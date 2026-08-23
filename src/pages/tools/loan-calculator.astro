@@ -1,0 +1,28 @@
+---
+import AdSlot from '../../components/AdSlot.astro';
+import LoanCalculator from '../../components/calculators/LoanCalculator.tsx';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Korea Loan Interest Calculator"
+  description="Monthly payment and total interest for a loan in Korea, using the equal-installment formula — and what a 1%p higher rate costs."
+>
+  <header class="mb-8">
+    <h1 class="mb-2 text-3xl font-bold text-slate-900">
+      Korea Loan Interest Calculator
+    </h1>
+    <p class="max-w-2xl text-slate-600">
+      Korean banks quote loans with equal monthly installments (원리금균등).
+      Enter the principal, annual rate, and term to see your monthly payment,
+      the total interest, and how much a one-point rate difference matters.
+    </p>
+  </header>
+
+  <LoanCalculator client:visible />
+
+  <AdSlot position="bottom" />
+
+  <RelatedPosts category="loans" heading="Guides on loans in Korea" />
+</Layout>

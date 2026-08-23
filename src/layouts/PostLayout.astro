@@ -1,0 +1,121 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import AdSlot from '../components/AdSlot.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import SourcesFooter from '../components/SourcesFooter.astro';
+import { getCategory } from '../lib/categories';
+import { SITE_TITLE, SITE_URL } from '../lib/site';
+import Layout from './Layout.astro';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, description, publishDate, updatedDate, sources, affiliate, faq } =
+  post.data;
+const category = getCategory(post.data.category);
+const canonical = `${SITE_URL}/${category.slug}/${post.id}/`;
+
+// Mid-article ad only for long-form posts (site policy: 800+ words).
+const wordCount = (post.body ?? '').split(/\s+/).filter(Boolean).length;
+const showMidAd = wordCount >= 800;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: publishDate.toISOString(),
+  dateModified: updatedDate.toISOString(),
+  mainEntityOfPage: canonical,
+  author: {
+    '@type': 'Organization',
+    name: SITE_TITLE,
+    url: SITE_URL,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_TITLE,
+    url: SITE_URL,
+  },
+};
+
+const faqSchema =
+  faq && faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: { '@type': 'Answer', text: item.answer },
+        })),
+      }
+    : null;
+---
+
+<Layout title={title} description={description} article>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    {
+      faqSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+      )
+    }
+  </Fragment>
+
+  <article class="mx-auto max-w-3xl">
+    <nav class="mb-4 text-sm text-slate-500">
+      <a href="/" class="hover:underline">Home</a>
+      <span class="mx-1">/</span>
+      <a href={`/${category.slug}/`} class="hover:underline">{category.shortTitle}</a>
+    </nav>
+
+    <header class="mb-6">
+      <h1 class="mb-3 text-3xl leading-tight font-bold text-slate-900">{title}</h1>
+      <p class="text-sm text-slate-500">
+        Published <FormattedDate date={publishDate} /> · Updated{' '}
+        <FormattedDate date={updatedDate} />
+      </p>
+    </header>
+
+    <AdSlot position="top" />
+
+    <div class="prose-article">
+      <slot />
+    </div>
+
+    {showMidAd && <AdSlot position="mid" />}
+
+    {
+      faq && faq.length > 0 && (
+        <section class="mt-10">
+          <h2 class="mb-4 text-2xl font-bold text-slate-900">
+            Frequently asked questions
+          </h2>
+          <dl class="space-y-4">
+            {faq.map((item) => (
+              <div class="rounded-lg border border-slate-200 p-4">
+                <dt class="mb-1 font-semibold text-slate-900">{item.question}</dt>
+                <dd class="text-sm text-slate-600">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )
+    }
+
+    <SourcesFooter
+      updatedDate={updatedDate}
+      sources={sources}
+      affiliate={affiliate}
+    />
+
+    <RelatedPosts category={category.slug} excludeId={post.id} />
+
+    <AdSlot position="bottom" />
+  </article>
+</Layout>

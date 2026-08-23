@@ -1,0 +1,55 @@
+---
+/**
+ * Auto-appended to every post: last-verified date, official sources,
+ * affiliate disclosure (when applicable), and the standing disclaimer.
+ */
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  updatedDate: Date;
+  sources: { label: string; url: string }[];
+  affiliate: boolean;
+}
+
+const { updatedDate, sources, affiliate } = Astro.props;
+---
+
+<section class="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-600">
+  <p class="mb-4 font-medium text-slate-900">
+    Last verified: <FormattedDate date={updatedDate} />
+  </p>
+
+  <h2 class="mb-2 font-semibold text-slate-900">Sources</h2>
+  <ul class="mb-4 list-disc space-y-1 pl-5">
+    {
+      sources.map((s) => (
+        <li>
+          <a
+            href={s.url}
+            rel="noopener nofollow"
+            target="_blank"
+            class="text-sky-700 hover:underline"
+          >
+            {s.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    affiliate && (
+      <p class="mb-3 text-xs text-slate-500">
+        This article contains affiliate links. If you sign up through one, we
+        may earn a commission at no extra cost to you. This never changes what
+        we write.
+      </p>
+    )
+  }
+
+  <p class="text-xs text-slate-500">
+    This article is general information, not financial, legal, or tax advice.
+    Requirements and figures change; confirm the current rules with the
+    official sources above before making decisions.
+  </p>
+</section>

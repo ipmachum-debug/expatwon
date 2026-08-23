@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import { getCategory } from '../lib/categories';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const category = getCategory(post.data.category);
+---
+
+<article class="rounded-lg border border-slate-200 p-5 transition-shadow hover:shadow-md">
+  <p class="mb-2 text-xs font-semibold tracking-wide text-sky-700 uppercase">
+    <a href={`/${category.slug}/`}>{category.shortTitle}</a>
+  </p>
+  <h3 class="mb-2 text-lg leading-snug font-bold text-slate-900">
+    <a href={`/${category.slug}/${post.id}/`} class="hover:underline">{post.data.title}</a>
+  </h3>
+  <p class="mb-3 text-sm text-slate-600">{post.data.description}</p>
+  <p class="text-xs text-slate-400">
+    Updated <FormattedDate date={post.data.updatedDate} />
+  </p>
+</article>

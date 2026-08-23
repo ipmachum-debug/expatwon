@@ -1,0 +1,28 @@
+---
+import AdSlot from '../../components/AdSlot.astro';
+import CostOfLivingCalculator from '../../components/calculators/CostOfLivingCalculator.tsx';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Korea Cost of Living Calculator"
+  description="Estimate your monthly living costs in Korea — rent, utilities, phone, food, and transport — with an automatic USD conversion."
+>
+  <header class="mb-8">
+    <h1 class="mb-2 text-3xl font-bold text-slate-900">
+      Korea Cost of Living Calculator
+    </h1>
+    <p class="max-w-2xl text-slate-600">
+      Pick a city, adjust the numbers to your lifestyle, and get a realistic
+      monthly total in KRW and USD. Deposits (보증금) are handled separately —
+      they tie up cash but come back when you move out.
+    </p>
+  </header>
+
+  <CostOfLivingCalculator client:visible />
+
+  <AdSlot position="bottom" />
+
+  <RelatedPosts category="cost-of-living" heading="Guides on living costs in Korea" />
+</Layout>

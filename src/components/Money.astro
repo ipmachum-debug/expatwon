@@ -1,0 +1,15 @@
+---
+/**
+ * Renders a KRW amount with a rough USD equivalent, e.g. "₩1,000,000 (≈ $725)".
+ * Rate comes from KRW_PER_USD in src/lib/site.ts (manually updated constant).
+ */
+import { EXCHANGE_RATE_NOTE, krw, usd } from '../lib/site';
+
+interface Props {
+  amount: number;
+}
+
+const { amount } = Astro.props;
+---
+
+<span title={EXCHANGE_RATE_NOTE}>{krw(amount)} <span class="text-slate-500">(≈ {usd(amount)})</span></span>

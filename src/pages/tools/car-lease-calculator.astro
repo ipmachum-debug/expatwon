@@ -1,0 +1,28 @@
+---
+import AdSlot from '../../components/AdSlot.astro';
+import CarLeaseCalculator from '../../components/calculators/CarLeaseCalculator.tsx';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Korea Car Lease Cost Calculator"
+  description="Calculate the real total cost of a car lease in Korea: down payment, deposit, monthly payments, and buyout — with USD conversion."
+>
+  <header class="mb-8">
+    <h1 class="mb-2 text-3xl font-bold text-slate-900">
+      Korea Car Lease Cost Calculator
+    </h1>
+    <p class="max-w-2xl text-slate-600">
+      Lease quotes in Korea advertise the monthly payment, but the real cost
+      includes the down payment (선수금) and — if you keep the car — the
+      residual value (잔존가치). Enter your quote to see the full picture.
+    </p>
+  </header>
+
+  <CarLeaseCalculator client:visible />
+
+  <AdSlot position="bottom" />
+
+  <RelatedPosts category="cars" heading="Guides on cars in Korea" />
+</Layout>

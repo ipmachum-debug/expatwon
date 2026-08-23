@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const tools = [
+  {
+    href: '/tools/car-lease-calculator/',
+    title: 'Korea Car Lease Cost Calculator',
+    description:
+      'Down payment, deposit, monthly payments, and residual value → the real total cost of leasing, with and without buyout.',
+  },
+  {
+    href: '/tools/loan-calculator/',
+    title: 'Korea Loan Interest Calculator',
+    description:
+      'Principal, rate, and term → monthly payment and total interest, plus what a 1%p higher rate would cost you.',
+  },
+  {
+    href: '/tools/cost-of-living-calculator/',
+    title: 'Korea Cost of Living Calculator',
+    description:
+      'Rent, phone, food, and transport → your estimated monthly budget in KRW and USD.',
+  },
+];
+---
+
+<Layout
+  title="Korea Money Calculators"
+  description="Free calculators for expats in Korea: car lease total cost, loan interest, and monthly cost of living with USD conversion."
+>
+  <header class="mb-8">
+    <h1 class="mb-2 text-3xl font-bold text-slate-900">Calculators</h1>
+    <p class="max-w-2xl text-slate-600">
+      Quick tools for the money decisions expats actually face in Korea. All
+      calculations run in your browser — nothing is stored or sent anywhere.
+    </p>
+  </header>
+
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      tools.map((t) => (
+        <a
+          href={t.href}
+          class="rounded-lg border border-slate-200 p-5 transition-shadow hover:shadow-md"
+        >
+          <h2 class="mb-1 font-bold text-slate-900">{t.title}</h2>
+          <p class="text-sm text-slate-600">{t.description}</p>
+        </a>
+      ))
+    }
+  </div>
+</Layout>

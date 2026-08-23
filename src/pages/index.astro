@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+
+import PostCard from '../components/PostCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { CATEGORIES } from '../lib/categories';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../lib/site';
+
+const posts = (await getCollection('posts', (p) => !p.data.draft)).sort(
+  (a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf(),
+);
+const latest = posts.slice(0, 6);
+
+const tools = [
+  {
+    href: '/tools/car-lease-calculator/',
+    title: 'Car Lease Cost Calculator',
+    description: 'The real total cost of a car lease in Korea, including buyout.',
+  },
+  {
+    href: '/tools/loan-calculator/',
+    title: 'Loan Interest Calculator',
+    description: 'Monthly payment and total interest, with a rate comparison.',
+  },
+  {
+    href: '/tools/cost-of-living-calculator/',
+    title: 'Cost of Living Calculator',
+    description: 'Estimate your monthly budget in Korea, converted to USD.',
+  },
+];
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section class="mb-12 rounded-xl bg-slate-900 px-6 py-10 text-white">
+    <h1 class="mb-3 max-w-2xl text-3xl leading-tight font-bold">
+      Money in Korea, explained for expats.
+    </h1>
+    <p class="mb-5 max-w-2xl text-slate-300">
+      Bank accounts, loans, cars, business registration, insurance, and the real
+      cost of living — how it works, what it costs, and which official rules
+      apply to foreigners.
+    </p>
+    <a
+      href="/tools/"
+      class="inline-block rounded-md bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-200"
+    >
+      Try the calculators →
+    </a>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-2xl font-bold text-slate-900">Latest guides</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {latest.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-2xl font-bold text-slate-900">Browse by topic</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        CATEGORIES.map((c) => (
+          <a
+            href={`/${c.slug}/`}
+            class="rounded-lg border border-slate-200 p-5 transition-shadow hover:shadow-md"
+          >
+            <h3 class="mb-1 font-bold text-slate-900">{c.title}</h3>
+            <p class="text-sm text-slate-600">{c.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section>
+    <h2 class="mb-4 text-2xl font-bold text-slate-900">Calculators</h2>
+    <div class="grid gap-4 sm:grid-cols-3">
+      {
+        tools.map((t) => (
+          <a
+            href={t.href}
+            class="rounded-lg border border-slate-200 p-5 transition-shadow hover:shadow-md"
+          >
+            <h3 class="mb-1 font-bold text-slate-900">{t.title}</h3>
+            <p class="text-sm text-slate-600">{t.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

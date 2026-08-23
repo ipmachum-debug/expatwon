@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+
+import { getCategory } from '../lib/categories';
+
+interface Props {
+  category: string;
+  /** post id to exclude (the post being viewed), if any */
+  excludeId?: string;
+  heading?: string;
+}
+
+const { category, excludeId, heading = 'Related guides' } = Astro.props;
+const categoryMeta = getCategory(category);
+
+const related = (
+  await getCollection(
+    'posts',
+    (p) => p.data.category === category && !p.data.draft && p.id !== excludeId,
+  )
+)
+  .sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf())
+  .slice(0, 5);
+---
+
+{
+  related.length > 0 && (
+    <section class="mt-10 rounded-lg bg-slate-50 p-5">
+      <h2 class="mb-3 text-base font-bold text-slate-900">{heading}</h2>
+      <ul class="space-y-2 text-sm">
+        {related.map((p) => (
+          <li>
+            <a
+              href={`/${categoryMeta.slug}/${p.id}/`}
+              class="text-sky-700 hover:underline"
+            >
+              {p.data.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
