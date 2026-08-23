@@ -219,6 +219,11 @@ Two practical rules follow:
    registration, a lease. "I'll wait a few months" or "I'll build up
    transaction history" is not how the system works.
 
+The full unlock playbook — which evidence works for employees, business
+owners, and people without income, plus the foreigner identity-matching
+traps — is in our
+[limited-accounts deep dive](/banking/korean-limited-accounts-hando-gyejwa-explained/).
+
 ## Salary accounts: settle the purpose (and your name) on day one
 
 If you work for a Korean company, salary is the easiest purpose to document.
