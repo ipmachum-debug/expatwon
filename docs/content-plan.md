@@ -71,7 +71,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - hometax-guide-for-foreign-business-owners — 홈택스 영어 화면 기준 신고 방법
 
 ### Insurance (P5)
-- ★★ nhis-korean-health-insurance-for-foreigners — 지역가입 의무·보험료 산정 (이 클러스터 최대 수요, 사실상 제2 필러)
+- ✅ ★★ nhis-korean-health-insurance-for-foreigners — 평균보험료 하한·직장전환·체납-비자 연계 (2026-08-23 발행)
 - private-health-insurance-silbi-korea — 실비보험 가입 가능 여부·구조
 - travel-insurance-for-visiting-korea — 단기 방문자용
 - renters-insurance-korea — 주택화재·임차인배상
