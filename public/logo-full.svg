@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 320" role="img" aria-label="ExpatWon — Money and Life in Korea">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="48" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(40,60) scale(4.1667)">
+    <rect width="48" height="48" rx="12" fill="url(#tile)"/>
+    <text x="23" y="33" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold" fill="#ffffff">₩</text>
+    <path d="M7 38 C 18 34, 30 26, 40 13" fill="none" stroke="#93c5fd" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M36.5 15.5 45 7l-3.2 8.6-3-1.6z" fill="#ffffff"/>
+  </g>
+
+  <text x="292" y="186" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="800" letter-spacing="-2">
+    <tspan fill="#0b1220">Expat</tspan><tspan fill="url(#wordmark)">Won</tspan>
+  </text>
+
+  <line x1="294" y1="236" x2="330" y2="236" stroke="#94a3b8" stroke-width="3"/>
+  <text x="346" y="247" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600" letter-spacing="7" fill="#64748b">MONEY &amp; LIFE IN KOREA</text>
+  <line x1="878" y1="236" x2="914" y2="236" stroke="#94a3b8" stroke-width="3"/>
+</svg>
