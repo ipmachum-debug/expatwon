@@ -88,6 +88,104 @@ rules differ product by product. The realistic path for a first account is:
 open the basic account at a branch, then layer on internet banking, the check
 card, and remittance settings from there.
 
+### Before your ARC arrives
+
+New arrivals often face a gap of several weeks between landing and receiving
+the physical ARC. During that window your options narrow, but they are not
+zero:
+
+- Some banks will open a basic account against a passport plus supporting
+  documents (an employment contract helps enormously) — at branch
+  discretion, and very likely as a limited account.
+- Some employers pay the first salary in cash or delay the first transfer
+  until the account exists; if you are negotiating a start date, it is worth
+  asking how the company usually handles this.
+- A Korean phone number in your own name is close to a prerequisite for
+  everything downstream (apps, identity verification, autopay), and getting
+  one is itself easier with an ARC — which is why many people simply wait
+  for the card and then do bank + phone + apps in one sweep.
+
+If you truly need an account in week one, call branches near your workplace
+and ask specifically: "passport only, ARC applied for but not issued — will
+you open a basic account, and with which documents?" You will get different
+answers from different branches; that is normal.
+
+## Traditional banks and internet banks are different tracks
+
+Korea's banking market splits into the traditional branch banks — KB
+Kookmin, Shinhan, Woori, Hana, plus NH and IBK — and the app-only internet
+banks (Toss Bank, KakaoBank, K bank).
+
+For a foreigner's **first** account, the traditional banks are usually the
+practical choice, for one structural reason: a branch can look at your
+documents, ask questions, and exercise judgment. An app cannot. Non-face-to-
+face onboarding depends entirely on automated identity verification, which is
+exactly where foreign customers hit edge cases — name formats, ID types the
+system does not recognize, missing Korean phone verification.
+
+The internet banks have been opening up: Toss Bank introduced
+non-face-to-face account opening for foreign residents (ARC holders with a
+Korean phone number), and KakaoBank has added products for foreign
+residents. But eligibility rules change frequently and differ by product, so
+treat internet banks as a *second* account you add once you hold an ARC and
+a Korean phone number — not as the place to solve your first-account
+problem. Check the current policy in the app itself before relying on it.
+
+What the internet banks are genuinely good at, once you qualify: fee-free
+transfers, better app UX than most legacy banks, and easy sub-accounts for
+budgeting. Many long-term residents settle into a pattern of one traditional
+main bank (salary, remittance, anything requiring a branch) plus one
+internet bank for daily spending.
+
+## What actually happens at the branch
+
+Knowing the sequence removes most of the stress. A typical first-account
+visit looks like this:
+
+1. **Take a number, state your purpose.** Say you want to open a deposit
+   account (입출금 계좌) and mention the purpose — salary, living expenses,
+   business.
+2. **Hand over ID.** Passport plus ARC if you have one. The teller may
+   photocopy both.
+3. **Purpose questionnaire.** You will fill in (or the teller fills in with
+   you) a financial-transaction-purpose form. Answer plainly and
+   consistently with your documents — this form is what decides whether you
+   get a normal or a limited account.
+4. **Register a signature.** Foreigners can sign instead of using a Korean
+   seal. Use a signature you can reproduce reliably; you will be asked for
+   it again for years.
+5. **Set a PIN** (4 digits) for the card and passbook.
+6. **Receive the passbook (통장) and/or account number.** Many banks still
+   issue a physical passbook; you can decline it if you prefer.
+7. **Check card and app enrollment.** Ask for the check card and
+   internet/mobile banking in the same sitting, and have the teller confirm
+   your transfer limits and whether the account is limited.
+
+Set aside an hour, go on a weekday morning if you can, and bring more
+documents than you think you need — the cost of an unused document is zero,
+and the cost of a missing one is a second visit.
+
+## The vocabulary you will actually encounter
+
+You do not need Korean to open an account, but these terms show up on forms,
+apps, and teller conversations constantly:
+
+| Korean | Meaning |
+| --- | --- |
+| 입출금 계좌 / 통장 | Deposit account / passbook |
+| 체크카드 | Check card (debit card) |
+| 외국인등록증 | Alien Registration Card (ARC) |
+| 한도제한계좌 | Limited account (daily caps) |
+| 거래목적 확인 | Transaction-purpose verification |
+| 재직증명서 | Certificate of employment |
+| 이체 한도 | Transfer limit |
+| 해외송금 | Overseas remittance |
+| 환율 우대 | Preferential FX rate |
+| 자동이체 | Autopay / automatic debit |
+
+Screenshot this table before your branch visit — pointing at a term is a
+perfectly effective communication strategy at a Korean bank counter.
+
 ## The real issue is not the account — it is the limited account
 
 The single most common surprise for new arrivals is not a rejected
@@ -261,6 +359,23 @@ When you ask, do not ask "can foreigners open an account?" — describe your
 visa status, the ID you hold, and what the account is for, then ask which
 documents they need. Note that opening an account itself is generally free
 (per FSS guidance); ATM, teller, and remittance fees apply afterward.
+
+## When you leave Korea: do not just abandon the account
+
+Plan the account's end as deliberately as its beginning. If you are leaving
+Korea for good, you generally have two clean options: close the account and
+remit the balance out (be ready to document the source of funds for a large
+final transfer), or keep the account open with your contact details updated
+to a reachable number and address.
+
+What you should not do is walk away and forget it. Accounts with no activity
+for an extended period are classified as dormant (휴면계좌), and an account
+attached to a dead phone number and an expired ARC is genuinely painful to
+recover from abroad — identity re-verification from overseas is exactly the
+scenario Korean banking handles worst. If you expect to return, or you have
+recurring Korean payments (tax refunds, deposit returns, final salary), sort
+out remote-access arrangements with the bank *before* your ARC expires and
+your Korean phone number dies.
 
 ## After opening: verify before you rely on it
 
