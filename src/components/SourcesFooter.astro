@@ -16,7 +16,7 @@ const { updatedDate, sources, affiliate } = Astro.props;
 
 <section class="mt-12 rounded-2xl border border-slate-200 bg-white p-6 text-sm sm:p-7">
   <p class="mb-5 flex items-center gap-2 font-semibold text-ink">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-500">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-blue-500">
       <circle cx="12" cy="12" r="9" /><path d="m8.5 12 2.5 2.5 4.5-5" />
     </svg>
     Last verified: <FormattedDate date={updatedDate} />
@@ -27,12 +27,12 @@ const { updatedDate, sources, affiliate } = Astro.props;
     {
       sources.map((s) => (
         <li class="flex items-baseline gap-2">
-          <span class="text-emerald-400" aria-hidden="true">↗</span>
+          <span class="text-blue-400" aria-hidden="true">↗</span>
           <a
             href={s.url}
             rel="noopener nofollow"
             target="_blank"
-            class="font-medium text-slate-600 underline decoration-slate-300 underline-offset-[3px] hover:text-accent-dark hover:decoration-emerald-400"
+            class="font-medium text-slate-600 underline decoration-slate-300 underline-offset-[3px] hover:text-accent-dark hover:decoration-blue-400"
           >
             {s.label}
           </a>

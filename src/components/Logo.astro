@@ -1,0 +1,62 @@
+---
+/**
+ * Brand lockup: gradient ₩ tile with ascending swoosh + plane, and the
+ * two-tone "ExpatWon" wordmark. SVG mark so it stays crisp at any size.
+ */
+interface Props {
+  /** 'light' renders the wordmark for dark backgrounds (footer). */
+  variant?: 'dark' | 'light';
+  /** Show the "Money & Life in Korea" tagline under the wordmark. */
+  tagline?: boolean;
+}
+
+const { variant = 'dark', tagline = false } = Astro.props;
+const gradId = `ew-g-${variant}`;
+---
+
+<span class="flex items-center gap-2.5">
+  <svg viewBox="0 0 48 48" class="h-9 w-9 shrink-0 drop-shadow-sm" aria-hidden="true">
+    <defs>
+      <linearGradient id={gradId} x1="0" y1="48" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#1e3a8a"></stop>
+        <stop offset="1" stop-color="#3b82f6"></stop>
+      </linearGradient>
+    </defs>
+    <rect width="48" height="48" rx="12" fill={`url(#${gradId})`}></rect>
+    <text
+      x="23"
+      y="33"
+      text-anchor="middle"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="26"
+      font-weight="bold"
+      fill="#ffffff">₩</text
+    >
+    <path
+      d="M7 38 C 18 34, 30 26, 40 13"
+      fill="none"
+      stroke="#93c5fd"
+      stroke-width="2.5"
+      stroke-linecap="round"></path>
+    <path d="M36.5 15.5 45 7l-3.2 8.6-3-1.6z" fill="#ffffff"></path>
+  </svg>
+  <span class="flex flex-col leading-none">
+    <span class="text-[1.35rem] font-extrabold tracking-tight">
+      <span class={variant === 'light' ? 'text-white' : 'text-ink'}>Expat</span><span
+        class={variant === 'light' ? 'text-sky-400' : 'text-blue-600'}>Won</span
+      >
+    </span>
+    {
+      tagline && (
+        <span
+          class:list={[
+            'mt-1 text-[0.58rem] font-semibold tracking-[0.18em] uppercase',
+            variant === 'light' ? 'text-slate-500' : 'text-slate-400',
+          ]}
+        >
+          Money &amp; Life in Korea
+        </span>
+      )
+    }
+  </span>
+</span>

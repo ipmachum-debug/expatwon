@@ -7,9 +7,9 @@
   --color-ink: #0b1220;
   --color-ink-soft: #141e33;
   --color-paper: #f6f7f9;
-  --color-accent: #059669;
-  --color-accent-dark: #047857;
-  --color-accent-soft: #ecfdf5;
+  --color-accent: #2563eb;
+  --color-accent-dark: #1d4ed8;
+  --color-accent-soft: #eff6ff;
   --color-gold: #d97706;
 }
 
@@ -22,7 +22,7 @@
     font-feature-settings: 'ss01', 'cv11';
   }
   ::selection {
-    @apply bg-emerald-100 text-emerald-900;
+    @apply bg-blue-100 text-blue-900;
   }
 }
 
@@ -44,13 +44,13 @@
   @apply my-4 list-outside space-y-1.5 pl-6;
 }
 .prose-article ul {
-  @apply list-disc marker:text-emerald-500;
+  @apply list-disc marker:text-blue-500;
 }
 .prose-article ol {
-  @apply list-decimal marker:font-semibold marker:text-emerald-600;
+  @apply list-decimal marker:font-semibold marker:text-blue-600;
 }
 .prose-article a {
-  @apply font-medium text-accent-dark underline decoration-emerald-300 underline-offset-[3px] transition-colors hover:decoration-emerald-600;
+  @apply font-medium text-accent-dark underline decoration-blue-300 underline-offset-[3px] transition-colors hover:decoration-blue-600;
 }
 .prose-article table {
   @apply my-6 w-full border-collapse text-sm;
@@ -62,7 +62,7 @@
   @apply border-b border-slate-200 px-3 py-2;
 }
 .prose-article blockquote {
-  @apply my-6 rounded-r-lg border-l-4 border-emerald-300 bg-emerald-50/50 py-2 pr-4 pl-4 text-slate-600 italic;
+  @apply my-6 rounded-r-lg border-l-4 border-blue-300 bg-blue-50/50 py-2 pr-4 pl-4 text-slate-600 italic;
 }
 .prose-article code {
   @apply rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em];

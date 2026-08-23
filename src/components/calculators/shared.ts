@@ -9,7 +9,7 @@ export function fmtUsd(krwAmount: number): string {
 }
 
 export const inputClass =
-  'w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 shadow-sm transition-colors focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 focus:outline-none';
+  'w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 shadow-sm transition-colors focus:border-blue-400 focus:ring-2 focus:ring-blue-100 focus:outline-none';
 export const labelClass = 'mb-1.5 block text-sm font-medium text-slate-600';
 export const cardClass =
   'rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7';
