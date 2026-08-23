@@ -78,7 +78,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - dental-and-vision-costs-korea — NHIS 적용/비적용 경계
 
 ### Cost of Living (P6)
-- ★★ jeonse-vs-wolse-korean-rental-system — 영어권 최대 공백 주제 중 하나
+- ✅ ★★ jeonse-vs-wolse-korean-rental-system — 보증금=신용공여 프레임, 전환율·회수위험·HUG/HF 구분 (2026-08-23 발행)
 - ★ rental-deposit-protection-korea — 보증금 보호·전세보증보험 (시의성 높음)
 - korean-phone-plans-for-foreigners — 통신 3사 vs 알뜰폰(MVNO)
 - utilities-and-maintenance-fees-korea — 공과금·관리비 구조
