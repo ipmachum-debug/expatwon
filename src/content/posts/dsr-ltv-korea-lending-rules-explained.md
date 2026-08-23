@@ -91,11 +91,14 @@ differs.
 > DSR = **all** loans' annual **principal and interest** ÷ income
 
 That difference bites. A borrower earning ₩80M with a ₩50M credit loan
-and a car installment sees mostly interest drag under DTI — but under
-DSR, the *principal repayment* of the credit loan and the car financing
-enters too. This is why DSR became the true wall of Korean lending, and
-why [a car installment taken today](/cars/buying-a-used-car-in-korea-as-a-foreigner/)
-directly shrinks next year's mortgage.
+and a card loan sees mostly interest drag under DTI — but under DSR, the
+*principal repayment* of those debts enters too. This is why DSR became
+the true wall of Korean lending. (One precision note: per FSC guidance,
+**auto installments and leases are exception items in the borrower-level
+DSR calculation** — they do not enter the formula the way credit and
+card loans do, though they remain real credit-screened obligations that
+banks can weigh in internal reviews; see
+[the rental-vs-lease-vs-buying comparison](/cars/long-term-car-rental-janggi-rent-korea/).)
 
 ## The 40% / 50% split — and why non-banks aren't a 25% bonus
 
@@ -239,7 +242,7 @@ column.
 Certain loans receive exceptional DSR treatment for policy reasons —
 portions of jeonse lending, interim/relocation payments on
 presale apartments, credit loans of ₩3M or less, some inclusive-finance
-products, deposit-secured loans. Two things follow. Exempt debt is still
+products, deposit-secured loans, and auto installments and leases. Two things follow. Exempt debt is still
 debt — it never disappears from your finances. And **business loans are
 not a personal-mortgage bypass**: the FSC is explicitly targeting
 diverted business lending and real-estate workarounds in its 2026
