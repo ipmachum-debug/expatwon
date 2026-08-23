@@ -17,6 +17,11 @@ sources:
   - label: 'Woori Bank — English site (resident / non-resident classification)'
     url: 'https://www.wooribank.com/eng/'
 affiliate: false
+keyFacts:
+  - { label: 'ID to bring', value: 'Passport + ARC' }
+  - { label: 'Also bring', value: 'Proof of purpose' }
+  - { label: 'Main pitfall', value: 'Limited account' }
+  - { label: 'Its daily cap', value: '₩1M online / ATM' }
 faq:
   - question: 'Can I open a Korean bank account with just my passport?'
     answer: 'Sometimes, but do not count on it. Banks must verify both your identity and your reason for opening the account. Some branches open basic accounts on a passport alone; many ask for an Alien Registration Card plus documents that explain the purpose, such as an employment contract. Requirements differ by bank and by your residence status.'
@@ -142,28 +147,44 @@ internet bank for daily spending.
 Knowing the sequence removes most of the stress. A typical first-account
 visit looks like this:
 
-1. **Take a number, state your purpose.** Say you want to open a deposit
-   account (입출금 계좌) and mention the purpose — salary, living expenses,
-   business.
-2. **Hand over ID.** Passport plus ARC if you have one. The teller may
-   photocopy both.
-3. **Purpose questionnaire.** You will fill in (or the teller fills in with
-   you) a financial-transaction-purpose form. Answer plainly and
-   consistently with your documents — this form is what decides whether you
-   get a normal or a limited account.
-4. **Register a signature.** Foreigners can sign instead of using a Korean
-   seal. Use a signature you can reproduce reliably; you will be asked for
-   it again for years.
-5. **Set a PIN** (4 digits) for the card and passbook.
-6. **Receive the passbook (통장) and/or account number.** Many banks still
-   issue a physical passbook; you can decline it if you prefer.
-7. **Check card and app enrollment.** Ask for the check card and
-   internet/mobile banking in the same sitting, and have the teller confirm
-   your transfer limits and whether the account is limited.
+<div class="steps">
+  <div class="step"><div class="step-num">1</div>
+    <div class="step-body"><strong>Take a number, state your purpose.</strong>
+    Say you want to open a deposit account (입출금 계좌) and mention the
+    purpose — salary, living expenses, business.</div></div>
+  <div class="step"><div class="step-num">2</div>
+    <div class="step-body"><strong>Hand over ID.</strong> Passport plus ARC if
+    you have one. The teller may photocopy both.</div></div>
+  <div class="step"><div class="step-num">3</div>
+    <div class="step-body"><strong>Purpose questionnaire.</strong> You will
+    fill in (or the teller fills in with you) a
+    financial-transaction-purpose form. Answer plainly and consistently with
+    your documents — this form is what decides whether you get a normal or a
+    limited account.</div></div>
+  <div class="step"><div class="step-num">4</div>
+    <div class="step-body"><strong>Register a signature.</strong> Foreigners
+    can sign instead of using a Korean seal. Use a signature you can
+    reproduce reliably; you will be asked for it again for years.</div></div>
+  <div class="step"><div class="step-num">5</div>
+    <div class="step-body"><strong>Set a PIN</strong> (4 digits) for the card
+    and passbook.</div></div>
+  <div class="step"><div class="step-num">6</div>
+    <div class="step-body"><strong>Receive the passbook (통장) and/or account
+    number.</strong> Many banks still issue a physical passbook; you can
+    decline it if you prefer.</div></div>
+  <div class="step"><div class="step-num">7</div>
+    <div class="step-body"><strong>Check card and app enrollment.</strong> Ask
+    for the check card and internet/mobile banking in the same sitting, and
+    have the teller confirm your transfer limits and whether the account is
+    limited.</div></div>
+</div>
 
-Set aside an hour, go on a weekday morning if you can, and bring more
-documents than you think you need — the cost of an unused document is zero,
-and the cost of a missing one is a second visit.
+<div class="callout callout-tip">
+  <p class="callout-title">💡 Tip</p>
+  <p>Set aside an hour, go on a weekday morning if you can, and bring more
+  documents than you think you need — the cost of an unused document is zero,
+  and the cost of a missing one is a second visit.</p>
+</div>
 
 ## The vocabulary you will actually encounter
 
@@ -204,10 +225,13 @@ from **May 2, 2024** are:
 | ATM withdrawal / transfer | ₩1,000,000 |
 | Teller (창구) transactions | ₩3,000,000 |
 
-Receiving a salary into a limited account is usually fine. The problem
-arrives the day you need to move real money: a housing deposit, a car
-purchase, business funds, or an overseas transfer. At that point a
-₩1,000,000/day cap stops the transaction cold.
+<div class="callout callout-warn">
+  <p class="callout-title">⚠️ Watch out</p>
+  <p>Receiving a salary into a limited account is usually fine. The problem
+  arrives the day you need to move real money: a housing deposit, a car
+  purchase, business funds, or an overseas transfer. At that point a
+  ₩1,000,000/day cap stops the transaction cold.</p>
+</div>
 
 Two practical rules follow:
 

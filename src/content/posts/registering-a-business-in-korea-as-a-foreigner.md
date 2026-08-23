@@ -15,6 +15,11 @@ sources:
   - label: 'Hi Korea — Ministry of Justice immigration portal (status-of-stay activity rules)'
     url: 'https://www.hikorea.go.kr'
 affiliate: false
+keyFacts:
+  - { label: 'Order of operations', value: 'Visa → registration' }
+  - { label: 'D-8-1 threshold', value: '₩100M + 10% shares' }
+  - { label: 'D-9 threshold', value: '₩300M' }
+  - { label: 'Bank hurdle', value: 'AML review' }
 faq:
   - question: 'Can I register a business on my current visa?'
     answer: 'Tax registration and immigration permission are separate questions. F-5 and generally F-6 allow broad business activity; F-2 and F-4 depend on the specific sub-status; E-7 workers need a status change or extra-activity permission before running their own business; D-2 students and D-10 job seekers are restricted. Check the immigration side first — a business registration certificate does not legalize activity your visa does not permit.'

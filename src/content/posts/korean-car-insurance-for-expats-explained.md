@@ -17,6 +17,11 @@ sources:
   - label: 'KoROAD Safe Driving portal — recognized countries and visa-based written-test exemptions'
     url: 'https://www.safedriving.or.kr/diGuide/selectDiGuide08.do'
 affiliate: false
+keyFacts:
+  - { label: 'Prerequisite', value: 'Korean license' }
+  - { label: 'Why year 1 is high', value: 'No local history' }
+  - { label: 'The fix', value: 'Overseas record proof' }
+  - { label: 'Biggest lever', value: 'Driver scope' }
 faq:
   - question: 'Why is my first-year car insurance in Korea so expensive?'
     answer: 'Usually not because of a “foreigner surcharge.” Premiums combine vehicle model grade, driver age and scope, insurance enrollment history, accident and violation records, and coverage choices. With no Korean insurance history on file, insurers cannot apply the experience-based rates a long-time insured driver gets — which prices you like a new driver until data accumulates or overseas history is recognized.'

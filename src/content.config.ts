@@ -28,6 +28,11 @@ const posts = defineCollection({
       .min(1),
     /** True when the post contains affiliate links (adds a disclosure line). */
     affiliate: z.boolean().default(false),
+    /** Optional "at a glance" stat tiles rendered under the post header (max 4). */
+    keyFacts: z
+      .array(z.object({ label: z.string().max(28), value: z.string().max(32) }))
+      .max(4)
+      .optional(),
     /** Optional FAQ block, rendered on-page and as FAQPage JSON-LD. */
     faq: z
       .array(z.object({ question: z.string(), answer: z.string() }))

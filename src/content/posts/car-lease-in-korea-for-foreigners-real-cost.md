@@ -17,6 +17,11 @@ sources:
   - label: 'Korea Accounting Standards Board — K-IFRS 1116 (Leases) guidance'
     url: 'https://kasb.or.kr/front/board/View016005.do?seq=40386'
 affiliate: false
+keyFacts:
+  - { label: 'Tax cap (base)', value: '₩8M per year' }
+  - { label: 'No driving log', value: '₩15M total cap' }
+  - { label: 'Approval hinges on', value: 'Visa + stay length' }
+  - { label: 'Exit risk', value: 'Early-end penalty' }
 faq:
   - question: 'Is the monthly lease payment fully tax-deductible for my Korean company?'
     answer: 'No — that claim is the most common leasing myth in Korea. The depreciation-equivalent portion of lease payments is capped at ₩8,000,000 per vehicle per year (excess carries forward), and without a driving log, total vehicle costs above ₩15,000,000 are only partially recognized. Business-use auto insurance is also a condition for corporate deduction.'

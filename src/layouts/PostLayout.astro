@@ -14,8 +14,16 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, publishDate, updatedDate, sources, affiliate, faq } =
-  post.data;
+const {
+  title,
+  description,
+  publishDate,
+  updatedDate,
+  sources,
+  affiliate,
+  faq,
+  keyFacts,
+} = post.data;
 const category = getCategory(post.data.category);
 const canonical = `${SITE_URL}/${category.slug}/${post.id}/`;
 
@@ -91,6 +99,23 @@ const faqSchema =
         </span>
       </p>
     </header>
+
+    {
+      keyFacts && keyFacts.length > 0 && (
+        <div class="mb-8 flex flex-wrap gap-3">
+          {keyFacts.map((fact) => (
+            <div class="min-w-[140px] flex-1 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3">
+              <div class="text-[0.68rem] font-semibold tracking-wider text-slate-400 uppercase">
+                {fact.label}
+              </div>
+              <div class="mt-0.5 text-[0.95rem] font-semibold text-ink">
+                {fact.value}
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
 
     <AdSlot position="top" />
 

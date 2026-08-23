@@ -19,6 +19,11 @@ sources:
   - label: 'Hana Bank — foreigner loan product disclosure (Hana Foreigner EZ Loan)'
     url: 'https://www.kebhana.com/cont/mall/mall08/mall0802/mall080204/1431732_115200.jsp'
 affiliate: false
+keyFacts:
+  - { label: 'Decides approval', value: 'Visa + Korean income' }
+  - { label: 'Strongest status', value: 'F-5 / F-4' }
+  - { label: 'Mortgage LTV', value: '40–70% by area' }
+  - { label: 'Since Jul 2025', value: 'Stage-3 stress DSR' }
 faq:
   - question: 'Which visa gives the best chance of getting a loan in Korea?'
     answer: 'F-5 permanent residency is structurally strongest because stay continuity is clearest, followed by F-4. But no visa carries automatic approval or local-equivalent terms — DSR, income, tenure, and credit score apply to everyone, and an F-4 holder with no Korean income can be weaker than an E-7 employee with three years of payroll history.'

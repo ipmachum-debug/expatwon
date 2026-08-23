@@ -21,6 +21,11 @@ sources:
   - label: 'HANPASS — registered small-amount overseas remittance service'
     url: 'https://www.hanpass.com/en?p=725'
 affiliate: false
+keyFacts:
+  - { label: 'Biggest leak', value: 'FX switch points' }
+  - { label: 'Card rule', value: 'Decline DCC, pay KRW' }
+  - { label: 'Common myth', value: '“$50,000 limit”' }
+  - { label: 'Tax perk', value: 'Card deduction' }
 faq:
   - question: 'Is $50,000 a year the maximum I can send out of Korea?'
     answer: 'No — that is the most over-simplified number in Korean FX. The regulations let foreign residents remit funds whose acquisition they can document (salary, declared income) in that documented amount. The USD 50,000/year figure applies to payments where the source is not separately documented, routed through a designated bank. Organize your proof of source first and the “limit” largely disappears.'
