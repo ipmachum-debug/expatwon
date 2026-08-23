@@ -48,6 +48,7 @@
 - personal-credit-loan-requirements-korea — 신용대출 소득·재직 요건
 - dsr-ltv-korea-lending-rules-explained — 용어·규제 해설 (다른 글이 전부 여기로 링크)
 - savings-banks-and-capital-companies-korea — 2금융권의 실제 비용 (경고 톤)
+- ✅ p2p-lending-in-korea-explained — 온투업 구조, 차주/투자자 양면, 한도·세제·플랫폼 평가 (2026-08-23 발행)
 
 ### Cars (P3)
 - ★ buying-a-used-car-in-korea-as-a-foreigner — 이전등록·성능기록부·엔카/KB차차차
