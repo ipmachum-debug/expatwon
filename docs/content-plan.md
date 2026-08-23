@@ -39,7 +39,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 
 ### Banking (P1)
 - ★ korean-limited-accounts-hando-gyejwa-explained — 한도계좌·20일 규칙 (모든 신규 입국자가 부딪히는 문제)
-- ★ how-to-send-money-from-korea-abroad — 은행 송금 vs 송금 앱, 수수료·한도·신고
+- ✅ ★ how-to-send-money-from-korea-abroad — Net Received Amount 산식·환율우대 해설·한도 3층 구조 (2026-08-23 발행)
 - kakaobank-toss-bank-kbank-for-foreigners — 인터넷은행 ARC 요건 비교
 - best-korean-banks-for-foreigners-compared — KB/신한/우리/하나 지점·앱·영어지원
 - korean-check-card-vs-credit-card-for-foreigners — 체크/신용 발급 조건
