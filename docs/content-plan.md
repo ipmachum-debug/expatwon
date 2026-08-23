@@ -55,7 +55,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - ✅ p2p-lending-in-korea-explained — 온투업 구조, 차주/투자자 양면, 한도·세제·플랫폼 평가 (2026-08-23 발행)
 
 ### Cars (P3)
-- ★ buying-a-used-car-in-korea-as-a-foreigner — 이전등록·성능기록부·엔카/KB차차차
+- ✅ ★ buying-a-used-car-in-korea-as-a-foreigner — 이전등록 체인·취득세·성능기록부/카히스토리·할부 심사 (2026-08-23 발행)
 - car-installment-financing-halbu-korea — 할부 구조, 리스와 총비용 비교 → 계산기 링크
 - long-term-car-rental-janggi-rent-korea — 장기렌트 vs 리스 (허/하/호 번호판)
 - getting-a-korean-drivers-license-license-exchange — 면허 교환 국가·절차
