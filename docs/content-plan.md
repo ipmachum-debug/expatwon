@@ -50,7 +50,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - ★ jeonse-loan-for-foreigners-explained — 전세대출 자격·보증기관
 - korean-mortgage-for-foreigners — LTV/DSR + 외국인 주택취득 신고
 - personal-credit-loan-requirements-korea — 신용대출 소득·재직 요건
-- dsr-ltv-korea-lending-rules-explained — 용어·규제 해설 (다른 글이 전부 여기로 링크)
+- ✅ dsr-ltv-korea-lending-rules-explained — 3중 한도 최솟값·스트레스 지역차등·역산 공식 허브 (2026-08-23 발행)
 - savings-banks-and-capital-companies-korea — 2금융권의 실제 비용 (경고 톤)
 - ✅ p2p-lending-in-korea-explained — 온투업 구조, 차주/투자자 양면, 한도·세제·플랫폼 평가 (2026-08-23 발행)
 

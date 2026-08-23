@@ -152,9 +152,12 @@ Two regulatory layers to know:
 
 So collateral genuinely helps a foreign applicant relative to unsecured
 credit — but it does not route around the regulatory limits or the
-repayment test. The LTV/DSR arithmetic is the same one Koreans face; run
-your numbers with the [loan calculator](/tools/loan-calculator/) before
-assuming a limit.
+repayment test. The LTV/DSR arithmetic is the same one Koreans face —
+the full mechanics, worked examples, and the 2026 regional stress-rate
+map are in our
+[DSR, LTV & stress DSR reference](/loans/dsr-ltv-korea-lending-rules-explained/) —
+and you can run your numbers with the
+[loan calculator](/tools/loan-calculator/) before assuming a limit.
 
 ## At tier-1 banks, your transaction history *is* the underwriting file
 
