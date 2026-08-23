@@ -136,7 +136,10 @@ jeonse-to-price ratio but:
 > **Real collateral cushion = conservative disposal value − senior liens −
 > senior tenants' deposits and other priority claims**
 
-That figure needs to exceed your deposit with room to spare.
+That figure needs to exceed your deposit with room to spare. (The full
+defensive playbook — registry analysis, perfecting your priority as a
+foreigner, and the guarantee mechanics — is in our
+[deposit protection guide](/cost-of-living/rental-deposit-protection-korea/).)
 
 Understand also the machine behind **reverse jeonse** (역전세): many
 landlords repay departing tenants with the *next* tenant's deposit. When
