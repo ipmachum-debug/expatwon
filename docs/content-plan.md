@@ -20,14 +20,18 @@
 
 현재 개요 상태인 5편을 각 클러스터의 필러 문서로 완성 + cost-of-living 필러 1편 신규.
 
-| # | 필러 (slug) | 클러스터 |
-|---|---|---|
-| P1 | how-to-open-a-bank-account-in-korea-as-a-foreigner | banking |
-| P2 | can-foreigners-get-a-loan-in-korea | loans |
-| P3 | car-lease-in-korea-for-foreigners-real-cost | cars |
-| P4 | registering-a-business-in-korea-as-a-foreigner | business |
-| P5 | korean-car-insurance-for-expats-explained | insurance |
-| P6 | cost-of-living-in-korea-2026-real-numbers *(신규)* | cost-of-living |
+| # | 필러 (slug) | 클러스터 | 상태 |
+|---|---|---|---|
+| P1 | how-to-open-a-bank-account-in-korea-as-a-foreigner | banking | ✅ 2026-08-23 (~3,000w) |
+| P2 | can-foreigners-get-a-loan-in-korea | loans | ✅ 2026-08-23 (~2,100w) |
+| P3 | car-lease-in-korea-for-foreigners-real-cost | cars | ✅ 2026-08-23 (~2,400w) |
+| P4 | registering-a-business-in-korea-as-a-foreigner | business | ✅ 2026-08-23 (~2,200w) |
+| P5 | korean-car-insurance-for-expats-explained | insurance | ✅ 2026-08-23 (~2,200w) |
+| P6 | managing-money-in-korea-fx-remittance-cards (머니플로우 앵글로 확정) | cost-of-living | ✅ 2026-08-23 (~2,400w) |
+
+**Phase 0 완료 (2026-08-23).** 다음: Phase 1 — 각 클러스터 ★ 지원 글.
+P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자" 글
+(cost-of-living-in-korea-real-numbers)은 cost-of-living 지원 글로 이동.
 
 ## 클러스터별 지원 글
 
