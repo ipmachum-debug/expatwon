@@ -18,6 +18,7 @@ npm install
 npm run dev       # local dev server
 npm run build     # production build → dist/
 npm run preview   # preview the production build
+npm run lint:seo  # quick frontmatter check (same limits as the zod schema)
 ```
 
 ## Deploying — GitHub → Cloudflare Pages
@@ -132,9 +133,10 @@ placeholder markup there with the real ad unit code — one file, all pages.
 
 - [x] Site skeleton, layouts, category hubs, tools, required pages
       (about / contact / privacy / disclaimer)
-- [ ] The 5 launch posts are **outlines** — write full articles and verify
-      every figure against the linked official sources before applying to
-      AdSense
+- [ ] The 5 launch posts are **outlines** — write full articles (pillar
+      depth, 1,500–2,500 words) and verify every figure against the linked
+      official sources before applying to AdSense. The full 39-post cluster
+      roadmap lives in [`docs/content-plan.md`](./docs/content-plan.md)
 - [ ] Set up `contact@expatwon.com` (Cloudflare Email Routing)
 - [ ] Connect Cloudflare Pages (steps above)
 - [ ] `www` → root Redirect Rule on the domain

@@ -4,11 +4,13 @@ export const SITE_DESCRIPTION =
   'Practical money guides for expats in Korea: bank accounts, loans, cars, business registration, insurance, and cost of living.';
 
 /**
- * Manual exchange rate. Update by hand when it drifts meaningfully.
- * Used only for rough USD equivalents shown next to KRW figures.
+ * Manual exchange rate — a deliberate constant, not a live API.
+ * ⚠️ Verify against the current market rate before launch and update
+ * KRW_PER_USD_UPDATED whenever you change it.
  */
 export const KRW_PER_USD = 1380;
-export const EXCHANGE_RATE_NOTE = `Approximate conversion at ₩${KRW_PER_USD.toLocaleString('en-US')}/USD, updated manually.`;
+export const KRW_PER_USD_UPDATED = '2026-08-23';
+export const EXCHANGE_RATE_NOTE = `Approximate conversion at ₩${KRW_PER_USD.toLocaleString('en-US')}/USD (rate last updated ${KRW_PER_USD_UPDATED}).`;
 
 export function krw(amount: number): string {
   return `₩${Math.round(amount).toLocaleString('en-US')}`;
