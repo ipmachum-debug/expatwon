@@ -46,7 +46,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - opening-a-bank-account-before-your-arc-arrives — ARC 발급 전 선택지
 
 ### Loans (P2)
-- ★ korean-credit-score-for-foreigners-nice-kcb — 신용점수 생성·조회·올리기
+- ✅ ★ korean-credit-score-for-foreigners-nice-kcb — Thin Filer 프레임·NICE/KCB 비중·속설 교정 (2026-08-23 발행)
 - ★ jeonse-loan-for-foreigners-explained — 전세대출 자격·보증기관
 - korean-mortgage-for-foreigners — LTV/DSR + 외국인 주택취득 신고
 - personal-credit-loan-requirements-korea — 신용대출 소득·재직 요건
