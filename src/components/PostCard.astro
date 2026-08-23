@@ -12,15 +12,24 @@ const { post } = Astro.props;
 const category = getCategory(post.data.category);
 ---
 
-<article class="rounded-lg border border-slate-200 p-5 transition-shadow hover:shadow-md">
-  <p class="mb-2 text-xs font-semibold tracking-wide text-sky-700 uppercase">
-    <a href={`/${category.slug}/`}>{category.shortTitle}</a>
-  </p>
-  <h3 class="mb-2 text-lg leading-snug font-bold text-slate-900">
-    <a href={`/${category.slug}/${post.id}/`} class="hover:underline">{post.data.title}</a>
+<article
+  class="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/60"
+>
+  <span class={`mb-3 w-fit rounded-full px-2.5 py-1 text-[0.7rem] font-semibold tracking-wider uppercase ${category.chip}`}>
+    {category.shortTitle}
+  </span>
+  <h3 class="mb-2 font-display text-[1.3rem] leading-snug font-semibold text-ink">
+    <a href={`/${category.slug}/${post.id}/`} class="after:absolute after:inset-0 group-hover:text-accent-dark">
+      {post.data.title}
+    </a>
   </h3>
-  <p class="mb-3 text-sm text-slate-600">{post.data.description}</p>
-  <p class="text-xs text-slate-400">
-    Updated <FormattedDate date={post.data.updatedDate} />
+  <p class="mb-4 line-clamp-3 text-sm leading-relaxed text-slate-500">{post.data.description}</p>
+  <p class="mt-auto flex items-center justify-between text-xs text-slate-400">
+    <span>Updated <FormattedDate date={post.data.updatedDate} /></span>
+    <span class="text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-accent" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+        <path d="M5 12h14m-6-6 6 6-6 6" />
+      </svg>
+    </span>
   </p>
 </article>

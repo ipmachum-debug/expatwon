@@ -25,15 +25,18 @@ const related = (
 
 {
   related.length > 0 && (
-    <section class="mt-10 rounded-lg bg-slate-50 p-5">
-      <h2 class="mb-3 text-base font-bold text-slate-900">{heading}</h2>
-      <ul class="space-y-2 text-sm">
+    <section class="mt-12 rounded-2xl bg-paper p-6 sm:p-7">
+      <h2 class="mb-4 font-display text-xl font-semibold text-ink">{heading}</h2>
+      <ul class="space-y-3">
         {related.map((p) => (
           <li>
             <a
               href={`/${categoryMeta.slug}/${p.id}/`}
-              class="text-sky-700 hover:underline"
+              class="group flex items-baseline gap-2.5 text-[0.95rem] font-medium text-slate-600 transition-colors hover:text-accent-dark"
             >
+              <span class="text-emerald-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                →
+              </span>
               {p.data.title}
             </a>
           </li>

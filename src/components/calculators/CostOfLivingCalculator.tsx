@@ -58,7 +58,7 @@ export default function CostOfLivingCalculator() {
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <div className={cardClass}>
-        <h2 className="mb-4 text-lg font-bold text-slate-900">Your monthly budget</h2>
+        <h2 className="mb-5 font-display text-xl font-semibold text-slate-900">Your monthly budget</h2>
         <div className="mb-4">
           <label className={labelClass}>City</label>
           <select
@@ -100,7 +100,7 @@ export default function CostOfLivingCalculator() {
       </div>
 
       <div className={cardClass}>
-        <h2 className="mb-4 text-lg font-bold text-slate-900">Monthly total</h2>
+        <h2 className="mb-5 font-display text-xl font-semibold text-slate-900">Monthly total</h2>
         <dl>
           {ITEMS.map((item) => (
             <div key={item.key} className={resultRowClass}>

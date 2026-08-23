@@ -29,7 +29,7 @@ export default function LoanCalculator() {
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <div className={cardClass}>
-        <h2 className="mb-4 text-lg font-bold text-slate-900">Loan terms</h2>
+        <h2 className="mb-5 font-display text-xl font-semibold text-slate-900">Loan terms</h2>
         <div className="space-y-4">
           <div>
             <label className={labelClass}>
@@ -77,7 +77,7 @@ export default function LoanCalculator() {
       </div>
 
       <div className={cardClass}>
-        <h2 className="mb-4 text-lg font-bold text-slate-900">Repayment</h2>
+        <h2 className="mb-5 font-display text-xl font-semibold text-slate-900">Repayment</h2>
         <dl>
           <div className={resultRowClass}>
             <dt className="text-slate-600">Monthly payment</dt>

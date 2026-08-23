@@ -19,22 +19,43 @@ const posts = (
 ---
 
 <Layout title={meta.title} description={meta.description}>
-  <header class="mb-8">
-    <h1 class="mb-2 text-3xl font-bold text-slate-900">{meta.title}</h1>
-    <p class="max-w-2xl text-slate-600">{meta.description}</p>
+  <header class="mb-10 flex items-start gap-5">
+    <span class={`hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl sm:flex ${meta.tile}`}>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-7 w-7"
+        set:html={meta.icon}
+      />
+    </span>
+    <div>
+      <nav class="mb-1 text-sm text-slate-400">
+        <a href="/" class="hover:text-ink">Home</a>
+        <span class="mx-1.5">/</span>
+        <span class="text-slate-500">{meta.shortTitle}</span>
+      </nav>
+      <h1 class="mb-2 font-display text-4xl font-bold text-ink">{meta.title}</h1>
+      <p class="max-w-2xl text-slate-500">{meta.description}</p>
+    </div>
   </header>
 
   <AdSlot position="top" />
 
   {
     posts.length > 0 ? (
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <PostCard post={post} />
         ))}
       </div>
     ) : (
-      <p class="text-slate-500">Guides for this topic are on the way.</p>
+      <p class="rounded-2xl border border-dashed border-slate-200 p-10 text-center text-slate-400">
+        Guides for this topic are on the way.
+      </p>
     )
   }
 </Layout>

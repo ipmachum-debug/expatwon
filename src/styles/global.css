@@ -2,9 +2,15 @@
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --color-ink: #0f172a;
-  --color-paper: #f8fafc;
-  --color-accent: #0369a1;
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+
+  --color-ink: #0b1220;
+  --color-ink-soft: #141e33;
+  --color-paper: #f6f7f9;
+  --color-accent: #059669;
+  --color-accent-dark: #047857;
+  --color-accent-soft: #ecfdf5;
+  --color-gold: #d97706;
 }
 
 @layer base {
@@ -12,48 +18,55 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-slate-800 antialiased;
+    @apply bg-white text-slate-700 antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection {
+    @apply bg-emerald-100 text-emerald-900;
   }
 }
 
 /* Long-form article styling without the typography plugin. */
 .prose-article {
-  @apply text-[1.0625rem] leading-relaxed text-slate-700;
+  @apply text-[1.0625rem] leading-[1.75] text-slate-700;
 }
 .prose-article h2 {
-  @apply mt-10 mb-3 text-2xl font-bold text-slate-900;
+  @apply mt-12 mb-4 font-display text-[1.75rem] leading-snug font-semibold text-ink;
 }
 .prose-article h3 {
-  @apply mt-8 mb-2 text-xl font-semibold text-slate-900;
+  @apply mt-8 mb-3 text-xl font-semibold text-ink;
 }
 .prose-article p {
   @apply my-4;
 }
 .prose-article ul,
 .prose-article ol {
-  @apply my-4 list-outside space-y-1 pl-6;
+  @apply my-4 list-outside space-y-1.5 pl-6;
 }
 .prose-article ul {
-  @apply list-disc;
+  @apply list-disc marker:text-emerald-500;
 }
 .prose-article ol {
-  @apply list-decimal;
+  @apply list-decimal marker:font-semibold marker:text-emerald-600;
 }
 .prose-article a {
-  @apply text-sky-700 underline decoration-sky-300 underline-offset-2 hover:decoration-sky-600;
+  @apply font-medium text-accent-dark underline decoration-emerald-300 underline-offset-[3px] transition-colors hover:decoration-emerald-600;
 }
 .prose-article table {
   @apply my-6 w-full border-collapse text-sm;
 }
 .prose-article th {
-  @apply border-b-2 border-slate-300 px-3 py-2 text-left font-semibold text-slate-900;
+  @apply border-b-2 border-slate-300 px-3 py-2 text-left font-semibold text-ink;
 }
 .prose-article td {
   @apply border-b border-slate-200 px-3 py-2;
 }
 .prose-article blockquote {
-  @apply my-6 border-l-4 border-slate-300 pl-4 text-slate-600 italic;
+  @apply my-6 rounded-r-lg border-l-4 border-emerald-300 bg-emerald-50/50 py-2 pr-4 pl-4 text-slate-600 italic;
 }
 .prose-article code {
   @apply rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em];
+}
+.prose-article > p:first-of-type {
+  @apply text-lg text-slate-600;
 }

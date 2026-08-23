@@ -53,7 +53,7 @@ export default function CarLeaseCalculator() {
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <div className={cardClass}>
-        <h2 className="mb-4 text-lg font-bold text-slate-900">Lease terms</h2>
+        <h2 className="mb-5 font-display text-xl font-semibold text-slate-900">Lease terms</h2>
         <div className="space-y-4">
           <NumberField label="Down payment (선수금)" value={downPayment} onChange={setDownPayment} step={100000} suffix="KRW" />
           <NumberField label="Refundable deposit (보증금)" value={deposit} onChange={setDeposit} step={100000} suffix="KRW" />
@@ -64,7 +64,7 @@ export default function CarLeaseCalculator() {
       </div>
 
       <div className={cardClass}>
-        <h2 className="mb-4 text-lg font-bold text-slate-900">Total cost</h2>
+        <h2 className="mb-5 font-display text-xl font-semibold text-slate-900">Total cost</h2>
         <dl>
           <div className={resultRowClass}>
             <dt className="text-slate-600">Sum of monthly payments</dt>

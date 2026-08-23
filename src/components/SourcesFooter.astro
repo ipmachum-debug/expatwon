@@ -14,21 +14,25 @@ interface Props {
 const { updatedDate, sources, affiliate } = Astro.props;
 ---
 
-<section class="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-600">
-  <p class="mb-4 font-medium text-slate-900">
+<section class="mt-12 rounded-2xl border border-slate-200 bg-white p-6 text-sm sm:p-7">
+  <p class="mb-5 flex items-center gap-2 font-semibold text-ink">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-500">
+      <circle cx="12" cy="12" r="9" /><path d="m8.5 12 2.5 2.5 4.5-5" />
+    </svg>
     Last verified: <FormattedDate date={updatedDate} />
   </p>
 
-  <h2 class="mb-2 font-semibold text-slate-900">Sources</h2>
-  <ul class="mb-4 list-disc space-y-1 pl-5">
+  <h2 class="mb-3 text-xs font-semibold tracking-widest text-slate-400 uppercase">Official sources</h2>
+  <ul class="mb-5 space-y-2">
     {
       sources.map((s) => (
-        <li>
+        <li class="flex items-baseline gap-2">
+          <span class="text-emerald-400" aria-hidden="true">↗</span>
           <a
             href={s.url}
             rel="noopener nofollow"
             target="_blank"
-            class="text-sky-700 hover:underline"
+            class="font-medium text-slate-600 underline decoration-slate-300 underline-offset-[3px] hover:text-accent-dark hover:decoration-emerald-400"
           >
             {s.label}
           </a>
@@ -39,7 +43,7 @@ const { updatedDate, sources, affiliate } = Astro.props;
 
   {
     affiliate && (
-      <p class="mb-3 text-xs text-slate-500">
+      <p class="mb-3 text-xs leading-relaxed text-slate-400">
         This article contains affiliate links. If you sign up through one, we
         may earn a commission at no extra cost to you. This never changes what
         we write.
@@ -47,7 +51,7 @@ const { updatedDate, sources, affiliate } = Astro.props;
     )
   }
 
-  <p class="text-xs text-slate-500">
+  <p class="text-xs leading-relaxed text-slate-400">
     This article is general information, not financial, legal, or tax advice.
     Requirements and figures change; confirm the current rules with the
     official sources above before making decisions.
