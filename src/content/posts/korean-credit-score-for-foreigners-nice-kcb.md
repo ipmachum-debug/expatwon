@@ -59,6 +59,41 @@ published representative weights as of 2026:
 | Credit-transaction form | 27.5% | 38% |
 | Non-financial / MyData | 7.3% | 8% |
 
+<figure class="figure">
+  <p class="figure-title">What each bureau weighs — NICE vs KCB representative models</p>
+  <p class="figure-sub">Published representative weights, 2026 · bars scaled to the largest weight (38%)</p>
+  <p class="figure-sub" style="margin-top:1.1rem;font-weight:600;color:#334155">Repayment history</p>
+  <div class="bars" style="margin-top:0.6rem">
+    <div class="bar-row"><span class="bar-label">NICE</span><span class="bar-track"><span class="bar-fill" style="width:75%"></span></span><span class="bar-value">28.4%</span></div>
+    <div class="bar-row"><span class="bar-label">KCB</span><span class="bar-track"><span class="bar-fill alt" style="width:55%"></span></span><span class="bar-value">21%</span></div>
+  </div>
+  <p class="figure-sub" style="margin-top:1.1rem;font-weight:600;color:#334155">Debt level</p>
+  <div class="bars" style="margin-top:0.6rem">
+    <div class="bar-row"><span class="bar-label">NICE</span><span class="bar-track"><span class="bar-fill" style="width:64%"></span></span><span class="bar-value">24.5%</span></div>
+    <div class="bar-row"><span class="bar-label">KCB</span><span class="bar-track"><span class="bar-fill alt" style="width:63%"></span></span><span class="bar-value">24%</span></div>
+  </div>
+  <p class="figure-sub" style="margin-top:1.1rem;font-weight:600;color:#334155">Credit-transaction period</p>
+  <div class="bars" style="margin-top:0.6rem">
+    <div class="bar-row"><span class="bar-label">NICE</span><span class="bar-track"><span class="bar-fill" style="width:32%"></span></span><span class="bar-value">12.3%</span></div>
+    <div class="bar-row"><span class="bar-label">KCB</span><span class="bar-track"><span class="bar-fill alt" style="width:24%"></span></span><span class="bar-value">9%</span></div>
+  </div>
+  <p class="figure-sub" style="margin-top:1.1rem;font-weight:600;color:#334155">Credit-transaction form</p>
+  <div class="bars" style="margin-top:0.6rem">
+    <div class="bar-row"><span class="bar-label">NICE</span><span class="bar-track"><span class="bar-fill" style="width:72%"></span></span><span class="bar-value">27.5%</span></div>
+    <div class="bar-row"><span class="bar-label">KCB</span><span class="bar-track"><span class="bar-fill alt" style="width:100%"></span></span><span class="bar-value">38%</span></div>
+  </div>
+  <p class="figure-sub" style="margin-top:1.1rem;font-weight:600;color:#334155">Non-financial / MyData</p>
+  <div class="bars" style="margin-top:0.6rem">
+    <div class="bar-row"><span class="bar-label">NICE</span><span class="bar-track"><span class="bar-fill" style="width:19%"></span></span><span class="bar-value">7.3%</span></div>
+    <div class="bar-row"><span class="bar-label">KCB</span><span class="bar-track"><span class="bar-fill alt" style="width:21%"></span></span><span class="bar-value">8%</span></div>
+  </div>
+  <div class="bars-legend">
+    <span><span class="swatch" style="background:#2563eb"></span>NICE</span>
+    <span><span class="swatch" style="background:#d97706"></span>KCB (general model)</span>
+  </div>
+  <figcaption class="figcap">NICE leans on repayment history and duration; KCB leans on the form of credit usage. Averages across each bureau's representative model — not the exact weights applied to you.</figcaption>
+</figure>
+
 Read directionally, not mechanically: NICE weighs repayment history and
 transaction period relatively more; KCB weighs the *form* of your credit
 usage heavily. But "NICE only cares about repayment, KCB only cares about

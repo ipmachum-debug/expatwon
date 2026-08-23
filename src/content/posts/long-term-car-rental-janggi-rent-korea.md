@@ -160,6 +160,17 @@ mechanisms:
 
 > no-log business-use ratio = ₩15,000,000 ÷ total vehicle costs
 
+<figure class="figure">
+  <p class="figure-title">No driving log: how much of your vehicle cost is recognized</p>
+  <p class="figure-sub">Recognized ratio = ₩15M ÷ total annual vehicle costs (above ₩15M)</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">Costs ₩15M or less</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-value">100%</span></div>
+    <div class="bar-row"><span class="bar-label">Costs ₩20M</span><span class="bar-track"><span class="bar-fill" style="width:75%"></span></span><span class="bar-value">75%</span></div>
+    <div class="bar-row"><span class="bar-label">Costs ₩30M</span><span class="bar-track"><span class="bar-fill" style="width:50%"></span></span><span class="bar-value">50%</span></div>
+  </div>
+  <figcaption class="figcap">The more the car costs to run, the smaller the share the tax office recognizes without a log — an expensive car needs the driving log most. The ₩8M/year depreciation cap applies separately.</figcaption>
+</figure>
+
 ₩20M of annual costs without a log → 75% recognized. "Related costs"
 sweep in depreciation/rent, insurance, fuel, repairs, vehicle tax, and
 tolls. If real business use is higher than the formula gives you, keep

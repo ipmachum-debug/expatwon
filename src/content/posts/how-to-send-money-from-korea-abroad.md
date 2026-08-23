@@ -48,6 +48,20 @@ can be the cheap one. Remittance cost lives in five places:
 The single number that nets all five is the **Net Received Amount** — and
 it is the only number worth comparing.
 
+<figure class="figure">
+  <p class="figure-title">Where a transfer loses value on its way abroad</p>
+  <p class="figure-sub">Five cost points between "amount sent" and "amount received"</p>
+  <div class="flow">
+    <div class="flow-node"><strong>You send KRW</strong><span class="sub">The amount you type into the bank or app</span></div>
+    <div class="flow-arrow leak">transfer fee · cable charge · FX spread</div>
+    <div class="flow-node"><strong>Sending bank converts and dispatches</strong><span class="sub">The exchange rate applied here is the biggest single variable</span></div>
+    <div class="flow-arrow leak">intermediary-bank deduction</div>
+    <div class="flow-node"><strong>Intermediary (SWIFT) bank</strong><span class="sub">May take its cut out of the amount in transit</span></div>
+    <div class="flow-arrow leak">receiving-bank fee</div>
+    <div class="flow-node"><strong>Recipient's bank credits the account</strong><span class="sub">= Net Received Amount — the only number worth comparing</span></div>
+  </div>
+</figure>
+
 ## The rate can cost more than every fee combined
 
 Say you are converting won to dollars. The mid-market (매매기준율) rate is

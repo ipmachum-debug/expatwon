@@ -197,6 +197,16 @@ A bank borrower, ₩50M income, no existing debt, 30-year amortizing loan:
 - Assume a capital-region floating loan where the full 3% stress applies
   → 7% calculation rate: the same ₩20M/year supports ≈ **₩251M**.
 
+<figure class="figure">
+  <p class="figure-title">Borrowing capacity on a ₩50M income — before and after stress DSR</p>
+  <p class="figure-sub">Bank DSR 40% · 30-year amortizing loan · no existing debt</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">Actual rate 4%</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-value">≈ ₩349M</span></div>
+    <div class="bar-row"><span class="bar-label">Calculated at 7% (4% + 3% stress)</span><span class="bar-track"><span class="bar-fill alt" style="width:72%"></span></span><span class="bar-value">≈ ₩251M</span></div>
+  </div>
+  <figcaption class="figcap">The stress rate is never charged — the loan still costs 4% — but roughly ₩100M of limit disappears at underwriting. Capital-region floating-rate case, 3.0% stress floor.</figcaption>
+</figure>
+
 Nearly ₩100M of limit evaporates — while the interest actually charged
 stays 4%. The bank is lending only what survives a 7% world.
 

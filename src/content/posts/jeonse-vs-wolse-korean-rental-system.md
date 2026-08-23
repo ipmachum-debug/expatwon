@@ -57,6 +57,20 @@ purchase price and jeonse price, the less equity the landlord needs and
 the higher their return on equity — and, symmetrically, the faster losses
 compound when prices fall.
 
+<figure class="figure">
+  <p class="figure-title">Who actually finances the landlord's ₩800M apartment</p>
+  <p class="figure-sub">A typical gap-investment capital structure</p>
+  <div class="stackbar">
+    <span style="width:37.5%;background:#d97706"></span>
+    <span style="width:62.5%;background:#2563eb"></span>
+  </div>
+  <div class="bars-legend">
+    <span><span class="swatch" style="background:#d97706"></span>Landlord's own equity — ₩300M (37.5%)</span>
+    <span><span class="swatch" style="background:#2563eb"></span>Your jeonse deposit — ₩500M (62.5%)</span>
+  </div>
+  <figcaption class="figcap">You supply the majority of the financing — interest-free, and repayable only if the landlord can refinance, re-let, or sell at the end of the term. The smaller the landlord's slice, the more the structure depends on prices not falling.</figcaption>
+</figure>
+
 The tenant-side corollary: a home whose jeonse price sits very close to
 its market price is **not** automatically a good deal. It means your
 deposit is financing most of the building — with all that implies for

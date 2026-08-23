@@ -71,6 +71,20 @@ consumer guidance warns that choosing KRW-DCC abroad typically adds around
 choice, pay in the local currency of the country you are standing in.**
 KRW in Korea, USD in the US, JPY in Japan.
 
+<figure class="figure">
+  <p class="figure-title">What a "simple" card payment costs on a foreign-issued card</p>
+  <p class="figure-sub">A ₩100,000 purchase in Korea, seen from the issuer's side</p>
+  <div class="flow">
+    <div class="flow-node"><strong>₩100,000 price tag at the register</strong><span class="sub">To your home issuer this is an overseas transaction, KRW or not</span></div>
+    <div class="flow-arrow leak">international brand fee</div>
+    <div class="flow-arrow leak">issuer's overseas-service fee</div>
+    <div class="flow-arrow leak">issuer's exchange rate (not the market rate)</div>
+    <div class="flow-node"><strong>Amount billed at home</strong><span class="sub">Already above ₩100,000-equivalent — before any mistake</span></div>
+    <div class="flow-arrow leak">+ ~3–8% more if you accept DCC (choose your home currency)</div>
+    <div class="flow-node"><strong>The defensive rule</strong><span class="sub">When the terminal offers a currency choice, always pay in the local currency — KRW in Korea</span></div>
+  </div>
+</figure>
+
 For settled residents the clean structure is: Korean salary into a Korean
 account, Korean spending on a Korean check or credit card. It is cheaper,
 and it also feeds two systems that pay you back later — your Korean credit

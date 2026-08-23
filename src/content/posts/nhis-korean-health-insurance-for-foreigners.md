@@ -65,6 +65,16 @@ So for anyone planning a long stay, the first question is which of three
 positions you occupy — regional subscriber, workplace subscriber, or
 dependent — because the premium differences between them are large.
 
+<figure class="figure">
+  <p class="figure-title">The three NHIS positions — same coverage, very different bills (2026)</p>
+  <div class="flow">
+    <div class="flow-node"><strong>Workplace subscriber</strong><span class="sub">7.19% of salary, split 50/50 with the employer · starts immediately, no six-month wait · no average-premium floor</span></div>
+    <div class="flow-node"><strong>Regional subscriber</strong><span class="sub">Income &amp; property formula — but many long-stay statuses pay at least the foreigner average: ₩158,630/month incl. long-term care</span></div>
+    <div class="flow-node"><strong>Dependent of a workplace subscriber</strong><span class="sub">₩0 · relationship, income and property criteria apply · spouse and under-19 children exempt from the six-month residence wait</span></div>
+  </div>
+  <figcaption class="figcap">The position — not your health or nationality — decides the bill. Employment and dependent eligibility are the two big premium levers.</figcaption>
+</figure>
+
 ## The average premium is a floor for *some* statuses — not all foreigners
 
 The average-premium mechanism exists because Korean systems often cannot

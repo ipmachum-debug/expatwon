@@ -233,6 +233,18 @@ from **May 2, 2024** are:
   ₩1,000,000/day cap stops the transaction cold.</p>
 </div>
 
+<figure class="figure">
+  <p class="figure-title">Why an account opens as a limited account</p>
+  <p class="figure-sub">The bank runs two checks — one inconclusive answer is enough</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark">✓</span> Identity verified — passport / ARC</div>
+    <div class="check-row miss"><span class="mark">?</span> Transaction purpose — no supporting documents</div>
+    <div class="check-row miss"><span class="mark">?</span> Income or activity evidence — not provided</div>
+  </div>
+  <p class="check-result">→ Opens as a limited account: ₩1M/day online &amp; ATM, ₩3M/day at the teller</p>
+  <figcaption class="figcap">Lifted by objective evidence of how you use the account — employment contract, business registration, lease — not by waiting or by transacting more.</figcaption>
+</figure>
+
 Two practical rules follow:
 
 1. **The day you open the account, ask whether it is a normal account or a

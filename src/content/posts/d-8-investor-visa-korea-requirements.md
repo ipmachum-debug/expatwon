@@ -60,6 +60,24 @@ new-corporation FDI:
 > corporate account → foreign-invested-company registration → D-8
 > application**
 
+<figure class="figure">
+  <p class="figure-title">The D-8-1 sequence — the visa is the last step, not the first</p>
+  <p class="figure-sub">New-corporation FDI route, ₩100M+ and ≥10% voting shares</p>
+  <div class="flow">
+    <div class="flow-node"><strong>1 · FDI notification</strong><span class="sub">Filed in advance through KOTRA (Invest KOREA) or a foreign-exchange bank</span></div>
+    <div class="flow-arrow">funds must come from the notified investor</div>
+    <div class="flow-node"><strong>2 · Overseas remittance of the investment</strong><span class="sub">Traceable from the investor named in the notification</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>3 · Incorporation + share acquisition</strong><span class="sub">The notified investor actually acquires the shares</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>4 · Business registration + corporate account</strong><span class="sub">Tax office registration; bank AML review applies</span></div>
+    <div class="flow-arrow">in principle within 60 days</div>
+    <div class="flow-node"><strong>5 · Foreign-invested-company registration</strong><span class="sub">Same KOTRA office / FX bank that took the notification</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>6 · D-8 application</strong><span class="sub">Immigration reviews the whole chain above — not just the bank balance</span></div>
+  </div>
+</figure>
+
 And a boundary to draw immediately: ₩100M is **not** a common minimum
 capital for everything labeled D-8. Technology startups run on an
 entirely different track.

@@ -122,6 +122,124 @@
   @apply text-amber-700;
 }
 
+/* ---------------------------------------------------------------------------
+ * Inline data graphics (editorial infographics). All values are printed as
+ * text; color encodes identity only (blue = subject, amber = comparison,
+ * status colors reserved for status). Series colors validated for CVD.
+ *
+ *   <figure class="figure">
+ *     <p class="figure-title">…</p><p class="figure-sub">…</p>
+ *     <div class="bars"> <div class="bar-row"><span class="bar-label">…</span>
+ *       <span class="bar-track"><span class="bar-fill" style="width:64%"></span></span>
+ *       <span class="bar-value">₩286M</span></div> </div>
+ *     <figcaption class="figcap">…</figcaption>
+ *   </figure>
+ * ------------------------------------------------------------------------- */
+
+.prose-article .figure {
+  @apply my-8 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6;
+}
+.prose-article .figure-title {
+  @apply my-0 text-[0.95rem] font-bold text-ink;
+}
+.prose-article .figure-sub {
+  @apply mt-0.5 mb-0 text-[0.8rem] text-slate-400;
+}
+.prose-article .figcap {
+  @apply mt-4 border-t border-slate-100 pt-3 text-[0.8rem] leading-relaxed text-slate-400;
+}
+
+/* Labeled horizontal bars (single measure, one axis). */
+.prose-article .bars {
+  @apply mt-5 space-y-3;
+}
+.prose-article .bar-row {
+  @apply grid grid-cols-[minmax(6rem,9rem)_1fr_auto] items-center gap-3;
+}
+.prose-article .bar-label {
+  @apply text-[0.8rem] leading-tight text-slate-500;
+}
+.prose-article .bar-track {
+  @apply block h-4 overflow-hidden rounded-r bg-slate-100;
+}
+.prose-article .bar-fill {
+  @apply block h-full rounded-r bg-accent;
+}
+.prose-article .bar-fill.alt {
+  @apply bg-gold;
+}
+.prose-article .bar-fill.muted {
+  @apply bg-slate-300;
+}
+.prose-article .bar-value {
+  @apply text-[0.85rem] font-semibold whitespace-nowrap text-ink;
+}
+.prose-article .bars-legend {
+  @apply mt-4 flex flex-wrap gap-x-5 gap-y-1 text-[0.78rem] text-slate-500;
+}
+.prose-article .bars-legend .swatch {
+  @apply mr-1.5 inline-block h-2.5 w-2.5 rounded-[3px] align-[-1px];
+}
+
+/* Single stacked composition bar (e.g. claims against a property). */
+.prose-article .stackbar {
+  @apply mt-5 flex h-7 gap-[2px] overflow-hidden rounded-lg;
+}
+.prose-article .stackbar > span {
+  @apply block h-full;
+}
+
+/* Vertical process flow with annotated arrows. */
+.prose-article .flow {
+  @apply mt-5;
+}
+.prose-article .flow-node {
+  @apply rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-[0.92rem] leading-snug;
+}
+.prose-article .flow-node strong {
+  @apply text-ink;
+}
+.prose-article .flow-node .sub {
+  @apply mt-0.5 block text-[0.8rem] text-slate-400;
+}
+.prose-article .flow-node + .flow-node {
+  @apply mt-2;
+}
+.prose-article .flow-arrow {
+  @apply flex items-center gap-2 py-1.5 pl-5 text-[0.8rem] text-slate-400;
+}
+.prose-article .flow-arrow::before {
+  content: '↓';
+  @apply font-bold text-blue-400;
+}
+.prose-article .flow-arrow.leak {
+  @apply text-amber-700;
+}
+.prose-article .flow-arrow.leak::before {
+  content: '↓';
+  @apply text-amber-500;
+}
+
+/* Status checklist card (e.g. "why your account is limited"). */
+.prose-article .check-card {
+  @apply mt-5 space-y-2;
+}
+.prose-article .check-row {
+  @apply flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50/60 px-4 py-2.5 text-[0.92rem];
+}
+.prose-article .check-row .mark {
+  @apply flex h-6 w-6 flex-none items-center justify-center rounded-full text-[0.8rem] font-bold;
+}
+.prose-article .check-row.ok .mark {
+  @apply bg-emerald-100 text-emerald-700;
+}
+.prose-article .check-row.miss .mark {
+  @apply bg-amber-100 text-amber-700;
+}
+.prose-article .check-result {
+  @apply mt-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-[0.95rem] font-semibold text-amber-900;
+}
+
 .prose-article .steps {
   @apply my-8;
 }

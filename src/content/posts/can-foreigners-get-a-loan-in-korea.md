@@ -53,6 +53,20 @@ history + existing debt + collateral or guarantee — can the lender actually
 verify?** This guide walks that stack, visa group by visa group and product
 by product.
 
+<figure class="figure">
+  <p class="figure-title">How a Korean lender reads a foreign borrower</p>
+  <p class="figure-sub">Three screens, in order — failing an early one makes the later ones irrelevant</p>
+  <div class="flow">
+    <div class="flow-node"><strong>1 · Stay continuity</strong><span class="sub">Status and remaining period — will the borrower still be in Korea for the life of the loan? (F-5/F-4 read strongest)</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>2 · Verifiable Korean income + credit file</strong><span class="sub">Documented domestic income beats higher-but-unverifiable overseas income; a thin NICE/KCB file caps everything</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>3 · Regulatory caps</strong><span class="sub">DSR, LTV and stress-rate math — identical to locals; nationality adds nothing here</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Decision &amp; terms</strong><span class="sub">Amount, rate and product follow from the weakest layer above</span></div>
+  </div>
+</figure>
+
 ## Why F-5 and F-4 are structurally favored
 
 **F-5 (permanent residency)** offers the clearest stay continuity a
