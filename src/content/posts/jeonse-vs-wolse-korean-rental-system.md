@@ -122,7 +122,9 @@ liquidity and risk, not against your most optimistic portfolio.
 
 ## Borrowed deposits change the benchmark to your loan rate
 
-If the deposit comes from a jeonse loan rather than your own capital, the
+If the deposit comes from a
+[jeonse loan](/loans/jeonse-loan-for-foreigners-explained/) rather than
+your own capital, the
 comparison simplifies. Borrow ₩300M at 4.5% and your financing cost is
 ₩13.5M/year; if removing that ₩300M from the deposit costs ₩12M/year in
 extra rent, then **on interest alone, wolse is cheaper** — before adding

@@ -47,7 +47,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 
 ### Loans (P2)
 - ✅ ★ korean-credit-score-for-foreigners-nice-kcb — Thin Filer 프레임·NICE/KCB 비중·속설 교정 (2026-08-23 발행)
-- ★ jeonse-loan-for-foreigners-explained — 전세대출 자격·보증기관
+- ✅ ★ jeonse-loan-for-foreigners-explained — SGI 보증부 경로·비자표 통념 교정·4중 한도 최솟값 (2026-08-24 발행)
 - korean-mortgage-for-foreigners — LTV/DSR + 외국인 주택취득 신고
 - personal-credit-loan-requirements-korea — 신용대출 소득·재직 요건
 - ✅ dsr-ltv-korea-lending-rules-explained — 3중 한도 최솟값·스트레스 지역차등·역산 공식 허브 (2026-08-23 발행)

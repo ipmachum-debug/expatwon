@@ -261,7 +261,8 @@ address* — never the reverse.
 
 ## With a jeonse loan, the deposit is not only your money
 
-A tenant using jeonse financing sits inside a web at maturity: landlord,
+A tenant using [jeonse financing](/loans/jeonse-loan-for-foreigners-explained/)
+sits inside a web at maturity: landlord,
 tenant, bank, and guarantee institution. The loan does not auto-extend
 because the landlord is late, and your bank debt does not vanish because
 the landlord defaulted. From two to three months before maturity,

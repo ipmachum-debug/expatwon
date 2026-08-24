@@ -118,8 +118,9 @@ For F-6 specifically, a working spouse and a shared household exist — but
 that does **not** automatically raise your own borrowing limit. Loans are
 underwritten against the borrower's own repayment capacity. Family-level
 information starts to matter in products where household composition
-legally participates: mortgages, and guarantee-backed jeonse loans where
-homeownership status, household registration, and the guarantee
+legally participates: mortgages, and
+[guarantee-backed jeonse loans](/loans/jeonse-loan-for-foreigners-explained/)
+where homeownership status, household registration, and the guarantee
 institution's acceptance criteria all interact.
 
 On guarantees, clear a common misconception: "foreigners just need
