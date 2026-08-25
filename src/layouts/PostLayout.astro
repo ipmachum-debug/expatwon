@@ -40,9 +40,12 @@ const articleSchema = {
   dateModified: updatedDate.toISOString(),
   mainEntityOfPage: canonical,
   author: {
-    '@type': 'Organization',
-    name: SITE_TITLE,
-    url: SITE_URL,
+    '@type': 'Person',
+    name: 'Sang Gab Han',
+    url: `${SITE_URL}/about/#author`,
+    jobTitle: 'Founder & CEO, Danji Co., Ltd.',
+    description:
+      'Korean manufacturing-company CEO since 2016; Managing Director, VSL Vietnam; certified ISO 9001/14001/45001 lead auditor (KOCI).',
   },
   publisher: {
     '@type': 'Organization',
@@ -142,6 +145,24 @@ const faqSchema =
         </section>
       )
     }
+
+    <aside class="mt-12 flex gap-4 rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+      <div class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-accent text-base font-bold text-white">
+        SH
+      </div>
+      <div class="text-sm leading-relaxed text-slate-500">
+        <p class="mb-0.5 font-semibold text-ink">Written by Sang Gab Han</p>
+        <p>
+          Founder &amp; CEO of a Korean manufacturing company since 2016 ·
+          Managing Director, VSL Vietnam · Certified ISO 9001 / 14001 / 45001
+          lead auditor.&nbsp;
+          <a
+            href="/about/#author"
+            class="font-medium text-accent-dark underline decoration-blue-300 underline-offset-[3px] hover:decoration-blue-600"
+          >About the author</a>
+        </p>
+      </div>
+    </aside>
 
     <SourcesFooter
       updatedDate={updatedDate}
