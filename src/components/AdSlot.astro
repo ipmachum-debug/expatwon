@@ -1,7 +1,9 @@
 ---
 /**
- * AdSense placeholder. After AdSense approval, replace the placeholder markup
- * with the ad unit code for each position. Max 3 slots per page (site policy).
+ * AdSense slot. Hidden until approval — an empty "advertisement" box reads
+ * as an unfinished site to AdSense reviewers. After approval, replace this
+ * markup with the ad unit code per position. Max 3 slots per page (site
+ * policy); the mid slot only renders on 800+ word posts (PostLayout).
  */
 interface Props {
   position: 'top' | 'mid' | 'bottom';
@@ -10,10 +12,4 @@ interface Props {
 const { position } = Astro.props;
 ---
 
-<div
-  class="ad-slot my-10 flex min-h-[90px] items-center justify-center rounded-xl border border-dashed border-slate-200/80 bg-slate-50/60 text-[0.65rem] tracking-[0.2em] text-slate-300 uppercase"
-  data-ad-position={position}
-  aria-hidden="true"
->
-  advertisement
-</div>
+<div class="ad-slot" data-ad-position={position} hidden></div>
