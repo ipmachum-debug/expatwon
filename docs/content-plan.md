@@ -40,7 +40,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 ### Banking (P1)
 - ✅ ★ korean-limited-accounts-hando-gyejwa-explained — 법정 목적확인 의무·상황별 증빙·신원매칭 (2026-08-23 발행)
 - ✅ ★ how-to-send-money-from-korea-abroad — Net Received Amount 산식·환율우대 해설·한도 3층 구조 (2026-08-23 발행)
-- kakaobank-toss-bank-kbank-for-foreigners — 인터넷은행 ARC 요건 비교
+- ✅ kakaobank-toss-bank-kbank-for-foreigners — 토스 단독 운영 현황·카뱅 4분기/케뱅 9월 계획·외화통장 함정 (2026-08-25 발행, 업데이트형)
 - best-korean-banks-for-foreigners-compared — KB/신한/우리/하나 지점·앱·영어지원
 - korean-check-card-vs-credit-card-for-foreigners — 체크/신용 발급 조건
 - opening-a-bank-account-before-your-arc-arrives — ARC 발급 전 선택지
