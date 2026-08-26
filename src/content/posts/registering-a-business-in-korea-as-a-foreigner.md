@@ -15,6 +15,9 @@ sources:
   - label: 'Hi Korea — Ministry of Justice immigration portal (status-of-stay activity rules)'
     url: 'https://www.hikorea.go.kr'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Order of operations', value: 'Visa → registration' }
   - { label: 'D-8-1 threshold', value: '₩100M + 10% shares' }

@@ -17,6 +17,9 @@ sources:
   - label: 'Toss Bank — limited-account and transaction-purpose verification guidance'
     url: 'https://www.tossbank.com'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Daily caps', value: '₩1M online / ATM' }
   - { label: 'At the teller', value: '₩3M' }

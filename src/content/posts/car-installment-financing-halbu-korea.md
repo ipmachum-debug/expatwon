@@ -18,6 +18,9 @@ sources:
   - label: 'KB Capital — consumer right of defense in installment purchase contracts'
     url: 'https://m.kbcapital.co.kr/cstmrPtct/fnncCstmrRght/rigtAsrtDefn.kbc'
 affiliate: false
+revisions:
+  - date: 2026-08-27
+    change: 'Published'
 keyFacts:
   - { label: 'Typical terms', value: '12–60 months' }
   - { label: 'Rate varies by', value: 'Credit score, not visa' }

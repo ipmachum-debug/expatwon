@@ -21,6 +21,9 @@ sources:
   - label: 'Specialized Credit Finance Business Act — facility leasing and installment-finance definitions'
     url: 'https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1030086875'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Compare', value: 'TCO, not monthly' }
   - { label: 'Depreciation cap', value: '₩8M per year' }

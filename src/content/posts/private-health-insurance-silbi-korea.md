@@ -21,6 +21,9 @@ sources:
   - label: 'KB Insurance — foreigner identity verification (ARC/residence-report name and number)'
     url: 'https://www.kbinsure.co.kr/CC101050005.ec'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Foreigners eligible?', value: 'Yes, with caveats' }
   - { label: 'Self-pay ratios', value: '20% covered / 30% not' }

@@ -17,6 +17,9 @@ sources:
   - label: 'Woori Bank — English site (resident / non-resident classification)'
     url: 'https://www.wooribank.com/eng/'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'ID to bring', value: 'Passport + ARC' }
   - { label: 'Also bring', value: 'Proof of purpose' }

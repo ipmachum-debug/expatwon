@@ -21,6 +21,9 @@ sources:
   - label: 'Income Tax Act Art. 168 — business registration obligation'
     url: 'https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1032965911'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: '3.3% is', value: 'A tax prepayment' }
   - { label: 'Three separate rules', value: 'Tax · visa · labor' }

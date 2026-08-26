@@ -21,6 +21,9 @@ sources:
   - label: 'Hyundai Capital — foreigner auto-finance program and required documents'
     url: 'https://www.hyundaicapital.com/main/foreign/CPMFOR0101.hc'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Registered in', value: 'Your own name' }
   - { label: 'Inspection record', value: 'Issued within 120 days' }

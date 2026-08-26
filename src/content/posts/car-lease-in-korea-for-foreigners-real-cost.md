@@ -17,6 +17,9 @@ sources:
   - label: 'Korea Accounting Standards Board — K-IFRS 1116 (Leases) guidance'
     url: 'https://kasb.or.kr/front/board/View016005.do?seq=40386'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Tax cap (base)', value: '₩8M per year' }
   - { label: 'No driving log', value: '₩15M total cap' }

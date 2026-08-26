@@ -21,6 +21,12 @@ sources:
   - label: 'FSC — jeonse-loan interest inclusion in DSR for single-home owners (from Oct 29, 2025)'
     url: 'https://www.fsc.go.kr/po010105/85432'
 affiliate: false
+revisions:
+  - date: 2026-08-24
+    change: 'Corrected: auto installments and leases are exception items in the borrower-level DSR calculation (worked example switched to a card loan)'
+    source: 'https://www.fsc.go.kr/po020201/76750'
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Your limit', value: 'Smallest of three' }
   - { label: 'Borrower DSR', value: '40% bank / 50% non-bank' }

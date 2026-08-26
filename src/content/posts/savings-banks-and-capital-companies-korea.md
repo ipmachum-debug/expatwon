@@ -19,6 +19,9 @@ sources:
   - label: 'Financial Services Commission — MyData-based automatic interest-rate-reduction requests (2026)'
     url: 'https://www.fsc.go.kr/no010101/86329'
 affiliate: false
+revisions:
+  - date: 2026-08-26
+    change: 'Published'
 keyFacts:
   - { label: 'Real cost is', value: 'Interest + DSR space' }
   - { label: 'Prepayment fee', value: 'Actual-cost only since 2025' }

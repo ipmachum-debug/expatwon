@@ -21,6 +21,9 @@ sources:
   - label: 'HANPASS Business — invoice and documentation requirements for corporate payments'
     url: 'https://hanbiz.hanpass.com/faq'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Compare by', value: 'Net received amount' }
   - { label: 'Cost points', value: 'Five, not one' }

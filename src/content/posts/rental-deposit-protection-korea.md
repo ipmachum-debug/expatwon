@@ -19,6 +19,9 @@ sources:
   - label: 'Housing Lease Protection Act Enforcement Decree — small-deposit tenant thresholds and top-priority amounts'
     url: 'https://www.law.go.kr'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Opposing power', value: 'Starts the next day' }
   - { label: 'Fixed date', value: 'Get it the same day' }

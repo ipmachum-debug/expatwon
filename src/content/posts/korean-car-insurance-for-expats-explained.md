@@ -17,6 +17,9 @@ sources:
   - label: 'KoROAD Safe Driving portal — recognized countries and visa-based written-test exemptions'
     url: 'https://www.safedriving.or.kr/diGuide/selectDiGuide08.do'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Prerequisite', value: 'Korean license' }
   - { label: 'Why year 1 is high', value: 'No local history' }

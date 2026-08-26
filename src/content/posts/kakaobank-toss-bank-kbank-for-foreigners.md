@@ -19,6 +19,9 @@ sources:
   - label: 'Ministry of Justice — mobile Alien Registration Card accepted for bank account opening from March 2025'
     url: 'https://www.immigration.go.kr/bbs/moj/182/478996/download.do'
 affiliate: false
+revisions:
+  - date: 2026-08-25
+    change: 'Published'
 keyFacts:
   - { label: 'Open to foreigners now', value: 'Toss Bank only' }
   - { label: 'K bank launch', value: 'Sept 2026 (planned)' }

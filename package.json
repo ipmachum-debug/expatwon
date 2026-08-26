@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:seo": "node scripts/lint-seo.mjs"
+    "lint:seo": "node scripts/lint-seo.mjs",
+    "audit": "node scripts/audit-freshness.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

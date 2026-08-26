@@ -17,6 +17,9 @@ sources:
   - label: 'HF (Korea Housing Finance Corporation) — Jeonse Jikim guarantee eligibility (Korean-national requirement)'
     url: 'https://hf.go.kr/ko/sub02/sub02_05_06.do'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'A jeonse deposit is', value: 'Credit you extend' }
   - { label: 'Compare via', value: 'Conversion rate' }

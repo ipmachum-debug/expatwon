@@ -17,6 +17,9 @@ sources:
   - label: 'KB Kookmin Bank — foreigner banking guidance (additional identity and residence documentation for lending)'
     url: 'https://omoney.kbstar.com/quics?page=C021012'
 affiliate: false
+revisions:
+  - date: 2026-08-25
+    change: 'Published'
 keyFacts:
   - { label: 'Do these exist?', value: 'Yes — even E-9, D-2' }
   - { label: 'Tier-2 product caps', value: '₩30–60M published' }

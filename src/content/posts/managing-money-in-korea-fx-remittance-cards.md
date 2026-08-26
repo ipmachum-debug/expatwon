@@ -21,6 +21,9 @@ sources:
   - label: 'HANPASS — registered small-amount overseas remittance service'
     url: 'https://www.hanpass.com/en?p=725'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Biggest leak', value: 'FX switch points' }
   - { label: 'Card rule', value: 'Decline DCC, pay KRW' }

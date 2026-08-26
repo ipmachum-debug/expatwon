@@ -21,6 +21,9 @@ sources:
   - label: 'KCB AllCredit — sole-proprietor (SOHO) evaluation system'
     url: 'https://www.allcredit.co.kr/screen/sc2111313586'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Two bureaus', value: 'NICE and KCB' }
   - { label: 'New arrivals are', value: 'Thin filers' }

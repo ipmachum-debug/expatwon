@@ -19,6 +19,9 @@ sources:
   - label: 'Hana Bank — foreigner loan product disclosure (Hana Foreigner EZ Loan)'
     url: 'https://www.kebhana.com/cont/mall/mall08/mall0802/mall080204/1431732_115200.jsp'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Decides approval', value: 'Visa + Korean income' }
   - { label: 'Strongest status', value: 'F-5 / F-4' }

@@ -17,6 +17,9 @@ sources:
   - label: 'K-Startup — government startup programs referenced by D-8-4 tracks'
     url: 'https://www.k-startup.go.kr'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'FDI baseline', value: '₩100M + 10% shares' }
   - { label: 'What decides it', value: 'The money''s legal path' }

@@ -15,6 +15,9 @@ sources:
   - label: 'LG U+ — passport-based prepaid eSIM/USIM for foreigners with Korean 010 numbers'
     url: 'https://lguplus.com/korea-sim/eng/pc/product/check-in-seoul?tab=esim'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Your number is', value: 'Financial infrastructure' }
   - { label: 'Prerequisite', value: 'ARC in your own name' }

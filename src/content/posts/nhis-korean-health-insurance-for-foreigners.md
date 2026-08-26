@@ -15,6 +15,9 @@ sources:
   - label: 'Hi Korea — Ministry of Justice portal (tax and NHIS-arrears checks before visa extension)'
     url: 'https://www.hikorea.go.kr'
 affiliate: false
+revisions:
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Foreigner average', value: '₩158,630/month (2026)' }
   - { label: 'Workplace rate', value: '7.19%, split 50/50' }

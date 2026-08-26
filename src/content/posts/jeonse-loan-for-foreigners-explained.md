@@ -17,6 +17,9 @@ sources:
   - label: 'Korea Housing & Urban Guarantee Corporation (HUG) — jeonse safe-loan guarantee (combined loan + return structure, guarantee ratios)'
     url: 'https://www.khug.or.kr/hug/web/ig/dl/igdl000001.jsp'
 affiliate: false
+revisions:
+  - date: 2026-08-24
+    change: 'Published'
 keyFacts:
   - { label: 'Clearest route', value: 'SGI-backed products' }
   - { label: 'KB product cap', value: '₩200M · 80% of deposit' }

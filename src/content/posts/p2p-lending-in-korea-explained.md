@@ -15,6 +15,11 @@ sources:
   - label: 'Financial Supervisory Service (English)'
     url: 'https://www.fss.or.kr/eng/main/main.do'
 affiliate: false
+revisions:
+  - date: 2026-08-24
+    change: 'Investor limits restated per the decree structure: ₩5M per borrower / ₩10M real-estate / ₩30M total'
+  - date: 2026-08-23
+    change: 'Published'
 keyFacts:
   - { label: 'Per borrower', value: '₩5M cap' }
   - { label: 'Real-estate loans', value: '₩10M cap' }

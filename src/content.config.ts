@@ -33,6 +33,27 @@ const posts = defineCollection({
       .array(z.object({ label: z.string().max(28), value: z.string().max(32) }))
       .max(4)
       .optional(),
+    /**
+     * Change log for the post. One entry per substantive revision — a figure
+     * that moved, a rule that changed, a correction. Never for typos or
+     * wording. Rendered newest-first under the sources block.
+     *
+     *   revisions:
+     *     - date: 2027-02-14
+     *       change: 'Capital-region stress-rate floor 3.0% → 2.5%'
+     *       source: 'https://www.fsc.go.kr/...'   # optional
+     *
+     * Every post carries at least its publication entry.
+     */
+    revisions: z
+      .array(
+        z.object({
+          date: z.coerce.date(),
+          change: z.string().min(3),
+          source: z.string().url().optional(),
+        }),
+      )
+      .optional(),
     /** Optional FAQ block, rendered on-page and as FAQPage JSON-LD. */
     faq: z
       .array(z.object({ question: z.string(), answer: z.string() }))
