@@ -139,7 +139,8 @@ near **20% a year** — and the difference compounds fast:
 </figure>
 
 The rational search order is therefore: **your main branch bank first →
-regional and foreigner-specialist banks → savings banks last** — using
+regional and foreigner-specialist banks →
+[savings banks](/loans/savings-banks-and-capital-companies-korea/) last** — using
 pre-screening limit inquiries and consultations rather than firing
 formal applications at several lenders in a short window, which itself
 reads badly in screening.

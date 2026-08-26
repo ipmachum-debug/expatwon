@@ -51,7 +51,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - korean-mortgage-for-foreigners — LTV/DSR + 외국인 주택취득 신고
 - ✅ personal-credit-loan-requirements-korea — 저축은행 실상품 근거 비자표 교정·1개월 체류 기준·DSR 기회비용 (2026-08-25 발행)
 - ✅ dsr-ltv-korea-lending-rules-explained — 3중 한도 최솟값·스트레스 지역차등·역산 공식 허브 (2026-08-23 발행)
-- savings-banks-and-capital-companies-korea — 2금융권의 실제 비용 (경고 톤)
+- ✅ savings-banks-and-capital-companies-korea — 저축은행/캐피탈 조달구조 구분·2025 중도상환수수료 개편·감점표 부재 교정·Exit Plan (2026-08-26 발행) — Loans 클러스터 완성
 - ✅ p2p-lending-in-korea-explained — 온투업 구조, 차주/투자자 양면, 한도·세제·플랫폼 평가 (2026-08-23 발행)
 
 ### Cars (P3)
