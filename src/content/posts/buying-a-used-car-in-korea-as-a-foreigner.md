@@ -273,7 +273,9 @@ different processes. Sort it with your bank in advance.
 
 ## Installments use credit; they are not a reason to borrow
 
-Normally repaid auto installments do feed your Korean credit file — but
+Normally repaid
+[auto installments](/cars/car-installment-financing-halbu-korea/) do feed your
+Korean credit file — but
 "take a car loan to build credit" is backwards economics: you are buying
 credit data with interest payments. The sound version is incidental: buy
 the car you need at a sensible rate, repay flawlessly, and the KCB/NICE

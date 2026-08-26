@@ -5,7 +5,6 @@ category: cars
 publishDate: 2026-08-27
 updatedDate: 2026-08-27
 tags: [cars, installment, financing, DSR, capital-companies]
-draft: true
 sources:
   - label: 'KB Capital — new-car installment product terms (12–60 months, fixed-rate band, lien, stamp duty, prepayment fee formula)'
     url: 'https://www.kbcapital.co.kr/prdt/car/carFnnc.kbc?prdtCd=1010010001'

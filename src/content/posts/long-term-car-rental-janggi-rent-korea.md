@@ -55,7 +55,8 @@ total cost of ownership:
 > maintenance + financing cost + end-of-contract costs − refunded
 > deposit − disposal value**
 
-Run 장기렌트 (long-term rental), lease, and installment purchase through
+Run 장기렌트 (long-term rental), lease, and
+[installment purchase](/cars/car-installment-financing-halbu-korea/) through
 that formula over the same horizon, or you are comparing marketing
 copy. (This is the structural sequel to
 [the lease pillar](/cars/car-lease-in-korea-for-foreigners-real-cost/)
