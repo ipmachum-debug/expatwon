@@ -85,8 +85,14 @@ const tools = [
 
   <!-- Latest guides -->
   <section class="mb-16">
-    <div class="mb-6 flex items-end justify-between">
+    <div class="mb-6 flex items-end justify-between gap-4">
       <h2 class="font-display text-3xl font-bold text-ink">Latest guides</h2>
+      <a
+        href="/articles/"
+        class="flex-none text-sm font-medium text-accent-dark transition-colors hover:text-accent"
+      >
+        View all {posts.length} guides →
+      </a>
     </div>
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {latest.map((post) => <PostCard post={post} />)}

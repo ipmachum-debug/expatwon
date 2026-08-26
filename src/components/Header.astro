@@ -12,6 +12,17 @@ const isActive = (path: string) => current === path || current.startsWith(`${pat
       <Logo tagline />
     </a>
     <nav class="flex flex-wrap items-center gap-x-1 gap-y-1 text-[0.9rem] font-medium">
+      <a
+        href="/articles/"
+        class:list={[
+          'rounded-full px-3 py-1.5 transition-colors',
+          isActive('/articles/')
+            ? 'bg-slate-100 text-ink'
+            : 'text-slate-500 hover:bg-slate-50 hover:text-ink',
+        ]}
+      >
+        All
+      </a>
       {
         CATEGORIES.map((c) => (
           <a
