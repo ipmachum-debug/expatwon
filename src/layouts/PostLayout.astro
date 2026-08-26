@@ -45,6 +45,7 @@ const articleSchema = {
     name: 'Michael Han',
     url: `${SITE_URL}/about/#author`,
     jobTitle: 'Founder & CEO, Danji Co., Ltd.',
+    image: `${SITE_URL}/author.jpg`,
     description:
       'Korean manufacturing-company CEO since 2016; Managing Director, VSL Vietnam; certified ISO 9001/14001/45001 lead auditor (KOCI).',
   },
@@ -148,9 +149,18 @@ const faqSchema =
     }
 
     <aside class="mt-12 flex gap-4 rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-      <div class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-accent text-base font-bold text-white">
-        MH
-      </div>
+      <picture class="flex-none">
+        <source srcset="/author.webp" type="image/webp" />
+        <img
+          src="/author.jpg"
+          alt="Michael Han"
+          width="320"
+          height="320"
+          loading="lazy"
+          decoding="async"
+          class="h-14 w-14 rounded-full object-cover ring-1 ring-slate-200"
+        />
+      </picture>
       <div class="text-sm leading-relaxed text-slate-500">
         <p class="mb-0.5 font-semibold text-ink">Written by Michael Han</p>
         <p>

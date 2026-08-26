@@ -24,6 +24,30 @@ import Layout from '../layouts/Layout.astro';
     </p>
 
     <h2 id="author">Who writes this</h2>
+
+    <div class="my-6 flex flex-col items-center gap-5 rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:flex-row sm:items-start">
+      <picture class="flex-none">
+        <source srcset="/author.webp" type="image/webp" />
+        <img
+          src="/author.jpg"
+          alt="Michael Han — founder and CEO of Danji Co., Ltd."
+          width="320"
+          height="320"
+          class="h-28 w-28 rounded-full object-cover ring-1 ring-slate-200"
+        />
+      </picture>
+      <div class="text-center sm:text-left">
+        <p class="my-0 font-display text-2xl font-bold text-ink">Michael Han</p>
+        <p class="my-1 text-[0.8rem] font-semibold tracking-wider text-slate-400 uppercase">
+          Founder &amp; CEO, Danji Co., Ltd. · MD, VSL Vietnam
+        </p>
+        <p class="my-0 text-[0.95rem] leading-relaxed text-slate-500">
+          Ten years running a Korean company — and now a foreigner building one
+          abroad. Both sides of the desk this site writes about.
+        </p>
+      </div>
+    </div>
+
     <p>
       ExpatWon is written by <strong>Michael Han</strong> — founder
       and CEO of <strong>Danji Co., Ltd. (주식회사 단지)</strong>, a Korean
