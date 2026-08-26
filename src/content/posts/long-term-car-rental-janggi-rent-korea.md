@@ -21,6 +21,11 @@ sources:
   - label: 'Specialized Credit Finance Business Act — facility leasing and installment-finance definitions'
     url: 'https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1030086875'
 affiliate: false
+keyFacts:
+  - { label: 'Compare', value: 'TCO, not monthly' }
+  - { label: 'Depreciation cap', value: '₩8M per year' }
+  - { label: 'No driving log', value: '₩15M total rule' }
+  - { label: 'DSR treatment', value: 'Calculation exception' }
 faq:
   - question: 'Is long-term rental automatically ~10% cheaper because rental firms buy cars without VAT?'
     answer: 'No — that simplification breaks down in the quote. The rental company’s pricing already contains its acquisition cost and taxes, vehicle tax, insurance, financing cost, residual-value assumptions, and margin. The only valid comparison is the total you actually pay over the same 48 or 60 months across structures, not the carmaker’s sticker price.'

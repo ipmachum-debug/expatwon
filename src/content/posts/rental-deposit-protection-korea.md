@@ -19,6 +19,11 @@ sources:
   - label: 'Housing Lease Protection Act Enforcement Decree — small-deposit tenant thresholds and top-priority amounts'
     url: 'https://www.law.go.kr'
 affiliate: false
+keyFacts:
+  - { label: 'Opposing power', value: 'Starts the next day' }
+  - { label: 'Fixed date', value: 'Get it the same day' }
+  - { label: 'Safety check', value: 'The 126% rule' }
+  - { label: 'Return guarantee', value: 'HUG accepts foreigners' }
 faq:
   - question: 'Do foreigners get the same deposit protections as Koreans?'
     answer: 'Yes, when perfected correctly. The Supreme Court has held that a foreigner’s lawful alien registration plus stay-address change report to the leased home carries the same public-notice effect as resident registration under the Housing Lease Protection Act (and likewise for overseas Koreans’ residence reports). The question is rarely whether the rights exist — it is whether you completed them at the right moment.'

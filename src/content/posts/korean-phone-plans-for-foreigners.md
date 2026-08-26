@@ -15,6 +15,11 @@ sources:
   - label: 'LG U+ — passport-based prepaid eSIM/USIM for foreigners with Korean 010 numbers'
     url: 'https://lguplus.com/korea-sim/eng/pc/product/check-in-seoul?tab=esim'
 affiliate: false
+keyFacts:
+  - { label: 'Your number is', value: 'Financial infrastructure' }
+  - { label: 'Prerequisite', value: 'ARC in your own name' }
+  - { label: 'Compare over', value: '24 months, not month 1' }
+  - { label: 'Postpaid vs prepaid', value: 'Verification differs' }
 faq:
   - question: 'I got my ARC — do I need to do anything about my passport-based SIM?'
     answer: 'Yes, if you plan to use Korean banking. A tourist/prepaid line opened on a passport is not the same as an own-name line tied to your alien-registration number, which is what banks, card issuers, and PASS match against. The stable sequence is passport SIM on arrival → ARC issued → open (or re-register) a line under your ARC identity.'

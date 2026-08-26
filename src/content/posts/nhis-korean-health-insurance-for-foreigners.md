@@ -15,6 +15,11 @@ sources:
   - label: 'Hi Korea — Ministry of Justice portal (tax and NHIS-arrears checks before visa extension)'
     url: 'https://www.hikorea.go.kr'
 affiliate: false
+keyFacts:
+  - { label: 'Foreigner average', value: '₩158,630/month (2026)' }
+  - { label: 'Workplace rate', value: '7.19%, split 50/50' }
+  - { label: 'Employment', value: 'Skips the 6-month wait' }
+  - { label: 'Arrears', value: 'Can affect your visa' }
 faq:
   - question: 'I have no Korean income — why is my NHIS bill over ₩150,000 a month?'
     answer: 'Most likely the foreigner average-premium floor. For many long-stay statuses (D-8, D-9, E-series, F-4 and others), if your income-and-property-based premium computes below the previous year’s regional average, the average applies instead — ₩158,630/month in 2026 including long-term care. It reflects unverifiable income, not high income.'

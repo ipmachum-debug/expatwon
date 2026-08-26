@@ -17,6 +17,11 @@ sources:
   - label: 'HF (Korea Housing Finance Corporation) — Jeonse Jikim guarantee eligibility (Korean-national requirement)'
     url: 'https://hf.go.kr/ko/sub02/sub02_05_06.do'
 affiliate: false
+keyFacts:
+  - { label: 'A jeonse deposit is', value: 'Credit you extend' }
+  - { label: 'Compare via', value: 'Conversion rate' }
+  - { label: 'HF return guarantee', value: 'Korean nationals only' }
+  - { label: 'For foreigners', value: 'HUG is the route' }
 faq:
   - question: 'What is jeonse, financially speaking?'
     answer: 'A jeonse tenant hands the landlord a large lump-sum deposit — often hundreds of millions of won — and pays no monthly rent, recovering the deposit at the end. Economically, you are extending the landlord a long-term interest-free loan in exchange for housing. Your real costs are the opportunity cost of that capital and the risk of getting it back.'

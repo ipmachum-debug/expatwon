@@ -21,6 +21,11 @@ sources:
   - label: 'HANPASS Business — invoice and documentation requirements for corporate payments'
     url: 'https://hanbiz.hanpass.com/faq'
 affiliate: false
+keyFacts:
+  - { label: 'Compare by', value: 'Net received amount' }
+  - { label: 'Cost points', value: 'Five, not one' }
+  - { label: 'Biggest variable', value: 'The FX spread' }
+  - { label: '“90% preferential”', value: 'Not 90% off' }
 faq:
   - question: 'Why is a "zero fee" transfer not automatically the cheapest?'
     answer: 'Because the visible fee is one of five cost components: transfer fee, cable charge, FX spread, intermediary-bank deductions, and receiving-bank fees. A free transfer at a poor exchange rate loses more than a ₩10,000 fee at a tight rate — on ₩14M, a ₩20/USD rate difference alone costs about USD 141. Always compare the final amount the recipient gets.'

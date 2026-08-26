@@ -15,6 +15,11 @@ sources:
   - label: 'Financial Supervisory Service (English)'
     url: 'https://www.fss.or.kr/eng/main/main.do'
 affiliate: false
+keyFacts:
+  - { label: 'Per borrower', value: '₩5M cap' }
+  - { label: 'Real-estate loans', value: '₩10M cap' }
+  - { label: 'Total invested', value: '₩30M cap' }
+  - { label: 'Risk type', value: 'Illiquid single-name' }
 faq:
   - question: 'Is P2P investing in Korea principal-protected?'
     answer: 'No. You are funding a specific borrower and you bear that borrower’s credit risk. If the borrower defaults, the loss is yours, and the Financial Services Commission explicitly classifies these products as high-risk with no principal protection. It is not a deposit and not covered by deposit insurance.'

@@ -21,6 +21,11 @@ sources:
   - label: 'FSC — jeonse-loan interest inclusion in DSR for single-home owners (from Oct 29, 2025)'
     url: 'https://www.fsc.go.kr/po010105/85432'
 affiliate: false
+keyFacts:
+  - { label: 'Your limit', value: 'Smallest of three' }
+  - { label: 'Borrower DSR', value: '40% bank / 50% non-bank' }
+  - { label: 'Capital-region stress', value: '3.0% floor' }
+  - { label: 'Stress rate charged?', value: 'No — limit only' }
 faq:
   - question: 'What actually determines how much I can borrow for a home in Korea?'
     answer: 'The smallest of three numbers: the collateral-based LTV limit, the income-based DSR limit, and any institutional or policy cap (including the price-tier maximums in the capital region and regulated areas). Plenty of borrowers clear LTV comfortably and hit the DSR wall — or the reverse. Compute both before signing anything.'

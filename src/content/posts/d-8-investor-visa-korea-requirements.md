@@ -17,6 +17,11 @@ sources:
   - label: 'K-Startup — government startup programs referenced by D-8-4 tracks'
     url: 'https://www.k-startup.go.kr'
 affiliate: false
+keyFacts:
+  - { label: 'FDI baseline', value: '₩100M + 10% shares' }
+  - { label: 'What decides it', value: 'The money''s legal path' }
+  - { label: 'FIE registration', value: 'Within 60 days' }
+  - { label: 'Startup track', value: 'D-8-4 differs entirely' }
 faq:
   - question: 'If I put ₩100 million into a Korean corporation, do I get a D-8 visa?'
     answer: 'Not automatically. ₩100M plus 10% of voting shares is the baseline FDI requirement for the typical D-8-1 structure — but approval turns on the money’s legal path: a proper foreign-investment notification, funds traceable to the notified investor, shares actually acquired, foreign-invested-company registration completed, and a company that genuinely operates. The balance alone decides nothing.'

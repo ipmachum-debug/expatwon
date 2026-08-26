@@ -76,27 +76,55 @@ const lastUpdated = posts
             <span class="ml-auto text-sm text-slate-400">{g.posts.length} guides</span>
           </div>
 
-          <ol class="space-y-1">
-            {g.posts.map((post) => (
-              <li>
-                <a
-                  href={`/${g.category.slug}/${post.id}/`}
-                  class="group flex flex-col gap-1 rounded-xl px-3 py-3 transition-colors hover:bg-slate-50 sm:flex-row sm:items-baseline sm:gap-4"
-                >
-                  <span class="flex-1">
-                    <span class="block font-semibold text-ink group-hover:text-accent-dark">
-                      {post.data.title}
+          <ol class="space-y-2">
+            {g.posts.map((post) => {
+              const headline = post.data.keyFacts?.[0];
+              return (
+                <li>
+                  <a
+                    href={`/${g.category.slug}/${post.id}/`}
+                    class="group flex gap-4 rounded-xl border border-transparent px-3 py-3 transition-all hover:border-slate-200 hover:bg-slate-50/70"
+                  >
+                    <span
+                      class={`hidden w-[8.5rem] flex-none flex-col justify-center rounded-lg px-3 py-2.5 sm:flex ${g.category.tile}`}
+                    >
+                      {headline ? (
+                        <>
+                          <span class="text-[0.6rem] leading-tight font-semibold tracking-wider uppercase opacity-70">
+                            {headline.label}
+                          </span>
+                          <span class="mt-0.5 text-[0.82rem] leading-tight font-bold">
+                            {headline.value}
+                          </span>
+                        </>
+                      ) : (
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="h-5 w-5 self-center opacity-70"
+                          set:html={g.category.icon}
+                        />
+                      )}
                     </span>
-                    <span class="mt-0.5 block text-sm leading-relaxed text-slate-500">
-                      {post.data.description}
+                    <span class="min-w-0 flex-1">
+                      <span class="block font-semibold text-ink group-hover:text-accent-dark">
+                        {post.data.title}
+                      </span>
+                      <span class="mt-1 block text-sm leading-relaxed text-slate-500">
+                        {post.data.description}
+                      </span>
+                      <span class="mt-1.5 block text-xs text-slate-400">
+                        Verified <FormattedDate date={post.data.updatedDate} />
+                      </span>
                     </span>
-                  </span>
-                  <span class="flex-none text-xs whitespace-nowrap text-slate-400">
-                    <FormattedDate date={post.data.updatedDate} />
-                  </span>
-                </a>
-              </li>
-            ))}
+                  </a>
+                </li>
+              );
+            })}
           </ol>
         </section>
       ))

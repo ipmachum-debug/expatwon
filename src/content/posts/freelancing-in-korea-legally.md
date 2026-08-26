@@ -21,6 +21,11 @@ sources:
   - label: 'Income Tax Act Art. 168 — business registration obligation'
     url: 'https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1032965911'
 affiliate: false
+keyFacts:
+  - { label: '3.3% is', value: 'A tax prepayment' }
+  - { label: 'Three separate rules', value: 'Tax · visa · labor' }
+  - { label: 'Filing month', value: 'May, every year' }
+  - { label: 'Visa permission', value: 'Required separately' }
 faq:
   - question: 'Is the 3.3% deducted from my freelance pay my final tax?'
     answer: 'No — it is a prepayment. The payer withholds 3% income tax plus 10% local surtax at payment, but your real tax is settled in the May comprehensive filing: total revenue minus necessary expenses, combined with other income, less deductions, at progressive rates. If the withheld amount exceeds the final tax you get a refund; if it falls short you pay the difference.'

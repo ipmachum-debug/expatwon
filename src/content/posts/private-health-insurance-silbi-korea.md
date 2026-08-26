@@ -21,6 +21,11 @@ sources:
   - label: 'KB Insurance — foreigner identity verification (ARC/residence-report name and number)'
     url: 'https://www.kbinsure.co.kr/CC101050005.ec'
 affiliate: false
+keyFacts:
+  - { label: 'Foreigners eligible?', value: 'Yes, with caveats' }
+  - { label: 'Self-pay ratios', value: '20% covered / 30% not' }
+  - { label: '4th-gen surcharge', value: 'Up to 4× the base' }
+  - { label: '5th generation', value: 'From May 6, 2026' }
 faq:
   - question: 'Can foreigners buy Korean silbi (actual-loss) medical insurance?'
     answer: 'Long-stay foreigners with an ARC generally can — insurers run foreigner identity verification on the alien-registration (or residence-report) name and number, and no rule reserves silbi for nationals. But there is no statutory “three requirements” checklist that guarantees acceptance: final underwriting weighs age, health history, occupation, and identity verifiability per each insurer’s standards.'

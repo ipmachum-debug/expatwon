@@ -21,6 +21,11 @@ sources:
   - label: 'KCB AllCredit — sole-proprietor (SOHO) evaluation system'
     url: 'https://www.allcredit.co.kr/screen/sc2111313586'
 affiliate: false
+keyFacts:
+  - { label: 'Two bureaus', value: 'NICE and KCB' }
+  - { label: 'New arrivals are', value: 'Thin filers' }
+  - { label: 'CB score alone', value: 'Never decides' }
+  - { label: 'Delinquency trigger', value: '₩100,000+, 5 days' }
 faq:
   - question: 'Do foreigners start with a bad credit score in Korea?'
     answer: 'Usually not bad — nonexistent. With no domestic credit transactions to evaluate, NICE notes a personal score may not even be produced. This “thin file” state is a data problem, not a judgment: your task is not raising a score but creating normal, readable transaction data — salary deposits, card payments, bills paid on time — under one consistent identity.'

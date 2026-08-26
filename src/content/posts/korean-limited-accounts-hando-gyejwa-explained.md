@@ -17,6 +17,11 @@ sources:
   - label: 'Toss Bank — limited-account and transaction-purpose verification guidance'
     url: 'https://www.tossbank.com'
 affiliate: false
+keyFacts:
+  - { label: 'Daily caps', value: '₩1M online / ATM' }
+  - { label: 'At the teller', value: '₩3M' }
+  - { label: 'In force since', value: 'May 2, 2024' }
+  - { label: 'Unlocks on', value: 'Evidence, not time' }
 faq:
   - question: 'Does a limited account unlock automatically after a few months of use?'
     answer: 'No. Since August 2024 the law explicitly obligates financial institutions to verify your transaction purpose both at account opening and at limit removal — the trigger is objective evidence of why money moves through the account, not elapsed time or transaction count. "Wait it out" is not how the system works.'

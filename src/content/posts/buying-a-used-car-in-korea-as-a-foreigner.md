@@ -21,6 +21,11 @@ sources:
   - label: 'Hyundai Capital — foreigner auto-finance program and required documents'
     url: 'https://www.hyundaicapital.com/main/foreign/CPMFOR0101.hc'
 affiliate: false
+keyFacts:
+  - { label: 'Registered in', value: 'Your own name' }
+  - { label: 'Inspection record', value: 'Issued within 120 days' }
+  - { label: 'Beyond the price', value: 'Tax + bonds + fees' }
+  - { label: 'Financing checks', value: 'Income, not nationality' }
 faq:
   - question: 'Can a foreigner register a car in their own name in Korea?'
     answer: 'Yes. The vehicle registration rules accept the alien-registration certificate as proof for an individual owner’s base-of-use, so no Korean nominee is needed. The practical prerequisites are an ARC (or residence-report card), your own compulsory insurance in place before transfer, and — if financing — enough domestic income and credit data to pass screening.'
