@@ -4,7 +4,6 @@ description: 'Converting a home-country licence into a Korean one: recognised vs
 category: cars
 publishDate: 2026-08-28
 updatedDate: 2026-08-28
-draft: true
 tags: [cars, drivers-license, KOROAD, visa, insurance]
 sources:
   - label: 'Road Traffic Act Art. 96 — driving on an international or mutually recognised foreign licence for one year from entry'

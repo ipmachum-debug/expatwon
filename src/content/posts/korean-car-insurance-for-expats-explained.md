@@ -125,7 +125,8 @@ So check both questions together: *whose license*, and *whose visa*.
 
 ## A Korean license does not automatically lower your premium
 
-License exchange and premium history are separate data streams. Converting
+[License exchange](/cars/getting-a-korean-drivers-license-license-exchange/)
+and premium history are separate data streams. Converting
 to a Korean license does not transfer ten years of no-claims history into
 the Korean insurers' systems — and conversely, even right after obtaining
 the Korean license, separately recognized overseas *insurance* history can

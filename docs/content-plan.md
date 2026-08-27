@@ -58,7 +58,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - ✅ ★ buying-a-used-car-in-korea-as-a-foreigner — 이전등록 체인·취득세·성능기록부/카히스토리·할부 심사 (2026-08-23 발행)
 - ✅ car-installment-financing-halbu-korea — 할부 구조·선수금 효과·유예할부 트레이드오프·DSR 예외 이중질문 (2026-08-27 발행)
 - ✅ long-term-car-rental-janggi-rent-korea — TCO 프레임·세무 한도 교정·DSR 예외 정밀화 (2026-08-23 발행)
-- getting-a-korean-drivers-license-license-exchange — 면허 교환 국가·절차
+- ✅ getting-a-korean-drivers-license-license-exchange — IDP 1년 한계·아포스티유≠인정국 교정·비자별 학과시험 면제 역전 (2026-08-28 발행)
 - car-ownership-taxes-and-costs-korea — 취득세·자동차세·검사
 - selling-or-exporting-your-car-when-leaving-korea — 출국 시 처분
 
