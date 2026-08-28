@@ -4,7 +4,6 @@ description: 'Handing over the keys is not transferring ownership. The 30-day ex
 category: cars
 publishDate: 2026-08-29
 updatedDate: 2026-08-29
-draft: true
 tags: [cars, relocation, deregistration, export, refunds]
 sources:
   - label: 'Motor Vehicle Management Act — deregistration, export-performance reporting duty and the penalty for failing to report'

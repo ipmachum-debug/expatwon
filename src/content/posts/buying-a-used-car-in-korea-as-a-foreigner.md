@@ -303,6 +303,10 @@ plate and VIN; panels distinguished from frame on the inspection sheet;
 financing argued with Korean income and credit rather than a visa name.
 And before signing, compute two numbers — **the total cash it takes to
 own the car today, and the loan principal that will remain the day you
-leave Korea or replace it.** Manage those two, and a used-car purchase in
-Korea stops being a foreigner's special ordeal and becomes what it should
-be: an ordinary asset-and-financing decision.
+leave Korea or replace it.** The second number is where most foreign
+owners get hurt, because an outstanding loan places a lien on the title
+and a lien blocks the sale — plan the exit with
+[selling or exporting your car when you leave](/cars/selling-or-exporting-your-car-when-leaving-korea/).
+Manage those two, and a used-car purchase in Korea stops being a
+foreigner's special ordeal and becomes what it should be: an ordinary
+asset-and-financing decision.

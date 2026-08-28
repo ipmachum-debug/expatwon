@@ -302,3 +302,8 @@ cheaper. Access is genuinely open to foreign residents — but the right move is
 not accepting a heavy down payment or a high rate simply because it gets
 approved. It is treating your **stay plan, declared income, holding period
 and future housing finance as one capital-allocation problem.**
+
+And plan the end of that holding period before it arrives: the lender's
+lien stays on the vehicle until the balance is cleared, and it will stop
+the sale on the day you try to leave. See
+[selling or exporting your car when leaving Korea](/cars/selling-or-exporting-your-car-when-leaving-korea/).
