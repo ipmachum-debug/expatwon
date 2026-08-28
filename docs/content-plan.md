@@ -59,7 +59,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - ✅ car-installment-financing-halbu-korea — 할부 구조·선수금 효과·유예할부 트레이드오프·DSR 예외 이중질문 (2026-08-27 발행)
 - ✅ long-term-car-rental-janggi-rent-korea — TCO 프레임·세무 한도 교정·DSR 예외 정밀화 (2026-08-23 발행)
 - ✅ getting-a-korean-drivers-license-license-exchange — IDP 1년 한계·아포스티유≠인정국 교정·비자별 학과시험 면제 역전 (2026-08-28 발행)
-- car-ownership-taxes-and-costs-korea — 취득세·자동차세·검사
+- 🕒 car-ownership-taxes-and-costs-korea — 취득세·자동차세·검사 (2026-08-30 예약, draft)
 - ✅ selling-or-exporting-your-car-when-leaving-korea — 인도≠소유권이전 교정·D-30 역산 절차·수출말소 경로·세금/보험 환급·수출이행신고 의무 (2026-08-29 발행)
 
 ### Business (P4)
