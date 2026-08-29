@@ -67,7 +67,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - ✅ ★ d-8-investor-visa-korea-requirements — FDI 자금 연속성·D-8-1 vs D-8-4·60일 등록 (2026-08-23 발행)
 - 🕒 sole-proprietor-vs-corporation-korea — 2026 법인세 인상 반영·인출층 이중과세·가지급금 4.6%·D-8-3/D-9-4 구분 (2026-08-31 예약, draft)
 - korean-vat-for-small-business-owners — 일반/간이, 신고 주기
-- hiring-your-first-employee-in-korea — 4대보험·최저임금·근로계약
+- 🕒 hiring-your-first-employee-in-korea — 2026 요율 인상 반영·인건비 웨지 계산·수습 3요건·5인 경계표 (2026-09-01 예약, draft)
 - hometax-guide-for-foreign-business-owners — 홈택스 영어 화면 기준 신고 방법
 
 ### Insurance (P5)
