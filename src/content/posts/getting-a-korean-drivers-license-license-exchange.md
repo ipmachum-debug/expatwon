@@ -37,12 +37,23 @@ faq:
   - question: 'Will my overseas driving history count for Korean car insurance?'
     answer: 'Not automatically, and not because you exchanged the licence. Recognition of overseas driving or claims history is a separate insurer-by-insurer process that typically requires documents such as a foreign insurance certificate or driving record. Treat licence exchange and insurance-history recognition as two independent procedures — the first does not deliver the second.'
 ---
-
 For a long-stay foreign resident in Korea, a driver's licence is less
 about driving than about infrastructure. It sits underneath car
 purchases, leases and long-term rentals, insurance enrolment,
 identity checks at finance and rental companies, and any claim to a
 driving record.
+
+<figure class="figure hero">
+  <p class="figure-title">Two gates people constantly merge into one</p>
+  <p class="figure-sub">Both must be satisfied — and passing one says nothing about the other</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span><strong>Is the document genuine?</strong> Answered by an apostille or embassy certification.</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Is the issuing country recognised?</strong> A separate determination that decides whether you sit the written test.</span></div>
+    <div class="check-result">You can hold a flawless apostille and still take the test, because your country is not on the recognised list. The two are unrelated layers.</div>
+  </div>
+  <figcaption class="figcap">Underneath both sits the real gate: alien registration. Without it there is no ordinary exchange route at all.</figcaption>
+</figure>
+
 
 An international driving permit (IDP) does not do that job. The Road
 Traffic Act allows someone who has entered the country lawfully and

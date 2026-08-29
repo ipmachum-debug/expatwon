@@ -185,6 +185,42 @@
 .prose-article .figure > :last-child {
   @apply mb-5 sm:mb-6;
 }
+/*
+ * Hero figure — one per article, placed after the opening paragraph. It is the
+ * article's core mechanism as a single graphic: the number that decides the
+ * decision, the structure the reader came for. Wider than the measure, set on
+ * the category tint, so every guide opens on its own image instead of on the
+ * same wall of prose.
+ */
+.prose-article .figure.hero {
+  @apply my-9 rounded-2xl border-0 shadow-sm sm:-mx-10;
+  background: var(--cat-tint);
+  outline: 1px solid var(--cat-line);
+}
+.prose-article .figure.hero .figure-title {
+  @apply px-6 pt-6 font-display text-[1.35rem] leading-snug font-bold sm:px-9;
+  background: transparent;
+}
+.prose-article .figure.hero .figure-sub {
+  @apply px-6 pb-5 text-[0.85rem] sm:px-9;
+  background: transparent;
+}
+.prose-article .figure.hero > :not(.figure-title):not(.figure-sub) {
+  @apply mx-6 sm:mx-9;
+}
+.prose-article .figure.hero > :last-child {
+  @apply mb-6 sm:mb-8;
+}
+.prose-article .figure.hero .figcap {
+  @apply mt-5 pt-3;
+  border-color: var(--cat-line);
+}
+.prose-article .figure.hero .flow-node,
+.prose-article .figure.hero .check-row,
+.prose-article .figure.hero .bar-track {
+  @apply bg-white;
+}
+
 .prose-article .figcap {
   @apply mt-5 border-t border-slate-100 pt-3 pb-0 text-[0.8rem] leading-relaxed text-slate-500;
 }

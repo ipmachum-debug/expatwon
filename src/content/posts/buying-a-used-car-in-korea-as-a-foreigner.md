@@ -39,13 +39,26 @@ faq:
   - question: 'Can I get auto financing on an E-7 visa?'
     answer: 'Possibly — there is no industry rule that F visas pass and E visas fail. Lenders run their own scoring on Korean credit data, income level and stability, tenure, existing debt, and how your remaining stay compares to the loan term. An E-7 with years of consistent payroll can outscore an F-visa holder with no domestic records.'
 ---
-
 There is no special legal barrier to a foreigner buying a used car in
 Korea. With alien registration in place, you can acquire a vehicle in your
 own name and complete transfer registration — the registration rules
 explicitly accept the alien-registration certificate as the owner's
 identity document, so the "borrow a Korean friend's name" workaround is
 not just risky; it is unnecessary.
+
+<figure class="figure hero">
+  <p class="figure-title">Four things that must be true before money moves</p>
+  <p class="figure-sub">Each is checkable on a document — none of them on trust</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span>The <strong>registered owner</strong> on the vehicle register is the person selling it to you</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>No lien</strong> from an unpaid loan sits on the title</span></div>
+    <div class="check-row ok"><span class="mark"></span><span>The <strong>performance inspection record</strong> was issued within 120 days</span></div>
+    <div class="check-row ok"><span class="mark"></span><span>CarHistory pulled by <strong>plate and VIN</strong> — both, not one</span></div>
+    <div class="check-result">Miss any one and the risk you carry is not the car's condition. It is whether the transfer registration can complete at all.</div>
+  </div>
+  <figcaption class="figcap">Nationality changes none of this. What it changes is how the financing behind it is screened.</figcaption>
+</figure>
+
 
 The real bottlenecks sit elsewhere: the identity and insurance paperwork
 around registration, verifying the car's actual condition, and — if you

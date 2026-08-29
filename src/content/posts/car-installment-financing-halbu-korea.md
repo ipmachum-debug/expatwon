@@ -35,11 +35,23 @@ faq:
   - question: 'Is a card company''s auto loan "first-tier" and therefore safer for my credit score?'
     answer: 'No. Card companies and capital companies are both specialized credit finance companies — conventionally grouped in the second tier. They differ in customer selection and product design, not regulatory class. And neither NICE nor KCB publishes fixed point deductions by lender type; what moves a score is the size and form of the debt and how you repay it.'
 ---
-
 Two opposite beliefs about car finance in Korea are both wrong. *"Foreigners
 can't get an installment plan"* does not match the market — foreign residents
 finance cars here routinely. But *"it works like it does for locals: pick the
 car, sign, done"* is not right either.
+
+<figure class="figure hero">
+  <p class="figure-title">What the lender is actually pricing</p>
+  <p class="figure-sub">Inputs to a Korean installment approval, in the order they matter</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span><strong>Credit data and declared income</strong> — the rate band is set here</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Down payment</strong> — reduces the lender's exposure if the car is repossessed</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Remaining stay vs the loan term</strong> — a term that outlasts your visa is a flag</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>Your nationality</strong> — not a pricing input, whatever the internet says</span></div>
+    <div class="check-result">Approval is argued with Korean income and credit data. A visa code is a constraint on the term, not a rate.</div>
+  </div>
+</figure>
+
 
 Car installment financing (할부) evaluates two things at once: the value of a
 physical asset and the creditworthiness of the borrower. The lender combines

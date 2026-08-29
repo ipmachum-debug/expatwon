@@ -39,12 +39,25 @@ faq:
   - question: 'Which structure is cheapest?'
     answer: 'Whichever minimizes after-tax total cost of ownership for your usage — not the lowest monthly payment. Long holding periods and high mileage favor buying; 3–5-year replacement cycles with admin simplicity favor rental or operating lease; long no-claims insurance history and normal plates favor lease; cash-tight new businesses favor rental/lease over cash purchase.'
 ---
-
 One of the least meaningful numbers in car finance is the monthly
 payment. A ₩800,000/month long-term rental can look cheaper than a
 ₩950,000/month lease and flip to more expensive the moment you equalize
 insurance, vehicle tax, upfront payments, residual values, and the
 end-of-term buyout.
+
+<figure class="figure hero">
+  <p class="figure-title">The monthly figure is not the comparison</p>
+  <p class="figure-sub">What has to be summed before rental, lease and purchase can be ranked</p>
+  <div class="flow">
+    <div class="flow-node"><strong>Cash out over five years</strong><span class="sub">Monthly payments · deposit · insurance · tax · maintenance · disposal costs</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>Minus what the tax return recognises</strong><span class="sub">Capped at ₩8M depreciation and ₩15M total without a driving log</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>Minus the asset left at the end</strong><span class="sub">Rental and lease leave nothing; a purchase leaves a used car of uncertain value</span></div>
+  </div>
+  <figcaption class="figcap">Rank the products only after those three lines are filled in. A cheaper month with no residual asset is not a cheaper car.</figcaption>
+</figure>
+
 
 What actually differs between the three structures is **who owns the
 car, how much cash goes in up front, and who captures (or eats) the

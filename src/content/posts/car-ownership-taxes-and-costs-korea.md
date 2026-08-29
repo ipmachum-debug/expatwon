@@ -49,10 +49,23 @@ faq:
   - question: 'I was out of the country and missed my inspection. Is that an excuse?'
     answer: 'Not on its own. The duty runs on the vehicle, not on whether you received the notice or were in Korea. The law recognises specific grounds for extension or deferral — theft, repair after an accident, seized plates, a suspension order — and those must be applied for. Simple absence abroad is not one of them, and the penalty escalates to ₩600,000 once you are 115 days late.'
 ---
-
 Owning a car in Korea is not the purchase price plus insurance. Two other
 obligations attach and never detach: taxes at acquisition, and taxes plus
 a statutory inspection for as long as the vehicle stays in your name.
+
+<figure class="figure hero">
+  <p class="figure-title">Ownership is three stages, and only one is monthly</p>
+  <p class="figure-sub">Where the money actually leaves, from purchase to disposal</p>
+  <div class="flow">
+    <div class="flow-node"><strong>Acquisition</strong><span class="sub">7% acquisition tax · registration bonds · plates · first insurance premium — all cash, none financed</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Holding</strong><span class="sub">Annual tax by engine size + 30% education surtax · inspection at 5 years, then every 2</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Disposal</strong><span class="sub">Transfer or deregistration · settle the loan and lien · refund the unused tax and insurance</span></div>
+  </div>
+  <figcaption class="figcap">The sticker price covers none of this. The number to check before buying is the total of all three stages.</figcaption>
+</figure>
+
 
 None of this varies by nationality. Register a car in your own name on an
 alien registration card and you are inside the same framework as any

@@ -35,11 +35,23 @@ faq:
   - question: 'Can I close my Korean bank account right after selling the car?'
     answer: 'Close it last. Vehicle-tax and insurance refunds, and sometimes final sale settlement, arrive after the paperwork clears — and once you have left, your ARC is surrendered and your Korean phone line is gone, which makes reopening or redirecting payments far harder. Sequence it: dispose of the car, settle tax and insurance, collect refunds, remit funds abroad, then close the account.'
 ---
-
 For a long-staying foreigner, the car is usually the last major asset in
 Korea — and the one people most often mishandle on the way out. The
 reason is a distinction that is easy to miss: **physically handing over
 the vehicle and legally disposing of it are two different acts.**
+
+<figure class="figure hero">
+  <p class="figure-title">Handing over the keys is not transferring ownership</p>
+  <p class="figure-sub">What still sits in your name after the car has physically gone</p>
+  <div class="check-card">
+    <div class="check-row miss"><span class="mark"></span><span><strong>Annual tax and fines</strong> keep accruing to the registered owner — you</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>An unpaid loan's lien</strong> blocks the transfer registration outright</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>Insurance</strong> stays live and unrefunded until the register changes</span></div>
+    <div class="check-result">Ownership moves when the register moves. Start 30 days before your flight, not the week of it.</div>
+  </div>
+  <figcaption class="figcap">And close the Korean bank account last — the tax and insurance refunds need somewhere to land.</figcaption>
+</figure>
+
 
 Giving a dealer the keys does not end your position. Your legal
 relationship to the car ends when the **vehicle register** shows either

@@ -35,12 +35,22 @@ faq:
   - question: 'Should I choose the quote with the lowest monthly payment?'
     answer: 'Not without checking the residual value and termination terms. A low monthly payment often means a high residual — cheap to rent, expensive to keep. Compare total payments, the end-of-term buyout price, and early-exit conditions together, not the monthly figure alone.'
 ---
-
 A car lease in Korea is not "a car for a monthly fee." It is a financial
 contract that separates ownership from use so you can engineer your cash
 flow. Buying converts cash into an asset; installment financing acquires the
 asset while creating debt; a lease has the finance company own the car while
 you pay for the right to use it.
+
+<figure class="figure hero">
+  <p class="figure-title">The two caps that decide what a company car really costs</p>
+  <p class="figure-sub">Annual deductible limits for a business-use passenger vehicle</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">Depreciation / lease</span><span class="bar-track"><span class="bar-fill" style="width:53%"></span></span><span class="bar-value">₩8M per year</span></div>
+    <div class="bar-row"><span class="bar-label">Total, no driving log</span><span class="bar-track"><span class="bar-fill alt" style="width:100%"></span></span><span class="bar-value">₩15M per year</span></div>
+  </div>
+  <figcaption class="figcap">Spend above these lines is real money that the tax return does not recognise. Keeping a driving log is what lifts the second cap — which is why the monthly quote is never the answer on its own.</figcaption>
+</figure>
+
 
 That framing changes what you should compare. For a company CEO — including
 a foreigner running a Korean 법인 — the monthly payment is close to the
