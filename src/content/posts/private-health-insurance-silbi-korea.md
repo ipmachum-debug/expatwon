@@ -39,13 +39,23 @@ faq:
   - question: 'Should a new enrollee in 2026 get 4th or 5th generation?'
     answer: 'New sales are 5th generation as of May 6, 2026 — the practical question is whether to keep an existing 4th-gen contract, not which to newly buy. The 5th gen splits severe from non-severe non-covered care, tightens self-pay on the non-severe side, strengthens severe-illness protection, and is projected by the FSC to price about 30% below 4th gen.'
 ---
-
 The claim that long-stay foreigners cannot buy Korean private actual-loss
 medical insurance (실손의료보험, "silbi") is simply wrong. A foreigner
 with an alien-registration number is identifiable to Korean insurers,
 and companies operate foreigner verification and contract-management
 systems — KB Insurance, for one, documents verifying foreign customers
 by the name and number on the ARC or domestic residence-report card.
+
+<figure class="figure hero">
+  <p class="figure-title">What silbi actually reimburses</p>
+  <p class="figure-sub">The self-pay portion, split by whether NHIS covers the treatment</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">NHIS-covered</span><span class="bar-track"><span class="bar-fill" style="width:67%"></span></span><span class="bar-value">20% self-pay</span></div>
+    <div class="bar-row"><span class="bar-label">Not covered</span><span class="bar-track"><span class="bar-fill alt" style="width:100%"></span></span><span class="bar-value">30% self-pay</span></div>
+  </div>
+  <figcaption class="figcap">Silbi sits on top of NHIS, never instead of it. Under the 4th generation, heavy claiming can lift your renewal premium to as much as four times the base — and the 5th generation arrives 6 May 2026.</figcaption>
+</figure>
+
 
 One correction before anything else, though: **there is no statutory
 "three requirements" — ARC + NHIS + the right visa — that guarantees

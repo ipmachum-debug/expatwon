@@ -33,7 +33,6 @@ faq:
   - question: 'Is an MVNO always cheaper?'
     answer: 'Not automatically. Promo rates must be averaged over the real term — a plan at ₩5,900 for 7 months then ₩29,700 averages about ₩22,760/month over 24 months. And households losing MNO bundle discounts (internet, family) must compare the actual billed total: saving ₩60,000 across two lines while losing ₩35,000 of bundle discounts nets only ₩25,000.'
 ---
-
 In Korea, a foreigner's mobile number is not merely a way to make calls.
 Bank accounts, card issuance, internet banking, government logins,
 delivery and shopping apps — a large share of Korean services runs
@@ -42,6 +41,18 @@ decision entirely: before comparing ₩20,000 against ₩70,000 a month, the
 first question is whether *your alien-registration identity and your
 carrier's subscriber record connect cleanly enough for Korea's
 verification systems to recognize you.*
+
+<figure class="figure hero">
+  <p class="figure-title">A Korean number is financial infrastructure</p>
+  <p class="figure-sub">What stops working without one in your own name</p>
+  <div class="check-card">
+    <div class="check-row miss"><span class="mark"></span><span><strong>Identity verification</strong> — the gateway to banking apps, government services and most payments</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>Bank and card applications</strong> — the subscriber record must match your ARC</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Prerequisite:</strong> an ARC, and the line registered in your own name — not an employer's, not a friend's</span></div>
+    <div class="check-result">Compare plans over 24 months, not on month one. Promotional pricing front-loads the discount.</div>
+  </div>
+</figure>
+
 
 That is not an accident of app design. The Telecommunications Business
 Act requires carriers to verify subscriber identity at contract — a

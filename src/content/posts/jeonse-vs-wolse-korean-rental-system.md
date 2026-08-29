@@ -35,11 +35,24 @@ faq:
   - question: 'How do I make my deposit legally protected?'
     answer: 'Opposing power requires actually moving in plus resident registration — for foreigners, the ARC-based stay-address reporting must be processed correctly and promptly, since protection runs from the day after. Priority repayment additionally requires a fixed date (확정일자) on the contract. Neither arises automatically from signing; both are filings you must make, fast.'
 ---
-
 Understanding jeonse (전세) as "rent without monthly payments" captures half
 the structure and misses the half that matters. Financially, jeonse is a
 transaction in which the tenant provides the landlord a large sum of money
 for years, and receives the right to live in the property in return.
+
+<figure class="figure hero">
+  <p class="figure-title">A jeonse deposit is credit you extend to your landlord</p>
+  <p class="figure-sub">Which reframes the whole comparison</p>
+  <div class="flow">
+    <div class="flow-node"><strong>You lend the deposit, interest-free</strong><span class="sub">Your rent is the return you gave up on that capital</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Compare via the conversion rate</strong><span class="sub">The only way to put jeonse and wolse on one axis</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>The risk is getting it back</strong><span class="sub">HF's return guarantee is for Korean nationals; HUG is the route open to foreigners</span></div>
+  </div>
+  <figcaption class="figcap">Price the deposit as a loan and jeonse stops looking free.</figcaption>
+</figure>
+
 
 Pay a ₩500,000,000 jeonse deposit with no monthly rent and you have, in
 substance, extended the landlord a ₩500M **interest-free loan**. Unlike an

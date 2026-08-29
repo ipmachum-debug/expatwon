@@ -40,11 +40,22 @@ faq:
   - question: 'Am I liable for the previous tenant''s unpaid bills?'
     answer: 'Not automatically — the supply contract is with a user for a period of use, and your period starts when you move in. But if the account is never transferred, the arrears surface when you register or restore supply and you end up having to explain the boundary. The clean answer is evidential: photograph every meter on the day you move in, get the previous occupant''s final settlement receipt, and register the account in your own name immediately.'
 ---
-
 Renting in Korea costs more than the monthly rent or the deposit. Every
 month there is metered consumption — electricity, city gas, water — and,
 in an apartment or officetel, a maintenance fee covering general
 management, security, cleaning, lift upkeep and heating.
+
+<figure class="figure hero">
+  <p class="figure-title">One line on the bill is refundable to you</p>
+  <p class="figure-sub">The monthly maintenance fee, by who ultimately bears it</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span><strong>You bear:</strong> general management, security, cleaning, lift upkeep, common-area power, your own electricity, water, gas and heating</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>The owner bears:</strong> the long-term repair reserve — even though it appears on the bill you pay every month</span></div>
+    <div class="check-result">Ask the management office for a certificate of payment before you move out, and claim the total from the landlord. Three years at ₩25,000 a month is ₩900,000.</div>
+  </div>
+  <figcaption class="figcap">Most tenants never learn that line was theirs to reclaim.</figcaption>
+</figure>
+
 
 For a foreign tenant, the difficulty is rarely the amount. It is **who
 bears which cost, and where one occupant's period ends and the next

@@ -39,13 +39,26 @@ faq:
   - question: 'Do foreign workers get the Korean credit-card tax deduction?'
     answer: 'If you are a tax resident with earned income, yes — the deduction applies to card, check-card, and cash-receipt spending in Korea above 25% of gross salary, with overseas spending excluded. Limits depend on salary (broadly ₩3M up to ₩70M gross salary, ₩2.5M above, with child-related expansions), so register cash receipts and keep spending domestic where practical.'
 ---
-
 The biggest leaks in an expat's Korean budget are usually not rent or food.
 They happen at the points where **currency changes hands and payment
 methods switch** — earning KRW while spending on a foreign card, converting
 small amounts of home currency whenever cash runs low, then wiring money
 abroad again. Run that loop and you pay FX spreads, card fees, and
 remittance fees on the same money repeatedly.
+
+<figure class="figure hero">
+  <p class="figure-title">Money leaks where currencies change hands</p>
+  <p class="figure-sub">Three switch points, three different fixes</p>
+  <div class="flow">
+    <div class="flow-node"><strong>Paying abroad by card</strong><span class="sub">Decline dynamic currency conversion — always settle in the local currency</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>Sending money home</strong><span class="sub">The spread, not the fee, is the main cost</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>Holding two currencies</strong><span class="sub">Every unnecessary conversion is a round trip you paid for twice</span></div>
+  </div>
+  <figcaption class="figcap">And the "$50,000 limit" people repeat is not one rule that applies to everyone.</figcaption>
+</figure>
+
 
 For a long-term resident, living-cost management is not really about
 consumption. Salary account, credit card, overseas remittance, credit

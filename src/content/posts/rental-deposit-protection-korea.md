@@ -37,11 +37,22 @@ faq:
   - question: 'Can I move out before getting my deposit back?'
     answer: 'Not without protecting yourself first — leaving and moving your address weakens the opposing power you must maintain, not just acquire. If you must move before repayment, apply for a lease-registration order (임차권등기명령) and confirm the registration is actually completed before relocating and re-filing your stay address.'
 ---
-
 A jeonse deposit is not a bank deposit. Nothing about it is automatically
 principal-protected. It is a **claim** — hundreds of millions of won
 entrusted to a landlord, recoverable only by demand at the end of the
 contract.
+
+<figure class="figure hero">
+  <p class="figure-title">Three steps that decide whether you get the deposit back</p>
+  <p class="figure-sub">Do them in this order, on these days — not later</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Move in and register your residence.</strong> Opposing power begins the day <em>after</em> — not the same day.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><strong>Get the fixed date the same day.</strong> It sets your priority against other creditors.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Run the 126% check before signing.</strong> Deposit plus prior claims against the property's value.</div></div>
+  </div>
+  <figcaption class="figcap">A day's delay on step one is a day in which a mortgage can be registered ahead of you.</figcaption>
+</figure>
+
 
 Which means a jeonse contract's safety is never judged by the landlord's
 demeanor or the agent's reassurance. It is judged in a fixed order: the

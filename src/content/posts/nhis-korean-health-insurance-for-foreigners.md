@@ -33,13 +33,24 @@ faq:
   - question: 'Can my spouse and children be my dependents on NHIS?'
     answer: 'If you are a workplace subscriber, yes — subject to the standard relationship, income, and property criteria. Since the 2024 reform foreign dependents generally face a six-month Korean-residence requirement, but a workplace subscriber’s spouse and children under 19 are exempt from that waiting period.'
 ---
-
 The most common misunderstanding foreign residents have about Korean
 national health insurance (NHIS) is the assumption that little income means
 little premium. For Korean nationals in the regional (self-employed) pool,
 premiums do track income and property. But for a large share of foreign
 regional subscribers, a separate **average-premium floor** applies — and it
 changes the arithmetic completely.
+
+<figure class="figure hero">
+  <p class="figure-title">Two ways to be insured, and they cost differently</p>
+  <p class="figure-sub">2026 figures — the route matters more than the rate</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span><strong>Employed</strong> — 7.19% of pay, split 50/50 with your employer, and no six-month wait</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>Individually enrolled</strong> — a floor applies: the foreigner average premium, ₩158,630 a month, even on low income</span></div>
+    <div class="check-result">Arrears are not just a debt. Unpaid contributions can affect a visa extension.</div>
+  </div>
+  <figcaption class="figcap">Which is why the six months before employment starts is the expensive window — and why the enrolment route is worth planning, not discovering.</figcaption>
+</figure>
+
 
 In 2026, the foreigner regional average premium is **₩158,630 per month** —
 ₩140,210 of health insurance plus ₩18,420 of long-term care insurance. If

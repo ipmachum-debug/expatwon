@@ -35,12 +35,25 @@ faq:
   - question: 'What if insurers refuse to cover me?'
     answer: 'One company’s refusal is not a market-wide refusal. Underwriting criteria differ by insurer, and the KNIA operates a joint-underwriting system for drivers declined by individual companies, plus a “find my insurer” matching service. Joint underwriting gets you covered but usually on worse terms — treat it as a fallback, not a starting point.'
 ---
-
 When a foreigner's car insurance quote in Korea comes in high, "because I'm
 foreign" is almost never the accurate explanation. What actually drives the
 number: the absence of **Korean insurance enrollment history**, the driver
 scope on the policy, age, vehicle model grade, accident history, coverage
 choices, and how well the insurer can identify you in its systems.
+
+<figure class="figure hero">
+  <p class="figure-title">Why year one costs what it does</p>
+  <p class="figure-sub">And the two levers that actually move it</p>
+  <div class="flow">
+    <div class="flow-node"><strong>No Korean claims history</strong><span class="sub">You are rated as a new driver regardless of decades abroad</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Lever 1 — submit your overseas driving record</strong><span class="sub">Recognition is insurer-by-insurer and needs documents, not a licence exchange</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Lever 2 — narrow the driver scope</strong><span class="sub">The single largest premium variable you control</span></div>
+  </div>
+  <figcaption class="figcap">A Korean licence is the prerequisite, not the discount. The discount is the paperwork behind it.</figcaption>
+</figure>
+
 
 A foreigner insuring their first car in Korea may have driven accident-free
 for a decade at home — but if no enrollment history exists in the Korean
