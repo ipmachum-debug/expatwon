@@ -39,9 +39,22 @@ faq:
   - question: 'Is there an income level above which I must register as a business?'
     answer: 'No statutory won threshold exists — the “₩24M” and “₩33M” rules circulating online are myths. The Income Tax Act requires those who commence a business to register, and the substantive test is continuity, repetition, and business character: serving multiple clients on an ongoing, independent basis is a business regardless of the amount.'
 ---
-
 The most dangerous misunderstanding among foreign freelancers in Korea is
 this sentence: *"They withheld 3.3%, so my income is legal."*
+
+<figure class="figure hero">
+  <p class="figure-title">Three separate rulebooks, three separate answers</p>
+  <p class="figure-sub">The mistake is assuming one clearance covers the others</p>
+  <div class="flow">
+    <div class="flow-node"><strong>Tax law</strong><span class="sub">3.3% withheld is a prepayment, not a settlement. You file in May regardless.</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Immigration law</strong><span class="sub">Your status must permit the activity. Separate permission, separate authority.</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Labour law</strong><span class="sub">Whether you are really a contractor is decided by how the work is directed — not by the contract's title</span></div>
+  </div>
+  <figcaption class="figcap">Being correct under one of these says nothing about the other two.</figcaption>
+</figure>
+
 
 The 3.3% is a **tax processing method** — nothing more. It is not an
 employment permit. Income can be perfectly reported under tax law and

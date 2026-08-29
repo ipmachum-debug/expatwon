@@ -35,12 +35,24 @@ faq:
   - question: 'Do I need revenue and Korean employees for my first D-8 extension?'
     answer: 'There is no statutory common minimum of revenue or Korean hires applying to every D-8-1 extension. What reviews look for is maintained investment, a genuinely operating company, tax filings, a real place of business, and the applicant’s actual management activity — with the evidence differing by industry and stage. An early-stage R&D company and a restaurant are not judged by one mechanical revenue bar.'
 ---
-
 The most dangerous simplification about the D-8 visa is the sentence
 "put ₩100 million into a Korean corporation and you get an investor
 visa." The ₩100M matters — it is the flagship foreign-direct-investment
 threshold in the typical D-8-1 structure — but visa approval is not
 decided by an account balance.
+
+<figure class="figure hero">
+  <p class="figure-title">The money is the beginning of the test, not the end</p>
+  <p class="figure-sub">What immigration examines beyond the ₩100M</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span><strong>₩100M or more</strong>, remitted from abroad in your own name through the proper channel</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>10% or more of voting shares</strong> in the Korean company</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Foreign-invested company registration</strong> within 60 days</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>Capital that arrives and leaves</strong> — continuity is checked at every renewal</span></div>
+    <div class="check-result">A real place of business, what the capital was spent on, revenue, employment and tax records all get read alongside the deposit.</div>
+  </div>
+</figure>
+
 
 What has to hold together, as one continuous story: a lawful investment
 notification under the Foreign Investment Promotion Act, foreign funds

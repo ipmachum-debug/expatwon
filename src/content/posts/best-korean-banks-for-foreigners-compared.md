@@ -44,9 +44,21 @@ faq:
   - question: 'How current is this comparison?'
     answer: 'Bank apps and remittance products change several times a year — SOL Global was overhauled at the end of 2025 and KB Quick Send opened to Korean nationals in December 2025. Treat the platform capabilities here as the shape of each bank''s offer rather than a permanent specification, and confirm the fee and country list on the bank''s own page before you commit to a corridor.'
 ---
-
 Every major Korean bank will open an account for a foreign resident. That
 is not the question worth asking.
+
+<figure class="figure hero">
+  <p class="figure-title">The four are not competing on the same axis</p>
+  <p class="figure-sub">What each major bank is actually strongest at</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span><strong>Woori</strong> — 17 languages, the most of any Korean bank app, plus worker-facing admin</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>KB</strong> — Quick Send at a flat ₩5,000 with no intermediary fee, 47 countries</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Shinhan</strong> — SOL Global in 16 languages, the furthest along on doing it without a branch</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Hana</strong> — FX infrastructure, Global Desk and Sunday Banking branches</span></div>
+    <div class="check-result">Pick for the year you are actually having, then concentrate everything there — split history weakens all of it.</div>
+  </div>
+</figure>
+
 
 The question is which one fits what you will actually do with the money —
 because the four differ sharply on the things that matter to a foreigner:

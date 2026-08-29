@@ -35,12 +35,25 @@ faq:
   - question: 'Should I open accounts at several banks when I arrive?'
     answer: 'No. Opening multiple accounts in a short period without a clear purpose can trigger stricter checks, and the FSS notes that banks may refuse new accounts opened without a specific reason. Run one main account for salary, bills, and remittance first, and add accounts later when a real need appears.'
 ---
-
 Opening a bank account in Korea is not an exotic financial product — it is an
 identity check plus a purpose check. Pass both, and you get a normal deposit
 account. The practical problems foreigners run into almost never come from
 nationality; they come from arriving with the wrong documents, or from not
 knowing that a freshly opened account may carry daily transaction limits.
+
+<figure class="figure hero">
+  <p class="figure-title">The bank is verifying purpose, not nationality</p>
+  <p class="figure-sub">What decides whether you leave with a full account or a restricted one</p>
+  <div class="flow">
+    <div class="flow-node"><strong>Identity</strong><span class="sub">Passport and ARC — and the name on both matching the bank's record exactly</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>Purpose</strong><span class="sub">Employment contract, enrolment certificate, lease — evidence of why the account exists</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>Missing purpose → limited account</strong><span class="sub">₩1M a day online and at ATMs, ₩3M at the teller, until you supply it</span></div>
+  </div>
+  <figcaption class="figcap">Bring proof of purpose to the first appointment and most of this article becomes unnecessary.</figcaption>
+</figure>
+
 
 The legal footing matters here. Since August 2024, Korean financial
 institutions have an explicit statutory basis (under the Special Act on

@@ -43,10 +43,22 @@ faq:
   - question: 'I already hold an F-2 or F-5. Do I need an investment visa?'
     answer: 'Generally not. D-8 and D-9 exist to grant residence on the basis of investment. If you already hold a status that permits the activity, manufacturing a ₩100M or ₩300M investment structure to obtain one is solving a problem you do not have. Check the activity limits on your specific status — F-4 in particular restricts certain categories of work — and check whether your industry needs its own licence, which applies regardless of nationality.'
 ---
-
 The first decision in starting a business in Korea is not the trade name
 or the industry code. It is the legal form: sole proprietorship or
 corporation.
+
+<figure class="figure hero">
+  <p class="figure-title">The rate comparison is only half the calculation</p>
+  <p class="figure-sub">Tax at the entity level on the same base, including local income tax</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">₩150M · sole</span><span class="bar-track"><span class="bar-fill" style="width:39%"></span></span><span class="bar-value">₩40.8M</span></div>
+    <div class="bar-row"><span class="bar-label">₩150M · company</span><span class="bar-track"><span class="bar-fill alt" style="width:16%"></span></span><span class="bar-value">₩16.5M</span></div>
+    <div class="bar-row"><span class="bar-label">₩300M · sole</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-value">₩103.5M</span></div>
+    <div class="bar-row"><span class="bar-label">₩300M · company</span><span class="bar-track"><span class="bar-fill alt" style="width:43%"></span></span><span class="bar-value">₩44.0M</span></div>
+  </div>
+  <figcaption class="figcap">The sole proprietor's money is already in their hands. The company's is not — and every route out of it is taxed again. That second layer is what this guide is about.</figcaption>
+</figure>
+
 
 That choice determines how far liability reaches into your personal
 assets, how profit is taxed, how you are allowed to take money out, how

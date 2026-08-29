@@ -37,12 +37,24 @@ faq:
   - question: 'Are there loan products made specifically for foreigners?'
     answer: 'Some banks run dedicated foreigner credit-loan products — for example, Hana Bank lists a Foreigner EZ Loan in its product disclosures from August 2025. Product lineups change and older products have been discontinued, so ask your bank which review track (foreigner-specific or general) currently applies to you rather than relying on past product terms.'
 ---
-
 Whether a foreigner can borrow in Korea is not decided by nationality. What
 a Korean lender actually needs to establish is threefold: how clearly your
 **Korean-source income** can be verified, how likely your **stay** is to
 continue, and how realistically the debt could be **recovered in Korea** if
 you stopped paying.
+
+<figure class="figure hero">
+  <p class="figure-title">What a Korean lender is answering</p>
+  <p class="figure-sub">Not "can foreigners borrow" — a different question entirely</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span><strong>Is there Korean income</strong> the lender can verify and keep verifying?</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Does the residence status outlast the loan</strong> — F-5 and F-4 sit strongest here</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Is there domestic credit data</strong>, or is this a thin file?</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>Is the applicant foreign?</strong> Not a question the underwriting model asks</span></div>
+    <div class="check-result">The constraint is documentary continuity, not nationality. Everything else in this guide follows from that.</div>
+  </div>
+</figure>
+
 
 That triad also explains why underwriting for foreign borrowers is more
 conservative than for locals. Departure or visa expiry can make collection

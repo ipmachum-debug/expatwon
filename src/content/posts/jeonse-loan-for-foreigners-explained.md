@@ -35,13 +35,25 @@ faq:
   - question: 'Is there a minimum remaining visa period of one year?'
     answer: 'No industry-wide rule says so. KB''s published foreigner product requires visa validity of at least three months from the loan date. A short remaining stay does make banks price the loan term and renewal risk conservatively, and other banks or guarantors can apply stricter internal rules — but "one year minimum" as a universal requirement is a myth.'
 ---
-
 Start with the sentence you will hear most often: *"foreigners can't get a
 jeonse loan in Korea."* As a description of the current market, it is
 simply wrong — banks run foreigner-specific jeonse loan products today,
 with published eligibility lists and published caps. But the opposite
 assumption — that you can walk into any branch and use the same products
 Koreans use, on the same terms — is not accurate either.
+
+<figure class="figure hero">
+  <p class="figure-title">Four caps apply at once — the smallest is your loan</p>
+  <p class="figure-sub">Worked on a ₩300M jeonse deposit, KB's foreigner product</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">80% of deposit</span><span class="bar-track"><span class="bar-fill muted" style="width:100%"></span></span><span class="bar-value">₩240M</span></div>
+    <div class="bar-row"><span class="bar-label">Product cap</span><span class="bar-track"><span class="bar-fill muted" style="width:83%"></span></span><span class="bar-value">₩200M</span></div>
+    <div class="bar-row"><span class="bar-label">Guarantee limit</span><span class="bar-track"><span class="bar-fill" style="width:67%"></span></span><span class="bar-value">₩160M ← binding</span></div>
+    <div class="bar-row"><span class="bar-label">DSR headroom</span><span class="bar-track"><span class="bar-fill muted" style="width:75%"></span></span><span class="bar-value">₩180M</span></div>
+  </div>
+  <figcaption class="figcap">The bank quotes the first number. You receive the third. Illustrative figures — the point is the structure, not the amounts.</figcaption>
+</figure>
+
 
 A foreigner's jeonse loan executes only when several things line up at
 once: the bank's own credit screen, a guarantee institution willing to

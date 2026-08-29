@@ -35,12 +35,23 @@ faq:
   - question: 'Why does the app fail to find my health-insurance record even though I am enrolled?'
     answer: 'Often an identity-matching problem, not a rejection. If your banking started on passport identification and your ARC number was registered later — or your customer record has not caught up with a passport renewal — public-data lookups can miss you. Fix the bank’s customer identification at a branch first instead of re-submitting the app application repeatedly.'
 ---
-
 The claim that a Korean limited account (한도제한계좌) "unlocks by itself
 after a few months of use" does not match how the system works. The core
 of the limited account is not transaction history. It is whether the bank
 has verified — with objective documents — **why money moves through this
 account.**
+
+<figure class="figure hero">
+  <p class="figure-title">What a limited account actually limits</p>
+  <p class="figure-sub">Caps in force since 2 May 2024 — an anti-fraud device, not a credit rating</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">Online transfer</span><span class="bar-track"><span class="bar-fill" style="width:33%"></span></span><span class="bar-value">₩1M / day</span></div>
+    <div class="bar-row"><span class="bar-label">ATM withdrawal</span><span class="bar-track"><span class="bar-fill" style="width:33%"></span></span><span class="bar-value">₩1M / day</span></div>
+    <div class="bar-row"><span class="bar-label">At the teller</span><span class="bar-track"><span class="bar-fill alt" style="width:100%"></span></span><span class="bar-value">₩3M / day</span></div>
+  </div>
+  <figcaption class="figcap">It unlocks on evidence, not on elapsed time. Deposits and months of waiting do not move it — documents do.</figcaption>
+</figure>
+
 
 As of 2026, Article 2-6 of the Special Act on Telecommunications-based
 Financial Fraud obligates financial institutions to verify transaction

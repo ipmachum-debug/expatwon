@@ -37,11 +37,22 @@ faq:
   - question: 'Can foreigners get credit loans from Korean internet banks?'
     answer: 'Largely no, for now. Toss Bank''s foreigner services have covered deposits, transfers, ATM and check cards while unsecured credit lending has remained restricted, and no official source confirms general credit loans are open to foreigners in 2026. Automated underwriting leans on NICE/KCB files and verifiable Korean income — exactly where foreign thin-filers are weakest.'
 ---
-
 Before comparing Korea's three internet-only banks for foreigners, one
 fact has to be set straight: **as of August 2026, KakaoBank, Toss Bank
 and K bank do not offer anywhere near the same level of service to
 foreign customers.**
+
+<figure class="figure hero">
+  <p class="figure-title">Where the three internet banks stand for foreigners</p>
+  <p class="figure-sub">As of August 2026 — this is a moving picture, not a settled one</p>
+  <div class="check-card">
+    <div class="check-row ok"><span class="mark"></span><span><strong>Toss Bank</strong> — open to foreign residents today</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>K bank</strong> — launch planned for September 2026</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>KakaoBank</strong> — launch planned for Q4 2026</span></div>
+    <div class="check-result">Foreign-currency accounts remain Korean-nationals-only across all three, so an internet bank is a second account — not your main one.</div>
+  </div>
+</figure>
+
 
 Only one of the three has actually been operating remote first-account
 opening for registered foreigners: **Toss Bank**, which launched

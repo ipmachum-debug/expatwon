@@ -39,13 +39,24 @@ faq:
   - question: 'Does my credit history reset when my visa changes?'
     answer: 'No — as long as your records are managed under the same identification number, history persists across status changes. What changes is the non-financial risk banks see in their own screening: an F-5 permanent resident reads differently from an E-7 employee with limited remaining stay, which is why re-checking your loan terms after a status change is worthwhile.'
 ---
-
 The biggest credit problem a foreigner faces in Korea is usually not a low
 score. It is that **there is not enough data to score at all**. A few
 months into a Korean job, with no domestic card, loan, or installment
 history, the local credit bureaus cannot see the excellent borrower you may
 have been at home — NICE states plainly that when there is no information
 to evaluate, a personal credit score may not even be produced.
+
+<figure class="figure hero">
+  <p class="figure-title">A new arrival has no bad score. They have no file.</p>
+  <p class="figure-sub">Why "thin filer" and "low score" get treated the same and are not the same</p>
+  <div class="check-card">
+    <div class="check-row miss"><span class="mark"></span><span><strong>Thin file</strong> — nothing to score yet. Fixed by time and ordinary repayment history.</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>Damaged file</strong> — arrears on record. A different problem with a different remedy.</span></div>
+    <div class="check-result">₩100,000 unpaid for 5 days is enough to register as delinquency. That is how a thin file becomes a damaged one.</div>
+  </div>
+  <figcaption class="figcap">Two bureaus, NICE and KCB, score you separately — and neither score alone decides a loan.</figcaption>
+</figure>
+
 
 That state is the **thin filer**. And it reframes the task: a newly
 arrived foreigner's first objective is not a high score. It is creating

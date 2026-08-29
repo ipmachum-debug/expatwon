@@ -42,12 +42,25 @@ faq:
   - question: 'Are jeonse loans exempt from DSR?'
     answer: 'Not always anymore. Since October 29, 2025, when a single-home owner takes a jeonse loan in the capital region or a regulated area, the interest portion counts in DSR. Ordinary jeonse loans for non-owners have not been wholesale absorbed into DSR — but the old blanket statement “jeonse loans don’t count” is now wrong.'
 ---
-
 If you estimate a Korean mortgage by asking only "what percent of the
 home's price can I borrow?", you will get the number badly wrong. A house
 expensive enough to support ₩500M under LTV lends you only ₩300M if your
 income and existing debts cap DSR there. Flip it around: income good for
 ₩700M under DSR still yields at most ₩400M on a ₩1B home at 40% LTV.
+
+<figure class="figure hero">
+  <p class="figure-title">Your limit is the smallest of three, not the largest</p>
+  <p class="figure-sub">Each rule caps a different thing; the binding one wins</p>
+  <div class="flow">
+    <div class="flow-node"><strong>LTV — how much the property supports</strong><span class="sub">40–70% of value, by area and property type</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>DSR — how much your income supports</strong><span class="sub">40% at banks, 50% at non-banks, across all your debt</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>The product's own cap</strong><span class="sub">Set by the lender, independent of both rules above</span></div>
+  </div>
+  <figcaption class="figcap">Three ceilings, one room. Raising the two you are not touching changes nothing — find the binding constraint first.</figcaption>
+</figure>
+
 
 The working rule for a real-world limit:
 

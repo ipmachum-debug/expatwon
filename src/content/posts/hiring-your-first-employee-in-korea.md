@@ -40,11 +40,22 @@ faq:
   - question: 'My employee works under 15 hours a week. Are all four insurances waived?'
     answer: 'No. Very short hours change the treatment of some coverages and of severance entitlement, but each scheme has its own test — hours, days, and continuity of employment — and industrial accident insurance is not generally excluded for short hours at all. For a foreign employee, National Pension coverage depends additionally on nationality, any social security agreement, and reciprocity. Check each scheme separately rather than applying one rule.'
 ---
-
 The day you hire your first employee, the legal character of your
 business changes. A one-person company becomes an employer, and with that
 come duties on contracts, social insurance, withholding, working hours,
 holidays and severance.
+
+<figure class="figure hero">
+  <p class="figure-title">A ₩3,000,000 salary is not ₩3,000,000</p>
+  <p class="figure-sub">2026 rates, industrial accident at the 1.47% average, before income tax</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">You pay</span><span class="bar-track"><span class="bar-fill alt" style="width:100%"></span></span><span class="bar-value">₩3,593,000</span></div>
+    <div class="bar-row"><span class="bar-label">Contract salary</span><span class="bar-track"><span class="bar-fill" style="width:84%"></span></span><span class="bar-value">₩3,000,000</span></div>
+    <div class="bar-row"><span class="bar-label">They receive</span><span class="bar-track"><span class="bar-fill" style="width:76%"></span></span><span class="bar-value">₩2,708,000</span></div>
+  </div>
+  <figcaption class="figcap">Roughly 30% between what leaves your account and what arrives in theirs — employer insurance on top, employee insurance and income tax deducted below.</figcaption>
+</figure>
+
 
 Being a foreign owner changes none of this. A sole proprietorship or
 company you set up in Korea, employing someone in Korea, is inside Korean

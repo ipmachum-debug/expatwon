@@ -39,12 +39,27 @@ faq:
   - question: 'Should I use a bank or a remittance app?'
     answer: 'Small, regular transfers usually favor licensed fintech remitters, whose structure strips out cable and intermediary fees; large transfers are dominated by the FX spread, where negotiated bank rates win — a ₩10 rate difference on USD 100,000 is ₩1,000,000. And for corporate, investment, or property-related money, the lawful channel and documentation outrank price entirely.'
 ---
-
 The worst way to compare international transfers is the way everyone
 starts: "Service A charges ₩5,000, Service B is free." The real cost of a
 remittance is not the fee printed next to the send button. It is the gap
 between **the won you spent and the foreign currency your recipient
 finally received.**
+
+<figure class="figure hero">
+  <p class="figure-title">Five places a transfer loses money — only one is advertised</p>
+  <p class="figure-sub">Everything between the won leaving and the cash arriving</p>
+  <div class="flow">
+    <div class="flow-node"><strong>Sending fee</strong><span class="sub">The number in the ad</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>The FX spread</strong><span class="sub">Usually the largest single cost, and never called a fee</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>Intermediary bank deductions</strong><span class="sub">Taken in transit on a SWIFT wire; unpredictable in advance</span></div>
+    <div class="flow-arrow leak"></div>
+    <div class="flow-node"><strong>Cable charge, then the receiving bank's fee</strong></div>
+  </div>
+  <figcaption class="figcap">Compare services on one number only: the <strong>net amount received</strong> in the destination currency.</figcaption>
+</figure>
+
 
 A zero-fee transfer at a bad exchange rate is an expensive transfer. A
 ₩10,000-fee transfer with a tight spread and no intermediary deductions

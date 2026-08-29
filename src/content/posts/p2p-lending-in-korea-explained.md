@@ -35,7 +35,6 @@ faq:
   - question: 'Is a low published delinquency rate a sign of a safe platform?'
     answer: 'Not by itself. Fast-growing loan books dilute the ratio, extended loans may be counted as current, and sold-off bad debt can drop out of the statistics. Look instead at cumulative defaults versus cumulative originations, 90-day-plus delinquencies, and actual final recovery rates.'
 ---
-
 Korean P2P lending — legally, *online investment-linked finance* (온라인투자연계금융,
 "온투업") — is routinely misunderstood on both sides of the transaction.
 It is not a high-interest savings substitute for investors, and it is not
@@ -43,6 +42,18 @@ just "faster bank credit" for borrowers. The governing statute defines the
 structure precisely: an investor's money is linked to a loan made to a
 specific borrower, and the right to receive that loan's principal and
 interest belongs to the investor.
+
+<figure class="figure hero">
+  <p class="figure-title">Three caps define retail P2P investing</p>
+  <p class="figure-sub">Statutory limits under the Online Investment-Linked Finance Act</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">Per borrower</span><span class="bar-track"><span class="bar-fill" style="width:17%"></span></span><span class="bar-value">₩5M</span></div>
+    <div class="bar-row"><span class="bar-label">Per real-estate loan</span><span class="bar-track"><span class="bar-fill" style="width:33%"></span></span><span class="bar-value">₩10M</span></div>
+    <div class="bar-row"><span class="bar-label">Total invested</span><span class="bar-track"><span class="bar-fill alt" style="width:100%"></span></span><span class="bar-value">₩30M</span></div>
+  </div>
+  <figcaption class="figcap">The caps exist because the risk is single-name and illiquid: you cannot sell out of a loan that stops paying.</figcaption>
+</figure>
+
 
 That one sentence explains most of what follows. A bank takes deposits and
 lends off its own balance sheet — depositors are not exposed to any single

@@ -35,12 +35,22 @@ faq:
   - question: 'Why was I rejected with a NICE score above 900?'
     answer: 'Because no lender approves on a bureau score alone. Banks combine the CB score with their internal credit scoring system — transaction history, salary deposits, tenure, existing debt, and for foreigners, stay period and domestic financial history. A 900-score applicant with unverifiable income can lose to an 800-score applicant with three years of clean payroll data at the same bank.'
 ---
-
 Start by discarding two opposite errors. *"Foreigners can't get unsecured
 loans in Korea"* is wrong — foreigner credit loan products exist today
 with published terms, and some explicitly accept E-9 workers and D-2
 students. But *"it works like a Korean salaryman's loan — score plus
 salary, auto-approved"* is equally wrong.
+
+<figure class="figure hero">
+  <p class="figure-title">What ₩20,000,000 over 36 months actually costs</p>
+  <p class="figure-sub">Total interest, by the rate your credit file earns you</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">6% — bank tier</span><span class="bar-track"><span class="bar-fill" style="width:36%"></span></span><span class="bar-value">≈ ₩1.9M</span></div>
+    <div class="bar-row"><span class="bar-label">16% — second tier</span><span class="bar-track"><span class="bar-fill alt" style="width:100%"></span></span><span class="bar-value">≈ ₩5.3M</span></div>
+  </div>
+  <figcaption class="figcap">Same principal, same term, ₩3.4M apart. The rate is set by credit data and declared income — which is why the documentation work pays better than shopping for lenders.</figcaption>
+</figure>
+
 
 With no collateral in the picture, the lender simultaneously weighs your
 stay stability, Korean employment, declared income, credit file, and

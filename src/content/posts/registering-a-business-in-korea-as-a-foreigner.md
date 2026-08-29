@@ -33,10 +33,25 @@ faq:
   - question: 'Can I get a business loan as soon as I register?'
     answer: 'No — a business registration certificate is an administrative document, not a credit file. Lenders look for repayment sources: declared income, VAT-reported and card revenue, tax compliance, and tenure for sole proprietors; financial statements, cash flow, and often the CEO’s personal credit and guarantee for young corporations.'
 ---
-
 The first distinction a foreigner starting a business in Korea must make is
 between two questions that sound identical and are not: *can I register a
 business*, and *does my current visa allow me to actually run it?*
+
+<figure class="figure hero">
+  <p class="figure-title">Two authorities, and neither validates the other</p>
+  <p class="figure-sub">A business registration certificate is a tax document, not permission</p>
+  <div class="flow">
+    <div class="flow-node"><strong>1 · Confirm the residence status permits the activity</strong><span class="sub">D-8-1 from ₩100M with 10% of shares; D-9 from ₩300M for a sole trader</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>2 · Remit the capital and file the foreign-investment report</strong></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>3 · Register the business at the tax office</strong><span class="sub">Within 20 days of commencing</span></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node"><strong>4 · Open the corporate account</strong><span class="sub">Where the AML review actually happens</span></div>
+  </div>
+  <figcaption class="figcap">The tax office will register something your visa does not allow. It is not their job to stop you.</figcaption>
+</figure>
+
 
 The National Tax Service's business registration is a **tax** procedure —
 it registers you as a business operator. Your status of stay is an

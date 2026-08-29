@@ -37,12 +37,23 @@ faq:
   - question: 'Can foreigners use Korea''s policy loans for low-credit borrowers?'
     answer: 'Sometimes, but never assume it. Programs like the mid-rate living stability loan (2026: up to ₩10M total, 5.9–15.27%) and the Sunshine Loan family publish their own nationality and residence conditions, and being a registered foreigner does not automatically qualify you. Check eligibility formally before taking a high-rate commercial loan — the policy option, where you qualify, is usually cheaper.'
 ---
-
 The cost of a second-tier loan in Korea is not the contract rate. Savings
 banks and capital companies accept risk that banks decline, and they
 price that risk — but the borrower repays it twice: once in interest,
 and again later in refinancing options, DSR headroom, credit
 assessment, and the price of the *next* loan.
+
+<figure class="figure hero">
+  <p class="figure-title">₩30,000,000 over 36 months, by tier</p>
+  <p class="figure-sub">Total interest paid — the number the monthly payment hides</p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-label">5% — bank</span><span class="bar-track"><span class="bar-fill" style="width:30%"></span></span><span class="bar-value">≈ ₩2.37M</span></div>
+    <div class="bar-row"><span class="bar-label">11% — savings bank</span><span class="bar-track"><span class="bar-fill" style="width:67%"></span></span><span class="bar-value">≈ ₩5.36M</span></div>
+    <div class="bar-row"><span class="bar-label">16% — capital firm</span><span class="bar-track"><span class="bar-fill alt" style="width:100%"></span></span><span class="bar-value">≈ ₩7.97M</span></div>
+  </div>
+  <figcaption class="figcap">Second-tier credit is not a cheaper bank. It is a different price for the same money — enter only with a plan to leave.</figcaption>
+</figure>
+
 
 Equally, the folklore in the other direction is wrong. *"Touch a savings
 bank and your score collapses by tens of points and banks lock you out
