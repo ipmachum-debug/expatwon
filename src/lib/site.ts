@@ -7,15 +7,15 @@ export const SITE_DESCRIPTION =
  * AdSense publisher ID, e.g. 'ca-pub-1234567890123456'.
  * Empty string = no AdSense markup is emitted anywhere.
  *
- * Set this to the ID Google gives you when you start the application; it
- * makes BaseHead emit the site-verification meta tag on every page, which
- * is one of the three accepted verification methods (the others being the
- * AdSense code snippet and an ads.txt line).
+ * When set, BaseHead emits both the AdSense code snippet and the
+ * google-adsense-account meta tag on every page. The snippet is the
+ * verification method selected for this site, and is also the loader the
+ * ad units need after approval.
  *
  * This is a PUBLIC identifier that appears in page source — it is not a
  * secret and belongs in the repo. Never put an API key or token here.
  */
-export const ADSENSE_PUBLISHER_ID = '';
+export const ADSENSE_PUBLISHER_ID = 'ca-pub-6014562863132369';
 
 /**
  * Manual exchange rate — a deliberate constant, not a live API.

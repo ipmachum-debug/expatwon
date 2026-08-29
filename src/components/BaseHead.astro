@@ -21,7 +21,14 @@ const fullTitle = title === SITE_TITLE ? `${title} — Money in Korea for Expats
 <meta name="theme-color" content="#0b1220" />
 {
   ADSENSE_PUBLISHER_ID && (
-    <meta name="google-adsense-account" content={ADSENSE_PUBLISHER_ID} />
+    <>
+      <meta name="google-adsense-account" content={ADSENSE_PUBLISHER_ID} />
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUBLISHER_ID}`}
+        crossorigin="anonymous"
+      />
+    </>
   )
 }
 
