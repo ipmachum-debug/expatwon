@@ -294,8 +294,9 @@ rental, and car sharing on total cost before committing to ownership.
 
 For settled residents (F-2/F-4/F-5/F-6) with a clear commuting or family
 need, ownership is often rational — evaluated as **total cost of
-ownership**: purchase, insurance, financing, and eventual disposal
-together.
+ownership**: purchase, insurance, financing, the
+[annual taxes and inspection cycle](/cars/car-ownership-taxes-and-costs-korea/),
+and eventual disposal together.
 
 The foreigner-specific playbook is short: insurance in your name before
 registration; the transfer-document chain verified; CarHistory pulled by

@@ -4,7 +4,6 @@ description: 'Acquisition tax, the engine-size annual tax, registration bonds an
 category: cars
 publishDate: 2026-08-30
 updatedDate: 2026-08-30
-draft: true
 tags: [cars, tax, acquisition-tax, inspection, cost-of-ownership]
 sources:
   - label: 'Local Tax Act Art. 12 — acquisition tax rates for motor vehicles (7% passenger, 4% light, 5% other non-commercial, 4% commercial)'

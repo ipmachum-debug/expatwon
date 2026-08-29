@@ -295,6 +295,14 @@ as every other foreigner credit decision.
   cash purchase on capital efficiency; a cash-rich company facing
   expensive auto financing may rationally buy outright.
 
+One line of that total is fixed by law rather than by the product you
+choose: acquisition tax and registration costs on the way in, then the
+engine-size annual tax and the statutory inspection for as long as the
+car is registered to you — set out in
+[car ownership taxes and costs](/cars/car-ownership-taxes-and-costs-korea/).
+Under a rental contract those sit with the rental company and are priced
+into the monthly figure; buy the car and they are yours to carry.
+
 The question is never "how much per month?" It is:
 
 > **Over five years, how much leaves my account in total — and what
