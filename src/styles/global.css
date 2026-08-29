@@ -17,8 +17,20 @@
   html {
     scroll-behavior: smooth;
   }
+  /*
+   * Category identity. PostLayout and the category pages override these on a
+   * wrapper element; everything below reads the variables, so one page-level
+   * declaration re-colours rules, table headers, bar fills, callouts and step
+   * markers together. Defaults are the Banking blue.
+   */
+  :root {
+    --cat-accent: #2563eb;
+    --cat-ink: #1d4ed8;
+    --cat-tint: #eff6ff;
+    --cat-line: #bfdbfe;
+  }
   body {
-    @apply bg-white text-slate-700 antialiased;
+    @apply bg-white text-slate-800 antialiased;
     font-feature-settings: 'ss01', 'cv11';
   }
   ::selection {
@@ -28,10 +40,15 @@
 
 /* Long-form article styling without the typography plugin. */
 .prose-article {
-  @apply text-[1.0625rem] leading-[1.75] text-slate-700;
+  @apply text-[1.0625rem] leading-[1.75] text-slate-800;
 }
 .prose-article h2 {
-  @apply mt-12 mb-4 font-display text-[1.75rem] leading-snug font-semibold text-ink;
+  @apply relative mt-14 mb-4 pt-5 font-display text-[1.75rem] leading-snug font-semibold text-ink;
+}
+.prose-article h2::before {
+  content: '';
+  @apply absolute top-0 left-0 h-[3px] w-10 rounded-full;
+  background: var(--cat-accent);
 }
 .prose-article h3 {
   @apply mt-8 mb-3 text-xl font-semibold text-ink;
@@ -44,19 +61,24 @@
   @apply my-4 list-outside space-y-1.5 pl-6;
 }
 .prose-article ul {
-  @apply list-disc marker:text-blue-500;
+  @apply list-disc;
+  &::marker { color: var(--cat-accent); }
 }
 .prose-article ol {
-  @apply list-decimal marker:font-semibold marker:text-blue-600;
+  @apply list-decimal marker:font-semibold;
+  &::marker { color: var(--cat-accent); }
 }
 .prose-article a {
-  @apply font-medium text-accent-dark underline decoration-blue-300 underline-offset-[3px] transition-colors hover:decoration-blue-600;
+  @apply font-medium underline decoration-current/35 underline-offset-[3px] transition-colors hover:decoration-current;
+  color: var(--cat-ink);
 }
 .prose-article table {
   @apply my-6 w-full border-collapse text-sm;
 }
 .prose-article thead th {
-  @apply border-b-2 border-blue-200 bg-blue-50/70 px-3.5 py-2.5 text-left font-semibold text-ink;
+  @apply border-b-2 px-3.5 py-2.5 text-left font-semibold text-ink;
+  border-color: var(--cat-accent);
+  background: var(--cat-tint);
 }
 .prose-article thead th:first-child {
   @apply rounded-tl-lg;
@@ -71,13 +93,16 @@
   @apply bg-slate-50/70;
 }
 .prose-article blockquote {
-  @apply my-6 rounded-r-lg border-l-4 border-blue-300 bg-blue-50/50 py-2 pr-4 pl-4 text-slate-600 italic;
+  @apply my-7 rounded-r-xl border-l-4 py-3 pr-5 pl-5 font-display text-[1.15rem] leading-relaxed font-medium text-ink not-italic;
+  border-color: var(--cat-accent);
+  background: var(--cat-tint);
 }
 .prose-article code {
   @apply rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em];
 }
 .prose-article > p:first-of-type {
-  @apply text-lg text-slate-600;
+  @apply mb-6 border-l-[3px] py-1 pl-5 text-[1.2rem] leading-[1.65] font-medium text-ink;
+  border-color: var(--cat-accent);
 }
 
 /* ---------------------------------------------------------------------------
@@ -104,10 +129,11 @@
   @apply mb-1.5 text-[0.78rem] font-bold tracking-wider uppercase;
 }
 .prose-article .callout-note {
-  @apply border-blue-200 bg-blue-50/70;
+  border-color: var(--cat-line);
+  background: var(--cat-tint);
 }
 .prose-article .callout-note .callout-title {
-  @apply text-blue-700;
+  color: var(--cat-ink);
 }
 .prose-article .callout-tip {
   @apply border-emerald-200 bg-emerald-50/70;
@@ -137,16 +163,30 @@
  * ------------------------------------------------------------------------- */
 
 .prose-article .figure {
-  @apply my-8 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6;
+  @apply my-9 overflow-hidden rounded-2xl border bg-white;
+  border-color: var(--cat-line);
+}
+.prose-article .figure > :not(.figure-title):not(.figure-sub) {
+  @apply mx-5 sm:mx-6;
 }
 .prose-article .figure-title {
-  @apply my-0 text-[0.95rem] font-bold text-ink;
+  @apply mt-0 mb-0 border-b px-5 pt-4 pb-0 text-[0.95rem] font-bold text-ink sm:px-6;
+  background: var(--cat-tint);
+  border-color: transparent;
 }
 .prose-article .figure-sub {
-  @apply mt-0.5 mb-0 text-[0.8rem] text-slate-400;
+  @apply mt-0.5 mb-0 px-5 pb-4 text-[0.8rem] sm:px-6;
+  background: var(--cat-tint);
+  color: var(--cat-ink);
+}
+.prose-article .figure > .figure-sub + * {
+  @apply mt-5;
+}
+.prose-article .figure > :last-child {
+  @apply mb-5 sm:mb-6;
 }
 .prose-article .figcap {
-  @apply mt-4 border-t border-slate-100 pt-3 text-[0.8rem] leading-relaxed text-slate-400;
+  @apply mt-5 border-t border-slate-100 pt-3 pb-0 text-[0.8rem] leading-relaxed text-slate-500;
 }
 
 /* Labeled horizontal bars (single measure, one axis). */
@@ -157,13 +197,14 @@
   @apply grid grid-cols-[minmax(6rem,9rem)_1fr_auto] items-center gap-3;
 }
 .prose-article .bar-label {
-  @apply text-[0.8rem] leading-tight text-slate-500;
+  @apply text-[0.8rem] leading-tight text-slate-600;
 }
 .prose-article .bar-track {
   @apply block h-4 overflow-hidden rounded-r bg-slate-100;
 }
 .prose-article .bar-fill {
-  @apply block h-full rounded-r bg-accent;
+  @apply block h-full rounded-r;
+  background: var(--cat-accent);
 }
 .prose-article .bar-fill.alt {
   @apply bg-gold;
@@ -194,23 +235,25 @@
   @apply mt-5;
 }
 .prose-article .flow-node {
-  @apply rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-[0.92rem] leading-snug;
+  @apply rounded-xl border-l-[3px] border-y border-r border-y-slate-200 border-r-slate-200 bg-slate-50/80 px-4 py-3 text-[0.92rem] leading-snug;
+  border-left-color: var(--cat-accent);
 }
 .prose-article .flow-node strong {
   @apply text-ink;
 }
 .prose-article .flow-node .sub {
-  @apply mt-0.5 block text-[0.8rem] text-slate-400;
+  @apply mt-0.5 block text-[0.8rem] text-slate-500;
 }
 .prose-article .flow-node + .flow-node {
   @apply mt-2;
 }
 .prose-article .flow-arrow {
-  @apply flex items-center gap-2 py-1.5 pl-5 text-[0.8rem] text-slate-400;
+  @apply flex items-center gap-2 py-1.5 pl-5 text-[0.8rem] text-slate-500;
 }
 .prose-article .flow-arrow::before {
   content: '↓';
-  @apply font-bold text-blue-400;
+  @apply font-bold;
+  color: var(--cat-accent);
 }
 .prose-article .flow-arrow.leak {
   @apply text-amber-700;
@@ -225,7 +268,7 @@
   @apply mt-5 space-y-2;
 }
 .prose-article .check-row {
-  @apply flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50/60 px-4 py-2.5 text-[0.92rem];
+  @apply flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-[0.92rem];
 }
 .prose-article .check-row .mark {
   @apply flex h-6 w-6 flex-none items-center justify-center rounded-full text-[0.8rem] font-bold;
@@ -251,13 +294,15 @@
 }
 .prose-article .step::before {
   content: '';
-  @apply absolute top-10 bottom-0 left-[1.05rem] w-px bg-blue-200;
+  @apply absolute top-10 bottom-0 left-[1.05rem] w-px;
+  background: var(--cat-line);
 }
 .prose-article .step:last-child::before {
   @apply hidden;
 }
 .prose-article .step-num {
-  @apply z-10 flex h-9 w-9 flex-none items-center justify-center rounded-full bg-accent text-sm font-bold text-white shadow-sm;
+  @apply z-10 flex h-9 w-9 flex-none items-center justify-center rounded-full text-sm font-bold text-white shadow-sm;
+  background: var(--cat-accent);
 }
 .prose-article .step-body {
   @apply pt-1.5 text-[0.97rem] leading-relaxed;

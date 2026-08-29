@@ -5,7 +5,7 @@ import AdSlot from '../components/AdSlot.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import SourcesFooter from '../components/SourcesFooter.astro';
-import { getCategory } from '../lib/categories';
+import { categoryVars, getCategory } from '../lib/categories';
 import { SITE_TITLE, SITE_URL } from '../lib/site';
 import Layout from './Layout.astro';
 
@@ -80,7 +80,7 @@ const faqSchema =
     }
   </Fragment>
 
-  <article class="mx-auto max-w-3xl">
+  <article class="mx-auto max-w-3xl" style={categoryVars(category)}>
     <nav class="mb-5 text-sm text-slate-400">
       <a href="/" class="hover:text-ink">Home</a>
       <span class="mx-1.5">/</span>
