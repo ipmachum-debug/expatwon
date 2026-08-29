@@ -81,7 +81,7 @@ P6가 외환·송금·카드 중심이 되었으므로 "실측 생활비 숫자"
 - ✅ ★★ jeonse-vs-wolse-korean-rental-system — 보증금=신용공여 프레임, 전환율·회수위험·HUG/HF 구분 (2026-08-23 발행)
 - ✅ ★ rental-deposit-protection-korea — 등기부·대항력/확정일자·126% 룰·임차권등기 (2026-08-23 발행) — Phase 1 완료, 15편 도달
 - ✅ korean-phone-plans-for-foreigners — 본인인증 인프라 프레임·4대 확인조건·프로모션 24개월 평균 (2026-08-23 발행)
-- utilities-and-maintenance-fees-korea — 공과금·관리비 구조
+- 🕒 utilities-and-maintenance-fees-korea — 장기수선충당금 반환청구·전기 누진 기본요금 절벽·정액관리비 10만원 고시 (2026-09-02 예약, draft)
 - seoul-vs-busan-vs-smaller-cities-costs — 도시별 비교 → 생활비 계산기 링크
 - monthly-budget-single-expat-seoul — 실계산 예시 → 생활비 계산기 링크
 
