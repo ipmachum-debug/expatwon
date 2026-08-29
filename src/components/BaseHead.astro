@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SITE_URL } from '../lib/site';
+import { ADSENSE_PUBLISHER_ID, SITE_TITLE, SITE_URL } from '../lib/site';
 
 interface Props {
   title: string;
@@ -19,6 +19,11 @@ const fullTitle = title === SITE_TITLE ? `${title} — Money in Korea for Expats
 <link rel="canonical" href={canonical} />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="theme-color" content="#0b1220" />
+{
+  ADSENSE_PUBLISHER_ID && (
+    <meta name="google-adsense-account" content={ADSENSE_PUBLISHER_ID} />
+  )
+}
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
