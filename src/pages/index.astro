@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
+import LeadCard from '../components/LeadCard.astro';
 import PostCard from '../components/PostCard.astro';
 import Layout from '../layouts/Layout.astro';
 import { CATEGORIES } from '../lib/categories';
@@ -9,7 +10,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../lib/site';
 const posts = (await getCollection('posts', (p) => !p.data.draft)).sort(
   (a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf(),
 );
-const latest = posts.slice(0, 6);
+const [lead, ...latest] = posts.slice(0, 5);
 
 const tools = [
   {
@@ -94,7 +95,8 @@ const tools = [
         View all {posts.length} guides →
       </a>
     </div>
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <LeadCard post={lead} />
+    <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {latest.map((post) => <PostCard post={post} />)}
     </div>
   </section>
