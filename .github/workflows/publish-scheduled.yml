@@ -1,0 +1,54 @@
+name: Publish scheduled posts
+
+# 08:30 Asia/Seoul = 23:30 UTC the previous day.
+# GitHub's scheduler is best-effort and can run late under load, so treat this
+# as "some time after 08:30", not a guaranteed minute.
+on:
+  schedule:
+    - cron: '30 23 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-scheduled
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Publish any draft whose date has arrived
+        id: flip
+        run: |
+          node scripts/publish-due-drafts.mjs | tee out.txt
+          echo "count=$(grep -oP '::count::\K\d+' out.txt)" >> "$GITHUB_OUTPUT"
+          rm out.txt
+
+      - name: Install dependencies
+        if: steps.flip.outputs.count != '0'
+        run: npm ci
+
+      # Never push something that would not build. A red site is worse than a
+      # post that goes out a day late.
+      - name: Verify
+        if: steps.flip.outputs.count != '0'
+        run: |
+          npm run lint:seo
+          npm run build
+
+      - name: Commit and push
+        if: steps.flip.outputs.count != '0'
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/content/posts
+          git commit -m "post: publish scheduled guide(s) for $(TZ=Asia/Seoul date +%Y-%m-%d)"
+          git push

@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint:seo": "node scripts/lint-seo.mjs",
-    "audit": "node scripts/audit-freshness.mjs"
+    "audit": "node scripts/audit-freshness.mjs",
+    "publish:due": "node scripts/publish-due-drafts.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
