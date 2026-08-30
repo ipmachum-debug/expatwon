@@ -56,6 +56,8 @@ management, security, cleaning, lift upkeep and heating.
   <figcaption class="figcap">Most tenants never learn that line was theirs to reclaim.</figcaption>
 </figure>
 
+<p class="hand">Ask the management office on your way out. It is fifteen minutes for money that is already yours.</p>
+
 
 For a foreign tenant, the difficulty is rarely the amount. It is **who
 bears which cost, and where one occupant's period ends and the next

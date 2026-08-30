@@ -54,6 +54,8 @@ Koreans use, on the same terms — is not accurate either.
   <figcaption class="figcap">The bank quotes the first number. You receive the third. Illustrative figures — the point is the structure, not the amounts.</figcaption>
 </figure>
 
+<p class="hand">Ask which of the four caps is binding. If the branch cannot tell you, ask a different branch.</p>
+
 
 A foreigner's jeonse loan executes only when several things line up at
 once: the bank's own credit screen, a guarantee institution willing to

@@ -5,11 +5,11 @@ import Logo from './Logo.astro';
 const year = new Date().getFullYear();
 ---
 
-<footer class="mt-20 bg-ink text-slate-400">
+<footer class="mt-20 border-t-2 border-ink bg-paper-deep text-ink-soft">
   <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
     <div>
       <a href="/" class="inline-block transition-opacity hover:opacity-85">
-        <Logo variant="light" tagline />
+        <Logo variant="dark" tagline />
       </a>
       <p class="mt-4 max-w-sm text-sm leading-relaxed">
         Money &amp; life in Korea, explained for expats — how it works and what
@@ -18,7 +18,7 @@ const year = new Date().getFullYear();
       </p>
     </div>
     <nav>
-      <h2 class="mb-3 text-xs font-semibold tracking-widest text-slate-500 uppercase">Topics</h2>
+      <h2 class="mb-3 text-xs font-semibold tracking-widest text-ink uppercase">Topics</h2>
       <ul class="space-y-2 text-sm">
         {
           CATEGORIES.map((c) => (
@@ -32,7 +32,7 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
     <nav>
-      <h2 class="mb-3 text-xs font-semibold tracking-widest text-slate-500 uppercase">Site</h2>
+      <h2 class="mb-3 text-xs font-semibold tracking-widest text-ink uppercase">Site</h2>
       <ul class="space-y-2 text-sm">
         <li><a href="/articles/" class="transition-colors hover:text-white">All guides</a></li>
         <li><a href="/updates/" class="transition-colors hover:text-white">Updates &amp; revisions</a></li>
@@ -45,7 +45,7 @@ const year = new Date().getFullYear();
     </nav>
   </div>
   <div class="border-t border-white/10">
-    <p class="mx-auto max-w-6xl px-4 py-5 text-xs text-slate-500 sm:px-6">
+    <p class="mx-auto max-w-6xl px-4 py-5 text-xs text-ink-soft/85 sm:px-6">
       &copy; {year} ExpatWon.com · Rules and figures change — always confirm with the official sources linked in each article.
     </p>
   </div>

@@ -14,7 +14,7 @@ const facts = post.data.keyFacts?.slice(0, 3) ?? [];
 ---
 
 <article
-  class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/60 sm:p-9"
+  class="group relative flex flex-col justify-between overflow-hidden rounded-lg border p-7 shadow-[4px_5px_0_rgba(34,28,20,0.06)] transition-transform duration-200 hover:-translate-y-0.5 sm:p-9"
   style={`${categoryVars(category)};border-color:var(--cat-line);background:var(--cat-tint)`}
 >
   <span
@@ -23,7 +23,7 @@ const facts = post.data.keyFacts?.slice(0, 3) ?? [];
     aria-hidden="true"></span>
 
   <div class="relative">
-    <p class="mb-4 flex items-center gap-2.5 text-[0.7rem] font-semibold tracking-wider uppercase" style="color:var(--cat-ink)">
+    <p class="mb-4 flex items-center gap-2.5 font-sans text-[0.66rem] font-bold tracking-[0.14em] uppercase" style="color:var(--cat-ink)">
       <span class="inline-block h-2 w-2 rounded-full" style="background:var(--cat-accent)"></span>
       Latest · {category.shortTitle}
     </p>
@@ -32,7 +32,7 @@ const facts = post.data.keyFacts?.slice(0, 3) ?? [];
         {post.data.title}
       </a>
     </h3>
-    <p class="mb-6 max-w-2xl text-[1.02rem] leading-relaxed text-slate-600">
+    <p class="mb-6 max-w-2xl text-[1.02rem] leading-relaxed text-ink-soft">
       {post.data.description}
     </p>
   </div>
@@ -43,16 +43,16 @@ const facts = post.data.keyFacts?.slice(0, 3) ?? [];
         <dl class="mb-5 flex flex-wrap gap-x-8 gap-y-3 border-t pt-5" style="border-color:var(--cat-line)">
           {facts.map((fact) => (
             <div>
-              <dt class="text-[0.68rem] font-semibold tracking-wider uppercase" style="color:var(--cat-ink)">
+              <dt class="font-sans text-[0.64rem] font-bold tracking-[0.14em] uppercase" style="color:var(--cat-ink)">
                 {fact.label}
               </dt>
-              <dd class="mt-0.5 text-[0.98rem] font-semibold text-ink">{fact.value}</dd>
+              <dd class="mt-1 font-sans text-[1rem] font-bold text-ink tabular-nums">{fact.value}</dd>
             </div>
           ))}
         </dl>
       )
     }
-    <p class="flex items-center gap-2 text-xs text-slate-500">
+    <p class="flex items-center gap-2 font-sans text-[0.72rem] text-ink-soft/70">
       <span>Updated <FormattedDate date={post.data.updatedDate} /></span>
       <span class="transition-transform group-hover:translate-x-0.5" style="color:var(--cat-accent)" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">

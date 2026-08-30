@@ -50,7 +50,7 @@ const lastChange = entries[0]?.date;
       <h1 class="mb-3 font-display text-[2.5rem] leading-tight font-bold text-ink sm:text-[2.9rem]">
         Updates &amp; revisions
       </h1>
-      <p class="max-w-2xl text-lg leading-relaxed text-slate-500">
+      <p class="max-w-2xl text-lg leading-relaxed text-ink-soft/85">
         Korean financial rules move. When a rate, a cap or a rule changes, we
         update the guide and log it here rather than silently overwriting the
         old figure — so you can always see what changed, when, and on whose
@@ -59,28 +59,28 @@ const lastChange = entries[0]?.date;
     </header>
 
     <div class="mb-10 flex flex-wrap gap-3">
-      <div class="min-w-[150px] flex-1 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3">
-        <div class="text-[0.68rem] font-semibold tracking-wider text-slate-400 uppercase">
+      <div class="min-w-[150px] flex-1 rounded-xl border border-rule bg-white px-4 py-3">
+        <div class="text-[0.68rem] font-semibold tracking-wider text-ink-soft/65 uppercase">
           Guides maintained
         </div>
         <div class="mt-0.5 text-[0.95rem] font-semibold text-ink">{posts.length}</div>
       </div>
-      <div class="min-w-[150px] flex-1 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3">
-        <div class="text-[0.68rem] font-semibold tracking-wider text-slate-400 uppercase">
+      <div class="min-w-[150px] flex-1 rounded-xl border border-rule bg-white px-4 py-3">
+        <div class="text-[0.68rem] font-semibold tracking-wider text-ink-soft/65 uppercase">
           Logged revisions
         </div>
         <div class="mt-0.5 text-[0.95rem] font-semibold text-ink">{substantive.length}</div>
       </div>
-      <div class="min-w-[150px] flex-1 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3">
-        <div class="text-[0.68rem] font-semibold tracking-wider text-slate-400 uppercase">
+      <div class="min-w-[150px] flex-1 rounded-xl border border-rule bg-white px-4 py-3">
+        <div class="text-[0.68rem] font-semibold tracking-wider text-ink-soft/65 uppercase">
           Re-check cycle
         </div>
         <div class="mt-0.5 text-[0.95rem] font-semibold text-ink">Every 6 months</div>
       </div>
       {
         lastChange && (
-          <div class="min-w-[150px] flex-1 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3">
-            <div class="text-[0.68rem] font-semibold tracking-wider text-slate-400 uppercase">
+          <div class="min-w-[150px] flex-1 rounded-xl border border-rule bg-white px-4 py-3">
+            <div class="text-[0.68rem] font-semibold tracking-wider text-ink-soft/65 uppercase">
               Last change
             </div>
             <div class="mt-0.5 text-[0.95rem] font-semibold text-ink">
@@ -94,23 +94,23 @@ const lastChange = entries[0]?.date;
     {
       months.map((month) => (
         <section class="mb-10">
-          <h2 class="mb-4 border-b border-slate-200 pb-2 font-display text-xl font-semibold text-ink">
+          <h2 class="mb-4 border-b border-rule pb-2 font-display text-xl font-semibold text-ink">
             {month.label}
           </h2>
           <ol class="space-y-3">
             {month.items.map((e) => (
-              <li class="flex flex-col gap-1 rounded-xl border border-slate-200 px-4 py-3 sm:flex-row sm:items-baseline sm:gap-4">
-                <span class="flex-none text-xs whitespace-nowrap text-slate-400 sm:w-24">
+              <li class="flex flex-col gap-1 rounded-xl border border-rule px-4 py-3 sm:flex-row sm:items-baseline sm:gap-4">
+                <span class="flex-none text-xs whitespace-nowrap text-ink-soft/65 sm:w-24">
                   <FormattedDate date={e.date} />
                 </span>
                 <span class="min-w-0 flex-1">
                   <a
                     href={`/${e.category.slug}/${e.post.id}/`}
-                    class="block font-semibold text-ink hover:text-accent-dark"
+                    class="block font-semibold text-ink hover:text-gold"
                   >
                     {e.post.data.title}
                   </a>
-                  <span class="mt-0.5 block text-[0.9rem] leading-relaxed text-slate-500">
+                  <span class="mt-0.5 block text-[0.9rem] leading-relaxed text-ink-soft/85">
                     {e.isPublication ? 'First published.' : e.change}
                     {e.source && (
                       <a
@@ -126,7 +126,7 @@ const lastChange = entries[0]?.date;
                 </span>
                 <span
                   class={`w-fit flex-none rounded-full px-2.5 py-0.5 text-[0.68rem] font-semibold tracking-wider uppercase ${
-                    e.isPublication ? 'bg-slate-100 text-slate-500' : e.category.chip
+                    e.isPublication ? 'bg-paper-deep text-ink-soft/85' : e.category.chip
                   }`}
                 >
                   {e.isPublication ? 'New' : 'Revised'}

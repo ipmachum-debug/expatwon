@@ -52,6 +52,8 @@ account.**
   <figcaption class="figcap">It unlocks on evidence, not on elapsed time. Deposits and months of waiting do not move it — documents do.</figcaption>
 </figure>
 
+<p class="hand">Waiting quietly is the one strategy that never works here.</p>
+
 
 As of 2026, Article 2-6 of the Special Act on Telecommunications-based
 Financial Fraud obligates financial institutions to verify transaction

@@ -32,7 +32,7 @@ const tools = [
 >
   <header class="mb-10">
     <h1 class="mb-3 font-display text-4xl font-bold text-ink">Calculators</h1>
-    <p class="max-w-2xl text-slate-500">
+    <p class="max-w-2xl text-ink-soft/85">
       Quick tools for the money decisions expats actually face in Korea. All
       calculations run in your browser — nothing is stored or sent anywhere.
     </p>
@@ -43,9 +43,9 @@ const tools = [
       tools.map((t) => (
         <a
           href={t.href}
-          class="group rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/60"
+          class="group rounded-2xl border border-rule bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/60"
         >
-          <span class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent-dark">
+          <span class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-deep text-gold">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -57,10 +57,10 @@ const tools = [
               set:html={t.icon}
             />
           </span>
-          <h2 class="mb-1.5 font-display text-xl font-semibold text-ink group-hover:text-accent-dark">
+          <h2 class="mb-1.5 font-display text-xl font-semibold text-ink group-hover:text-gold">
             {t.title}
           </h2>
-          <p class="text-sm leading-relaxed text-slate-500">{t.description}</p>
+          <p class="text-sm leading-relaxed text-ink-soft/85">{t.description}</p>
         </a>
       ))
     }

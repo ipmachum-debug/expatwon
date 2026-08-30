@@ -52,6 +52,8 @@ the vehicle and legally disposing of it are two different acts.**
   <figcaption class="figcap">And close the Korean bank account last — the tax and insurance refunds need somewhere to land.</figcaption>
 </figure>
 
+<p class="hand">I have watched people hand over keys at the airport and pay someone else's parking fines for a year.</p>
+
 
 Giving a dealer the keys does not end your position. Your legal
 relationship to the car ends when the **vehicle register** shows either

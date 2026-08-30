@@ -53,6 +53,8 @@ contract.
   <figcaption class="figcap">A day's delay on step one is a day in which a mortgage can be registered ahead of you.</figcaption>
 </figure>
 
+<p class="hand">Do the registration and the fixed date on the same morning. Not the same week — the same morning.</p>
+
 
 Which means a jeonse contract's safety is never judged by the landlord's
 demeanor or the agent's reassurance. It is judged in a fixed order: the

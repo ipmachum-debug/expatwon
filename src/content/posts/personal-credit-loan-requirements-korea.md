@@ -51,6 +51,8 @@ salary, auto-approved"* is equally wrong.
   <figcaption class="figcap">Same principal, same term, ₩3.4M apart. The rate is set by credit data and declared income — which is why the documentation work pays better than shopping for lenders.</figcaption>
 </figure>
 
+<p class="hand">Spend the week on your documents, not on shopping for lenders. The rate is decided before you apply.</p>
+
 
 With no collateral in the picture, the lender simultaneously weighs your
 stay stability, Korean employment, declared income, credit file, and

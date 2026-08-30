@@ -54,6 +54,8 @@ driving record.
   <figcaption class="figcap">Underneath both sits the real gate: alien registration. Without it there is no ordinary exchange route at all.</figcaption>
 </figure>
 
+<p class="hand">Check the recognised-country list on the day you go. It moves, and nobody announces it.</p>
+
 
 An international driving permit (IDP) does not do that job. The Road
 Traffic Act allows someone who has entered the country lawfully and

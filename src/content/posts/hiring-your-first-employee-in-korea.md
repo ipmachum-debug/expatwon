@@ -56,6 +56,8 @@ holidays and severance.
   <figcaption class="figcap">Roughly 30% between what leaves your account and what arrives in theirs — employer insurance on top, employee insurance and income tax deducted below.</figcaption>
 </figure>
 
+<p class="hand">Budget the fifth hire before you make the fourth. That is where the rules change.</p>
+
 
 Being a foreign owner changes none of this. A sole proprietorship or
 company you set up in Korea, employing someone in Korea, is inside Korean

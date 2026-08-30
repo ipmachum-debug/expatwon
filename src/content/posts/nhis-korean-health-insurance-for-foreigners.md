@@ -51,6 +51,8 @@ changes the arithmetic completely.
   <figcaption class="figcap">Which is why the six months before employment starts is the expensive window — and why the enrolment route is worth planning, not discovering.</figcaption>
 </figure>
 
+<p class="hand">Of everything on this site, this is the one bill I would never let slide.</p>
+
 
 In 2026, the foreigner regional average premium is **₩158,630 per month** —
 ₩140,210 of health insurance plus ₩18,420 of long-term care insurance. If

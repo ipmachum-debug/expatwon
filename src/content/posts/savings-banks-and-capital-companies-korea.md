@@ -54,6 +54,8 @@ assessment, and the price of the *next* loan.
   <figcaption class="figcap">Second-tier credit is not a cheaper bank. It is a different price for the same money — enter only with a plan to leave.</figcaption>
 </figure>
 
+<p class="hand">Borrow here only if you can name the month you get out. “Someday” is not a plan.</p>
+
 
 Equally, the folklore in the other direction is wrong. *"Touch a savings
 bank and your score collapses by tens of points and banks lock you out

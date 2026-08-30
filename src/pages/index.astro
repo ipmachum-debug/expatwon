@@ -36,52 +36,64 @@ const tools = [
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <!-- Hero -->
-  <section class="relative mb-16 overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-12 sm:py-20">
-    <div class="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-blue-500/25 blur-3xl" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-sky-500/15 blur-3xl" aria-hidden="true"></div>
-    <span
-      class="pointer-events-none absolute -right-6 -bottom-24 font-display text-[17rem] leading-none font-bold text-white/[0.045] select-none"
-      aria-hidden="true">₩</span
+  <section class="relative mb-16 border-y-2 border-ink py-14 sm:py-20">
+    <div
+      class="pointer-events-none absolute top-4 right-2 hidden max-w-[15rem] -rotate-[5deg] bg-[#ffe9b8] px-4 py-3 shadow-[2px_3px_0_rgba(34,28,20,0.10)] lg:block"
+      aria-hidden="true"
     >
-
-    <div class="relative max-w-2xl">
-      <p class="mb-4 text-xs font-semibold tracking-[0.2em] text-blue-400 uppercase">
-        Money in Korea · In English
+      <p class="font-hand text-[1.35rem] leading-[1.25] text-[#5c4a1e]">
+        every figure links to the<br />.go.kr page that proves it
       </p>
-      <h1 class="mb-5 font-display text-4xl leading-[1.12] font-bold sm:text-[3.4rem]">
-        Korean money,<br />without the guesswork.
-      </h1>
-      <p class="mb-8 max-w-xl text-lg leading-relaxed text-slate-300">
-        Bank accounts, loans, cars, business registration, and the real cost of
-        living — how it works, what it costs, and which official rules apply to
-        foreigners.
-      </p>
-      <div class="flex flex-wrap items-center gap-3">
-        <a
-          href="/tools/"
-          class="rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-400 hover:shadow-blue-400/30"
-        >
-          Try the calculators →
-        </a>
-        <a
-          href="/banking/"
-          class="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/5"
-        >
-          Start with banking
-        </a>
-      </div>
-      <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[0.8rem] text-slate-400">
-        <li class="flex items-center gap-1.5">
-          <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span> Official sources only
-        </li>
-        <li class="flex items-center gap-1.5">
-          <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span> Last-verified dates on every guide
-        </li>
-        <li class="flex items-center gap-1.5">
-          <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span> Written from first-hand experience
-        </li>
-      </ul>
     </div>
+
+    <p class="mb-6 font-sans text-[0.68rem] font-bold tracking-[0.2em] text-ink-soft/70 uppercase">
+      Money in Korea · In English
+    </p>
+
+    <h1 class="mb-7 max-w-[13ch] font-display text-[2.9rem] leading-[1.04] font-bold text-ink sm:text-[4.2rem]">
+      Korean money,<br />with the <span class="relative inline-block">receipts<svg
+          viewBox="0 0 240 16"
+          preserveAspectRatio="none"
+          class="absolute -bottom-1.5 left-0 h-3.5 w-full text-gold"
+          aria-hidden="true"
+        ><path d="M3 11C60 3 150 15 237 5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" /></svg></span>.
+    </h1>
+
+    <p class="mb-9 max-w-xl text-[1.15rem] leading-relaxed text-ink-soft">
+      Bank accounts, loans, cars, business registration, and the real cost of
+      living — written by someone who has run a Korean company for ten years and
+      files the same paperwork you are about to.
+    </p>
+
+    <div class="mb-11 flex flex-wrap items-center gap-3">
+      <a
+        href="/tools/"
+        class="rounded-full bg-ink px-6 py-3 font-sans text-[0.92rem] font-semibold text-paper transition-transform hover:-translate-y-0.5"
+      >
+        Run your own numbers →
+      </a>
+      <a
+        href="/banking/"
+        class="rounded-full border border-ink/25 px-6 py-3 font-sans text-[0.92rem] font-semibold text-ink transition-colors hover:border-ink"
+      >
+        Start with banking
+      </a>
+    </div>
+
+    <dl class="flex flex-wrap gap-x-12 gap-y-5 border-t-2 border-ink pt-5">
+      <div>
+        <dt class="num text-[2rem] leading-none font-bold text-ink">{posts.length}</dt>
+        <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Guides, all sourced</dd>
+      </div>
+      <div>
+        <dt class="num text-[2rem] leading-none font-bold text-ink">6mo</dt>
+        <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Re-check cycle</dd>
+      </div>
+      <div>
+        <dt class="num text-[2rem] leading-none font-bold text-ink">2016</dt>
+        <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Running a Korean company since</dd>
+      </div>
+    </dl>
   </section>
 
   <!-- Latest guides -->
@@ -90,7 +102,7 @@ const tools = [
       <h2 class="font-display text-3xl font-bold text-ink">Latest guides</h2>
       <a
         href="/articles/"
-        class="flex-none text-sm font-medium text-accent-dark transition-colors hover:text-accent"
+        class="flex-none text-sm font-medium text-ink underline decoration-gold decoration-2 underline-offset-4 transition-colors hover:text-gold"
       >
         View all {posts.length} guides →
       </a>
@@ -109,7 +121,7 @@ const tools = [
         CATEGORIES.map((c) => (
           <a
             href={`/${c.slug}/`}
-            class="group rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/60"
+            class="group rounded-2xl border border-rule bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink/35 hover:shadow-lg hover:shadow-slate-200/60"
           >
             <span class={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl ${c.tile}`}>
               <svg
@@ -123,10 +135,10 @@ const tools = [
                 set:html={c.icon}
               />
             </span>
-            <h3 class="mb-1.5 font-display text-xl font-semibold text-ink group-hover:text-accent-dark">
+            <h3 class="mb-1.5 font-display text-xl font-semibold text-ink group-hover:text-gold">
               {c.title}
             </h3>
-            <p class="text-sm leading-relaxed text-slate-500">{c.description}</p>
+            <p class="text-sm leading-relaxed text-ink-soft/85">{c.description}</p>
           </a>
         ))
       }
@@ -137,7 +149,7 @@ const tools = [
   <section class="rounded-3xl bg-paper p-8 sm:p-10">
     <div class="mb-6 max-w-xl">
       <h2 class="mb-2 font-display text-3xl font-bold text-ink">Run your own numbers</h2>
-      <p class="text-slate-500">
+      <p class="text-ink-soft/85">
         Free calculators built for the money decisions expats actually face in
         Korea. Everything runs in your browser.
       </p>
@@ -147,9 +159,9 @@ const tools = [
         tools.map((t) => (
           <a
             href={t.href}
-            class="group rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/60"
+            class="group rounded-2xl border border-rule bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/60"
           >
-            <span class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent-dark">
+            <span class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-deep text-gold">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -161,8 +173,8 @@ const tools = [
                 set:html={t.icon}
               />
             </span>
-            <h3 class="mb-1.5 font-semibold text-ink group-hover:text-accent-dark">{t.title} Calculator</h3>
-            <p class="text-sm leading-relaxed text-slate-500">{t.description}</p>
+            <h3 class="mb-1.5 font-semibold text-ink group-hover:text-gold">{t.title} Calculator</h3>
+            <p class="text-sm leading-relaxed text-ink-soft/85">{t.description}</p>
           </a>
         ))
       }

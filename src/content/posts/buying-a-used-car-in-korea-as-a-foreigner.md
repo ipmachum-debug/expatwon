@@ -59,6 +59,8 @@ not just risky; it is unnecessary.
   <figcaption class="figcap">Nationality changes none of this. What it changes is how the financing behind it is screened.</figcaption>
 </figure>
 
+<p class="hand">If a seller is impatient about any of these four, that is the whole answer. Walk.</p>
+
 
 The real bottlenecks sit elsewhere: the identity and insurance paperwork
 around registration, verifying the car's actual condition, and — if you

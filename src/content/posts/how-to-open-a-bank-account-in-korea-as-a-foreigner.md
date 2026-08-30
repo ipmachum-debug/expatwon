@@ -54,6 +54,8 @@ knowing that a freshly opened account may carry daily transaction limits.
   <figcaption class="figcap">Bring proof of purpose to the first appointment and most of this article becomes unnecessary.</figcaption>
 </figure>
 
+<p class="hand">Take the employment contract. It turns a two-visit problem into a one-visit one.</p>
+
 
 The legal footing matters here. Since August 2024, Korean financial
 institutions have an explicit statutory basis (under the Special Act on

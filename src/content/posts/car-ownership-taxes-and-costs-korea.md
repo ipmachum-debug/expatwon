@@ -288,6 +288,8 @@ vehicle from **90 days before** the expiry date to **31 days after** — a
 that is the single most useful number in this article: an inspection due
 while you are abroad can usually be done three months early.
 
+<p class="hand">If you travel for work, do the inspection three months early. Nobody tells you that you can.</p>
+
 When buying used, read the current inspection expiry off the
 registration certificate — not just the first registration date. It is
 part of the same document chain covered in

@@ -1,12 +1,22 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  /*
+   * Field Notes — a warm paper ground with a rigorous number treatment.
+   * Handwriting carries the human voice (asides, cautions, "in my
+   * experience"); printed type carries every fact. That line is the whole
+   * design: it buys personality without spending credibility.
+   */
+  --font-sans: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-hand: 'Caveat', 'Bradley Hand', 'Segoe Script', 'Comic Sans MS', cursive;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
-  --color-ink: #0b1220;
-  --color-ink-soft: #141e33;
-  --color-paper: #f6f7f9;
+  --color-ink: #221c14;
+  --color-ink-soft: #4a4133;
+  --color-paper: #fbf7ef;
+  --color-paper-deep: #f4eee1;
+  --color-rule: #e0d6c4;
   --color-accent: #2563eb;
   --color-accent-dark: #1d4ed8;
   --color-accent-soft: #eff6ff;
@@ -30,17 +40,23 @@
     --cat-line: #bfdbfe;
   }
   body {
-    @apply bg-white text-slate-800 antialiased;
-    font-feature-settings: 'ss01', 'cv11';
+    @apply bg-paper text-ink-soft antialiased;
   }
   ::selection {
-    @apply bg-blue-100 text-blue-900;
+    background: var(--cat-line);
+    @apply text-ink;
+  }
+  /* Every figure in running text is tabular and unambiguous. */
+  .num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
   }
 }
 
 /* Long-form article styling without the typography plugin. */
 .prose-article {
-  @apply text-[1.0625rem] leading-[1.75] text-slate-800;
+  @apply text-[1.0625rem] leading-[1.75] text-ink-soft;
 }
 .prose-article h2 {
   @apply relative mt-14 mb-4 pt-5 font-display text-[1.75rem] leading-snug font-semibold text-ink;
@@ -76,7 +92,7 @@
   @apply my-6 w-full border-collapse text-sm;
 }
 .prose-article thead th {
-  @apply border-b-2 px-3.5 py-2.5 text-left font-semibold text-ink;
+  @apply border-b-2 px-3.5 py-2.5 text-left font-sans text-[0.82rem] font-bold tracking-wide text-ink uppercase;
   border-color: var(--cat-accent);
   background: var(--cat-tint);
 }
@@ -87,10 +103,15 @@
   @apply rounded-tr-lg;
 }
 .prose-article td {
-  @apply border-b border-slate-200 px-3.5 py-2.5 align-top;
+  @apply border-b border-rule px-3.5 py-2.5 align-top;
+}
+.prose-article td:not(:first-child) {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  @apply text-[0.94em] font-medium text-ink;
 }
 .prose-article tbody tr:nth-child(even) {
-  @apply bg-slate-50/70;
+  @apply bg-paper-deep/60;
 }
 .prose-article blockquote {
   @apply my-7 rounded-r-xl border-l-4 py-3 pr-5 pl-5 font-display text-[1.15rem] leading-relaxed font-medium text-ink not-italic;
@@ -98,7 +119,7 @@
   background: var(--cat-tint);
 }
 .prose-article code {
-  @apply rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em];
+  @apply rounded bg-paper-deep px-1.5 py-0.5 text-[0.9em];
 }
 .prose-article > p:first-of-type {
   @apply mb-6 border-l-[3px] py-1 pl-5 text-[1.2rem] leading-[1.65] font-medium text-ink;
@@ -163,14 +184,14 @@
  * ------------------------------------------------------------------------- */
 
 .prose-article .figure {
-  @apply my-9 overflow-hidden rounded-2xl border bg-white;
-  border-color: var(--cat-line);
+  @apply my-9 overflow-hidden rounded-lg border border-rule bg-white;
+  box-shadow: 3px 4px 0 rgb(34 28 20 / 0.06);
 }
 .prose-article .figure > :not(.figure-title):not(.figure-sub) {
   @apply mx-5 sm:mx-6;
 }
 .prose-article .figure-title {
-  @apply mt-0 mb-0 border-b px-5 pt-4 pb-0 text-[0.95rem] font-bold text-ink sm:px-6;
+  @apply mt-0 mb-0 border-b px-5 pt-4 pb-0 font-sans text-[0.95rem] font-bold text-ink sm:px-6;
   background: var(--cat-tint);
   border-color: transparent;
 }
@@ -193,13 +214,22 @@
  * same wall of prose.
  */
 .prose-article .figure.hero {
-  @apply my-9 rounded-2xl border-0 shadow-sm sm:-mx-10;
+  @apply relative my-12 rounded-lg border border-rule sm:-mx-10;
   background: var(--cat-tint);
-  outline: 1px solid var(--cat-line);
+  box-shadow: 4px 5px 0 rgb(34 28 20 / 0.07);
+}
+/* A strip of tape holding the card to the page. */
+.prose-article .figure.hero::before {
+  content: '';
+  @apply absolute -top-2.5 left-1/2 h-5 w-28 -translate-x-1/2 -rotate-1;
+  background: rgb(34 28 20 / 0.07);
+  border-left: 1px solid rgb(34 28 20 / 0.06);
+  border-right: 1px solid rgb(34 28 20 / 0.06);
 }
 .prose-article .figure.hero .figure-title {
-  @apply px-6 pt-6 font-display text-[1.35rem] leading-snug font-bold sm:px-9;
+  @apply px-6 pt-7 font-display text-[1.4rem] leading-snug font-bold sm:px-9;
   background: transparent;
+  border-color: transparent;
 }
 .prose-article .figure.hero .figure-sub {
   @apply px-6 pb-5 text-[0.85rem] sm:px-9;
@@ -216,13 +246,15 @@
   border-color: var(--cat-line);
 }
 .prose-article .figure.hero .flow-node,
-.prose-article .figure.hero .check-row,
+.prose-article .figure.hero .check-row {
+  @apply bg-white;
+}
 .prose-article .figure.hero .bar-track {
   @apply bg-white;
 }
 
 .prose-article .figcap {
-  @apply mt-5 border-t border-slate-100 pt-3 pb-0 text-[0.8rem] leading-relaxed text-slate-500;
+  @apply mt-5 border-t border-rule pt-3 pb-0 text-[0.82rem] leading-relaxed text-ink-soft/75;
 }
 
 /* Labeled horizontal bars (single measure, one axis). */
@@ -233,26 +265,29 @@
   @apply grid grid-cols-[minmax(6rem,9rem)_1fr_auto] items-center gap-3;
 }
 .prose-article .bar-label {
-  @apply text-[0.8rem] leading-tight text-slate-600;
+  @apply font-sans text-[0.78rem] leading-tight font-medium text-ink-soft;
 }
 .prose-article .bar-track {
-  @apply block h-4 overflow-hidden rounded-r bg-slate-100;
+  @apply block h-[1.35rem] overflow-hidden bg-paper-deep;
 }
 .prose-article .bar-fill {
-  @apply block h-full rounded-r;
+  @apply block h-full;
   background: var(--cat-accent);
 }
 .prose-article .bar-fill.alt {
   @apply bg-gold;
 }
 .prose-article .bar-fill.muted {
-  @apply bg-slate-300;
+  @apply bg-ink-soft/30;
 }
 .prose-article .bar-value {
-  @apply text-[0.85rem] font-semibold whitespace-nowrap text-ink;
+  @apply text-[0.92rem] font-bold whitespace-nowrap text-ink;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 .prose-article .bars-legend {
-  @apply mt-4 flex flex-wrap gap-x-5 gap-y-1 text-[0.78rem] text-slate-500;
+  @apply mt-4 flex flex-wrap gap-x-5 gap-y-1 text-[0.78rem] text-ink-soft/85;
 }
 .prose-article .bars-legend .swatch {
   @apply mr-1.5 inline-block h-2.5 w-2.5 rounded-[3px] align-[-1px];
@@ -271,20 +306,20 @@
   @apply mt-5;
 }
 .prose-article .flow-node {
-  @apply rounded-xl border-l-[3px] border-y border-r border-y-slate-200 border-r-slate-200 bg-slate-50/80 px-4 py-3 text-[0.92rem] leading-snug;
+  @apply rounded-md border-l-[3px] border-y border-r border-y-rule border-r-rule bg-paper-deep/50 px-4 py-3 text-[0.92rem] leading-snug;
   border-left-color: var(--cat-accent);
 }
 .prose-article .flow-node strong {
   @apply text-ink;
 }
 .prose-article .flow-node .sub {
-  @apply mt-0.5 block text-[0.8rem] text-slate-500;
+  @apply mt-0.5 block text-[0.8rem] text-ink-soft/85;
 }
 .prose-article .flow-node + .flow-node {
   @apply mt-2;
 }
 .prose-article .flow-arrow {
-  @apply flex items-center gap-2 py-1.5 pl-5 text-[0.8rem] text-slate-500;
+  @apply flex items-center gap-2 py-1.5 pl-5 text-[0.8rem] text-ink-soft/85;
 }
 .prose-article .flow-arrow::before {
   content: '↓';
@@ -304,7 +339,7 @@
   @apply mt-5 space-y-2;
 }
 .prose-article .check-row {
-  @apply flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-[0.92rem];
+  @apply flex items-center gap-3 rounded-md border border-rule bg-white px-4 py-2.5 text-[0.92rem];
 }
 .prose-article .check-row .mark {
   @apply flex h-6 w-6 flex-none items-center justify-center rounded-full text-[0.8rem] font-bold;
@@ -317,6 +352,26 @@
 }
 .prose-article .check-result {
   @apply mt-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-[0.95rem] font-semibold text-amber-900;
+}
+
+
+/*
+ * Handwritten aside. The author's voice: a caution, a judgement call, "what
+ * actually happens". NEVER a statute, a rate or an amount — printed type
+ * carries facts, handwriting carries the person. Written in markdown as:
+ *
+ *   <p class="hand">Do not sign this on the same day you see it.</p>
+ */
+.prose-article .hand {
+  @apply my-8 flex items-start gap-3.5 pl-1 text-[1.5rem] leading-[1.4];
+  font-family: var(--font-hand);
+  color: var(--cat-ink);
+}
+.prose-article .hand::before {
+  content: '';
+  @apply mt-2 h-8 w-8 flex-none bg-current;
+  opacity: 0.8;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'%3E%3Cpath d='M38 4C22 2 8 10 5 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M4 14l1 11 10-4' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 .prose-article .steps {

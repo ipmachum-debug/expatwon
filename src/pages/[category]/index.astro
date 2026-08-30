@@ -34,13 +34,13 @@ const posts = (
       />
     </span>
     <div>
-      <nav class="mb-1 text-sm text-slate-400">
+      <nav class="mb-1 text-sm text-ink-soft/65">
         <a href="/" class="hover:text-ink">Home</a>
         <span class="mx-1.5">/</span>
-        <span class="text-slate-500">{meta.shortTitle}</span>
+        <span class="text-ink-soft/85">{meta.shortTitle}</span>
       </nav>
       <h1 class="mb-2 font-display text-4xl font-bold text-ink">{meta.title}</h1>
-      <p class="max-w-2xl text-slate-500">{meta.description}</p>
+      <p class="max-w-2xl text-ink-soft/85">{meta.description}</p>
     </div>
   </header>
 
@@ -54,7 +54,7 @@ const posts = (
         ))}
       </div>
     ) : (
-      <p class="rounded-2xl border border-dashed border-slate-200 p-10 text-center text-slate-400">
+      <p class="rounded-2xl border border-dashed border-rule p-10 text-center text-ink-soft/65">
         Guides for this topic are on the way.
       </p>
     )

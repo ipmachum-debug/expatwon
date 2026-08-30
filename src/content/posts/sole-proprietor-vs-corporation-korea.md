@@ -59,6 +59,8 @@ corporation.
   <figcaption class="figcap">The sole proprietor's money is already in their hands. The company's is not — and every route out of it is taxed again. That second layer is what this guide is about.</figcaption>
 </figure>
 
+<p class="hand">The day you stop treating the company account as yours is the day the structure starts working.</p>
+
 
 That choice determines how far liability reaches into your personal
 assets, how profit is taxed, how you are allowed to take money out, how
