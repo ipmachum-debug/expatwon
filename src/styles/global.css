@@ -342,16 +342,24 @@
   @apply flex items-center gap-3 rounded-md border border-rule bg-white px-4 py-2.5 text-[0.92rem];
 }
 .prose-article .check-row .mark {
-  @apply flex h-6 w-6 flex-none items-center justify-center rounded-full text-[0.8rem] font-bold;
+  @apply flex h-6 w-6 flex-none items-center justify-center rounded-full text-[0.85rem] leading-none font-bold;
 }
+/* The glyph carries the meaning; colour only reinforces it. */
 .prose-article .check-row.ok .mark {
-  @apply bg-emerald-100 text-emerald-700;
+  @apply bg-emerald-600 text-white;
+}
+.prose-article .check-row.ok .mark::before {
+  content: '✓';
 }
 .prose-article .check-row.miss .mark {
-  @apply bg-amber-100 text-amber-700;
+  @apply bg-rose-600 text-white;
+}
+.prose-article .check-row.miss .mark::before {
+  content: '✕';
+  @apply text-[0.75rem];
 }
 .prose-article .check-result {
-  @apply mt-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-[0.95rem] font-semibold text-amber-900;
+  @apply mt-4 border-t-2 border-ink pt-3 text-[0.95rem] leading-relaxed font-semibold text-ink;
 }
 
 
