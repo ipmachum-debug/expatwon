@@ -4,7 +4,6 @@ description: 'Korea raised corporate tax rates in 2026. Which structure is cheap
 category: business
 publishDate: 2026-08-31
 updatedDate: 2026-08-31
-draft: true
 tags: [business, tax, corporation, sole-proprietor, visa]
 sources:
   - label: 'National Tax Service — corporate income tax rates for fiscal years beginning on or after 1 January 2026'
