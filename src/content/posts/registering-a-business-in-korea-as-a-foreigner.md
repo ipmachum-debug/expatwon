@@ -294,3 +294,8 @@ the bank account, the tax filings, and the loan look like independent
 administrative events — but in a real credit review they are read as one
 continuous record. Keeping that record unbroken from day one is the whole
 strategy.
+
+Which legal form to register in the first place — the reach of liability, the
+second layer of tax on money you take out, and the visa route attached to each
+— is compared in
+[sole proprietor versus corporation](/business/sole-proprietor-vs-corporation-korea/).

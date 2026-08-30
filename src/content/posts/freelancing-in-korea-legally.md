@@ -272,3 +272,7 @@ business?**
 3.3% is a tax number. It is not a work permit and not a business
 license. The first thing to verify before freelancing in Korea is not
 the rate — it is whether you are legally allowed to do the work at all.
+
+Once the freelance work has premises, staff or outside investment in view, the
+next decision is structural rather than administrative:
+[sole proprietor versus corporation in Korea](/business/sole-proprietor-vs-corporation-korea/).
