@@ -1,11 +1,19 @@
 name: Publish scheduled posts
 
-# 08:30 Asia/Seoul = 23:30 UTC the previous day.
-# GitHub's scheduler is best-effort and can run late under load, so treat this
-# as "some time after 08:30", not a guaranteed minute.
+# Target is 08:30 Asia/Seoul = 23:32 UTC the previous day.
+#
+# GitHub's scheduler is best-effort and queues heavily on round minutes — the
+# first real run of this workflow was scheduled for 23:30 UTC and executed at
+# 01:25 UTC, nearly two hours late. So: odd minutes to dodge the contention,
+# and four attempts rather than one. The script is idempotent (it publishes
+# only what is due and exits in seconds otherwise), so whichever attempt lands
+# first does the work and the rest are no-ops.
 on:
   schedule:
-    - cron: '30 23 * * *'
+    - cron: '32 23 * * *'   # 08:32 KST — the intended slot
+    - cron: '53 23 * * *'   # 08:53 KST
+    - cron: '21 0 * * *'    # 09:21 KST
+    - cron: '47 0 * * *'    # 09:47 KST — last resort
   workflow_dispatch:
 
 permissions:
@@ -19,9 +27,9 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
 
