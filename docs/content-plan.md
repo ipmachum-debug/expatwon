@@ -407,7 +407,7 @@ F-2 점수제는 실제로 다른 글이다.
 - `144` foreign-real-estate-transaction-reporting — 제3조·제8조 신고 구분
 - `145` bringing-overseas-money-to-buy-korean-property — 해외자금 취득
 - `146` property-ownership-registration-for-foreigners — 소유권이전등기
-- `147` [예약 PM 09-04] closing-costs-when-buying-property-in-korea — 등기까지 필요한 현금 총액 · ↔ korean-mortgage-for-foreigners
+- `147` [예약 PM 09-04] closing-costs-when-buying-property-in-korea — 등기까지 필요한 현금 총액 · ↔ korean-mortgage-for-foreigners · **원고 완료**
 - `148` korean-real-estate-agent-fees-explained — 중개보수 계산
 
 ## 물건 검증

@@ -1,0 +1,19 @@
+{
+  "key": "brokerage-fee-caps-sale",
+  "label": "Estate agent fee caps on a housing sale",
+  "unit": "% of the transaction, maximum",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Housing purchases in Seoul. Other local authorities set their own within the national framework.",
+  "why": "A cap, not a price: the actual fee is agreed within it, so knowing the ceiling is what makes negotiation possible. The bands were last restructured in 2021 and are revisited whenever prices move enough to make a band bite.",
+  "history": [
+    {
+      "date": "2026-08-31",
+      "value": 0.7,
+      "display": "0.4% at ₩200M–900M, rising to 0.7% above ₩1.5B",
+      "source": "Seoul Metropolitan Government schedule under the Licensed Real Estate Agents Act",
+      "note": "VAT may be charged on top where the agent is a standard-regime taxpayer."
+    }
+  ]
+}

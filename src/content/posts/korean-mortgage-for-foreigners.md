@@ -4,6 +4,7 @@ description: 'LTV and the hard won caps, why recognised income binds first, Seou
 category: loans
 publishDate: 2026-09-04
 updatedDate: 2026-09-04
+pairedWith: closing-costs-when-buying-property-in-korea
 draft: true
 tags: [loans, mortgage, property, LTV, DSR]
 sources:

@@ -1,0 +1,19 @@
+{
+  "key": "acquisition-tax-housing",
+  "label": "Housing acquisition tax rate",
+  "unit": "% of the acquisition price, individual buyer",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Individuals acquiring housing for consideration. Multiple owners and companies are on a separate, heavier schedule.",
+  "why": "The single largest cash cost at completion, and the most politically active number in Korean property. Nationality does not change it — what does is the buyer, the number of homes held, the price, the region and the nature of the dwelling.",
+  "history": [
+    {
+      "date": "2026-08-31",
+      "value": 3,
+      "display": "1% ≤₩600M · 1–3% to ₩900M · 3% above",
+      "source": "Local Tax Act",
+      "note": "Local education tax on top, and rural special tax where the exclusive floor area exceeds 85㎡."
+    }
+  ]
+}
