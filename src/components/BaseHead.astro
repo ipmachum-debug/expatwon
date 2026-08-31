@@ -1,5 +1,10 @@
 ---
-import { ADSENSE_PUBLISHER_ID, SITE_TITLE, SITE_URL } from '../lib/site';
+import {
+  ADSENSE_PUBLISHER_ID,
+  NAVER_SITE_VERIFICATION,
+  SITE_TITLE,
+  SITE_URL,
+} from '../lib/site';
 
 interface Props {
   title: string;
@@ -18,7 +23,13 @@ const fullTitle = title === SITE_TITLE ? `${title} — Money in Korea for Expats
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="canonical" href={canonical} />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
 <meta name="theme-color" content="#221c14" />
+{
+  NAVER_SITE_VERIFICATION && (
+    <meta name="naver-site-verification" content={NAVER_SITE_VERIFICATION} />
+  )
+}
 {
   ADSENSE_PUBLISHER_ID && (
     <>

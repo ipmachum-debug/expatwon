@@ -4,6 +4,18 @@ export const SITE_DESCRIPTION =
   'Practical money guides for expats in Korea: bank accounts, loans, cars, business registration, insurance, and cost of living.';
 
 /**
+ * Naver Search Advisor site-ownership token, e.g. 'a1b2c3...'.
+ * Empty string = no verification meta tag is emitted.
+ *
+ * Naver matters far less than Google here — this site is in English and
+ * Naver's traffic is overwhelmingly Korean-language — but registration is
+ * free, low-risk, and Korea is where the clicks actually come from.
+ *
+ * A PUBLIC token that appears in page source. Not a secret.
+ */
+export const NAVER_SITE_VERIFICATION = '';
+
+/**
  * AdSense publisher ID, e.g. 'ca-pub-1234567890123456'.
  * Empty string = no AdSense markup is emitted anywhere.
  *
