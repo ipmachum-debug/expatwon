@@ -1,0 +1,19 @@
+{
+  "key": "vehicle-tax-prepayment-rate",
+  "label": "Vehicle tax annual prepayment rate",
+  "unit": "% used in the statutory formula",
+  "type": "rate",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Anyone with a vehicle registered in their name",
+  "why": "The rate applies to the tax covering the remainder of the year, not to the annual bill, so the actual discount is smaller than the headline rate and depends on which window you pay in.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 5,
+      "display": "5%",
+      "source": "Local Tax Act Enforcement Decree",
+      "note": "A January payment works out near 4.58% of the annual bill. March, June and September windows discount less."
+    }
+  ]
+}

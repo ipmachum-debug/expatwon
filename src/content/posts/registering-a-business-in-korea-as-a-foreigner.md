@@ -5,6 +5,8 @@ category: business
 publishDate: 2026-08-23
 updatedDate: 2026-08-23
 tags: [business, visa, incorporation, tax, D-8]
+tracked: [corporate-tax-rates, vat-simplified-threshold]
+lastVerified: 2026-08-31
 sources:
   - label: 'Invest KOREA — How Foreigners Can Start Business in Korea'
     url: 'https://www.investkorea.org/ik-en/cntnts/i-341/web.do'

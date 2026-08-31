@@ -6,6 +6,8 @@ publishDate: 2026-09-01
 updatedDate: 2026-09-01
 draft: true
 tags: [business, employment, social-insurance, minimum-wage, payroll]
+tracked: [minimum-wage, national-pension-rate, health-insurance-rate, long-term-care-rate]
+lastVerified: 2026-08-31
 sources:
   - label: 'Labor Standards Act Art. 17 — statement of working conditions and the duty to hand the employee a written copy'
     url: 'https://www.law.go.kr/lsLawLinkInfo.do?chrClsCd=010201&lsJoLnkSeq=1015677481'

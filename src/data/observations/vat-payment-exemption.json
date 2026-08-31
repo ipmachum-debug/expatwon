@@ -1,0 +1,19 @@
+{
+  "key": "vat-payment-exemption",
+  "label": "Simplified taxpayer payment-exemption line",
+  "unit": "KRW, supply value for the period",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Simplified VAT taxpayers",
+  "why": "Below this, no VAT is payable — but the return must still be filed. Filing is what establishes the exemption, and missing the deadline is penalised on its own.",
+  "history": [
+    {
+      "date": "2026-08-31",
+      "value": 48000000,
+      "display": "₩48,000,000",
+      "source": "National Tax Service",
+      "note": "Exempt from paying, not from filing."
+    }
+  ]
+}

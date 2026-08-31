@@ -7,12 +7,14 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/lint-data.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint:seo": "node scripts/lint-seo.mjs",
     "audit": "node scripts/audit-freshness.mjs",
-    "publish:due": "node scripts/publish-due-drafts.mjs"
+    "publish:due": "node scripts/publish-due-drafts.mjs",
+    "lint:data": "node scripts/lint-data.mjs",
+    "check": "npm run lint:seo && npm run lint:data"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

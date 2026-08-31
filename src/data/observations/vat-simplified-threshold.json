@@ -1,0 +1,19 @@
+{
+  "key": "vat-simplified-threshold",
+  "label": "Simplified VAT taxpayer threshold",
+  "unit": "KRW, annual supply value",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Individual businesses. Corporations cannot use the simplified regime at all.",
+  "why": "Below this line you file once a year at an effective rate of 1.5–4% instead of a flat 10%. It is the single largest structural difference in Korean VAT for a small business.",
+  "history": [
+    {
+      "date": "2026-08-31",
+      "value": 104000000,
+      "display": "₩104,000,000",
+      "source": "National Tax Service",
+      "note": "Raised from ₩80,000,000. Recorded at the date this site first verified it, not the date it changed."
+    }
+  ]
+}

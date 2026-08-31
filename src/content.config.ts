@@ -54,6 +54,35 @@ const posts = defineCollection({
         }),
       )
       .optional(),
+    /**
+     * Layer 2 — the moving figures this guide depends on, by observation key.
+     * The history lives in `src/data/observations/<key>.json`, never here: a
+     * monthly audit appends one line to one file instead of editing every
+     * article that quotes the number.
+     *
+     *   tracked: [minimum-wage, national-pension-rate]
+     *
+     * An unknown key fails `npm run lint:data`.
+     */
+    tracked: z.array(z.string().min(2)).optional(),
+    /**
+     * Layer 3 — first-party evidence backing this guide, by record id from
+     * `src/data/evidence/<id>.json`. A screenshot of the actual filing, the
+     * actual document list a bank asked for, the actual bill.
+     */
+    evidence: z.array(z.string().min(2)).optional(),
+    /**
+     * When a human last checked this guide's figures against the source, as
+     * opposed to when the file was last touched. `updatedDate` moves for a
+     * typo; this does not.
+     */
+    lastVerified: z.coerce.date().optional(),
+    /**
+     * When it should next be checked. Derived from the tracked series where
+     * it is absent — an annual figure that lands in January is worth checking
+     * in January, not on a rolling twelve-month timer.
+     */
+    nextCheck: z.coerce.date().optional(),
     /** Optional FAQ block, rendered on-page and as FAQPage JSON-LD. */
     faq: z
       .array(z.object({ question: z.string(), answer: z.string() }))

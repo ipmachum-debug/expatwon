@@ -5,6 +5,8 @@ category: cars
 publishDate: 2026-08-30
 updatedDate: 2026-08-30
 tags: [cars, tax, acquisition-tax, inspection, cost-of-ownership]
+tracked: [vehicle-tax-prepayment-rate]
+lastVerified: 2026-08-31
 sources:
   - label: 'Local Tax Act Art. 12 — acquisition tax rates for motor vehicles (7% passenger, 4% light, 5% other non-commercial, 4% commercial)'
     url: 'https://law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1021846727'

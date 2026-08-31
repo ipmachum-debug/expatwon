@@ -1,0 +1,26 @@
+{
+  "key": "national-pension-rate",
+  "label": "National Pension contribution rate",
+  "unit": "% of gross pay, split employer/employee",
+  "type": "rate",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Employees, including most foreign nationals. Some nationalities are exempt by treaty.",
+  "why": "Half is the employer's cost and half is deducted from pay. The first increase since 1998 landed in 2026 and English-language guides still carry the old figure.",
+  "history": [
+    {
+      "date": "2025-01-01",
+      "value": 9,
+      "display": "9%",
+      "source": "National Pension Service",
+      "note": "Unchanged since 1998."
+    },
+    {
+      "date": "2026-01-01",
+      "value": 9.5,
+      "display": "9.5%",
+      "source": "National Pension Service",
+      "note": "First rate rise in 28 years."
+    }
+  ]
+}

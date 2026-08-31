@@ -5,6 +5,8 @@ category: business
 publishDate: 2026-08-31
 updatedDate: 2026-08-31
 tags: [business, tax, corporation, sole-proprietor, visa]
+tracked: [corporate-tax-rates, vat-simplified-threshold]
+lastVerified: 2026-08-31
 sources:
   - label: 'National Tax Service — corporate income tax rates for fiscal years beginning on or after 1 January 2026'
     url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7746&mi=2372'

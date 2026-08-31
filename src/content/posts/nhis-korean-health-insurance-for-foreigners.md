@@ -5,6 +5,8 @@ category: insurance
 publishDate: 2026-08-23
 updatedDate: 2026-08-23
 tags: [insurance, NHIS, health-insurance, visa, premiums]
+tracked: [health-insurance-rate, long-term-care-rate]
+lastVerified: 2026-08-31
 sources:
   - label: 'NHIS — 2026 premium rates and foreigner regional-subscriber average premium (official notice)'
     url: 'https://edi.nhis.or.kr/portal/images/popup/20251204_pop01longdesc.html'

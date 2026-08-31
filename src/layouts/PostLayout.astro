@@ -5,6 +5,7 @@ import AdSlot from '../components/AdSlot.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import SourcesFooter from '../components/SourcesFooter.astro';
+import TrackedFigures from '../components/TrackedFigures.astro';
 import { categoryVars, getCategory } from '../lib/categories';
 import { SITE_TITLE, SITE_URL } from '../lib/site';
 import Layout from './Layout.astro';
@@ -24,6 +25,8 @@ const {
   faq,
   keyFacts,
   revisions,
+  tracked,
+  lastVerified,
 } = post.data;
 const category = getCategory(post.data.category);
 const canonical = `${SITE_URL}/${category.slug}/${post.id}/`;
@@ -174,6 +177,8 @@ const faqSchema =
         </p>
       </div>
     </aside>
+
+    <TrackedFigures tracked={tracked} lastVerified={lastVerified} />
 
     <SourcesFooter
       updatedDate={updatedDate}

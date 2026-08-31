@@ -13,11 +13,6 @@ const published = new Set(
   ),
 );
 
-const now = new Date();
-const kstMonth = Number(
-  new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Seoul', month: 'numeric' }).format(now),
-);
-
 const totalItems = CALENDAR.reduce((n, m) => n + m.items.length, 0);
 const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-GB', {
   day: 'numeric',
@@ -89,31 +84,36 @@ const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString(
         CALENDAR.map((m) => (
           <li
             class="month-block border-t border-rule pt-5 pb-7"
-            data-month
+            data-month={m.month}
             data-audiences={[...new Set(m.items.flatMap((i) => i.who))].join(' ')}
           >
             <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[7.5rem_1fr]">
-              <h2
-                class:list={[
-                  'font-display text-xl font-semibold',
-                  m.month === kstMonth ? 'text-gold' : 'text-ink',
-                ]}
-              >
+              <h2 class="font-display text-xl font-semibold text-ink" data-month-heading>
                 {m.label}
-                {m.month === kstMonth && (
-                  <span class="mt-1 block font-mono text-[0.65rem] tracking-[0.14em] text-gold uppercase">
-                    This month
-                  </span>
-                )}
+                <span
+                  class="mt-1 hidden font-mono text-[0.65rem] tracking-[0.14em] text-gold uppercase"
+                  data-this-month
+                >
+                  This month
+                </span>
               </h2>
 
               <ul class="space-y-5">
                 {m.items.map((item) => (
-                  <li class="cal-item" data-audiences={item.who.join(' ')}>
+                  <li
+                    class="cal-item"
+                    data-audiences={item.who.join(' ')}
+                    data-month={m.month}
+                    data-due={item.dueDay}
+                  >
                     <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                       <span class="font-mono text-[0.8rem] font-semibold text-ink tabular-nums">
                         {item.when}
                       </span>
+                      <span
+                        class="countdown hidden rounded-full px-2 py-0.5 font-mono text-[0.65rem] font-semibold tracking-[0.1em] uppercase"
+                        data-countdown
+                      ></span>
                       <h3 class="font-sans text-[1rem] font-semibold text-ink">
                         {item.link && published.has(item.link) ? (
                           <a
@@ -171,6 +171,57 @@ const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString(
     </section>
   </div>
 </Layout>
+
+<script>
+  // The page is static and only rebuilds when a post is due, so anything
+  // date-dependent has to be computed in the reader's browser. Korea is the
+  // reference timezone: these are Korean deadlines, whoever is reading.
+  {
+    const parts = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Asia/Seoul',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).format(new Date());
+    const [y, mo, d] = parts.split('-').map(Number);
+    const today = Date.UTC(y, mo - 1, d);
+    const DAY = 86400000;
+
+    for (const heading of document.querySelectorAll('[data-month-heading]')) {
+      const block = heading.closest('[data-month]');
+      if (Number(block?.getAttribute('data-month')) !== mo) continue;
+      heading.classList.replace('text-ink', 'text-gold');
+      heading.querySelector('[data-this-month]')?.classList.replace('hidden', 'block');
+    }
+
+    for (const item of document.querySelectorAll('.cal-item')) {
+      const month = Number(item.getAttribute('data-month'));
+      const due = Number(item.getAttribute('data-due'));
+      const badge = item.querySelector('[data-countdown]');
+      if (!badge || !month || !due) continue;
+
+      // Next occurrence: this year's date, or next year's once it has passed.
+      let target = Date.UTC(y, month - 1, due);
+      if (target < today) target = Date.UTC(y + 1, month - 1, due);
+      const days = Math.round((target - today) / DAY);
+
+      // Beyond about six weeks a countdown is noise rather than a prompt.
+      if (days > 45) continue;
+
+      if (days === 0) {
+        badge.textContent = 'Today';
+        badge.classList.add('bg-gold', 'text-white');
+      } else if (days <= 7) {
+        badge.textContent = `D-${days}`;
+        badge.classList.add('bg-gold/15', 'text-gold');
+      } else {
+        badge.textContent = `D-${days}`;
+        badge.classList.add('bg-paper-deep', 'text-ink-soft/70');
+      }
+      badge.classList.remove('hidden');
+    }
+  }
+</script>
 
 <script>
   const bar = document.querySelector('[data-filter-bar]');

@@ -1,0 +1,166 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../../layouts/Layout.astro';
+import { EVIDENCE } from '../../data/evidence';
+import { OBSERVATIONS, latest } from '../../data/observations';
+import { getCategory } from '../../lib/categories';
+
+export async function getStaticPaths() {
+  return OBSERVATIONS.map((series) => ({ params: { key: series.key }, props: { series } }));
+}
+
+const { series } = Astro.props;
+const posts = await getCollection('posts', (p) => !p.data.draft);
+
+const guides = posts
+  .filter((p) => (p.data.tracked ?? []).includes(series.key))
+  .map((p) => ({ title: p.data.title, href: `/${getCategory(p.data.category).slug}/${p.id}/` }));
+
+const supporting = EVIDENCE.filter((e) => (e.supports ?? []).includes(series.key));
+
+// Newest first for reading; the stored order is oldest-first.
+const timeline = [...series.history].reverse();
+const now = latest(series);
+const CADENCE: Record<string, string> = {
+  annual: 'Checked once a year',
+  quarterly: 'Checked quarterly',
+  monthly: 'Checked monthly',
+};
+---
+
+<Layout
+  title={`${series.label} — History`}
+  description={`What Korea’s ${series.label.toLowerCase()} is now, what it was before, and when it changed. ${series.appliesTo}`}
+>
+  <div class="mx-auto max-w-3xl">
+    <nav class="mb-6 font-mono text-[0.72rem] tracking-wide text-ink-soft/60 uppercase">
+      <a href="/tracked/" class="transition-colors hover:text-gold">Figures we track</a>
+      <span class="mx-2 text-ink-soft/35">/</span>
+      <span>{series.label}</span>
+    </nav>
+
+    <header class="mb-8 border-b border-rule pb-8">
+      <h1 class="mb-4 font-display text-[2.3rem] leading-tight font-bold text-ink sm:text-[2.7rem]">
+        {series.label}
+      </h1>
+      <div class="mb-5 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <span class="font-mono text-[2rem] font-semibold text-ink tabular-nums">{now.display}</span>
+        <span class="font-sans text-[0.9rem] text-ink-soft/70">{series.unit}</span>
+      </div>
+      <p class="max-w-2xl text-lg leading-relaxed text-ink-soft/85">{series.why}</p>
+      <dl class="mt-6 grid gap-x-8 gap-y-3 font-sans text-[0.88rem] sm:grid-cols-2">
+        <div>
+          <dt class="font-mono text-[0.68rem] tracking-[0.14em] text-ink-soft/55 uppercase">
+            Applies to
+          </dt>
+          <dd class="mt-0.5 text-ink-soft/90">{series.appliesTo}</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-[0.68rem] tracking-[0.14em] text-ink-soft/55 uppercase">
+            Review cadence
+          </dt>
+          <dd class="mt-0.5 text-ink-soft/90">{CADENCE[series.check] ?? series.check}</dd>
+        </div>
+      </dl>
+    </header>
+
+    <section class="mb-10">
+      <h2 class="mb-5 font-display text-xl font-semibold text-ink">
+        {timeline.length > 1 ? 'What it has been' : 'What we have recorded'}
+      </h2>
+      <ol class="space-y-0">
+        {
+          timeline.map((point, i) => (
+            <li class="grid grid-cols-[5.5rem_1fr] gap-x-5 border-t border-rule py-4">
+              <div class="font-mono text-[0.8rem] text-ink-soft/70 tabular-nums">{point.date}</div>
+              <div>
+                <div class="flex flex-wrap items-baseline gap-x-3">
+                  <span
+                    class:list={[
+                      'font-mono font-semibold tabular-nums',
+                      i === 0 ? 'text-[1.15rem] text-ink' : 'text-[1rem] text-ink-soft/75',
+                    ]}
+                  >
+                    {point.display}
+                  </span>
+                  {i === 0 && timeline.length > 1 && (
+                    <span class="font-mono text-[0.65rem] tracking-[0.14em] text-gold uppercase">
+                      Current
+                    </span>
+                  )}
+                </div>
+                {point.note && (
+                  <p class="mt-1 text-[0.93rem] leading-relaxed text-ink-soft/85">{point.note}</p>
+                )}
+                <p class="mt-1 font-sans text-[0.8rem] text-ink-soft/60">{point.source}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      {
+        timeline.length === 1 && (
+          <p class="mt-4 border-l-2 border-gold/60 pl-3 text-[0.9rem] leading-relaxed text-ink-soft/75">
+            One reading so far. This becomes a history the first time the figure
+            moves while we are watching — which is the part that cannot be
+            reconstructed later.
+          </p>
+        )
+      }
+    </section>
+
+    {
+      supporting.length > 0 && (
+        <section class="mb-10">
+          <h2 class="mb-4 font-display text-xl font-semibold text-ink">Evidence</h2>
+          <ul class="space-y-5">
+            {supporting.map((e) => (
+              <li>
+                <img
+                  src={e.asset}
+                  alt={e.alt}
+                  loading="lazy"
+                  class="w-full rounded-lg border border-rule"
+                />
+                <p class="mt-2 text-[0.92rem] leading-relaxed text-ink-soft/85">{e.note}</p>
+                <p class="mt-1 font-sans text-[0.78rem] text-ink-soft/60">
+                  {e.date} · {e.redaction}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      guides.length > 0 && (
+        <section class="border-t border-rule pt-6">
+          <h2 class="mb-3 font-display text-lg font-semibold text-ink">
+            Guides that depend on this figure
+          </h2>
+          <ul class="space-y-2">
+            {guides.map((g) => (
+              <li>
+                <a
+                  href={g.href}
+                  class="text-[0.95rem] font-medium text-ink-soft transition-colors hover:text-gold"
+                >
+                  <span class="text-gold/70" aria-hidden="true">
+                    →
+                  </span>{' '}
+                  {g.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 font-sans text-[0.82rem] text-ink-soft/60">
+            When this figure moves, every guide above needs the same edit. That
+            is why it is tracked here rather than copied into each one.
+          </p>
+        </section>
+      )
+    }
+  </div>
+</Layout>

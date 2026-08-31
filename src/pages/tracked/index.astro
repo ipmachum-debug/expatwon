@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../../layouts/Layout.astro';
+import { OBSERVATIONS, hasHistory, latest } from '../../data/observations';
+import { getCategory } from '../../lib/categories';
+
+const posts = await getCollection('posts', (p) => !p.data.draft);
+
+const rows = OBSERVATIONS.map((s) => {
+  const now = latest(s);
+  const first = s.history[0];
+  const guides = posts
+    .filter((p) => (p.data.tracked ?? []).includes(s.key))
+    .map((p) => ({ title: p.data.title, href: `/${getCategory(p.data.category).slug}/${p.id}/` }));
+  return { series: s, now, first, guides, moved: hasHistory(s) };
+});
+
+const moved = rows.filter((r) => r.moved).length;
+const points = OBSERVATIONS.reduce((n, s) => n + s.history.length, 0);
+---
+
+<Layout
+  title="Figures We Track"
+  description="The Korean rates, thresholds and caps this site watches: what each one is now, when it last moved, and which guides depend on it."
+>
+  <div class="mx-auto max-w-4xl">
+    <header class="mb-8 border-b border-rule pb-8">
+      <p class="mb-3 font-mono text-[0.7rem] tracking-[0.18em] text-ink-soft/60 uppercase">
+        Reference · rebuilt from data, not written
+      </p>
+      <h1 class="mb-4 font-display text-[2.5rem] leading-tight font-bold text-ink sm:text-[2.9rem]">
+        Figures we track
+      </h1>
+      <p class="max-w-2xl text-lg leading-relaxed text-ink-soft/85">
+        Korean rates and thresholds move, and when they do, the guides quoting
+        them go quietly wrong. These are the numbers we watch on a schedule.
+        Each one keeps its own history, so you can see not just what it is but
+        what it was.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[0.78rem] text-ink-soft/70">
+        <span><strong class="text-ink">{OBSERVATIONS.length}</strong> figures</span>
+        <span><strong class="text-ink">{points}</strong> readings</span>
+        <span><strong class="text-ink">{moved}</strong> with a recorded change</span>
+      </div>
+    </header>
+
+    <ul class="space-y-px">
+      {
+        rows.map(({ series, now, guides, moved }) => (
+          <li class="border-t border-rule py-5">
+            <div class="grid gap-x-8 gap-y-3 sm:grid-cols-[1fr_auto] sm:items-baseline">
+              <div>
+                <h2 class="font-sans text-[1.05rem] font-semibold text-ink">
+                  <a
+                    href={`/tracked/${series.key}/`}
+                    class="underline decoration-gold/50 decoration-2 underline-offset-4 transition-colors hover:text-gold"
+                  >
+                    {series.label}
+                  </a>
+                </h2>
+                <p class="mt-1 max-w-xl text-[0.92rem] leading-relaxed text-ink-soft/85">
+                  {series.appliesTo}
+                </p>
+              </div>
+              <div class="text-left sm:text-right">
+                <div class="font-mono text-lg font-semibold text-ink tabular-nums">
+                  {now.display}
+                </div>
+                <div class="font-mono text-[0.7rem] tracking-wide text-ink-soft/60 uppercase">
+                  {moved ? `changed ${now.date}` : `verified ${now.date}`}
+                </div>
+              </div>
+            </div>
+            {guides.length > 0 && (
+              <p class="mt-2.5 text-[0.85rem] text-ink-soft/70">
+                <span class="font-mono text-[0.7rem] tracking-wide uppercase">Used in</span>{' '}
+                {guides.map((g, i) => (
+                  <>
+                    {i > 0 && <span class="text-ink-soft/40"> · </span>}
+                    <a href={g.href} class="transition-colors hover:text-gold">
+                      {g.title}
+                    </a>
+                  </>
+                ))}
+              </p>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-8 border-t border-rule pt-6 font-sans text-[0.85rem] leading-relaxed text-ink-soft/65">
+      Every reading carries the source that established it. A figure with one
+      reading is a number we checked; a figure with several is a history — and
+      the history is the part you cannot get by searching for today’s value.
+    </p>
+  </div>
+</Layout>

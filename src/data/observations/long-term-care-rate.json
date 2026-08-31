@@ -1,0 +1,19 @@
+{
+  "key": "long-term-care-rate",
+  "label": "Long-term care insurance rate",
+  "unit": "% of the health insurance contribution",
+  "type": "rate",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Everyone paying health insurance",
+  "why": "Charged as a percentage of the health contribution rather than of pay, which is why it is missed when people estimate their own deductions.",
+  "history": [
+    {
+      "date": "2026-08-31",
+      "value": 13.14,
+      "display": "13.14%",
+      "source": "National Health Insurance Service",
+      "note": "Of the health insurance contribution, not of gross pay."
+    }
+  ]
+}

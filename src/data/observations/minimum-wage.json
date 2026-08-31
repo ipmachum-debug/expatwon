@@ -1,0 +1,26 @@
+{
+  "key": "minimum-wage",
+  "label": "Minimum wage",
+  "unit": "KRW per hour",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 8,
+  "appliesTo": "Every employee in Korea, foreign or not, from the first hour",
+  "why": "Announced each August by the Minimum Wage Commission and effective the following 1 January. It sets the floor for hourly pay and, through the weekly holiday allowance, for monthly pay.",
+  "history": [
+    {
+      "date": "2025-01-01",
+      "value": 10030,
+      "display": "₩10,030",
+      "source": "Minimum Wage Commission",
+      "note": "First year above ₩10,000."
+    },
+    {
+      "date": "2026-01-01",
+      "value": 10320,
+      "display": "₩10,320",
+      "source": "Minimum Wage Commission",
+      "note": "Up 2.9% on 2025."
+    }
+  ]
+}

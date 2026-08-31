@@ -5,6 +5,8 @@ category: business
 publishDate: 2026-08-23
 updatedDate: 2026-08-23
 tags: [business, freelance, tax, visa, 3.3-percent]
+tracked: [vat-simplified-threshold, national-pension-rate, health-insurance-rate]
+lastVerified: 2026-08-31
 sources:
   - label: 'NTS — withholding on business income from personal services (3% + local tax)'
     url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7902&mi=6466'

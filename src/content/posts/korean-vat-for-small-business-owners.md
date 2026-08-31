@@ -6,6 +6,8 @@ publishDate: 2026-09-05
 updatedDate: 2026-09-05
 draft: true
 tags: [business, tax, VAT, simplified-taxpayer, filing]
+tracked: [vat-simplified-threshold, vat-payment-exemption]
+lastVerified: 2026-08-31
 sources:
   - label: 'National Tax Service — VAT rates and the simplified-taxpayer sector value-added ratios'
     url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2275&cntntsId=7696'
