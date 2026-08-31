@@ -4,6 +4,7 @@ description: 'Hana EZ, SOL Global, KB Quick Send and Woori WON Global compared â
 category: banking
 publishDate: 2026-09-03
 updatedDate: 2026-09-03
+pairedWith: foreign-currency-accounts-in-korea
 draft: true
 tags: [banking, remittance, mobile-banking, comparison, foreign-residents]
 sources:

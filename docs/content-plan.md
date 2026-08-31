@@ -347,7 +347,7 @@ F-2 점수제는 실제로 다른 글이다.
 - `102` opening-a-bank-account-before-your-arc-arrives — ARC 이전 여권 계좌
 - `103` resident-vs-non-resident-bank-accounts — 계좌 상품 차이 (070 참조)
 - `104` setting-up-a-salary-account-in-korea — 급여통장 세팅
-- `105` [예약 PM 09-03] foreign-currency-accounts-in-korea — 외화예금 개설 · ↔ best-korean-banks-for-foreigners-compared
+- `105` [예약 PM 09-03] foreign-currency-accounts-in-korea — 예치(보유) 전용 · 송금은 범위 밖 · ↔ best-korean-banks-for-foreigners-compared · **원고 완료**
 - `106` designated-foreign-exchange-bank-explained — 지정거래외국환은행
 - `107` sending-large-amounts-of-money-overseas — 고액송금 증빙·심사
 - `108` proving-source-of-funds-for-transfers — 자금출처 증빙

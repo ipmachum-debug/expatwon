@@ -1,0 +1,18 @@
+{
+  "key": "usd-time-deposit-rate-kr",
+  "label": "USD time deposit rate at Korean banks",
+  "unit": "% per year, before tax",
+  "type": "rate",
+  "check": "quarterly",
+  "appliesTo": "Foreign currency time deposits in US dollars at the major Korean commercial banks",
+  "why": "Dollar deposits in Korea track international rates rather than the Korean policy rate, so they can pay materially more or less than a won deposit at the same bank in the same month. One reading is a snapshot; a run of them is a record of what holding dollars in Korea actually paid, which nothing in English keeps.",
+  "history": [
+    {
+      "date": "2026-08-31",
+      "value": 3,
+      "display": "≈3% pre-tax",
+      "source": "KB and Woori published rates",
+      "note": "Published rates for USD foreign currency time deposits, varying by term. A snapshot of advertised rates, not a quote made to any individual."
+    }
+  ]
+}
