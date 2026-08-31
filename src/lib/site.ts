@@ -1,7 +1,16 @@
 export const SITE_TITLE = 'ExpatWon';
 export const SITE_URL = 'https://expatwon.com';
+/**
+ * Homepage meta and og:description, and the RSS channel description.
+ *
+ * Kept under 80 characters: Naver's optimisation checker asks for it, and a
+ * meta description is not a ranking input for Google — it only has to earn
+ * the click, where a short line displays in full on mobile. Article
+ * descriptions stay in the 50–155 band the content schema enforces; those are
+ * written for Google's snippet and are not shortened for Naver.
+ */
 export const SITE_DESCRIPTION =
-  'Practical money guides for expats in Korea: bank accounts, loans, cars, business registration, insurance, and cost of living.';
+  'How money works in Korea, for foreigners: banking, loans, cars, tax, insurance.';
 
 /**
  * Naver Search Advisor site-ownership token, e.g. 'a1b2c3...'.
