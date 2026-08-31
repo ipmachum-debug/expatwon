@@ -9,15 +9,34 @@
  * It only ever deletes that one line. Everything editorial — reverse internal
  * links from related guides, the content-plan marker — stays a human step.
  *
+ * At two posts a day the pillar goes out in the morning and the supporting
+ * piece in the afternoon, so a date alone no longer identifies a post: both
+ * carry the same publishDate. `slot: pm` in the frontmatter moves a post to
+ * the afternoon run; anything without a slot is treated as morning, which
+ * keeps every post written before this existed working unchanged.
+ *
+ * A run only publishes its own slot. A pm post is never released by the
+ * morning run even when its date has passed — otherwise the pair lands
+ * together and the split is pointless. Past-dated stragglers are the one
+ * exception: a pm post whose date is already behind us is overdue rather than
+ * scheduled, so the next run of either slot releases it.
+ *
  * Run by .github/workflows/publish-scheduled.yml; safe to run by hand:
- *   node scripts/publish-due-drafts.mjs          # publish what is due
- *   node scripts/publish-due-drafts.mjs --dry    # report only
+ *   node scripts/publish-due-drafts.mjs                # morning slot
+ *   node scripts/publish-due-drafts.mjs --slot=pm      # afternoon slot
+ *   node scripts/publish-due-drafts.mjs --dry          # report only
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const POSTS = 'src/content/posts';
 const dry = process.argv.includes('--dry');
+
+const slotArg = process.argv.find((a) => a.startsWith('--slot='))?.split('=')[1] ?? 'am';
+if (!['am', 'pm'].includes(slotArg)) {
+  console.error(`unknown slot "${slotArg}" — expected am or pm`);
+  process.exit(1);
+}
 
 /** Today in Asia/Seoul as YYYY-MM-DD, so a date string compares lexically. */
 const today = new Intl.DateTimeFormat('en-CA', {
@@ -45,17 +64,22 @@ for (const name of readdirSync(POSTS).filter((f) => f.endsWith('.md'))) {
   }
   if (date > today) continue;
 
-  published.push({ name, date });
+  const slot = frontmatter.match(/^slot:\s*(am|pm)\s*$/m)?.[1] ?? 'am';
+  // Today's posts wait for their own run; anything already overdue does not.
+  if (slot !== slotArg && date === today) continue;
+
+  published.push({ name, date, slot });
   if (!dry) {
     writeFileSync(path, source.replace(/^draft:\s*true\s*\n/m, ''), 'utf8');
   }
 }
 
 if (published.length === 0) {
-  console.log(`nothing due (${today} KST)`);
+  console.log(`nothing due for the ${slotArg} slot (${today} KST)`);
 } else {
-  for (const { name, date } of published) {
-    console.log(`${dry ? 'due' : 'published'}: ${name} (${date})`);
+  for (const { name, date, slot } of published) {
+    const late = date < today ? ' — overdue' : '';
+    console.log(`${dry ? 'due' : 'published'}: ${name} (${date} ${slot}${late})`);
   }
 }
 

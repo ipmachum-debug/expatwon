@@ -1,20 +1,34 @@
 name: Publish scheduled posts
 
-# Target is 08:30 Asia/Seoul = 23:32 UTC the previous day.
+# Two slots a day: the pillar at 08:30 Asia/Seoul, the supporting piece at
+# 17:30. In UTC that is 23:32 the previous day, and 08:32 the same day.
 #
 # GitHub's scheduler is best-effort and queues heavily on round minutes — the
 # first real run of this workflow was scheduled for 23:30 UTC and executed at
 # 01:25 UTC, nearly two hours late. So: odd minutes to dodge the contention,
-# and four attempts rather than one. The script is idempotent (it publishes
-# only what is due and exits in seconds otherwise), so whichever attempt lands
-# first does the work and the rest are no-ops.
+# and several attempts per slot rather than one. The script is idempotent and
+# publishes only its own slot, so whichever attempt lands first does the work
+# and the rest are no-ops.
+#
+# The slot is derived from the hour the run actually starts, not from which
+# cron fired — a delayed morning attempt that lands after noon KST would
+# otherwise release the afternoon post early.
 on:
   schedule:
-    - cron: '32 23 * * *'   # 08:32 KST — the intended slot
+    - cron: '32 23 * * *'   # 08:32 KST — morning slot
     - cron: '53 23 * * *'   # 08:53 KST
     - cron: '21 0 * * *'    # 09:21 KST
-    - cron: '47 0 * * *'    # 09:47 KST — last resort
+    - cron: '47 0 * * *'    # 09:47 KST — last morning attempt
+    - cron: '32 8 * * *'    # 17:32 KST — afternoon slot
+    - cron: '53 8 * * *'    # 17:53 KST
+    - cron: '21 9 * * *'    # 18:21 KST
+    - cron: '47 9 * * *'    # 18:47 KST — last afternoon attempt
   workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Which slot to publish (am or pm)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -33,10 +47,24 @@ jobs:
         with:
           node-version: 22
 
+      # Before noon KST is the morning slot, after it the afternoon one.
+      - name: Decide which slot this run serves
+        id: slot
+        run: |
+          if [ -n "${{ github.event.inputs.slot }}" ]; then
+            slot='${{ github.event.inputs.slot }}'
+          elif [ "$(TZ=Asia/Seoul date +%H)" -lt 12 ]; then
+            slot=am
+          else
+            slot=pm
+          fi
+          echo "slot=$slot" >> "$GITHUB_OUTPUT"
+          echo "Serving the $slot slot ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST)"
+
       - name: Publish any draft whose date has arrived
         id: flip
         run: |
-          node scripts/publish-due-drafts.mjs | tee out.txt
+          node scripts/publish-due-drafts.mjs --slot=${{ steps.slot.outputs.slot }} | tee out.txt
           echo "count=$(grep -oP '::count::\K\d+' out.txt)" >> "$GITHUB_OUTPUT"
           rm out.txt
 
@@ -50,6 +78,7 @@ jobs:
         if: steps.flip.outputs.count != '0'
         run: |
           npm run lint:seo
+          npm run lint:data
           npm run build
 
       - name: Commit and push
@@ -58,5 +87,5 @@ jobs:
           git config user.name  'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add src/content/posts
-          git commit -m "post: publish scheduled guide(s) for $(TZ=Asia/Seoul date +%Y-%m-%d)"
+          git commit -m "post: publish ${{ steps.slot.outputs.slot }} guide(s) for $(TZ=Asia/Seoul date +%Y-%m-%d)"
           git push

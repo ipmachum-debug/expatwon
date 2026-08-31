@@ -14,7 +14,8 @@
     "audit": "node scripts/audit-freshness.mjs",
     "publish:due": "node scripts/publish-due-drafts.mjs",
     "lint:data": "node scripts/lint-data.mjs",
-    "check": "npm run lint:seo && npm run lint:data"
+    "check": "npm run lint:seo && npm run lint:data",
+    "queue": "node scripts/audit-freshness.mjs --queue=3"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

@@ -87,6 +87,13 @@ const posts = defineCollection({
     faq: z
       .array(z.object({ question: z.string(), answer: z.string() }))
       .optional(),
+    /**
+     * Which of the day's two runs releases this post. At two posts a day the
+     * pillar goes out in the morning and the supporting piece in the
+     * afternoon, so publishDate alone no longer identifies a post. Absent
+     * means morning.
+     */
+    slot: z.enum(['am', 'pm']).default('am'),
     draft: z.boolean().default(false),
   }),
 });
