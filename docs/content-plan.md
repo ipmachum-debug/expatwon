@@ -186,7 +186,7 @@ F-2 점수제는 실제로 다른 글이다.
 - `032` [예약 09-05] korean-vat-for-small-business-owners — 간이 1억400만·0.5%·환급불가
 - `033` [예약 09-06] korean-check-card-vs-credit-card-for-foreigners — 후불교통=신용기능
 - `034` [예약 09-02] utilities-and-maintenance-fees-korea — 장기수선충당금 반환청구
-- `035` [예약 09-01] hiring-your-first-employee-in-korea — 인건비 웨지 → **`/employment/` 이관 예정**
+- `035` [예약 09-01] hiring-your-first-employee-in-korea — 인건비 웨지 · `/employment/` 확정
 
 ---
 

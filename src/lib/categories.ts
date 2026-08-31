@@ -110,6 +110,20 @@ export const CATEGORIES: CategoryMeta[] = [
     line: '#a5f3fc',
     icon: '<path d="M3 11 12 4l9 7M5.5 9.5V20h13V9.5M9.5 20v-6h5v6"/>',
   },
+  {
+    slug: 'employment',
+    title: 'Work & Employment',
+    shortTitle: 'Employment',
+    description:
+      'Contracts, payroll, working hours, the four major insurances, and changing jobs as a foreign worker in Korea.',
+    chip: 'bg-lime-50 text-lime-700',
+    tile: 'bg-lime-50 text-lime-600',
+    accent: '#4d7c0f',
+    ink: '#3f6212',
+    tint: '#f7fee7',
+    line: '#d9f99d',
+    icon: '<rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5M3 13h18M10 13v2h4v-2"/>',
+  },
 ];
 
 export const CATEGORY_SLUGS = CATEGORIES.map((c) => c.slug);

@@ -258,7 +258,7 @@ figure; VAT is computed from an entirely separate one.
 Paying VAT does not reduce income tax, and filing income tax does not
 discharge VAT. They are two calendars and two calculations, and both are
 mandatory. Where you have staff, payroll withholding is a third —
-covered in [hiring your first employee](/business/hiring-your-first-employee-in-korea/).
+covered in [hiring your first employee](/employment/hiring-your-first-employee-in-korea/).
 
 ## Missing the deadline costs more than the tax
 

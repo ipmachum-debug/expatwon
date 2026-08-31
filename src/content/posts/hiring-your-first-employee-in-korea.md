@@ -1,7 +1,7 @@
 ---
 title: 'Hiring Your First Employee in Korea'
 description: 'Contract, four social insurances, the 2026 minimum wage and what changes at five staff — what a ₩3,000,000 salary actually costs an employer here.'
-category: business
+category: employment
 publishDate: 2026-09-01
 updatedDate: 2026-09-01
 draft: true
