@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import Layout from '../layouts/Layout.astro';
-import { AUDIENCES, CALENDAR } from '../data/calendar';
+import { AUDIENCES, CALENDAR, LAST_VERIFIED } from '../data/calendar';
 import { getCategory } from '../lib/categories';
 
 // Only link to guides that are actually live — a draft resolves to 404 until
@@ -19,6 +19,12 @@ const kstMonth = Number(
 );
 
 const totalItems = CALENDAR.reduce((n, m) => n + m.items.length, 0);
+const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
 ---
 
 <Layout
@@ -125,9 +131,9 @@ const totalItems = CALENDAR.reduce((n, m) => n + m.items.length, 0);
                     <p class="mt-1.5 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft/90">
                       {item.detail}
                     </p>
-                    {item.penalty && (
+                    {item.note && (
                       <p class="mt-1.5 border-l-2 border-gold/60 pl-3 font-sans text-[0.85rem] text-ink-soft/75">
-                        {item.penalty}
+                        {item.note}
                       </p>
                     )}
                   </li>
@@ -159,7 +165,8 @@ const totalItems = CALENDAR.reduce((n, m) => n + m.items.length, 0);
         Dates from the Value-Added Tax Act, the Income Tax Act and the Local Tax
         Act, as administered by the National Tax Service (nts.go.kr) and Wetax
         (wetax.go.kr). Deadlines, not rates — figures live in the individual
-        guides, where every change is logged.
+        guides, where every change is logged. Last checked against the current
+        year’s rules on <strong class="text-ink-soft">{verifiedLabel}</strong>.
       </p>
     </section>
   </div>

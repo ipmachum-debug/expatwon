@@ -14,6 +14,9 @@
  * resolve to 404 until their publishDate, so the page guards on the collection.
  */
 
+/** Last checked against the current year's rules. Rendered on the page. */
+export const LAST_VERIFIED = '2026-08-31';
+
 export type Audience = 'employee' | 'freelancer' | 'business' | 'car' | 'property';
 
 export interface CalendarItem {
@@ -24,8 +27,8 @@ export interface CalendarItem {
   who: Audience[];
   /** What actually happens. One sentence, concrete. */
   detail: string;
-  /** The cost of missing it, where there is one. */
-  penalty?: string;
+  /** The caveat that belongs beside the line: what missing it costs, or what the headline rule leaves out. */
+  note?: string;
   link?: string;
 }
 
@@ -72,16 +75,18 @@ export const CALENDAR: CalendarMonth[] = [
         who: ['business'],
         detail:
           'Covers July through December. Simplified taxpayers file once a year and this is that filing, even when no VAT is payable.',
-        penalty: 'Filing late is penalised on its own, separately from the tax',
+        note: 'Filing late is penalised on its own, separately from the tax',
         link: '/business/korean-vat-for-small-business-owners/',
       },
       {
         when: '16–31',
-        title: 'Vehicle tax prepayment window',
-        korean: '자동차세 연납 신청',
+        title: 'Vehicle tax annual prepayment',
+        korean: '자동차세 연납 신청·납부',
         who: ['car'],
         detail:
-          'Pay the whole year now instead of in two instalments and a discount applies. The window is January only.',
+          'Pay the full year up front instead of in two instalments and a discount applies. The statutory formula applies a 5% rate to the tax covering the rest of the year — which for a January payment works out at roughly 4.58% off the annual bill, not a flat 5%.',
+        note:
+          'January is the largest discount, not the only window: March, June and September also allow annual payment, each discounting less because less of the year is left',
         link: '/cars/car-ownership-taxes-and-costs-korea/',
       },
     ],
@@ -150,7 +155,7 @@ export const CALENDAR: CalendarMonth[] = [
         who: ['freelancer', 'business'],
         detail:
           'The deadline foreign freelancers miss most. If you were paid with 3.3% withheld, this filing is how you reclaim the over-withholding — it is not automatic.',
-        penalty: 'No filing means no refund, and penalties on top if tax was owed',
+        note: 'No filing means no refund, and penalties on top if tax was owed',
         link: '/business/freelancing-in-korea-legally/',
       },
       {
@@ -195,7 +200,7 @@ export const CALENDAR: CalendarMonth[] = [
         korean: '부가가치세 확정신고 (1기)',
         who: ['business'],
         detail: 'Covers January through June, for taxpayers on the standard regime.',
-        penalty: 'Filing late is penalised on its own, separately from the tax',
+        note: 'Filing late is penalised on its own, separately from the tax',
         link: '/business/korean-vat-for-small-business-owners/',
       },
       {
@@ -255,12 +260,14 @@ export const CALENDAR: CalendarMonth[] = [
     label: 'November',
     items: [
       {
-        when: '1–30',
-        title: 'Income tax interim prepayment',
-        korean: '종합소득세 중간예납',
+        when: '30',
+        title: 'Income tax interim prepayment due',
+        korean: '종합소득세 중간예납 고지·납부',
         who: ['freelancer', 'business'],
         detail:
-          'Roughly half of last year’s income tax, billed in advance against next May’s return. It arrives as a notice, so there is nothing to file — only to pay.',
+          'Roughly half of last year’s income tax, charged in advance against next May’s return and covering the January–June period. For most people the National Tax Service calculates it and issues a notice in early November, so there is nothing to file — only to pay by the 30th.',
+        note:
+          'If your first-half income came in well below last year’s, certain cases allow you to file an estimate instead of paying the notice',
       },
     ],
   },
