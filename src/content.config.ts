@@ -17,7 +17,26 @@ const posts = defineCollection({
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date(),
     tags: z.array(z.string().min(1)).min(1),
-    /** Official sources backing every figure in the post. Required. */
+    /**
+     * Official sources backing every figure in the post. Required.
+     *
+     * Three tiers, and the tier decides the depth of the link:
+     *
+     *   statute or decree  → Korea Law Information Center, deep-linked to the
+     *                        article or appendix, and named in the label
+     *                        ("… art. 16-10(3)", "… Appendix 3")
+     *   procedure or rate  → the agency's own page for that procedure,
+     *                        deep-linked (NPS practice guide, NHIS EDI form)
+     *   the body itself    → root URL, and only where no stable deep link
+     *                        exists for what is being cited
+     *
+     * A guessed deep link is worse than a root URL: it looks precise and
+     * rots. If the exact page cannot be confirmed, cite the body and say in
+     * the label what it is being cited for.
+     *
+     * Never carry tracking parameters into a url. Strip `utm_*` and anything
+     * else appended by whatever tool surfaced the page.
+     */
     sources: z
       .array(
         z.object({

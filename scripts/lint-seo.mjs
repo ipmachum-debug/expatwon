@@ -25,7 +25,15 @@ for (const file of files) {
   if (desc.length < 50) fail(file, `description too short (${desc.length}/50 min)`);
   if (desc.length > 155) fail(file, `description too long (${desc.length}/155 max)`);
   if (!/^sources:/m.test(fm)) fail(file, 'missing sources (official links required)');
-  if (!/^\s+url: /m.test(fm) && /^sources:/m.test(fm))
+
+
+  // Tracking parameters get appended by whatever tool surfaced a page, and
+  // publishing them puts a third party's analytics tag on the site's own
+  // citations. Cheap to strip, invisible once shipped.
+  for (const [, url] of fm.matchAll(/^\s+url:\s*'([^']+)'/gm)) {
+    const junk = [...url.matchAll(/[?&](utm_[a-z_]+|fbclid|gclid)=/g)].map((m) => m[1]);
+    if (junk.length > 0) fail(file, `source url carries tracking parameters: ${junk.join(', ')}`);
+  }  if (!/^\s+url: /m.test(fm) && /^sources:/m.test(fm))
     fail(file, 'sources must be {label, url} objects');
 }
 

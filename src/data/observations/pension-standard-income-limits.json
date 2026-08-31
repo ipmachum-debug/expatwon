@@ -1,0 +1,19 @@
+{
+  "key": "pension-standard-income-limits",
+  "label": "Pension standard monthly income limits",
+  "unit": "KRW per month, lower and upper bound",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 7,
+  "appliesTo": "Every National Pension contributor, employee and employer alike",
+  "why": "Contributions are calculated on income only between these two bounds. Pay above the ceiling contributes nothing further, which is what caps the employer's pension cost on a senior salary. The bounds are reset annually and run from 1 July, not 1 January.",
+  "history": [
+    {
+      "date": "2026-07-01",
+      "value": 6590000,
+      "display": "₩410,000 – ₩6,590,000",
+      "source": "National Pension Service",
+      "note": "Applies 1 July 2026 to 30 June 2027."
+    }
+  ]
+}

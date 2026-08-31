@@ -7,23 +7,27 @@ updatedDate: 2026-09-01
 slot: pm
 draft: true
 tags: [employment, social-insurance, payroll, hiring, foreign-workers]
-tracked: [national-pension-rate, health-insurance-rate, pension-short-hours-income-floor, meal-allowance-tax-exemption]
+tracked: [national-pension-rate, health-insurance-rate, pension-short-hours-income-floor, pension-standard-income-limits, meal-allowance-tax-exemption]
 lastVerified: 2026-09-01
 sources:
-  - label: 'Four Major Social Insurance Information Portal — combined acquisition reporting for employers'
-    url: 'https://www.4insure.or.kr/'
-  - label: 'National Pension Service — workplace-based subscriber acquisition reporting'
-    url: 'https://www.nps.or.kr/'
-  - label: 'National Health Insurance Service — employee subscriber acquisition reporting'
-    url: 'https://www.nhis.or.kr/'
-  - label: 'Korea Workers’ Compensation & Welfare Service — employment insurance and industrial accident reporting'
-    url: 'https://www.comwel.or.kr/'
+  - label: 'Korea Law Information Center — Act on the Collection of Insurance Premiums for Employment Insurance and Industrial Accident Compensation Insurance, art. 16-10(3)'
+    url: 'https://law.go.kr/LSW/lsInfoP.do?lsiSeq=103790'
+  - label: 'Korea Law Information Center — Enforcement Decree of the Employment Insurance Act, Appendix 3 (administrative fine schedule)'
+    url: 'https://law.go.kr/LSW/flDownload.do?flSeq=40485966&gubun='
+  - label: 'National Pension Service — 2026 Easy Guide to Workplace National Pension Administration'
+    url: 'https://www.nps.or.kr/pnsinfo/databbs/getOHAG0064M1Detail.do?hmpgBbsCd=BS20240278&menuId=MN24001612&pageIndex=1&pstId=ZZ202600000000000020'
+  - label: 'National Pension Service — standard monthly income upper and lower limits'
+    url: 'https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0038M0.do?menuId=MN24001113&tab=tab5'
+  - label: 'National Health Insurance Service EDI — workplace insured person acquisition report guide'
+    url: 'https://edi.nhis.or.kr/webedi/file_sy/all_chuiduk.html'
   - label: 'National Pension Act'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EB%B2%95'
   - label: 'National Health Insurance Act'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95'
-  - label: 'Employment Insurance Act'
-    url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95'
+  - label: 'Four Major Social Insurance Information Portal — combined acquisition reporting'
+    url: 'https://www.4insure.or.kr/'
+  - label: 'Korea Workers’ Compensation & Welfare Service'
+    url: 'https://www.comwel.or.kr/'
 affiliate: false
 revisions:
   - date: 2026-09-01
@@ -32,12 +36,12 @@ keyFacts:
   - { label: 'Health insurance', value: '14 days from the start' }
   - { label: 'The other three', value: '15th of the next month' }
   - { label: 'Part-time line', value: '60 hours a month' }
-  - { label: 'Employment ins. late fee', value: '₩30,000 per person' }
+  - { label: 'Late employment ins. filing', value: '₩30,000/person · ₩1M cap' }
 faq:
   - question: 'Can I just file everything on the 15th of the following month?'
     answer: 'Not safely. Three of the four are due on the 15th of the month after the hire, but health insurance is due within 14 days of the day the employee becomes covered. Anyone who starts before roughly the 2nd of the month is already late by the time a monthly batch goes out. The combined portal lets you submit the filings together; it does not merge the statutory deadlines behind them.'
   - question: 'Is there really a ₩300,000–500,000 fine per unregistered employee?'
-    answer: 'No. There is no single penalty of that shape covering all four insurances — each statute sets its own. Under the National Pension Act a failure to report or a false report carries a fine of up to ₩500,000. For employment insurance, a plain failure to report or a late report is currently assessed at ₩30,000 per insured person as the base amount, with false reporting rising by the number of violations. Health and industrial accident insurance follow the penalty schedules in their own statutes.'
+    answer: 'No. There is no single penalty of that shape covering all four insurances — each statute sets its own. Under the National Pension Act a failure to report or a false report carries a fine of up to ₩500,000. For employment insurance, the fine for failure to report, including late filing, is ₩30,000 per insured employee with an aggregate cap of ₩1,000,000; false reporting runs on a separate escalating schedule of ₩50,000, ₩80,000 and ₩100,000 per person. Health and industrial accident insurance follow the penalty schedules in their own statutes.'
   - question: 'My employee works 15 hours a week. Do I still register them?'
     answer: 'Probably for some of the four, and it is not one decision. Health insurance generally excludes employees working under 60 contracted hours a month. National Pension uses the same 60-hour starting point but can still cover someone employed for a month or more whose monthly income reaches the published floor. Employment insurance generally excludes work under 60 hours a month or 15 hours a week, but covers it where the work is the person’s livelihood and continues three months or more. Industrial accident insurance is not excluded on short hours as a rule at all.'
   - question: 'Does registering a foreign employee for social insurance make their work legal?'
@@ -76,7 +80,15 @@ each filing is due is not the same day.
 | National Pension | Workplace subscriber acquisition | 15th of the month after the event | National Pension Service |
 | Health insurance | Employee subscriber acquisition | **Within 14 days of coverage starting** | National Health Insurance Service |
 | Employment insurance | Acquisition of insured status | 15th of the month after the event | Korea Workers' Compensation & Welfare Service |
-| Industrial accident | Employment, status and wage information | As a rule, the 15th of the month after hiring | Korea Workers' Compensation & Welfare Service |
+| Industrial accident | Employment, status and wage information | 15th of the month following the hire, subject to statutory exceptions | Korea Workers' Compensation & Welfare Service |
+
+The industrial accident line carries a genuine statutory exception rather
+than a soft "usually": the Act on the Collection of Insurance Premiums
+fixes the 15th-of-the-following-month duty, and the Enforcement Decree
+then relieves some employees from being reported at all — short-hours
+work under 60 hours a month among them. That is an exception to the
+*reporting duty*, and it is not the same question as whether the person
+is covered, which the next section takes separately.
 
 The Four Major Social Insurance Information Portal, and each agency's own
 EDI system, will take several of these filings together. That convenience
@@ -188,9 +200,11 @@ common rule. Each statute sets its own penalty:
 
 - Under the **National Pension Act**, a failure to report or a false
   report by the employer carries a fine of up to ₩500,000.
-- For **employment insurance**, a plain failure to report or a late
-  report is currently assessed at ₩30,000 per insured person as the base
-  amount. False reporting rises with the number of violations.
+- For **employment insurance**, the current administrative fine for
+  failure to report — including late filing — is ₩30,000 per insured
+  employee, subject to an aggregate cap of ₩1,000,000. False reporting is
+  a separate, escalating schedule: ₩50,000 per person for a first
+  offence, ₩80,000 for a second, ₩100,000 from the third.
 - **Health insurance** and **industrial accident insurance** follow the
   violation-specific schedules in their own statutes.
 
