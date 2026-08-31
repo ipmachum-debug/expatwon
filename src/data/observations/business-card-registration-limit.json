@@ -1,0 +1,19 @@
+{
+  "key": "business-card-registration-limit",
+  "label": "Business cards registerable on Hometax",
+  "unit": "cards per individual business",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Individual businesses. Corporate cards are linked to the company already and are not registered this way.",
+  "why": "The cap on how many cards an individual business can have collecting data automatically. It is set administratively by the National Tax Service rather than in the Act, so it moves without a statutory amendment.",
+  "history": [
+    {
+      "date": "2026-08-31",
+      "value": 50,
+      "display": "50 cards",
+      "source": "National Tax Service",
+      "note": "Credit cards in the business owner's own name only. Family cards and debit cards are outside the scheme."
+    }
+  ]
+}

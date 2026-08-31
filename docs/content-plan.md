@@ -315,7 +315,7 @@ F-2 점수제는 실제로 다른 글이다.
 ## 경비·증빙
 - `082` business-expense-deductions-in-korea — 필요경비 인정 기준
 - `083` standard-vs-simplified-expense-ratios — 기준경비율·단순경비율
-- `084` [예약 PM 09-05] registering-a-business-card-on-hometax — 사업용 신용카드 등록 · ↔ korean-vat-for-small-business-owners
+- `084` [예약 PM 09-05] registering-a-business-card-on-hometax — 사업용 신용카드 등록 · ↔ korean-vat-for-small-business-owners · **원고 완료**
 - `085` electronic-tax-invoice-rules-korea — 전자세금계산서 의무
 - `086` cash-receipt-rules-for-korean-businesses — 현금영수증 의무발행·가산세
 
