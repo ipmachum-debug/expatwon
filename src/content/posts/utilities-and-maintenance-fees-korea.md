@@ -4,6 +4,7 @@ description: 'Meter photos on move-in, the electricity tier cliff, what your mai
 category: cost-of-living
 publishDate: 2026-09-02
 updatedDate: 2026-09-02
+pairedWith: apartment-management-offices-explained
 draft: true
 tags: [cost-of-living, rental, utilities, maintenance-fee, moving-out]
 sources:

@@ -434,7 +434,7 @@ F-2 점수제는 실제로 다른 글이다.
 ## 법인·생활
 - `166` corporate-housing-for-foreign-executives — 사택 임대차
 - `167` company-lease-vs-personal-lease — 법인명의 vs 개인명의
-- `168` [예약 PM 09-02] apartment-management-offices-explained — 관리사무소·주차 등록 · ↔ utilities-and-maintenance-fees-korea
+- `168` [예약 PM 09-02] apartment-management-offices-explained — 공동주택관리법 vs 집합건물법 · ↔ utilities-and-maintenance-fees-korea · **원고 완료**
 - `169` moving-home-in-korea-settlement-checklist — 이사 종합정산
 
 ---
