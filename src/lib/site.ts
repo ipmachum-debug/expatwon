@@ -13,7 +13,7 @@ export const SITE_DESCRIPTION =
  *
  * A PUBLIC token that appears in page source. Not a secret.
  */
-export const NAVER_SITE_VERIFICATION = '';
+export const NAVER_SITE_VERIFICATION = '0f5ddc6a055c9066ee1771e95c18298b27128f1f';
 
 /**
  * AdSense publisher ID, e.g. 'ca-pub-1234567890123456'.
