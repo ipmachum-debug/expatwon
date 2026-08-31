@@ -1,0 +1,215 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../layouts/Layout.astro';
+import { AUDIENCES, CALENDAR } from '../data/calendar';
+import { getCategory } from '../lib/categories';
+
+// Only link to guides that are actually live — a draft resolves to 404 until
+// its publishDate, so the link disappears rather than breaking.
+const published = new Set(
+  (await getCollection('posts', (p) => !p.data.draft)).map(
+    (p) => `/${getCategory(p.data.category).slug}/${p.id}/`,
+  ),
+);
+
+const now = new Date();
+const kstMonth = Number(
+  new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Seoul', month: 'numeric' }).format(now),
+);
+
+const totalItems = CALENDAR.reduce((n, m) => n + m.items.length, 0);
+---
+
+<Layout
+  title="Korea Money Calendar"
+  description="Every tax and money deadline in Korea in one place: VAT, income tax, vehicle tax, property tax and year-end settlement, filtered by whether you are an employee, a freelancer or a business owner."
+>
+  <div class="mx-auto max-w-4xl">
+    <header class="mb-8 border-b border-rule pb-8">
+      <p class="mb-3 font-mono text-[0.7rem] tracking-[0.18em] text-ink-soft/60 uppercase">
+        Reference · updated as the rules move
+      </p>
+      <h1 class="mb-4 font-display text-[2.5rem] leading-tight font-bold text-ink sm:text-[2.9rem]">
+        The Korea money calendar
+      </h1>
+      <p class="max-w-2xl text-lg leading-relaxed text-ink-soft/85">
+        Korean tax deadlines are statutory: they sit in the law, not in an annual
+        announcement, so they land on the same dates every year. Rates change and
+        we log those separately — these dates do not. Filter by what applies to
+        you and the rest disappears.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[0.78rem] text-ink-soft/70">
+        <span><strong class="text-ink">{totalItems}</strong> dated obligations</span>
+        <span><strong class="text-ink">5</strong> situations</span>
+        <span><strong class="text-ink">12</strong> months</span>
+      </div>
+    </header>
+
+    <div class="mb-10" data-filter-bar>
+      <p class="mb-3 font-sans text-[0.8rem] font-semibold tracking-wide text-ink-soft/70 uppercase">
+        Show what applies to me
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          data-audience="all"
+          aria-pressed="true"
+          class="aud-chip rounded-full border border-ink bg-ink px-4 py-1.5 font-sans text-[0.85rem] font-medium text-white transition-colors"
+        >
+          Everything
+        </button>
+        {
+          AUDIENCES.map((a) => (
+            <button
+              type="button"
+              data-audience={a.id}
+              aria-pressed="false"
+              title={a.hint}
+              class="aud-chip rounded-full border border-rule bg-paper px-4 py-1.5 font-sans text-[0.85rem] font-medium text-ink-soft transition-colors hover:border-ink/40 hover:text-ink"
+            >
+              {a.label}
+            </button>
+          ))
+        }
+      </div>
+      <p class="mt-3 hidden font-sans text-[0.85rem] text-ink-soft/70" data-empty-note>
+        Nothing in the calendar applies to that combination.
+      </p>
+    </div>
+
+    <ol class="space-y-px">
+      {
+        CALENDAR.map((m) => (
+          <li
+            class="month-block border-t border-rule pt-5 pb-7"
+            data-month
+            data-audiences={[...new Set(m.items.flatMap((i) => i.who))].join(' ')}
+          >
+            <div class="grid gap-x-8 gap-y-4 sm:grid-cols-[7.5rem_1fr]">
+              <h2
+                class:list={[
+                  'font-display text-xl font-semibold',
+                  m.month === kstMonth ? 'text-gold' : 'text-ink',
+                ]}
+              >
+                {m.label}
+                {m.month === kstMonth && (
+                  <span class="mt-1 block font-mono text-[0.65rem] tracking-[0.14em] text-gold uppercase">
+                    This month
+                  </span>
+                )}
+              </h2>
+
+              <ul class="space-y-5">
+                {m.items.map((item) => (
+                  <li class="cal-item" data-audiences={item.who.join(' ')}>
+                    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <span class="font-mono text-[0.8rem] font-semibold text-ink tabular-nums">
+                        {item.when}
+                      </span>
+                      <h3 class="font-sans text-[1rem] font-semibold text-ink">
+                        {item.link && published.has(item.link) ? (
+                          <a
+                            href={item.link}
+                            class="underline decoration-gold/50 decoration-2 underline-offset-4 transition-colors hover:text-gold"
+                          >
+                            {item.title}
+                          </a>
+                        ) : (
+                          item.title
+                        )}
+                      </h3>
+                      <span class="font-sans text-[0.8rem] text-ink-soft/55">{item.korean}</span>
+                    </div>
+                    <p class="mt-1.5 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft/90">
+                      {item.detail}
+                    </p>
+                    {item.penalty && (
+                      <p class="mt-1.5 border-l-2 border-gold/60 pl-3 font-sans text-[0.85rem] text-ink-soft/75">
+                        {item.penalty}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <section class="mt-10 border-t border-rule pt-6">
+      <h2 class="mb-3 font-display text-lg font-semibold text-ink">Two things this page assumes</h2>
+      <ul class="max-w-2xl space-y-2.5 text-[0.95rem] leading-relaxed text-ink-soft/85">
+        <li>
+          <strong class="text-ink">Weekends roll forward.</strong> When a deadline
+          falls on a Saturday, Sunday or public holiday, it moves to the next
+          business day. That is the general rule under the Framework Act on
+          National Taxes, so we do not restate it on every line.
+        </li>
+        <li>
+          <strong class="text-ink">Your residence permit is not on this calendar.</strong>
+          Immigration deadlines run from your own expiry date, not from a shared
+          annual date, so there is no month to put them in. Check the date on your
+          card, not this page.
+        </li>
+      </ul>
+      <p class="mt-5 font-sans text-[0.85rem] text-ink-soft/65">
+        Dates from the Value-Added Tax Act, the Income Tax Act and the Local Tax
+        Act, as administered by the National Tax Service (nts.go.kr) and Wetax
+        (wetax.go.kr). Deadlines, not rates — figures live in the individual
+        guides, where every change is logged.
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  const bar = document.querySelector('[data-filter-bar]');
+  if (bar) {
+    const chips = [...bar.querySelectorAll<HTMLButtonElement>('.aud-chip')];
+    const months = [...document.querySelectorAll<HTMLElement>('[data-month]')];
+    const emptyNote = bar.querySelector<HTMLElement>('[data-empty-note]');
+    const ON = ['border-ink', 'bg-ink', 'text-white'];
+    const OFF = ['border-rule', 'bg-paper', 'text-ink-soft'];
+
+    const selected = new Set<string>();
+
+    function paint() {
+      const all = selected.size === 0;
+      for (const chip of chips) {
+        const id = chip.dataset.audience!;
+        const on = all ? id === 'all' : selected.has(id);
+        chip.setAttribute('aria-pressed', String(on));
+        chip.classList.remove(...(on ? OFF : ON));
+        chip.classList.add(...(on ? ON : OFF));
+      }
+
+      let anyVisible = false;
+      for (const month of months) {
+        let shown = 0;
+        for (const item of month.querySelectorAll<HTMLElement>('.cal-item')) {
+          const who = (item.dataset.audiences ?? '').split(' ');
+          const visible = all || who.some((w) => selected.has(w));
+          item.hidden = !visible;
+          if (visible) shown++;
+        }
+        month.hidden = shown === 0;
+        if (shown > 0) anyVisible = true;
+      }
+      if (emptyNote) emptyNote.classList.toggle('hidden', anyVisible);
+    }
+
+    for (const chip of chips) {
+      chip.addEventListener('click', () => {
+        const id = chip.dataset.audience!;
+        if (id === 'all') selected.clear();
+        else if (selected.has(id)) selected.delete(id);
+        else selected.add(id);
+        paint();
+      });
+    }
+    paint();
+  }
+</script>
