@@ -354,7 +354,7 @@ F-2 점수제는 실제로 다른 글이다.
 - `109` korean-bank-vs-fintech-remittance-apps — 실질 비용 비교
 - `110` exchange-rates-spreads-and-preferential-fx — 환율우대 90%의 실제 의미
 - `111` getting-your-first-korean-credit-card — 첫 신용카드 로드맵
-- `112` [예약 PM 09-06] postpaid-transportation-cards-for-foreigners — 후불교통 심사·결제 · ↔ korean-check-card-vs-credit-card-for-foreigners
+- `112` [예약 PM 09-06] postpaid-transportation-cards-for-foreigners — 후불교통 심사·결제 · ↔ korean-check-card-vs-credit-card-for-foreigners · **원고 완료**
 - `113` online-banking-otp-and-digital-certificates — 공동·금융인증·OTP
 - `114` foreign-name-matching-problems-in-korean-banking — 영문명 불일치
 - `115` when-your-korean-bank-account-is-frozen — 지급정지 대응

@@ -4,6 +4,7 @@ description: 'A check card needs an account; a credit card is a small loan revie
 category: banking
 publishDate: 2026-09-06
 updatedDate: 2026-09-06
+pairedWith: postpaid-transportation-cards-for-foreigners
 draft: true
 tags: [banking, cards, credit, eligibility, documents]
 sources:

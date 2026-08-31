@@ -1,0 +1,19 @@
+{
+  "key": "postpaid-transit-min-age",
+  "label": "Minimum age for a post-paid transit check card",
+  "unit": "years",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 6,
+  "appliesTo": "Check cards carrying the post-paid transport function",
+  "why": "Post-paid transit extends credit, so the age floor sits in the Specialized Credit Finance Business Act decree rather than in a card company's policy. It is the one hard statutory number in an area otherwise governed by internal assessment.",
+  "history": [
+    {
+      "date": "2019-06-11",
+      "value": 12,
+      "display": "12 years",
+      "source": "Enforcement Decree of the Specialized Credit Finance Business Act",
+      "note": "Widened to 12 by the amendment of this date. The amendment set the age floor — it did not create the credit character of post-paid transit, which is a common misreading."
+    }
+  ]
+}
