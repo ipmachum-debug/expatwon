@@ -315,7 +315,7 @@ F-2 점수제는 실제로 다른 글이다.
 ## 경비·증빙
 - `082` business-expense-deductions-in-korea — 필요경비 인정 기준
 - `083` standard-vs-simplified-expense-ratios — 기준경비율·단순경비율
-- `084` registering-a-business-card-on-hometax — 사업용 신용카드 등록
+- `084` [예약 PM 09-05] registering-a-business-card-on-hometax — 사업용 신용카드 등록 · ↔ korean-vat-for-small-business-owners
 - `085` electronic-tax-invoice-rules-korea — 전자세금계산서 의무
 - `086` cash-receipt-rules-for-korean-businesses — 현금영수증 의무발행·가산세
 
@@ -347,14 +347,14 @@ F-2 점수제는 실제로 다른 글이다.
 - `102` opening-a-bank-account-before-your-arc-arrives — ARC 이전 여권 계좌
 - `103` resident-vs-non-resident-bank-accounts — 계좌 상품 차이 (070 참조)
 - `104` setting-up-a-salary-account-in-korea — 급여통장 세팅
-- `105` foreign-currency-accounts-in-korea — 외화예금 개설
+- `105` [예약 PM 09-03] foreign-currency-accounts-in-korea — 외화예금 개설 · ↔ best-korean-banks-for-foreigners-compared
 - `106` designated-foreign-exchange-bank-explained — 지정거래외국환은행
 - `107` sending-large-amounts-of-money-overseas — 고액송금 증빙·심사
 - `108` proving-source-of-funds-for-transfers — 자금출처 증빙
 - `109` korean-bank-vs-fintech-remittance-apps — 실질 비용 비교
 - `110` exchange-rates-spreads-and-preferential-fx — 환율우대 90%의 실제 의미
 - `111` getting-your-first-korean-credit-card — 첫 신용카드 로드맵
-- `112` postpaid-transportation-cards-for-foreigners — 후불교통 심사·결제
+- `112` [예약 PM 09-06] postpaid-transportation-cards-for-foreigners — 후불교통 심사·결제 · ↔ korean-check-card-vs-credit-card-for-foreigners
 - `113` online-banking-otp-and-digital-certificates — 공동·금융인증·OTP
 - `114` foreign-name-matching-problems-in-korean-banking — 영문명 불일치
 - `115` when-your-korean-bank-account-is-frozen — 지급정지 대응
@@ -407,7 +407,7 @@ F-2 점수제는 실제로 다른 글이다.
 - `144` foreign-real-estate-transaction-reporting — 제3조·제8조 신고 구분
 - `145` bringing-overseas-money-to-buy-korean-property — 해외자금 취득
 - `146` property-ownership-registration-for-foreigners — 소유권이전등기
-- `147` closing-costs-when-buying-property-in-korea — 등기까지 필요한 현금 총액
+- `147` [예약 PM 09-04] closing-costs-when-buying-property-in-korea — 등기까지 필요한 현금 총액 · ↔ korean-mortgage-for-foreigners
 - `148` korean-real-estate-agent-fees-explained — 중개보수 계산
 
 ## 물건 검증
@@ -434,7 +434,7 @@ F-2 점수제는 실제로 다른 글이다.
 ## 법인·생활
 - `166` corporate-housing-for-foreign-executives — 사택 임대차
 - `167` company-lease-vs-personal-lease — 법인명의 vs 개인명의
-- `168` apartment-management-offices-explained — 관리사무소·주차 등록
+- `168` [예약 PM 09-02] apartment-management-offices-explained — 관리사무소·주차 등록 · ↔ utilities-and-maintenance-fees-korea
 - `169` moving-home-in-korea-settlement-checklist — 이사 종합정산
 
 ---
@@ -478,7 +478,7 @@ F-2 점수제는 실제로 다른 글이다.
 - `199` probation-period-rules-korea — 수습기간·최저임금·해고
 - `200` dismissal-and-30-day-notice-korea — 해고 제한과 해고예고
 - `201` workplaces-with-fewer-than-five-employees — 5인 미만 적용 범위
-- `202` registering-employees-for-four-insurances — 4대보험 취득신고
+- `202` [예약 PM 09-01] registering-employees-for-four-insurances — 4대보험 취득신고 · ↔ hiring-your-first-employee-in-korea
 - `203` national-pension-rules-for-foreign-employees — 국적별 가입 (사업주 관점)
 - `204` nhis-workplace-enrollment-korea — 직장 건강보험
 - `205` employment-insurance-for-foreign-workers — 체류자격별 고용보험
