@@ -1,0 +1,19 @@
+{
+  "key": "pension-short-hours-income-floor",
+  "label": "Pension income floor for short-hours work",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Employees working under 60 hours a month on a contract of a month or more",
+  "why": "Under 60 hours a month normally falls outside workplace pension coverage. Earning at or above this line brings it back in, so the same hours produce a different answer depending on the rate of pay.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 2200000,
+      "display": "₩2,200,000",
+      "source": "National Pension Service",
+      "note": "The threshold the NPS publishes for 2026."
+    }
+  ]
+}

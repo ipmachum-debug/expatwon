@@ -1,0 +1,19 @@
+{
+  "key": "meal-allowance-tax-exemption",
+  "label": "Meal allowance exempt from income tax",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Employees who are not provided with meals in kind",
+  "why": "Exempt pay is excluded from the wage figure the social insurances are calculated on, so this line moves the employer's contribution as well as the employee's tax. Renaming a payslip line does not qualify it — the conditions have to hold.",
+  "history": [
+    {
+      "date": "2026-08-31",
+      "value": 200000,
+      "display": "₩200,000",
+      "source": "Income Tax Act",
+      "note": "Applies only where meals are not provided in kind."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+---
+/**
+ * "Read next" for the other half of the day's pair.
+ *
+ * Renders nothing until the target is published. At two posts a day the
+ * pillar goes out nine hours before its supporting piece, so a link written
+ * into the manuscript would be dead for the morning — and the alternative,
+ * remembering to add it by hand every afternoon for months, is the kind of
+ * step that quietly stops happening.
+ */
+import { getCollection } from 'astro:content';
+
+import { getCategory } from '../lib/categories';
+
+interface Props {
+  slug?: string;
+}
+
+const { slug } = Astro.props;
+
+const target = slug
+  ? (await getCollection('posts', (p) => !p.data.draft && p.id === slug))[0]
+  : undefined;
+const cat = target ? getCategory(target.data.category) : undefined;
+---
+
+{
+  target && cat && (
+    <aside class="mt-12 border-t-2 border-[var(--cat-accent)] pt-5">
+      <p class="mb-2 font-mono text-[0.68rem] tracking-[0.16em] text-ink-soft/55 uppercase">
+        Read next
+      </p>
+      <h2 class="font-display text-xl font-semibold text-ink">
+        <a
+          href={`/${cat.slug}/${target.id}/`}
+          class="underline decoration-gold/50 decoration-2 underline-offset-4 transition-colors hover:text-gold"
+        >
+          {target.data.title}
+        </a>
+      </h2>
+      <p class="mt-1.5 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft/85">
+        {target.data.description}
+      </p>
+    </aside>
+  )
+}

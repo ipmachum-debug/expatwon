@@ -478,7 +478,7 @@ F-2 점수제는 실제로 다른 글이다.
 - `199` probation-period-rules-korea — 수습기간·최저임금·해고
 - `200` dismissal-and-30-day-notice-korea — 해고 제한과 해고예고
 - `201` workplaces-with-fewer-than-five-employees — 5인 미만 적용 범위
-- `202` [예약 PM 09-01] registering-employees-for-four-insurances — 4대보험 취득신고 · ↔ hiring-your-first-employee-in-korea
+- `202` [예약 PM 09-01] registering-employees-for-four-insurances — 4대보험 취득신고 · ↔ hiring-your-first-employee-in-korea · **원고 완료**
 - `203` national-pension-rules-for-foreign-employees — 국적별 가입 (사업주 관점)
 - `204` nhis-workplace-enrollment-korea — 직장 건강보험
 - `205` employment-insurance-for-foreign-workers — 체류자격별 고용보험

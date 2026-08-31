@@ -88,6 +88,13 @@ const posts = defineCollection({
       .array(z.object({ question: z.string(), answer: z.string() }))
       .optional(),
     /**
+     * The other half of the day's pair, by slug. The morning pillar names the
+     * afternoon supporting piece; the link renders only once the target is
+     * actually published, so a pillar that goes out at 08:32 does not carry a
+     * dead link to a guide that appears at 17:32.
+     */
+    pairedWith: z.string().min(3).optional(),
+    /**
      * Which of the day's two runs releases this post. At two posts a day the
      * pillar goes out in the morning and the supporting piece in the
      * afternoon, so publishDate alone no longer identifies a post. Absent
