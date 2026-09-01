@@ -10,9 +10,12 @@ name: Publish scheduled posts
 # publishes only its own slot, so whichever attempt lands first does the work
 # and the rest are no-ops.
 #
-# The slot is derived from the hour the run actually starts, not from which
-# cron fired — a delayed morning attempt that lands after noon KST would
-# otherwise release the afternoon post early.
+# The slot comes from WHICH CRON FIRED, never from the wall clock. GitHub
+# delivers these hours late — on 2026-09-01 the morning attempts arrived
+# between 10:56 and 14:43 KST — and a clock-based rule read a delayed
+# morning run landing at 14:10 as "it is afternoon, serve pm" and released
+# the afternoon post three hours early. The cron expression is the only
+# thing that still says what the run was meant to do.
 on:
   schedule:
     - cron: '32 23 * * *'   # 08:32 KST — morning slot
@@ -51,15 +54,26 @@ jobs:
       - name: Decide which slot this run serves
         id: slot
         run: |
-          if [ -n "${{ github.event.inputs.slot }}" ]; then
-            slot='${{ github.event.inputs.slot }}'
-          elif [ "$(TZ=Asia/Seoul date +%H)" -lt 12 ]; then
-            slot=am
+          schedule='${{ github.event.schedule }}'
+          manual='${{ github.event.inputs.slot }}'
+          if [ -n "$manual" ]; then
+            slot="$manual"
+            why="manual dispatch"
+          elif [ -n "$schedule" ]; then
+            # Second field of the cron is the UTC hour: 23 and 0 are the
+            # morning slot, 8 and 9 the afternoon one.
+            case "$(echo "$schedule" | awk '{print $2}')" in
+              23|0) slot=am ;;
+              8|9)  slot=pm ;;
+              *)    echo "::error::unrecognised schedule '$schedule'"; exit 1 ;;
+            esac
+            why="cron '$schedule'"
           else
-            slot=pm
+            echo "::error::no slot input and no schedule — refusing to guess"
+            exit 1
           fi
           echo "slot=$slot" >> "$GITHUB_OUTPUT"
-          echo "Serving the $slot slot ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST)"
+          echo "Serving the $slot slot from $why, at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
 
       - name: Publish any draft whose date has arrived
         id: flip
