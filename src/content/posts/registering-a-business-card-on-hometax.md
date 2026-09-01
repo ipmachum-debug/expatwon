@@ -24,14 +24,14 @@ revisions:
     change: 'Published'
 keyFacts:
   - { label: 'Cards you can register', value: 'Up to 50, in your own name' }
-  - { label: 'Never accepted', value: 'Family and debit cards' }
+  - { label: 'Check cards', value: 'Accepted. 직불카드 is not' }
   - { label: 'Corporate cards', value: 'No registration needed' }
   - { label: 'What registration adds', value: 'Data, not deductions' }
 faq:
   - question: 'Does registering a card on Hometax get me a bigger deduction?'
     answer: 'No. Registration does not make a non-deductible transaction deductible. It lets the National Tax Service collect your card data from the card companies so that purchases which already qualify arrive as filing data instead of as a shoebox of receipts. The deduction rules are untouched by it.'
   - question: 'Can I register my spouse’s card, or an employee’s?'
-    answer: 'No. The scheme takes credit cards issued in the business owner’s own name, up to 50 of them. Family cards and debit cards are outside it, and an employee’s personal card cannot be registered against your business registration number. If staff need to spend, that is a corporate card or a reimbursement process, not this.'
+    answer: 'No. The registration screen takes credit cards and check cards in the name of the representative or the company, plus rechargeable prepaid cards converted to a registered name — gift cards only — up to 50 of them. Family cards, gift cards, unregistered rechargeable prepaid cards, 직불카드 and department store cards are all refused, and an employee’s personal card cannot be registered against your business registration number. If staff need to spend, that is a corporate card or a reimbursement process, not this.'
   - question: 'Do corporate cards need registering too?'
     answer: 'No. A card issued in the company’s name is already linked to the company, so there is no separate registration. That is a data-collection convenience and nothing more — paying a director’s personal shopping, a family meal or a private trip on a corporate card does not make it a business cost because the card has the company’s name on it.'
   - question: 'Is there a penalty for not registering a business card?'
@@ -74,23 +74,46 @@ Log in → Invoices · Receipts · Cards
        → Business credit card registration and enquiry
 ```
 
-An individual business can register up to **50 credit cards issued in the
-owner's own name**. They do not have to be cards opened specifically for
-the business — an ordinary personal credit card in the owner's name can
-be registered.
+An individual business can register up to **50 cards**, and the field on
+the screen says exactly which: credit cards and check cards in the name
+of the representative or the company. They do not have to be cards opened
+specifically for the business — an ordinary personal credit card in the
+owner's name can be registered.
+
+A mobile number is required alongside the card numbers. It is not
+optional politeness: it is where the SMS goes if a card number is
+mistyped, and clearing all the card numbers clears the phone number with
+them.
 
 What the scheme will not take:
 
 <div class="check-card">
-  <div class="check-row miss"><span class="mark"></span><span><strong>Family cards</strong> — outside the registration scheme entirely</span></div>
-  <div class="check-row miss"><span class="mark"></span><span><strong>Debit cards</strong> — likewise outside it</span></div>
+  <div class="check-row miss"><span class="mark"></span><span><strong>Family cards</strong> (가족카드) — refused</span></div>
+  <div class="check-row miss"><span class="mark"></span><span><strong>Gift cards</strong> (기프트카드) and <strong>unregistered rechargeable prepaid cards</strong> (충전식선불카드) — refused. A rechargeable prepaid card converted to a registered name is accepted, but only where it is a gift card.</span></div>
+  <div class="check-row miss"><span class="mark"></span><span><strong>직불카드</strong> — refused. This is the older direct-debit product, <em>not</em> a check card. English guides that say "no debit cards" get this wrong.</span></div>
+  <div class="check-row miss"><span class="mark"></span><span><strong>Department store cards</strong> (백화점전용카드) — refused</span></div>
   <div class="check-row miss"><span class="mark"></span><span><strong>An employee's personal card</strong> — cannot be registered against your business registration number</span></div>
   <div class="check-result">Registering a spouse's or a staff member's card against one business number is not a supported structure. Where staff need to spend, that is a corporate card or a reimbursement process.</div>
 </div>
 
-Usage appears in Hometax from the month after registration. So if a new
-card is going to carry business spending, register it **before** you
-start using it, not after the first statement.
+A card registered this month can be checked for an identity match from
+around the 10th of next month, and usage history has been available
+monthly for registrations from October 2019 onward. So if a new card is
+going to carry business spending, register it **before** you start using
+it, not after the first statement.
+
+One card type to keep out deliberately: fuel usage on a freight driver
+welfare card is queried through its own menu, and the screen asks you not
+to register it here.
+
+<div class="callout callout-tip">
+  <p class="callout-title">Get the number right the first time</p>
+  <p>The registration list shows each card with a request date, a
+  confirmation date and a processing status — and while that status reads
+  <strong>확인요청중</strong> (confirmation requested), the entry cannot be
+  deleted. A mistyped card number is not a quick fix; it is a wait. Check the
+  digits before submitting rather than after.</p>
+</div>
 
 ## Individual and corporate cards are collected differently
 
