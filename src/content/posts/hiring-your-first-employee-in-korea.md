@@ -4,7 +4,6 @@ description: 'Contract, four social insurances, the 2026 minimum wage and what c
 category: employment
 publishDate: 2026-09-01
 updatedDate: 2026-09-01
-draft: true
 tags: [business, employment, social-insurance, minimum-wage, payroll]
 tracked: [minimum-wage, national-pension-rate, health-insurance-rate, long-term-care-rate]
 lastVerified: 2026-08-31
