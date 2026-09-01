@@ -1,0 +1,12 @@
+{
+  "id": "housing-bond-rate-history",
+  "type": "first_party",
+  "date": "2026-09-01",
+  "title": "Fourteen years of the bond's coupon rate",
+  "cluster": "mortgage",
+  "asset": "/evidence/mortgage/housing-bond-rate-history.png",
+  "alt": "Housing and Urban Fund notice listing every First-Class National Housing Bond interest rate change from 2012 to 2026",
+  "note": "The full run of rate changes as the fund publishes them: 3.00% until July 2012, down through 1.00% by August 2019, up to 1.30% in December 2022, back to 1.00% from April 2025. This is the coupon the bond pays — not the discount you take when selling it on the day, which moves with market yields and is the number that actually leaves your account.",
+  "redaction": "Nothing removed. A public notice page, no personal or business information.",
+  "supports": ["national-housing-bond-coupon-rate"]
+}

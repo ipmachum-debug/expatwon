@@ -7,7 +7,8 @@ updatedDate: 2026-09-04
 slot: pm
 draft: true
 tags: [cost-of-living, property, buying, tax, closing-costs]
-tracked: [acquisition-tax-housing, brokerage-fee-caps-sale]
+tracked: [acquisition-tax-housing, brokerage-fee-caps-sale, housing-bond-purchase-rate, national-housing-bond-coupon-rate]
+evidence: [housing-bond-terms, housing-bond-rate-history]
 lastVerified: 2026-09-04
 sources:
   - label: 'Korea Law Information Center — Local Tax Act (acquisition tax on housing, local education tax)'
@@ -22,6 +23,8 @@ sources:
     url: 'https://www.seoul.go.kr/'
   - label: 'Wetax — local tax filing and payment, including acquisition tax'
     url: 'https://www.wetax.go.kr/'
+  - label: 'Housing and Urban Fund — National Housing Bond terms, rate history and the 2026 practice manual'
+    url: 'https://nhuf.molit.go.kr/'
 affiliate: false
 revisions:
   - date: 2026-09-04
@@ -170,9 +173,19 @@ This is the line most misread on a completion statement.
 
 Registering ownership of certain property requires you to buy First-Class
 National Housing Bonds. The purchase amount is calculated from the
-**published assessed value**, not the price you paid, at a statutory
-rate. For housing in Seoul with an assessed value of ₩500,000,000, the
-applicable rate is 26/1,000:
+**published assessed value**, not the price you paid, at a rate that
+moves with that value and with where the property is:
+
+| Assessed value | Metropolitan | Elsewhere |
+|---|---|---|
+| ₩20M – under ₩50M | 13 / 1,000 | 13 / 1,000 |
+| ₩50M – under ₩100M | 19 / 1,000 | 14 / 1,000 |
+| ₩100M – under ₩160M | 21 / 1,000 | 16 / 1,000 |
+| ₩160M – under ₩260M | 23 / 1,000 | 18 / 1,000 |
+| ₩260M – under ₩600M | **26 / 1,000** | 21 / 1,000 |
+| ₩600M and above | 31 / 1,000 | 26 / 1,000 |
+
+A Seoul home assessed at ₩500,000,000 sits in the fifth band:
 
 ```
 ₩500,000,000 × 26/1,000 = ₩13,000,000 of bonds to buy
@@ -185,6 +198,32 @@ actually lose is the discount on that immediate sale:
 ```
 ₩13,000,000 × 8.5% ≈ ₩1,105,000
 ```
+
+**Where that discount comes from** is the part nothing explains. The bond
+pays **1.0% a year over five years**, compounded annually and repaid in
+one sum at the end. When the market wants more than 1.0% to hold
+five-year paper, nobody buys it at face value — and the gap between what
+it pays and what the market wants is the discount. So the discount is not
+a fee anyone charges you. It is the price of getting out of a
+below-market bond immediately instead of waiting five years.
+
+That coupon has moved a great deal: 3.00% until mid-2012, down to 1.00%
+by August 2019, up to 1.30% in December 2022, back to 1.00% from April
+2025. [Its full history is tracked here](/tracked/national-housing-bond-coupon-rate/).
+
+<div class="callout callout-tip">
+  <p class="callout-title">Buying jointly lowers the rate</p>
+  <p>Where a property is bought in more than one name, the assessed value is
+  apportioned by each buyer's share and <strong>each buyer's rate comes from
+  their own share's band</strong>, not from the whole. Two people splitting a
+  home 50/50 can each land a band or two lower than one person buying it
+  alone. On a couple's purchase that is worth checking before the registration
+  is drawn up, because the saving is real and it is not recoverable
+  afterwards.</p>
+</div>
+
+One thing to ignore: if a guide mentions a Second-Class National Housing
+Bond, it is out of date. Issuance of those stopped on 31 May 2013.
 
 Two things follow, and both matter on the day:
 

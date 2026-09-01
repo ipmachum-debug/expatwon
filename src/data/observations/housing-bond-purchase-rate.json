@@ -1,0 +1,19 @@
+{
+  "key": "housing-bond-purchase-rate",
+  "label": "Housing bond purchase rate on a property transfer",
+  "unit": "per 1,000 of the published assessed value",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Registration of ownership transfer or preservation for housing. Land and other property run on separate schedules.",
+  "why": "Six bands, and outside the lowest one the rate also splits by region — so the same home costs a different bond obligation in Seoul than elsewhere. It is calculated on the published assessed value, not on the price paid, and the band is set by each buyer's share where a property is bought jointly.",
+  "history": [
+    {
+      "date": "2026-09-01",
+      "value": 31,
+      "display": "13 – 31 per 1,000, by value and region",
+      "source": "Housing and Urban Fund Act Enforcement Decree, via the 2026 National Housing Bond practice manual",
+      "note": "Metropolitan / elsewhere: ₩20M–50M 13 (no split); ₩50M–100M 19 / 14; ₩100M–160M 21 / 16; ₩160M–260M 23 / 18; ₩260M–600M 26 / 21; ₩600M and above 31 / 26."
+    }
+  ]
+}

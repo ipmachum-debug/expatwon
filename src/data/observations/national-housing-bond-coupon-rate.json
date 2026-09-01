@@ -1,0 +1,23 @@
+{
+  "key": "national-housing-bond-coupon-rate",
+  "label": "First-Class National Housing Bond coupon rate",
+  "unit": "% per year, compounded annually",
+  "type": "rate",
+  "check": "quarterly",
+  "appliesTo": "Anyone required to buy First-Class National Housing Bonds on a property registration",
+  "why": "The bond runs five years at this rate. When market yields sit well above it, a buyer selling the bond the same day takes the gap as a loss — which is why the immediate-sale discount exists at all and why it moves. Before August 2012 the rate was 3.00%.",
+  "history": [
+    { "date": "2012-08-01", "value": 2.5,  "display": "2.50%", "source": "Korea Housing and Urban Guarantee / Housing and Urban Fund", "note": "Down from 3.00%, which had applied until 31 July 2012." },
+    { "date": "2013-05-01", "value": 2.25, "display": "2.25%", "source": "Housing and Urban Fund" },
+    { "date": "2014-10-01", "value": 2.0,  "display": "2.00%", "source": "Housing and Urban Fund" },
+    { "date": "2015-04-01", "value": 1.75, "display": "1.75%", "source": "Housing and Urban Fund" },
+    { "date": "2016-02-15", "value": 1.25, "display": "1.25%", "source": "Housing and Urban Fund" },
+    { "date": "2016-11-24", "value": 1.5,  "display": "1.50%", "source": "Housing and Urban Fund" },
+    { "date": "2017-01-01", "value": 1.75, "display": "1.75%", "source": "Housing and Urban Fund" },
+    { "date": "2019-06-04", "value": 1.5,  "display": "1.50%", "source": "Housing and Urban Fund" },
+    { "date": "2019-07-23", "value": 1.25, "display": "1.25%", "source": "Housing and Urban Fund" },
+    { "date": "2019-08-08", "value": 1.0,  "display": "1.00%", "source": "Housing and Urban Fund", "note": "Held for over three years." },
+    { "date": "2022-12-01", "value": 1.3,  "display": "1.30%", "source": "Housing and Urban Fund" },
+    { "date": "2025-04-01", "value": 1.0,  "display": "1.00%", "source": "Housing and Urban Fund", "note": "The rate in force now. Five-year maturity, repaid in a single sum." }
+  ]
+}

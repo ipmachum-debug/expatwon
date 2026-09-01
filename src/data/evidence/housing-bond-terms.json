@@ -1,0 +1,12 @@
+{
+  "id": "housing-bond-terms",
+  "type": "first_party",
+  "date": "2026-09-01",
+  "title": "What the bond actually is",
+  "cluster": "mortgage",
+  "asset": "/evidence/mortgage/housing-bond-terms.png",
+  "alt": "Housing and Urban Fund page describing First-Class and Second-Class National Housing Bonds and their issue conditions",
+  "note": "The First-Class bond is the one a property registration triggers. Its terms are on the bottom row: 1.0% a year, five-year maturity, annual compounding, repaid in a single sum. The Second-Class bond, which older guides still mention, stopped being issued on 31 May 2013 — if a source is telling you about it, the source is at least thirteen years out of date.",
+  "redaction": "Nothing removed. A public information page on the Housing and Urban Fund site, carrying no personal or business information.",
+  "supports": ["national-housing-bond-coupon-rate"]
+}
