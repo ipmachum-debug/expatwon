@@ -5,7 +5,6 @@ category: employment
 publishDate: 2026-09-01
 updatedDate: 2026-09-01
 slot: pm
-draft: true
 tags: [employment, social-insurance, payroll, hiring, foreign-workers]
 tracked: [national-pension-rate, health-insurance-rate, pension-short-hours-income-floor, pension-standard-income-limits, meal-allowance-tax-exemption, nhis-dependant-residence-requirement]
 evidence: [four-insurance-breakdown-2026-08, nhis-2026-rate-notice, nhis-foreign-dependant-rule]
