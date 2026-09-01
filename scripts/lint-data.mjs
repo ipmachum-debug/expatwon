@@ -13,7 +13,7 @@
  * means what the code assumes it means.
  */
 
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
 
 const OBS_DIR = 'src/data/observations';
@@ -97,8 +97,14 @@ for (const file of listJson(EV_DIR)) {
     errors.push(`${where}: type must be first_party or observed`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(e.date ?? ''))
     errors.push(`${where}: date must be YYYY-MM-DD`);
-  if (e.asset && !e.asset.startsWith('/evidence/'))
+  if (e.asset && !e.asset.startsWith('/evidence/')) {
     errors.push(`${where}: asset must live under /evidence/`);
+  } else if (e.asset) {
+    // A record pointing at a missing image renders a broken picture where the
+    // reader was promised proof. Worse than having no evidence at all.
+    const onDisk = join('public', e.asset.replace(/^\//, ''));
+    if (!existsSync(onDisk)) errors.push(`${where}: asset not found at ${onDisk}`);
+  }
 
   for (const key of e.supports ?? []) {
     if (!observationKeys.has(key))
