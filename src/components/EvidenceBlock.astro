@@ -1,0 +1,74 @@
+---
+/**
+ * Layer 3 — first-party evidence, rendered under the guide.
+ *
+ * The redaction line is not decoration. A reader looking at a document has to
+ * know what was taken out of it, or they cannot tell the difference between
+ * "nothing was hidden" and "the inconvenient part was cropped". Both cases
+ * appear here and both say so.
+ */
+import { getEvidence } from '../data/evidence';
+
+interface Props {
+  ids?: string[];
+}
+
+const { ids = [] } = Astro.props;
+const records = ids
+  .map((id) => getEvidence(id))
+  .filter((e): e is NonNullable<typeof e> => Boolean(e));
+
+const fmt = (iso: string) =>
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+---
+
+{
+  records.length > 0 && (
+    <section class="mt-12 border-t-2 border-[var(--cat-accent)] pt-5">
+      <div class="mb-1 flex flex-wrap items-baseline justify-between gap-x-4">
+        <h2 class="font-display text-lg font-semibold text-ink">
+          {records.length > 1 ? 'The documents themselves' : 'The document itself'}
+        </h2>
+        <span class="font-mono text-[0.68rem] tracking-[0.14em] text-ink-soft/55 uppercase">
+          First-hand
+        </span>
+      </div>
+      <p class="mb-6 max-w-2xl font-sans text-[0.88rem] leading-relaxed text-ink-soft/70">
+        Not a description of what the paperwork says — the paperwork. Every
+        record states what was removed before it was published.
+      </p>
+
+      <ul class="space-y-9">
+        {records.map((e) => (
+          <li>
+            <figure class="m-0">
+              <img
+                src={e.asset}
+                alt={e.alt}
+                loading="lazy"
+                class="w-full rounded-lg border border-rule bg-white"
+              />
+              <figcaption class="mt-3">
+                <p class="mb-1 font-sans text-[0.95rem] font-semibold text-ink">
+                  {e.title}
+                  <span class="ml-2 font-mono text-[0.7rem] font-normal tracking-wide text-ink-soft/55">
+                    {fmt(e.date)}
+                  </span>
+                </p>
+                <p class="max-w-2xl text-[0.93rem] leading-relaxed text-ink-soft/90">{e.note}</p>
+                <p class="mt-2 max-w-2xl border-l-2 border-gold/60 pl-3 font-sans text-[0.82rem] leading-relaxed text-ink-soft/70">
+                  {e.redaction}
+                </p>
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

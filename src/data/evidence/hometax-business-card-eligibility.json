@@ -1,0 +1,12 @@
+{
+  "id": "hometax-business-card-eligibility",
+  "type": "first_party",
+  "date": "2026-09-01",
+  "title": "Which cards Hometax will and will not register",
+  "cluster": "vat",
+  "asset": "/evidence/vat/hometax-business-card-eligibility.png",
+  "alt": "Hometax business credit card registration page listing eligible and ineligible card types and the credit information consent",
+  "note": "The eligibility list as the National Tax Service words it. Accepted: credit cards and check cards in the name of the representative or the company, and rechargeable prepaid cards converted to a registered name — gift cards only. Refused: family cards, gift cards, rechargeable prepaid cards, 직불카드 and department store cards. Note that a check card is accepted while 직불카드 is not; English guides that translate both as 'debit card' get this backwards. The screen also asks that a freight driver welfare card be kept out, and states that a card registered this month can be checked for an identity match from around the 10th of next month.",
+  "redaction": "Browser chrome cropped away. Nothing on the page itself was masked — no business registration number or trade name had been selected.",
+  "supports": ["business-card-registration-limit"]
+}

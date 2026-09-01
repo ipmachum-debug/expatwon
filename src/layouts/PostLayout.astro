@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 
 import AdSlot from '../components/AdSlot.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import EvidenceBlock from '../components/EvidenceBlock.astro';
 import PairedGuide from '../components/PairedGuide.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import SourcesFooter from '../components/SourcesFooter.astro';
@@ -29,6 +30,7 @@ const {
   tracked,
   lastVerified,
   pairedWith,
+  evidence,
 } = post.data;
 const category = getCategory(post.data.category);
 const canonical = `${SITE_URL}/${category.slug}/${post.id}/`;
@@ -181,6 +183,8 @@ const faqSchema =
     </aside>
 
     <PairedGuide slug={pairedWith} />
+
+    <EvidenceBlock ids={evidence} />
 
     <TrackedFigures tracked={tracked} lastVerified={lastVerified} />
 

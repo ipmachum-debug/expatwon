@@ -1,0 +1,12 @@
+{
+  "id": "nhis-foreign-dependant-rule",
+  "type": "first_party",
+  "date": "2026-08-24",
+  "title": "The six-month wait before a foreign dependant is covered",
+  "cluster": "insurance",
+  "asset": "/evidence/insurance/nhis-foreign-dependant-rule.png",
+  "alt": "Notice stating that foreign nationals and overseas Koreans who entered Korea from 3 April 2024 must reside in Korea for six months before becoming a dependant, with listed exceptions",
+  "note": "For anyone who entered Korea on or after 3 April 2024, six months of domestic residence is required before they can be registered as a dependant. The exceptions take effect immediately on entry: a spouse and minor children, and a set of residence statuses the notice names individually — study (D-2), general training for primary and secondary students (D-4-3), non-professional employment (E-9), permanent residence (F-5) and marriage migration (F-6), alongside residence-purpose status.",
+  "redaction": "Nothing removed. Standard guidance printed on the notice, with no identifying information.",
+  "supports": ["nhis-dependant-residence-requirement"]
+}

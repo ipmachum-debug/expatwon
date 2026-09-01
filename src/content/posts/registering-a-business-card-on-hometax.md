@@ -8,6 +8,7 @@ slot: pm
 draft: true
 tags: [business, tax, vat, hometax, bookkeeping]
 tracked: [business-card-registration-limit, vat-simplified-threshold]
+evidence: [hometax-business-card-eligibility, hometax-business-card-form]
 lastVerified: 2026-09-05
 sources:
   - label: 'Korea Law Information Center — Value-Added Tax Act (input tax not eligible for deduction)'

@@ -1,0 +1,19 @@
+{
+  "key": "nhis-dependant-residence-requirement",
+  "label": "Residence required before a foreign dependant is covered",
+  "unit": "months of domestic residence",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 4,
+  "appliesTo": "Foreign nationals and overseas Koreans who entered Korea on or after 3 April 2024, seeking dependant status on an employee's health insurance",
+  "why": "It decides whether a family member arriving with you is covered from day one or after half a year, which for a family relocation is one of the larger unbudgeted costs. Spouses, minor children and several named residence statuses are exempt from the wait.",
+  "history": [
+    {
+      "date": "2024-04-03",
+      "value": 6,
+      "display": "6 months",
+      "source": "National Health Insurance Service",
+      "note": "Applies to entries on or after this date. Immediate exceptions: a spouse and minor children, plus study (D-2), general training for primary and secondary students (D-4-3), non-professional employment (E-9), permanent residence (F-5), marriage migration (F-6) and residence-purpose status."
+    }
+  ]
+}

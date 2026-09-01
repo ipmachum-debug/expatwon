@@ -1,0 +1,12 @@
+{
+  "id": "nhis-2026-rate-notice",
+  "type": "first_party",
+  "date": "2026-08-24",
+  "title": "2026 contribution rates, as printed on the bill",
+  "cluster": "insurance",
+  "asset": "/evidence/insurance/nhis-2026-rate-notice.png",
+  "alt": "Notice page from a National Health Insurance Service statement stating the 2026 employee health insurance rate of 7.19% and long-term care rate of 0.9448%",
+  "note": "The rates this site quotes, printed on an actual statement rather than taken from a guide: employee health insurance 7.19%, long-term care 0.9448%. Long-term care is expressed here as a percentage of income, which is the figure that reconciles with the 13.14%-of-the-health-contribution formulation used elsewhere.",
+  "redaction": "Nothing removed. This page of the notice carries no identifying information — it is the standard guidance printed for every recipient.",
+  "supports": ["health-insurance-rate", "long-term-care-rate"]
+}

@@ -7,7 +7,8 @@ updatedDate: 2026-09-01
 slot: pm
 draft: true
 tags: [employment, social-insurance, payroll, hiring, foreign-workers]
-tracked: [national-pension-rate, health-insurance-rate, pension-short-hours-income-floor, pension-standard-income-limits, meal-allowance-tax-exemption]
+tracked: [national-pension-rate, health-insurance-rate, pension-short-hours-income-floor, pension-standard-income-limits, meal-allowance-tax-exemption, nhis-dependant-residence-requirement]
+evidence: [four-insurance-breakdown-2026-08, nhis-2026-rate-notice, nhis-foreign-dependant-rule]
 lastVerified: 2026-09-01
 sources:
   - label: 'Korea Law Information Center — Act on the Collection of Insurance Premiums for Employment Insurance and Industrial Accident Compensation Insurance, art. 16-10(3)'
@@ -188,9 +189,20 @@ Dependants are a separate filing again. Registering the employee does not
 automatically register their family. The relationship has to qualify, the
 income and asset conditions have to be met, and it has to be applied for
 — and a foreign family member may need documents proving the
-relationship. In the residence-period condition applied to foreign
-dependants, a subscriber's spouse and children under 19 are treated as
-exceptions.
+relationship.
+
+There is also a waiting period that catches families relocating together.
+**Anyone who entered Korea on or after 3 April 2024 must have lived here
+six months before they can be registered as a dependant.** The exceptions
+apply from the day of entry, and the notice names them individually:
+
+<div class="check-card">
+  <div class="check-row ok"><span class="mark"></span><span>A <strong>spouse</strong> and <strong>minor children</strong></span></div>
+  <div class="check-row ok"><span class="mark"></span><span>Study <strong>(D-2)</strong>, and general training for primary and secondary students <strong>(D-4-3)</strong></span></div>
+  <div class="check-row ok"><span class="mark"></span><span>Non-professional employment <strong>(E-9)</strong></span></div>
+  <div class="check-row ok"><span class="mark"></span><span>Permanent residence <strong>(F-5)</strong> and marriage migration <strong>(F-6)</strong>, alongside residence-purpose status</span></div>
+  <div class="check-result">A parent arriving with an employee on a status outside this list waits six months for cover. That is a real cost to plan for, not a formality.</div>
+</div>
 
 ## The real cost of filing late is not the fine
 

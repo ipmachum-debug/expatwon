@@ -1,0 +1,12 @@
+{
+  "id": "four-insurance-breakdown-2026-08",
+  "type": "first_party",
+  "date": "2026-08-24",
+  "title": "A real four-insurance bill, broken down",
+  "cluster": "payroll",
+  "asset": "/evidence/payroll/four-insurance-breakdown-2026-08.png",
+  "alt": "National Health Insurance Service calculation statement showing health, long-term care, pension, employment and industrial accident premiums with subscriber and employer shares",
+  "note": "The August 2026 statement for a Korean workplace of six to eight insured people. The line worth finding is in the first table: 가입자보험료 ₩725,300 and 사용자보험료 ₩725,300 — the employee's share and the employer's share, identical, on the same bill. The same split runs through long-term care at ₩95,250 each. Health and long-term care together come to ₩1,641,100, pension ₩1,604,480, employment ₩408,990 and industrial accident ₩741,040. Employment insurance is the one that is not split evenly: it separates unemployment benefit (₩359,120) from employment stability and vocational development (₩49,870), and industrial accident is the employer's alone.",
+  "redaction": "Cropped to the calculation page. The workplace name, management number, payer number, electronic payment number, the payment-only account numbers and the payment QR code are on other pages of the notice and are not included here. The insured headcount is left in — without it the amounts mean nothing.",
+  "supports": ["health-insurance-rate", "national-pension-rate", "long-term-care-rate"]
+}

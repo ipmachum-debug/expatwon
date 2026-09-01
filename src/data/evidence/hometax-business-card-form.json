@@ -1,0 +1,12 @@
+{
+  "id": "hometax-business-card-form",
+  "type": "first_party",
+  "date": "2026-09-01",
+  "title": "The registration form itself, empty",
+  "cluster": "vat",
+  "asset": "/evidence/vat/hometax-business-card-form.png",
+  "alt": "Empty Hometax business credit card registration form showing the card number field capped at 50 cards, a mandatory mobile number field, and an empty registration list",
+  "note": "The card number field is labelled 최대50장 — the 50-card cap, on the screen rather than in a guide. Beneath it: 대표자 또는 기업 명의의 신용카드·체크카드만, confirming check cards are in. A mobile number is mandatory because that is where the SMS goes if a card number is wrong, and clearing the card numbers clears it too. The registration list below shows the columns you will be reading later — card type, number, request date, confirmation date and processing status — with the warning that an entry cannot be deleted while the status reads 확인요청중.",
+  "redaction": "Browser chrome cropped away. Nothing masked: the form was blank, with no business registration number, trade name, card numbers or phone number entered, and the registration list empty at 총 0건.",
+  "supports": ["business-card-registration-limit"]
+}
