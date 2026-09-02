@@ -5,7 +5,6 @@ category: cost-of-living
 publishDate: 2026-09-02
 updatedDate: 2026-09-02
 slot: pm
-draft: true
 tags: [cost-of-living, rental, apartment, officetel, management-fee]
 lastVerified: 2026-09-02
 sources:
