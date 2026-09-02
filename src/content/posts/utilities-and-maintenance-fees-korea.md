@@ -5,7 +5,6 @@ category: cost-of-living
 publishDate: 2026-09-02
 updatedDate: 2026-09-02
 pairedWith: apartment-management-offices-explained
-draft: true
 tags: [cost-of-living, rental, utilities, maintenance-fee, moving-out]
 sources:
   - label: 'Multi-Family Housing Management Act Art. 30 — the long-term repair reserve is collected from the owner'
