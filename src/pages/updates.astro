@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 
 import FormattedDate from '../components/FormattedDate.astro';
 import Layout from '../layouts/Layout.astro';
+import { OBSERVATIONS, hasHistory } from '../data/observations';
 import { getCategory } from '../lib/categories';
 
 const posts = await getCollection('posts', (p) => !p.data.draft);
@@ -39,6 +40,16 @@ const months = [...byMonth.entries()].map(([key, items]) => ({
 }));
 
 const lastChange = entries[0]?.date;
+
+// The revision log starts when the site does, so it is short by construction.
+// The compiled history behind each figure is a different and much longer
+// thing, and it belongs one click away rather than merged in here — merging
+// would make the count look bigger than the site's actual watching record.
+const trackedCount = OBSERVATIONS.length;
+const trackedMoves = OBSERVATIONS.reduce(
+  (n, s) => n + (hasHistory(s) ? s.history.length - 1 : 0),
+  0,
+);
 ---
 
 <Layout
@@ -55,6 +66,15 @@ const lastChange = entries[0]?.date;
         update the guide and log it here rather than silently overwriting the
         old figure — so you can always see what changed, when, and on whose
         authority.
+      </p>
+      <p class="mt-4 max-w-2xl leading-relaxed text-ink-soft/80">
+        This log begins when the site does, so it is short on purpose. The
+        longer record — what each figure was before we started watching, and
+        every time it has moved since 2012 — is kept separately under{' '}
+        <a class="underline decoration-rule underline-offset-4 hover:decoration-ink-soft" href="/tracked/">
+          figures we track
+        </a>: {trackedCount} rates and thresholds carrying {trackedMoves} recorded
+        changes between them.
       </p>
     </header>
 
@@ -77,6 +97,15 @@ const lastChange = entries[0]?.date;
         </div>
         <div class="mt-0.5 text-[0.95rem] font-semibold text-ink">Every 6 months</div>
       </div>
+      <a
+        href="/tracked/"
+        class="min-w-[150px] flex-1 rounded-xl border border-rule bg-white px-4 py-3 transition-colors hover:border-ink-soft/40 hover:bg-paper"
+      >
+        <div class="text-[0.68rem] font-semibold tracking-wider text-ink-soft/65 uppercase">
+          Figures tracked
+        </div>
+        <div class="mt-0.5 text-[0.95rem] font-semibold text-ink">{trackedCount}</div>
+      </a>
       {
         lastChange && (
           <div class="min-w-[150px] flex-1 rounded-xl border border-rule bg-white px-4 py-3">
