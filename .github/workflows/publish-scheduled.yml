@@ -10,22 +10,31 @@ name: Publish scheduled posts
 # publishes only its own slot, so whichever attempt lands first does the work
 # and the rest are no-ops.
 #
+# How late is "late" here, measured rather than assumed: on 2026-09-02 the
+# four morning attempts were delivered 1h40m, 1h53m, 4h14m and 4h21m behind
+# their crons, and the afternoon ones had still not arrived four hours after
+# the last of them was due. A slot whose attempts are packed into 75 minutes
+# does not survive that, so each slot now runs a tail of later attempts.
+#
 # The slot comes from WHICH CRON FIRED, never from the wall clock. GitHub
-# delivers these hours late — on 2026-09-01 the morning attempts arrived
-# between 10:56 and 14:43 KST — and a clock-based rule read a delayed
-# morning run landing at 14:10 as "it is afternoon, serve pm" and released
-# the afternoon post three hours early. The cron expression is the only
-# thing that still says what the run was meant to do.
+# delivers these hours late and a clock-based rule read a delayed morning run
+# landing at 14:10 KST as "it is afternoon, serve pm" and released the
+# afternoon post three hours early. The cron expression is the only thing
+# that still says what the run was meant to do.
 on:
   schedule:
     - cron: '32 23 * * *'   # 08:32 KST — morning slot
     - cron: '53 23 * * *'   # 08:53 KST
     - cron: '21 0 * * *'    # 09:21 KST
-    - cron: '47 0 * * *'    # 09:47 KST — last morning attempt
+    - cron: '47 0 * * *'    # 09:47 KST
+    - cron: '17 1 * * *'    # 10:17 KST — morning tail, for a delayed queue
+    - cron: '43 2 * * *'    # 11:43 KST — last morning attempt
     - cron: '32 8 * * *'    # 17:32 KST — afternoon slot
     - cron: '53 8 * * *'    # 17:53 KST
     - cron: '21 9 * * *'    # 18:21 KST
-    - cron: '47 9 * * *'    # 18:47 KST — last afternoon attempt
+    - cron: '47 9 * * *'    # 18:47 KST
+    - cron: '17 10 * * *'   # 19:17 KST — afternoon tail
+    - cron: '43 11 * * *'   # 20:43 KST — last afternoon attempt
   workflow_dispatch:
     inputs:
       slot:
@@ -50,53 +59,67 @@ jobs:
         with:
           node-version: 22
 
-      # Before noon KST is the morning slot, after it the afternoon one.
       - name: Decide which slot this run serves
         id: slot
         run: |
           schedule='${{ github.event.schedule }}'
           manual='${{ github.event.inputs.slot }}'
           if [ -n "$manual" ]; then
-            slot="$manual"
-            why="manual dispatch"
-          elif [ -n "$schedule" ]; then
-            # Second field of the cron is the UTC hour: 23 and 0 are the
-            # morning slot, 8 and 9 the afternoon one.
-            case "$(echo "$schedule" | awk '{print $2}')" in
-              23|0) slot=am ;;
-              8|9)  slot=pm ;;
-              *)    echo "::error::unrecognised schedule '$schedule'"; exit 1 ;;
-            esac
-            why="cron '$schedule'"
-          else
+            # A person asking for a slot by hand has a reason. No window check.
+            echo "slot=$manual" >> "$GITHUB_OUTPUT"
+            echo "Serving the $manual slot from manual dispatch, at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
+            exit 0
+          fi
+          if [ -z "$schedule" ]; then
             echo "::error::no slot input and no schedule — refusing to guess"
             exit 1
           fi
+          # Second field of the cron is the UTC hour: 23, 0, 1 and 2 are the
+          # morning slot, 8 through 11 the afternoon one.
+          case "$(echo "$schedule" | awk '{print $2}')" in
+            23|0|1|2)   slot=am; lo=6;  hi=14 ;;
+            8|9|10|11)  slot=pm; lo=15; hi=23 ;;
+            *)          echo "::error::unrecognised schedule '$schedule'"; exit 1 ;;
+          esac
+          # A delay of a few hours is survivable — a post going out at 20:00
+          # instead of 17:30 is merely a late post. A delay that crosses
+          # midnight KST is not: "today" has moved on, and the run would
+          # release tomorrow's post in the small hours. So each slot has a
+          # window in Korean local time, and a run landing outside its own
+          # window publishes nothing and leaves the work to the next attempt.
+          # This reads the clock to REFUSE work, never to choose which work.
+          hour=$(TZ=Asia/Seoul date +%-H)
+          if [ "$hour" -lt "$lo" ] || [ "$hour" -gt "$hi" ]; then
+            echo "::warning::$slot run from cron '$schedule' landed at ${hour}:00 KST, outside its ${lo}:00-${hi}:59 window — skipping"
+            echo "slot=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           echo "slot=$slot" >> "$GITHUB_OUTPUT"
-          echo "Serving the $slot slot from $why, at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
+          echo "Serving the $slot slot from cron '$schedule', at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
 
       - name: Publish any draft whose date has arrived
         id: flip
+        if: steps.slot.outputs.slot != ''
         run: |
           node scripts/publish-due-drafts.mjs --slot=${{ steps.slot.outputs.slot }} | tee out.txt
           echo "count=$(grep -oP '::count::\K\d+' out.txt)" >> "$GITHUB_OUTPUT"
           rm out.txt
 
       - name: Install dependencies
-        if: steps.flip.outputs.count != '0'
+        if: steps.flip.outputs.count != '' && steps.flip.outputs.count != '0'
         run: npm ci
 
       # Never push something that would not build. A red site is worse than a
       # post that goes out a day late.
       - name: Verify
-        if: steps.flip.outputs.count != '0'
+        if: steps.flip.outputs.count != '' && steps.flip.outputs.count != '0'
         run: |
           npm run lint:seo
           npm run lint:data
           npm run build
 
       - name: Commit and push
-        if: steps.flip.outputs.count != '0'
+        if: steps.flip.outputs.count != '' && steps.flip.outputs.count != '0'
         run: |
           git config user.name  'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
