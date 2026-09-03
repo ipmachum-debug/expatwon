@@ -29,12 +29,20 @@ on:
     - cron: '47 0 * * *'    # 09:47 KST
     - cron: '17 1 * * *'    # 10:17 KST — morning tail, for a delayed queue
     - cron: '43 2 * * *'    # 11:43 KST — last morning attempt
-    - cron: '32 8 * * *'    # 17:32 KST — afternoon slot
+    # The afternoon crons are requested EARLY on purpose. GitHub delivers
+    # this repo's 08:00-11:00 UTC crons about four hours late, every day, so
+    # a request at 03:07 UTC is what actually lands near 17:00 KST. If the
+    # queue is healthy instead and one arrives on time at 12:07 KST, the
+    # window guard below rejects it and a later attempt does the work — an
+    # early request cannot cause an early post.
+    - cron: '7 3 * * *'     # 12:07 KST requested — lands ~16:00 at +4h
+    - cron: '13 4 * * *'    # 13:13 KST requested — lands ~17:15 at +4h
+    - cron: '32 8 * * *'    # 17:32 KST — afternoon slot, for an on-time queue
     - cron: '53 8 * * *'    # 17:53 KST
     - cron: '21 9 * * *'    # 18:21 KST
     - cron: '47 9 * * *'    # 18:47 KST
-    - cron: '17 10 * * *'   # 19:17 KST — afternoon tail
-    - cron: '43 11 * * *'   # 20:43 KST — last afternoon attempt
+    - cron: '17 10 * * *'   # 19:17 KST
+    - cron: '43 11 * * *'   # 20:43 KST — last on-time attempt
   workflow_dispatch:
     inputs:
       slot:
@@ -75,10 +83,10 @@ jobs:
             exit 1
           fi
           # Second field of the cron is the UTC hour: 23, 0, 1 and 2 are the
-          # morning slot, 8 through 11 the afternoon one.
+          # morning slot; 3, 4 and 8 through 11 the afternoon one.
           case "$(echo "$schedule" | awk '{print $2}')" in
-            23|0|1|2)   slot=am; lo=6;  hi=14 ;;
-            8|9|10|11)  slot=pm; lo=15; hi=23 ;;
+            23|0|1|2)          slot=am; lo=6;  hi=14 ;;
+            3|4|8|9|10|11)     slot=pm; lo=15; hi=23 ;;
             *)          echo "::error::unrecognised schedule '$schedule'"; exit 1 ;;
           esac
           # A delay of a few hours is survivable — a post going out at 20:00
