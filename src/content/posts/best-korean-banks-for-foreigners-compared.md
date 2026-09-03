@@ -5,7 +5,6 @@ category: banking
 publishDate: 2026-09-03
 updatedDate: 2026-09-03
 pairedWith: foreign-currency-accounts-in-korea
-draft: true
 tags: [banking, remittance, mobile-banking, comparison, foreign-residents]
 sources:
   - label: 'KB Kookmin Bank — KB Quick Send: ₩5,000 flat fee, no intermediary or wire charges, delivery within one business day'
