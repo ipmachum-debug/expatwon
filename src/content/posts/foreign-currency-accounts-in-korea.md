@@ -5,7 +5,6 @@ category: banking
 publishDate: 2026-09-03
 updatedDate: 2026-09-03
 slot: pm
-draft: true
 tags: [banking, foreign-currency, savings, fx, tax]
 tracked: [deposit-protection-limit, usd-time-deposit-rate-kr]
 lastVerified: 2026-09-03
