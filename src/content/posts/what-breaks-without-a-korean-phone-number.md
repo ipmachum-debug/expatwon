@@ -6,6 +6,7 @@ publishDate: 2026-09-12
 updatedDate: 2026-09-12
 slot: am
 draft: true
+pairedWith: buying-a-korean-sim-airport-online-or-in-town
 tags: [cost-of-living, phone, identity-verification, arrival, banking]
 verificationMatrix: true
 tracked: [tourist-sim-max-validity]

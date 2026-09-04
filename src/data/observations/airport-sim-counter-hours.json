@@ -1,0 +1,18 @@
+{
+  "key": "airport-sim-counter-hours",
+  "label": "Airport SIM counter: hours at Incheon Terminal 1 arrivals",
+  "unit": "hours open per day",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Arrivals collecting or activating a SIM or eSIM at the airport",
+  "why": "A red-eye arrival and a midday arrival are different decisions, and this is the figure that separates them. Counter hours are set by the carrier and change with terminal operations, so a guide that states them as permanent will be wrong before it is old.",
+  "history": [
+    {
+      "date": "2026-09-12",
+      "value": 24,
+      "display": "24 hours (T1 arrivals)",
+      "source": "KT — airport roaming centre locations and operating hours",
+      "note": "KT operates roaming centres at Incheon Terminals 1 and 2, Gimpo and Gimhae, with round-the-clock cover at Incheon T1 arrivals. Other counters and other carriers keep their own hours — check the specific desk against your own landing time, not the airport in general."
+    }
+  ]
+}
