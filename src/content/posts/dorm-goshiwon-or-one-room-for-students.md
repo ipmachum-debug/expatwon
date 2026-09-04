@@ -157,7 +157,7 @@ handshake sublet, a place taken through a group chat. It may be a fine
 place to live and it is not a place you can register from.
 
 The dependency chain this sits in is in
-[alien registration for language students](/study/alien-registration-for-language-students/).
+[keeping D-4 status](/study/alien-registration-for-language-students/).
 
 ## A sequence that works
 

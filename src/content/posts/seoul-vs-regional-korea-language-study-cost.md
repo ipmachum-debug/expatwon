@@ -57,6 +57,11 @@ to produce before your first class and it stays locked up until you leave.
 
 <p class="hand">Compare the cash you need before the first class. Not the rent.</p>
 
+**Why the institute and the city are one decision**, rather than two taken
+in sequence, is in
+[choosing a Korean language institute and a city](/study/choosing-a-korean-language-institute-and-city/).
+This guide is the cost half of it.
+
 ## Why the deposit is the number
 
 Korean rental deposits scale with local property values. They are not a
@@ -113,6 +118,28 @@ one. Ask the institute two things in writing:
 The three housing options and how their deposits differ is the subject of
 [dormitory, goshiwon or one-room](/study/dorm-goshiwon-or-one-room-for-students/).
 
+## Which places, specifically
+
+Seoul's university districts are where the housing cost concentrates —
+**Sinchon, Hongdae, Seongbuk, Dongdaemun and the Gangnam side.** One-room
+and officetel prices around those campuses sit well above the equivalent
+near major regional universities.
+
+The regional alternatives with large universities and Korean language
+institutes are **Busan, Daegu, Daejeon and Gwangju**. The Study in Korea
+search filters by region, by whether a university has a Korean language
+institute, and by whether a dormitory is provided — which is the fastest
+way to build a shortlist city by city instead of school by school.
+
+<div class="callout callout-warn">
+  <p class="callout-title">"Regional is cheaper" is a tendency, not a rule</p>
+  <p>Parts of Busan — Haeundae among them — and newly built officetels
+  anywhere can cost more than outer Seoul. And a dormitory place is not
+  guaranteed to every language student at every school. The comparison that
+  matters is between two specific campuses and two specific buildings, not
+  between two cities' reputations.</p>
+</div>
+
 ## What a regional city actually gives you
 
 **More Korean.** This is the honest advantage and it is not small. In
@@ -138,6 +165,12 @@ binding limit outside Seoul is the availability of jobs, not the rules.
 **Proximity to hiring.** If language study is a step towards working in
 Korea, most international-facing hiring is concentrated in the capital
 region. That has a value that does not appear in a rent comparison.
+
+**Not, however, your choice of degree.** You do not have to take a degree
+at the university whose institute taught you Korean. Studying at a regional
+institute, taking TOPIK, then entering a Seoul university on D-2 is an
+ordinary path — and a deliberate one for students who want the cheaper
+housing during the language year and the Seoul university afterwards.
 
 **Administrative convenience.** Immigration offices, embassies, and
 services that assume English exist everywhere, but they are denser in

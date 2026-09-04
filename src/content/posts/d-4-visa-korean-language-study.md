@@ -27,7 +27,7 @@ keyFacts:
   - { label: 'Decision happens', value: 'Outside Korea' }
 faq:
   - question: 'Can I study Korean at a private academy on a D-4?'
-    answer: 'Generally no, and this is the mistake that costs people a term. A D-4-1 needs a certificate of admission from an institution accredited to enrol foreign students — in practice a university-affiliated Korean language institute. Most neighbourhood hagwons are not on that list and cannot produce the document, no matter how good their teaching is. You can study at one while holding another status, but the academy itself will not get you the visa. Confirm the institution appears on the government portal before you pay anything.'
+    answer: 'Generally the academy is not a sponsor route, and this is the mistake that costs people a term. A D-4-1 needs a certificate of admission from an institution whose course meets the standards for hosting foreign students on that status; in practice that is usually a university-affiliated Korean language institute. Note the rule is about the course rather than the category, so the question to ask is not "are hagwons allowed" but "does this specific course support D-4-1" — in writing, before you pay. You can study at an academy while holding another status; the academy simply will not be what gets you the status.'
   - question: 'Do I pay tuition before or after the visa is approved?'
     answer: 'Before, in almost every case. The institute issues the certificate of admission after you have paid — often a full term in advance — and that certificate is what your application rests on. So the sequence is: apply to the school, pay, receive the document, then apply for the visa. Ask the institute in writing what happens to your payment if the visa is refused; refund policies differ and the answer belongs in your inbox rather than in your memory.'
   - question: 'Is a D-4 the same as a student visa?'
@@ -78,10 +78,15 @@ than to enrol in a degree, **D-4-1** is the class.
 This is the part people discover too late.
 
 A D-4-1 rests on a **certificate of admission** issued by an institution
-that is accredited to enrol foreign students. In practice that means a
-Korean language institute attached to a university. A private academy —
-however good, however much it advertises to foreigners — generally cannot
-issue that document.
+whose course meets the standards set for hosting foreign students on that
+status. In practice the representative route is a Korean language institute
+attached to a university, and the government's own listings show course
+after course run that way. A private academy — however good, however much
+it advertises to foreigners — is generally not a sponsor route.
+
+The distinction matters because the rule is about **the course**, not about
+a category of building. Ask the institute directly whether this specific
+course supports D-4-1, and get the answer in writing.
 
 <div class="callout callout-warn">
   <p class="callout-title">Check accreditation before you pay, not after</p>
@@ -162,7 +167,7 @@ it.
   <p>Register as a resident, then bank account, then phone, then health
   insurance. They stack in that order because each one asks for the card
   before it. The sequence, the deadline and what goes wrong in it are in
-  <a href="/study/alien-registration-for-language-students/">alien registration for language students</a>.</p>
+  <a href="/study/alien-registration-for-language-students/">keeping D-4 status</a>.</p>
 </div>
 
 Before then, two things are worth doing while you are still at home:

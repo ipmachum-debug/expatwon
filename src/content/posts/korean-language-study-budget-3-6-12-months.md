@@ -125,7 +125,7 @@ afford one more term of tuition and three more months of living".
   you are on a prepaid SIM, paying cash, and possibly in temporary
   accommodation on top of the room you have already committed to. Why that
   happens, and how to shorten it, is in
-  [alien registration for language students](/study/alien-registration-for-language-students/).
+  [keeping D-4 status](/study/alien-registration-for-language-students/).
 
 ## Do not budget on part-time work
 
