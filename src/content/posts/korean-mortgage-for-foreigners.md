@@ -5,7 +5,6 @@ category: loans
 publishDate: 2026-09-04
 updatedDate: 2026-09-04
 pairedWith: closing-costs-when-buying-property-in-korea
-draft: true
 tags: [loans, mortgage, property, LTV, DSR]
 sources:
   - label: 'Easy Law (Ministry of Government Legislation) — real-estate transaction reporting and foreigners'' acquisition reporting'
