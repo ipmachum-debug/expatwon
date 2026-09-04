@@ -5,7 +5,6 @@ category: business
 publishDate: 2026-09-05
 updatedDate: 2026-09-05
 pairedWith: registering-a-business-card-on-hometax
-draft: true
 tags: [business, tax, VAT, simplified-taxpayer, filing]
 tracked: [vat-simplified-threshold, vat-payment-exemption]
 lastVerified: 2026-08-31
