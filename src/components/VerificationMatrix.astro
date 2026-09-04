@@ -1,0 +1,102 @@
+---
+/**
+ * What a foreign resident can actually do, by which kind of phone line.
+ *
+ * Rendered from `src/data/verification/` rather than written into the guide,
+ * because this is the sort of claim that goes stale one service at a time:
+ * a platform adds an alternative sign-in and one row changes, not a
+ * paragraph. Keeping it as data also lets the "another way in" count be
+ * computed, which is what stops the section reading as "nothing works".
+ */
+import { VERIFICATION, VERIFICATION_STATES, countByState } from '../data/verification';
+
+const alternatives = countByState('alternative');
+const total = VERIFICATION.reduce((n, a) => n + a.items.length, 0);
+---
+
+<figure class="figure">
+  <p class="figure-title">Where a passport-only line actually stops</p>
+  <p class="figure-sub">
+    {total} tasks across {VERIFICATION.length} areas — {alternatives} of them have another way in
+  </p>
+
+  <ul class="mb-5 flex flex-wrap gap-x-5 gap-y-2 text-[0.78rem] text-ink-soft/85">
+    {
+      Object.entries(VERIFICATION_STATES).map(([key, meta]) => (
+        <li class="flex items-center gap-2">
+          <span
+            class:list={[
+              'inline-block h-2.5 w-2.5 rounded-full',
+              key === 'works' && 'bg-emerald-500',
+              key === 'needs-rc' && 'bg-rose-500',
+              key === 'alternative' && 'bg-amber-500',
+            ]}
+            aria-hidden="true"
+          />
+          <span><strong class="text-ink">{meta.label}</strong> — {meta.blurb}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="overflow-x-auto">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Area</th>
+          <th scope="col">What you are trying to do</th>
+          <th scope="col">On a passport line</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          VERIFICATION.map((area) =>
+            area.items.map((item, i) => (
+              <tr>
+                {i === 0 && (
+                  <th scope="row" rowspan={area.items.length} class="align-top">
+                    {area.area}
+                    <span class="mt-1 block text-[0.72rem] leading-snug font-normal text-ink-soft/75">
+                      {area.summary}
+                    </span>
+                  </th>
+                )}
+                <td>
+                  {item.task}
+                  <span class="mt-0.5 block text-[0.74rem] leading-snug text-ink-soft/75">
+                    {item.note}
+                  </span>
+                </td>
+                <td class="whitespace-nowrap">
+                  <span
+                    class:list={[
+                      'inline-flex items-center gap-1.5 font-semibold',
+                      item.state === 'works' && 'text-emerald-700',
+                      item.state === 'needs-rc' && 'text-rose-700',
+                      item.state === 'alternative' && 'text-amber-700',
+                    ]}
+                  >
+                    <span
+                      class:list={[
+                        'inline-block h-2 w-2 rounded-full',
+                        item.state === 'works' && 'bg-emerald-500',
+                        item.state === 'needs-rc' && 'bg-rose-500',
+                        item.state === 'alternative' && 'bg-amber-500',
+                      ]}
+                      aria-hidden="true"
+                    />
+                    {VERIFICATION_STATES[item.state].label}
+                  </span>
+                </td>
+              </tr>
+            )),
+          )
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <p class="mt-3 text-[0.72rem] leading-relaxed text-ink-soft/70">
+    Sources, by area: {VERIFICATION.map((a) => `${a.area} — ${a.source}`).join(' · ')}
+  </p>
+</figure>

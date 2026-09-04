@@ -1,0 +1,11 @@
+{
+  "id": "messaging",
+  "area": "Messenger and simple pay",
+  "summary": "The messenger and the certificate are different products.",
+  "items": [
+    { "task": "Using KakaoTalk to message", "state": "works", "note": "The account can be built on an email or a phone number." },
+    { "task": "Issuing a Kakao certificate", "state": "needs-rc", "note": "Kakao's own developer documentation describes issuance using mobile identity verification and account verification." },
+    { "task": "Kakao Pay financial features", "state": "needs-rc", "note": "Follows the certificate, not the messenger." }
+  ],
+  "source": "Kakao developer documentation on certificate issuance"
+}

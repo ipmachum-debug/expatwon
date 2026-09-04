@@ -18,6 +18,7 @@ import { basename, join } from 'node:path';
 
 const OBS_DIR = 'src/data/observations';
 const EV_DIR = 'src/data/evidence';
+const VERIFY_DIR = 'src/data/verification';
 const POSTS_DIR = 'src/content/posts';
 
 const errors = [];
@@ -112,6 +113,36 @@ for (const file of listJson(EV_DIR)) {
   }
 }
 
+// --------------------------------------------------------------- verification
+// A state matrix, not a series. Validated here for the same reason the
+// series are: the value of the dataset is that every row is trustworthy, and
+// one row asserting a service rule with nobody behind it spoils the rest.
+const VERIFY_STATES = new Set(['works', 'needs-rc', 'alternative']);
+let verifyRows = 0;
+
+for (const file of listJson(VERIFY_DIR)) {
+  const a = readJson(VERIFY_DIR, file);
+  if (!a) continue;
+  const where = `${VERIFY_DIR}/${file}`;
+
+  if (a.id !== basename(file, '.json')) errors.push(`${where}: id does not match the filename`);
+  for (const field of ['area', 'summary', 'source']) {
+    if (!a[field]?.trim()) errors.push(`${where}: "${field}" is required`);
+  }
+  if (!Array.isArray(a.items) || a.items.length === 0) {
+    errors.push(`${where}: items must hold at least one task`);
+    continue;
+  }
+  for (const [i, item] of a.items.entries()) {
+    const at = `${where} items[${i}]`;
+    if (!item.task?.trim()) errors.push(`${at}: task is required`);
+    if (!item.note?.trim()) errors.push(`${at}: note is required — a bare state explains nothing`);
+    if (!VERIFY_STATES.has(item.state))
+      errors.push(`${at}: state must be one of ${[...VERIFY_STATES].join(', ')}`);
+    verifyRows++;
+  }
+}
+
 // ------------------------------------------------------------------- articles
 const frontmatterList = (body, field) => {
   // inline form: `tracked: [a, b]`
@@ -177,5 +208,5 @@ if (errors.length > 0) {
 console.log(
   `✓ Data lint passed — ${observationKeys.size} observation series, ` +
     `${evidenceIds.size} evidence records, ${tracking} articles tracking figures, ` +
-    `${pairs} paired days.`,
+    `${pairs} paired days, ${verifyRows} verification rows.`,
 );

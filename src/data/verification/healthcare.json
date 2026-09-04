@@ -1,0 +1,12 @@
+{
+  "id": "healthcare",
+  "area": "Healthcare",
+  "summary": "A treatment question that is really a scheduling question.",
+  "items": [
+    { "task": "Being treated, and health insurance entitlement", "state": "works", "note": "Hospitals identify patients by passport or registration card, and NHIS entitlement does not arise from a phone number. 'No number means no insurance check' is inaccurate." },
+    { "task": "Registering in a hospital or booking app", "state": "needs-rc", "note": "Where the app asks for phone identity verification, sign-up or patient-record linking stops there." },
+    { "task": "Appointment changes, results and prescription alerts", "state": "needs-rc", "note": "Sent to a domestic number. Losing them is inconvenience rather than exclusion, and it compounds." },
+    { "task": "Attending in person", "state": "alternative", "note": "Reception still works the way it always did." }
+  ],
+  "source": "National Health Insurance Service coverage rules for foreign residents"
+}

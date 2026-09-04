@@ -1,0 +1,11 @@
+{
+  "id": "transport",
+  "area": "Taxi and rail",
+  "summary": "Hailing works. The paid and member-only functions are the ones that ask.",
+  "items": [
+    { "task": "Hailing a taxi in the app", "state": "works", "note": "Users on foreign country codes appear in Kakao Mobility's own material. A foreign number is not a bar to hailing." },
+    { "task": "Automatic payment, financial features, some memberships", "state": "needs-rc", "note": "Kakao Mobility's privacy policy states that identity verification collects name, carrier, mobile number, date of birth, Korean or foreign national status, and CI/DI." },
+    { "task": "KTX and SRT mobile tickets", "state": "alternative", "note": "Routes for foreign and non-member purchasers exist, so a blanket 'no Korean number means no mobile ticket' is wrong. What narrows is member functions and simple payment." }
+  ],
+  "source": "Kakao Mobility privacy policy; rail operators' non-member and foreign purchase routes"
+}

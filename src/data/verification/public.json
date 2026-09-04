@@ -1,0 +1,11 @@
+{
+  "id": "public",
+  "area": "Public administration",
+  "summary": "Not locked out. Pushed off the convenient route.",
+  "items": [
+    { "task": "Using Government24 and Hometax at all", "state": "alternative", "note": "Joint certificates and financial certificates remain available, so 'no Korean number means no access' is wrong." },
+    { "task": "Simple authentication (PASS, Kakao, Naver, Toss, bank apps)", "state": "needs-rc", "note": "The National Tax Service supports these on Hometax, extended in 2026 to business users as well as individuals. This is the route a passport-only line loses." },
+    { "task": "PASS itself", "state": "needs-rc", "note": "PASS does not exclude foreign residents; it requires a line that supports phone identity verification, and some MVNOs restrict exactly that." }
+  ],
+  "source": "National Tax Service simple authentication support on Hometax; PASS foreigner eligibility guidance"
+}

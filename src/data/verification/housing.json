@@ -1,0 +1,12 @@
+{
+  "id": "housing",
+  "area": "Housing",
+  "summary": "The contract is valid. Living there digitally is the part that asks.",
+  "items": [
+    { "task": "Signing a paper lease", "state": "works", "note": "A Korean mobile number is not a condition of a valid lease." },
+    { "task": "The real-estate electronic contract system", "state": "needs-rc", "note": "The Ministry of Land's published processing items for electronic contracts include name, resident or alien registration number, address and mobile number." },
+    { "task": "Management office apps, entrance apps, parcel alerts, parking registration, fee payment", "state": "needs-rc", "note": "The number reappears at every one of these after move-in." },
+    { "task": "Doing it offline", "state": "alternative", "note": "Paper contracts and counter service still exist." }
+  ],
+  "source": "Ministry of Land, Infrastructure and Transport — real-estate electronic contract system, published personal data processing items"
+}

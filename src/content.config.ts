@@ -120,6 +120,15 @@ const posts = defineCollection({
      * means morning.
      */
     slot: z.enum(['am', 'pm']).default('am'),
+    /**
+     * Render the verification-availability matrix from `src/data/verification/`.
+     *
+     * A flag rather than a component import, because posts are markdown. Only
+     * the guide whose subject IS that matrix should set it — it is a large
+     * block, and repeating it under every guide that mentions a phone number
+     * would turn a dataset into wallpaper.
+     */
+    verificationMatrix: z.boolean().default(false),
     draft: z.boolean().default(false),
   }),
 });

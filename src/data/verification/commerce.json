@@ -1,0 +1,13 @@
+{
+  "id": "commerce",
+  "area": "Delivery and shopping",
+  "summary": "Sign-up often clears. Payment registration is where it stops.",
+  "items": [
+    { "task": "Creating an account with email and password", "state": "works", "note": "Usually fine. The wall comes later." },
+    { "task": "Identity verification at sign-up on major platforms", "state": "needs-rc", "note": "The Bank of Korea has noted that many domestic platforms require SMS or ARS identity verification from registration, which restricts foreign use." },
+    { "task": "Registering a domestic payment method or simple pay", "state": "needs-rc", "note": "The step most often reached and not completed." },
+    { "task": "Buying at all", "state": "alternative", "note": "Global sites, foreigner-oriented shops and services using email-based authentication exist. 'No Korean number means no online shopping' is not true." },
+    { "task": "Receiving the delivery", "state": "works", "note": "Couriers and delivery riders call a Korean number, so a contactable domestic number has value independent of verification." }
+  ],
+  "source": "Bank of Korea analysis of foreign access to domestic e-commerce, 2025"
+}

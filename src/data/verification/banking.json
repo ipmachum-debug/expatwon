@@ -1,0 +1,12 @@
+{
+  "id": "banking",
+  "area": "Banking",
+  "summary": "The counter still opens an account. The app is where a passport-only line stops.",
+  "items": [
+    { "task": "Opening an account at a branch", "state": "works", "note": "Passport and registration card, in person. Not dependent on phone verification." },
+    { "task": "Opening an account in the app", "state": "needs-rc", "note": "The flow asks for phone identity verification before the identity document step, so it halts there." },
+    { "task": "Mobile OTP issuance and simple authentication", "state": "needs-rc", "note": "Registration on these depends on a line the carrier can vouch for." },
+    { "task": "Raising transfer limits, buying products", "state": "needs-rc", "note": "Product-dependent, and the ones that ask for verification cannot be completed remotely." }
+  ],
+  "source": "Bank account opening procedures for foreign nationals; Korea Communications Commission on identity verification using alternatives to the resident registration number"
+}

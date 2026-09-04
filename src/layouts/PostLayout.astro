@@ -8,6 +8,7 @@ import PairedGuide from '../components/PairedGuide.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import SourcesFooter from '../components/SourcesFooter.astro';
 import TrackedFigures from '../components/TrackedFigures.astro';
+import VerificationMatrix from '../components/VerificationMatrix.astro';
 import { categoryVars, getCategory } from '../lib/categories';
 import { SITE_TITLE, SITE_URL } from '../lib/site';
 import Layout from './Layout.astro';
@@ -28,6 +29,7 @@ const {
   keyFacts,
   revisions,
   tracked,
+  verificationMatrix,
   lastVerified,
   pairedWith,
   evidence,
@@ -185,6 +187,8 @@ const faqSchema =
     <PairedGuide slug={pairedWith} />
 
     <EvidenceBlock ids={evidence} />
+
+    {verificationMatrix && <VerificationMatrix />}
 
     <TrackedFigures tracked={tracked} lastVerified={lastVerified} />
 
