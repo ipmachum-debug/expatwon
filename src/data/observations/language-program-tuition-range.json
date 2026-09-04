@@ -1,0 +1,18 @@
+{
+  "key": "language-program-tuition-range",
+  "label": "University Korean language course: tuition per term",
+  "unit": "KRW per 10-week term",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Regular Korean language courses at university-affiliated institutes",
+  "why": "The number every budget starts from, and the one most often quoted as a single national figure when it is a range. Set by each university independently, so it drifts school by school rather than moving all at once.",
+  "history": [
+    {
+      "date": "2026-09-09",
+      "value": 1800000,
+      "display": "₩1.2m–1.8m per term",
+      "source": "Study in Korea — Korean language institute course information",
+      "note": "The government portal indicates roughly ₩1,200,000 to ₩1,800,000 per term as the general level. Individual 2026 courses sit across that band — ₩1,750,000 at one Seoul university, ₩1,500,000 at another school. Value records the upper end of the stated range; always recalculate from the target university's current prospectus."
+    }
+  ]
+}

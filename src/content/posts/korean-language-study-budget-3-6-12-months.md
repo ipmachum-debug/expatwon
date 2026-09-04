@@ -1,18 +1,21 @@
 ---
-title: 'Budgeting for Korean Language Study: 3, 6 or 12 Months'
-description: 'Three of your largest costs do not scale with how long you stay. That is why a short stay costs far more per month than a long one.'
+title: 'Budgeting for Korean Study: 3, 6 or 12 Months'
+description: 'Split the money three ways — spent, locked up, and merely proven. Add the total and you have the cash you need before you fly, not after.'
 category: study
 publishDate: 2026-09-09
 updatedDate: 2026-09-09
 slot: am
 draft: true
-tags: [study, budget, cost-of-living, language-school, housing]
+tags: [study, budget, cost-of-living, housing, d-4]
 pairedWith: dorm-goshiwon-or-one-room-for-students
+tracked: [language-program-tuition-range, d4-financial-proof-example, student-dormitory-monthly-cost]
 lastVerified: 2026-09-09
 sources:
-  - label: 'Study in Korea — accredited institutions and their published fees'
-    url: 'https://www.studyinkorea.go.kr/'
-  - label: 'HiKorea — financial capability requirement and the Immigration Contact Center (1345)'
+  - label: 'Study in Korea — Korean language institute course structure and tuition levels'
+    url: 'https://www.studyinkorea.go.kr/cmm/plan/schoolType.do?tab=korean-language-institute'
+  - label: 'Study in Korea — university information, including dormitory costs'
+    url: 'https://www.studyinkorea.go.kr/ko/search/universityInfo.do?tab=univ-basic-info'
+  - label: 'HiKorea — financial evidence and the Immigration Contact Center (1345)'
     url: 'https://www.hikorea.go.kr/'
   - label: 'National Health Insurance Service — contributions for foreign residents'
     url: 'https://www.nhis.or.kr/'
@@ -21,135 +24,193 @@ revisions:
   - date: 2026-09-09
     change: 'Published'
 keyFacts:
-  - { label: 'Deposit', value: 'Same at 3 or 12 months' }
-  - { label: 'Visa balance', value: 'Does not scale either' }
-  - { label: 'Flights', value: 'Fixed, once' }
-  - { label: 'Cost per month', value: 'Falls as you stay longer' }
+  - { label: 'Tuition per term', value: '₩1.2m–1.8m' }
+  - { label: 'Terms in a year', value: 'Four' }
+  - { label: 'Money splits', value: 'Spent, locked, proven' }
+  - { label: 'Keep in reserve', value: '10–20%' }
 faq:
-  - question: 'Why does three months cost so much more per month than twelve?'
-    answer: 'Because the big one-time costs are the same either way. A rental deposit is set by the room, not by how long you keep it. The balance the visa asks you to show is set by the institution’s region, not by the length of your stay. Flights are a return trip whether you stay a term or four. Spread those over three months and they dominate the monthly figure; spread them over twelve and they shrink. This is the single most useful thing to understand before choosing a length, because it means a short taster stay is the most expensive way to buy a month in Korea.'
-  - question: 'Do I get the deposit back?'
-    answer: 'Yes, if the tenancy ends cleanly — a deposit is returned, not spent. The two things that go wrong are timing and condition: money comes back when the next tenant’s deposit arrives, which may not be the day you leave, and deductions for damage or unpaid bills are taken from it. Plan to be out of the country before it lands, and plan for how it will reach you. A closed Korean bank account after you have flown home is a genuinely hard problem to unwind.'
-  - question: 'Should I budget for repeating a level?'
-    answer: 'If you are aiming past level 4, yes. Repeats are common around levels 3 and 4 where the grammar load jumps, and a repeat costs a full term of tuition and a full term of living costs. Building one spare term into a twelve-month plan is cheaper than discovering you need it and having to fund it from nothing. If it turns out you do not need the term, it is money you did not spend.'
-  - question: 'Can part-time work close the gap?'
-    answer: 'Treat it as upside, not as budget. Part-time work requires permission, the permitted hours are capped, availability varies enormously by city, and the jobs that will hire limited Korean pay accordingly. A plan that only works if the work materialises is a plan that fails in the first month, when you are least able to absorb it — and you cannot legally work before the permission is granted anyway.'
+  - question: 'Is USD 10,000 the required balance for a D-4?'
+    answer: 'It is a common figure, not a legal constant, and the difference matters. Several universities state USD 10,000 in an English balance certificate for D-4 applicants; other schools state a won amount — ₩8,000,000 or above — which is materially lower. The requirement depends on the institution, the mission handling your application and your nationality. So budget against the figure your target school and consulate actually state, and treat any number you read in a forum as a starting hypothesis. Separate conditions usually sit on top: when the certificate was issued, how long the funds have been held, and whether a parent’s account is acceptable.'
+  - question: 'If I only stay three months, do I skip the financial evidence?'
+    answer: 'Not as a rule. What is true is that a short stay may not involve D-4 at all, so the D-4 financial evidence requirement may not apply to you. That is not the same as saying no financial evidence is ever required — what a mission asks for on entry or on a short-stay visa depends on your nationality, the mission and your stated purpose. Check your own case rather than assuming a three-month plan exempts you from proving anything.'
+  - question: 'Why not just tell me the total for a year?'
+    answer: 'Because a single total would be wrong for almost everyone reading it. Seoul against a regional city, a dormitory place against a one-room, tuition that ranges from ₩1.2m to ₩1.8m a term — those swing the answer so far that one figure would flatten the only decisions that matter. What this guide gives instead is the structure and the sources, so you can produce your own number in an afternoon. That number will be right; a national average would not be.'
+  - question: 'Can I put everything into the deposit and live off part-time work?'
+    answer: 'No, and this is the plan that fails most reliably. Part-time work on D-4 is not available immediately: eligibility begins six months after entry or a change of status, there is a Korean proficiency standard attached to the permitted hours, the school has to confirm it, and immigration has to grant permission before the first shift. So the months when your money is tightest are exactly the months when work cannot legally close the gap. Build the plan so it works without the work.'
 ---
 
-The useful question is not "what does a term cost". It is **which of these
-costs care how long you stay**, because three of the largest ones do not.
+The number people ask for is tuition. It is not the number that decides
+anything.
+
+What decides whether the year works is **how much liquidity you must have
+before you fly** — and that is three different kinds of money, only one of
+which you ever spend.
 
 <figure class="figure hero">
-  <p class="figure-title">What scales, and what does not</p>
-  <p class="figure-sub">The reason a short stay is expensive per month</p>
+  <p class="figure-title">Three kinds of money, one total</p>
+  <p class="figure-sub">Add all three, because you need all three at once</p>
   <div class="check-card">
-    <div class="check-row miss"><span class="mark"></span><span><strong>Does not scale</strong> — the housing deposit, the balance the visa requires, return flights, the alien registration fee, setting up a phone. Identical at three months and at twelve.</span></div>
-    <div class="check-row ok"><span class="mark"></span><span><strong>Scales per term</strong> — tuition, and any per-term dormitory fee.</span></div>
-    <div class="check-row ok"><span class="mark"></span><span><strong>Scales per month</strong> — rent, utilities, food, transport, phone, health insurance.</span></div>
-    <div class="check-result">Spread the fixed block over three months and it dominates. Spread it over twelve and it almost disappears. Same trip, very different monthly cost.</div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Spent</strong> — tuition, rent, maintenance charges, food, transport, phone, insurance, books. It leaves and does not come back.</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Locked</strong> — a rental deposit. Returned at the end, and unusable for the whole tenancy.</span></div>
+    <div class="check-row miss"><span class="mark"></span><span><strong>Proven</strong> — the balance a school or consulate may require you to evidence. Still yours, and it has to sit somewhere and stay there.</span></div>
+    <div class="check-result">Budget only the first and you will be short. The maximum liquidity you need is the sum of all three, plus a reserve.</div>
   </div>
 </figure>
 
-<p class="hand">A three-month taster is the most expensive way to buy a month in Korea.</p>
+<p class="hand">Money you cannot spend is still money you must have.</p>
 
-## Build it as two numbers
+## The one number worth memorising
 
-Everything sits in one of two buckets, and they answer different
-questions.
+A regular course at a university-affiliated institute is generally about
+**ten weeks a term, four terms a year**. The government portal indicates
+tuition of roughly **₩1.2m to ₩1.8m per term**, and real 2026 courses sit
+across that band — ₩1,750,000 at one Seoul university, ₩1,500,000 at
+another school.
 
-| | What it answers | What goes in |
-|---|---|---|
-| **Day-one cash** | Can I do this at all? | Deposit · first month · agency fee · first term's tuition · flights · the balance the visa requires |
-| **Monthly run rate** | Can I keep doing it? | Rent · utilities · food · transport · phone · health insurance · books |
+| | 3 months | 6 months | 12 months |
+|---|---:|---:|---:|
+| Terms | 1 | 2 | 4 |
+| Tuition, at ₩1.5m–1.8m a term | ₩1.5m–1.8m | ₩3.0m–3.6m | ₩6.0m–7.2m |
+| Housing that usually fits | Dormitory or goshiwon | Dormitory or goshiwon | One-room or dormitory |
+| Deposit exposure | Keep it low | Moderate | Can be large |
+| Financial evidence | Depends on the status used | Central | Plus the extension |
+| What to manage | Short-term liquidity | Living cost plus the balance | Living cost plus deposit recovery |
 
-Most budgets fail on the first, not the second. A student who can
-comfortably afford the monthly figure can still be unable to produce the
-deposit and a term of tuition in the same fortnight.
+**This is a range for planning, not a price list.** Recalculate from your
+target university's current prospectus — that is the only figure that is
+actually yours. The band is tracked at
+[tuition per term](/tracked/language-program-tuition-range/).
 
-## The lines, and where each real number comes from
+## 3 months: the housing contract matters more than the tuition
 
-Do not use averages for any of these. Every one has a source that will
-tell you your actual figure.
+One term. Tuition lands in a predictable range, and the thing that can go
+wrong is the room.
+
+Signing a standard twelve-month one-room lease for a three-month stay
+creates two problems at once: a contract longer than your stay, and a
+deposit you cannot recover on your own timetable.
+
+So for three months the priority is not minimising monthly rent. **It is
+minimising the cash you tie up.** A dormitory place first if one is
+available; otherwise a goshiwon or officetel-style room that contracts by
+the month.
+
+The structure that trades a large deposit for lower rent is the wrong
+instrument here, however good the arithmetic looks over a year.
+
+## 6 months: the balance enters the calculation
+
+Two terms — roughly **₩3.0m to ₩3.6m** in tuition, plus six months of
+housing, food, transport and phone.
+
+If you are on D-4-1, the financial evidence your school and the consulate
+require now sits alongside all of that.
+
+<div class="callout callout-warn">
+  <p class="callout-title">USD 10,000 is common, not a standard</p>
+  <p>Several universities state USD 10,000 in an English balance certificate
+  for D-4 applicants. Others state a won figure — ₩8,000,000 or above —
+  which is materially lower. The requirement depends on the institution, the
+  mission and your nationality, so there is no single number to plan against.
+  Get it from your own school and consulate. It is tracked here as an
+  observation rather than a rule:
+  <a href="/tracked/d4-financial-proof-example/">D-4 financial evidence</a>.</p>
+</div>
+
+And keep the proven money separate from the spendable money in your head.
+A balance certificate showing ₩10m does not mean ₩10m is available for
+tuition and rent — the certificate's issue date, how long the funds have
+been held, and whether a parent's account is acceptable are all separate
+conditions attached to it.
+
+## 12 months: the deposit is the whole story
+
+Four terms — **₩6.0m to ₩7.2m** in tuition. Over a year a one-room usually
+beats a goshiwon on liveability, and the day-one cash requirement rises
+sharply for it.
+
+Take a room at a ₩5,000,000 deposit and ₩600,000 a month. Over twelve
+months you **spend** ₩7.2m in rent — and before you move in you must
+**have** the ₩5,000,000 as well.
+
+```
+Day-one housing cash =
+  deposit
+  + first month's rent
+  + maintenance charge
+  + agency fee
+  + move-in costs
+```
+
+The deposit comes back if the tenancy ends cleanly. For the whole year, it
+is liquidity you do not have. That distinction is the difference between a
+budget that works and one that stops in month two.
+
+Deposits of ₩5,000,000 or ₩10,000,000 are commonly quoted in student
+areas, and they are **not a national price** — the figure moves with the
+district and the building. How the deposit and rent trade against each
+other is in
+[jeonse and wolse explained](/cost-of-living/jeonse-vs-wolse-korean-rental-system/),
+and what protects the money is in
+[protecting a rental deposit](/cost-of-living/rental-deposit-protection-korea/).
+
+## Where each real number comes from
 
 <div class="steps">
   <div class="step"><div class="step-num">1</div>
-    <div class="step-body"><strong>Tuition.</strong> From the institute's own fee page. Every university publishes it per term. Multiply by the number of terms, and check whether the published figure includes textbooks or not.</div></div>
+    <div class="step-body"><strong>Tuition</strong> — the institute's current prospectus. Check whether textbooks are inside the figure.</div></div>
   <div class="step"><div class="step-num">2</div>
-    <div class="step-body"><strong>Housing.</strong> Dormitory fee from the institute; private rent and deposit from listings for the specific neighbourhood around that campus, not a city average. The gap between a station-adjacent room and one fifteen minutes away is large.</div></div>
+    <div class="step-body"><strong>Dormitory</strong> — the university's own page. 2026 regional examples indicate around <strong>₩130,000–200,000 a month</strong> for a twin room; some schools bill per term instead, with ₩1,800,000 for six months appearing in the same listings, and some include meals. Tracked at <a href="/tracked/student-dormitory-monthly-cost/">dormitory monthly cost</a>.</div></div>
   <div class="step"><div class="step-num">3</div>
-    <div class="step-body"><strong>The visa's financial evidence.</strong> Set higher for capital-area institutions than regional ones, and adjusted from time to time. Confirm the current figure for your institution's region on HiKorea or by calling <strong>1345</strong>.</div></div>
+    <div class="step-body"><strong>Private rent and deposit</strong> — listings for the specific neighbourhood around that campus, not a city average.</div></div>
   <div class="step"><div class="step-num">4</div>
-    <div class="step-body"><strong>Health insurance.</strong> Long-term foreign residents are inside the national system and students have their own treatment within it. Ask the NHIS about your case; the rules for students have changed more than once.</div></div>
+    <div class="step-body"><strong>Financial evidence</strong> — your school's admission requirements and the consulate you will apply at.</div></div>
   <div class="step"><div class="step-num">5</div>
-    <div class="step-body"><strong>Living costs.</strong> Food, transport, phone. These are the numbers people over-research and they move the total least.</div></div>
+    <div class="step-body"><strong>Health insurance</strong> — the NHIS, for your own case. The treatment of foreign students has changed more than once.</div></div>
 </div>
 
-<div class="callout callout-warn">
-  <p class="callout-title">The balance is shown, not spent — but it is not free either</p>
-  <p>The financial evidence is proof you can support yourself, so the money is
-  still yours. But it has to sit in an account for a period before you apply,
-  which means it cannot be doing anything else in the months before you leave.
-  Treat it as capital that is committed, not as cash on hand.</p>
-</div>
+## Do not fund the plan with part-time work
 
-## What changes between three, six and twelve months
+Part-time work on D-4 is not available on arrival. Eligibility begins
+**six months** after entry or a change of status, a Korean proficiency
+standard governs the permitted hours, the school must confirm it, and
+immigration must grant permission before the first shift.
 
-Hold the city and the housing constant and only the term count moves.
+Which means the months when your money is tightest are precisely the
+months when work cannot legally rescue it. The conditions are in
+[keeping D-4 status](/study/alien-registration-for-language-students/).
 
-| | 3 months | 6 months | 12 months |
-|---|---|---|---|
-| Terms of tuition | 1 | 2 | 4 |
-| Housing deposit | Same | Same | Same |
-| Visa financial evidence | Same | Same | Same |
-| Return flights | Same | Same | Same |
-| Months of living costs | 3 | 6 | 12 |
-| **Fixed block, per month** | Heaviest | Halved | Quartered |
+Treat earnings as something that makes the year more comfortable, never as
+something that makes it possible.
 
-The practical reading: **if you are choosing between three months and six,
-the second three months are much cheaper than the first three.** The
-decision is rarely "can I afford twice as long" — it is closer to "can I
-afford one more term of tuition and three more months of living".
+## Keep 10–20% back
 
-## The costs people leave out
+Early weeks generate costs nobody plans for: a dormitory move-in date that
+slips and needs short-stay accommodation on top of housing you have already
+committed to, a landlord who wants more deposit than advertised, a winter
+heating bill larger than the autumn ones that set your expectations.
 
-- **A repeat term.** Common around levels 3 and 4. Build one into a
-  twelve-month plan.
-- **The gap between terms.** Institute terms do not run back to back with
-  no break, and rent does not pause. If you go home between terms, that is
-  another flight.
-- **Getting the deposit back after you leave.** It returns when the next
-  tenant's deposit arrives, which may be after you have flown. Closing a
-  Korean bank account before that money lands creates a problem that is
-  genuinely hard to unwind from abroad.
-- **The first three weeks.** Before the alien registration card exists,
-  you are on a prepaid SIM, paying cash, and possibly in temporary
-  accommodation on top of the room you have already committed to. Why that
-  happens, and how to shorten it, is in
-  [keeping D-4 status](/study/alien-registration-for-language-students/).
+A plan that spends exactly 100% of a correct calculation still fails,
+because the calculation was of the expected costs. **Hold a reserve.**
 
-## Do not budget on part-time work
+## The number that actually matters
 
-Part-time work requires permission, is capped in hours, and depends
-heavily on the local job market and your Korean. It is real, and it is
-upside.
+Not tuition. This:
 
-A budget that only balances if the work appears is a budget that fails in
-month one — which is exactly when you have the least Korean, no permission
-yet, and the largest outstanding payments. Build the plan so it works
-without it, and let the work make the year more comfortable rather than
-possible.
+```
+cost consumed during the stay
+  + deposit locked for the contract
+  + balance the school or consulate may require you to prove
+  + reserve
+```
 
-## Before you commit anything
+Separate those four and any of the three lengths is fundable. Add them
+together as one lump and you will discover in month two which of them you
+forgot.
 
-Two decisions upstream of the budget change it more than any line item.
-
-**Which city.** Tuition barely moves; housing and the required balance
-both do. The comparison is in
-[Seoul or a regional city](/study/seoul-vs-regional-korea-language-study-cost/).
-
-**Which kind of room.** The deposit is the largest single day-one number,
-and one of the three options does not have one at all. That is in
-[dormitory, goshiwon or one-room](/study/dorm-goshiwon-or-one-room-for-students/).
-
-Settle those two, then fill the table. In that order the budget takes an
-afternoon; in the other order it takes three attempts.
+Which room type carries which of these burdens is in
+[dormitory, goshiwon or one-room](/study/dorm-goshiwon-or-one-room-for-students/);
+the city comparison is in
+[Seoul or a regional city](/study/seoul-vs-regional-korea-language-study-cost/);
+and bringing the money in is in
+[sending money from Korea](/banking/how-to-send-money-from-korea-abroad/).

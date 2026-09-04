@@ -7,8 +7,11 @@ updatedDate: 2026-09-09
 slot: pm
 draft: true
 tags: [study, housing, goshiwon, budget, arrival]
+tracked: [student-dormitory-monthly-cost]
 lastVerified: 2026-09-09
 sources:
+  - label: 'Study in Korea — university information, including dormitory provision and cost'
+    url: 'https://www.studyinkorea.go.kr/ko/search/universityInfo.do?tab=univ-basic-info'
   - label: 'Ministry of Land, Infrastructure and Transport — Real Transaction Price Disclosure System'
     url: 'https://rt.molit.go.kr/'
   - label: 'Korea Housing & Urban Guarantee Corporation — rental deposit guarantee'
@@ -44,7 +47,7 @@ available to you at all.
   <p class="figure-sub">Day-one cash, before rent enters the conversation</p>
   <div class="check-card">
     <div class="check-row ok"><span class="mark"></span><span><strong>Dormitory</strong> — no deposit. Billed by term or by month, often including utilities and sometimes meals.</span></div>
-    <div class="check-row ok"><span class="mark"></span><span><strong>Goshiwon</strong> — little or no deposit. Monthly, all-inclusive, and you can leave at a month's notice.</span></div>
+    <div class="check-row ok"><span class="mark"></span><span><strong>Goshiwon</strong> — usually little or no deposit, though some ask a small one. Monthly, largely all-inclusive, and you can leave at a month's notice.</span></div>
     <div class="check-row miss"><span class="mark"></span><span><strong>One-room</strong> — a substantial deposit, locked up for the whole tenancy, plus monthly rent and utilities on top.</span></div>
     <div class="check-result">A student who cannot raise the deposit is not choosing between three options. They are choosing between two.</div>
   </div>
@@ -56,7 +59,7 @@ available to you at all.
 
 | | Dormitory | Goshiwon | One-room |
 |---|---|---|---|
-| Deposit | None | None or small | Substantial |
+| Deposit | None | Often none, sometimes small | Substantial |
 | Billing | Per term or month | Monthly | Monthly + utilities |
 | Utilities | Usually included | Included | Separate |
 | Furniture | Provided | Provided | Sometimes bare |
@@ -66,6 +69,13 @@ available to you at all.
 | Notice to leave | Term-bound | About a month | Contract term |
 | Curfew / rules | Sometimes | Rarely | None |
 | Proof of address | Confirmation letter | Contract, if reputable | Lease |
+| Fits 3 months | Yes | Yes | Usually not |
+| Fits 6 months | Yes | Yes | Conditionally |
+| Fits 12 months | Check continuity | Liveability becomes the issue | Yes |
+
+**This is a comparison of funding structures, not a price list.** Actual
+amounts move with the city, the university and the building, which is why
+the figures live in the tracked series rather than in this paragraph.
 
 ## The dormitory is the answer to a specific problem
 
@@ -73,9 +83,21 @@ It solves day-one cash, and it solves it completely: no deposit, no agency
 fee, no negotiating in a language you are still learning, and a document
 for your registration appointment that arrives without argument.
 
-Its weakness is duration. Institute dormitories are limited and typically
-allocated term by term with priority to new arrivals. **A first-term place
-is common; a guaranteed fourth-term place is not.**
+Its weakness is duration. Not every university guarantees a dormitory place
+to language students at all, and where places exist they are limited —
+constrained by capacity, by gender, by term, and by how the school handles
+vacations. Some dormitories require moving out between terms.
+
+**So the first question is not "is the dormitory cheap". It is "can I live
+there continuously for six or twelve months".** A first-term place is
+common; a guaranteed fourth-term place is not.
+
+2026 examples from regional universities indicate roughly
+**₩130,000–200,000 a month for a twin room**. Some schools bill by term
+instead — ₩1,800,000 for six months appears in the same listings — and some
+include meals, which makes a headline figure hard to compare until you know
+what is inside it. The band is tracked at
+[dormitory monthly cost](/tracked/student-dormitory-monthly-cost/).
 
 <div class="callout callout-warn">
   <p class="callout-title">Ask these two in writing, before you fly</p>
@@ -119,10 +141,20 @@ of the tenancy, and its size tracks local property values, not your rent.
 
 Which means:
 
-- It is **large**, particularly in the capital region.
+- It is **large**, particularly in the capital region. Deposits of
+  **₩5,000,000 or ₩10,000,000** are commonly quoted in districts students
+  look in — and that is a common quote, not a national price. The figure
+  moves with the district and the building, and can be well below or far
+  above those.
 - It is **not spendable** while you live there.
 - It is the same whether you stay six months or two years.
 - Getting it back is a process with its own risks.
+
+And the rent is not the only recurring cost: maintenance charges, and
+electricity, gas and water billed on usage, sit on top, plus an agency fee
+at the front if you go through a broker. What the maintenance charge
+actually covers is in
+[utilities and maintenance fees](/cost-of-living/utilities-and-maintenance-fees-korea/).
 
 The mechanics, and how the deposit interacts with monthly rent, are in
 [jeonse and wolse explained](/cost-of-living/jeonse-vs-wolse-korean-rental-system/).

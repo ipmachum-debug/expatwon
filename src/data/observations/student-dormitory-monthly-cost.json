@@ -1,0 +1,18 @@
+{
+  "key": "student-dormitory-monthly-cost",
+  "label": "University dormitory: monthly cost, twin room",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Language students in university dormitories, where a place is available",
+  "why": "The cheapest housing route and the one that removes a deposit from day-one cash entirely, which is why it decides whether an expensive city is affordable. Set per university and per building, so it belongs in an observation series rather than in prose.",
+  "history": [
+    {
+      "date": "2026-09-09",
+      "value": 200000,
+      "display": "₩130,000–200,000 (twin)",
+      "source": "Study in Korea — university information pages, 2026",
+      "note": "Regional university examples for 2026 indicate roughly ₩130,000 to ₩200,000 a month for a twin room. Some schools bill per term instead — ₩1,800,000 for six months appears in the same listings — and some include meals. Value records the upper end of the monthly range. A place is not guaranteed to every language student: capacity, gender, term and vacation handling all restrict it, and some dormitories require moving out between terms."
+    }
+  ]
+}

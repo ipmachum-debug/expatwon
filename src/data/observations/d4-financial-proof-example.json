@@ -1,0 +1,18 @@
+{
+  "key": "d4-financial-proof-example",
+  "label": "D-4 financial evidence: balance commonly required",
+  "unit": "USD equivalent balance certificate",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "D-4 applicants, as required by the institution and the consulate",
+  "why": "Widely quoted as though it were a statutory constant. It is not — it is set by the institution and the mission handling the application, and schools genuinely differ. Recording it as an observation rather than a rule is the honest treatment, and it is exactly the sort of figure that moves without any legislative change.",
+  "history": [
+    {
+      "date": "2026-09-09",
+      "value": 10000,
+      "display": "USD 10,000 (common), ₩8m at some schools",
+      "source": "University 2026 admission requirements for D-4 applicants",
+      "note": "USD 10,000 in an English balance certificate is the level several universities state for D-4 applicants. Other schools state a won figure — ₩8,000,000 or above — which is materially lower. There is no single common standard: the requirement depends on nationality, the mission, and the school. Issue date of the certificate, how long the funds must have been held, and whether a parent's account is acceptable are separate conditions on top."
+    }
+  ]
+}
