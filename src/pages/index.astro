@@ -82,70 +82,83 @@ const tools = [
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <!-- Hero -->
-  <section class="relative mb-16 border-y-2 border-ink py-14 sm:py-20">
-    <div
-      class="pointer-events-none absolute top-4 right-2 hidden max-w-[15rem] -rotate-[5deg] bg-[#ffe9b8] px-4 py-3 shadow-[2px_3px_0_rgba(34,28,20,0.10)] lg:block"
-      aria-hidden="true"
-    >
-      <p class="font-hand text-[1.35rem] leading-[1.25] text-[#5c4a1e]">
-        every figure links to the<br />.go.kr page that proves it
-      </p>
-    </div>
+  <!-- Hero.  Two columns from lg, because a single column left the right
+       half of a laptop screen empty and pushed the task cards below the
+       fold — where a section built to be the first thing read is no use. -->
+  <section class="mb-8 border-y-2 border-ink py-7 sm:py-10">
+    <div class="gap-x-14 lg:grid lg:grid-cols-[minmax(0,36rem)_1fr] lg:items-start">
+      <div>
+        <p class="mb-5 font-sans text-[0.68rem] font-bold tracking-[0.2em] text-ink-soft/70 uppercase">
+          In English · Sourced to the Korean original
+        </p>
 
-    <p class="mb-6 font-sans text-[0.68rem] font-bold tracking-[0.2em] text-ink-soft/70 uppercase">
-      In English · Sourced to the Korean original
-    </p>
+        <h1 class="mb-3.5 max-w-[19ch] font-display text-[2.15rem] leading-[1.09] sm:text-[2.7rem] font-bold text-ink lg:text-[3.3rem]">
+          Money in Korea, explained for <span class="relative inline-block">foreigners<svg
+              viewBox="0 0 240 16"
+              preserveAspectRatio="none"
+              class="absolute -bottom-1 left-0 h-3 w-full text-gold"
+              aria-hidden="true"
+            ><path d="M3 11C60 3 150 15 237 5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" /></svg></span>.
+        </h1>
 
-    <h1 class="mb-4 max-w-[15ch] font-display text-[2.7rem] leading-[1.06] font-bold text-ink sm:text-[3.9rem]">
-      Money in Korea,<br />explained for <span class="relative inline-block">foreigners<svg
-          viewBox="0 0 240 16"
-          preserveAspectRatio="none"
-          class="absolute -bottom-1.5 left-0 h-3.5 w-full text-gold"
+        <p class="mb-4 font-hand text-[1.35rem] sm:text-[1.5rem] leading-none text-[#8a6d1f]">
+          Korean money, with the receipts.
+        </p>
+
+        <p class="mb-7 max-w-xl leading-relaxed text-ink-soft">
+          Banking, credit, loans, cars, housing, business and insurance —
+          current Korean rules, real numbers, and the official page behind
+          each one.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a
+            href="/tools/"
+            class="rounded-full bg-ink px-6 py-3 font-sans text-[0.92rem] font-semibold text-paper transition-transform hover:-translate-y-0.5"
+          >
+            Run your own numbers →
+          </a>
+          <a
+            href="/banking/"
+            class="rounded-full border border-ink/25 px-6 py-3 font-sans text-[0.92rem] font-semibold text-ink transition-colors hover:border-ink"
+          >
+            Start with banking
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 lg:mt-1.5">
+        <div
+          class="mb-8 hidden max-w-[16rem] -rotate-[3deg] bg-[#ffe9b8] px-4 py-3 shadow-[2px_3px_0_rgba(34,28,20,0.10)] lg:ml-auto lg:block"
           aria-hidden="true"
-        ><path d="M3 11C60 3 150 15 237 5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" /></svg></span>.
-    </h1>
+        >
+          <p class="font-hand text-[1.3rem] leading-[1.25] text-[#5c4a1e]">
+            every figure links to the<br />.go.kr page that proves it
+          </p>
+        </div>
 
-    <p class="mb-6 font-hand text-[1.6rem] leading-none text-[#8a6d1f]">
-      Korean money, with the receipts.
-    </p>
+        <p class="border-t-2 border-ink pt-3 text-[0.82rem] leading-relaxed text-ink-soft/85 lg:hidden">
+          <strong class="num font-bold text-ink">{posts.length} guides</strong>, every figure
+          sourced · re-checked every <strong class="num font-bold text-ink">6 months</strong> ·
+          written from inside a Korean company since <strong class="num font-bold text-ink">2016</strong>
+        </p>
 
-    <p class="mb-9 max-w-xl text-[1.15rem] leading-relaxed text-ink-soft">
-      Banking, credit, loans, cars, housing, business and insurance — current
-      Korean rules, real numbers, and the official page behind each one.
-      Written by someone who has run a Korean company for ten years and files
-      the same paperwork you are about to.
-    </p>
-
-    <div class="mb-11 flex flex-wrap items-center gap-3">
-      <a
-        href="/tools/"
-        class="rounded-full bg-ink px-6 py-3 font-sans text-[0.92rem] font-semibold text-paper transition-transform hover:-translate-y-0.5"
-      >
-        Run your own numbers →
-      </a>
-      <a
-        href="/banking/"
-        class="rounded-full border border-ink/25 px-6 py-3 font-sans text-[0.92rem] font-semibold text-ink transition-colors hover:border-ink"
-      >
-        Start with banking
-      </a>
+        <dl class="hidden lg:block lg:space-y-4 lg:border-l-2 lg:border-ink lg:pl-6">
+          <div>
+            <dt class="num text-[1.9rem] leading-none font-bold text-ink">{posts.length}</dt>
+            <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Guides, all sourced</dd>
+          </div>
+          <div>
+            <dt class="num text-[1.9rem] leading-none font-bold text-ink">6mo</dt>
+            <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Re-check cycle</dd>
+          </div>
+          <div>
+            <dt class="num text-[1.9rem] leading-none font-bold text-ink">2016</dt>
+            <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Running a Korean company since</dd>
+          </div>
+        </dl>
+      </div>
     </div>
-
-    <dl class="flex flex-wrap gap-x-12 gap-y-5 border-t-2 border-ink pt-5">
-      <div>
-        <dt class="num text-[2rem] leading-none font-bold text-ink">{posts.length}</dt>
-        <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Guides, all sourced</dd>
-      </div>
-      <div>
-        <dt class="num text-[2rem] leading-none font-bold text-ink">6mo</dt>
-        <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Re-check cycle</dd>
-      </div>
-      <div>
-        <dt class="num text-[2rem] leading-none font-bold text-ink">2016</dt>
-        <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Running a Korean company since</dd>
-      </div>
-    </dl>
   </section>
 
   <!-- What do you need to do -->
