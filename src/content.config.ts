@@ -109,8 +109,8 @@ const posts = defineCollection({
     /**
      * The other half of the day's pair, by slug. The morning pillar names the
      * afternoon supporting piece; the link renders only once the target is
-     * actually published, so a pillar that goes out at 08:32 does not carry a
-     * dead link to a guide that appears at 17:32.
+     * actually published, so a pillar that goes out at 07:00 does not carry a
+     * dead link to a guide that appears at 15:00.
      */
     pairedWith: z.string().min(3).optional(),
     /**
