@@ -6,6 +6,7 @@ publishDate: 2026-09-10
 updatedDate: 2026-09-10
 slot: am
 draft: true
+pairedWith: after-the-language-programme-d2-d10-e7
 tags: [study, topik, d-4, visa, language-school]
 tracked: [topik-annual-test-rounds, topik-score-validity, topik-score-release-gap, university-general-topik-admission-level, d4-parttime-korean-level]
 lastVerified: 2026-09-10

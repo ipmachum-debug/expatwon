@@ -1,0 +1,25 @@
+{
+  "key": "d10-max-stay-period",
+  "label": "D-10 job-seeking status: maximum total period of stay",
+  "unit": "years, cumulative",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "General job-seeking (D-10) holders looking for work in E-1 to E-7 fields",
+  "why": "It changed in October 2025 and a great deal of published guidance did not. University pages and forum answers still describe the old six-month grants to a two-year ceiling, so a graduate planning a job search from those sources budgets a year less than they actually have. This is the clearest case on the site for why a figure needs a recorded history rather than a current value.",
+  "history": [
+    {
+      "date": "2025-10-28",
+      "value": 2,
+      "display": "2 years (6 months per grant)",
+      "source": "Ministry of Justice — general job-seeking (D-10) rules as they stood before the 2025 reform",
+      "note": "The position immediately before the reform: granted in six-month periods to a cumulative ceiling of two years. Recorded because guidance describing it is still in wide circulation."
+    },
+    {
+      "date": "2025-10-29",
+      "value": 3,
+      "display": "3 years (up to 1 year per grant)",
+      "source": "Ministry of Justice — reform of the general job-seeking (D-10) system, effective 29 October 2025",
+      "note": "Up to one year per grant, to a cumulative ceiling of three years. The eligibility conditions were not removed by the reform: the degree requirement, the job-seeking field and the points test are all still assessed separately."
+    }
+  ]
+}
