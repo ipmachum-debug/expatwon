@@ -1,0 +1,18 @@
+{
+  "key": "topik-score-validity",
+  "label": "TOPIK: how long a score stays usable",
+  "unit": "years from the result announcement",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Anyone holding a TOPIK certificate for a future application",
+  "why": "A score that has expired is administratively worthless however high it was, and the clock starts at the announcement rather than the test. Set administratively, so it can change.",
+  "history": [
+    {
+      "date": "2026-09-10",
+      "value": 2,
+      "display": "2 years",
+      "source": "Study in Korea / TOPIK",
+      "note": "Counted from the date the result is announced, not the date of the test."
+    }
+  ]
+}

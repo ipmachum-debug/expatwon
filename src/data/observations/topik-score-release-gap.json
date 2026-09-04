@@ -1,0 +1,18 @@
+{
+  "key": "topik-score-release-gap",
+  "label": "TOPIK: interval between sitting and official result",
+  "unit": "days from test to result announcement",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Anyone whose TOPIK score has to arrive before an admission or immigration deadline",
+  "why": "The number that actually collides with deadlines — a test taken in time is useless if the result lands after the document deadline. It is not constant across rounds, and the assumption that IBT always reports faster than PBT does not hold, which is exactly why it is observed rather than stated.",
+  "history": [
+    {
+      "date": "2026-09-10",
+      "value": 35,
+      "display": "Roughly 4-6 weeks, varies by round",
+      "source": "TOPIK annual implementation plan, per-round result dates",
+      "note": "Recorded as an indicative interval only. Each round publishes its own result date alongside its test date in the annual plan, and the gap differs between rounds and between PBT and IBT. Never plan from this figure — read the result date for the specific round you intend to sit."
+    }
+  ]
+}

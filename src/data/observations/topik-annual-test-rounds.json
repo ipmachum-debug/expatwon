@@ -1,0 +1,18 @@
+{
+  "key": "topik-annual-test-rounds",
+  "label": "TOPIK: test rounds offered each year",
+  "unit": "rounds per year",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Anyone planning a TOPIK sitting around an admission or status deadline",
+  "why": "How many chances a year exist decides whether a missed round costs weeks or a semester. Set by the annual implementation plan, so it is re-announced every year rather than fixed in law.",
+  "history": [
+    {
+      "date": "2026-09-10",
+      "value": 6,
+      "display": "PBT 6, IBT 6, Speaking 3",
+      "source": "Study in Korea / TOPIK annual implementation plan",
+      "note": "For 2026 the plan indicates PBT in January, April, May, July, October and November; IBT in February, March, June, September, October and November; and the separate Speaking test in March, June and October. Value records the PBT and IBT count. Always read the current year plan for the exact dates."
+    }
+  ]
+}
