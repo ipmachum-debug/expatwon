@@ -4,10 +4,11 @@ import { getCollection } from 'astro:content';
 import AdSlot from '../../components/AdSlot.astro';
 import PostCard from '../../components/PostCard.astro';
 import Layout from '../../layouts/Layout.astro';
-import { CATEGORIES, categoryVars, getCategory } from '../../lib/categories';
+import { categoriesWithPosts, categoryVars, getCategory } from '../../lib/categories';
 
-export function getStaticPaths() {
-  return CATEGORIES.map((c) => ({ params: { category: c.slug } }));
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return categoriesWithPosts(posts).map((c) => ({ params: { category: c.slug } }));
 }
 
 const { category } = Astro.params;

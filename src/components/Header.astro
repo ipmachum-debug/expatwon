@@ -1,6 +1,10 @@
 ---
-import { CATEGORIES } from '../lib/categories';
+import { getCollection } from 'astro:content';
+
+import { categoriesWithPosts } from '../lib/categories';
 import Logo from './Logo.astro';
+
+const categories = categoriesWithPosts(await getCollection('posts'));
 
 const current = Astro.url.pathname;
 const isActive = (path: string) => current === path || current.startsWith(`${path}`);
@@ -24,7 +28,7 @@ const isActive = (path: string) => current === path || current.startsWith(`${pat
         All
       </a>
       {
-        CATEGORIES.map((c) => (
+        categories.map((c) => (
           <a
             href={`/${c.slug}/`}
             class:list={[

@@ -1,8 +1,12 @@
 ---
-import { CATEGORIES } from '../lib/categories';
+import { getCollection } from 'astro:content';
+
+import { categoriesWithPosts } from '../lib/categories';
 import Logo from './Logo.astro';
 
 const year = new Date().getFullYear();
+
+const categories = categoriesWithPosts(await getCollection('posts'));
 ---
 
 <footer class="mt-20 border-t-2 border-ink bg-paper-deep text-ink-soft">
@@ -21,7 +25,7 @@ const year = new Date().getFullYear();
       <h2 class="mb-3 text-xs font-semibold tracking-widest text-ink uppercase">Topics</h2>
       <ul class="space-y-2 text-sm">
         {
-          CATEGORIES.map((c) => (
+          categories.map((c) => (
             <li>
               <a href={`/${c.slug}/`} class="transition-colors hover:text-white">
                 {c.title}

@@ -3,11 +3,11 @@ import { getCollection } from 'astro:content';
 
 import FormattedDate from '../components/FormattedDate.astro';
 import Layout from '../layouts/Layout.astro';
-import { CATEGORIES } from '../lib/categories';
+import { categoriesWithPosts } from '../lib/categories';
 
 const posts = await getCollection('posts', (p) => !p.data.draft);
 
-const groups = CATEGORIES.map((category) => ({
+const groups = categoriesWithPosts(posts).map((category) => ({
   category,
   posts: posts
     .filter((p) => p.data.category === category.slug)

@@ -124,6 +124,20 @@ export const CATEGORIES: CategoryMeta[] = [
     line: '#d9f99d',
     icon: '<rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5M3 13h18M10 13v2h4v-2"/>',
   },
+  {
+    slug: 'study',
+    title: 'Studying in Korea',
+    shortTitle: 'Study',
+    description:
+      'Coming to Korea to study Korean: the D-4 visa, choosing a school and city, and what a term actually costs.',
+    chip: 'bg-fuchsia-50 text-fuchsia-700',
+    tile: 'bg-fuchsia-50 text-fuchsia-600',
+    accent: '#a21caf',
+    ink: '#86198f',
+    tint: '#fdf4ff',
+    line: '#f5d0fe',
+    icon: '<path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/><path d="M22 9v5.5"/>',
+  },
 ];
 
 export const CATEGORY_SLUGS = CATEGORIES.map((c) => c.slug);
@@ -137,4 +151,25 @@ export function getCategory(slug: string): CategoryMeta {
   const found = CATEGORIES.find((c) => c.slug === slug);
   if (!found) throw new Error(`Unknown category: ${slug}`);
   return found;
+}
+
+/**
+ * Categories that have at least one published guide.
+ *
+ * A category is declared here before its first guide goes out — the guides are
+ * written as drafts with a future publishDate, and the category has to exist
+ * for the schema to accept them. Left alone, that puts an empty listing page
+ * in the sitemap and an empty tab in the nav: a page promising a topic and
+ * delivering nothing, which is exactly the "thin content" a reviewer counts
+ * against the site.
+ *
+ * So the nav and the category route both filter through this. The page and the
+ * tab appear on the morning the first guide publishes, and nothing has to be
+ * remembered on the day.
+ */
+export function categoriesWithPosts(
+  posts: { data: { category: string; draft?: boolean } }[],
+): CategoryMeta[] {
+  const live = new Set(posts.filter((p) => !p.data.draft).map((p) => p.data.category));
+  return CATEGORIES.filter((c) => live.has(c.slug));
 }

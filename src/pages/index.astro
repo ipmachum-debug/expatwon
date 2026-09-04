@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import LeadCard from '../components/LeadCard.astro';
 import PostCard from '../components/PostCard.astro';
 import Layout from '../layouts/Layout.astro';
-import { CATEGORIES } from '../lib/categories';
+import { categoriesWithPosts } from '../lib/categories';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../lib/site';
 
 const posts = (await getCollection('posts', (p) => !p.data.draft)).sort(
@@ -253,7 +253,7 @@ const tools = [
     <h2 class="mb-6 font-display text-3xl font-bold text-ink">Browse by topic</h2>
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
-        CATEGORIES.map((c) => (
+        categoriesWithPosts(posts).map((c) => (
           <a
             href={`/${c.slug}/`}
             class="group rounded-2xl border border-rule bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink/35 hover:shadow-lg hover:shadow-slate-200/60"
