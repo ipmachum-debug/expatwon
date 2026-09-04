@@ -1,0 +1,18 @@
+{
+  "key": "d4-parttime-waiting-period",
+  "label": "D-4 part-time work: waiting period before eligibility",
+  "unit": "months after entry or status change",
+  "type": "schedule",
+  "check": "quarterly",
+  "appliesTo": "D-4-1 and D-4-7 holders wanting a part-time work permit",
+  "why": "A student who budgets on part-time earnings from month one has budgeted on something that cannot legally happen yet. This is administrative guidance rather than statute, so it can move without a legislative change — which is exactly why it is worth watching.",
+  "history": [
+    {
+      "date": "2026-09-07",
+      "value": 6,
+      "display": "6 months",
+      "source": "Study in Korea — residence and stay information, part-time work",
+      "note": "Counted from the date of entry or of the change of status, whichever applies."
+    }
+  ]
+}

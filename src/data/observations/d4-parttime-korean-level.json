@@ -1,0 +1,18 @@
+{
+  "key": "d4-parttime-korean-level",
+  "label": "D-4 part-time work: Korean proficiency standard",
+  "unit": "TOPIK level (or accepted equivalent)",
+  "type": "schedule",
+  "check": "quarterly",
+  "appliesTo": "D-4-1 language trainees applying for a part-time work permit",
+  "why": "The proficiency bar decides how many hours a student may work, so it is a budget input, not a language goal. It sits in administrative guidance and has been revised before.",
+  "history": [
+    {
+      "date": "2026-09-07",
+      "value": 2,
+      "display": "TOPIK level 2",
+      "source": "Study in Korea — residence and stay information",
+      "note": "Accepted equivalents include completing KIIP stage 2, scoring 41 or above on the KIIP pre-assessment, or beginner level at a King Sejong Institute. Falling short does not bar work outright; it narrows the permitted hours."
+    }
+  ]
+}

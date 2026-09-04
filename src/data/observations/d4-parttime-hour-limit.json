@@ -1,0 +1,18 @@
+{
+  "key": "d4-parttime-hour-limit",
+  "label": "D-4 part-time work: weekday hour ceiling once the standard is met",
+  "unit": "hours per week, term time",
+  "type": "schedule",
+  "check": "quarterly",
+  "appliesTo": "D-4-1 language trainees holding a part-time work permit",
+  "why": "The single figure a student needs to know before signing anything, and the one most often quoted from an out-of-date forum post. Set by administrative guidance, so it moves more readily than the statutory registration deadlines.",
+  "history": [
+    {
+      "date": "2026-09-07",
+      "value": 20,
+      "display": "20 hours",
+      "source": "Study in Korea — residence and stay information",
+      "note": "Weekdays during term. Weekends and vacation periods are allowed a higher ceiling, indicated at 25 hours. Students who do not meet the Korean proficiency standard are held to a narrower range."
+    }
+  ]
+}

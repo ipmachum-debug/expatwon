@@ -104,6 +104,14 @@ in the same moment.
   as if it were part of your visa file, because in effect it is.</p>
 </div>
 
+The figure you will hear is 80%, and it is worth being exact about what it
+is: **the threshold institutes themselves enforce** for progressing a level,
+re-enrolling or transferring. It is not a statutory cut-off — nothing says
+79% means an extension is automatically refused. Extensions are assessed on
+attendance together with enrolment, grades, tuition and stay history. The
+full picture, and what actually happens when absences accumulate, is in
+[keeping D-4 status](/study/alien-registration-for-language-students/).
+
 Illness and emergencies are provided for. They are provided for by
 **telling the office at the time and keeping the documentation** — a
 clinic receipt, a certificate — not by explaining afterwards. The
