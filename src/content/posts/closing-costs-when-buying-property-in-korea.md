@@ -5,7 +5,6 @@ category: cost-of-living
 publishDate: 2026-09-04
 updatedDate: 2026-09-04
 slot: pm
-draft: true
 tags: [cost-of-living, property, buying, tax, closing-costs]
 tracked: [acquisition-tax-housing, brokerage-fee-caps-sale, housing-bond-purchase-rate, national-housing-bond-coupon-rate]
 evidence: [housing-bond-terms, housing-bond-rate-history]
