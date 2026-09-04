@@ -1,0 +1,18 @@
+{
+  "key": "tourist-sim-max-validity",
+  "label": "Tourist SIM and eSIM: maximum validity from activation",
+  "unit": "days from first activation",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign visitors on a passport-registered tourist SIM or eSIM",
+  "why": "This is why a long-stay resident cannot simply keep the line they arrived on. The tourist product expires on its own schedule regardless of how long the person stays, which forces a move to a registration-card line — and anyone who registered the temporary number with a bank, a school or an employer has to change it everywhere at the same time.",
+  "history": [
+    {
+      "date": "2026-09-11",
+      "value": 90,
+      "display": "90 days",
+      "source": "KT — foreigner tourist SIM and eSIM service terms",
+      "note": "Counted from first activation. Other carriers and resellers set their own limits, so confirm the product you actually buy. The practical consequence is the same everywhere: the arrival line is temporary by design."
+    }
+  ]
+}

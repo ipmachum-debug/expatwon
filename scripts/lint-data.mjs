@@ -129,6 +129,7 @@ const frontmatterList = (body, field) => {
 };
 
 let tracking = 0;
+let pairs = 0;
 
 for (const file of readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'))) {
   const body = readFileSync(join(POSTS_DIR, file), 'utf8');
@@ -142,6 +143,18 @@ for (const file of readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'))) {
   }
   for (const id of frontmatterList(fm, 'evidence')) {
     if (!evidenceIds.has(id)) errors.push(`${where}: cites unknown evidence record "${id}"`);
+  }
+
+  // A pair points at the other half of the day. PairedGuide renders nothing
+  // when the target is unpublished, so a typo or a since-renamed slug fails
+  // silently and the pillar simply never links to its partner. Caught here
+  // instead — twice already this has been found only by reading the diff.
+  const paired = fm.match(/^pairedWith:\s*['"]?([^'"\n]+?)['"]?\s*$/m)?.[1]?.trim();
+  if (paired) {
+    pairs++;
+    if (!existsSync(join(POSTS_DIR, `${paired}.md`))) {
+      errors.push(`${where}: pairedWith "${paired}" does not exist`);
+    }
   }
 }
 
@@ -163,5 +176,6 @@ if (errors.length > 0) {
 
 console.log(
   `✓ Data lint passed — ${observationKeys.size} observation series, ` +
-    `${evidenceIds.size} evidence records, ${tracking} articles tracking figures.`,
+    `${evidenceIds.size} evidence records, ${tracking} articles tracking figures, ` +
+    `${pairs} paired days.`,
 );
