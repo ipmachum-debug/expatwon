@@ -12,6 +12,53 @@ const posts = (await getCollection('posts', (p) => !p.data.draft)).sort(
 );
 const [lead, ...latest] = posts.slice(0, 5);
 
+// What a visitor actually arrives with. These are jobs, not categories: "rent
+// a home" spans cost-of-living and loans, and no category page expresses it.
+// Each one points at the guide that opens the job, so a card never promises
+// depth the site does not have.
+const tasks = [
+  {
+    title: 'Open a bank account',
+    blurb: 'What the branch asks for, and why the first account is limited.',
+    href: '/banking/how-to-open-a-bank-account-in-korea-as-a-foreigner/',
+  },
+  {
+    title: 'Build Korean credit',
+    blurb: 'How NICE and KCB score someone with no Korean history yet.',
+    href: '/loans/korean-credit-score-for-foreigners-nice-kcb/',
+  },
+  {
+    title: 'Get a loan',
+    blurb: 'What lenders actually underwrite: visa, stay, verifiable income.',
+    href: '/loans/can-foreigners-get-a-loan-in-korea/',
+  },
+  {
+    title: 'Buy or lease a car',
+    blurb: 'Lease, instalment or cash — the total cost, not the monthly.',
+    href: '/cars/car-lease-in-korea-for-foreigners-real-cost/',
+  },
+  {
+    title: 'Rent a home',
+    blurb: 'Jeonse against wolse, and how to keep the deposit safe.',
+    href: '/cost-of-living/jeonse-vs-wolse-korean-rental-system/',
+  },
+  {
+    title: 'Send money home',
+    blurb: 'Compare by what arrives, not by the advertised fee.',
+    href: '/banking/how-to-send-money-from-korea-abroad/',
+  },
+  {
+    title: 'Start a business',
+    blurb: 'Visa permission first, then tax registration — in that order.',
+    href: '/business/registering-a-business-in-korea-as-a-foreigner/',
+  },
+  {
+    title: 'Hire and insure staff',
+    blurb: 'The four insurances, their deadlines, and what missing one costs.',
+    href: '/employment/hiring-your-first-employee-in-korea/',
+  },
+];
+
 const tools = [
   {
     href: '/tools/car-lease-calculator/',
@@ -47,11 +94,11 @@ const tools = [
     </div>
 
     <p class="mb-6 font-sans text-[0.68rem] font-bold tracking-[0.2em] text-ink-soft/70 uppercase">
-      Money in Korea · In English
+      In English · Sourced to the Korean original
     </p>
 
-    <h1 class="mb-7 max-w-[13ch] font-display text-[2.9rem] leading-[1.04] font-bold text-ink sm:text-[4.2rem]">
-      Korean money,<br />with the <span class="relative inline-block">receipts<svg
+    <h1 class="mb-4 max-w-[15ch] font-display text-[2.7rem] leading-[1.06] font-bold text-ink sm:text-[3.9rem]">
+      Money in Korea,<br />explained for <span class="relative inline-block">foreigners<svg
           viewBox="0 0 240 16"
           preserveAspectRatio="none"
           class="absolute -bottom-1.5 left-0 h-3.5 w-full text-gold"
@@ -59,10 +106,15 @@ const tools = [
         ><path d="M3 11C60 3 150 15 237 5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" /></svg></span>.
     </h1>
 
+    <p class="mb-6 font-hand text-[1.6rem] leading-none text-[#8a6d1f]">
+      Korean money, with the receipts.
+    </p>
+
     <p class="mb-9 max-w-xl text-[1.15rem] leading-relaxed text-ink-soft">
-      Bank accounts, loans, cars, business registration, and the real cost of
-      living — written by someone who has run a Korean company for ten years and
-      files the same paperwork you are about to.
+      Banking, credit, loans, cars, housing, business and insurance — current
+      Korean rules, real numbers, and the official page behind each one.
+      Written by someone who has run a Korean company for ten years and files
+      the same paperwork you are about to.
     </p>
 
     <div class="mb-11 flex flex-wrap items-center gap-3">
@@ -94,6 +146,76 @@ const tools = [
         <dd class="mt-1.5 font-sans text-[0.64rem] font-bold tracking-[0.14em] text-ink-soft/70 uppercase">Running a Korean company since</dd>
       </div>
     </dl>
+  </section>
+
+  <!-- What do you need to do -->
+  <section class="mb-16">
+    <div class="mb-6 max-w-2xl">
+      <h2 class="mb-2 font-display text-3xl font-bold text-ink">
+        What do you need to do in Korea?
+      </h2>
+      <p class="text-ink-soft/85">
+        Most people arrive here holding a job to get done, not a topic to read
+        about. Start from the job.
+      </p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        tasks.map((t) => (
+          <a
+            href={t.href}
+            class="group flex flex-col rounded-2xl border border-rule bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink/35 hover:shadow-lg hover:shadow-slate-200/60"
+          >
+            <h3 class="mb-1.5 font-display text-lg leading-snug font-semibold text-ink group-hover:text-gold">
+              {t.title}
+            </h3>
+            <p class="text-[0.86rem] leading-relaxed text-ink-soft/85">{t.blurb}</p>
+            <span
+              class="mt-3 font-sans text-[0.78rem] font-semibold text-ink-soft/55 transition-colors group-hover:text-gold"
+              aria-hidden="true"
+            >
+              Start here →
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Calculators -->
+  <section class="mb-16 rounded-3xl bg-paper p-8 sm:p-10">
+    <div class="mb-6 max-w-xl">
+      <h2 class="mb-2 font-display text-3xl font-bold text-ink">Run your own numbers</h2>
+      <p class="text-ink-soft/85">
+        Free calculators built for the money decisions expats actually face in
+        Korea. Everything runs in your browser.
+      </p>
+    </div>
+    <div class="grid gap-5 sm:grid-cols-3">
+      {
+        tools.map((t) => (
+          <a
+            href={t.href}
+            class="group rounded-2xl border border-rule bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/60"
+          >
+            <span class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-deep text-gold">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6"
+                set:html={t.icon}
+              />
+            </span>
+            <h3 class="mb-1.5 font-semibold text-ink group-hover:text-gold">{t.title} Calculator</h3>
+            <p class="text-sm leading-relaxed text-ink-soft/85">{t.description}</p>
+          </a>
+        ))
+      }
+    </div>
   </section>
 
   <!-- Latest guides -->
@@ -139,42 +261,6 @@ const tools = [
               {c.title}
             </h3>
             <p class="text-sm leading-relaxed text-ink-soft/85">{c.description}</p>
-          </a>
-        ))
-      }
-    </div>
-  </section>
-
-  <!-- Calculators -->
-  <section class="rounded-3xl bg-paper p-8 sm:p-10">
-    <div class="mb-6 max-w-xl">
-      <h2 class="mb-2 font-display text-3xl font-bold text-ink">Run your own numbers</h2>
-      <p class="text-ink-soft/85">
-        Free calculators built for the money decisions expats actually face in
-        Korea. Everything runs in your browser.
-      </p>
-    </div>
-    <div class="grid gap-5 sm:grid-cols-3">
-      {
-        tools.map((t) => (
-          <a
-            href={t.href}
-            class="group rounded-2xl border border-rule bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/60"
-          >
-            <span class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-deep text-gold">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-                set:html={t.icon}
-              />
-            </span>
-            <h3 class="mb-1.5 font-semibold text-ink group-hover:text-gold">{t.title} Calculator</h3>
-            <p class="text-sm leading-relaxed text-ink-soft/85">{t.description}</p>
           </a>
         ))
       }
