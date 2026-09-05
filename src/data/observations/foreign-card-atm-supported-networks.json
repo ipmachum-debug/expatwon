@@ -1,0 +1,18 @@
+{
+  "key": "foreign-card-atm-supported-networks",
+  "label": "Global ATM: overseas card networks accepted",
+  "unit": "card networks listed as supported",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Overseas-issued cards used at a Korean bank’s Global ATM service",
+  "why": "The only part of Korean ATM access that is published as a stable list rather than varying machine by machine. Everything travellers actually want to know — the operator's fee, the per-transaction limit, the opening hours — differs by operator, model and location and has no national figure, so the network list is the one thing worth committing to a record. It is also the practical first filter: read the logos on the machine, not the name of the bank above it.",
+  "history": [
+    {
+      "date": "2026-09-13",
+      "value": 7,
+      "display": "Mastercard, Maestro, Cirrus, Visa, PLUS, JCB, UnionPay",
+      "source": "Hana Bank — Global ATM service guidance",
+      "note": "The networks Hana Bank lists for its Global ATM service. Other banks publish their own lists and the overlap is high but not guaranteed. A logo on the machine does not by itself mean your particular card will be approved: the issuer can have overseas cash withdrawal disabled, and the card product and the ATM network still have to be compatible."
+    }
+  ]
+}
