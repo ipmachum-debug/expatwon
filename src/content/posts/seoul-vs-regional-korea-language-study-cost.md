@@ -116,7 +116,7 @@ one. Ask the institute two things in writing:
 </div>
 
 The three housing options and how their deposits differ is the subject of
-[dormitory, goshiwon or one-room](/study/dorm-goshiwon-or-one-room-for-students/).
+**dormitory, goshiwon or one-room**.
 
 ## Which places, specifically
 
@@ -201,4 +201,4 @@ all; the monthly number decides whether the stay is comfortable.
 
 The full stack — tuition, housing, insurance, living costs — assembled
 into a single figure for three, six and twelve months, is in
-[the budget for studying Korean in Korea](/study/korean-language-study-budget-3-6-12-months/).
+**the budget for studying Korean in Korea**.

@@ -167,7 +167,7 @@ it.
   <p>Register as a resident, then bank account, then phone, then health
   insurance. They stack in that order because each one asks for the card
   before it. The sequence, the deadline and what goes wrong in it are in
-  <a href="/study/alien-registration-for-language-students/">keeping D-4 status</a>.</p>
+  <strong>keeping D-4 status</strong>.</p>
 </div>
 
 Before then, two things are worth doing while you are still at home:

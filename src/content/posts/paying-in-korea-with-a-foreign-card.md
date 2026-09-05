@@ -186,4 +186,4 @@ the currency and remittance structure that follows is in
 
 Getting cash out in the meantime — which machines take your card, and what
 each withdrawal actually costs — is in
-[ATMs in Korea for foreign cards](/banking/atms-in-korea-for-foreign-cards/).
+**ATMs in Korea for foreign cards**.

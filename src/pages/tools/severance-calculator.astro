@@ -1,0 +1,31 @@
+---
+import AdSlot from '../../components/AdSlot.astro';
+import SeveranceCalculator from '../../components/calculators/SeveranceCalculator.tsx';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Korea Severance Pay Calculator"
+  description="Statutory Korean severance on the correct basis: calendar-day average wage, the 3/12 bonus share, and the ordinary wage floor most calculators skip."
+>
+  <header class="mb-8">
+    <h1 class="mb-3 font-display text-4xl font-bold text-ink">
+      Korea Severance Pay Calculator
+    </h1>
+    <p class="max-w-2xl text-slate-600">
+      Statutory severance is thirty days of average wage per year of continuous
+      service — and average wage is your final three months of pay divided by
+      the <strong>calendar days</strong> in that period, not the days you
+      worked. This calculator uses that divisor, adds regular bonuses at three
+      twelfths of the prior year, and applies the ordinary wage floor that
+      protects anyone whose last months included leave or unpaid time.
+    </p>
+  </header>
+
+  <SeveranceCalculator client:visible />
+
+  <AdSlot position="bottom" />
+
+  <RelatedPosts category="employment" heading="Guides on working in Korea" />
+</Layout>

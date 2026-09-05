@@ -209,8 +209,10 @@ together as one lump and you will discover in month two which of them you
 forgot.
 
 Which room type carries which of these burdens is in
-[dormitory, goshiwon or one-room](/study/dorm-goshiwon-or-one-room-for-students/);
+**dormitory, goshiwon or one-room**;
 the city comparison is in
 [Seoul or a regional city](/study/seoul-vs-regional-korea-language-study-cost/);
 and bringing the money in is in
 [sending money from Korea](/banking/how-to-send-money-from-korea-abroad/).
+Which institute and which city produce these figures in the first place is in
+[choosing a Korean language institute and a city](/study/choosing-a-korean-language-institute-and-city/).

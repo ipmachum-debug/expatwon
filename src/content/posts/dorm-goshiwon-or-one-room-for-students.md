@@ -207,4 +207,7 @@ ability to see the room, is how students end up in a twelve-month contract
 on a place they would not have chosen in person.
 
 How this line fits the rest of the money is in
-[the 3, 6 and 12-month budget](/study/korean-language-study-budget-3-6-12-months/).
+[the 3, 6 and 12-month budget](/study/korean-language-study-budget-3-6-12-months/),
+and how the deposits themselves move between the capital region and a
+regional city is in
+[Seoul or a regional city](/study/seoul-vs-regional-korea-language-study-cost/).

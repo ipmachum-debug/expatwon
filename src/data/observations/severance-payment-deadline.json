@@ -1,0 +1,18 @@
+{
+  "key": "severance-payment-deadline",
+  "label": "Deadline for paying retirement benefits after leaving",
+  "unit": "days from the date the entitlement arises",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employers, on every departing employee entitled to retirement benefits",
+  "why": "The most useful date to know on the way out, and the one most often replaced in conversation by 'next payroll run'. It also interacts badly with a departure flight: an employee leaving Korea a week after their last day can be gone before the statutory deadline even expires.",
+  "history": [
+    {
+      "date": "2026-09-27",
+      "value": 14,
+      "display": "14 days",
+      "source": "Act on the Guarantee of Workers’ Retirement Benefits",
+      "note": "Payable within 14 days of the date the entitlement arises. The period can be extended by agreement between the parties where there are special circumstances — an agreement, not a unilateral decision by the employer."
+    }
+  ]
+}

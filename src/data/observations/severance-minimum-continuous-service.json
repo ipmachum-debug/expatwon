@@ -1,0 +1,18 @@
+{
+  "key": "severance-minimum-continuous-service",
+  "label": "Statutory severance: minimum continuous service",
+  "unit": "years of continuous employment",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "All employees including foreign nationals, alongside the 15-hour weekly threshold",
+  "why": "Routinely treated as 365 days of attendance, which it is not — it is the length of the employment relationship. Probation counts, and periods where the relationship survives without work, such as parental leave, count in principle. Employers who carve the probation out of the calculation are using a rule that does not exist.",
+  "history": [
+    {
+      "date": "2026-09-27",
+      "value": 1,
+      "display": "1 year",
+      "source": "Act on the Guarantee of Workers’ Retirement Benefits",
+      "note": "An employer need not set up a retirement benefit scheme for an employee whose continuous service is under one year, or whose contractual working hours average under 15 a week over four weeks. Both gates have to be cleared, and continuous service is measured on the employment relationship, not on days attended."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "departure-guarantee-insurance-rate",
+  "label": "Departure guarantee insurance: employer accrual rate",
+  "unit": "% of monthly ordinary wage",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Employers of Employment Permit System workers (E-9, H-2) — not foreign employees generally",
+  "why": "Two errors ride on this figure. It is widely assumed to cover every foreign worker, when it is an Employment Permit System instrument; and it is treated as discharging statutory severance in full, when it accrues on ordinary wage while severance is computed on average wage — so the insurance can pay out less than the statutory entitlement, and the employer owes the difference.",
+  "history": [
+    {
+      "date": "2026-09-27",
+      "value": 8.3,
+      "display": "8.3%",
+      "source": "Employment Permit System (EPS) guidance on departure guarantee insurance",
+      "note": "Accrued monthly by the employer at 8.3% of the worker's monthly ordinary wage. A payout event can arise where the worker has been employed a year or more and departs, or on certain changes of status. Because the base is ordinary wage rather than average wage, matching it against the statutory severance calculation is a separate step, not an assumption."
+    }
+  ]
+}

@@ -242,7 +242,7 @@ The deposit and rent structure is in
 and maintenance charges in
 [utilities and maintenance fees](/cost-of-living/utilities-and-maintenance-fees-korea/);
 the assembled figure is in
-[the 3, 6 and 12-month budget](/study/korean-language-study-budget-3-6-12-months/).
+**the 3, 6 and 12-month budget**.
 
 ## 9 · In practice there are three combinations
 
@@ -274,7 +274,7 @@ What happens after you land — registration, attendance, extensions and
 permission to work part-time — is in
 [keeping D-4 status](/study/alien-registration-for-language-students/).
 The city-by-city cost comparison is in
-[Seoul or a regional city](/study/seoul-vs-regional-korea-language-study-cost/).
+**Seoul or a regional city**.
 
 Choosing an institute is not choosing an education product. It is choosing
 a period of stay. And choosing a city is not a matter of taste — it is

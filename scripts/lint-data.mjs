@@ -161,11 +161,26 @@ const frontmatterList = (body, field) => {
 
 let tracking = 0;
 let pairs = 0;
+const postMeta = new Map();
+const postBodies = [];
 
 for (const file of readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'))) {
   const body = readFileSync(join(POSTS_DIR, file), 'utf8');
   const fm = body.split(/^---$/m)[1] ?? '';
   const where = `${POSTS_DIR}/${file}`;
+  const scalar = (field) =>
+    fm.match(new RegExp(`^${field}:\\s*['\"]?([^'\"\n]+?)['\"]?\\s*$`, 'm'))?.[1]?.trim();
+
+  const slug = basename(file, '.md');
+  const meta = {
+    slug,
+    category: scalar('category') ?? '',
+    date: scalar('publishDate') ?? '',
+    slot: scalar('slot') === 'pm' ? 'pm' : 'am',
+    draft: scalar('draft') === 'true',
+  };
+  postMeta.set(slug, meta);
+  postBodies.push({ where, meta, body: body.split(/^---$/m).slice(2).join('---') });
 
   const tracked = frontmatterList(fm, 'tracked');
   if (tracked.length > 0) tracking++;
@@ -185,6 +200,43 @@ for (const file of readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'))) {
     pairs++;
     if (!existsSync(join(POSTS_DIR, `${paired}.md`))) {
       errors.push(`${where}: pairedWith "${paired}" does not exist`);
+    }
+  }
+}
+
+// -------------------------------------------------------------- forward links
+// A guide may only link to a guide that is already out. At two posts a day
+// the morning pillar goes live nine hours before the afternoon piece, so an
+// inline link to the day's other half is a 404 for the whole morning — which
+// is exactly when the post is being read. PairedGuide exists to carry that
+// link safely; this rule stops the manuscript smuggling it back in.
+//
+// It also catches the quieter failure: the right slug under the wrong
+// category prefix, which 404s permanently.
+const slotOrder = (m) => `${m.date}#${m.slot === 'pm' ? 1 : 0}`;
+
+for (const { where, meta, body } of postBodies) {
+  const links = [
+    ...body.matchAll(/\]\(\/([a-z0-9-]+)\/([a-z0-9-]+)\/\)/g),
+    ...body.matchAll(/href="\/([a-z0-9-]+)\/([a-z0-9-]+)\/"/g),
+  ];
+  for (const [, prefix, slug] of links) {
+    const target = postMeta.get(slug);
+    if (!target) continue; // /tracked/, /tools/ and friends are not posts
+
+    if (target.category !== prefix) {
+      errors.push(
+        `${where}: links to /${prefix}/${slug}/ but that post lives in "${target.category}"`,
+      );
+    }
+    // Only a target that is *still a draft* can be dead. Once both halves are
+    // out the link works, and the window it was dead for is history — there is
+    // nothing left to fix in an article published three weeks ago.
+    if (target.draft && slotOrder(target) > slotOrder(meta)) {
+      errors.push(
+        `${where}: links to "${slug}", which publishes later ` +
+          `(${target.date} ${target.slot} vs ${meta.date} ${meta.slot}) — dead link on release`,
+      );
     }
   }
 }
