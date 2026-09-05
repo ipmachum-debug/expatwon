@@ -1,0 +1,18 @@
+{
+  "key": "foreign-dependant-residence-requirement",
+  "label": "Health insurance dependants: residence requirement for foreign nationals",
+  "unit": "months of residence in Korea",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign nationals and overseas Koreans being registered as dependants of a workplace subscriber",
+  "why": "The assumption that arriving family are covered from the day they land is a common and expensive one — a hospital visit in the gap is billed at the uninsured rate. The requirement also sits alongside the ordinary income and property tests, so satisfying it is necessary rather than sufficient, and how it applies varies with the relationship and the family member's own residence status.",
+  "history": [
+    {
+      "date": "2026-09-30",
+      "value": 6,
+      "display": "6 months",
+      "source": "National Health Insurance Service — foreign and overseas Korean dependants",
+      "note": "A six-month residence requirement applies in certain cases to foreign and overseas Korean dependants, in addition to the relationship, income and property conditions that apply to everyone. Treatment differs by relationship and residence status — spouses and minor children among the cases to check individually rather than assume."
+    }
+  ]
+}

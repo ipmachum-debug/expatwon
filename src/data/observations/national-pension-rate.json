@@ -6,7 +6,7 @@
   "check": "annual",
   "checkMonth": 1,
   "appliesTo": "Employees, including most foreign nationals. Some nationalities are exempt by treaty.",
-  "why": "Half is the employer's cost and half is deducted from pay. The first increase since 1998 landed in 2026 and English-language guides still carry the old figure.",
+  "why": "Half is the employer's cost and half is deducted from pay, so the employee side is always this figure divided by two. The first increase since 1998 landed in 2026 and English-language guides still carry the old 9%. It is also the one social insurance rate whose future is already fixed in law rather than negotiated annually, which is why the path to 2033 is recorded separately below rather than left to be rediscovered each January.",
   "history": [
     {
       "date": "2025-01-01",
@@ -21,6 +21,57 @@
       "display": "9.5%",
       "source": "National Pension Service",
       "note": "First rate rise in 28 years."
+    }
+  ],
+  "scheduled": [
+    {
+      "date": "2027-01-01",
+      "value": 10.0,
+      "display": "10.0%",
+      "source": "National Pension Service — legislated rate path under the 2026 pension reform",
+      "note": "Employee share 5.0%."
+    },
+    {
+      "date": "2028-01-01",
+      "value": 10.5,
+      "display": "10.5%",
+      "source": "National Pension Service — legislated rate path under the 2026 pension reform",
+      "note": "Employee share 5.25%."
+    },
+    {
+      "date": "2029-01-01",
+      "value": 11.0,
+      "display": "11.0%",
+      "source": "National Pension Service — legislated rate path under the 2026 pension reform",
+      "note": "Employee share 5.5%."
+    },
+    {
+      "date": "2030-01-01",
+      "value": 11.5,
+      "display": "11.5%",
+      "source": "National Pension Service — legislated rate path under the 2026 pension reform",
+      "note": "Employee share 5.75%."
+    },
+    {
+      "date": "2031-01-01",
+      "value": 12.0,
+      "display": "12.0%",
+      "source": "National Pension Service — legislated rate path under the 2026 pension reform",
+      "note": "Employee share 6.0%."
+    },
+    {
+      "date": "2032-01-01",
+      "value": 12.5,
+      "display": "12.5%",
+      "source": "National Pension Service — legislated rate path under the 2026 pension reform",
+      "note": "Employee share 6.25%."
+    },
+    {
+      "date": "2033-01-01",
+      "value": 13.0,
+      "display": "13.0%",
+      "source": "National Pension Service — legislated rate path under the 2026 pension reform",
+      "note": "Employee share 6.5%. End of the legislated path."
     }
   ]
 }

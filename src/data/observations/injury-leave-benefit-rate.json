@@ -1,0 +1,18 @@
+{
+  "key": "injury-leave-benefit-rate",
+  "label": "Industrial accident: temporary disability benefit rate",
+  "unit": "% of average wage per day",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Employees unable to work because of an occupational injury or illness, regardless of nationality",
+  "why": "The number that makes industrial accident insurance concrete rather than abstract. It is also the one insurance an employee contributes nothing to, which means a worker who has never seen it on a payslip may not know they are covered at all — and a foreign worker may be told, wrongly, that they are not.",
+  "history": [
+    {
+      "date": "2026-09-30",
+      "value": 70,
+      "display": "70% of average wage",
+      "source": "Industrial Accident Compensation Insurance Act",
+      "note": "Paid per day for the period the employee cannot work because of an occupational injury, where the conditions are met. Alongside medical care benefits, disability benefits and survivors' benefits. The employer pays the entire premium; nothing is deducted from the employee."
+    }
+  ]
+}

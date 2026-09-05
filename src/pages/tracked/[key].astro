@@ -21,6 +21,9 @@ const supporting = EVIDENCE.filter((e) => (e.supports ?? []).includes(series.key
 
 // Newest first for reading; the stored order is oldest-first.
 const timeline = [...series.history].reverse();
+// Already in law, not yet in force. Read forwards — it is a schedule, not a
+// record — and never folded into `latest()`.
+const scheduled = series.scheduled ?? [];
 const now = latest(series);
 const CADENCE: Record<string, string> = {
   annual: 'Checked once a year',
@@ -109,6 +112,36 @@ const CADENCE: Record<string, string> = {
         )
       }
     </section>
+
+    {
+      scheduled.length > 0 && (
+        <section class="mb-10">
+          <h2 class="mb-2 font-display text-xl font-semibold text-ink">
+            Already scheduled
+          </h2>
+          <p class="mb-5 max-w-2xl text-[0.93rem] leading-relaxed text-ink-soft/80">
+            Set in law, not yet in force. These are not the figure to use today —
+            they are what it becomes, and when.
+          </p>
+          <ol class="space-y-0">
+            {scheduled.map((point) => (
+              <li class="grid grid-cols-[5.5rem_1fr] gap-x-5 border-t border-dashed border-rule py-3.5">
+                <div class="font-mono text-[0.8rem] text-ink-soft/55 tabular-nums">{point.date}</div>
+                <div>
+                  <span class="font-mono text-[1rem] font-semibold text-ink-soft/65 tabular-nums">
+                    {point.display}
+                  </span>
+                  {point.note && (
+                    <p class="mt-1 text-[0.9rem] leading-relaxed text-ink-soft/70">{point.note}</p>
+                  )}
+                  <p class="mt-1 font-sans text-[0.78rem] text-ink-soft/55">{point.source}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
 
     {
       supporting.length > 0 && (

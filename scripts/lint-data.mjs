@@ -78,6 +78,40 @@ for (const file of listJson(OBS_DIR)) {
     if (!p.display?.trim()) errors.push(`${at}: display is required`);
     if (!p.source?.trim()) errors.push(`${at}: source is required — an unsourced reading is a rumour`);
   }
+
+  // Changes already in law but not yet in force. Kept out of `history` so the
+  // published "current" figure can never silently become a future one; every
+  // entry must therefore sit strictly after the last recorded reading.
+  if (s.scheduled !== undefined) {
+    if (!Array.isArray(s.scheduled) || s.scheduled.length === 0) {
+      errors.push(`${where}: scheduled, if present, must hold at least one entry`);
+    } else {
+      const today = new Date().toISOString().slice(0, 10);
+      let prev = previous;
+      for (const [i, p] of s.scheduled.entries()) {
+        const at = `${where} scheduled[${i}]`;
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(p.date ?? '')) {
+          errors.push(`${at}: date must be YYYY-MM-DD`);
+        } else if (p.date <= prev) {
+          errors.push(
+            `${at}: ${p.date} is not after the previous entry (${prev}) — ` +
+              `scheduled runs oldest-first and starts after the last history point`,
+          );
+        } else {
+          if (p.date <= today) {
+            warnings.push(
+              `observation "${s.key}" scheduled ${p.date} is now in force — move it into history`,
+            );
+          }
+          prev = p.date;
+        }
+        if (typeof p.value !== 'number' || Number.isNaN(p.value))
+          errors.push(`${at}: value must be a number`);
+        if (!p.display?.trim()) errors.push(`${at}: display is required`);
+        if (!p.source?.trim()) errors.push(`${at}: source is required`);
+      }
+    }
+  }
 }
 
 // ------------------------------------------------------------------- evidence

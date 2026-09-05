@@ -1,0 +1,18 @@
+{
+  "key": "health-insurance-acquisition-report-deadline",
+  "label": "Health insurance: employer’s deadline to report a new subscriber",
+  "unit": "days from the date coverage begins",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employers, on every workplace subscriber including foreign employees",
+  "why": "A short, checkable date that decides whether an employee is actually covered when they first need to be. It gives a new arrival something concrete to ask about in week one — and a missing report is the ordinary explanation for a health insurance card that never arrives, rather than anything to do with nationality.",
+  "history": [
+    {
+      "date": "2026-09-30",
+      "value": 14,
+      "display": "14 days",
+      "source": "National Health Insurance Act",
+      "note": "The employer must file the acquisition of workplace subscriber status within 14 days of the day it begins. Workplace health insurance turns on the employment relationship meeting the statutory conditions, not on nationality reciprocity — which is why a foreign employee can correctly have health insurance and no national pension line."
+    }
+  ]
+}

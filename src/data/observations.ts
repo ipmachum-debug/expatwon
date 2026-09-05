@@ -44,6 +44,20 @@ export interface ObservationSeries {
   why: string;
   /** Oldest first. */
   history: ObservationPoint[];
+  /**
+   * Changes already legislated but not yet in force, oldest first.
+   *
+   * Deliberately not part of `history`, because `latest()` reads the last
+   * history entry as the current figure — a future value stored there would
+   * be published as though it applied today. The national pension rate is the
+   * case that forced this: its path to 2033 is already fixed in law, and it is
+   * genuinely useful to show, but showing it as the current rate would be
+   * wrong every year until then.
+   *
+   * When a scheduled date arrives, move the entry into `history`.
+   * `scripts/lint-data.mjs` warns once it is past due.
+   */
+  scheduled?: ObservationPoint[];
 }
 
 const modules = import.meta.glob<{ default: ObservationSeries }>('./observations/*.json', {
