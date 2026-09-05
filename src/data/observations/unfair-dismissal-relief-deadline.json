@@ -1,0 +1,18 @@
+{
+  "key": "unfair-dismissal-relief-deadline",
+  "label": "Unfair dismissal: deadline to apply to the Labor Relations Commission",
+  "unit": "months from the dismissal",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employees dismissed from workplaces with five or more ordinary employees, foreign nationals included",
+  "why": "A hard cut-off, and the one most often lost by people doing something sensible instead. Unpaid wages go to the labour office on a different and longer timetable, so an employee who works the wage claim first can reach the end of it with the dismissal remedy already gone. For a foreign worker there is a third clock — the period of stay — running against both.",
+  "history": [
+    {
+      "date": "2026-09-25",
+      "value": 3,
+      "display": "3 months",
+      "source": "Labor Standards Act, art. 28",
+      "note": "An application for relief must be made within three months of the day the unfair dismissal or other unfair action occurred. It runs from the dismissal itself, not from the day the employee learns of a remedy or finishes a related wage complaint."
+    }
+  ]
+}

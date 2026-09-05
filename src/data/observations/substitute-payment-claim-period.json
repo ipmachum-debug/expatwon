@@ -1,0 +1,18 @@
+{
+  "key": "substitute-payment-claim-period",
+  "label": "Simplified substitute payment: deadline to file, labour office route",
+  "unit": "year from the day after leaving",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Former employees pursuing unpaid wages through a labour office complaint, foreign nationals included",
+  "why": "The state-funded backstop for unpaid wages is not open indefinitely, and the deadline attaches to the complaint rather than to the payment. Someone who waits to see whether the employer eventually pays can pass it without ever being told it existed. It is also not a guarantee of the full amount — the scheme covers specified wages up to a ceiling — so treating it as a reason to relax about a large arrears figure is a second error on top of the first.",
+  "history": [
+    {
+      "date": "2026-09-25",
+      "value": 1,
+      "display": "1 year",
+      "source": "Wage Claim Guarantee Act and its Enforcement Decree — simplified substitute payment via a labour office complaint",
+      "note": "For a former employee using the labour office route, the complaint or accusation must as a rule be filed within one year of the day after leaving. Separate routes exist through a court judgment or order, and certain employees still in work can qualify on their own conditions. Covered wages and a payment ceiling apply, so the scheme does not reimburse every arrear in full."
+    }
+  ]
+}

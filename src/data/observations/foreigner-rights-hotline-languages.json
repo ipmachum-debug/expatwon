@@ -1,0 +1,18 @@
+{
+  "key": "foreigner-rights-hotline-languages",
+  "label": "Immigration Contact Center: languages for human rights and unpaid wage reports",
+  "unit": "languages supported",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Foreign nationals reporting unpaid wages, violence or other rights violations through 1345",
+  "why": "Language coverage is the practical difference between a right existing and a right being usable, and it is the kind of provision that expands quietly without anyone updating the guides. The dedicated reporting line is also recent — the Ministry of Justice created an immigrant rights team and a dedicated option on 1345 in June 2026 — so material written before then does not mention it at all.",
+  "history": [
+    {
+      "date": "2026-06-01",
+      "value": 20,
+      "display": "20 languages",
+      "source": "Ministry of Justice — immigrant rights and interests team; 1345 Immigration Contact Center",
+      "note": "Reached through option 1 on 1345, covering unpaid wages, assault, sexual violence and other rights violations, with referral to the relevant agencies. Separate from the Foreign Workers Support Center on 1577-0071, which serves Employment Permit System workers with multilingual counselling and three-way interpretation on employment permits, workplace changes and workplace grievances."
+    }
+  ]
+}

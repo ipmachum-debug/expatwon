@@ -1,0 +1,18 @@
+{
+  "key": "dismissal-notice-period",
+  "label": "Dismissal: advance notice, or pay in lieu",
+  "unit": "days of notice, or days of ordinary wages",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employees being dismissed, subject to the statutory exceptions",
+  "why": "Constantly mistaken for a price on dismissal. Paying thirty days' ordinary wages satisfies the notice requirement and says nothing at all about whether the dismissal had a justifiable reason — those are separate provisions with separate remedies. An employee handed the payment often concludes the matter is closed, which is how the three-month window to challenge the dismissal itself gets missed.",
+  "history": [
+    {
+      "date": "2026-09-25",
+      "value": 30,
+      "display": "30 days",
+      "source": "Labor Standards Act, art. 26",
+      "note": "Thirty days' advance notice, or thirty days' ordinary wages in lieu, subject to the statutory exceptions including continuous employment of under three months. Separate from art. 27, which requires the grounds and the date to be given in writing, and separate again from whether the dismissal was justified."
+    }
+  ]
+}
