@@ -1,0 +1,18 @@
+{
+  "key": "annual-leave-minimum-workplace-size",
+  "label": "Statutory annual leave: minimum workplace size",
+  "unit": "employees, ordinary headcount",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Workplaces in Korea, deciding whether the Labor Standards Act’s annual leave provisions apply at all",
+  "why": "The gate that gets left out of almost every explanation of Korean annual leave, including guides written for foreign employees. Below it, Article 60 does not apply and there is no statutory leave to calculate — only whatever the contract or workplace rules promised, which is a different question with a different remedy. Checking headcount before entitlement saves an argument built on the wrong statute.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 5,
+      "display": "5 employees",
+      "source": "Labor Standards Act, application to workplaces with five or more ordinary employees",
+      "note": "Statutory annual leave under art. 60 applies at workplaces with five or more ordinary employees. Below that the entitlement is not statutory; any leave promised in the employment contract or the workplace rules stands on that promise instead. The 15-hour weekly threshold applies on top of this, not instead of it."
+    }
+  ]
+}

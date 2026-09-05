@@ -1,0 +1,18 @@
+{
+  "key": "first-year-leave-expiry-rule",
+  "label": "First-year monthly leave: how long it can be used",
+  "unit": "months from the hire date",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employees in their first year, on the up-to-11 days that accrue one per completed month",
+  "why": "Widely written as 'each day is usable for a year from the day it accrued', which is no longer the rule and produces expiry dates up to eleven months too late. All of the first-year days now run out at the same moment, so a day earned in month eleven has weeks of life, not a year — and that is precisely the day people plan to use later.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 12,
+      "display": "12 months from hire",
+      "source": "Labor Standards Act, art. 60(7)",
+      "note": "Leave accrued during the first year must be used by the end of that first year of employment — one shared deadline, not a rolling year per day. The earlier position, still repeated in older guidance, treated each accrued day as usable for a year from its own accrual date. Where the employee could not use the leave through the employer's fault, the ordinary lapse rule does not simply apply."
+    }
+  ]
+}

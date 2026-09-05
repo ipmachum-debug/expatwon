@@ -1,0 +1,18 @@
+{
+  "key": "annual-leave-promotion-deadlines",
+  "label": "Leave use-promotion: first written notice, general annual leave",
+  "unit": "months before the leave expires",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employers running the statutory use-promotion procedure, which if valid removes the duty to pay for unused leave",
+  "why": "This is a procedure that changes who owes money, so its dates are not administrative detail. Employers routinely apply the general schedule to first-year employees, whose timetable is different and shorter — which invalidates the promotion and leaves the unused-leave pay owing. The figure also needs watching rather than memorising: an amendment of 9 June 2026 carries provisions that do not commence until 10 June 2027, so guidance describing the later position is not the rule in force.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 6,
+      "display": "6 months before expiry",
+      "source": "Labor Standards Act, art. 61",
+      "note": "General annual leave: within 10 days of the point six months before the leave period ends, the employer notifies the employee in writing of the unused days and asks them to fix dates; if the employee does not reply within 10 days, the employer designates the dates in writing by two months before the period ends. First-year leave runs on its own shorter timetable — first notice keyed to three months before the first year ends, employer designation by one month before — with a further compressed schedule for days that accrue after the first notice."
+    }
+  ]
+}
