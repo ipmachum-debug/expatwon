@@ -1,0 +1,18 @@
+{
+  "key": "wise-krw-resident-receiving-limit",
+  "label": "Wise: annual KRW receiving limit, resident recipient",
+  "unit": "USD equivalent per year",
+  "type": "amount",
+  "check": "quarterly",
+  "appliesTo": "Individuals receiving personal transfers in KRW through Wise’s Korean settlement route",
+  "why": "A service and route limit, not a legal one, and it happens to share a number with the foreign exchange regulation's written-confirmation threshold — which is exactly how the two get conflated into a single imagined national rule. Kept as its own record so the distinction survives: this one binds a particular provider's Korean settlement path and can be changed by that provider, while the regulatory figure binds banks and comes from the regulations.",
+  "history": [
+    {
+      "date": "2026-09-01",
+      "value": 100000,
+      "display": "USD 100,000 a year",
+      "source": "Wise — KRW receiving limits for Korean recipients",
+      "note": "For recipients confirmed as residents through the PayGate verification used on this route, on person-to-person transfers. Recipient name and date of birth must match the Korean bank account details, and verification not completed within the stated window causes the transfer to fail. Larger KRW transfers can require additional verification, typically through a Korean mobile number."
+    }
+  ]
+}

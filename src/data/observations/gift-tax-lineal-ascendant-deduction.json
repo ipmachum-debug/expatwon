@@ -1,0 +1,18 @@
+{
+  "key": "gift-tax-lineal-ascendant-deduction",
+  "label": "Gift tax: deduction for gifts from a lineal ascendant",
+  "unit": "KRW, cumulative over ten years",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Recipients who are Korean tax residents receiving a gift from a parent or grandparent",
+  "why": "Constantly merged with a different provision. Support for a dependant — genuine living costs and education expenses within what is socially accepted — is treated as exempt from gift tax on its own terms, and does not need to be squeezed inside this deduction. The two are separate rules, and treating the deduction as the only shelter leads people either to over-report ordinary parental support or, in the other direction, to label investment and deposit money as living expenses.",
+  "history": [
+    {
+      "date": "2026-09-29",
+      "value": 50000000,
+      "display": "₩50,000,000",
+      "source": "Inheritance Tax and Gift Tax Act — gift deduction provisions",
+      "note": "For an adult recipient who is a Korean tax resident, cumulative over ten years; ₩20,000,000 where the recipient is a minor. Distinct from the exemption for a dependant's living and education expenses recognised as reasonable, which is a separate provision. Money used to build the recipient's own assets — a rental deposit, investments — is not converted into exempt living expenses by calling it that."
+    }
+  ]
+}

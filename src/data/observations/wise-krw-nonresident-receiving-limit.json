@@ -1,0 +1,18 @@
+{
+  "key": "wise-krw-nonresident-receiving-limit",
+  "label": "Wise: KRW receiving limit, non-resident recipient",
+  "unit": "USD equivalent per year",
+  "type": "amount",
+  "check": "quarterly",
+  "appliesTo": "Individuals not confirmed as Korean residents receiving personal transfers in KRW through Wise",
+  "why": "The number most often mistaken for a Korean legal ceiling on inbound transfers. It is a provider limit on one settlement route, applying to recipients who are not confirmed as residents — a category many new arrivals fall into before registration completes, which is precisely when they are receiving set-up money from home and least expecting a cap.",
+  "history": [
+    {
+      "date": "2026-09-01",
+      "value": 50000,
+      "display": "USD 5,000 per transfer, USD 50,000 a year",
+      "source": "Wise — KRW receiving limits for Korean recipients",
+      "note": "Per-transfer and annual limits for recipients not confirmed as residents, on person-to-person transfers. Not a statutory figure: a bank transfer over SWIFT is governed by the foreign exchange regulations rather than by this. Someone expecting a large arrival before their residency is established should check the route before sending, not after."
+    }
+  ]
+}

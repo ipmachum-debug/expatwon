@@ -1,0 +1,18 @@
+{
+  "key": "inbound-remittance-bank-confirmation-threshold",
+  "label": "Inbound remittance: threshold for written confirmation of purpose",
+  "unit": "USD equivalent, same day and same person",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Receipts into Korea that do not otherwise require a foreign exchange declaration",
+  "why": "Replaces the figure everyone repeats. Guidance in English almost universally states that inbound transfers above USD 10,000 are automatically reported and that USD 50,000 a year triggers a declaration; neither is the general rule for receiving money in Korea. What the regulations do set is a point at which the foreign exchange bank obtains written confirmation of why the money was received — an obligation on the bank, not a filing by the recipient, and a different thing from any declaration attaching to the underlying transaction.",
+  "history": [
+    {
+      "date": "2026-09-29",
+      "value": 100000,
+      "display": "USD 100,000",
+      "source": "Foreign Exchange Transactions Regulation — receipts not requiring declaration",
+      "note": "Measured on the same day for the same person. Below it, ordinary receipts are broadly permitted without declaration. Where the underlying transaction is itself a capital transaction — overseas investment, a loan, acquisition of securities or real estate — the declaration requirements for that transaction apply regardless of amount, and are assessed first. Separately from all of this, a bank can request source-of-funds evidence under its anti-money-laundering and customer due diligence obligations, which is not a declaration."
+    }
+  ]
+}
