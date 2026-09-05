@@ -1,0 +1,18 @@
+{
+  "key": "immediate-refund-total-limit",
+  "label": "Immediate refund: cumulative limit per stay",
+  "unit": "KRW total across the visit",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Shoppers using immediate refund repeatedly during one stay in Korea",
+  "why": "The limit that arrives without warning, because it accumulates silently across separate shops and days. Someone who has been taking the tax off at the till all week can be told at the counter that this purchase does not qualify, with no obvious reason — and the reason is a running total nobody has been showing them.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 5000000,
+      "display": "₩5,000,000",
+      "source": "Korea Tourism Organization — tax refund guidance",
+      "note": "Cumulative cap on immediate refunds during a single stay. Beyond it, further purchases go through the ordinary refund route rather than being deducted at the till."
+    }
+  ]
+}

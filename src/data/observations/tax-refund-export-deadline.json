@@ -1,0 +1,18 @@
+{
+  "key": "tax-refund-export-deadline",
+  "label": "Tax refund: deadline to take the goods out of Korea",
+  "unit": "months from the date of purchase",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Anyone holding a Korean tax refund slip or having taken an immediate refund",
+  "why": "The refund is conditional on export, and the condition has a clock. It matters most to people who are not tourists — someone who buys early in a stay and leaves months later can fall outside it entirely, and someone who took the refund at the till has already received money against a condition they may not meet.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 3,
+      "display": "3 months",
+      "source": "Korea Tourism Organization — tax refund guidance",
+      "note": "Departure with the goods is required within three months of purchase as a rule, and the goods should remain new, unopened and unused. A refund already taken at the till or in the city is still given against this condition."
+    }
+  ]
+}

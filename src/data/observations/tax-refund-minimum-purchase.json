@@ -1,0 +1,18 @@
+{
+  "key": "tax-refund-minimum-purchase",
+  "label": "Tax refund: minimum spend per transaction",
+  "unit": "KRW in a single qualifying purchase",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Eligible non-resident shoppers at licensed tax refund merchants in Korea",
+  "why": "The threshold applies to one transaction at one merchant, which is the part people misread — two purchases below it at different shops do not combine into one above it. It is also the figure most often quoted from an out-of-date guide, and the whole refund turns on it: below the line no refund record is created at all, and nothing can be recovered at the airport afterwards.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 15000,
+      "display": "₩15,000",
+      "source": "Korea Tourism Organization — tax refund guidance",
+      "note": "Per single qualifying purchase at a licensed refund merchant. Applies to immediate, downtown and airport refunds alike. Purchases at different merchants are not aggregated to reach it."
+    }
+  ]
+}

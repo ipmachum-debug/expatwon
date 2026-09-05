@@ -1,0 +1,18 @@
+{
+  "key": "tourist-tax-refund-stay-period",
+  "label": "Tax refund eligibility: maximum stay in Korea for a foreign national",
+  "unit": "months of stay in Korea",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign nationals shopping in Korea, deciding whether they qualify as a non-resident tourist",
+  "why": "Eligibility runs on non-residence and length of stay, not on whether you hold a residence card — which is the misconception in both directions. Holding one does not automatically disqualify you, and a foreign passport does not automatically qualify you either. Since passport details are what the merchant checks, a long-stayer should establish their actual position rather than keep claiming by habit.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 6,
+      "display": "under 6 months",
+      "source": "Incheon Airport Customs — tax refund eligibility guidance",
+      "note": "The stated basis for foreign nationals is a stay in Korea of under six months, within the non-resident tourist definition. Korean nationals resident abroad for two years or more can qualify on a temporary return where the conditions are met. The residence card itself is not the test."
+    }
+  ]
+}

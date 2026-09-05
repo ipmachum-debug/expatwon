@@ -1,0 +1,18 @@
+{
+  "key": "downtown-refund-per-receipt-limit",
+  "label": "Downtown refund: maximum per purchase",
+  "unit": "KRW, upper bound on one purchase",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Shoppers collecting a refund at a city-centre counter or kiosk before departure",
+  "why": "Downtown refund pays before you fly, which makes it feel like the transaction is finished — it is not, because the export condition and the customs confirmation at departure remain. This ceiling is the practical boundary of that convenience, and above it the airport route applies, which is the one people have then failed to plan for.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 6000000,
+      "display": "₩6,000,000 or less",
+      "source": "Korea Tourism Organization — tax refund guidance",
+      "note": "Per purchase, for refunds collected at a downtown counter or kiosk before departure. Passport, refund slip and an international credit card are normally required, and customs confirmation of export is still needed on departure."
+    }
+  ]
+}

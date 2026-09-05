@@ -1,0 +1,18 @@
+{
+  "key": "immediate-refund-per-transaction-limit",
+  "label": "Immediate refund: maximum per transaction",
+  "unit": "KRW, upper bound on one purchase",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Shoppers using immediate refund at the till, where the tax is deducted before payment",
+  "why": "Decides at the counter which refund route you are on. A purchase at or above this cannot be handled by deducting the tax on the spot, so it falls back to the ordinary process with a refund slip and a customs step at the airport — which is a different set of things to keep hold of, and a surprise if you assumed the till had settled it.",
+  "history": [
+    {
+      "date": "2026-09-28",
+      "value": 1000000,
+      "display": "under ₩1,000,000",
+      "source": "Korea Tourism Organization — tax refund guidance",
+      "note": "Immediate refund applies to a single purchase of at least ₩15,000 and under ₩1,000,000. At or above that, use the ordinary post-purchase refund route."
+    }
+  ]
+}
