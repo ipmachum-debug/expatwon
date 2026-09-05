@@ -1,0 +1,18 @@
+{
+  "key": "nhis-sibling-property-threshold",
+  "label": "NHIS dependant: property ceiling for siblings",
+  "unit": "KRW, combined property tax assessment base",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Siblings of a workplace subscriber being registered as dependants",
+  "why": "Siblings sit under a separate and much tighter property ceiling than spouses and lineal relatives, which is easy to miss because everything else about the test reads the same. Sibling eligibility is already narrow — confined to defined age, disability and veteran categories — so applying the general property figure to it produces an answer that is wrong twice over.",
+  "history": [
+    {
+      "date": "2026-10-02",
+      "value": 180000000,
+      "display": "₩180,000,000",
+      "source": "Enforcement Rule of the National Health Insurance Act, appended table 1-2",
+      "note": "Applies where the prospective dependant is a sibling, in place of the general ceiling. Sibling dependants are also limited to defined categories — broadly those under 30, those 65 or over, persons with disabilities, and certain veterans with service-related injuries — and must still satisfy the support and income conditions."
+    }
+  ]
+}

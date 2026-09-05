@@ -1,0 +1,18 @@
+{
+  "key": "nhis-dependent-income-threshold",
+  "label": "NHIS dependant: annual combined income ceiling",
+  "unit": "KRW per year, all qualifying income combined",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Anyone being registered as a dependant of a workplace health insurance subscriber, Korean or foreign",
+  "why": "The single figure that decides most dependant applications, and one that circulates at the wrong value in a great deal of secondary guidance. It also catches people who believe they have no income at all: interest, dividends, business, employment, pension and other statutory income are combined, so an overseas pension or investment return can breach a ceiling a person assumed was irrelevant to them.",
+  "history": [
+    {
+      "date": "2026-10-02",
+      "value": 20000000,
+      "display": "₩20,000,000",
+      "source": "Enforcement Rule of the National Health Insurance Act, appended table 1-2",
+      "note": "Combined annual income of interest, dividend, business, employment, pension and other income as defined by the health insurance rules. A separate and stricter condition applies to business income specifically. Where the prospective dependant is married, the rule requires both spouses to satisfy the income condition, which is the part most often missed when registering a parent."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "nhis-dependent-business-income-exception",
+  "label": "NHIS dependant: business income treated as none",
+  "unit": "KRW per year, without business registration",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Prospective dependants with some business income but no business registration",
+  "why": "Business income is governed by its own rule rather than absorbed into the combined income ceiling, which is why someone comfortably under the general threshold can still fail. The exception here is narrow and conditional on not holding a business registration — so a registered sole trader earning modestly is in a different position from an unregistered person earning the same amount, and the two are constantly treated as equivalent.",
+  "history": [
+    {
+      "date": "2026-10-02",
+      "value": 5000000,
+      "display": "₩5,000,000",
+      "source": "Enforcement Rule of the National Health Insurance Act, appended table 1-2",
+      "note": "A dependant must in principle have no business income. Where there is no business registration, business income at or below this level is treated as none. Someone holding a business registration and generating income does not keep dependant status merely by staying under the general combined income ceiling — both conditions have to be satisfied."
+    }
+  ]
+}
