@@ -1,0 +1,18 @@
+{
+  "key": "phone-identity-verification-agencies",
+  "label": "Mobile phone identity verification: designated agencies",
+  "unit": "designated agencies",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Anyone verifying their identity by mobile phone on a Korean bank, government or commerce service",
+  "why": "Corrects a description that circulates widely and misdirects troubleshooting. Credit bureaux are routinely named as the operators of phone identity verification; they are not. The designated agencies for the mobile route are the three network operators, and a credit bureau appears in this space as an i-PIN verification agency or as an intermediary a service happens to use. It matters practically: when verification fails, the record to fix is the one the network operator holds, not a credit file.",
+  "history": [
+    {
+      "date": "2026-09-30",
+      "value": 3,
+      "display": "SKT, KT, LG U+",
+      "source": "Korea Internet & Security Agency — designated identity verification agencies",
+      "note": "The designated agencies for mobile phone identity verification. An MVNO subscriber is verified against the subscriber record on whichever of these three networks the line runs on, which is why verification screens ask you to pick the network and offer MVNO options under each. NICE is listed as an i-PIN verification agency, a different route."
+    }
+  ]
+}

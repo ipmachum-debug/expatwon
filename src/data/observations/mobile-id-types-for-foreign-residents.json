@@ -1,0 +1,18 @@
+{
+  "key": "mobile-id-types-for-foreign-residents",
+  "label": "Government mobile ID credentials available to foreign residents",
+  "unit": "credential types issuable",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Registered foreign residents in Korea using the government mobile identification service",
+  "why": "Undoes the assumption that the plastic card is a foreign resident's only identity document in Korea. Mobile credentials for foreign residents are a live government service rather than a pilot, and the set has been growing — so guidance describing it as unavailable to foreigners is not slightly behind, it is describing a different year.",
+  "history": [
+    {
+      "date": "2026-09-30",
+      "value": 3,
+      "display": "resident card, permanent residence card, overseas Korean residence report",
+      "source": "Government of Korea — mobile identification service",
+      "note": "Mobile versions of the alien registration card, the permanent residence card and the domestic residence report for overseas Koreans. Issued either by tagging an IC-chip card to a phone, or in person at an immigration office by QR for holders of an existing card. A foreign resident holding a Korean driving licence can additionally hold the mobile driving licence. Issuance runs through mobile phone identity verification, so a line that does not verify will block it."
+    }
+  ]
+}
