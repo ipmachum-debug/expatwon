@@ -1,0 +1,25 @@
+{
+  "key": "foreigner-housing-deduction-eligibility",
+  "label": "Housing deductions available to a foreign resident employee",
+  "unit": "number of housing-related deductions open to qualifying foreign residents",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign nationals who are Korean tax residents, at year-end settlement",
+  "why": "The clearest case on this site of a rule change quietly turning old guidance into misinformation. Guides written before 2021 say a foreign employee cannot claim housing deductions because they cannot be a head of household under the resident registration system, and that sentence is still being copied years after it stopped being true. Anyone following it hands back deductions they were entitled to.",
+  "history": [
+    {
+      "date": "2020-12-31",
+      "value": 0,
+      "display": "None",
+      "source": "Position before the 2021 change",
+      "note": "Foreign employees were generally treated as unable to claim housing-related deductions. Recorded because material describing this position is still in wide circulation."
+    },
+    {
+      "date": "2021-01-01",
+      "value": 3,
+      "display": "3 — rent loan principal and interest, long-term mortgage interest, monthly rent credit",
+      "source": "National Tax Service — year-end settlement guidance for foreign employees",
+      "note": "A qualifying foreign resident may claim repayment of principal and interest on a housing rental loan, interest on a long-term mortgage, and the monthly rent tax credit. The 2026 National Tax Service comparison marks housing funds and the monthly rent credit as available to foreign residents. Each still carries its own conditions on income, home ownership, property size and whose name the contract is in."
+    }
+  ]
+}

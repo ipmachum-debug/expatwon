@@ -1,0 +1,25 @@
+{
+  "key": "housing-savings-foreign-spouse-rule",
+  "label": "Housing subscription savings deduction: annual cap for a qualifying foreign employee",
+  "unit": "KRW annual contribution eligible for deduction",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Foreign residents who are the spouse of a head of household owning no home, with total salary of ₩70m or below",
+  "why": "The narrowest of the housing exceptions and the newest, opened on contributions from 2025. It matters because the blanket statement it replaces — that a foreign national simply cannot claim housing subscription savings — is still the general rule for most people, so only the exception moved. Recording both states keeps that distinction visible.",
+  "history": [
+    {
+      "date": "2024-12-31",
+      "value": 0,
+      "display": "Not available",
+      "source": "Position before the 2025 change",
+      "note": "A foreign national cannot be a head of household in the ordinary sense under the resident registration system, so the deduction was effectively closed."
+    },
+    {
+      "date": "2025-01-01",
+      "value": 3000000,
+      "display": "₩3,000,000 a year, deducted at 40%",
+      "source": "National Tax Service — 2026 year-end settlement guidance for foreign employees",
+      "note": "From contributions made in 2025: a foreign resident with total salary of ₩70,000,000 or below who is the spouse of a head of household owning no home, contributing to a qualifying housing savings account in their own name, may deduct 40% of contributions up to ₩3,000,000 a year. The general position for other foreign nationals is unchanged."
+    }
+  ]
+}
