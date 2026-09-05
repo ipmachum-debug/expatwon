@@ -1,0 +1,18 @@
+{
+  "key": "private-loss-overseas-suspension-period",
+  "label": "Korean indemnity insurance: overseas stay for premium suspension or refund",
+  "unit": "months of continuous overseas stay",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Holders of Korean private indemnity health policies living abroad for an extended period",
+  "why": "A private insurance arrangement that shares a number with the public scheme's exemption period and works differently in every other respect. Nothing happens automatically: the policyholder either applies to suspend before going, or returns and claims a refund on evidence of the stay. It is also not free — suspension limits the cover for that period, which matters most to the people with medical histories who would struggle to be underwritten again.",
+  "history": [
+    {
+      "date": "2026-10-04",
+      "value": 3,
+      "display": "3 months continuous",
+      "source": "Financial Services Commission — indemnity insurance premium suspension and refund for long-term overseas residents",
+      "note": "The usual threshold for suspending premiums, or reclaiming them after returning on proof of the overseas period such as an immigration record certificate. Applied by the insurer under the policy's own generation and terms, and not triggered by departure alone. Distinct from the National Health Insurance premium exemption period, which is public law with its own conditions."
+    }
+  ]
+}

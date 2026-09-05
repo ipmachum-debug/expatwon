@@ -1,0 +1,18 @@
+{
+  "key": "nhis-overseas-work-exception-period",
+  "label": "NHIS: shortened exemption period for work-related overseas stay",
+  "unit": "months abroad",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Subscribers whose overseas stay is recognised by the insurance service as being for work",
+  "why": "Widely quoted as though one month abroad suspends anyone's premiums, which is not the rule. It is a shortened period available where the service recognises the stay as work-related, sitting alongside the general three-month period rather than replacing it. Recorded separately from that period because conflating the two produces confident advice to business travellers that does not survive contact with a bill.",
+  "history": [
+    {
+      "date": "2026-10-04",
+      "value": 1,
+      "display": "1 month, work-related only",
+      "source": "Enforcement Decree of the National Health Insurance Act, art. 44-2",
+      "note": "Applies where the insurance service recognises the overseas stay as being for the purpose of work. A one-month business trip does not exempt a subscriber as of right; recognition is the operative step. The dependants condition applying to workplace subscribers is unaffected by which period applies."
+    }
+  ]
+}

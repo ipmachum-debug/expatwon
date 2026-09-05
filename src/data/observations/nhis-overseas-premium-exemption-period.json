@@ -1,0 +1,18 @@
+{
+  "key": "nhis-overseas-premium-exemption-period",
+  "label": "NHIS: overseas stay required for premium exemption",
+  "unit": "months abroad",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "National health insurance subscribers staying outside Korea, subject to the dependants condition",
+  "why": "One of three similar-looking periods in cross-border insurance that come from entirely different instruments, and the one people apply to the wrong scheme. This is public insurance law, not a private policy term, and it carries a condition nothing else does: a workplace subscriber with dependants remaining in Korea is not exempted merely by being abroad. Kept in its own record precisely so it cannot be collapsed into the private-insurance suspension period, which is also three months and is a different thing entirely.",
+  "history": [
+    {
+      "date": "2026-10-04",
+      "value": 3,
+      "display": "3 months",
+      "source": "Enforcement Decree of the National Health Insurance Act, art. 44-2",
+      "note": "The general period of overseas stay for premium exemption. A workplace subscriber is exempted where there is no dependant residing in Korea — so a posting abroad with a spouse and children still using the scheme here does not produce a zero premium. Exemption from premiums and the status itself are also distinct questions, and returning to Korea and receiving benefits in a month can create an exception for that month."
+    }
+  ]
+}
