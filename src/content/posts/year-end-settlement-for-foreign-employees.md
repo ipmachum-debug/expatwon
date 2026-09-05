@@ -6,6 +6,7 @@ publishDate: 2026-09-24
 updatedDate: 2026-09-24
 slot: am
 draft: true
+pairedWith: reading-your-korean-payslip
 tags: [business, tax, income-tax, payroll, employment]
 tracked: [foreigner-housing-deduction-eligibility, housing-savings-foreign-spouse-rule, foreign-worker-flat-tax-rate]
 lastVerified: 2026-09-24

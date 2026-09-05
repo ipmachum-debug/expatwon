@@ -1,0 +1,18 @@
+{
+  "key": "employment-insurance-employee-rate",
+  "label": "Employment insurance: employee contribution rate",
+  "unit": "% of monthly remuneration",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Employees covered by employment insurance, including foreign nationals where the status applies",
+  "why": "The smallest line on a payslip and the one whose presence or absence says most about a foreign employee's status — coverage depends on the visa, so two colleagues on identical salaries can have different employment insurance lines. Recording the rate separately from the coverage question keeps that distinction usable.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 0.9,
+      "display": "0.9%",
+      "source": "Employment Insurance Act and its Enforcement Decree — unemployment benefit contribution",
+      "note": "The unemployment benefit portion, matched by 0.9% from the employer. Employment stability and vocational skills development contributions are charged to the employer additionally, scaled by business size, and do not appear as an employee deduction. Coverage for foreign nationals depends on the status of stay: F-5 and certain F-2 and F-6 holders fall under the Act in full, while F-4 and the E-1 to E-7 work statuses run through an application-based structure once an employment contract exists."
+    }
+  ]
+}
