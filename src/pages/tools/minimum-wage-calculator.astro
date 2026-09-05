@@ -1,0 +1,30 @@
+---
+import AdSlot from '../../components/AdSlot.astro';
+import MinimumWageCalculator from '../../components/calculators/MinimumWageCalculator.tsx';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Korea Minimum Wage & Weekly Holiday Pay Calculator"
+  description="Contractual hours → weekly holiday hours → monthly conversion hours → the lawful monthly minimum, at the 2026 Korean minimum wage of ₩10,320."
+>
+  <header class="mb-8">
+    <h1 class="mb-3 font-display text-4xl font-bold text-ink">
+      Korea Minimum Wage &amp; Weekly Holiday Calculator
+    </h1>
+    <p class="max-w-2xl text-slate-600">
+      Korea's lawful monthly minimum is not the hourly rate times the hours you
+      work. A 40-hour week carries eight hours of paid weekly holiday, which is
+      how ₩10,320 an hour becomes ₩2,156,880 a month on a 209-hour basis. Enter
+      your contractual hours to see the same arithmetic for your own contract —
+      and test a monthly salary against it.
+    </p>
+  </header>
+
+  <MinimumWageCalculator client:visible />
+
+  <AdSlot position="bottom" />
+
+  <RelatedPosts category="employment" heading="Guides on working in Korea" />
+</Layout>

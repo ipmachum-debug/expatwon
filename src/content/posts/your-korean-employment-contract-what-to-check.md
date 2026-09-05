@@ -5,6 +5,7 @@ category: employment
 publishDate: 2026-09-26
 updatedDate: 2026-09-26
 slot: am
+pairedWith: minimum-wage-and-weekly-holiday-pay-korea
 draft: true
 tags: [employment, contract, probation, labour-law, foreign-workers]
 tracked: [employment-contract-written-delivery-penalty, probation-minimum-wage-reduction-period, fixed-term-two-year-rule, minimum-wage]

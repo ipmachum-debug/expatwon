@@ -1,0 +1,18 @@
+{
+  "key": "monthly-standard-hours",
+  "label": "Monthly conversion hours for a full-time employee",
+  "unit": "hours per month",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Full-time employees on a 40-hour week with a paid weekly holiday",
+  "why": "Read by nearly everyone as an expectation of hours worked, which it is not — it is the divisor that turns a monthly salary into an hourly rate for the minimum wage test. It moves only if statutory weekly hours or the paid weekly holiday change, and both are live policy questions, which is exactly why the value is worth dating rather than treating as a constant.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 209,
+      "display": "209 hours",
+      "source": "Ministry of Employment and Labor, minimum wage monthly conversion basis",
+      "note": "(40 contractual + 8 paid weekly holiday) x 52.14 weeks / 12 months = 208.56, used as 209. Anyone paid monthly divides by this figure, not by hours worked, to test their rate against the minimum wage."
+    }
+  ]
+}

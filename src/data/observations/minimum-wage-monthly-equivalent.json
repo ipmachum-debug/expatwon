@@ -1,0 +1,18 @@
+{
+  "key": "minimum-wage-monthly-equivalent",
+  "label": "Minimum wage, official monthly equivalent (40-hour week)",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Employees working a 40-hour week and meeting the paid weekly holiday conditions",
+  "why": "The hourly minimum wage is the number that gets published; this is the number that decides whether a monthly salary is lawful. It is not the hourly rate times actual hours worked — it includes eight paid weekly holiday hours, which is why a salary that looks above the minimum on an hours-worked basis can still be below it.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 2156880,
+      "display": "₩2,156,880",
+      "source": "Ministry of Employment and Labor, minimum wage notice for 2026",
+      "note": "₩10,320 x 209 hours. The 209 hours is a monthly conversion basis — 40 contractual hours plus 8 paid weekly holiday hours, across an average 4.345 weeks — not a count of hours actually worked."
+    }
+  ]
+}
