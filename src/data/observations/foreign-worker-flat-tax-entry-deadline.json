@@ -1,0 +1,18 @@
+{
+  "key": "foreign-worker-flat-tax-entry-deadline",
+  "label": "Foreign worker flat tax: deadline for starting work in Korea",
+  "unit": "calendar year by which employment must first begin",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign employees considering the flat-rate election on Korean employment income",
+  "why": "More consequential than the rate itself. The election is only open to people whose first Korean employment began by this date, so an extension or a repeal in an end-of-year tax revision changes who can use the scheme at all — and a guide that prints the deadline as permanent misleads whoever reads it in the following January.",
+  "history": [
+    {
+      "date": "2026-09-23",
+      "value": 2026,
+      "display": "31 December 2026",
+      "source": "Restriction of Special Taxation Act, Article 18-2",
+      "note": "The election is available to a foreign employee who first begins providing work in Korea on or before 31 December 2026, for tax periods ending within 20 years of that first day. This end date has been extended before and is a standing candidate in year-end tax revisions — check it against the current statute rather than any secondary source."
+    }
+  ]
+}
