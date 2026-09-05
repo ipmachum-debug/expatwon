@@ -1,0 +1,18 @@
+{
+  "key": "small-employer-insurance-subsidy-threshold",
+  "label": "Small-employer insurance subsidy: monthly pay ceiling",
+  "unit": "KRW average monthly remuneration, below which support is available",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Employers with fewer than 10 employees, on newly enrolled employees",
+  "why": "The support most often missed on a first hire, and the threshold that decides whether a candidate is inside it at all. It is also not a headcount rule despite being described as one: pay level, newness of enrolment, the support period and the employee's own property and income all gate it. Budgeting the subsidy in before approval is the mistake it invites.",
+  "history": [
+    {
+      "date": "2026-10-05",
+      "value": 2700000,
+      "display": "under ₩2,700,000 a month",
+      "source": "Ministry of Employment and Labor / National Pension Service — Duru-nuri social insurance support",
+      "note": "For businesses with fewer than 10 employees, supporting 80% of the national pension and employment insurance contributions of both employer and employee for up to 36 months, on employees newly enrolled — generally meaning no national pension or employment insurance record in the preceding year. Support for those earning ₩2,300,000 or more is calculated on a ₩2,300,000 base. Employees whose prior-year property tax base reaches ₩600,000,000, or whose global income reaches ₩43,000,000, are excluded."
+    }
+  ]
+}

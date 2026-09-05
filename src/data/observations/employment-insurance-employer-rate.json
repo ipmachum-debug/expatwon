@@ -1,0 +1,18 @@
+{
+  "key": "employment-insurance-employer-rate",
+  "label": "Employment insurance: employer rate at under 150 employees",
+  "unit": "% of remuneration, employer side",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Employers with fewer than 150 employees",
+  "why": "The one social insurance where the employer pays more than the employee, and the reason is invisible on a payslip: the employment stability and vocational skills development contribution is charged to the employer only and never appears as a deduction. It also rises with headcount, so a budget built at the small-employer rate stops being right as a company grows.",
+  "history": [
+    {
+      "date": "2026-10-05",
+      "value": 1.15,
+      "display": "1.15%",
+      "source": "Employment Insurance Act and its Enforcement Decree — contribution rates",
+      "note": "0.9% for job-seeking benefit, matching the employee's share, plus 0.25% for employment stability and vocational skills development at fewer than 150 employees. The additional component rises with headcount through bands of 0.45%, 0.65% and 0.85%."
+    }
+  ]
+}

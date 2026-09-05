@@ -1,0 +1,18 @@
+{
+  "key": "employer-social-insurance-burden",
+  "label": "Employer’s social insurance burden, budgeting composite",
+  "unit": "% of gross salary, employer side",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Small employers budgeting a hire, at fewer than 150 employees and using the average industrial accident rate",
+  "why": "A derived figure rather than a published rate, kept because the number people budget with is out of date. The old rule of thumb that employer social insurance runs to about 10% of salary no longer leaves any margin: national pension rose in 2026 and the composite now sits above eleven. It is deliberately a composite — the individual rates are recorded separately, and the industrial accident component varies enough by industry that this should be re-derived rather than quoted.",
+  "history": [
+    {
+      "date": "2026-10-05",
+      "value": 11.44,
+      "display": "≈11.44%",
+      "source": "Derived from the 2026 published rates for each scheme",
+      "note": "National pension 4.75% + health insurance 3.595% + long-term care ≈0.4724% + employment insurance 1.15% at under 150 employees + industrial accident at the 1.47% average. The pension component is capped by the standard monthly income ceiling, and the industrial accident component is set by the workplace's industry classification — an office-based business sits well below the average and construction or manufacturing well above it."
+    }
+  ]
+}

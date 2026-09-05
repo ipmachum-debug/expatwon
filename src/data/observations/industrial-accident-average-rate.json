@@ -1,0 +1,19 @@
+{
+  "key": "industrial-accident-average-rate",
+  "label": "Industrial accident insurance: overall average rate",
+  "unit": "% of payroll, paid entirely by the employer",
+  "type": "rate",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Employers, as a planning average only — the applicable rate is set by industry classification",
+  "why": "Useful for a first pass at a hiring budget and misleading if left there. The rate that actually applies comes from the workplace's industry classification, and the spread across classes is wide enough that using the average for a construction or manufacturing site materially understates the cost. Recorded as an average, labelled as an average.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 1.47,
+      "display": "1.47% average",
+      "source": "Ministry of Employment and Labor — 2026 industrial accident insurance rates",
+      "note": "Overall average across industry classes, with a separate commuting-accident rate. Paid in full by the employer; nothing is deducted from the employee. Re-derive any budget against the workplace's own industry classification code before relying on it."
+    }
+  ]
+}
