@@ -1,0 +1,18 @@
+{
+  "key": "foreign-worker-employment-change-report-deadline",
+  "label": "Employer’s deadline to report a change in a foreign national’s employment",
+  "unit": "days from the event",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employers of foreign nationals — this is the employer’s duty, not the employee’s",
+  "why": "Widely repeated online as a fifteen-day grace period in which a departing foreign employee must change status, which it is not. It is the employer's notification duty to immigration on dismissal, resignation and similar events. Treating it as the employee's deadline produces both panic and complacency: people rush a status change they may not need on that timetable, and skip the steps that actually apply to them.",
+  "history": [
+    {
+      "date": "2026-10-01",
+      "value": 15,
+      "display": "15 days",
+      "source": "Immigration Act — employer notification of changes in foreign nationals’ employment",
+      "note": "The employer must notify within 15 days where an employment relationship with a foreign national ends or otherwise changes. Separate from anything the employee must do: the employee's own obligations — a workplace change permit or report, or a change of status — run on their own conditions and timing, decided by the current status, the remaining period of stay and whether a new contract exists."
+    }
+  ]
+}

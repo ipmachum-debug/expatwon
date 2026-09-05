@@ -1,0 +1,18 @@
+{
+  "key": "employment-insurance-voluntary-coverage-backdating",
+  "label": "Employment insurance on application: period that can be backdated",
+  "unit": "days of service recoverable before the application",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign nationals on statuses where the Employment Insurance Act applies on application — E-1 to E-7, E-9, E-10, F-4, H-2 among them",
+  "why": "The most consequential zero in Korean employment law for a foreign professional. Coverage on an application-based status begins the day after the application, so years already worked cannot be pulled back into the 180-day insured-days count. It converts what looks like a question to resolve when leaving into one that had to be settled on the first day of the job, and nothing on a payslip announces it.",
+  "history": [
+    {
+      "date": "2026-10-01",
+      "value": 0,
+      "display": "none — no retroactive coverage",
+      "source": "Employment Insurance Act and its Enforcement Decree, application-based coverage for foreign nationals",
+      "note": "Insured status generally arises from the day after the application is filed. An employee two years into a job who applies in month 21 does not thereby acquire 21 months of insured period. Where the Act applies in full — permanent residence and certain residence and marriage statuses — the question does not arise, because coverage never depended on an application."
+    }
+  ]
+}

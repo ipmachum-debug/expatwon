@@ -1,0 +1,18 @@
+{
+  "key": "unemployment-benefit-claim-period",
+  "label": "Job-seeking benefit: window in which it can be drawn",
+  "unit": "months from the day after leaving",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employment insurance subscribers, including foreign nationals who were covered",
+  "why": "It runs from the day after leaving, not from the day you apply, so time spent sorting out something else is time taken off the benefit rather than added before it. For a foreign worker that something else is usually an immigration problem — and the two clocks run simultaneously, which is why the sequence people naturally choose, status first and benefit later, is the expensive one.",
+  "history": [
+    {
+      "date": "2026-10-01",
+      "value": 12,
+      "display": "12 months",
+      "source": "Employment Insurance Act",
+      "note": "Job-seeking benefit is generally payable within 12 months of the day after the date of leaving. Days lost to a late application are not recovered at the end; the window closes on schedule regardless of when the claim started."
+    }
+  ]
+}
