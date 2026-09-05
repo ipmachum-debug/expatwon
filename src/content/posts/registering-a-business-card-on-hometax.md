@@ -5,7 +5,6 @@ category: business
 publishDate: 2026-09-05
 updatedDate: 2026-09-05
 slot: pm
-draft: true
 tags: [business, tax, vat, hometax, bookkeeping]
 tracked: [business-card-registration-limit, vat-simplified-threshold]
 evidence: [hometax-business-card-eligibility, hometax-business-card-form]
