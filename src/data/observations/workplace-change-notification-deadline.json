@@ -1,0 +1,18 @@
+{
+  "key": "workplace-change-notification-deadline",
+  "label": "Workplace change on the notification route: deadline to notify",
+  "unit": "days after the change",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "E-1 to E-7 holders who meet the Ministry of Justice criteria for the notification exception — not E-1 to E-7 generally",
+  "why": "The exception, not the rule. Article 21 makes a change or addition of workplace subject to prior permission; the Enforcement Decree lets qualifying E-1 to E-7 holders notify after the fact instead. Which route applies decides whether starting work before approval is lawful or an immigration offence, so it is the first thing to establish and the thing most often assumed. The same fifteen-day figure attaches to a completely different obligation — the employer's report that employment ended — and the two are routinely conflated.",
+  "history": [
+    {
+      "date": "2026-09-24",
+      "value": 15,
+      "display": "15 days",
+      "source": "Immigration Act art. 21 and its Enforcement Decree (notification exception for qualifying E-1 to E-7 holders)",
+      "note": "Notification after the change, for those who satisfy the announced criteria. It removes the prior-permission step, not the substantive requirements: the new employer and duties must still fall within the status, and a notification can fail to be accepted. Where the criteria are not met, prior permission applies and work must not begin before it is granted."
+    }
+  ]
+}

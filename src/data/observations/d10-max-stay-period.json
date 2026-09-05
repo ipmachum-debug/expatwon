@@ -4,8 +4,8 @@
   "unit": "years, cumulative",
   "type": "schedule",
   "check": "annual",
-  "appliesTo": "General job-seeking (D-10) holders looking for work in E-1 to E-7 fields",
-  "why": "It changed in October 2025 and a great deal of published guidance did not. University pages and forum answers still describe the old six-month grants to a two-year ceiling, so a graduate planning a job search from those sources budgets a year less than they actually have. This is the clearest case on the site for why a figure needs a recorded history rather than a current value.",
+  "appliesTo": "D-10 job-seeking holders who qualify under the track the extension covers — principally graduates of Korean universities. Not every route into D-10 carries the same period.",
+  "why": "It changed in October 2025 and a great deal of published guidance did not. But the correction cuts both ways: the extended period came from a reform aimed at graduates of Korean universities, and it should not be quoted back to someone whose route into D-10 is different — a professional leaving an E-7 job, for example. Two questions have to be kept apart: whether this applicant qualifies for D-10 at all, and, once they do, which period applies to their track.",
   "history": [
     {
       "date": "2025-10-28",
@@ -19,7 +19,7 @@
       "value": 3,
       "display": "3 years (up to 1 year per grant)",
       "source": "Ministry of Justice — reform of the general job-seeking (D-10) system, effective 29 October 2025",
-      "note": "Up to one year per grant, to a cumulative ceiling of three years. The eligibility conditions were not removed by the reform: the degree requirement, the job-seeking field and the points test are all still assessed separately."
+      "note": "Up to one year per grant, to a cumulative ceiling of three years, under the 2025 improvement for graduates of Korean universities. The eligibility conditions were not removed by the reform: the degree requirement, the job-seeking field and the points test all still apply. Nor does the figure transfer automatically to every applicant — someone changing status after losing an E-7 job has to establish both their eligibility and the period that attaches to their own track."
     }
   ]
 }

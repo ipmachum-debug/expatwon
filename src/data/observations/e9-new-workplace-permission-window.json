@@ -1,0 +1,18 @@
+{
+  "key": "e9-new-workplace-permission-window",
+  "label": "E-9: window to obtain permission for a new workplace",
+  "unit": "months from the workplace change application",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "E-9 workers who have applied for a workplace change through the employment centre",
+  "why": "The second of two consecutive deadlines, and the one whose consequence is departure rather than a refused application. It is measured from the application rather than from the day the job ended, so a worker who applies late has not bought extra searching time — they have shortened the total. Both clocks together are why a lost job on E-9 becomes an immigration problem in weeks, where a professional status gives months.",
+  "history": [
+    {
+      "date": "2026-09-24",
+      "value": 3,
+      "display": "3 months",
+      "source": "Act on the Employment of Foreign Workers, art. 25",
+      "note": "Permission for the new workplace must be obtained within three months of applying for the change, failing which the worker must leave Korea. It follows a separate one-month deadline to make the application after the contract ends. Statutory exceptions including occupational injury, illness and pregnancy or childbirth can change how the periods are counted."
+    }
+  ]
+}

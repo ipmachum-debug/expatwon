@@ -1,0 +1,18 @@
+{
+  "key": "employer-employment-change-report-penalty",
+  "label": "Failing to report a change in a foreign national’s employment: maximum fine",
+  "unit": "KRW, maximum administrative fine",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Employers of foreign nationals who miss the 15-day notification to immigration",
+  "why": "Gives the fifteen-day report an owner. Because the same number is so often repeated as a deadline imposed on the departing employee, it helps to be able to point at whose failure is actually sanctioned — the employer's, and by an administrative fine rather than anything falling on the worker. It is also the reason a former employer may be more willing to complete paperwork than the employee expects.",
+  "history": [
+    {
+      "date": "2026-09-24",
+      "value": 2000000,
+      "display": "₩2,000,000",
+      "source": "Immigration Act — administrative fine for failure to report changes in employment of foreign nationals",
+      "note": "Applies to the employer's failure to notify within 15 days of dismissal, resignation or another reportable change. Distinct from anything the employee must do about their own status, and distinct again from the 15-day notification route for a qualifying workplace change, which is the worker's own filing."
+    }
+  ]
+}

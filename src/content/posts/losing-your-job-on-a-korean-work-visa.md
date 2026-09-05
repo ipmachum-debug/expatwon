@@ -105,10 +105,13 @@ institutions. It is not an automatic consequence of an E-7 ending.
 
 Eligibility runs on education, career history, a Korean degree and points
 criteria depending on the track, and a change of status has to be permitted.
-Where it is granted, the current framework runs to
-[up to one year per grant and three years in total](/tracked/d10-max-stay-period/)
-— a figure that moved as recently as October 2025, which is a reason to check
-it rather than trust a remembered number.
+The period of stay then depends on which track you qualify under. The
+much-quoted
+[one year per grant to a ceiling of three](/tracked/d10-max-stay-period/)
+came from a 2025 improvement aimed at graduates of Korean universities, and it
+does not transfer automatically to someone arriving at D-10 from a lost E-7
+job. Establish eligibility first, then the period that attaches to your own
+route — and check both, since the figure moved as recently as October 2025.
 
 <div class="callout callout-note">
   <p class="callout-title">Do the eligibility check before your last working day</p>
