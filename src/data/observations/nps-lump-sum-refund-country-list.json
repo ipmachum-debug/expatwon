@@ -1,0 +1,18 @@
+{
+  "key": "nps-lump-sum-refund-country-list",
+  "label": "National pension lump-sum refund: countries whose nationals may claim",
+  "unit": "countries, across both nationality routes",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign nationals leaving Korea permanently who contributed to the national pension",
+  "why": "Nationality decides this and the list is not intuitive — large countries with many workers in Korea are absent from it. The list is republished as agreements are concluded, so an old blog's country table is one of the more damaging things a departing worker can rely on.",
+  "history": [
+    {
+      "date": "2026-06-15",
+      "value": 50,
+      "display": "24 by agreement + 26 by reciprocity",
+      "source": "National Pension Service — countries paying lump-sum refund",
+      "note": "24 countries qualify through a social security agreement providing for the refund — the United States, Canada, Germany, Australia, France, India, Türkiye and the Philippines among them — and 26 through reciprocity, including Thailand, Malaysia, Indonesia and Kazakhstan. China is not on the current list, so Chinese nationality alone does not establish entitlement. Minimum contribution conditions differ by country. Separately, periods contributed on E-8, E-9 or H-2 status qualify regardless of nationality."
+    }
+  ]
+}

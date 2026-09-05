@@ -1,0 +1,18 @@
+{
+  "key": "nps-airport-refund-lead-time",
+  "label": "Airport cash payment of a pension refund: how far ahead to apply",
+  "unit": "months before departure within which the application must be made",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Departing foreign nationals wanting the refund in cash at Incheon on the day they fly",
+  "why": "The service is widely described as something you do at the airport. It is not — it is applied for at a branch beforehand, and the employer has a deadline of its own that the employee cannot see. Anyone who leaves the day after their last working day is at risk of missing it without ever being told.",
+  "history": [
+    {
+      "date": "2026-09-25",
+      "value": 1,
+      "display": "Within 1 month before departure",
+      "source": "National Pension Service — airport payment of lump-sum refund",
+      "note": "Applied for at an NPS branch within a month of departure, selecting airport payment; the airport counter is collection, not application. The former employer must also have completed the loss-of-coverage report by the day before departure. The service runs on weekdays and carries flight-time conditions, so a weekend or late-night departure cannot use it."
+    }
+  ]
+}

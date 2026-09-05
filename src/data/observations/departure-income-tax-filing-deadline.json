@@ -1,0 +1,18 @@
+{
+  "key": "departure-income-tax-filing-deadline",
+  "label": "Global income tax filing deadline when leaving Korea permanently",
+  "unit": "days before departure",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Residents with a global income filing obligation who are relocating their domicile abroad",
+  "why": "Widely misstated as the end of the month following departure, or as the ordinary May deadline. It is neither, and the gap between the wrong answer and the right one is the difference between filing before you fly and filing from another country without a Korean bank account, a Korean number or a certificate.",
+  "history": [
+    {
+      "date": "2026-09-25",
+      "value": 1,
+      "display": "The day before departure",
+      "source": "Income Tax Act — final return where a resident departs to relocate domicile abroad",
+      "note": "Applies to a resident who has a global income filing obligation and is leaving to move their domicile or residence overseas. An employee with employment income only is normally settled by the employer's mid-year settlement instead, so the two situations must be separated before this deadline is applied to anyone."
+    }
+  ]
+}
