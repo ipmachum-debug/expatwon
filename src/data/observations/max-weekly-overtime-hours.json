@@ -1,0 +1,18 @@
+{
+  "key": "max-weekly-overtime-hours",
+  "label": "Maximum extended working hours per week",
+  "unit": "hours per week, on agreement",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employees at workplaces with five or more ordinary employees, under the ordinary working hours regime",
+  "why": "The second half of the '52-hour week', and the half that is enforced weekly rather than on average. Paying the overtime premium does not buy extra hours: the cap and the pay duty are separate regulations with separate consequences, one of them criminal. Flexible and selective working hour schemes can average across a settlement period, but only when lawfully adopted with the required written agreement — not by rewriting a roster.",
+  "history": [
+    {
+      "date": "2026-09-29",
+      "value": 12,
+      "display": "12 hours",
+      "source": "Labor Standards Act, art. 53",
+      "note": "40 statutory hours plus up to 12 extended hours by agreement gives the familiar weekly maximum of 52. Each week is assessed on its own: 60 hours one week and 44 the next is not made lawful by averaging 52. Special extended work beyond the cap is an exception requiring statutory grounds, employee consent and ministerial authorisation or after-the-fact approval — not a management decision about a deadline."
+    }
+  ]
+}

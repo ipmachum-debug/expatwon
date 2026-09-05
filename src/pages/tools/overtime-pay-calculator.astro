@@ -1,0 +1,30 @@
+---
+import AdSlot from '../../components/AdSlot.astro';
+import OvertimePayCalculator from '../../components/calculators/OvertimePayCalculator.tsx';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Korea Overtime, Night & Holiday Pay Calculator"
+  description="Statutory premium pay in Korea by ground — extended work, night work 22:00–06:00, and holiday work's two tiers — plus a separate check against the 52-hour cap."
+>
+  <header class="mb-8">
+    <h1 class="mb-3 font-display text-4xl font-bold text-ink">
+      Korea Overtime, Night &amp; Holiday Pay Calculator
+    </h1>
+    <p class="max-w-2xl text-slate-600">
+      Premium pay is not one rate. Extended work adds 50%, night work between
+      22:00 and 06:00 adds another 50%, and holiday work runs on its own two
+      tiers — so extended work at night is 200%, and holiday work beyond eight
+      hours is already 200% before any night premium. Enter your hours by ground
+      to see each line, and the hours cap checked separately from the pay.
+    </p>
+  </header>
+
+  <OvertimePayCalculator client:visible />
+
+  <AdSlot position="bottom" />
+
+  <RelatedPosts category="employment" heading="Guides on working in Korea" />
+</Layout>

@@ -1,0 +1,18 @@
+{
+  "key": "overtime-premium-rate",
+  "label": "Extended and night work: statutory premium",
+  "unit": "% of ordinary wage, added",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Employees at workplaces with five or more ordinary employees",
+  "why": "The premium attaches to each ground independently, so extended work performed at night carries both — 200% of ordinary wage in total, not 150%. Payroll systems that treat the two as alternatives underpay every night shift, and the error is invisible on a payslip that shows only a single overtime line.",
+  "history": [
+    {
+      "date": "2026-09-29",
+      "value": 50,
+      "display": "50% each",
+      "source": "Labor Standards Act, art. 56(1) and 56(3)",
+      "note": "At least 50% of ordinary wage added for extended work, and at least 50% added for night work. Where both grounds apply to the same hour the total is 100% base plus 50% plus 50% — 200%."
+    }
+  ]
+}

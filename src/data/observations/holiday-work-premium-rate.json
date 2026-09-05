@@ -1,0 +1,18 @@
+{
+  "key": "holiday-work-premium-rate",
+  "label": "Holiday work: statutory premium within eight hours",
+  "unit": "% of ordinary wage, added",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Employees at workplaces with five or more ordinary employees, working on a holiday",
+  "why": "Holiday work is regulated separately, with its own two-tier structure, and this is where premium stacking is most often computed wrongly in both directions. The statute already sets a higher rate beyond eight hours, so adding a further extended-work premium on top of that double-counts; treating a ten-hour holiday as a flat rate under-counts.",
+  "history": [
+    {
+      "date": "2026-09-29",
+      "value": 50,
+      "display": "50% (100% beyond 8 hours)",
+      "source": "Labor Standards Act, art. 56(2)",
+      "note": "At least 50% of ordinary wage added for holiday work within eight hours, and at least 100% added for the part beyond eight hours. The night premium still applies on top where the hours fall in the night window, which is how holiday work beyond eight hours at night reaches 250%."
+    }
+  ]
+}

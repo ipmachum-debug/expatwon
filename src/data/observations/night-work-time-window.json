@@ -1,0 +1,18 @@
+{
+  "key": "night-work-time-window",
+  "label": "Night work: the hours that attract the night premium",
+  "unit": "hours in the nightly window",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employees at workplaces with five or more ordinary employees",
+  "why": "Frequently written as 22:00 to 05:00, which drops an hour of premium pay every night worked. It is stated directly in the statute rather than derived, so a guide that gets it wrong is not interpreting anything — it is simply wrong, and the error compounds across a roster.",
+  "history": [
+    {
+      "date": "2026-09-29",
+      "value": 8,
+      "display": "22:00 to 06:00",
+      "source": "Labor Standards Act, art. 56(3)",
+      "note": "Work performed between 22:00 and 06:00 the following day attracts a premium of at least 50% of ordinary wage, in addition to any premium for extended or holiday work. Eight hours wide, ending at 06:00 and not 05:00."
+    }
+  ]
+}

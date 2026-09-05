@@ -1,0 +1,18 @@
+{
+  "key": "statutory-weekly-hours",
+  "label": "Statutory working hours per week",
+  "unit": "hours per week, excluding breaks",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employees at workplaces with five or more ordinary employees",
+  "why": "The base the whole overtime structure is built on, and the number people skip past on their way to '52'. It also fixes what counts as working time in the first place: time spent on standby under the employer's direction is working time, so an employer cannot reclassify pre-shift, training and waiting time as breaks and reach a lawful figure that way.",
+  "history": [
+    {
+      "date": "2026-09-29",
+      "value": 40,
+      "display": "40 hours",
+      "source": "Labor Standards Act, art. 50",
+      "note": "Excluding break time, working hours may not exceed 40 a week or 8 a day. Break time only counts as break time if the employee is genuinely free to use it; standby under the employer's direction and supervision is working time."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "working-hours-violation-max-fine",
+  "label": "Exceeding the working hours limits: maximum fine",
+  "unit": "KRW, maximum fine",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Employers, on breaches of the statutory working hours and extended work limits",
+  "why": "Establishes that the weekly cap is not a payroll setting. Because the sanction is criminal rather than administrative, paying the premium in full does not resolve a breach of the cap — and the evidence is the employer's own records: access logs, PC sessions, work messaging and the instructions actually given.",
+  "history": [
+    {
+      "date": "2026-09-29",
+      "value": 20000000,
+      "display": "₩20,000,000",
+      "source": "Labor Standards Act, art. 110 penalty provision for arts. 50 and 53",
+      "note": "Imprisonment for up to two years or a fine of up to ₩20,000,000. Attaches to the hours limits themselves, separately from any liability for unpaid premiums under art. 56."
+    }
+  ]
+}
