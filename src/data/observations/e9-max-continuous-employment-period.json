@@ -1,0 +1,18 @@
+{
+  "key": "e9-max-continuous-employment-period",
+  "label": "E-9: maximum continuous employment activity period",
+  "unit": "months, initial plus extension",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employment Permit System workers on E-9",
+  "why": "Known universally as the four-year-ten-month visa, and routinely misread as a lifetime ceiling on working in Korea. It is a limit on one continuous period: a worker meeting the conditions can leave and return under the re-entry special case, and separately can move to E-7-4 skilled status without the cycle at all. Presenting it as a hard end date makes people plan a departure they may not need.",
+  "history": [
+    {
+      "date": "2026-09-23",
+      "value": 58,
+      "display": "4 years 10 months",
+      "source": "Act on the Employment of Foreign Workers — employment activity period and extension",
+      "note": "An initial employment activity period plus an extension, commonly totalling 4 years and 10 months of continuous work. Not an absolute lifetime cap: long-serving workers meeting the conditions can re-enter on E-9 under the re-entry special case after a short period outside Korea, currently one month."
+    }
+  ]
+}

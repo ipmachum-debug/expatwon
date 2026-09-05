@@ -2,13 +2,13 @@
 title: 'Korea’s Four Social Insurances, From Your Side'
 description: 'Around 9.7% of pay, across four schemes that do not share a calculation base — and one of them never costs you a won.'
 category: employment
-publishDate: 2026-09-30
-updatedDate: 2026-09-30
+publishDate: 2026-09-21
+updatedDate: 2026-09-21
 slot: am
 pairedWith: which-korean-social-insurances-you-are-in
 tags: [employment, social-insurance, national-pension, health-insurance, payroll]
 tracked: [national-pension-rate, health-insurance-rate, long-term-care-rate, employment-insurance-employee-rate, pension-standard-income-limits, nps-minimum-contribution-years, injury-leave-benefit-rate]
-lastVerified: 2026-09-30
+lastVerified: 2026-09-21
 draft: true
 sources:
   - label: 'National Pension Service — 2026 contribution rate and standard monthly income limits'
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-30
+  - date: 2026-09-21
     change: 'Published'
 keyFacts:
   - { label: 'Employee side, roughly', value: '9.7% of pay' }

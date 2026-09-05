@@ -8,7 +8,7 @@
   "why": "A DC balance is not calculated backwards from a final salary, so the thing to audit is whether each year's contribution was actually paid at this level. Under-contribution accumulates silently across years and is the characteristic DC dispute, in the way that a mis-stated average wage is the characteristic dispute on ordinary severance.",
   "history": [
     {
-      "date": "2026-09-27",
+      "date": "2026-09-18",
       "value": 8.33,
       "display": "1/12 of annual wages (≈8.33%)",
       "source": "Act on the Guarantee of Workers’ Retirement Benefits, DC contribution requirement",

@@ -2,12 +2,12 @@
 title: 'Overtime, Night and Holiday Pay: The Stacking Rules'
 description: 'Extended work at night is 200%, not 150%. Holiday work has two tiers of its own. And a comprehensive wage clause removes none of it.'
 category: employment
-publishDate: 2026-09-29
-updatedDate: 2026-09-29
+publishDate: 2026-09-20
+updatedDate: 2026-09-20
 slot: pm
 tags: [employment, overtime, ordinary-wage, comprehensive-wage, unpaid-wages]
 tracked: [overtime-premium-rate, night-work-time-window, holiday-work-premium-rate, ordinary-wage-requirements-count, monthly-standard-hours]
-lastVerified: 2026-09-29
+lastVerified: 2026-09-20
 draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 56 premium pay; 56(2) holiday work; 56(3) night work 22:00–06:00)'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-29
+  - date: 2026-09-20
     change: 'Published'
 keyFacts:
   - { label: 'Night window', value: '22:00 to 06:00' }

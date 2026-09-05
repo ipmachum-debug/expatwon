@@ -8,7 +8,7 @@
   "why": "Not a statutory figure — a derived one. It is the output of the current rate table, the earned income deduction and the earned income tax credit, so it moves whenever any of those change even though no rule about the flat tax itself has moved. Publishing it as a computed observation rather than as a fact is the only honest way to carry it, and it replaces the widely repeated and wrong claim that the crossover sits somewhere between ₩70m and ₩100m.",
   "history": [
     {
-      "date": "2026-09-23",
+      "date": "2026-09-14",
       "value": 135000000,
       "display": "≈ ₩135,000,000",
       "source": "Derived: 2026 basic rates, earned income deduction and earned income tax credit",

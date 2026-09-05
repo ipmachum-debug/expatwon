@@ -2,13 +2,13 @@
 title: 'Annual Leave in Korea: How It Actually Accrues'
 description: 'Two gates before any entitlement exists, eleven first-year days that all expire on the same date, and a payout that is not always eight hours a day.'
 category: employment
-publishDate: 2026-09-28
-updatedDate: 2026-09-28
+publishDate: 2026-09-19
+updatedDate: 2026-09-19
 slot: am
 pairedWith: annual-leave-use-promotion-korea
 tags: [employment, annual-leave, unused-leave-pay, ordinary-wage, foreign-workers]
 tracked: [annual-leave-minimum-workplace-size, first-year-leave-expiry-rule, weekly-holiday-hours-threshold]
-lastVerified: 2026-09-28
+lastVerified: 2026-09-19
 draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 18(3) short hours, art. 60 annual leave, art. 60(7) first-year expiry)'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-28
+  - date: 2026-09-19
     change: 'Published'
 keyFacts:
   - { label: 'Workplace gate', value: '5 or more employees' }

@@ -2,13 +2,13 @@
 title: 'The 19% Flat Rate: When It Beats the Brackets'
 description: 'The crossover is nowhere near where it is usually quoted. Modelled on a single filer it sits around ₩135m — and every deduction pushes it higher.'
 category: business
-publishDate: 2026-09-23
-updatedDate: 2026-09-23
+publishDate: 2026-09-14
+updatedDate: 2026-09-14
 slot: pm
 draft: true
 tags: [business, tax, income-tax, payroll, employment]
 tracked: [foreign-worker-flat-tax-rate, foreign-worker-flat-tax-entry-deadline, flat-tax-application-period, flat-tax-break-even-model]
-lastVerified: 2026-09-23
+lastVerified: 2026-09-14
 sources:
   - label: 'Korea Law Information Center — Restriction of Special Taxation Act, Article 18-2'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A1%B0%EC%84%B8%ED%8A%B9%EB%A1%80%EC%A0%9C%ED%95%9C%EB%B2%95'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.hometax.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-23
+  - date: 2026-09-14
     change: 'Published'
 keyFacts:
   - { label: 'Modelled break-even', value: '≈ ₩135,000,000' }

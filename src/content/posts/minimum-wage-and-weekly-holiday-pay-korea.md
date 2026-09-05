@@ -2,13 +2,13 @@
 title: 'Korea’s Minimum Wage and the 209-Hour Month'
 description: 'The hourly rate is ₩10,320. The lawful monthly minimum is ₩2,156,880 — and the gap between those two numbers is a paid holiday you never work.'
 category: employment
-publishDate: 2026-09-26
-updatedDate: 2026-09-26
+publishDate: 2026-09-17
+updatedDate: 2026-09-17
 slot: pm
 draft: true
 tags: [employment, minimum-wage, weekly-holiday, part-time, payroll]
 tracked: [minimum-wage, minimum-wage-monthly-equivalent, monthly-standard-hours, weekly-holiday-hours-threshold]
-lastVerified: 2026-09-26
+lastVerified: 2026-09-17
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 18(3) short hours, art. 55 paid weekly holiday)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-26
+  - date: 2026-09-17
     change: 'Published'
 keyFacts:
   - { label: '2026 hourly minimum', value: '₩10,320' }

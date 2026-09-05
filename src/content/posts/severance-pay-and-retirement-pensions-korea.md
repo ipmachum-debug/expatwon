@@ -2,13 +2,13 @@
 title: 'Korean Severance Pay: What You Are Actually Owed'
 description: 'Not one month per year. The divisor is calendar days, the floor is ordinary wage, and on a DC plan the last three months barely matter at all.'
 category: employment
-publishDate: 2026-09-27
-updatedDate: 2026-09-27
+publishDate: 2026-09-18
+updatedDate: 2026-09-18
 slot: am
 pairedWith: departure-guarantee-insurance-for-eps-workers
 tags: [employment, severance, retirement-pension, average-wage, foreign-workers]
 tracked: [severance-minimum-continuous-service, severance-payment-deadline, dc-employer-minimum-contribution, departure-guarantee-insurance-rate]
-lastVerified: 2026-09-27
+lastVerified: 2026-09-18
 draft: true
 sources:
   - label: 'Korea Law Information Center — Act on the Guarantee of Workers’ Retirement Benefits (eligibility, DB/DC, 14-day payment, IRP transfer)'
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-27
+  - date: 2026-09-18
     change: 'Published'
 keyFacts:
   - { label: 'Two gates', value: '1 year + 15 hours' }

@@ -2,13 +2,13 @@
 title: 'Leaving Korea: Tax, Pension and What You Are Owed'
 description: 'Your departure date is not the end of this. Some of it is due the day before you fly, and some of it lands months after you have gone.'
 category: business
-publishDate: 2026-09-25
-updatedDate: 2026-09-25
+publishDate: 2026-09-16
+updatedDate: 2026-09-16
 slot: am
 draft: true
 tags: [business, tax, pension, employment, exit]
 tracked: [departure-income-tax-filing-deadline, nps-lump-sum-refund-country-list, nps-airport-refund-lead-time]
-lastVerified: 2026-09-25
+lastVerified: 2026-09-16
 sources:
   - label: 'Korea Law Information Center — Income Tax Act, final return on departure to relocate abroad'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.nts.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-25
+  - date: 2026-09-16
     change: 'Published'
 keyFacts:
   - { label: 'If you must file', value: 'The day before you fly' }

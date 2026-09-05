@@ -1,0 +1,18 @@
+{
+  "key": "e9-workplace-change-limit",
+  "label": "E-9: permitted workplace changes during the base employment period",
+  "unit": "changes, base period",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employment Permit System workers on E-9, and their employers",
+  "why": "Usually compressed to 'five moves in a lifetime', which gets both halves wrong. The allowance is split between the base period and the extension, and changes forced by circumstances outside the worker's control — closure, breach of working conditions, unfair treatment — need not be counted at all. The reason for the move is therefore examined before the tally is, and a worker who believes they are out of moves may not be.",
+  "history": [
+    {
+      "date": "2026-09-23",
+      "value": 3,
+      "display": "3, plus 2 in the extension",
+      "source": "Act on the Employment of Foreign Workers, art. 25",
+      "note": "Three changes as a rule during the base employment activity period and a further two during the extended period. Changes for statutory reasons not attributable to the worker — the employer terminating or refusing to renew, suspension or closure of business, breach of working conditions, unpaid wages or unfair treatment — may fall outside the count."
+    }
+  ]
+}

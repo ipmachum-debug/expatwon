@@ -1,0 +1,19 @@
+{
+  "key": "e7-annual-wage-requirement",
+  "label": "E-7 basic annual wage requirement, professional (E-7-1)",
+  "unit": "KRW per year, minimum",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 2,
+  "appliesTo": "E-7 specific activities status holders and the employers sponsoring them",
+  "why": "The basis changed, not just the number. E-7 wage requirements were long explained as a percentage of the previous year's per-capita GNI, and that formula is still repeated everywhere — but the Ministry of Justice now announces amounts by sub-type directly, with a stated period of application. Anyone computing a figure from GNI is answering a question that is no longer asked, and certain occupations set their own requirement on top.",
+  "history": [
+    {
+      "date": "2026-02-01",
+      "value": 31120000,
+      "display": "₩31,120,000",
+      "source": "Ministry of Justice — 2026 E-7 wage requirement announcement",
+      "note": "E-7-1 professional. The same announcement sets E-7-2 semi-professional and E-7-3 general skilled at ₩25,890,000, and E-7-4 skilled technical at ₩26,000,000. It applies from 1 February to 31 December 2026. Where an occupation-specific notice or guideline sets its own wage requirement — some still keyed to a share of GNI — that requirement governs instead."
+    }
+  ]
+}

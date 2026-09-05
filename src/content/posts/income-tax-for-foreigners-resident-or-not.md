@@ -2,14 +2,14 @@
 title: 'Income Tax for Foreigners: Resident or Not'
 description: 'Your visa does not decide this and neither does your passport. Residence for tax is a question about your life, and it sets what Korea taxes at all.'
 category: business
-publishDate: 2026-09-23
-updatedDate: 2026-09-23
+publishDate: 2026-09-14
+updatedDate: 2026-09-14
 slot: am
 draft: true
 pairedWith: the-19-percent-flat-rate-when-it-wins
 tags: [business, tax, income-tax, employment, visa]
 tracked: [foreign-worker-flat-tax-rate, foreign-worker-flat-tax-entry-deadline, foreign-short-term-resident-5-of-10-rule]
-lastVerified: 2026-09-23
+lastVerified: 2026-09-14
 sources:
   - label: 'National Tax Service — Individual Income Tax and Benefit Guide for Foreigners 2026'
     url: 'https://www.nts.go.kr/'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.hometax.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-23
+  - date: 2026-09-14
     change: 'Published'
 keyFacts:
   - { label: 'Decided by', value: 'Your life, not your visa' }

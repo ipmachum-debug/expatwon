@@ -2,14 +2,14 @@
 title: 'Year-End Settlement for Foreign Employees'
 description: 'There is no foreign deduction table. Residence decides most of it — and the old rule that foreigners cannot claim housing stopped being true in 2021.'
 category: business
-publishDate: 2026-09-24
-updatedDate: 2026-09-24
+publishDate: 2026-09-15
+updatedDate: 2026-09-15
 slot: am
 draft: true
 pairedWith: reading-your-korean-payslip
 tags: [business, tax, income-tax, payroll, employment]
 tracked: [foreigner-housing-deduction-eligibility, housing-savings-foreign-spouse-rule, foreign-worker-flat-tax-rate]
-lastVerified: 2026-09-24
+lastVerified: 2026-09-15
 sources:
   - label: 'National Tax Service — Year-End Tax Settlement Manual for Foreigners, and the accompanying release'
     url: 'https://www.nts.go.kr/'
@@ -19,7 +19,7 @@ sources:
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A1%B0%EC%84%B8%ED%8A%B9%EB%A1%80%EC%A0%9C%ED%95%9C%EB%B2%95%20%EC%8B%9C%ED%96%89%EB%A0%B9'
 affiliate: false
 revisions:
-  - date: 2026-09-24
+  - date: 2026-09-15
     change: 'Published'
 keyFacts:
   - { label: 'First question', value: 'Resident, not foreign' }

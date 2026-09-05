@@ -2,13 +2,13 @@
 title: 'The 52-Hour Week in Korea, and What It Does Not Buy'
 description: 'Paying the overtime premium does not purchase extra hours. The cap and the pay duty are separate regulations, and only one of them is criminal.'
 category: employment
-publishDate: 2026-09-29
-updatedDate: 2026-09-29
+publishDate: 2026-09-20
+updatedDate: 2026-09-20
 slot: am
 pairedWith: overtime-night-and-holiday-pay-korea
 tags: [employment, working-hours, overtime, labour-law, foreign-workers]
 tracked: [statutory-weekly-hours, max-weekly-overtime-hours, working-hours-violation-max-fine, annual-leave-minimum-workplace-size]
-lastVerified: 2026-09-29
+lastVerified: 2026-09-20
 draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 50 working hours, art. 53 extended work, art. 110 penalties)'
@@ -19,7 +19,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-29
+  - date: 2026-09-20
     change: 'Published'
 keyFacts:
   - { label: 'Statutory hours', value: '40 a week, 8 a day' }

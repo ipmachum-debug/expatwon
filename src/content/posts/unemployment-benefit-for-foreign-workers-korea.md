@@ -2,13 +2,13 @@
 title: 'Unemployment Benefit in Korea as a Foreign Worker'
 description: 'Paying the 0.9% does not mean you were covered. On most work statuses coverage starts the day after you apply — and nothing is backdated.'
 category: employment
-publishDate: 2026-10-01
-updatedDate: 2026-10-01
+publishDate: 2026-09-22
+updatedDate: 2026-09-22
 slot: am
 pairedWith: losing-your-job-on-a-korean-work-visa
 tags: [employment, unemployment-benefit, employment-insurance, foreign-workers, e-7]
 tracked: [employment-insurance-voluntary-coverage-backdating, unemployment-benefit-insured-days, unemployment-benefit-claim-period, employment-insurance-employee-rate]
-lastVerified: 2026-10-01
+lastVerified: 2026-09-22
 draft: true
 sources:
   - label: 'Korea Law Information Center — Employment Insurance Act and its Enforcement Decree (application to foreign nationals; insured periods; job-seeking benefit)'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.ei.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-01
+  - date: 2026-09-22
     change: 'Published'
 keyFacts:
   - { label: 'Backdating on application', value: 'None' }

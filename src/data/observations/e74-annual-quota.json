@@ -1,0 +1,19 @@
+{
+  "key": "e74-annual-quota",
+  "label": "E-7-4 skilled technical status: annual issuance quota",
+  "unit": "grants per year",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "E-9, E-10 and H-2 holders applying to convert to E-7-4 skilled technical status",
+  "why": "The only route by which a non-professional worker reaches a long-stay status with family accompaniment, and it is rationed. A quota means the qualifying criteria are a threshold rather than an entitlement, and the number is set annually — so whether the route is realistically open in a given year is a fact about policy, not about the applicant. Worth watching in both directions: it has been expanded before.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 33000,
+      "display": "33,000",
+      "source": "Ministry of Justice — 2026 E-7-4 operating plan",
+      "note": "For 2026, with the scope of eligible employment widened in some sectors including agriculture and fisheries. Base eligibility is a registered foreign national with four or more years of stay on E-9, E-10 or H-2 within the last ten years, subject to points criteria covering income, Korean language ability, age, work history and employer recommendation."
+    }
+  ]
+}

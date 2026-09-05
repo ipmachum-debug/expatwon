@@ -1,0 +1,18 @@
+{
+  "key": "e9-workplace-change-application-period",
+  "label": "E-9: deadline to apply for a workplace change after a contract ends",
+  "unit": "months from the end of the employment contract",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "E-9 workers who have left a workplace and intend to move to another",
+  "why": "The shortest fuse in Korean foreign employment. On E-9 the loss of a job becomes an immigration problem within weeks rather than months, and there are two separate clocks — one to file the application, another to actually secure a new workplace — either of which ends in a requirement to leave the country. It is the sharpest structural contrast with the professional statuses, where the same event allows a change of status and a job search.",
+  "history": [
+    {
+      "date": "2026-09-23",
+      "value": 1,
+      "display": "1 month to apply",
+      "source": "Act on the Employment of Foreign Workers and its Enforcement Decree",
+      "note": "As a rule the worker must apply for a workplace change through the employment centre within one month of the contract ending, and must obtain permission for the new workplace within three months of applying, failing which departure is required. Statutory exceptions including occupational injury, illness and pregnancy or childbirth can change how the periods are counted."
+    }
+  ]
+}

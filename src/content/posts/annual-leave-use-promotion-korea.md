@@ -2,12 +2,12 @@
 title: 'When Unused Leave Stops Being Owed to You'
 description: 'Korea’s use-promotion procedure removes an employer’s duty to pay for unused leave — if every step is done. Most of the time not every step is done.'
 category: employment
-publishDate: 2026-09-28
-updatedDate: 2026-09-28
+publishDate: 2026-09-19
+updatedDate: 2026-09-19
 slot: pm
 tags: [employment, annual-leave, unused-leave-pay, hr-compliance, foreign-workers]
 tracked: [annual-leave-promotion-deadlines, first-year-leave-expiry-rule]
-lastVerified: 2026-09-28
+lastVerified: 2026-09-19
 draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 60 lapse and employer fault, art. 61 use promotion)'
@@ -18,7 +18,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-28
+  - date: 2026-09-19
     change: 'Published'
 keyFacts:
   - { label: 'General leave, notice 1', value: '6 months before expiry' }
