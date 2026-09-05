@@ -1,0 +1,19 @@
+{
+  "key": "employment-income-statement-deadline",
+  "label": "Employment income payment statement: employer’s filing deadline",
+  "unit": "day of March in the year following the tax year",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 3,
+  "appliesTo": "Employers filing employment income payment statements; employees relying on Hometax to retrieve them",
+  "why": "Explains a gap people run into without understanding it: the reason your income data is not on Hometax in October is that the employer has not filed it yet. It also sets the practical rule for anyone leaving a job mid-year — within the same tax year the employer is the only source of the document, so it has to be obtained before contact with that employer becomes difficult.",
+  "history": [
+    {
+      "date": "2026-03-10",
+      "value": 10,
+      "display": "10 March",
+      "source": "National Tax Service — employment income payment statement filing",
+      "note": "Employers file the annual employment income payment statement by 10 March of the following year. Until then the year's figures are not available through the Hometax payment statement lookup, and the employer-issued withholding receipt is the only copy in circulation."
+    }
+  ]
+}

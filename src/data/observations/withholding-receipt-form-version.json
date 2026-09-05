@@ -1,0 +1,18 @@
+{
+  "key": "withholding-receipt-form-version",
+  "label": "Withholding tax receipt: current form and revision date",
+  "unit": "Enforcement Rule appended form number",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Anyone reading a Korean employment income withholding receipt, or a guide that explains one",
+  "why": "Almost every explanation of this document online tells you to look at item 72, 73 or 74. Form numbering changes on revision, so those instructions decay silently — they still read as precise, they just point at the wrong box. Tracking the revision is the cheapest way to know whether an explanation written for an earlier form still applies, and it is the reason this site names the lines rather than numbering them.",
+  "history": [
+    {
+      "date": "2026-03-20",
+      "value": 24,
+      "display": "Appended Form 24, revised 20 March 2026",
+      "source": "Enforcement Rule of the Income Tax Act, appended form 24 (employment income withholding receipt / payment statement)",
+      "note": "The tax section of the current form runs determined tax, tax already paid, current workplace, special payment tax, then the balance to collect or refund. Numbering differs from earlier versions of the form, so guidance keyed to item numbers should be checked against the revision it was written for."
+    }
+  ]
+}
