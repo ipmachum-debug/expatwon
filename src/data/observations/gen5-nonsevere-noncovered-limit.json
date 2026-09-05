@@ -1,0 +1,18 @@
+{
+  "key": "gen5-nonsevere-noncovered-limit",
+  "label": "5th generation: annual limit on non-severe non-covered treatment",
+  "unit": "KRW per year, non-severe non-covered rider",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Holders of 5th generation policies claiming non-covered treatment outside the severe categories",
+  "why": "The number that shows what the 2026 reform actually did. Severe non-covered treatment — cancer, cerebrovascular and cardiac disease, rare and intractable conditions — is handled in its own rider, while everything else sits under this ceiling with a high excess and several common therapies excluded outright. Anyone choosing between an existing policy and a new one is really choosing between two different treatments of this category.",
+  "history": [
+    {
+      "date": "2026-05-06",
+      "value": 10000000,
+      "display": "₩10,000,000 a year",
+      "source": "Financial Services Commission — 5th generation indemnity health insurance",
+      "note": "Annual cover under the non-severe non-covered rider. Manual therapy, extracorporeal shockwave, prolotherapy and certain non-covered injections are among the treatments excluded from this rider. The severe non-covered rider, tied to the health insurance special-calculation categories, is separate and more generous."
+    }
+  ]
+}

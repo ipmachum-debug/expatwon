@@ -1,0 +1,18 @@
+{
+  "key": "gen4-therapy-limit",
+  "label": "4th generation: annual limit on manual and related therapies",
+  "unit": "KRW per year, non-covered rider",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "4th generation policyholders claiming manual therapy, extracorporeal shockwave or prolotherapy",
+  "why": "The figure most quoted as though it described Korean indemnity insurance generally. It describes one generation's rider, and the fifth generation excludes several of these therapies from its non-severe cover altogether — so quoting it to someone buying a policy now is not a small inaccuracy but a description of a product they cannot buy.",
+  "history": [
+    {
+      "date": "2021-07-01",
+      "value": 3500000,
+      "display": "₩3,500,000 a year, up to 50 sessions",
+      "source": "Financial Services Commission — 4th generation non-covered rider limits",
+      "note": "For manual therapy, extracorporeal shockwave and prolotherapy taken together. Alongside separate limits in the same rider for non-covered injections at ₩2,500,000 and 50 sessions, and non-covered MRI and MRA at ₩3,000,000. Session counts and cumulative claims have to be tracked together, since either can end cover for the year."
+    }
+  ]
+}

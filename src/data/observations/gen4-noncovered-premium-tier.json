@@ -1,0 +1,18 @@
+{
+  "key": "gen4-noncovered-premium-tier",
+  "label": "4th generation: maximum non-covered premium surcharge",
+  "unit": "% surcharge on the non-covered rider premium",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Holders of 4th generation indemnity policies, assessed on the previous year’s non-covered claims",
+  "why": "Turns a claim into a decision with a price attached, which is not how insurance normally reads. Two things get lost in the telling: the surcharge applies to the non-covered rider premium rather than to the whole policy, and the band is reassessed every year rather than being a permanent mark — so a heavy year is recoverable and a light year moves you back down.",
+  "history": [
+    {
+      "date": "2024-07-01",
+      "value": 300,
+      "display": "up to +300%",
+      "source": "Financial Services Commission — differential non-covered premiums, 4th generation",
+      "note": "Bands on the previous twelve months of non-covered claims: nothing claimed attracts a discount; under ₩1,000,000 is unchanged; ₩1,000,000 to under ₩1,500,000 is +100%; ₩1,500,000 to under ₩3,000,000 is +200%; ₩3,000,000 or more is +300%. Applies to the non-covered rider premium, reassessed annually. Treatment related to conditions under the health insurance special-calculation scheme, and to long-term care grades 1 and 2, is excluded from the assessment."
+    }
+  ]
+}

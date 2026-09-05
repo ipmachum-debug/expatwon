@@ -1,0 +1,25 @@
+{
+  "key": "private-health-insurance-generation-on-sale",
+  "label": "Private indemnity health insurance: generation on sale to new applicants",
+  "unit": "generation number",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Anyone taking out indemnity health insurance in Korea now, as distinct from anyone already holding a policy",
+  "why": "The single fact that dates every article on this subject. Cover, excesses and limits are set by the generation of the policy rather than by the insurer, so guidance describing the fourth generation as the current product stops being true on a specific day rather than gradually. Existing policies keep their own generation's terms, which is why both the current and the previous generation matter and for different readers.",
+  "history": [
+    {
+      "date": "2021-07-01",
+      "value": 4,
+      "display": "4th generation",
+      "source": "Financial Services Commission — indemnity health insurance reform",
+      "note": "Separated benefit-covered and non-covered treatment into a main contract and a rider, with a differential non-covered premium mechanism that took effect from July 2024."
+    },
+    {
+      "date": "2026-05-06",
+      "value": 5,
+      "display": "5th generation",
+      "source": "Financial Services Commission — 5th generation indemnity health insurance",
+      "note": "On sale to new applicants from this date. Splits non-covered treatment into severe and non-severe, with substantially tighter cover and higher excesses on the non-severe side and a lower premium overall. A guide calling the fourth generation the newest product is describing the position before this date."
+    }
+  ]
+}

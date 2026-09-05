@@ -1,0 +1,18 @@
+{
+  "key": "gen5-noncovered-copay",
+  "label": "5th generation: excess on non-severe non-covered treatment",
+  "unit": "% of the cost borne by the patient",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Holders of 5th generation policies claiming non-severe non-covered treatment",
+  "why": "The other half of the trade the 2026 reform makes: a lower premium against a much larger share of non-essential non-covered costs staying with the patient. Read next to the fourth generation's 30% on non-covered treatment, it is the clearest single indicator of which policy suits someone who uses repeated outpatient therapy — and of how much a cheaper premium is actually buying.",
+  "history": [
+    {
+      "date": "2026-05-06",
+      "value": 50,
+      "display": "50% inpatient; outpatient 50% or ₩50,000, whichever is greater",
+      "source": "Financial Services Commission — 5th generation indemnity health insurance",
+      "note": "For non-severe non-covered treatment. The outpatient rule means small claims can be met entirely by the patient, since the fixed floor applies where it exceeds the percentage. The fourth generation applies 20% on benefit-covered and 30% on non-covered treatment, which is the comparison worth making before switching."
+    }
+  ]
+}
