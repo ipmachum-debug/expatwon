@@ -1,0 +1,18 @@
+{
+  "key": "hira-disclosed-noncovered-items",
+  "label": "Non-covered medical services with prices published by institution",
+  "unit": "service items in the public disclosure",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Anyone comparing the price of a non-covered procedure between Korean hospitals before booking",
+  "why": "The existence of this disclosure is the answer to the question people actually ask — what will an MRI cost me — and it is a better answer than any multiplier. Prices for the same item differ between institutions, which is precisely why they are published per institution rather than as a schedule. The count is worth tracking because the list has been expanding: the wider it gets, the more of a self-paying patient's bill can be checked in advance rather than discovered at the desk.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 753,
+      "display": "753 items",
+      "source": "Health Insurance Review and Assessment Service — public disclosure of non-covered treatment costs by institution",
+      "note": "Prices are published per medical institution, and the variation between institutions for the same item is the point of the exercise. Covers items such as imaging, ultrasound, vaccinations and various tests and procedures. It does not cover the cost of covered services billed to an uninsured patient, which is a different question with no equivalent public schedule."
+    }
+  ]
+}

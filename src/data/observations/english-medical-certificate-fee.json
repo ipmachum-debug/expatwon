@@ -1,0 +1,18 @@
+{
+  "key": "english-medical-certificate-fee",
+  "label": "English medical certificate: issuing fee at a university hospital",
+  "unit": "KRW per certificate, one institution",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Foreign patients obtaining an English medical certificate for an insurance claim — this figure is Seoul National University Hospital’s, not a national rate",
+  "why": "The document a foreign insurance claim usually turns on, and the one people discover the cost and the procedure for after they have left the hospital. Recording one named institution's fee gives a realistic order of magnitude without pretending there is a national price; hospitals set their own, and the number matters far less than knowing the certificate is a separate, chargeable request that has to be made while the doctor is still in front of you.",
+  "history": [
+    {
+      "date": "2026-09-27",
+      "value": 20000,
+      "display": "₩20,000",
+      "source": "Seoul National University Hospital International Healthcare Center",
+      "note": "For an English medical certificate at this hospital. Its guidance is that the certificate is requested from the treating doctor during the consultation rather than written up afterwards by the international centre — which is the operative point: ask during the appointment, not at the payment desk. Other hospitals set their own fees and their own procedures."
+    }
+  ]
+}
