@@ -6,6 +6,7 @@ publishDate: 2026-09-23
 updatedDate: 2026-09-23
 slot: am
 draft: true
+pairedWith: the-19-percent-flat-rate-when-it-wins
 tags: [business, tax, income-tax, employment, visa]
 tracked: [foreign-worker-flat-tax-rate, foreign-worker-flat-tax-entry-deadline, foreign-short-term-resident-5-of-10-rule]
 lastVerified: 2026-09-23
