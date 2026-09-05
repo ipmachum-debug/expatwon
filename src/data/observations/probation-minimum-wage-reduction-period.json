@@ -1,0 +1,18 @@
+{
+  "key": "probation-minimum-wage-reduction-period",
+  "label": "Probation: maximum period the reduced minimum wage may apply",
+  "unit": "months from the start of probation",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employees on probation under a contract of one year or more, outside simple labour occupations",
+  "why": "Routinely misreported as a limit on probation itself. It is not — probation can run longer; only the reduced minimum wage is capped at this. Conflating the two lets an employer justify a longer pay reduction than the law allows, and lets an employee think a six-month probation is automatically unlawful when it is not.",
+  "history": [
+    {
+      "date": "2026-09-26",
+      "value": 3,
+      "display": "3 months",
+      "source": "Minimum Wage Act, Article 5",
+      "note": "Within the first three months of probation, and only where the employment contract runs for a year or more, the employee is genuinely on probation, and the occupation is not one designated as simple labour, minimum wage may be applied at 90%. It caps the reduction, not the probation period, and it says nothing about reducing a contracted salary above the minimum wage."
+    }
+  ]
+}

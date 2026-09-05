@@ -1,0 +1,18 @@
+{
+  "key": "fixed-term-two-year-rule",
+  "label": "Fixed-term employment: period beyond which the contract is treated as open-ended",
+  "unit": "years of continuous employment",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Fixed-term employees, including foreign nationals on work statuses",
+  "why": "Usually stated as an automatic conversion, and the exceptions are what make it wrong for exactly the population this site writes for — foreign professionals are frequently engaged under the professional knowledge and skills exception, so the two-year clock does not work the way a general article implies.",
+  "history": [
+    {
+      "date": "2026-09-26",
+      "value": 2,
+      "display": "2 years",
+      "source": "Act on the Protection of Fixed-Term and Part-Time Employees",
+      "note": "As a rule a fixed-term employee may not be used beyond two years, and continuous employment past it is treated as a contract without a fixed term. Statutory exceptions allow longer engagement — completion of a defined project, covering an absent employee, education and training periods, older workers, and the use of professional knowledge or skills among them. The last of those covers a great deal of foreign professional hiring, so 'two years means automatic permanence' is not a safe reading."
+    }
+  ]
+}
