@@ -1,0 +1,18 @@
+{
+  "key": "internet-contract-term-options",
+  "label": "Home internet: contract terms offered by major carriers",
+  "unit": "term options published",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Anyone signing a home internet contract in Korea, including short-stay foreign residents",
+  "why": "Recorded to contradict the idea that the three-year contract is the Korean standard and the only real choice. It is the most common and usually the cheapest per month, and it is one of several published options — which matters most to the people least suited to it, since a resident whose stay is uncertain is routinely signed onto thirty-six months without being told a no-contract price exists.",
+  "history": [
+    {
+      "date": "2026-10-01",
+      "value": 4,
+      "display": "none, 1, 2 or 3 years",
+      "source": "KT — 2026 published internet tariffs",
+      "note": "Major carriers publish no-contract, one-year, two-year and three-year prices for the same service, with the monthly charge falling as the term lengthens. The gap between the no-contract and three-year price on the same speed is the discount being recovered if the contract ends early."
+    }
+  ]
+}

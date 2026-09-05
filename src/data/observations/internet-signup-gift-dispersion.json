@@ -1,0 +1,18 @@
+{
+  "key": "internet-signup-gift-dispersion",
+  "label": "Home internet signup benefits: range found across subscribers",
+  "unit": "KRW, spread between the lowest and highest benefit observed",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "New home internet subscribers negotiating cash, vouchers or bill credits at signup",
+  "why": "Answers the question people actually have — is there a legal cap on the cash I can be offered — with something better than a number: a regulator's own finding that what subscribers received for the same product ranged from nothing at all to a very large sum. The regulatory concern is unequal treatment of users rather than a single ceiling, so anyone told that a figure is the legal maximum, or that a rival's offer must be illegal, is being managed rather than informed.",
+  "history": [
+    {
+      "date": "2026-10-01",
+      "value": 910000,
+      "display": "₩0 – ₩910,000",
+      "source": "Korea Communications Commission — enforcement findings on broadband signup benefits",
+      "note": "The spread in benefits and out-of-tariff reductions found across broadband subscribers in the regulator's review. It establishes dispersion, not an entitlement: it does not mean the high end is available to you, and it does not make the low end unlawful. What it does mean is that no single figure can be quoted as the national cap."
+    }
+  ]
+}

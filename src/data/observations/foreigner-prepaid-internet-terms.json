@@ -1,0 +1,18 @@
+{
+  "key": "foreigner-prepaid-internet-terms",
+  "label": "Prepaid home internet for foreign residents: available terms",
+  "unit": "months, longest term offered",
+  "type": "schedule",
+  "check": "quarterly",
+  "appliesTo": "Foreign residents in Korea whose stay is shorter or less certain than a standard contract term",
+  "why": "The concrete alternative to signing thirty-six months you may not serve, and it is recent enough that most guidance does not mention it exists. Worth watching rather than stating once: a product aimed at a specific population, launched into a market built around long contracts, is exactly the kind of offering whose terms, price and availability move.",
+  "history": [
+    {
+      "date": "2026-10-01",
+      "value": 12,
+      "display": "6 or 12 months",
+      "source": "LG U+ — prepaid internet for foreign nationals",
+      "note": "Sold to foreign nationals with no age restriction, on a passport, with no contract term, no early termination charge and no separate installation fee. The monthly cost is higher than a discounted long contract; the comparison is against the total cost of a term you might not complete, not against the headline monthly figure."
+    }
+  ]
+}
