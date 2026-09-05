@@ -1,0 +1,18 @@
+{
+  "key": "tmoney-card-price",
+  "label": "Standard T-money card: price of the card itself",
+  "unit": "KRW for the card, excluding any balance",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Anyone buying a physical T-money card at a convenience store or station machine",
+  "why": "Recorded because of what it is not. Visitors routinely assume the price is a deposit that comes back with the balance at the end, the way transport cards work in several other countries. It is the price of the card, it is generally not refundable, and only the loaded balance is — so someone who buys a card and tops up a small amount can get back less than they expect and conclude the refund was mishandled.",
+  "history": [
+    {
+      "date": "2026-09-26",
+      "value": 4000,
+      "display": "≈₩4,000",
+      "source": "T-money — foreign visitor guidance",
+      "note": "Typical price of a standard physical card; designs vary and character or collaboration editions cost more. The card price and the loaded balance are separate amounts: the balance is refundable through the usual channels, the card price ordinarily is not."
+    }
+  ]
+}

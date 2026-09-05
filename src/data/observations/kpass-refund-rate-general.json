@@ -1,0 +1,18 @@
+{
+  "key": "kpass-refund-rate-general",
+  "label": "K-Pass transport refund: standard rate",
+  "unit": "% of qualifying transport spending refunded",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Registered K-Pass users, including foreign nationals who complete residence verification",
+  "why": "A government transport subsidy that foreign residents are widely assumed to be excluded from, and are not — the barrier is registration and residence verification rather than nationality. The rates are also a live policy area rather than a fixed feature: the scheme was expanded in 2026 with additional tiers and a separate refund on spending above a threshold, so a figure quoted without a date is not much use.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 20,
+      "display": "20% standard",
+      "source": "Government of Korea — K-Pass scheme, operated within the 2026 unified travel card framework",
+      "note": "Proportional refund of qualifying public transport spending. Higher tiers apply to young people, households with two children and older people at 30%, households with three or more children at 50%, and low-income users at 53.3%. A separate flat-amount refund applies to spending above a threshold. Registration is the gate for foreign nationals: the sign-up flow accepts a foreign registration number, with residence confirmed by document where automatic address verification is unavailable."
+    }
+  ]
+}

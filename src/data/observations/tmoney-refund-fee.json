@@ -1,0 +1,18 @@
+{
+  "key": "tmoney-refund-fee",
+  "label": "T-money balance refund: handling fee deducted",
+  "unit": "KRW deducted from the refunded balance",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Departing visitors and residents cashing out a remaining prepaid transport balance",
+  "why": "Small enough to ignore and useful for deciding how much to load in the last week of a trip: on a large leftover balance it is trivial, on a few thousand won it is most of what is left. The maximum amount a given counter can refund is a separate question that varies by channel — a convenience store handles small sums, larger balances go to a station or designated centre — which is the part that catches people at the airport.",
+  "history": [
+    {
+      "date": "2026-09-26",
+      "value": 500,
+      "display": "≈₩500",
+      "source": "T-money — refund guidance",
+      "note": "Deducted from the balance when refunded. Where the refund can be processed depends on the amount and on whether the card is physical or mobile, so a large balance may not be refundable at a convenience store counter. Confirm the current per-channel ceiling before relying on a last-minute refund."
+    }
+  ]
+}
