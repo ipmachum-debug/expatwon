@@ -1,0 +1,18 @@
+{
+  "key": "seoul-transit-foreign-card-machines",
+  "label": "Seoul metro ticket machines accepting foreign cards",
+  "unit": "machines, across lines 1–8",
+  "type": "amount",
+  "check": "quarterly",
+  "appliesTo": "Visitors and new arrivals buying single-journey tickets or short-term passes on the Seoul metro",
+  "why": "Reverses advice that is repeated in essentially every travel guide to Korea: that ticket machines take cash or domestic cards only, so bring notes. That stopped being true in March 2026 for a large part of the Seoul network. The figure is worth watching rather than stating once, because the rollout is partial by design — other operators, regional networks and older machines are not covered, and the count is how you tell how far it has actually reached.",
+  "history": [
+    {
+      "date": "2026-03-17",
+      "value": 440,
+      "display": "440 machines, 273 stations",
+      "source": "Seoul Metropolitan Government — new ticket machines accepting overseas-issued cards",
+      "note": "Across lines 1 to 8. Overseas-issued Visa and Mastercard can buy or top up single-journey tickets and the short-term Climate Card. Buying a ticket with a foreign card is not the same as tapping a foreign card at the gate: open-loop EMV acceptance is being introduced in stages and should not be assumed. Ordinary T-money top-up machines, other operators and regional networks are separate questions."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "seoul-transit-foreign-card-fee",
+  "label": "Seoul metro ticket machines: service fee on foreign card payments",
+  "unit": "% of the transaction, average",
+  "type": "rate",
+  "check": "quarterly",
+  "appliesTo": "Foreign-issued card payments at the new Seoul metro ticket machines",
+  "why": "The convenience is real and it is not free. Stating the fee alongside the capability keeps the guidance honest — a traveller topping up in small amounts pays it every time, and for anyone staying more than a few days a prepaid transport card loaded with cash is still cheaper. It is also the kind of figure that moves quietly once a service is established.",
+  "history": [
+    {
+      "date": "2026-03-17",
+      "value": 3.7,
+      "display": "≈3.7% average",
+      "source": "Seoul Metropolitan Government announcement",
+      "note": "Announced as an average service fee on overseas card payments at these machines. The issuer's own foreign transaction fee, where the card has one, applies separately on top."
+    }
+  ]
+}

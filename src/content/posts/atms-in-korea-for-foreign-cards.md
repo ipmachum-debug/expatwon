@@ -8,6 +8,7 @@ slot: pm
 draft: true
 tags: [banking, cards, arrival, cash, short-stay]
 lastVerified: 2026-09-13
+tracked: [dcc-typical-markup]
 sources:
   - label: 'Visa — PLUS network ATM locator and cross-border withdrawal terms'
     url: 'https://www.visa.co.kr/'

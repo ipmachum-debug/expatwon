@@ -1,0 +1,18 @@
+{
+  "key": "dcc-typical-markup",
+  "label": "Dynamic currency conversion: typical exchange rate markup",
+  "unit": "% markup, upper end of the usual range",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Anyone paying with a foreign-issued card in Korea who is offered their home currency at the terminal",
+  "why": "The cost of DCC is routinely quoted as a fixed figure — 5%, 8%, sometimes more — which is a guess dressed as a fact. Visa's own guidance describes a markup in the region of 3 to 5%, and the issuer's foreign transaction fee is a separate charge that applies whichever currency is chosen. Two variable components, quoted as one certainty, is how people end up either ignoring DCC or overstating it to the point of not being believed.",
+  "history": [
+    {
+      "date": "2026-09-13",
+      "value": 5,
+      "display": "3–5%",
+      "source": "Visa — guidance on dynamic currency conversion",
+      "note": "Markup embedded in the exchange rate applied by the merchant's DCC provider, typically in the 3–5% region. Your issuer's foreign transaction fee is separate and applies either way, so choosing the local currency avoids the markup rather than all currency costs. Visa and Mastercard both require that the cardholder be offered the choice of currency and shown the rate and any charges."
+    }
+  ]
+}

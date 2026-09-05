@@ -1,0 +1,18 @@
+{
+  "key": "wowpass-topup-networks",
+  "label": "WOWPASS: overseas card networks accepted for top-up",
+  "unit": "card networks supported",
+  "type": "amount",
+  "check": "quarterly",
+  "appliesTo": "Visitors and new arrivals using a Korean prepaid card before opening a bank account",
+  "why": "Prepaid cards aimed at foreign visitors change their top-up methods, fees and supported networks often, which is exactly why the supported-network count belongs in a dated record rather than in the body of an article that will be read for years. The useful property of these cards is structural and more stable: money loaded from an overseas card is spent as a domestic card, so it clears at merchants that decline the overseas card outright.",
+  "history": [
+    {
+      "date": "2026-09-13",
+      "value": 3,
+      "display": "Visa, Mastercard, JCB",
+      "source": "WOWPASS — official top-up guidance",
+      "note": "Mobile top-up using an overseas-issued card, alongside foreign cash top-up at machines. The balance is then spent as a domestic prepaid card at offline merchants. The payment balance and the T-money transport balance are separate: a funded payment balance does not pay a bus or subway fare. Fees, limits and supported networks change — confirm in the app before relying on any of them."
+    }
+  ]
+}
