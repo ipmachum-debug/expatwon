@@ -1,0 +1,18 @@
+{
+  "key": "resident-move-in-report-deadline",
+  "label": "Resident registration: deadline to report a move-in",
+  "unit": "days from moving in",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Korean nationals who have changed their place of residence",
+  "why": "Kept as its own field because it is one of three different numbers people collapse into 'the address deadline'. This one comes from the Resident Registration Act, the foreign nationals' fifteen days comes from the Immigration Act, and the day-after start of a tenant's opposing power comes from the Housing Lease Protection Act. They are three statutes with three purposes, and merging them produces advice that is wrong for whoever is reading it.",
+  "history": [
+    {
+      "date": "2026-10-10",
+      "value": 14,
+      "display": "14 days",
+      "source": "Resident Registration Act, art. 16",
+      "note": "The statutory last day, not the sensible day. A tenant's opposing power arises only from the day after delivery and registration are complete, so waiting out the fourteen days leaves the deposit unprotected for two weeks for no gain. File it on the day the balance is paid and possession is taken."
+    }
+  ]
+}

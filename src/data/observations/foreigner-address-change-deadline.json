@@ -1,0 +1,18 @@
+{
+  "key": "foreigner-address-change-deadline",
+  "label": "Registered foreign nationals: deadline to report a change of stay address",
+  "unit": "days from moving in",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign nationals holding alien registration who have moved to a new address in Korea",
+  "why": "One day longer than the Korean nationals' deadline, from a different statute, with a different enforcement consequence — which is exactly why it needs its own field rather than an approximation of the resident registration rule. It is also the filing that carries a foreign tenant's opposing power, so the deposit and the immigration obligation ride on the same act.",
+  "history": [
+    {
+      "date": "2026-10-10",
+      "value": 15,
+      "display": "15 days",
+      "source": "Immigration Act, art. 36",
+      "note": "Filed at the si/gun/gu or eup/myeon/dong community centre for the new address, or at the competent immigration office; electronic filing via Hi Korea is available in some cases. An alien registration card and something evidencing the actual address, such as the lease, are generally needed. A Korean spouse filing a household move-in report does not complete this — the registered foreign national's own filing is a separate act."
+    }
+  ]
+}

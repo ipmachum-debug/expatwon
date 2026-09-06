@@ -1,0 +1,18 @@
+{
+  "key": "foreigner-address-change-penalty",
+  "label": "Failing to report a change of stay address: the penalty",
+  "unit": "KRW maximum, criminal fine",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Registered foreign nationals who do not report a change of stay address within the deadline",
+  "why": "Recorded because almost every English-language moving checklist calls this an administrative fine, and it is not one. It is a criminal fine under the Immigration Act — a different legal character with different consequences for someone whose residence status is reviewed on their record. The amount matters less than the category.",
+  "history": [
+    {
+      "date": "2026-10-10",
+      "value": 1000000,
+      "display": "Up to ₩1,000,000 — a criminal fine",
+      "source": "Immigration Act, art. 98(2)",
+      "note": "A criminal fine (벌금), not an administrative fine (과태료). Failure to report other changes to alien registration particulars sits under different provisions with a different enforcement structure, so the two should not be quoted as one rule. For a person whose visa extension or status change is assessed partly on compliance history, the classification is the part that carries weight."
+    }
+  ]
+}

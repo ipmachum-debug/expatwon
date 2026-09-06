@@ -1,0 +1,18 @@
+{
+  "key": "address-change-bulk-service",
+  "label": "Public integrated service for changing your address across financial institutions",
+  "unit": "public services currently operating",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Anyone moving house in Korea and updating addresses held by banks, card issuers, insurers and securities firms",
+  "why": "Recorded as zero because the service that used to exist is still recommended in moving checklists years after it closed, and following that advice wastes an afternoon before anyone realises. Tracking the absence is the only way to keep it out of guidance — a figure that reads zero is harder to reintroduce by accident than a paragraph that was deleted.",
+  "history": [
+    {
+      "date": "2026-10-10",
+      "value": 0,
+      "display": "None — the public service closed in August 2020",
+      "source": "Financial Supervisory Service and Korea Credit Information Services — termination of the integrated financial address change service",
+      "note": "금융주소 한번에 ended in August 2020 and should not appear in a current checklist. Private alternatives exist — KT Moving's bulk address and contact change service is free, open to non-KT customers on identity verification, and covers partner financial, insurance and retail companies — but they reach partner institutions only, so major banks, card issuers and insurers still need checking individually in each app."
+    }
+  ]
+}
