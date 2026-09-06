@@ -5,7 +5,6 @@ category: banking
 publishDate: 2026-09-06
 updatedDate: 2026-09-06
 slot: pm
-draft: true
 tags: [banking, transport, cards, tmoney, credit]
 tracked: [postpaid-transit-min-age]
 lastVerified: 2026-09-06
