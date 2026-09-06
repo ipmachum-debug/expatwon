@@ -1,0 +1,18 @@
+{
+  "key": "civil-default-interest-rate",
+  "label": "Statutory default interest rate under the Civil Act",
+  "unit": "% per year",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Monetary obligations in default where no contractual rate was agreed, including an unreturned housing deposit",
+  "why": "The starting point for late interest on a deposit, and half of a pair that is routinely collapsed into one number. This rate runs from when the debtor actually falls into default; the higher litigation rate runs from a different event entirely. Keeping them as separate series keeps the two dates separate too.",
+  "history": [
+    {
+      "date": "2026-10-09",
+      "value": 5,
+      "display": "5% per year",
+      "source": "Civil Act — statutory interest rate for monetary obligations",
+      "note": "On a ₩200,000,000 deposit this is ₩10,000,000 a year, roughly ₩27,400 a day. When it starts is the harder question: returning the deposit and returning the property are in principle concurrent obligations, so a tenant still occupying the property who has neither performed nor properly tendered delivery can face an argument that the landlord is not yet in default at all."
+    }
+  ]
+}

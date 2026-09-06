@@ -1,0 +1,18 @@
+{
+  "key": "tacit-renewal-termination-effective-period",
+  "label": "Tacitly renewed housing lease: waiting period before termination takes effect",
+  "unit": "months from the landlord's receipt of the notice",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Residential tenants whose lease has been tacitly renewed and who now wish to terminate it",
+  "why": "The consolation for missing the two-month deadline, and the reason a tenant who assumes tacit renewal locked them in for another full term is wrong in a useful direction. It is also the number that ruins moving plans: notice given today does not release the deposit today, and the clock starts from the landlord's receipt rather than from sending.",
+  "history": [
+    {
+      "date": "2026-10-09",
+      "value": 3,
+      "display": "3 months from receipt",
+      "source": "Housing Lease Protection Act, art. 6-2",
+      "note": "A tenant under a tacitly renewed lease may give notice of termination at any time, but it takes effect once three months have passed from the day the landlord received it. Notice arriving on 10 June therefore points at termination after 10 September. Because the period runs from receipt, proving when the notice arrived is part of establishing the date the deposit falls due."
+    }
+  ]
+}

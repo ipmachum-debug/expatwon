@@ -1,0 +1,18 @@
+{
+  "key": "litigation-promotion-interest-rate",
+  "label": "Litigation interest rate under the Act on Special Cases Concerning Expedition of Legal Proceedings",
+  "unit": "% per year",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Monetary claims in litigation, from the day after the complaint or an equivalent document is served on the debtor",
+  "why": "Set by presidential decree and revised as market rates move, so it needs a timeline rather than a quotation. It is also widely misdescribed as the rate that applies once you sue. It does not run from instructing a lawyer or from filing — it runs from service, and a court may withhold it for a period where the debtor had reasonable grounds to dispute the debt.",
+  "history": [
+    {
+      "date": "2026-10-09",
+      "value": 12,
+      "display": "12% per year",
+      "source": "Act on Special Cases Concerning Expedition of Legal Proceedings and its Enforcement Decree",
+      "note": "Applies from the day after the complaint, or a document equivalent to it, is served on the debtor. Before that the Civil Act rate is the reference. Where the court finds it reasonable for the debtor to dispute the existence or scope of the obligation, the higher rate can be restricted for the period up to judgment — so it is a likely outcome rather than an entitlement fixed at filing."
+    }
+  ]
+}

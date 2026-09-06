@@ -1,0 +1,18 @@
+{
+  "key": "leasehold-registration-order-effective-point",
+  "label": "Leasehold registration order: protection from application alone",
+  "unit": "days of protection given by filing the application",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Tenants whose lease has ended without the deposit being returned and who must move out of the property",
+  "why": "Recorded as zero because that is the practical answer to the question tenants actually ask, and getting it wrong is not recoverable. The Act preserves opposing power and priority repayment once the leasehold registration has been completed — a receipt from the court preserves nothing. The most common serious error in a deposit dispute is filing the application and then moving out and transferring the address.",
+  "history": [
+    {
+      "date": "2026-10-09",
+      "value": 0,
+      "display": "None — protection follows the completed registration",
+      "source": "Housing Lease Protection Act, art. 3-3",
+      "note": "Check the certified copy of the register and confirm the leasehold entry is actually recorded before moving out. Since the 2023 amendment the court may commission the registration before the decision has been served on the landlord, so a landlord refusing post can no longer stall the process indefinitely — but that change speeds up the registration, it does not move the moment protection attaches."
+    }
+  ]
+}

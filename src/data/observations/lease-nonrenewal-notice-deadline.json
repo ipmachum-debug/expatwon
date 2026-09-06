@@ -1,0 +1,18 @@
+{
+  "key": "lease-nonrenewal-notice-deadline",
+  "label": "Housing lease: tenant's deadline to refuse renewal before expiry",
+  "unit": "months before the lease expires",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Residential tenants on a fixed-term lease who intend the lease to end on its expiry date",
+  "why": "Deliberately kept apart from the three-month period that applies after tacit renewal, because the two are different rules for different situations and are constantly merged into one half-remembered figure. This one is a deadline before expiry; the other is a waiting period after notice. Missing this one does not end the tenancy late — it renews it.",
+  "history": [
+    {
+      "date": "2026-10-09",
+      "value": 2,
+      "display": "2 months before expiry",
+      "source": "Housing Lease Protection Act, art. 6",
+      "note": "Where the tenant does not give notice of refusal to renew by two months before expiry, the lease can be treated as tacitly renewed on the same terms. The landlord's own window is different — from six months to two months before expiry. The obligation is that the notice reaches the landlord by the deadline, not that it was sent by then: a lease expiring on 31 March needs the refusal to have arrived by 31 January."
+    }
+  ]
+}
