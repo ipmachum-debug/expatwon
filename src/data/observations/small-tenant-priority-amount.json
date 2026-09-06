@@ -1,0 +1,18 @@
+{
+  "key": "small-tenant-priority-amount",
+  "label": "Small-deposit tenant: maximum amount protected ahead of secured creditors",
+  "unit": "KRW, Seoul",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Small-deposit tenants recovering from an auction or public sale of the leased housing",
+  "why": "Kept apart from the qualifying threshold because conflating them is the actual danger. Qualifying does not protect the deposit — it protects a capped portion of it, and the gap between the two figures is what the tenant loses if the property sells for less than the claims against it.",
+  "history": [
+    {
+      "date": "2026-10-08",
+      "value": 55000000,
+      "display": "Up to ₩55,000,000 in Seoul",
+      "source": "Enforcement Decree of the Housing Lease Protection Act",
+      "note": "Seoul's figure, paired with the ₩165,000,000 qualifying ceiling. A tenant with a ₩160,000,000 deposit qualifies and is protected on ₩55,000,000 of it ahead of secured creditors — the remaining ₩105,000,000 ranks by fixed date like any other claim. Payouts under this rule are also limited by reference to a share of the housing's value, so the stated maximum is a ceiling rather than an entitlement."
+    }
+  ]
+}

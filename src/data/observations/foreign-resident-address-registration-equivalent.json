@@ -1,0 +1,18 @@
+{
+  "key": "foreign-resident-address-registration-equivalent",
+  "label": "Filings that substitute for resident registration in a housing lease",
+  "unit": "recognised equivalents for foreign nationals",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign nationals and overseas Koreans renting housing in Korea and needing opposing power under the Housing Lease Protection Act",
+  "why": "Because every Korean-language guide says 전입신고 and a foreign tenant cannot make one. That produces two failures: tenants who conclude the protection is unavailable to them, and tenants who assume the contract alone is enough. Neither is right — there is a substitute filing, it is a different office from the one the guides name, and it has to actually be made at the leased address.",
+  "history": [
+    {
+      "date": "2026-10-08",
+      "value": 2,
+      "display": "2 — stay-address report, domestic residence report",
+      "source": "Housing Lease Protection Act and Ministry of Justice guidance on fixed dates and foreign tenants",
+      "note": "A registered foreign national who reports or changes their stay address to the leased housing can be recognised as meeting the resident registration requirement. For overseas Koreans the domestic residence report performs the same function. The practical failure is leaving the immigration stay-address different from the lease address for months — the filing is what carries the protection, not the contract."
+    }
+  ]
+}

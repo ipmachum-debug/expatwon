@@ -1,0 +1,18 @@
+{
+  "key": "unpaid-tax-inspection-without-landlord-consent-threshold",
+  "label": "Inspecting a landlord's unpaid taxes without their consent: deposit threshold",
+  "unit": "KRW deposit, above which consent is not required",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Tenants who have concluded a lease, inspecting the landlord's unpaid national and local taxes before the lease term begins",
+  "why": "A change that most lease templates have not caught up with. Unpaid taxes can outrank a tenant's deposit, and the old position was that checking required the landlord's cooperation — which a landlord with arrears had every reason to withhold. Above this deposit level a tenant who has already signed can inspect without asking, and the office notifies the landlord that they did.",
+  "history": [
+    {
+      "date": "2026-10-08",
+      "value": 10000000,
+      "display": "Deposits above ₩10,000,000",
+      "source": "National Tax Collection Act and the local tax equivalent, on tenants' inspection of unpaid taxes",
+      "note": "Available to a tenant who has concluded a lease, up until the lease term begins, at the tax office or the local authority. Before signing, inspection still runs on the landlord's consent. The tax office notifies the landlord that the inspection took place — which is a reason to raise it in negotiation rather than as a surprise, and a reason the contract should also require disclosure of arrears arising between signing and the balance payment."
+    }
+  ]
+}

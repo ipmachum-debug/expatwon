@@ -1,0 +1,18 @@
+{
+  "key": "hug-deposit-guarantee-limit",
+  "label": "HUG deposit return guarantee: maximum deposit covered",
+  "unit": "KRW, by region",
+  "type": "amount",
+  "check": "quarterly",
+  "appliesTo": "Tenants applying for the Korea Housing and Urban Guarantee Corporation deposit return guarantee",
+  "why": "A policy figure rather than a statutory one, which is exactly why it needs a timeline. It has been adjusted in response to the jeonse fraud cycle and it decides, before anything else about the property, whether the guarantee is available at all. A tenant negotiating a deposit just above the line is negotiating themselves out of the protection.",
+  "history": [
+    {
+      "date": "2026-10-08",
+      "value": 700000000,
+      "display": "₩700M capital region · ₩500M elsewhere",
+      "source": "Korea Housing and Urban Guarantee Corporation — deposit return guarantee eligibility",
+      "note": "The cap is on the deposit, and it is only the entry condition. Underwriting still looks at the property's value against the deposit plus prior-ranking claims, and at the landlord. HUG, the Korea Housing Finance Corporation and SGI Seoul Guarantee run separate products with separate conditions — being refused by one does not settle the other two."
+    }
+  ]
+}

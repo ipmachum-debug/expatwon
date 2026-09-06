@@ -1,0 +1,18 @@
+{
+  "key": "small-tenant-priority-threshold",
+  "label": "Small-deposit tenant: deposit ceiling for top-priority protection",
+  "unit": "KRW deposit, Seoul",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Residential tenants testing whether they fall within the small-deposit tenant category, which varies by region",
+  "why": "Set by enforcement decree and revised as prices move, so a figure quoted from an old guide is routinely wrong by tens of millions. It is also the figure most often misread as a safety guarantee: being under it protects a portion of the deposit ahead of secured creditors, not the deposit.",
+  "history": [
+    {
+      "date": "2026-10-08",
+      "value": 165000000,
+      "display": "₩165,000,000 in Seoul",
+      "source": "Enforcement Decree of the Housing Lease Protection Act",
+      "note": "Seoul's figure. Other regions have their own, lower, thresholds — the Seoul number should never be applied outside it. The tenant must have met the opposing-power requirements before the auction commencement registration, and the total paid out under this rule is capped by reference to a share of the housing's value."
+    }
+  ]
+}

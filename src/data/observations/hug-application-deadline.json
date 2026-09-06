@@ -1,0 +1,18 @@
+{
+  "key": "hug-application-deadline",
+  "label": "HUG deposit return guarantee: application window within the lease term",
+  "unit": "% of the lease term elapsed",
+  "type": "schedule",
+  "check": "quarterly",
+  "appliesTo": "Tenants applying for the deposit return guarantee after the lease has already started",
+  "why": "The deadline that turns a good intention into nothing. Tenants routinely sign first and look at the guarantee later, and 'later' has a hard edge halfway through the term. Recorded as a proportion rather than a date because it moves with the length of the lease — half of a two-year term is a year, half of a one-year term is six months.",
+  "history": [
+    {
+      "date": "2026-10-08",
+      "value": 50,
+      "display": "Before half the lease term has elapsed",
+      "source": "Korea Housing and Urban Guarantee Corporation — deposit return guarantee application conditions",
+      "note": "Generally the application must be made before half of the lease term has passed. This is why eligibility is a pre-contract question: a property that cannot be guaranteed is a property whose deposit has no institutional backstop, and discovering that in month thirteen of a twenty-four month lease leaves nothing to do about it."
+    }
+  ]
+}

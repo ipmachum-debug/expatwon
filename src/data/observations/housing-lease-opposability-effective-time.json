@@ -1,0 +1,18 @@
+{
+  "key": "housing-lease-opposability-effective-time",
+  "label": "Housing lease: when opposing power takes effect",
+  "unit": "days after the requirements are completed",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Residential tenants in Korea who have taken delivery of the property and completed resident registration, or the equivalent filing for foreign nationals",
+  "why": "The single structural gap in Korean residential tenancy, and it is created by the statute rather than by anyone's mistake. A mortgage registered by the landlord takes its rank on the day it is registered; the tenant's opposing power does not exist until the following day. So a tenant who pays the balance, moves in and files on the same morning can still rank behind a mortgage registered that afternoon. Recorded because the gap drives the whole sequence of the balance-payment day.",
+  "history": [
+    {
+      "date": "2026-10-08",
+      "value": 1,
+      "display": "From the following day",
+      "source": "Housing Lease Protection Act, art. 3",
+      "note": "Where a tenant has been delivered the housing and completed resident registration, the lease takes effect against third parties from the day after. Both limbs are required: paying the deposit in full is not delivery, and holding the contract is not registration. For a foreign national the registration limb is met by the stay-address report rather than by resident registration."
+    }
+  ]
+}
