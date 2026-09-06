@@ -62,6 +62,10 @@ const articleSchema = {
     '@type': 'Organization',
     name: SITE_TITLE,
     url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/logo-full.svg`,
+    },
   },
 };
 

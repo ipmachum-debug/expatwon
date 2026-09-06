@@ -5,7 +5,7 @@ category: employment
 publishDate: 2026-09-01
 updatedDate: 2026-09-01
 tags: [business, employment, social-insurance, minimum-wage, payroll]
-tracked: [minimum-wage, national-pension-rate, health-insurance-rate, long-term-care-rate]
+tracked: [minimum-wage, minimum-wage-monthly-equivalent, national-pension-rate, health-insurance-rate, long-term-care-rate]
 lastVerified: 2026-08-31
 pairedWith: registering-employees-for-four-insurances
 sources:
@@ -181,7 +181,7 @@ The 2026 minimum wage is **₩10,320 per hour**, up 2.9% from ₩10,030.
 |---|---|
 | Hourly | ₩10,320 |
 | Daily (8 hours) | ₩82,560 |
-| Monthly (209 hours) | ₩2,156,880 |
+| Monthly (209 hours) | {{fig:minimum-wage-monthly-equivalent}} |
 
 The 209-hour figure is 40 contractual hours a week plus the 8 paid
 weekly-holiday hours, annualised. It applies to every workplace including

@@ -214,7 +214,12 @@ for (const file of readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'))) {
     draft: scalar('draft') === 'true',
   };
   postMeta.set(slug, meta);
-  postBodies.push({ where, meta, body: body.split(/^---$/m).slice(2).join('---') });
+  postBodies.push({
+    where,
+    meta,
+    body: body.split(/^---$/m).slice(2).join('---'),
+    frontmatter: fm,
+  });
 
   const tracked = frontmatterList(fm, 'tracked');
   if (tracked.length > 0) tracking++;
@@ -249,7 +254,32 @@ for (const file of readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'))) {
 // category prefix, which 404s permanently.
 const slotOrder = (m) => `${m.date}#${m.slot === 'pm' ? 1 : 0}`;
 
-for (const { where, meta, body } of postBodies) {
+const FIGURE_TOKEN = /\{\{fig:([a-z0-9-]+)\}\}/g;
+
+for (const { where, meta, body, frontmatter } of postBodies) {
+  // Remark only ever sees the body, so a token in the frontmatter would be
+  // published verbatim — into a meta description, a keyFact tile or an FAQ
+  // answer, which is exactly where a literal `{{fig:...}}` is most visible.
+  for (const [token] of frontmatter.matchAll(FIGURE_TOKEN)) {
+    errors.push(
+      `${where}: ${token} appears in the frontmatter, which the Markdown processor never sees — ` +
+        `it would publish literally. Write the figure out there.`,
+    );
+  }
+
+  const declared = new Set(frontmatterList(frontmatter, 'tracked'));
+  for (const [, key] of body.matchAll(FIGURE_TOKEN)) {
+    if (!observationKeys.has(key)) {
+      errors.push(`${where}: {{fig:${key}}} has no observation series`);
+    } else if (!declared.has(key)) {
+      // Quoting a figure is depending on it: the article has to appear on that
+      // series' page, and has to be found when the figure next moves.
+      errors.push(
+        `${where}: {{fig:${key}}} is used in the body but not listed in tracked`,
+      );
+    }
+  }
+
   const links = [
     ...body.matchAll(/\]\(\/([a-z0-9-]+)\/([a-z0-9-]+)\/\)/g),
     ...body.matchAll(/href="\/([a-z0-9-]+)\/([a-z0-9-]+)\/"/g),

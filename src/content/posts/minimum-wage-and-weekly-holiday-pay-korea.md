@@ -40,21 +40,21 @@ faq:
 
 Korea publishes one number and enforces another.
 
-The 2026 minimum wage is **₩10,320 an hour**. The lawful monthly minimum for
-someone on a 40-hour week is **₩2,156,880** — and you cannot get from the
+The 2026 minimum wage is **{{fig:minimum-wage}} an hour**. The lawful monthly minimum for
+someone on a 40-hour week is **{{fig:minimum-wage-monthly-equivalent}}** — and you cannot get from the
 first to the second by multiplying by the hours anyone actually works.
 
 The difference is a paid day off that no one works, written into the Labor
 Standards Act since 1953.
 
 <figure class="figure hero">
-  <p class="figure-title">Where ₩2,156,880 comes from</p>
+  <p class="figure-title">Where {{fig:minimum-wage-monthly-equivalent}} comes from</p>
   <p class="figure-sub">Two of these hours are the ones people miss</p>
   <div class="check-card">
     <div class="check-row ok"><span class="mark"></span><span><strong>40 hours</strong> — contractual working hours in a week.</span></div>
     <div class="check-row ok"><span class="mark"></span><span><strong>+ 8 hours</strong> — paid weekly holiday, art. 55. Not worked, still paid.</span></div>
     <div class="check-row ok"><span class="mark"></span><span><strong>× 4.345 weeks</strong> — a month, on average, across the year.</span></div>
-    <div class="check-result">= 208.56, used as <strong>209 hours</strong> × ₩10,320 = ₩2,156,880</div>
+    <div class="check-result">= 208.56, used as <strong>209 hours</strong> × {{fig:minimum-wage}} = {{fig:minimum-wage-monthly-equivalent}}</div>
   </div>
 </figure>
 
@@ -74,8 +74,8 @@ For a 40-hour employee the weekly holiday is normally **8 hours**, which
 makes the week:
 
 ```
-worked        40 h × ₩10,320  =  ₩412,800
-weekly holiday 8 h × ₩10,320  =   ₩82,560
+worked        40 h × {{fig:minimum-wage}}  =  ₩412,800
+weekly holiday 8 h × {{fig:minimum-wage}}  =   ₩82,560
                                  ─────────
                                   ₩495,360
 ```
@@ -164,7 +164,7 @@ Above the 15-hour line, the weekly holiday is proportional:
 weekly holiday hours = weekly contractual hours ÷ 40 × 8
 ```
 
-At the 2026 rate of [₩10,320 an hour](/tracked/minimum-wage/):
+At the 2026 rate of [{{fig:minimum-wage}} an hour](/tracked/minimum-wage/):
 
 | Weekly contractual hours | Weekly holiday hours | Weekly holiday pay | Weekly pay basis |
 |---:|---:|---:|---:|
@@ -173,13 +173,13 @@ At the 2026 rate of [₩10,320 an hour](/tracked/minimum-wage/):
 | 15 | 3 | ₩30,960 | ₩185,760 |
 | 14 | none | ₩0 | ₩144,480 |
 
-Hourly rate ₩10,320, no other allowances, conditions met. A simplified
+Hourly rate {{fig:minimum-wage}}, no other allowances, conditions met. A simplified
 model, not a payslip.
 
 ## The one-hour cliff, and why it shapes the job market
 
 Look at the last two rows. One additional contractual hour a week moves the
-weekly pay basis by ₩41,280 — an hour of work at ₩10,320 plus three hours of
+weekly pay basis by ₩41,280 — an hour of work at {{fig:minimum-wage}} plus three hours of
 weekly holiday at ₩30,960.
 
 That cliff is what produces **쪼개기 알바**, splitting one job into pieces
@@ -227,7 +227,7 @@ worth reading for.
 <div class="callout callout-warn">
   <p class="callout-title">As of 2026 nothing has been abolished</p>
   <p>Article 55 is in force, and the official 2026 monthly conversion —
-  ₩2,156,880 on a 209-hour basis — is published on exactly that assumption. A
+  {{fig:minimum-wage-monthly-equivalent}} on a 209-hour basis — is published on exactly that assumption. A
   proposal under discussion is not a defence for underpaying now.</p>
 </div>
 
@@ -263,7 +263,7 @@ how the hours and weekly holiday should have been written down in the first
 place is in
 [your Korean employment contract](/employment/your-korean-employment-contract-what-to-check/).
 
-Understanding the Korean minimum wage is not knowing that it is ₩10,320. It
+Understanding the Korean minimum wage is not knowing that it is {{fig:minimum-wage}}. It
 is knowing how contractual hours, the 15-hour threshold, full attendance,
 the paid weekly holiday and 209 hours combine into the figure that is
 actually enforceable.
