@@ -1,0 +1,18 @@
+{
+  "key": "no-filing-penalty-rate",
+  "label": "Penalty for failing to file a tax return",
+  "unit": "% of the tax that should have been reported",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Taxpayers who do not file a return by the statutory deadline, including a final VAT return after closing a business",
+  "why": "The price of the most common closure mistake — assuming the closure filing was the last thing to do and waiting for the tax office to write. It is a penalty on the unreported tax rather than a flat fee, so it scales with the size of the return that was missed, and late-payment interest accrues on top of it independently.",
+  "history": [
+    {
+      "date": "2026-10-06",
+      "value": 20,
+      "display": "20% of the unreported tax",
+      "source": "Framework Act on National Taxes — penalty for non-filing",
+      "note": "The ordinary rate. It is heavier where the non-filing is treated as improper, and a separate late-payment penalty runs on the unpaid tax for as long as it is unpaid. Filing late but voluntarily can reduce the penalty; being assessed does not."
+    }
+  ]
+}

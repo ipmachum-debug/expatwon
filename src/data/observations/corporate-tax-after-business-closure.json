@@ -1,0 +1,18 @@
+{
+  "key": "corporate-tax-after-business-closure",
+  "label": "Corporate tax return: deadline after a company's business registration is closed",
+  "unit": "months from the end of the month in which the fiscal year ends",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Companies (법인) that have closed a business registration, as distinct from sole proprietors",
+  "why": "Because the widely repeated 'file it next May' is the sole-trader rule and does not apply to a company. Sole proprietors settle the closure year through the following May's global income tax return; a company files on its own fiscal-year clock regardless of when the business registration closed. Applying the individual deadline to a company produces a late filing with a penalty attached.",
+  "history": [
+    {
+      "date": "2026-10-06",
+      "value": 3,
+      "display": "3 months from the fiscal year end month",
+      "source": "Corporate Tax Act — filing of the return for each business year",
+      "note": "The return is due within three months from the last day of the month in which the business year ends. Closing the business registration does not extinguish the company: a company that has only stopped trading still exists until it is dissolved and liquidated under the Commercial Act, and a company that is dissolved may have its business year split at the date the dissolution is registered."
+    }
+  ]
+}

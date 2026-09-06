@@ -1,0 +1,18 @@
+{
+  "key": "deemed-supply-depreciable-asset-deduction-rate",
+  "label": "Deemed supply on closure: deduction rate per taxable period, non-building depreciable assets",
+  "unit": "% of acquisition cost deducted per elapsed taxable period",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Machinery, equipment, fixtures, vehicles and other non-building depreciable assets held at closure, where input VAT was deducted on purchase",
+  "why": "Because the widespread shortcut — 'value the leftovers at market price, or at book value' — is wrong for exactly the assets worth the most money. Ordinary stock is valued at market value; depreciable assets have their own statutory formula, and it is neither market value nor the depreciated figure in the accounts. Getting this wrong produces a final VAT bill that is too high as often as too low.",
+  "history": [
+    {
+      "date": "2026-10-06",
+      "value": 25,
+      "display": "25% per taxable period, capped at 4 periods",
+      "source": "Enforcement Decree of the Value-Added Tax Act, art. 66",
+      "note": "Supply value = acquisition cost × [1 − 25% × elapsed taxable periods], counting a maximum of four periods. Korean VAT taxable periods are half-yearly, so four periods is roughly two years: an asset bought more than two years before closure reaches zero and carries no deemed-supply VAT, while one bought shortly before closure is taxed on most of its cost. This only applies where input VAT was deducted at purchase."
+    }
+  ]
+}

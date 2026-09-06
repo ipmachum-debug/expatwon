@@ -1,0 +1,18 @@
+{
+  "key": "closure-final-vat-deadline",
+  "label": "Final VAT return on closing a business: deadline",
+  "unit": "day of the month following the month of closure",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "General taxpayers (일반과세자) closing a business registration, including foreign-owned sole proprietorships and companies",
+  "why": "The hardest deadline in a closure and the one most often assumed to be handled by the closure filing itself. It is not: filing the closure and filing the final VAT return are separate acts, and the National Tax Service does not complete the second because you did the first. It is also the deadline that fixes what the closure date means — the last taxable period runs to the closure date, not to the end of the half-year.",
+  "history": [
+    {
+      "date": "2026-10-06",
+      "value": 25,
+      "display": "25th of the following month",
+      "source": "Value-Added Tax Act, art. 49 (final return and payment by general taxpayers)",
+      "note": "A business closing on 12 September 2026 files and pays by 25 October 2026 for the period from the start of the taxable period to 12 September. Simplified taxpayers (간이과세자) file under their own provision rather than art. 49. The legal basis is art. 49, not art. 63 — art. 63 governs the simplified regime, and citing it for a general taxpayer is a common error in closure checklists."
+    }
+  ]
+}

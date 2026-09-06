@@ -1,0 +1,18 @@
+{
+  "key": "nps-business-closure-deadline",
+  "label": "National pension: deadline to report a workplace withdrawal and loss of insured status",
+  "unit": "day of the month following the month of the event",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employers de-registering a workplace from the National Pension Scheme, and reporting employees' loss of insured status",
+  "why": "The exception that breaks the '14 days for the four insurances' checklist. The national pension is not on a day count at all — it runs to a fixed date in the following month, which can be longer or shorter than 14 days depending on where in the month the business closed. A closure on the 2nd gives about six weeks; a closure on the 30th gives about two.",
+  "history": [
+    {
+      "date": "2026-10-06",
+      "value": 15,
+      "display": "15th of the following month",
+      "source": "National Pension Act and its subordinate rules on workplace and insured-status reporting",
+      "note": "Both the workplace withdrawal and the individual insured members' loss of status run on this deadline. Filing all four schemes together through the joint social insurance portal does not merge the legal deadlines — the portal is one submission against four separate statutory clocks."
+    }
+  ]
+}

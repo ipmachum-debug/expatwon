@@ -1,0 +1,18 @@
+{
+  "key": "nhis-business-closure-deadline",
+  "label": "Health insurance: deadline to report a workplace withdrawal on closure",
+  "unit": "days from the event",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employers de-registering a workplace from National Health Insurance after closing the business",
+  "why": "One of three closure deadlines that are routinely collapsed into a single '14 days after closing' rule. Two of the four schemes do run on 14 days — this one and the employment/industrial accident pair — and the national pension does not. Recording them separately is the point: the convenient version of the rule is wrong about a quarter of the way through.",
+  "history": [
+    {
+      "date": "2026-10-06",
+      "value": 14,
+      "display": "14 days",
+      "source": "National Health Insurance Act and its subordinate rules on workplace withdrawal reporting",
+      "note": "The workplace withdrawal report and an individual employee's loss of insured status are separate filings with their own timings; closing the workplace does not by itself dispose of the employee side. The reporting deadline runs from the event, and the event is not always the tax office closure date — employees kept on for stock clearance or wind-up work end their employment later."
+    }
+  ]
+}

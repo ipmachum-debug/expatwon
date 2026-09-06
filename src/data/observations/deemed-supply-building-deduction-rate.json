@@ -1,0 +1,18 @@
+{
+  "key": "deemed-supply-building-deduction-rate",
+  "label": "Deemed supply on closure: deduction rate per taxable period, buildings and structures",
+  "unit": "% of acquisition cost deducted per elapsed taxable period",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Buildings and structures held at closure, where input VAT was deducted on acquisition",
+  "why": "Kept separately from the rate for other depreciable assets because the two are constantly conflated, and the difference is a decade. Buildings run down at 5% a period over up to twenty periods; everything else at 25% over up to four. Applying the wrong one to a building overstates the deduction fivefold.",
+  "history": [
+    {
+      "date": "2026-10-06",
+      "value": 5,
+      "display": "5% per taxable period, capped at 20 periods",
+      "source": "Enforcement Decree of the Value-Added Tax Act, art. 66",
+      "note": "Supply value = acquisition cost × [1 − 5% × elapsed taxable periods], counting a maximum of twenty periods — about ten years at half-yearly periods. Leasehold fit-out is not automatically a building for this purpose: whether interior work is a remaining asset at all turns on who owns it, whether it was capitalised, and what the lease says happens to it at the end."
+    }
+  ]
+}

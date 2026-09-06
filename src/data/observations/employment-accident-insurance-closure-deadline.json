@@ -1,0 +1,18 @@
+{
+  "key": "employment-accident-insurance-closure-deadline",
+  "label": "Employment and industrial accident insurance: deadline to report the end of coverage",
+  "unit": "days from the date coverage ends",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employers whose insurance relationship ends because the business closed or operations ceased",
+  "why": "Recorded apart from the health insurance deadline even though both are 14 days, because the two clocks start from different events. Health insurance runs from the withdrawal event; this one runs from the date the insurance relationship itself is extinguished, which is determined by when the business actually ceased rather than by the date on the closure filing.",
+  "history": [
+    {
+      "date": "2026-10-06",
+      "value": 14,
+      "display": "14 days from the date coverage ends",
+      "source": "Act on the Collection of Premiums for Employment Insurance and Industrial Accident Compensation Insurance",
+      "note": "Employment insurance and industrial accident insurance are collected together and their coverage ends together on closure. Filing does not close the account: the final premium is reconciled against wages actually paid, so a further assessment or a refund can arrive after the report is accepted."
+    }
+  ]
+}
