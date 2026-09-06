@@ -1,0 +1,18 @@
+{
+  "key": "limited-account-electronic-limit",
+  "label": "Limited-transaction account: daily limit for electronic banking",
+  "unit": "KRW per day",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Accounts opened as limited-transaction accounts at ordinary banks, on internet and mobile banking transfers",
+  "why": "The limit that actually binds, because a business pays through electronic banking rather than at a counter. It sits a third of the way down from the counter limit, which means the workaround for a single large payment is a trip to the branch — and that is the whole design.",
+  "history": [
+    {
+      "date": "2026-10-07",
+      "value": 1000000,
+      "display": "₩1,000,000 per day",
+      "source": "Financial Services Commission — 2024 raise to limited-transaction account limits",
+      "note": "ATM withdrawals run on their own separate daily limit at the same ₩1,000,000 level. Both were raised from May 2024 for ordinary banks; internet-only banks may set different figures. Lifting the restriction is a customer due diligence and transaction-purpose review, not a document that triggers it automatically."
+    }
+  ]
+}

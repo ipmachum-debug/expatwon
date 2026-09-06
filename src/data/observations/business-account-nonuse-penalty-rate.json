@@ -1,0 +1,18 @@
+{
+  "key": "business-account-nonuse-penalty-rate",
+  "label": "Penalty for not using a reported business-use account",
+  "unit": "% of the transaction amount that should have gone through the account",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Double-entry bookkeeping obligors who reported a business-use account but settled qualifying transactions elsewhere",
+  "why": "Kept separate from the non-reporting penalty because the two are different calculations on different bases, and merging them into one '0.2% of revenue' line is the most common error in Korean small-business guidance. This one is charged on the transactions that bypassed the account, so it scales with how much of the business ran through the wrong place.",
+  "history": [
+    {
+      "date": "2026-10-07",
+      "value": 0.2,
+      "display": "0.2% of the bypassing transactions",
+      "source": "Income Tax Act, art. 81-8 (penalty on business-use accounts)",
+      "note": "The transactions that must go through the account are payments and receipts of transaction consideration made through a financial institution, and payments and receipts of wages and rent. Registering an account at Hometax while continuing to receive sales or pay salaries and rent from a private account leaves this penalty running. It applies even where there is no calculated income tax."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "limited-account-counter-limit",
+  "label": "Limited-transaction account: daily limit at the branch counter",
+  "unit": "KRW per day",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Accounts opened as limited-transaction accounts at ordinary banks, including newly incorporated companies that cannot yet evidence a transaction purpose",
+  "why": "The practical obstacle for a new company, and one nobody is warned about before the account exists. It has nothing to do with nationality or with the company's capital — it follows from the bank being unable to verify a financial transaction purpose, which a business with no trading history cannot do yet. It was raised in 2024 and is worth re-checking rather than assuming.",
+  "history": [
+    {
+      "date": "2026-10-07",
+      "value": 3000000,
+      "display": "₩3,000,000 per day",
+      "source": "Financial Services Commission — 2024 raise to limited-transaction account limits",
+      "note": "Raised from May 2024 for ordinary banks. Internet-only banks and individual institutions can set their own figures, so this is the general banking-sector level rather than an absolute ceiling on every account in Korea. For a business paying wages, rent and materials it is still low enough to matter from the first month."
+    }
+  ]
+}

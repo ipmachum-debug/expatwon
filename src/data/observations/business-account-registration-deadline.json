@@ -1,0 +1,18 @@
+{
+  "key": "business-account-registration-deadline",
+  "label": "Business-use account: deadline to report it to the tax office",
+  "unit": "months from the start of the taxable period",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Sole proprietors who are double-entry bookkeeping obligors under the Income Tax Act",
+  "why": "The obligation is easy to acquire without noticing. It does not attach on registering a business — it attaches on becoming a double-entry bookkeeping obligor, which happens by crossing a revenue threshold in the previous year. So the trigger is a number in last year's accounts, and the deadline runs from the start of the taxable period rather than from any event the business would think of as a change.",
+  "history": [
+    {
+      "date": "2026-10-07",
+      "value": 6,
+      "display": "6 months from the start of the taxable period",
+      "source": "Income Tax Act, art. 160-5 (business-use account reporting and use)",
+      "note": "Reported to the head of the competent tax office. Where the obligation and the start of business coincide, the timing is judged from the following taxable period under the rules for that case. Changing or adding an account has its own timing, tied to the global income tax filing deadline — this is not a one-time registration that stays correct forever."
+    }
+  ]
+}

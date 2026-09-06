@@ -1,0 +1,18 @@
+{
+  "key": "business-account-nonregistration-penalty-formula",
+  "label": "Penalty for never reporting a business-use account: the higher of two bases",
+  "unit": "% applied to the larger of two bases",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Double-entry bookkeeping obligors who never reported a business-use account at all",
+  "why": "Recorded as a comparison rather than a single figure because that is what the statute does, and stating it as 'annual revenue × 0.2%' understates it for a business whose qualifying transactions exceed its reported revenue for the unreported period. The rate is the same 0.2% as the non-use penalty; what differs is that this one takes the larger of two bases rather than one.",
+  "history": [
+    {
+      "date": "2026-10-07",
+      "value": 0.2,
+      "display": "0.2% — the higher of two bases",
+      "source": "Income Tax Act, art. 81-8 (penalty on business-use accounts)",
+      "note": "The higher of (a) revenue attributable to the unreported period × 0.2% and (b) the transactions that were required to go through a business-use account × 0.2%. It applies even where there is no calculated income tax, so a loss-making year is not a shelter from it."
+    }
+  ]
+}

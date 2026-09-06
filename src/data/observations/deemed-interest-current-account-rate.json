@@ -1,0 +1,18 @@
+{
+  "key": "deemed-interest-current-account-rate",
+  "label": "Overdraft (current account) interest rate for deemed interest on director loans",
+  "unit": "% per year",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Companies computing deemed interest on money lent to a related party such as a representative director, where this rate applies rather than the weighted average borrowing rate",
+  "why": "The most-quoted number in Korean owner-manager tax and the most often misapplied. It is not the default: the arm's length price for lending to a related party is built on the weighted average borrowing rate first, and this rate applies where the statutory conditions or an election make it apply. Recorded because the figure itself is fixed by regulation and does move, while the rule about when it is used does not change with it.",
+  "history": [
+    {
+      "date": "2026-10-07",
+      "value": 4.6,
+      "display": "4.6% per year",
+      "source": "Corporate Tax Act and its subordinate rules on deemed interest for related-party lending",
+      "note": "Deemed interest on a director's provisional payment is not automatically this figure. Applying '{balance} × 4.6%' as a universal formula is wrong in both directions depending on the company's own borrowing. Deemed interest is also not the whole exposure: a business-unrelated provisional payment can also disallow a share of the company's own interest expense, and an amount that is never recovered can be reclassified as remuneration."
+    }
+  ]
+}
