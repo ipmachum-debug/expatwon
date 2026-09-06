@@ -1,0 +1,18 @@
+{
+  "key": "employment-insurance-acquisition-report-deadline",
+  "label": "Employment insurance: deadline to report an employee's acquisition of insured status",
+  "unit": "day of the month following the month of the event",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Employers reporting a new employee's acquisition of employment insurance coverage",
+  "why": "The counterexample to the '14 days for the four insurances' rule that every hiring checklist repeats. Health insurance runs on 14 days; this one runs to a fixed date in the following month, so the two deadlines can be weeks apart for the same hire. Recorded alongside the health insurance deadline precisely so the pair cannot be quoted as one number.",
+  "history": [
+    {
+      "date": "2026-10-12",
+      "value": 15,
+      "display": "15th of the following month",
+      "source": "Act on the Collection of Premiums for Employment Insurance and Industrial Accident Compensation Insurance",
+      "note": "Generally by the 15th of the month following the month in which the cause arose. Because the schemes diverge, the safe practice is not to memorise each deadline but to file all four together immediately after the hire — which satisfies the earliest of them and makes the rest moot."
+    }
+  ]
+}

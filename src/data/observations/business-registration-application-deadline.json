@@ -1,0 +1,18 @@
+{
+  "key": "business-registration-application-deadline",
+  "label": "Business registration: deadline to apply after starting business",
+  "unit": "days from the business commencement date",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Sole proprietors and companies starting business at a place of business in Korea",
+  "why": "A short window that starts from an event the business itself defines, which is why it slips. It is also the point where the tax record of the business begins — input VAT and evidence handling both depend on the registration existing, so a late registration is not only a compliance question.",
+  "history": [
+    {
+      "date": "2026-10-12",
+      "value": 20,
+      "display": "20 days from commencement",
+      "source": "National Tax Service — business registration application",
+      "note": "Applied for at each place of business. Registration in advance of commencing business is also available, and is usually the better course where costs are being incurred before the first sale. Separate from the Income Tax Act business-use account report, which is a different obligation on a different population and a different timetable."
+    }
+  ]
+}

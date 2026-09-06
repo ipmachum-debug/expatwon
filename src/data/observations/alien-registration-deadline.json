@@ -1,0 +1,18 @@
+{
+  "key": "alien-registration-deadline",
+  "label": "Alien registration: deadline from entry",
+  "unit": "days from the date of entry",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Foreign nationals intending to stay in Korea for more than 90 days",
+  "why": "The first deadline of a stay in Korea, and the one that gates almost everything after it — a phone line for identity verification, a bank account, and a tenant's opposing power all wait on the registration number. Recorded because it is routinely described as a deadline to collect a card by, which is a different obligation from the one the statute imposes.",
+  "history": [
+    {
+      "date": "2026-10-12",
+      "value": 90,
+      "display": "90 days from entry",
+      "source": "Immigration Act — alien registration",
+      "note": "The obligation is to complete the alien registration, not merely to have applied or to hold a card by then. A separate registration point can apply where status is granted or changed inside Korea. Treating 90 days as a target rather than a ceiling is the practical mistake: appointment availability and document preparation both run ahead of it, and everything downstream is blocked until the registration number exists."
+    }
+  ]
+}

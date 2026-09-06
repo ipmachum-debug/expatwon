@@ -1,0 +1,18 @@
+{
+  "key": "tax-residency-day-threshold",
+  "label": "Korean tax residency: the day-count element",
+  "unit": "days of residence in Korea",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Individuals determining whether they are Korean tax residents, and therefore the scope of income Korea taxes",
+  "why": "Recorded because it is treated as the test when it is one element of a test. Residency is decided on the whole picture — address in Korea, occupation, family, assets and duration of stay — and a person can be a resident without reaching the day count or fail to be one having reached it. The figure matters because the scope of taxable income turns on the answer, so the arithmetic is worth doing before the year ends rather than in May.",
+  "history": [
+    {
+      "date": "2026-10-12",
+      "value": 183,
+      "display": "183 days — an element, not the test",
+      "source": "Income Tax Act and its Enforcement Decree — determination of residency",
+      "note": "Visa category does not decide residency. Where the answer is close, or where foreign income exists, the applicable tax treaty has to be read alongside the domestic rule — a treaty tie-breaker can allocate residence differently from the domestic test. Anyone holding foreign income should reach a view around the six-month point, not after the year has closed."
+    }
+  ]
+}
