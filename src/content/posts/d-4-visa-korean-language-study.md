@@ -5,7 +5,6 @@ category: study
 publishDate: 2026-09-07
 updatedDate: 2026-09-07
 slot: am
-draft: true
 tags: [study, visa, d-4, language-school, arrival]
 pairedWith: alien-registration-for-language-students
 lastVerified: 2026-09-07
