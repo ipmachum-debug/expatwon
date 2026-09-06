@@ -1,0 +1,18 @@
+{
+  "key": "monthly-rent-tax-credit-limit",
+  "label": "Monthly rent tax credit: annual rent ceiling",
+  "unit": "KRW of annual rent eligible for the credit",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Employees claiming the monthly rent tax credit",
+  "why": "Recorded apart from the rate because the two move independently and because the cap is what makes the credit shrink in relative terms as rent rises. Above roughly ₩833,000 a month the credit stops growing, so for an expensive lease it becomes a fixed amount rather than a percentage — which changes how it behaves in a multi-year model.",
+  "history": [
+    {
+      "date": "2026-10-11",
+      "value": 10000000,
+      "display": "₩10,000,000 of annual rent",
+      "source": "National Tax Service — monthly rent tax credit for employees",
+      "note": "Rent above the ceiling attracts no further credit. At the 17% rate the maximum credit is therefore ₩1,700,000 a year and at 15% it is ₩1,500,000 — worth entering as a capped amount in any cost model rather than as a percentage of whatever rent is actually paid."
+    }
+  ]
+}

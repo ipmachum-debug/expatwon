@@ -1,0 +1,18 @@
+{
+  "key": "comprehensive-property-tax-rate-individual",
+  "label": "Comprehensive real estate holding tax: rate band for individuals with up to two homes",
+  "unit": "% of the tax base, upper end of the band",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Individuals holding two homes or fewer, on the housing portion of the tax",
+  "why": "Kept as its own series because the heavy rates for larger holdings are a different structure, and because the band matters more than the top rate: an ordinary owner sits near the bottom of it, not the top. In a holding-period model this is a recurring annual cost, so an error here compounds over every year of the projection rather than appearing once.",
+  "history": [
+    {
+      "date": "2026-10-11",
+      "value": 2.7,
+      "display": "0.5–2.7% by tax base",
+      "source": "Comprehensive Real Estate Holding Tax Act",
+      "note": "Progressive by tax base for an individual holding two homes or fewer. The tax base is the aggregate published price less the deduction, multiplied by the fair market value ratio — so the effective rate against market value is materially lower than the headline. Companies and larger holdings are taxed under a separate structure."
+    }
+  ]
+}

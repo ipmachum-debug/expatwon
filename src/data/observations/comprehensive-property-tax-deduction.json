@@ -1,0 +1,18 @@
+{
+  "key": "comprehensive-property-tax-deduction",
+  "label": "Comprehensive real estate holding tax: deduction from aggregate published price",
+  "unit": "KRW deducted before the tax base is calculated",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Individuals holding housing, tested against the aggregate published price of all homes held",
+  "why": "The threshold that decides whether the holding tax is a line in a buy-versus-rent model or a rounding error, and it is politically active enough to move. It is also two figures rather than one — the single-home household allowance is larger — and quoting the wrong one moves the answer by hundreds of thousands of won a year.",
+  "history": [
+    {
+      "date": "2026-10-11",
+      "value": 900000000,
+      "display": "₩900M · ₩1.2B for a single-home household",
+      "source": "Comprehensive Real Estate Holding Tax Act",
+      "note": "Deducted from the aggregate published price of the housing held, after which a fair market value ratio is applied to arrive at the tax base. Published price is not market price, and the fair market value ratio is set by decree — so a model built from the asking price will overstate this tax substantially. Property tax runs separately and applies regardless of whether this threshold is crossed."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "housing-multiple-owner-acquisition-tax-rate",
+  "label": "Acquisition tax: heavy rates for multiple homes and companies",
+  "unit": "% of the acquisition price, maximum heavy rate",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Acquisitions of additional homes in adjusted areas, high-count acquisitions outside them, and acquisitions by companies",
+  "why": "Recorded separately from the ordinary housing rate because '1.1% to 12%' gets quoted as though it were one sliding scale a single-home buyer might land anywhere on. It is not. The ordinary schedule tops out at 3% plus surtaxes; 8% and 12% are a separate heavy-rate structure that turns on how many homes are held, where, and whether the buyer is a company. A buy-versus-rent model that uses 12% for a first home is wrong by an order of magnitude.",
+  "history": [
+    {
+      "date": "2026-10-11",
+      "value": 12,
+      "display": "8% or 12% — not the ordinary schedule",
+      "source": "Local Tax Act, art. 13-2",
+      "note": "Applies to certain acquisitions of additional homes in adjusted areas, to high-count acquisitions in non-adjusted areas, and to acquisitions by companies. The ordinary schedule for a purchase for consideration runs 1% up to ₩600M, a statutory formula between 1% and 3% from ₩600M to ₩900M, and 3% above — with local education tax and, where the conditions apply, the rural special tax on top. Establish the number of homes held, the region and whether the buyer is an individual or a company before running any acquisition figure at all."
+    }
+  ]
+}

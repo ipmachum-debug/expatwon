@@ -1,0 +1,18 @@
+{
+  "key": "monthly-rent-tax-credit-rate",
+  "label": "Monthly rent tax credit: rate by total salary",
+  "unit": "% of qualifying annual rent, higher band",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Employees meeting the conditions, including a total salary of ₩80,000,000 or less, paying monthly rent on qualifying housing",
+  "why": "The one item that reduces the cost side of renting, and it is routinely left out of buy-versus-rent arithmetic entirely — which biases the comparison toward buying before any assumption about prices is made. Both the rate and the income bands are set by tax law and revised, so it needs a timeline rather than a number in a paragraph.",
+  "history": [
+    {
+      "date": "2026-10-11",
+      "value": 17,
+      "display": "17% ≤₩55M salary · 15% to ₩80M",
+      "source": "National Tax Service — monthly rent tax credit for employees",
+      "note": "A tax credit, deducted from tax payable, rather than a deduction from income — so the benefit does not scale with the marginal rate. Conditions attach beyond the salary test, including the housing itself and the identity of the payer. Deduct the credit from the annual rent figure before comparing it with the cost of owning, or the rental side is overstated every year of the model."
+    }
+  ]
+}
