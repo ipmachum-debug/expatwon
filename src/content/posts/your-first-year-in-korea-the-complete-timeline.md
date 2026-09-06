@@ -5,6 +5,7 @@ category: cost-of-living
 publishDate: 2026-10-12
 updatedDate: 2026-10-12
 slot: am
+pairedWith: leaving-korea-for-good-the-order-to-close-things-in
 tags: [moving-to-korea, immigration, banking, tax, first-year]
 tracked: [alien-registration-deadline, foreigner-address-change-deadline, business-registration-application-deadline, employment-insurance-acquisition-report-deadline, tax-residency-day-threshold]
 lastVerified: 2026-10-12
