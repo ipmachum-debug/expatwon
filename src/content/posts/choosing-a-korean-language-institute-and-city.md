@@ -5,7 +5,6 @@ category: study
 publishDate: 2026-09-08
 updatedDate: 2026-09-08
 slot: am
-draft: true
 tags: [study, language-school, d-4, topik, budget]
 pairedWith: seoul-vs-regional-korea-language-study-cost
 lastVerified: 2026-09-08
