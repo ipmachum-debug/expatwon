@@ -5,7 +5,6 @@ category: study
 publishDate: 2026-09-07
 updatedDate: 2026-09-07
 slot: pm
-draft: true
 tags: [study, arc, visa, d-4, part-time-work]
 tracked: [d4-parttime-waiting-period, d4-parttime-korean-level, d4-parttime-hour-limit]
 lastVerified: 2026-09-07
