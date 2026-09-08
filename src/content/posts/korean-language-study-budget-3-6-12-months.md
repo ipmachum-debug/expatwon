@@ -5,7 +5,6 @@ category: study
 publishDate: 2026-09-09
 updatedDate: 2026-09-09
 slot: am
-draft: true
 tags: [study, budget, cost-of-living, housing, d-4]
 pairedWith: dorm-goshiwon-or-one-room-for-students
 tracked: [language-program-tuition-range, d4-financial-proof-example, student-dormitory-monthly-cost]
