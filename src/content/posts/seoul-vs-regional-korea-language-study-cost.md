@@ -5,7 +5,6 @@ category: study
 publishDate: 2026-09-08
 updatedDate: 2026-09-08
 slot: pm
-draft: true
 tags: [study, cost-of-living, housing, language-school, budget]
 lastVerified: 2026-09-08
 sources:
