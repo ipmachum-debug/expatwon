@@ -5,7 +5,6 @@ category: study
 publishDate: 2026-09-09
 updatedDate: 2026-09-09
 slot: pm
-draft: true
 tags: [study, housing, goshiwon, budget, arrival]
 tracked: [student-dormitory-monthly-cost]
 lastVerified: 2026-09-09
