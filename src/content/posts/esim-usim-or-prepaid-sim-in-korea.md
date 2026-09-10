@@ -5,7 +5,6 @@ category: cost-of-living
 publishDate: 2026-09-11
 updatedDate: 2026-09-11
 slot: am
-draft: true
 pairedWith: korean-phone-number-before-your-arc
 tags: [cost-of-living, phone, esim, arrival, identity-verification]
 tracked: [tourist-sim-max-validity]
