@@ -5,7 +5,6 @@ category: study
 publishDate: 2026-09-10
 updatedDate: 2026-09-10
 slot: pm
-draft: true
 tags: [study, visa, d-4, d-2, e-7]
 tracked: [d10-max-stay-period, university-general-topik-admission-level]
 lastVerified: 2026-09-10
