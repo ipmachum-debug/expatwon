@@ -9,11 +9,17 @@ import {
 interface Props {
   title: string;
   description: string;
+  /**
+   * Keep the page out of Google's index while leaving it fully usable on the
+   * site. For pages that exist to be reached from a guide or from search here,
+   * not from a search engine.
+   */
+  noindex?: boolean;
   /** article pages set this for og:type */
   article?: boolean;
 }
 
-const { title, description, article = false } = Astro.props;
+const { title, description, article = false, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === SITE_TITLE ? `${title} — Money in Korea for Expats` : `${title} | ${SITE_TITLE}`;
 ---
@@ -22,6 +28,7 @@ const fullTitle = title === SITE_TITLE ? `${title} — Money in Korea for Expats
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
 <meta name="theme-color" content="#221c14" />

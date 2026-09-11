@@ -8,15 +8,16 @@ interface Props {
   title: string;
   description: string;
   article?: boolean;
+  noindex?: boolean;
 }
 
-const { title, description, article } = Astro.props;
+const { title, description, article, noindex } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} article={article} />
+    <BaseHead title={title} description={description} article={article} noindex={noindex} />
     <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col">
