@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 
 import { categoriesWithPosts } from '../lib/categories';
 import Logo from './Logo.astro';
+import SearchTrigger from './SearchTrigger.astro';
 import SiteSearch from './SiteSearch.astro';
 
 const categories = categoriesWithPosts(await getCollection('posts'));
@@ -43,9 +44,7 @@ const isActive = (path: string) => current === path || current.startsWith(`${pat
           </a>
         ))
       }
-      <div class="ml-2">
-        <SiteSearch />
-      </div>
+      <SearchTrigger class="ml-2 hidden lg:flex" />
       <a
         href="/tools/"
         class="ml-1 flex items-center gap-1.5 rounded-full bg-ink px-4 py-1.5 text-white shadow-sm transition-all hover:bg-ink-soft hover:shadow"
@@ -57,5 +56,11 @@ const isActive = (path: string) => current === path || current.startsWith(`${pat
         Calculators
       </a>
     </nav>
+
+    <div class="w-full lg:hidden">
+      <SearchTrigger variant="bar" />
+    </div>
   </div>
+
+  <SiteSearch />
 </header>

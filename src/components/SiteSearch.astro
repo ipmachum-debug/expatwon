@@ -10,25 +10,12 @@
  * Plain JavaScript rather than a React island: this sits in the header of every
  * page, and shipping a framework to every visit for a box most of them never
  * open is the wrong trade. The index is fetched on first open, not on load.
+ *
+ * This component is the dialog and its behaviour. The buttons that open it are
+ * SearchTrigger, which the header renders twice in two shapes — a full-width bar
+ * on phones, a compact pill on wide screens.
  */
 ---
-
-<button
-  type="button"
-  data-search-open
-  class="flex items-center gap-2 rounded-full border border-rule bg-paper-deep/50 px-3 py-1.5 font-sans text-[0.82rem] text-ink-soft/70 transition-colors hover:border-ink-soft/30 hover:text-ink"
-  aria-label="Search this site"
->
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-3.5 w-3.5">
-    <circle cx="11" cy="11" r="7"></circle>
-    <path d="m20 20-3.5-3.5"></path>
-  </svg>
-  <span class="hidden sm:inline">Search</span>
-  <kbd
-    data-search-hint
-    class="hidden font-sans text-[0.72rem] tracking-wide text-ink-soft/45 lg:inline"
-  >Ctrl K</kbd>
-</button>
 
 <dialog
   data-search-dialog
@@ -70,13 +57,13 @@
 </dialog>
 
 <script>
-  const button = document.querySelector<HTMLButtonElement>('[data-search-open]');
+  const triggers = [...document.querySelectorAll<HTMLButtonElement>('[data-search-open]')];
   const dialog = document.querySelector<HTMLDialogElement>('[data-search-dialog]');
   const input = document.querySelector<HTMLInputElement>('[data-search-input]');
   const results = document.querySelector<HTMLElement>('[data-search-results]');
   const status = document.querySelector<HTMLElement>('[data-search-status]');
 
-  if (button && dialog && input && results && status) {
+  if (triggers.length > 0 && dialog && input && results && status) {
     type Entry = { t: string; u: string; k: 'guide' | 'figure' | 'tool'; c: string; d: string; x: string };
     type Scored = Entry & { score: number };
 
@@ -222,14 +209,15 @@
       void load();
     };
 
-    button.addEventListener('click', open);
+    triggers.forEach((trigger) => trigger.addEventListener('click', open));
 
     // A lone "/" in a bordered box reads as a divider or a stray key, not as a
     // shortcut. Cmd/Ctrl-K is the convention people already recognise, so that
     // is what the header advertises — "/" still works, it is just not shown.
-    const hint = document.querySelector<HTMLElement>('[data-search-hint]');
-    if (hint && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) {
-      hint.textContent = '\u2318K';
+    if (/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) {
+      document
+        .querySelectorAll<HTMLElement>('[data-search-hint]')
+        .forEach((hint) => (hint.textContent = '\u2318K'));
     }
 
     document.addEventListener('keydown', (event) => {
