@@ -1,28 +1,33 @@
 ---
 /**
- * Site search.
+ * Site search: one engine, two shapes.
  *
  * A reader arriving on a guide from Google has a question, not a category in
  * mind. Making them work out that "how long before my deposit comes back" lives
  * under Cost of Living is a tax on the one person who already knows what they
  * want.
  *
- * Plain JavaScript rather than a React island: this sits in the header of every
- * page, and shipping a framework to every visit for a box most of them never
- * open is the wrong trade. The index is fetched on first open, not on load.
+ * On a phone the search box is a real input sitting in the header, and results
+ * drop beneath it. A modal is the wrong shape there: the keyboard takes half the
+ * screen, the page behind goes blurred and unreachable, and what is left reads as
+ * a panel floating over nothing. Typing in place keeps the page where it was.
  *
- * This component is the dialog and its behaviour. The buttons that open it are
- * SearchTrigger, which the header renders twice in two shapes — a full-width bar
- * on phones, a compact pill on wide screens.
+ * On a wide screen the modal is the better shape — it is the Cmd-K convention,
+ * it centres the results, and there is no keyboard eating the viewport.
+ *
+ * Both are the same markup underneath: a `[data-search-scope]` holding an input,
+ * a results list and a status line. The script initialises every scope on the
+ * page and they share one fetched index.
+ *
+ * Plain JavaScript rather than a React island — this sits in the header of every
+ * page, and shipping a framework for a box most visits never open is the wrong
+ * trade. The index is fetched on first use, not on load.
  */
 ---
 
-<dialog
-  data-search-dialog
-  class="w-[min(42rem,calc(100vw-2rem))] rounded-2xl border border-rule bg-paper p-0 shadow-2xl backdrop:bg-ink/40 backdrop:backdrop-blur-sm"
-  aria-label="Search"
->
-  <form method="dialog" class="flex items-center gap-3 border-b border-rule px-4 py-3">
+{/* Phones and tablets: a real input in the header. */}
+<div data-search-scope class="relative w-full lg:hidden">
+  <div class="flex items-center gap-2.5 rounded-full border border-rule bg-paper-deep/40 px-4 py-2.5 focus-within:border-ink-soft/40 focus-within:bg-paper">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-4 w-4 shrink-0 text-ink-soft/50">
       <circle cx="11" cy="11" r="7"></circle>
       <path d="m20 20-3.5-3.5"></path>
@@ -30,133 +35,221 @@
     <input
       type="search"
       data-search-input
-      placeholder="Search guides, figures and calculators"
+      placeholder="Search guides and calculators"
       autocomplete="off"
-      enterkeyhint="go"
-      class="w-full bg-transparent font-sans text-[0.95rem] text-ink outline-none placeholder:text-ink-soft/45"
+      enterkeyhint="search"
+      class="w-full bg-transparent font-sans text-[0.95rem] text-ink outline-none placeholder:text-ink-soft/55 [&::-webkit-search-cancel-button]:hidden"
     />
     <button
-      type="submit"
-      class="shrink-0 rounded-lg p-1.5 text-ink-soft/45 transition-colors hover:bg-paper-deep hover:text-ink"
-      aria-label="Close search"
+      type="button"
+      data-search-clear
+      hidden
+      class="shrink-0 rounded-lg p-1 text-ink-soft/45 transition-colors hover:text-ink"
+      aria-label="Clear search"
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-4 w-4">
         <path d="m6 6 12 12M18 6 6 18"></path>
       </svg>
     </button>
-  </form>
+  </div>
 
-  <div data-search-results class="max-h-[60vh] overflow-y-auto overscroll-contain p-2" role="listbox"></div>
-
-  <p
-    data-search-status
-    class="border-t border-rule px-4 py-2.5 font-sans text-[0.76rem] text-ink-soft/55"
+  {/* Absolutely positioned so a long result list never shoves the page down. */}
+  <div
+    data-search-drop
+    hidden
+    class="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-rule bg-paper shadow-xl"
   >
-    Type to search.
-  </p>
+    <div data-search-results class="max-h-[55vh] overflow-y-auto overscroll-contain p-2" role="listbox"></div>
+    <p data-search-status class="border-t border-rule px-4 py-2.5 font-sans text-[0.76rem] text-ink-soft/55">
+      Type to search.
+    </p>
+  </div>
+</div>
+
+{/* Wide screens: the Cmd-K dialog, opened by the pill in the nav. */}
+<dialog
+  data-search-dialog
+  class="w-[min(42rem,calc(100vw-2rem))] rounded-2xl border border-rule bg-paper p-0 shadow-2xl backdrop:bg-ink/40 backdrop:backdrop-blur-sm"
+  aria-label="Search"
+>
+  <div data-search-scope>
+    <form method="dialog" class="flex items-center gap-3 border-b border-rule px-4 py-3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-4 w-4 shrink-0 text-ink-soft/50">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m20 20-3.5-3.5"></path>
+      </svg>
+      <input
+        type="search"
+        data-search-input
+        placeholder="Search guides, figures and calculators"
+        autocomplete="off"
+        enterkeyhint="go"
+        class="w-full bg-transparent font-sans text-[0.95rem] text-ink outline-none placeholder:text-ink-soft/45 [&::-webkit-search-cancel-button]:hidden"
+      />
+      <button
+        type="submit"
+        class="shrink-0 rounded-lg p-1.5 text-ink-soft/45 transition-colors hover:bg-paper-deep hover:text-ink"
+        aria-label="Close search"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-4 w-4">
+          <path d="m6 6 12 12M18 6 6 18"></path>
+        </svg>
+      </button>
+    </form>
+
+    <div data-search-drop>
+      <div data-search-results class="max-h-[60vh] overflow-y-auto overscroll-contain p-2" role="listbox"></div>
+      <p data-search-status class="border-t border-rule px-4 py-2.5 font-sans text-[0.76rem] text-ink-soft/55">
+        Type to search.
+      </p>
+    </div>
+  </div>
 </dialog>
 
 <script>
-  const triggers = [...document.querySelectorAll<HTMLButtonElement>('[data-search-open]')];
-  const dialog = document.querySelector<HTMLDialogElement>('[data-search-dialog]');
-  const input = document.querySelector<HTMLInputElement>('[data-search-input]');
-  const results = document.querySelector<HTMLElement>('[data-search-results]');
-  const status = document.querySelector<HTMLElement>('[data-search-status]');
+  type Entry = {
+    t: string;
+    u: string;
+    k: 'guide' | 'figure' | 'tool';
+    c: string;
+    d: string;
+    x: string;
+  };
 
-  if (triggers.length > 0 && dialog && input && results && status) {
-    type Entry = { t: string; u: string; k: 'guide' | 'figure' | 'tool'; c: string; d: string; x: string };
-    type Scored = Entry & { score: number };
+  const KIND_LABEL: Record<Entry['k'], string> = {
+    guide: 'Guide',
+    figure: 'Figure',
+    tool: 'Calculator',
+  };
 
-    let index: Entry[] | null = null;
-    let loading: Promise<Entry[]> | null = null;
+  // Words that carry no signal here. A reader types how they speak — "how do I
+  // send money to china" — and matching on "how", "do", "i" and "to" ranks by
+  // grammar rather than by subject.
+  const STOPWORDS = new Set([
+    'a', 'an', 'and', 'are', 'as', 'at', 'be', 'can', 'do', 'does', 'for',
+    'from', 'get', 'how', 'i', 'in', 'is', 'it', 'my', 'of', 'on', 'or',
+    'the', 'to', 'what', 'when', 'where', 'which', 'with', 'you', 'your',
+  ]);
+
+  // One index for the whole page, however many scopes are on it.
+  let index: Entry[] | null = null;
+  let loading: Promise<Entry[]> | null = null;
+  let failed = false;
+
+  const loadIndex = () => {
+    if (index) return Promise.resolve(index);
+    if (!loading) {
+      loading = fetch('/search-index.json')
+        .then((r) => r.json())
+        .then((data: Entry[]) => {
+          index = data;
+          return data;
+        })
+        .catch(() => {
+          failed = true;
+          return [];
+        });
+    }
+    return loading;
+  };
+
+  const escapeHtml = (s: string) =>
+    s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
+  /**
+   * Rank by where the match lands, not how often. A term in the title is what
+   * the reader typed; the same term buried in a description usually is not.
+   *
+   * Terms are not all required. "send money to china" should reach the
+   * remittance guide even though no page names China — that query is the single
+   * most common one this site is shown for, and demanding every word returned
+   * nothing at all for it. A little over half the terms has to land, and how
+   * many did is itself part of the score.
+   */
+  const score = (entry: Entry, terms: string[], phrase: string): number => {
+    const title = entry.t.toLowerCase();
+    const extra = entry.x.toLowerCase();
+    const description = entry.d.toLowerCase();
+    let total = 0;
+    let hits = 0;
+
+    if (title.includes(phrase)) total += 60;
+    if (title.startsWith(phrase)) total += 25;
+
+    for (const term of terms) {
+      if (title.includes(term)) {
+        total += 20;
+        hits += 1;
+      } else if (extra.includes(term)) {
+        total += 9;
+        hits += 1;
+      } else if (description.includes(term)) {
+        total += 4;
+        hits += 1;
+      }
+    }
+
+    if (hits < Math.ceil(terms.length / 2)) return 0;
+    total += (hits / terms.length) * 30;
+
+    // Kind matters more than it looks. Figure labels are short, so a two-word
+    // query matches one almost entirely and collects both phrase bonuses, while
+    // the guide that actually answers the question has a longer title and scores
+    // lower on the same terms. Someone searching "minimum wage" wants the guide,
+    // not the 240-word page holding the number.
+    if (entry.k === 'guide') total += 45;
+    else if (entry.k === 'tool') total += 18;
+    return total;
+  };
+
+  const search = (entries: Entry[], raw: string) => {
+    const query = raw.trim().toLowerCase();
+    const words = query.split(/\s+/).filter(Boolean);
+    // Keep the stopwords if that is all there is, so "how to" still searches for
+    // something rather than for nothing.
+    const meaningful = words.filter((w) => !STOPWORDS.has(w));
+    const terms = meaningful.length > 0 ? meaningful : words;
+
+    return entries
+      .map((entry) => ({ entry, score: score(entry, terms, query) }))
+      .filter((row) => row.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 20)
+      .map((row) => row.entry);
+  };
+
+  function initScope(scope: HTMLElement) {
+    const input = scope.querySelector<HTMLInputElement>('[data-search-input]');
+    const results = scope.querySelector<HTMLElement>('[data-search-results]');
+    const status = scope.querySelector<HTMLElement>('[data-search-status]');
+    const drop = scope.querySelector<HTMLElement>('[data-search-drop]');
+    const clear = scope.querySelector<HTMLButtonElement>('[data-search-clear]');
+    if (!input || !results || !status || !drop) return;
+
+    // The inline scope hides its results until there is something to show; the
+    // dialog is already hidden as a whole, so it keeps them mounted.
+    const collapsible = drop.hasAttribute('hidden');
     let active = -1;
 
-    const KIND_LABEL: Record<Entry['k'], string> = {
-      guide: 'Guide',
-      figure: 'Figure',
-      tool: 'Calculator',
+    const show = (open: boolean) => {
+      if (collapsible) drop.hidden = !open;
     };
 
-    const load = () => {
-      if (index) return Promise.resolve(index);
-      if (!loading) {
-        loading = fetch('/search-index.json')
-          .then((r) => r.json())
-          .then((data: Entry[]) => {
-            index = data;
-            return data;
-          })
-          .catch(() => {
-            // A failed index is a dead box, so say so rather than looking broken.
-            status.textContent = 'Search is unavailable right now. Try the category links instead.';
-            return [];
-          });
-      }
-      return loading;
-    };
+    const render = (matches: Entry[], query: string) => {
+      active = -1;
+      if (clear) clear.hidden = query.length === 0;
 
-    const escapeHtml = (s: string) =>
-      s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
-
-    // Words that carry no signal here. A reader types how they speak — "how do I
-    // send money to china" — and matching on "how", "do", "i" and "to" ranks by
-    // grammar rather than by subject.
-    const STOPWORDS = new Set([
-      'a', 'an', 'and', 'are', 'as', 'at', 'be', 'can', 'do', 'does', 'for',
-      'from', 'get', 'how', 'i', 'in', 'is', 'it', 'my', 'of', 'on', 'or',
-      'the', 'to', 'what', 'when', 'where', 'which', 'with', 'you', 'your',
-    ]);
-
-    /**
-     * Rank by where the match lands, not how often. A term in the title is what
-     * the reader typed; the same term buried in a description usually is not.
-     *
-     * Terms are not all required. "send money to china" should reach the
-     * remittance guide even though no page names China — that query is the
-     * single most common one this site is shown for, and demanding every word
-     * returned nothing at all for it. A little over half the terms has to land,
-     * and how many did is itself part of the score.
-     */
-    const score = (entry: Entry, terms: string[], phrase: string): number => {
-      const title = entry.t.toLowerCase();
-      const extra = entry.x.toLowerCase();
-      const description = entry.d.toLowerCase();
-      let total = 0;
-      let hits = 0;
-
-      if (title.includes(phrase)) total += 60;
-      if (title.startsWith(phrase)) total += 25;
-
-      for (const term of terms) {
-        if (title.includes(term)) {
-          total += 20;
-          hits += 1;
-        } else if (extra.includes(term)) {
-          total += 9;
-          hits += 1;
-        } else if (description.includes(term)) {
-          total += 4;
-          hits += 1;
-        }
-      }
-
-      if (hits < Math.ceil(terms.length / 2)) return 0;
-      total += (hits / terms.length) * 30;
-
-      // Kind matters more than it looks. Figure labels are short, so a two-word
-      // query matches one almost entirely and collects both phrase bonuses,
-      // while the guide that actually answers the question has a longer title
-      // and scores lower on the same terms. Someone searching "minimum wage"
-      // wants the guide, not the 240-word page holding the number.
-      if (entry.k === 'guide') total += 45;
-      else if (entry.k === 'tool') total += 18;
-      return total;
-    };
-
-    const render = (matches: Scored[], query: string) => {
       if (!query) {
         results.innerHTML = '';
         status.textContent = 'Type to search.';
+        show(false);
+        return;
+      }
+      show(true);
+
+      if (failed) {
+        results.innerHTML = '';
+        status.textContent = 'Search is unavailable right now. Try the category links instead.';
         return;
       }
       if (matches.length === 0) {
@@ -180,68 +273,38 @@
         )
         .join('');
 
-      status.textContent = `${matches.length} result${matches.length === 1 ? '' : 's'} — arrow keys to move, Enter to open.`;
-      active = -1;
+      status.textContent = `${matches.length} result${matches.length === 1 ? '' : 's'}`;
     };
 
-    const search = async () => {
-      const query = input.value.trim().toLowerCase();
-      if (!query) return render([], '');
-
-      const entries = await load();
-      const words = query.split(/\s+/).filter(Boolean);
-      // Keep the stopwords if that is all there is, so "how to" still searches
-      // for something rather than for nothing.
-      const meaningful = words.filter((w) => !STOPWORDS.has(w));
-      const terms = meaningful.length > 0 ? meaningful : words;
-      const matches = entries
-        .map((entry) => ({ ...entry, score: score(entry, terms, query) }))
-        .filter((entry) => entry.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 20);
-
-      render(matches, input.value.trim());
+    const run = async () => {
+      const raw = input.value.trim();
+      if (!raw) return render([], '');
+      render(search(await loadIndex(), raw), raw);
     };
-
-    const open = () => {
-      dialog.showModal();
-      input.focus();
-      void load();
-    };
-
-    triggers.forEach((trigger) => trigger.addEventListener('click', open));
-
-    // A lone "/" in a bordered box reads as a divider or a stray key, not as a
-    // shortcut. Cmd/Ctrl-K is the convention people already recognise, so that
-    // is what the header advertises — "/" still works, it is just not shown.
-    if (/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) {
-      document
-        .querySelectorAll<HTMLElement>('[data-search-hint]')
-        .forEach((hint) => (hint.textContent = '\u2318K'));
-    }
-
-    document.addEventListener('keydown', (event) => {
-      const target = event.target as HTMLElement | null;
-      const typing =
-        target &&
-        (target.tagName === 'INPUT' ||
-          target.tagName === 'TEXTAREA' ||
-          target.isContentEditable);
-      if (typing) return;
-
-      if (event.key === '/' || ((event.metaKey || event.ctrlKey) && event.key === 'k')) {
-        event.preventDefault();
-        open();
-      }
-    });
 
     let debounce: number | undefined;
     input.addEventListener('input', () => {
       window.clearTimeout(debounce);
-      debounce = window.setTimeout(search, 90);
+      debounce = window.setTimeout(run, 90);
+    });
+    input.addEventListener('focus', () => {
+      void loadIndex();
+      if (input.value.trim()) show(true);
+    });
+
+    clear?.addEventListener('click', () => {
+      input.value = '';
+      render([], '');
+      input.focus();
     });
 
     input.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        input.value = '';
+        render([], '');
+        input.blur();
+        return;
+      }
       const options = [...results.querySelectorAll<HTMLAnchorElement>('[data-result]')];
       if (options.length === 0) return;
 
@@ -253,15 +316,69 @@
             : (active - 1 + options.length) % options.length;
         options.forEach((option, i) => option.setAttribute('aria-selected', String(i === active)));
         options[active].scrollIntoView({ block: 'nearest' });
-      } else if (event.key === 'Enter' && active >= 0) {
+      } else if (event.key === 'Enter') {
         event.preventDefault();
-        options[active].click();
+        (active >= 0 ? options[active] : options[0]).click();
+      }
+    });
+
+    if (collapsible) {
+      // Tapping anywhere else puts the page back.
+      document.addEventListener('click', (event) => {
+        if (!scope.contains(event.target as Node)) show(false);
+      });
+    }
+
+    scope.dataset.searchReady = 'true';
+    return { scope, input, render };
+  }
+
+  const scopes = [...document.querySelectorAll<HTMLElement>('[data-search-scope]')]
+    .map(initScope)
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
+
+  const dialog = document.querySelector<HTMLDialogElement>('[data-search-dialog]');
+  if (dialog) {
+    // By containment rather than by position: which scope is the dialog's should
+    // not depend on the order the two happen to be written in.
+    const dialogScope = scopes.find((s) => dialog.contains(s.scope));
+
+    const open = () => {
+      dialog.showModal();
+      dialogScope?.input.focus();
+      void loadIndex();
+    };
+
+    document
+      .querySelectorAll<HTMLButtonElement>('[data-search-open]')
+      .forEach((trigger) => trigger.addEventListener('click', open));
+
+    // A lone "/" in a bordered box reads as a divider or a stray key, not as a
+    // shortcut. Cmd/Ctrl-K is the convention people already recognise, so that
+    // is what the header advertises — "/" still works, it is just not shown.
+    if (/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) {
+      document
+        .querySelectorAll<HTMLElement>('[data-search-hint]')
+        .forEach((hint) => (hint.textContent = '⌘K'));
+    }
+
+    document.addEventListener('keydown', (event) => {
+      const target = event.target as HTMLElement | null;
+      const typing =
+        target &&
+        (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable);
+      if (typing) return;
+
+      if (event.key === '/' || ((event.metaKey || event.ctrlKey) && event.key === 'k')) {
+        event.preventDefault();
+        open();
       }
     });
 
     dialog.addEventListener('close', () => {
-      input.value = '';
-      render([], '');
+      if (!dialogScope) return;
+      dialogScope.input.value = '';
+      dialogScope.render([], '');
     });
 
     // Clicking the backdrop closes it — the dialog element itself is the

@@ -1,60 +1,29 @@
 ---
 /**
- * Opens the search dialog. Two shapes, because the right one differs by screen.
- *
- * On a phone the header nav already wraps to three rows, and an icon-only
- * circle wedged between the last category and the Calculators button reads as
- * something left over rather than as search. A full-width bar under the nav is
- * both obvious and easy to hit with a thumb.
- *
- * On a wide screen that bar would be a stripe of empty box, so the compact pill
- * sits inline in the nav instead.
- *
- * The dialog itself lives in SiteSearch and is rendered once; every trigger on
- * the page just carries `data-search-open`.
+ * Opens the search dialog. Wide screens only — phones get the real input that
+ * SiteSearch renders inline in the header, because a modal over a blurred page
+ * with the keyboard up is the wrong shape on a small screen.
  */
 interface Props {
-  variant?: 'compact' | 'bar';
   class?: string;
 }
 
-const { variant = 'compact', class: className = '' } = Astro.props;
+const { class: className = '' } = Astro.props;
 ---
 
-{
-  variant === 'bar' ? (
-    <button
-      type="button"
-      data-search-open
-      class:list={[
-        'flex w-full items-center gap-2.5 rounded-full border border-rule bg-paper-deep/40 px-4 py-2.5 text-left font-sans text-[0.9rem] text-ink-soft/60 transition-colors hover:border-ink-soft/30 hover:text-ink',
-        className,
-      ]}
-    >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-4 w-4 shrink-0 text-ink-soft/50">
-        <circle cx="11" cy="11" r="7" />
-        <path d="m20 20-3.5-3.5" />
-      </svg>
-      Search guides and calculators
-    </button>
-  ) : (
-    <button
-      type="button"
-      data-search-open
-      class:list={[
-        'flex items-center gap-2 rounded-full border border-rule bg-paper-deep/50 px-3 py-1.5 font-sans text-[0.82rem] text-ink-soft/70 transition-colors hover:border-ink-soft/30 hover:text-ink',
-        className,
-      ]}
-      aria-label="Search this site"
-    >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-3.5 w-3.5">
-        <circle cx="11" cy="11" r="7" />
-        <path d="m20 20-3.5-3.5" />
-      </svg>
-      Search
-      <kbd data-search-hint class="font-sans text-[0.72rem] tracking-wide text-ink-soft/45">
-        Ctrl K
-      </kbd>
-    </button>
-  )
-}
+<button
+  type="button"
+  data-search-open
+  class:list={[
+    'items-center gap-2 rounded-full border border-rule bg-paper-deep/50 px-3 py-1.5 font-sans text-[0.82rem] text-ink-soft/70 transition-colors hover:border-ink-soft/30 hover:text-ink',
+    className,
+  ]}
+  aria-label="Search this site"
+>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-3.5 w-3.5">
+    <circle cx="11" cy="11" r="7"></circle>
+    <path d="m20 20-3.5-3.5"></path>
+  </svg>
+  Search
+  <kbd data-search-hint class="font-sans text-[0.72rem] tracking-wide text-ink-soft/45">Ctrl K</kbd>
+</button>
