@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 
 import { categoriesWithPosts } from '../lib/categories';
 import Logo from './Logo.astro';
+import SiteSearch from './SiteSearch.astro';
 
 const categories = categoriesWithPosts(await getCollection('posts'));
 
@@ -42,9 +43,12 @@ const isActive = (path: string) => current === path || current.startsWith(`${pat
           </a>
         ))
       }
+      <div class="ml-2">
+        <SiteSearch />
+      </div>
       <a
         href="/tools/"
-        class="ml-2 flex items-center gap-1.5 rounded-full bg-ink px-4 py-1.5 text-white shadow-sm transition-all hover:bg-ink-soft hover:shadow"
+        class="ml-1 flex items-center gap-1.5 rounded-full bg-ink px-4 py-1.5 text-white shadow-sm transition-all hover:bg-ink-soft hover:shadow"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-3.5 w-3.5">
           <rect x="4" y="2.5" width="16" height="19" rx="2" />

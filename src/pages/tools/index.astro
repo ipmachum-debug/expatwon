@@ -1,64 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { TOOLS } from '../../lib/tools';
 
-const tools = [
-  {
-    href: '/calendar/',
-    title: 'Korea Money Calendar',
-    description:
-      'Every statutory tax and money deadline in Korea, filtered by whether you are an employee, a freelancer, a business owner, or none of those.',
-    icon: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/>',
-  },
-  {
-    href: '/tools/car-lease-calculator/',
-    title: 'Korea Car Lease Cost Calculator',
-    description:
-      'Down payment, deposit, monthly payments, and residual value → the real total cost of leasing, with and without buyout.',
-    icon: '<path d="M5 13 6.5 8a2 2 0 0 1 1.9-1.4h7.2A2 2 0 0 1 17.5 8L19 13m-14 0h14m-14 0a2 2 0 0 0-2 2v3h2m14-5a2 2 0 0 1 2 2v3h-2m-14 0v2h3v-2m11 0v2h3v-2m-14 0h11M7.5 15.5h.01M16.5 15.5h.01"/>',
-  },
-  {
-    href: '/tools/minimum-wage-calculator/',
-    title: 'Korea Minimum Wage & Weekly Holiday Calculator',
-    description:
-      'Contractual hours \u2192 paid weekly holiday hours \u2192 the lawful monthly minimum, on the 209-hour basis \u2014 and whether a monthly salary clears it.',
-    icon: '<circle cx="12" cy="12" r="9"/><path d="M12 6.5v11M9.75 9.25h4a1.75 1.75 0 0 1 0 3.5h-3.5a1.75 1.75 0 0 0 0 3.5h4"/>',
-  },
-  {
-    href: '/tools/severance-calculator/',
-    title: 'Korea Severance Pay Calculator',
-    description:
-      'Statutory severance on the correct basis \u2014 calendar-day average wage, the 3/12 bonus share, and the ordinary wage floor most calculators skip.',
-    icon: '<path d="M3 8.5h18v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5v-11Z"/><path d="M9 8.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2.5M3 13h18"/>',
-  },
-  {
-    href: '/tools/overtime-pay-calculator/',
-    title: 'Korea Overtime, Night & Holiday Pay Calculator',
-    description:
-      'Premium pay by ground \u2014 extended, night 22:00\u201306:00, and holiday work\u2019s two tiers \u2014 with the 52-hour cap checked separately from the pay.',
-    icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 1.75"/>',
-  },
-  {
-    href: '/tools/buy-vs-rent-calculator/',
-    title: 'Korea Buy vs Rent Break-Even Calculator',
-    description:
-      'Break-even holding period for buying against jeonse or wolse \u2014 with the opportunity cost of tied-up equity charged to both sides, not just the deposit.',
-    icon: '<path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1v-9.5Z"/>',
-  },
-  {
-    href: '/tools/loan-calculator/',
-    title: 'Korea Loan Interest Calculator',
-    description:
-      'Principal, rate, and term → monthly payment and total interest, plus what a 1%p higher rate would cost you.',
-    icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h3.75a1.75 1.75 0 1 1 0 3.5H9.5h4a1.75 1.75 0 1 1 0 3.5H9"/>',
-  },
-  {
-    href: '/tools/cost-of-living-calculator/',
-    title: 'Korea Cost of Living Calculator',
-    description:
-      'Rent, phone, food, and transport → your estimated monthly budget in KRW and USD.',
-    icon: '<path d="M3 11 12 4l9 7M5.5 9.5V20h13V9.5M9.5 20v-6h5v6"/>',
-  },
-];
+const tools = TOOLS;
 ---
 
 <Layout

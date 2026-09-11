@@ -1,0 +1,279 @@
+---
+/**
+ * Site search.
+ *
+ * A reader arriving on a guide from Google has a question, not a category in
+ * mind. Making them work out that "how long before my deposit comes back" lives
+ * under Cost of Living is a tax on the one person who already knows what they
+ * want.
+ *
+ * Plain JavaScript rather than a React island: this sits in the header of every
+ * page, and shipping a framework to every visit for a box most of them never
+ * open is the wrong trade. The index is fetched on first open, not on load.
+ */
+---
+
+<button
+  type="button"
+  data-search-open
+  class="flex items-center gap-2 rounded-full border border-rule bg-paper-deep/50 px-3 py-1.5 font-sans text-[0.82rem] text-ink-soft/70 transition-colors hover:border-ink-soft/30 hover:text-ink"
+  aria-label="Search this site"
+>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-3.5 w-3.5">
+    <circle cx="11" cy="11" r="7"></circle>
+    <path d="m20 20-3.5-3.5"></path>
+  </svg>
+  <span class="hidden sm:inline">Search</span>
+  <kbd class="hidden rounded border border-rule bg-paper px-1.5 py-0.5 font-sans text-[0.68rem] text-ink-soft/60 md:inline">/</kbd>
+</button>
+
+<dialog
+  data-search-dialog
+  class="w-[min(42rem,calc(100vw-2rem))] rounded-2xl border border-rule bg-paper p-0 shadow-2xl backdrop:bg-ink/40 backdrop:backdrop-blur-sm"
+  aria-label="Search"
+>
+  <form method="dialog" class="flex items-center gap-3 border-b border-rule px-4 py-3">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-4 w-4 shrink-0 text-ink-soft/50">
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="m20 20-3.5-3.5"></path>
+    </svg>
+    <input
+      type="search"
+      data-search-input
+      placeholder="Search guides, figures and calculators"
+      autocomplete="off"
+      enterkeyhint="go"
+      class="w-full bg-transparent font-sans text-[0.95rem] text-ink outline-none placeholder:text-ink-soft/45"
+    />
+    <button
+      type="submit"
+      class="shrink-0 rounded-md px-2 py-1 font-sans text-[0.75rem] text-ink-soft/60 transition-colors hover:bg-paper-deep hover:text-ink"
+      aria-label="Close search"
+    >
+      Esc
+    </button>
+  </form>
+
+  <div data-search-results class="max-h-[60vh] overflow-y-auto overscroll-contain p-2" role="listbox"></div>
+
+  <p
+    data-search-status
+    class="border-t border-rule px-4 py-2.5 font-sans text-[0.76rem] text-ink-soft/55"
+  >
+    Type to search.
+  </p>
+</dialog>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-search-open]');
+  const dialog = document.querySelector<HTMLDialogElement>('[data-search-dialog]');
+  const input = document.querySelector<HTMLInputElement>('[data-search-input]');
+  const results = document.querySelector<HTMLElement>('[data-search-results]');
+  const status = document.querySelector<HTMLElement>('[data-search-status]');
+
+  if (button && dialog && input && results && status) {
+    type Entry = { t: string; u: string; k: 'guide' | 'figure' | 'tool'; c: string; d: string; x: string };
+    type Scored = Entry & { score: number };
+
+    let index: Entry[] | null = null;
+    let loading: Promise<Entry[]> | null = null;
+    let active = -1;
+
+    const KIND_LABEL: Record<Entry['k'], string> = {
+      guide: 'Guide',
+      figure: 'Figure',
+      tool: 'Calculator',
+    };
+
+    const load = () => {
+      if (index) return Promise.resolve(index);
+      if (!loading) {
+        loading = fetch('/search-index.json')
+          .then((r) => r.json())
+          .then((data: Entry[]) => {
+            index = data;
+            return data;
+          })
+          .catch(() => {
+            // A failed index is a dead box, so say so rather than looking broken.
+            status.textContent = 'Search is unavailable right now. Try the category links instead.';
+            return [];
+          });
+      }
+      return loading;
+    };
+
+    const escapeHtml = (s: string) =>
+      s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
+    // Words that carry no signal here. A reader types how they speak — "how do I
+    // send money to china" — and matching on "how", "do", "i" and "to" ranks by
+    // grammar rather than by subject.
+    const STOPWORDS = new Set([
+      'a', 'an', 'and', 'are', 'as', 'at', 'be', 'can', 'do', 'does', 'for',
+      'from', 'get', 'how', 'i', 'in', 'is', 'it', 'my', 'of', 'on', 'or',
+      'the', 'to', 'what', 'when', 'where', 'which', 'with', 'you', 'your',
+    ]);
+
+    /**
+     * Rank by where the match lands, not how often. A term in the title is what
+     * the reader typed; the same term buried in a description usually is not.
+     *
+     * Terms are not all required. "send money to china" should reach the
+     * remittance guide even though no page names China — that query is the
+     * single most common one this site is shown for, and demanding every word
+     * returned nothing at all for it. A little over half the terms has to land,
+     * and how many did is itself part of the score.
+     */
+    const score = (entry: Entry, terms: string[], phrase: string): number => {
+      const title = entry.t.toLowerCase();
+      const extra = entry.x.toLowerCase();
+      const description = entry.d.toLowerCase();
+      let total = 0;
+      let hits = 0;
+
+      if (title.includes(phrase)) total += 60;
+      if (title.startsWith(phrase)) total += 25;
+
+      for (const term of terms) {
+        if (title.includes(term)) {
+          total += 20;
+          hits += 1;
+        } else if (extra.includes(term)) {
+          total += 9;
+          hits += 1;
+        } else if (description.includes(term)) {
+          total += 4;
+          hits += 1;
+        }
+      }
+
+      if (hits < Math.ceil(terms.length / 2)) return 0;
+      total += (hits / terms.length) * 30;
+
+      // Kind matters more than it looks. Figure labels are short, so a two-word
+      // query matches one almost entirely and collects both phrase bonuses,
+      // while the guide that actually answers the question has a longer title
+      // and scores lower on the same terms. Someone searching "minimum wage"
+      // wants the guide, not the 240-word page holding the number.
+      if (entry.k === 'guide') total += 45;
+      else if (entry.k === 'tool') total += 18;
+      return total;
+    };
+
+    const render = (matches: Scored[], query: string) => {
+      if (!query) {
+        results.innerHTML = '';
+        status.textContent = 'Type to search.';
+        return;
+      }
+      if (matches.length === 0) {
+        results.innerHTML = '';
+        status.textContent = `Nothing matches “${query}”.`;
+        return;
+      }
+
+      results.innerHTML = matches
+        .map(
+          (m, i) => `
+        <a href="${m.u}" role="option" data-result="${i}"
+           class="block rounded-xl px-3 py-2.5 transition-colors hover:bg-paper-deep focus:bg-paper-deep focus:outline-none aria-selected:bg-paper-deep">
+          <span class="flex items-baseline justify-between gap-3">
+            <span class="font-sans text-[0.92rem] font-medium text-ink">${escapeHtml(m.t)}</span>
+            <span class="shrink-0 font-sans text-[0.68rem] uppercase tracking-wide text-ink-soft/50">${KIND_LABEL[m.k]}</span>
+          </span>
+          <span class="mt-0.5 block font-sans text-[0.8rem] leading-snug text-ink-soft/70">${escapeHtml(m.d)}</span>
+          <span class="mt-1 block font-sans text-[0.72rem] text-ink-soft/50">${escapeHtml(m.c)}</span>
+        </a>`,
+        )
+        .join('');
+
+      status.textContent = `${matches.length} result${matches.length === 1 ? '' : 's'} — arrow keys to move, Enter to open.`;
+      active = -1;
+    };
+
+    const search = async () => {
+      const query = input.value.trim().toLowerCase();
+      if (!query) return render([], '');
+
+      const entries = await load();
+      const words = query.split(/\s+/).filter(Boolean);
+      // Keep the stopwords if that is all there is, so "how to" still searches
+      // for something rather than for nothing.
+      const meaningful = words.filter((w) => !STOPWORDS.has(w));
+      const terms = meaningful.length > 0 ? meaningful : words;
+      const matches = entries
+        .map((entry) => ({ ...entry, score: score(entry, terms, query) }))
+        .filter((entry) => entry.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 20);
+
+      render(matches, input.value.trim());
+    };
+
+    const open = () => {
+      dialog.showModal();
+      input.focus();
+      void load();
+    };
+
+    button.addEventListener('click', open);
+
+    document.addEventListener('keydown', (event) => {
+      const target = event.target as HTMLElement | null;
+      const typing =
+        target &&
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          target.isContentEditable);
+      if (typing) return;
+
+      if (event.key === '/' || ((event.metaKey || event.ctrlKey) && event.key === 'k')) {
+        event.preventDefault();
+        open();
+      }
+    });
+
+    let debounce: number | undefined;
+    input.addEventListener('input', () => {
+      window.clearTimeout(debounce);
+      debounce = window.setTimeout(search, 90);
+    });
+
+    input.addEventListener('keydown', (event) => {
+      const options = [...results.querySelectorAll<HTMLAnchorElement>('[data-result]')];
+      if (options.length === 0) return;
+
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        active =
+          event.key === 'ArrowDown'
+            ? (active + 1) % options.length
+            : (active - 1 + options.length) % options.length;
+        options.forEach((option, i) => option.setAttribute('aria-selected', String(i === active)));
+        options[active].scrollIntoView({ block: 'nearest' });
+      } else if (event.key === 'Enter' && active >= 0) {
+        event.preventDefault();
+        options[active].click();
+      }
+    });
+
+    dialog.addEventListener('close', () => {
+      input.value = '';
+      render([], '');
+    });
+
+    // Clicking the backdrop closes it — the dialog element itself is the
+    // backdrop's hit area, so compare against the panel's own bounds.
+    dialog.addEventListener('click', (event) => {
+      if (event.target !== dialog) return;
+      const box = dialog.getBoundingClientRect();
+      const inside =
+        event.clientX >= box.left &&
+        event.clientX <= box.right &&
+        event.clientY >= box.top &&
+        event.clientY <= box.bottom;
+      if (!inside) dialog.close();
+    });
+  }
+</script>
