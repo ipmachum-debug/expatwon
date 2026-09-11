@@ -59,7 +59,7 @@
     hidden
     class="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-rule bg-paper shadow-xl"
   >
-    <div data-search-results class="max-h-[55vh] overflow-y-auto overscroll-contain p-2" role="listbox"></div>
+    <div data-search-results class="overflow-y-auto overscroll-contain p-2" role="listbox"></div>
     <p data-search-status class="border-t border-rule px-4 py-2.5 font-sans text-[0.76rem] text-ink-soft/55">
       Type to search.
     </p>
@@ -105,6 +105,22 @@
     </div>
   </div>
 </dialog>
+
+<style is:global>
+  /*
+   * While the phone search is in use, fold the category nav away.
+   *
+   * It is three wrapped rows on a narrow screen, and with the keyboard up it was
+   * taking more than half of what remained — leaving room for two results. The
+   * header stays sticky, so this space cannot be reclaimed by scrolling; it has
+   * to be given up.
+   */
+  @media (max-width: 1023px) {
+    :root[data-search-active] [data-header-nav] {
+      display: none;
+    }
+  }
+</style>
 
 <script>
   type Entry = {
@@ -231,9 +247,50 @@
     const collapsible = drop.hasAttribute('hidden');
     let active = -1;
 
-    const show = (open: boolean) => {
-      if (collapsible) drop.hidden = !open;
+    /**
+     * Size the result list to the space actually on screen.
+     *
+     * A `vh` cap is measured against the viewport as it was before the keyboard
+     * opened, so on a phone the list ran on underneath the keyboard: the part you
+     * could see had no overflow of its own, nothing scrolled when you swiped it,
+     * and the only way down the list was to scroll the whole page.
+     *
+     * `visualViewport` is the part not covered by the keyboard, and `offsetTop`
+     * places it inside the layout viewport that `getBoundingClientRect` measures
+     * against — so the two can be subtracted to get the real room below the input.
+     */
+    const fit = () => {
+      if (!collapsible || drop.hidden) return;
+      const viewport = window.visualViewport;
+      const visibleBottom = viewport
+        ? viewport.offsetTop + viewport.height
+        : window.innerHeight;
+      const room = visibleBottom - drop.getBoundingClientRect().top;
+      const forStatus = status.offsetHeight;
+      // A floor, so a cramped landscape keyboard still leaves something to read
+      // and scroll rather than a sliver.
+      results.style.maxHeight = `${Math.max(120, room - forStatus - 16)}px`;
     };
+
+    const show = (open: boolean) => {
+      if (!collapsible) return;
+      drop.hidden = !open;
+      if (open) {
+        document.documentElement.dataset.searchActive = 'true';
+        fit();
+        // The nav folding away moves the drop up; measure again once it has.
+        requestAnimationFrame(fit);
+      } else {
+        delete document.documentElement.dataset.searchActive;
+      }
+    };
+
+    if (collapsible && window.visualViewport) {
+      // The keyboard opening, closing or the page scrolling under it all change
+      // where the bottom edge is.
+      window.visualViewport.addEventListener('resize', fit);
+      window.visualViewport.addEventListener('scroll', fit);
+    }
 
     const render = (matches: Entry[], query: string) => {
       active = -1;
@@ -274,6 +331,10 @@
         .join('');
 
       status.textContent = `${matches.length} result${matches.length === 1 ? '' : 's'}`;
+      // A new query is a new list; leaving it scrolled where the last one ended
+      // hides the best match.
+      results.scrollTop = 0;
+      fit();
     };
 
     const run = async () => {
