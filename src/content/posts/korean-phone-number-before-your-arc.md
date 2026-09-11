@@ -5,7 +5,6 @@ category: cost-of-living
 publishDate: 2026-09-11
 updatedDate: 2026-09-11
 slot: pm
-draft: true
 tags: [cost-of-living, phone, arrival, arc, identity-verification]
 tracked: [tourist-sim-max-validity]
 lastVerified: 2026-09-11
