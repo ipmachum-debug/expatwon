@@ -24,7 +24,10 @@
     <path d="m20 20-3.5-3.5"></path>
   </svg>
   <span class="hidden sm:inline">Search</span>
-  <kbd class="hidden rounded border border-rule bg-paper px-1.5 py-0.5 font-sans text-[0.68rem] text-ink-soft/60 md:inline">/</kbd>
+  <kbd
+    data-search-hint
+    class="hidden font-sans text-[0.72rem] tracking-wide text-ink-soft/45 lg:inline"
+  >Ctrl K</kbd>
 </button>
 
 <dialog
@@ -47,10 +50,12 @@
     />
     <button
       type="submit"
-      class="shrink-0 rounded-md px-2 py-1 font-sans text-[0.75rem] text-ink-soft/60 transition-colors hover:bg-paper-deep hover:text-ink"
+      class="shrink-0 rounded-lg p-1.5 text-ink-soft/45 transition-colors hover:bg-paper-deep hover:text-ink"
       aria-label="Close search"
     >
-      Esc
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="h-4 w-4">
+        <path d="m6 6 12 12M18 6 6 18"></path>
+      </svg>
     </button>
   </form>
 
@@ -218,6 +223,14 @@
     };
 
     button.addEventListener('click', open);
+
+    // A lone "/" in a bordered box reads as a divider or a stray key, not as a
+    // shortcut. Cmd/Ctrl-K is the convention people already recognise, so that
+    // is what the header advertises — "/" still works, it is just not shown.
+    const hint = document.querySelector<HTMLElement>('[data-search-hint]');
+    if (hint && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) {
+      hint.textContent = '\u2318K';
+    }
 
     document.addEventListener('keydown', (event) => {
       const target = event.target as HTMLElement | null;
