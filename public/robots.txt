@@ -1,17 +1,5 @@
 User-agent: *
 Allow: /
 
-# The per-figure pages under /tracked/ are reference lookups of about 240
-# words — a label, a current value, a short note on why it is watched, and the
-# history. They exist to be reached from the guide that cites a number and from
-# site search, and they are already noindex for that reason.
-#
-# noindex is a Search directive and says nothing to AdSense, which judges
-# ad-serving eligibility with its own crawler. Sampled cold by a reviewer, 166
-# pages of that length are the thinnest surface this site has, and they are not
-# pages that should carry ads in any case. This is the documented way to say so.
-User-agent: Mediapartners-Google
-Disallow: /tracked/
-
 Sitemap: https://expatwon.com/sitemap-index.xml
 Sitemap: https://expatwon.com/rss.xml
