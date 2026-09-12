@@ -1,6 +1,6 @@
 ---
 title: 'Sending Money From Korea: What Actually Arrives'
-description: 'Compare remittances by net received amount, not fees: FX spreads, the 90%-preferential myth, SWIFT deductions, fintech limits, and the real formulas.'
+description: 'What a transfer out of Korea really costs: the FX spread that dwarfs the fees, what banks deduct en route, and how to compare on the amount received.'
 category: banking
 publishDate: 2026-08-23
 updatedDate: 2026-08-23
