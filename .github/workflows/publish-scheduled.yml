@@ -4,13 +4,26 @@ name: Publish scheduled posts
 # appear, enforced by the window guard below — the crons are only attempts
 # at hitting it.
 #
-# It was two a day until 2026-09-12. The reason for halving it is not that
-# twice a day harmed anything: crawl budget on a young domain follows the
-# domain's age and authority, not how fast it publishes. It is that sixty
-# guides were sitting discovered-but-uncrawled, and there is nothing to gain
-# from adding to a queue Google is not draining — while one a day doubles how
-# long the written backlog lasts. Going back to two is this comment, the pm
-# crons, and the pm branch of the slot case.
+# One a day is the standing decision, not a temporary adjustment. Do not
+# raise it because the crawl rate improved.
+#
+# It was two a day until 2026-09-12. The immediate trigger was sixty guides
+# sitting discovered-but-uncrawled: Google was taking roughly 1.7 pages a day
+# on this domain and we were adding two, so the queue only ever grew. Twice a
+# day did no harm in itself — crawl budget follows a domain's age and
+# authority, not how fast it publishes — but publishing past what gets crawled
+# buys nothing, and an article waiting six weeks to be seen spends its best
+# window sitting still.
+#
+# The reason it is now fixed rather than provisional is different and does not
+# change with the crawl rate: this is one of four sites the same person writes.
+# A cadence that only works while all the attention is here is not a cadence.
+# One a day also doubles how long the written backlog lasts, which is the part
+# that actually protects the schedule on a busy week.
+#
+# Two a day would be this comment, the pm crons and the pm branch of the slot
+# case — but that is a decision about how the author spends their week, not
+# something to infer from Search Console.
 #
 # GitHub's scheduler is best-effort and queues heavily. Measured on this
 # repo, an attempt is delivered between one and five hours after its cron,
