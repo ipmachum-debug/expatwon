@@ -5,7 +5,6 @@ category: cost-of-living
 publishDate: 2026-09-13
 updatedDate: 2026-09-13
 slot: am
-draft: true
 tags: [cost-of-living, phone, esim, arrival, airport]
 tracked: [airport-sim-counter-hours, tourist-sim-max-validity]
 lastVerified: 2026-09-13
