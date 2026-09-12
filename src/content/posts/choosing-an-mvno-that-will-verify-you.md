@@ -2,13 +2,13 @@
 title: 'Choosing an MVNO That Will Actually Verify You'
 description: 'The monthly price is the least important thing about a Korean phone line. Five checks decide whether banks and government sites will recognise you.'
 category: cost-of-living
-publishDate: 2026-09-30
-updatedDate: 2026-09-30
+publishDate: 2026-10-18
+updatedDate: 2026-10-18
 slot: am
 pairedWith: pass-and-mobile-id-for-foreign-residents
 tags: [cost-of-living, telecom, mvno, identity-verification, foreign-residents]
 tracked: [phone-identity-verification-agencies]
-lastVerified: 2026-09-30
+lastVerified: 2026-10-18
 draft: true
 sources:
   - label: 'Korea Internet & Security Agency — designated identity verification agencies'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.kcc.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-30
+  - date: 2026-10-18
     change: 'Published'
 keyFacts:
   - { label: 'Verification agencies', value: 'The three networks' }

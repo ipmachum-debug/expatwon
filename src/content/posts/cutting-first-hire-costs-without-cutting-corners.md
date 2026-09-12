@@ -2,12 +2,12 @@
 title: 'Cutting First-Hire Costs Without Cutting Corners'
 description: 'Two legitimate levers on a small employer’s payroll: a state subsidy aimed at exactly this hire, and a pay component that is not taxed.'
 category: employment
-publishDate: 2026-10-05
-updatedDate: 2026-10-05
-slot: pm
+publishDate: 2026-10-29
+updatedDate: 2026-10-29
+slot: am
 tags: [employment, hiring, payroll, subsidies, small-business]
 tracked: [small-employer-insurance-subsidy-threshold, employer-social-insurance-burden, minimum-wage]
-lastVerified: 2026-10-05
+lastVerified: 2026-10-29
 draft: true
 sources:
   - label: 'Ministry of Employment and Labor — Duru-nuri social insurance support: eligibility, rate and exclusions'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.nts.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-05
+  - date: 2026-10-29
     change: 'Published'
 keyFacts:
   - { label: 'Subsidy pay ceiling', value: 'Under ₩2,700,000' }

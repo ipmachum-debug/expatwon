@@ -2,13 +2,13 @@
 title: 'Lease Clauses That Actually Protect a Tenant in Korea'
 description: 'Five special clauses worth writing into a Korean lease — and the limit on what any of them can do against a mortgage that is already registered.'
 category: cost-of-living
-publishDate: 2026-10-08
-updatedDate: 2026-10-08
+publishDate: 2026-11-03
+updatedDate: 2026-11-03
 slot: am
 pairedWith: repairs-restoration-and-leaving-without-your-deposit
 tags: [housing, rental, jeonse, lease-contract, deposit]
 tracked: [housing-lease-opposability-effective-time, hug-deposit-guarantee-limit, hug-application-deadline, unpaid-tax-inspection-without-landlord-consent-threshold]
-lastVerified: 2026-10-08
+lastVerified: 2026-11-03
 draft: true
 sources:
   - label: 'Korea Law Information Center — Housing Lease Protection Act, art. 3 (opposing power) and art. 3-2 (priority repayment)'
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%AF%BC%EB%B2%95'
 affiliate: false
 revisions:
-  - date: 2026-10-08
+  - date: 2026-11-03
     change: 'Published'
 keyFacts:
   - { label: 'Opposing power', value: 'From the next day' }

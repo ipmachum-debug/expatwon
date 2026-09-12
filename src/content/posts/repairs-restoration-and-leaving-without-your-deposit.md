@@ -2,12 +2,12 @@
 title: 'Repairs, Restoration and Leaving Without Your Deposit'
 description: '“All repairs at the tenant’s expense” is not automatically enforceable, wear is not damage, and moving out before repayment can break your protection.'
 category: cost-of-living
-publishDate: 2026-10-08
-updatedDate: 2026-10-08
-slot: pm
+publishDate: 2026-11-04
+updatedDate: 2026-11-04
+slot: am
 tags: [housing, rental, lease-contract, deposit, moving-out]
 tracked: [small-tenant-priority-threshold, small-tenant-priority-amount, foreign-resident-address-registration-equivalent]
-lastVerified: 2026-10-08
+lastVerified: 2026-11-04
 draft: true
 sources:
   - label: 'Korea Law Information Center — Civil Act (landlord’s obligation to maintain the property, art. 623)'
@@ -22,7 +22,7 @@ sources:
     url: 'https://www.iros.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-08
+  - date: 2026-11-04
     change: 'Published'
 keyFacts:
   - { label: 'Small-deposit ceiling', value: '₩165M in Seoul' }

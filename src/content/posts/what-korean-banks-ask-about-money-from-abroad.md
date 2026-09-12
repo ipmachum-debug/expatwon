@@ -2,12 +2,12 @@
 title: 'What Korean Banks Ask About Money From Abroad'
 description: 'There is no general USD 10,000 reporting rule for receiving money in Korea. There is a threshold, it is a different one, and it binds the bank.'
 category: banking
-publishDate: 2026-09-29
-updatedDate: 2026-09-29
-slot: pm
+publishDate: 2026-10-17
+updatedDate: 2026-10-17
+slot: am
 tags: [banking, remittance, fx-regulation, gift-tax, compliance]
 tracked: [inbound-remittance-bank-confirmation-threshold, gift-tax-lineal-ascendant-deduction, wise-krw-resident-receiving-limit]
-lastVerified: 2026-09-29
+lastVerified: 2026-10-17
 draft: true
 sources:
   - label: 'Korea Law Information Center — Foreign Exchange Transactions Act and its Regulation (receipts; capital transactions)'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.nts.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-29
+  - date: 2026-10-17
     change: 'Published'
 keyFacts:
   - { label: 'The USD 10,000 rule', value: 'Not a thing here' }

@@ -2,13 +2,13 @@
 title: 'Your First Year in Korea: The Complete Timeline'
 description: 'Identity, then address, then banking, then contracts, then employment and tax. Twelve months of deadlines, in the order that stops each blocking the next.'
 category: cost-of-living
-publishDate: 2026-10-12
-updatedDate: 2026-10-12
+publishDate: 2026-11-11
+updatedDate: 2026-11-11
 slot: am
 pairedWith: leaving-korea-for-good-the-order-to-close-things-in
 tags: [moving-to-korea, immigration, banking, tax, first-year]
 tracked: [alien-registration-deadline, foreigner-address-change-deadline, business-registration-application-deadline, employment-insurance-acquisition-report-deadline, tax-residency-day-threshold]
-lastVerified: 2026-10-12
+lastVerified: 2026-11-11
 draft: true
 sources:
   - label: 'Korea Law Information Center — Immigration Act (alien registration, art. 36 stay address, art. 98)'
@@ -25,7 +25,7 @@ sources:
     url: 'https://www.hikorea.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-12
+  - date: 2026-11-11
     change: 'Published'
 keyFacts:
   - { label: 'Alien registration', value: '90 days from entry' }

@@ -2,13 +2,13 @@
 title: 'E-9 vs E-7: What Actually Separates Them'
 description: 'Not wages, and not skill level. The real difference is who controls the employment relationship, and how quickly losing a job becomes a visa problem.'
 category: employment
-publishDate: 2026-09-23
-updatedDate: 2026-09-23
+publishDate: 2026-10-04
+updatedDate: 2026-10-04
 slot: am
 pairedWith: e-7-4-from-e-9-to-long-term-status
 tags: [employment, immigration, e-9, e-7, foreign-workers]
 tracked: [e7-annual-wage-requirement, e9-workplace-change-limit, e9-workplace-change-application-period, e9-max-continuous-employment-period]
-lastVerified: 2026-09-23
+lastVerified: 2026-10-04
 draft: true
 sources:
   - label: 'Korea Law Information Center — Act on the Employment of Foreign Workers (art. 25 workplace change; employment activity period)'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.eps.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-23
+  - date: 2026-10-04
     change: 'Published'
 keyFacts:
   - { label: 'E-7 wage floor 2026', value: 'Set in won, not GNI' }

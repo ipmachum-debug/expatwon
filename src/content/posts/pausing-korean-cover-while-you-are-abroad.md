@@ -2,12 +2,12 @@
 title: 'Pausing Korean Cover While You Are Abroad'
 description: 'Three months, three months and one month govern three different schemes. None of them starts by itself when you get on the plane.'
 category: insurance
-publishDate: 2026-10-04
-updatedDate: 2026-10-04
-slot: pm
+publishDate: 2026-10-27
+updatedDate: 2026-10-27
+slot: am
 tags: [insurance, nhis, private-health-insurance, overseas, premiums]
 tracked: [nhis-overseas-premium-exemption-period, nhis-overseas-work-exception-period, private-loss-overseas-suspension-period]
-lastVerified: 2026-10-04
+lastVerified: 2026-10-27
 draft: true
 sources:
   - label: 'Korea Law Information Center — Enforcement Decree of the National Health Insurance Act, art. 44-2 (overseas stay)'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.immigration.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-04
+  - date: 2026-10-27
     change: 'Published'
 keyFacts:
   - { label: 'NHIS, general', value: '3 months abroad' }

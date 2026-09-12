@@ -2,13 +2,13 @@
 title: 'Paying in Korea With a Foreign Card'
 description: 'Korea runs on cards and still refuses foreign ones in specific, predictable places. Which places, why, and what to carry instead.'
 category: banking
-publishDate: 2026-09-13
-updatedDate: 2026-09-13
+publishDate: 2026-09-14
+updatedDate: 2026-09-14
 slot: am
 draft: true
 tags: [banking, cards, arrival, payments, short-stay]
 pairedWith: atms-in-korea-for-foreign-cards
-lastVerified: 2026-09-13
+lastVerified: 2026-09-14
 tracked: [dcc-typical-markup, seoul-transit-foreign-card-machines, seoul-transit-foreign-card-fee, wowpass-topup-networks]
 sources:
   - label: 'Visa — dynamic currency conversion and cardholder choice of currency'
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.wowpass.io/'
 affiliate: false
 revisions:
-  - date: 2026-09-13
+  - date: 2026-09-14
     change: 'Published'
   - date: 2026-09-13
     change: 'Seoul metro ticket machines now accept overseas cards; DCC markup and prepaid-card routes added'

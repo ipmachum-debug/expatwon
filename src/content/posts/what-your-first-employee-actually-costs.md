@@ -2,13 +2,13 @@
 title: 'What Your First Employee Actually Costs'
 description: 'A ₩3,000,000 salary is a ₩3,593,000 monthly cost and ₩43,120,000 a year. Budget on 120% of gross, and know which 20% you are paying.'
 category: employment
-publishDate: 2026-10-05
-updatedDate: 2026-10-05
+publishDate: 2026-10-28
+updatedDate: 2026-10-28
 slot: am
 pairedWith: cutting-first-hire-costs-without-cutting-corners
 tags: [employment, hiring, payroll, employer-costs, small-business]
 tracked: [employer-social-insurance-burden, employment-insurance-employer-rate, industrial-accident-average-rate, national-pension-rate, pension-standard-income-limits]
-lastVerified: 2026-10-05
+lastVerified: 2026-10-28
 draft: true
 sources:
   - label: 'National Pension Service — 2026 contribution rate and standard monthly income limits'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95'
 affiliate: false
 revisions:
-  - date: 2026-10-05
+  - date: 2026-10-28
     change: 'Published'
 keyFacts:
   - { label: 'Budget on', value: '≈120% of gross' }

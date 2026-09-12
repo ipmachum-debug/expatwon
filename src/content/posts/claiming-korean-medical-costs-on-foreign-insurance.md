@@ -2,12 +2,12 @@
 title: 'Claiming Korean Medical Costs on Foreign Insurance'
 description: 'Nobody is paid for having a good policy. They are paid for leaving the hospital with three documents — one of which you must ask for in the room.'
 category: insurance
-publishDate: 2026-09-27
-updatedDate: 2026-09-27
-slot: pm
+publishDate: 2026-10-13
+updatedDate: 2026-10-13
+slot: am
 tags: [insurance, healthcare, travel-insurance, claims, short-stay]
 tracked: [english-medical-certificate-fee]
-lastVerified: 2026-09-27
+lastVerified: 2026-10-13
 draft: true
 sources:
   - label: 'Seoul National University Hospital — International Healthcare Center: billing records, English documents, direct billing insurers'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.mohw.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-27
+  - date: 2026-10-13
     change: 'Published'
 keyFacts:
   - { label: 'Three documents', value: 'Diagnosis, itemised, receipt' }

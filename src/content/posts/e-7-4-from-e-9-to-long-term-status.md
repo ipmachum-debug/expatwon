@@ -2,12 +2,12 @@
 title: 'E-7-4: The Route From E-9 to Long-Term Status'
 description: 'The one path out of the four-year-ten-month cycle. It is rationed at 33,000 a year, scored on points, and it is not a promotion.'
 category: employment
-publishDate: 2026-09-23
-updatedDate: 2026-09-23
-slot: pm
+publishDate: 2026-10-05
+updatedDate: 2026-10-05
+slot: am
 tags: [employment, immigration, e-7, e-9, permanent-residence]
 tracked: [e74-annual-quota, e7-annual-wage-requirement, e9-max-continuous-employment-period]
-lastVerified: 2026-09-23
+lastVerified: 2026-10-05
 draft: true
 sources:
   - label: 'Ministry of Justice — 2026 E-7-4 skilled technical personnel operating plan (quota, eligibility, points)'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.immigration.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-23
+  - date: 2026-10-05
     change: 'Published'
 keyFacts:
   - { label: '2026 quota', value: '33,000' }

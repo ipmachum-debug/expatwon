@@ -2,13 +2,13 @@
 title: 'Buying a Korean SIM: Airport, Online or in Town'
 description: 'The three routes barely differ when everything works. Compare them on what happens when it does not, and on who you can hand the phone to.'
 category: cost-of-living
-publishDate: 2026-09-12
-updatedDate: 2026-09-12
-slot: pm
+publishDate: 2026-09-13
+updatedDate: 2026-09-13
+slot: am
 draft: true
 tags: [cost-of-living, phone, esim, arrival, airport]
 tracked: [airport-sim-counter-hours, tourist-sim-max-validity]
-lastVerified: 2026-09-12
+lastVerified: 2026-09-13
 sources:
   - label: 'KT — airport roaming centres, tourist (e)SIM entry check, booking name entry and eSIM purchase conditions'
     url: 'https://globalroaming.kt.com/'
@@ -18,7 +18,7 @@ sources:
     url: 'https://www.airport.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-12
+  - date: 2026-09-13
     change: 'Published'
 keyFacts:
   - { label: 'Compare on', value: 'Recovery, not price' }

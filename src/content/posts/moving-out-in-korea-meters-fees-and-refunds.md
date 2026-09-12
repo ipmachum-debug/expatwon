@@ -2,13 +2,13 @@
 title: 'Moving Out in Korea: Meters, Fees and What You Get Back'
 description: 'Photograph three meters, ask for an interim settlement rather than a final bill, and reclaim the repair reserve you have been paying on the owner’s behalf.'
 category: cost-of-living
-publishDate: 2026-10-10
-updatedDate: 2026-10-10
+publishDate: 2026-11-07
+updatedDate: 2026-11-07
 slot: am
 pairedWith: moving-in-korea-the-filings-and-their-deadlines
 tags: [housing, moving, utilities, management-fees, rental]
 tracked: []
-lastVerified: 2026-10-10
+lastVerified: 2026-11-07
 draft: true
 sources:
   - label: 'Korea Law Information Center — Multi-Family Housing Management Act (long-term repair reserve)'
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%AF%BC%EB%B2%95'
 affiliate: false
 revisions:
-  - date: 2026-10-10
+  - date: 2026-11-07
     change: 'Published'
 keyFacts:
   - { label: 'Photograph', value: 'Water, power, gas' }

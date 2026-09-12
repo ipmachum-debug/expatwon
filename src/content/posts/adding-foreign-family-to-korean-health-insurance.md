@@ -2,12 +2,12 @@
 title: 'Adding Foreign Family to Korean Health Insurance'
 description: 'A residence rule arrived in 2024, and the exemptions people quote come from two different legal mechanisms that need different evidence.'
 category: insurance
-publishDate: 2026-10-02
-updatedDate: 2026-10-02
-slot: pm
+publishDate: 2026-10-23
+updatedDate: 2026-10-23
+slot: am
 tags: [insurance, nhis, dependants, foreign-residents, family]
 tracked: [foreign-dependant-residence-requirement, nhis-dependent-income-threshold]
-lastVerified: 2026-10-02
+lastVerified: 2026-10-23
 draft: true
 sources:
   - label: 'Korea Law Information Center — National Health Insurance Act, art. 109 (foreign nationals; dependant residence condition)'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.immigration.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-02
+  - date: 2026-10-23
     change: 'Published'
 keyFacts:
   - { label: 'Since 3 April 2024', value: '6-month residence rule' }

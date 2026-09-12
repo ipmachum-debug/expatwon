@@ -2,13 +2,13 @@
 title: 'Reading Your Korean Payslip'
 description: 'Two colleagues on the same salary can have different deductions, legally. The reason is in the visa column, not the payroll system.'
 category: employment
-publishDate: 2026-09-15
-updatedDate: 2026-09-15
-slot: pm
+publishDate: 2026-09-19
+updatedDate: 2026-09-19
+slot: am
 draft: true
 tags: [employment, payroll, tax, insurance, four-insurances]
 tracked: [national-pension-rate, health-insurance-rate, long-term-care-rate, employment-insurance-employee-rate]
-lastVerified: 2026-09-15
+lastVerified: 2026-09-19
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act, Article 48 (obligation to issue a wage statement)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
@@ -22,7 +22,7 @@ sources:
     url: 'https://www.nts.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-15
+  - date: 2026-09-19
     change: 'Published'
 keyFacts:
   - { label: 'A wage statement is', value: 'A legal requirement' }

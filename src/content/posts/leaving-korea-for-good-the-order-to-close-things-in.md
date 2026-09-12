@@ -2,12 +2,12 @@
 title: 'Leaving Korea for Good: The Order to Close Things In'
 description: 'The dangerous sequence is ARC, then bank account, then money. Real settlement runs the other way — keep the channel open until the last payment lands.'
 category: cost-of-living
-publishDate: 2026-10-12
-updatedDate: 2026-10-12
-slot: pm
+publishDate: 2026-11-12
+updatedDate: 2026-11-12
+slot: am
 tags: [leaving-korea, immigration, banking, tax, moving]
 tracked: [nps-lump-sum-refund-country-list, nps-airport-refund-lead-time, departure-income-tax-filing-deadline, lease-nonrenewal-notice-deadline, tacit-renewal-termination-effective-period]
-lastVerified: 2026-10-12
+lastVerified: 2026-11-12
 draft: true
 sources:
   - label: 'Korea Law Information Center — Immigration Act, art. 37 (return of the alien registration card)'
@@ -24,7 +24,7 @@ sources:
     url: 'https://www.nps.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-12
+  - date: 2026-11-12
     change: 'Published'
 keyFacts:
   - { label: 'Start at', value: 'D-90, with the lease' }

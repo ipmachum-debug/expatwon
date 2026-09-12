@@ -2,12 +2,12 @@
 title: 'Your Korean Withholding Tax Receipt, Explained'
 description: 'Five numbers and one minus sign decide whether you are owed a refund. And the item numbers every guide online tells you to look at have changed.'
 category: business
-publishDate: 2026-09-16
-updatedDate: 2026-09-16
-slot: pm
+publishDate: 2026-09-21
+updatedDate: 2026-09-21
+slot: am
 tags: [business, tax, payroll, year-end-settlement, foreign-workers]
 tracked: [withholding-receipt-form-version, employment-income-statement-deadline, foreign-worker-flat-tax-rate]
-lastVerified: 2026-09-16
+lastVerified: 2026-09-21
 draft: true
 sources:
   - label: 'Korea Law Information Center — Enforcement Rule of the Income Tax Act, appended form 24 (employment income withholding receipt), revised 20 March 2026'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.nts.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-16
+  - date: 2026-09-21
     change: 'Published'
 keyFacts:
   - { label: 'Minus means', value: 'Refund' }

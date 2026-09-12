@@ -2,12 +2,12 @@
 title: 'Korean Private Health Insurance: 4th vs 5th Generation'
 description: 'The generation of the policy decides the cover, not the insurer. A new one has been on sale since May 2026, and it treats routine therapy very differently.'
 category: insurance
-publishDate: 2026-10-03
-updatedDate: 2026-10-03
-slot: pm
+publishDate: 2026-10-25
+updatedDate: 2026-10-25
+slot: am
 tags: [insurance, private-health-insurance, silson, claims, foreign-residents]
 tracked: [private-health-insurance-generation-on-sale, gen4-noncovered-premium-tier, gen4-therapy-limit, gen5-nonsevere-noncovered-limit, gen5-noncovered-copay]
-lastVerified: 2026-10-03
+lastVerified: 2026-10-25
 draft: true
 sources:
   - label: 'Financial Services Commission — 5th generation indemnity health insurance, on sale from 6 May 2026'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.nhis.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-03
+  - date: 2026-10-25
     change: 'Published'
 keyFacts:
   - { label: 'On sale now', value: '5th generation' }

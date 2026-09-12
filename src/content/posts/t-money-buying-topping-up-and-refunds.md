@@ -2,13 +2,13 @@
 title: 'T-money: Buying It, Topping It Up, Getting It Back'
 description: 'The card price is not a deposit, the top-up rules differ by product, and the refund channel depends on how much is left. Sorted before you land.'
 category: cost-of-living
-publishDate: 2026-09-26
-updatedDate: 2026-09-26
+publishDate: 2026-10-10
+updatedDate: 2026-10-10
 slot: am
 pairedWith: k-pass-transport-refunds-for-foreign-residents
 tags: [cost-of-living, transport, t-money, arrival, short-stay]
 tracked: [tmoney-card-price, tmoney-refund-fee, seoul-transit-foreign-card-machines, seoul-transit-foreign-card-fee, wowpass-topup-networks]
-lastVerified: 2026-09-26
+lastVerified: 2026-10-10
 draft: true
 sources:
   - label: 'T-money — foreign visitor guidance: where to buy, top up and refund'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.wowpass.io/'
 affiliate: false
 revisions:
-  - date: 2026-09-26
+  - date: 2026-10-10
     change: 'Published'
 keyFacts:
   - { label: 'Card price', value: 'Not a deposit' }

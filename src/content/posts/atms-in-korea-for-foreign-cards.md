@@ -2,12 +2,12 @@
 title: 'ATMs in Korea for Foreign Cards'
 description: 'Not every machine takes an overseas card, and the ones that do charge in three separate places. Where to look and what a withdrawal really costs.'
 category: banking
-publishDate: 2026-09-13
-updatedDate: 2026-09-13
-slot: pm
+publishDate: 2026-09-15
+updatedDate: 2026-09-15
+slot: am
 draft: true
 tags: [banking, cards, arrival, cash, short-stay]
-lastVerified: 2026-09-13
+lastVerified: 2026-09-15
 tracked: [dcc-typical-markup, foreign-card-atm-supported-networks]
 sources:
   - label: 'Visa — PLUS network ATM locator and cross-border withdrawal terms'
@@ -18,7 +18,7 @@ sources:
     url: 'https://www.fss.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-13
+  - date: 2026-09-15
     change: 'Published'
 keyFacts:
   - { label: 'Look for', value: 'Global ATM signage' }

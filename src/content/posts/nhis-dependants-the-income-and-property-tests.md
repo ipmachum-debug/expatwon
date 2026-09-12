@@ -2,13 +2,13 @@
 title: 'NHIS Dependants: The Income and Property Tests'
 description: 'Being family is where it starts, not where it ends. Four conditions decide it, and the property one is measured on a base most people never look up.'
 category: insurance
-publishDate: 2026-10-02
-updatedDate: 2026-10-02
+publishDate: 2026-10-22
+updatedDate: 2026-10-22
 slot: am
 pairedWith: adding-foreign-family-to-korean-health-insurance
 tags: [insurance, nhis, dependants, family, health-insurance]
 tracked: [nhis-dependent-income-threshold, nhis-dependent-business-income-exception, nhis-dependent-property-threshold, nhis-sibling-property-threshold]
-lastVerified: 2026-10-02
+lastVerified: 2026-10-22
 draft: true
 sources:
   - label: 'Korea Law Information Center — Enforcement Rule of the National Health Insurance Act, art. 2 and appended table 1-2'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95'
 affiliate: false
 revisions:
-  - date: 2026-10-02
+  - date: 2026-10-22
     change: 'Published'
 keyFacts:
   - { label: 'Income ceiling', value: '₩20,000,000 a year' }

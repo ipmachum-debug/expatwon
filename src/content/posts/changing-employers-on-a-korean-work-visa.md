@@ -2,13 +2,13 @@
 title: 'Changing Employers on a Korean Work Visa'
 description: 'The date that causes trouble is not your last day. It is your first day at the new place, and whether immigration had already said yes.'
 category: employment
-publishDate: 2026-09-24
-updatedDate: 2026-09-24
+publishDate: 2026-10-06
+updatedDate: 2026-10-06
 slot: am
 pairedWith: when-your-old-employer-will-not-release-you
 tags: [employment, immigration, e-7, e-9, foreign-workers]
 tracked: [workplace-change-notification-deadline, foreign-worker-employment-change-report-deadline, e9-workplace-change-application-period, e9-new-workplace-permission-window]
-lastVerified: 2026-09-24
+lastVerified: 2026-10-06
 draft: true
 sources:
   - label: 'Korea Law Information Center — Immigration Act, art. 21 (change or addition of workplace) and its Enforcement Decree (notification exception; employer reporting)'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.immigration.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-24
+  - date: 2026-10-06
     change: 'Published'
 keyFacts:
   - { label: 'Default rule', value: 'Prior permission' }

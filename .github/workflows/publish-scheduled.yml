@@ -1,8 +1,16 @@
 name: Publish scheduled posts
 
-# Two slots a day, in Asia/Seoul: the pillar at 07:00, the supporting piece
-# at 15:00. Those are the times a post may first appear, enforced by the
-# window guard below — the crons are only attempts at hitting them.
+# One post a day, at 07:00 Asia/Seoul. That is the time a post may first
+# appear, enforced by the window guard below — the crons are only attempts
+# at hitting it.
+#
+# It was two a day until 2026-09-12. The reason for halving it is not that
+# twice a day harmed anything: crawl budget on a young domain follows the
+# domain's age and authority, not how fast it publishes. It is that sixty
+# guides were sitting discovered-but-uncrawled, and there is nothing to gain
+# from adding to a queue Google is not draining — while one a day doubles how
+# long the written backlog lasts. Going back to two is this comment, the pm
+# crons, and the pm branch of the slot case.
 #
 # GitHub's scheduler is best-effort and queues heavily. Measured on this
 # repo, an attempt is delivered between one and five hours after its cron,
@@ -30,26 +38,18 @@ name: Publish scheduled posts
 
 on:
   schedule:
-    # Morning slot — target 07:00 KST. UTC hours 20-23 and 0-1.
+    # Target 07:00 KST. UTC hours 20-23 and 0-1.
     - cron: '11 20 * * *'   # 05:11 KST requested — rescues a 2h+ delay
     - cron: '23 21 * * *'   # 06:23 KST requested — rescues a 1h+ delay
     - cron: '7 22 * * *'    # 07:07 KST — the on-time attempt
     - cron: '41 22 * * *'   # 07:41 KST
     - cron: '32 23 * * *'   # 08:32 KST
     - cron: '21 0 * * *'    # 09:21 KST
-    - cron: '17 1 * * *'    # 10:17 KST — last morning attempt
-    # Afternoon slot — target 15:00 KST. UTC hours 4-9.
-    - cron: '9 4 * * *'     # 13:09 KST requested — rescues a 2h+ delay
-    - cron: '13 5 * * *'    # 14:13 KST requested — rescues a 1h+ delay
-    - cron: '7 6 * * *'     # 15:07 KST — the on-time attempt
-    - cron: '43 6 * * *'    # 15:43 KST
-    - cron: '31 7 * * *'    # 16:31 KST
-    - cron: '32 8 * * *'    # 17:32 KST
-    - cron: '47 9 * * *'    # 18:47 KST — last afternoon attempt
+    - cron: '17 1 * * *'    # 10:17 KST — last attempt of the day
   workflow_dispatch:
     inputs:
       slot:
-        description: 'Which slot to publish (am or pm)'
+        description: 'Which slot to publish (am; pm only if one is ever scheduled again)'
         required: false
         default: ''
 
@@ -85,11 +85,11 @@ jobs:
             echo "::error::no slot input and no schedule — refusing to guess"
             exit 1
           fi
-          # Second field of the cron is the UTC hour: 20 through 1 is the
-          # morning slot, 4 through 9 the afternoon one.
+          # Second field of the cron is the UTC hour. Only the morning block
+          # is scheduled; anything else means the crons and this case have
+          # drifted apart, which is worth failing on rather than guessing.
           case "$(echo "$schedule" | awk '{print $2}')" in
             20|21|22|23|0|1)   slot=am; lo=7;  hi=14 ;;
-            4|5|6|7|8|9)       slot=pm; lo=15; hi=23 ;;
             *)          echo "::error::unrecognised schedule '$schedule'"; exit 1 ;;
           esac
           # A delay of a few hours is survivable — a post going out at 20:00

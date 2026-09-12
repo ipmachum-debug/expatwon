@@ -2,12 +2,12 @@
 title: 'Departure Guarantee Insurance for E-9 and H-2 Workers'
 description: 'It is not severance and it is not a pension. It accrues on a different wage base, which is why the payout is often smaller than what you are owed.'
 category: employment
-publishDate: 2026-09-18
-updatedDate: 2026-09-18
-slot: pm
+publishDate: 2026-09-25
+updatedDate: 2026-09-25
+slot: am
 tags: [employment, severance, eps, foreign-workers, departure]
 tracked: [departure-guarantee-insurance-rate, severance-payment-deadline]
-lastVerified: 2026-09-18
+lastVerified: 2026-09-25
 draft: true
 sources:
   - label: 'Korea Law Information Center — Act on the Employment of Foreign Workers (departure guarantee insurance)'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-18
+  - date: 2026-09-25
     change: 'Published'
 keyFacts:
   - { label: 'Who it covers', value: 'EPS workers only' }
