@@ -5,7 +5,6 @@ category: banking
 publishDate: 2026-09-14
 updatedDate: 2026-09-14
 slot: am
-draft: true
 tags: [banking, cards, arrival, payments, short-stay]
 pairedWith: atms-in-korea-for-foreign-cards
 lastVerified: 2026-09-14
