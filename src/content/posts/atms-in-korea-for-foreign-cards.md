@@ -5,7 +5,6 @@ category: banking
 publishDate: 2026-09-15
 updatedDate: 2026-09-15
 slot: am
-draft: true
 tags: [banking, cards, arrival, cash, short-stay]
 lastVerified: 2026-09-15
 tracked: [dcc-typical-markup, foreign-card-atm-supported-networks]
