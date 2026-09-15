@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useStoredState } from './useStoredState';
 
 import {
   cardClass,
@@ -36,9 +36,9 @@ function compute(weeklyHours: number, hourlyRate: number) {
 }
 
 export default function MinimumWageCalculator() {
-  const [weeklyHours, setWeeklyHours] = useState(40);
-  const [hourlyRate, setHourlyRate] = useState(MIN_WAGE_2026);
-  const [monthlySalary, setMonthlySalary] = useState(2_200_000);
+  const [weeklyHours, setWeeklyHours] = useStoredState('minimum-wage.weeklyHours', 40);
+  const [hourlyRate, setHourlyRate] = useStoredState('minimum-wage.hourlyRate', MIN_WAGE_2026);
+  const [monthlySalary, setMonthlySalary] = useStoredState('minimum-wage.monthlySalary', 2_200_000);
 
   const r = compute(weeklyHours, hourlyRate);
 

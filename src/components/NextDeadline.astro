@@ -1,0 +1,155 @@
+---
+/**
+ * The reader's own next deadline, on every page.
+ *
+ * A reference site is read once and left. The calendar is the one part of this
+ * site with a reason to come back — the dates are statutory, so they return
+ * every year on the same day — but only if the reader does not have to go and
+ * filter it again to find out which of them are theirs.
+ *
+ * So: nothing here until the reader has chosen their situations on /calendar/.
+ * After that this strip names the next date that applies to them, counts down
+ * to it, and links to the guide that explains it. No account, no email, no
+ * dismissal state to keep — clearing the choice on /calendar/ removes the strip.
+ *
+ * The page is static and rebuilds only when a post is due, so the date maths
+ * runs in the browser. Korea is the reference timezone whoever is reading:
+ * these are Korean deadlines.
+ */
+import { getCollection } from 'astro:content';
+import { CALENDAR } from '../data/calendar';
+import { getCategory } from '../lib/categories';
+
+// Same guard the calendar page uses: a draft resolves to 404 until its
+// publishDate, so an unpublished target renders as plain text instead.
+const published = new Set(
+  (await getCollection('posts', (p) => !p.data.draft)).map(
+    (p) => `/${getCategory(p.data.category).slug}/${p.id}/`,
+  ),
+);
+
+/** Only dated obligations can be counted down to. Payroll events in the
+ *  calendar carry no dueDay and are left out of this strip entirely. */
+const dated = CALENDAR.flatMap((m) =>
+  m.items
+    .filter((i) => typeof i.dueDay === 'number')
+    .map((i) => ({
+      month: m.month,
+      day: i.dueDay as number,
+      title: i.title,
+      who: i.who,
+      href: i.link && published.has(i.link) ? i.link : null,
+    })),
+);
+---
+
+<div
+  class="hidden border-b border-rule bg-paper-deep/60"
+  data-next-deadline
+  data-items={JSON.stringify(dated)}
+>
+  <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2 sm:px-6">
+    <span class="font-mono text-[0.65rem] tracking-[0.14em] text-ink-soft/60 uppercase">
+      Next for you
+    </span>
+    <span class="font-sans text-[0.85rem] text-ink" data-nd-body></span>
+    <a
+      href="/calendar/"
+      class="ml-auto font-sans text-[0.8rem] font-medium text-ink-soft/70 underline decoration-rule underline-offset-2 transition-colors hover:text-gold hover:decoration-gold"
+    >
+      All your dates
+    </a>
+  </div>
+</div>
+
+<script>
+  import { readAudience } from '../lib/audience';
+
+  const strip = document.querySelector<HTMLElement>('[data-next-deadline]');
+  const body = strip?.querySelector<HTMLElement>('[data-nd-body]');
+
+  if (strip && body) {
+    const mine = readAudience();
+
+    // No stored choice means a first-time reader. They get nothing: an
+    // unexplained countdown to someone else's tax deadline is noise.
+    if (mine.length > 0) {
+      type Item = {
+        month: number;
+        day: number;
+        title: string;
+        who: string[];
+        href: string | null;
+      };
+      let items: Item[] = [];
+      try {
+        items = JSON.parse(strip.dataset.items ?? '[]');
+      } catch {
+        items = [];
+      }
+
+      const parts = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }).format(new Date());
+      const [y, mo, d] = parts.split('-').map(Number);
+      const today = Date.UTC(y, mo - 1, d);
+      const DAY = 86400000;
+
+      const isMine = new Set<string>(mine);
+
+      // Statutory dates repeat every year, so the nearest occurrence of a
+      // deadline may be next year's. Both are considered and the closer wins,
+      // which is what makes December sensible: January is nine days away, not
+      // eleven months behind.
+      let best: { item: Item; at: number } | null = null;
+      for (const item of items) {
+        if (!item.who.some((w) => isMine.has(w))) continue;
+        for (const year of [y, y + 1]) {
+          const at = Date.UTC(year, item.month - 1, item.day);
+          if (at < today) continue;
+          if (!best || at < best.at) best = { item, at };
+          break;
+        }
+      }
+
+      if (best) {
+        const days = Math.round((best.at - today) / DAY);
+        const when = new Intl.DateTimeFormat('en-GB', {
+          day: 'numeric',
+          month: 'long',
+          timeZone: 'UTC',
+        }).format(new Date(best.at));
+        const left =
+          days === 0 ? 'today' : days === 1 ? 'tomorrow' : `in ${days} days`;
+
+        // Built as nodes rather than an HTML string. The titles come from this
+        // repo, not from a reader, but a strip that renders on every page is
+        // the wrong place to keep an innerHTML habit alive.
+        const name = document.createElement(best.item.href ? 'a' : 'span');
+        name.textContent = best.item.title;
+        name.className = 'font-semibold';
+        if (best.item.href && name instanceof HTMLAnchorElement) {
+          name.href = best.item.href;
+          name.classList.add(
+            'underline',
+            'decoration-gold/50',
+            'decoration-2',
+            'underline-offset-4',
+            'transition-colors',
+            'hover:text-gold',
+          );
+        }
+
+        const rest = document.createElement('span');
+        rest.className = 'text-ink-soft/70';
+        rest.textContent = ` — ${when}, ${left}`;
+
+        body.replaceChildren(name, rest);
+        strip.classList.remove('hidden');
+      }
+    }
+  }
+</script>

@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import NextDeadline from '../components/NextDeadline.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -22,6 +23,7 @@ const { title, description, article, noindex } = Astro.props;
   </head>
   <body class="flex min-h-screen flex-col">
     <Header />
+    <NextDeadline />
     <main class="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6">
       <slot />
     </main>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useStoredState } from './useStoredState';
 
 import {
   cardClass,
@@ -31,12 +31,12 @@ function calendarDaysInPeriod(end: Date): number {
 }
 
 export default function SeveranceCalculator() {
-  const [startDate, setStartDate] = useState('2023-09-01');
-  const [endDate, setEndDate] = useState('2026-09-01');
-  const [weeklyHours, setWeeklyHours] = useState(40);
-  const [threeMonthWages, setThreeMonthWages] = useState(15_000_000);
-  const [annualBonus, setAnnualBonus] = useState(0);
-  const [ordinaryDaily, setOrdinaryDaily] = useState(0);
+  const [startDate, setStartDate] = useStoredState('severance.startDate', '2023-09-01');
+  const [endDate, setEndDate] = useStoredState('severance.endDate', '2026-09-01');
+  const [weeklyHours, setWeeklyHours] = useStoredState('severance.weeklyHours', 40);
+  const [threeMonthWages, setThreeMonthWages] = useStoredState('severance.threeMonthWages', 15_000_000);
+  const [annualBonus, setAnnualBonus] = useStoredState('severance.annualBonus', 0);
+  const [ordinaryDaily, setOrdinaryDaily] = useStoredState('severance.ordinaryDaily', 0);
 
   const start = parseDate(startDate);
   const end = parseDate(endDate);

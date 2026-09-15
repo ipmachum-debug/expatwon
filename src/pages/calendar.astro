@@ -224,6 +224,9 @@ const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString(
 </script>
 
 <script>
+  import { readAudience, writeAudience } from '../lib/audience';
+  import type { Audience } from '../data/calendar';
+
   const bar = document.querySelector('[data-filter-bar]');
   if (bar) {
     const chips = [...bar.querySelectorAll<HTMLButtonElement>('.aud-chip')];
@@ -232,7 +235,9 @@ const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString(
     const ON = ['border-ink', 'bg-ink', 'text-white'];
     const OFF = ['border-rule', 'bg-paper', 'text-ink-soft'];
 
-    const selected = new Set<string>();
+    // Seeded from the reader's own browser, so returning here shows the
+    // situations they already chose rather than the whole calendar again.
+    const selected = new Set<string>(readAudience());
 
     function paint() {
       const all = selected.size === 0;
@@ -265,6 +270,7 @@ const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString(
         if (id === 'all') selected.clear();
         else if (selected.has(id)) selected.delete(id);
         else selected.add(id);
+        writeAudience([...selected] as Audience[]);
         paint();
       });
     }

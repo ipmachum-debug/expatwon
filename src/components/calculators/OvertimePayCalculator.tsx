@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useStoredState } from './useStoredState';
 
 import {
   cardClass,
@@ -29,10 +29,10 @@ const ROWS = [
 type RowKey = (typeof ROWS)[number]['key'];
 
 export default function OvertimePayCalculator() {
-  const [monthlyOrdinary, setMonthlyOrdinary] = useState(3_135_000);
-  const [conversionHours, setConversionHours] = useState(209);
-  const [contractualWeekly, setContractualWeekly] = useState(40);
-  const [hours, setHours] = useState<Record<RowKey, number>>({
+  const [monthlyOrdinary, setMonthlyOrdinary] = useStoredState('overtime.monthlyOrdinary', 3_135_000);
+  const [conversionHours, setConversionHours] = useStoredState('overtime.conversionHours', 209);
+  const [contractualWeekly, setContractualWeekly] = useStoredState('overtime.contractualWeekly', 40);
+  const [hours, setHours] = useStoredState<Record<RowKey, number>>('overtime.hours', {
     extDay: 2,
     extNight: 0,
     holDay: 0,

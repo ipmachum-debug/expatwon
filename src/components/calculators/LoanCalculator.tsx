@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useStoredState } from './useStoredState';
 
 import {
   cardClass,
@@ -19,9 +19,9 @@ function amortize(principal: number, annualRatePct: number, months: number) {
 }
 
 export default function LoanCalculator() {
-  const [principal, setPrincipal] = useState(30_000_000);
-  const [rate, setRate] = useState(5.5);
-  const [months, setMonths] = useState(36);
+  const [principal, setPrincipal] = useStoredState('loan.principal', 30_000_000);
+  const [rate, setRate] = useStoredState('loan.rate', 5.5);
+  const [months, setMonths] = useStoredState('loan.months', 36);
 
   const base = amortize(principal, rate, months);
   const higher = amortize(principal, rate + 1, months);

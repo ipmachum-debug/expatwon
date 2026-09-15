@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useStoredState } from './useStoredState';
 
 import { cardClass, fmtKrw, inputClass, labelClass, resultRowClass } from './shared';
 
@@ -102,22 +102,22 @@ function project(input: {
 }
 
 export default function BuyVsRentCalculator() {
-  const [price, setPrice] = useState(800_000_000);
-  const [equity, setEquity] = useState(400_000_000);
-  const [acquisitionPct, setAcquisitionPct] = useState(2.5);
-  const [loanRate, setLoanRate] = useState(4.2);
-  const [holdingCost, setHoldingCost] = useState(1_500_000);
-  const [maintenance, setMaintenance] = useState(1_200_000);
-  const [sellingPct, setSellingPct] = useState(1.0);
-  const [growth, setGrowth] = useState(3.0);
-  const [altReturn, setAltReturn] = useState(4.0);
+  const [price, setPrice] = useStoredState('buy-vs-rent.price', 800_000_000);
+  const [equity, setEquity] = useStoredState('buy-vs-rent.equity', 400_000_000);
+  const [acquisitionPct, setAcquisitionPct] = useStoredState('buy-vs-rent.acquisitionPct', 2.5);
+  const [loanRate, setLoanRate] = useStoredState('buy-vs-rent.loanRate', 4.2);
+  const [holdingCost, setHoldingCost] = useStoredState('buy-vs-rent.holdingCost', 1_500_000);
+  const [maintenance, setMaintenance] = useStoredState('buy-vs-rent.maintenance', 1_200_000);
+  const [sellingPct, setSellingPct] = useStoredState('buy-vs-rent.sellingPct', 1.0);
+  const [growth, setGrowth] = useStoredState('buy-vs-rent.growth', 3.0);
+  const [altReturn, setAltReturn] = useStoredState('buy-vs-rent.altReturn', 4.0);
 
-  const [mode, setMode] = useState<Mode>('jeonse');
-  const [deposit, setDeposit] = useState(500_000_000);
-  const [monthlyRent, setMonthlyRent] = useState(1_500_000);
-  const [depositLoan, setDepositLoan] = useState(0);
-  const [depositLoanRate, setDepositLoanRate] = useState(3.8);
-  const [rentCreditRate, setRentCreditRate] = useState(0);
+  const [mode, setMode] = useStoredState<Mode>('buy-vs-rent.mode', 'jeonse');
+  const [deposit, setDeposit] = useStoredState('buy-vs-rent.deposit', 500_000_000);
+  const [monthlyRent, setMonthlyRent] = useStoredState('buy-vs-rent.monthlyRent', 1_500_000);
+  const [depositLoan, setDepositLoan] = useStoredState('buy-vs-rent.depositLoan', 0);
+  const [depositLoanRate, setDepositLoanRate] = useStoredState('buy-vs-rent.depositLoanRate', 3.8);
+  const [rentCreditRate, setRentCreditRate] = useStoredState('buy-vs-rent.rentCreditRate', 0);
 
   const rows = project({
     price,

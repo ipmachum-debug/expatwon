@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useStoredState } from './useStoredState';
 
 import {
   cardClass,
@@ -37,11 +37,11 @@ function NumberField({ label, value, onChange, step = 10000, suffix }: NumberFie
 }
 
 export default function CarLeaseCalculator() {
-  const [downPayment, setDownPayment] = useState(5_000_000);
-  const [deposit, setDeposit] = useState(0);
-  const [monthly, setMonthly] = useState(700_000);
-  const [termMonths, setTermMonths] = useState(36);
-  const [residual, setResidual] = useState(15_000_000);
+  const [downPayment, setDownPayment] = useStoredState('car-lease.downPayment', 5_000_000);
+  const [deposit, setDeposit] = useStoredState('car-lease.deposit', 0);
+  const [monthly, setMonthly] = useStoredState('car-lease.monthly', 700_000);
+  const [termMonths, setTermMonths] = useStoredState('car-lease.termMonths', 36);
+  const [residual, setResidual] = useStoredState('car-lease.residual', 15_000_000);
 
   const totalPayments = monthly * termMonths;
   // Deposit is refundable at lease end, so it is cash tied up, not cash spent.

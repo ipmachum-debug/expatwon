@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useStoredState } from './useStoredState';
 
 import { KRW_PER_USD } from '../../lib/site';
 import {
@@ -42,8 +42,8 @@ const DEFAULTS: Record<string, number> = {
 };
 
 export default function CostOfLivingCalculator() {
-  const [city, setCity] = useState('seoul');
-  const [values, setValues] = useState<Record<string, number>>(DEFAULTS);
+  const [city, setCity] = useStoredState('cost-of-living.city', 'seoul');
+  const [values, setValues] = useStoredState<Record<string, number>>('cost-of-living.values', DEFAULTS);
 
   const setItem = (key: string, v: number) =>
     setValues((prev) => ({ ...prev, [key]: Math.max(0, v) }));
