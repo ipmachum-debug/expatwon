@@ -5,7 +5,7 @@ import AdSlot from '../components/AdSlot.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import EvidenceBlock from '../components/EvidenceBlock.astro';
 import PairedGuide from '../components/PairedGuide.astro';
-import RelatedPosts from '../components/RelatedPosts.astro';
+import ReadNext from '../components/ReadNext.astro';
 import SourcesFooter from '../components/SourcesFooter.astro';
 import TrackedFigures from '../components/TrackedFigures.astro';
 import VerificationMatrix from '../components/VerificationMatrix.astro';
@@ -204,7 +204,7 @@ const faqSchema =
       publishDate={publishDate}
     />
 
-    <RelatedPosts category={category.slug} excludeId={post.id} />
+    <ReadNext post={post} pairedWith={pairedWith} />
 
     <AdSlot position="bottom" />
   </article>
