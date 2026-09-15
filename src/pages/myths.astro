@@ -1,0 +1,147 @@
+---
+/**
+ * The corrections, collected.
+ *
+ * Every guide on this site ends up correcting something — a threshold that is
+ * not in the law, a requirement no lender actually publishes, a rule imported
+ * from somewhere else. Those corrections are the most useful paragraphs here
+ * and they are also the hardest to find, because each one sits in the middle of
+ * the guide it belongs to.
+ *
+ * This page is only a collection. Nothing is asserted here that a guide has not
+ * already asserted and sourced, and an entry whose guide has not published yet
+ * is left out rather than linked to a 404 — so the page fills itself in as the
+ * schedule runs.
+ */
+import Layout from '../layouts/Layout.astro';
+import { MYTHS } from '../data/myths';
+import { getCategory } from '../lib/categories';
+import { livePosts } from '../lib/livePaths';
+
+const bySlug = await livePosts();
+
+// An entry is only shown once the guide behind it is live. That keeps the one
+// rule this page has: every correction here has been published and sourced
+// somewhere you can go and check.
+const entries = MYTHS.flatMap((m) => {
+  const post = bySlug.get(m.guide);
+  if (!post) return [];
+  return [{ ...m, post, category: getCategory(post.data.category) }];
+});
+
+const waiting = MYTHS.length - entries.length;
+
+// Grouped so the page reads as a map of the subject rather than a list.
+const order = ['banking', 'loans', 'cars', 'business', 'cost-of-living', 'employment'];
+const groups = order
+  .map((slug) => ({
+    meta: getCategory(slug),
+    items: entries.filter((e) => e.category.slug === slug),
+  }))
+  .filter((g) => g.items.length > 0);
+---
+
+<Layout
+  title="Money in Korea: What Everyone Gets Wrong"
+  description="The thresholds, limits and requirements foreigners in Korea are told about that are not in any law — each one corrected against the statute or the lender's own published terms."
+>
+  <div class="mx-auto max-w-4xl">
+    <header class="mb-10 border-b border-rule pb-8">
+      <p class="mb-3 font-mono text-[0.7rem] tracking-[0.18em] text-ink-soft/60 uppercase">
+        Reference · corrections from across the guides
+      </p>
+      <h1 class="mb-4 font-display text-[2.5rem] leading-tight font-bold text-ink sm:text-[2.9rem]">
+        What everyone gets wrong
+      </h1>
+      <p class="max-w-2xl text-lg leading-relaxed text-ink-soft/85">
+        Most bad advice about money in Korea is not a lie. It is a real rule from
+        one bank, one office or one year, repeated until it sounds like the law.
+        These are the ones that come up most, and what the statute or the
+        lender’s own published terms actually say.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[0.78rem] text-ink-soft/70">
+        <span><strong class="text-ink">{entries.length}</strong> corrections</span>
+        <span><strong class="text-ink">{groups.length}</strong> subjects</span>
+        {
+          waiting > 0 && (
+            <span>
+              <strong class="text-ink">{waiting}</strong> waiting on a scheduled guide
+            </span>
+          )
+        }
+      </div>
+    </header>
+
+    {
+      groups.map((group) => (
+        <section class="mb-12">
+          <h2 class="mb-5 flex items-baseline gap-3 border-b border-rule pb-2">
+            <span class="font-display text-xl font-semibold text-ink">
+              {group.meta.shortTitle}
+            </span>
+            <a
+              href={`/${group.meta.slug}/`}
+              class="font-sans text-[0.8rem] font-medium text-ink-soft/60 underline decoration-rule underline-offset-2 transition-colors hover:text-gold hover:decoration-gold"
+            >
+              All {group.meta.shortTitle.toLowerCase()} guides
+            </a>
+          </h2>
+
+          <ol class="space-y-8">
+            {group.items.map((e) => (
+              <li>
+                <p class="mb-2 flex items-start gap-2.5">
+                  <span
+                    class="mt-[0.3rem] flex-none font-mono text-[0.8rem] font-bold text-ink-soft/40"
+                    aria-hidden="true"
+                  >
+                    ✕
+                  </span>
+                  <span class="font-display text-[1.15rem] leading-snug font-semibold text-ink-soft/70 line-through decoration-ink-soft/30">
+                    {e.claim}
+                  </span>
+                </p>
+                <p class="mb-3 max-w-2xl pl-[1.6rem] text-[1rem] leading-relaxed text-ink">
+                  {e.reality}
+                </p>
+                <p class="flex flex-wrap items-baseline gap-x-3 gap-y-1 pl-[1.6rem] font-sans text-[0.8rem]">
+                  <span class="text-ink-soft/60">{e.basis}</span>
+                  <span class="text-ink-soft/30" aria-hidden="true">·</span>
+                  <a
+                    href={e.guide}
+                    class="font-medium text-ink underline decoration-gold/50 decoration-2 underline-offset-4 transition-colors hover:text-gold"
+                  >
+                    {e.post.data.title}
+                  </a>
+                </p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))
+    }
+
+    <section class="border-t border-rule pt-6">
+      <h2 class="mb-3 font-display text-lg font-semibold text-ink">
+        How something gets onto this page
+      </h2>
+      <p class="max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft/85">
+        Only by being corrected in a guide first, against a statute, a
+        regulator, or a lender’s own published product terms — never against
+        another article. Each line above is a summary; the guide beside it
+        carries the citation and the reasoning, and logs it if the rule later
+        moves. Where a correction is “there is no such rule”, that is a
+        statement about what the law contains, not a promise about how the
+        counter in front of you will behave: a bank may still apply its own
+        internal policy, and it is allowed to.
+      </p>
+      <p class="mt-4 max-w-2xl font-sans text-[0.85rem] text-ink-soft/65">
+        If something here has gone out of date, or a rule you were quoted is not
+        on this page, <a
+          href="/contact/"
+          class="text-ink-soft/85 underline decoration-slate-300 underline-offset-2 hover:text-gold">tell us</a
+        > — that is how most of these were found.
+      </p>
+    </section>
+  </div>
+</Layout>

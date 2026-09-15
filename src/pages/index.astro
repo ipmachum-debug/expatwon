@@ -4,13 +4,21 @@ import { getCollection } from 'astro:content';
 import LeadCard from '../components/LeadCard.astro';
 import PostCard from '../components/PostCard.astro';
 import Layout from '../layouts/Layout.astro';
+import { MYTHS } from '../data/myths';
 import { categoriesWithPosts } from '../lib/categories';
+import { livePaths } from '../lib/livePaths';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../lib/site';
 
 const posts = (await getCollection('posts', (p) => !p.data.draft)).sort(
   (a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf(),
 );
 const [lead, ...latest] = posts.slice(0, 5);
+
+// Three of the corrections, as a sample of /myths/. Taken from the live set so
+// a scheduled guide never shows up here as a link to a 404.
+const live = await livePaths();
+const liveMyths = MYTHS.filter((m) => live.has(m.guide));
+const mythSample = liveMyths.slice(0, 3);
 
 // What a visitor actually arrives with. These are jobs, not categories: "rent
 // a home" spans cost-of-living and loans, and no category page expresses it.
@@ -230,6 +238,41 @@ const tools = [
       }
     </div>
   </section>
+
+  <!-- What everyone gets wrong -->
+  {
+    mythSample.length > 0 && (
+      <section class="mb-16">
+        <div class="mb-6 flex items-end justify-between gap-4">
+          <div class="max-w-xl">
+            <h2 class="mb-2 font-display text-3xl font-bold text-ink">
+              What everyone gets wrong
+            </h2>
+            <p class="text-ink-soft/85">
+              Most bad advice about money here is a real rule from one bank or
+              one year, repeated until it sounds like the law.
+            </p>
+          </div>
+          <a
+            href="/myths/"
+            class="flex-none text-sm font-medium text-ink underline decoration-gold decoration-2 underline-offset-4 transition-colors hover:text-gold"
+          >
+            All {liveMyths.length} corrections
+          </a>
+        </div>
+        <ul class="grid gap-4 sm:grid-cols-3">
+          {mythSample.map((m) => (
+            <li class="rounded-2xl border border-rule bg-white p-6">
+              <p class="mb-2.5 font-display text-[1.05rem] leading-snug font-semibold text-ink-soft/70 line-through decoration-ink-soft/30">
+                {m.claim}
+              </p>
+              <p class="text-sm leading-relaxed text-ink">{m.reality}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
 
   <!-- Latest guides -->
   <section class="mb-16">

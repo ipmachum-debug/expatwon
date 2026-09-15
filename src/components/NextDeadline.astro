@@ -16,17 +16,11 @@
  * runs in the browser. Korea is the reference timezone whoever is reading:
  * these are Korean deadlines.
  */
-import { getCollection } from 'astro:content';
 import { CALENDAR } from '../data/calendar';
-import { getCategory } from '../lib/categories';
+import { livePaths } from '../lib/livePaths';
 
-// Same guard the calendar page uses: a draft resolves to 404 until its
-// publishDate, so an unpublished target renders as plain text instead.
-const published = new Set(
-  (await getCollection('posts', (p) => !p.data.draft)).map(
-    (p) => `/${getCategory(p.data.category).slug}/${p.id}/`,
-  ),
-);
+// An unpublished target renders as plain text rather than a link to a 404.
+const published = await livePaths();
 
 /** Only dated obligations can be counted down to. Payroll events in the
  *  calendar carry no dueDay and are left out of this strip entirely. */

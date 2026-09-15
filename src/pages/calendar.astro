@@ -1,17 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
-
 import Layout from '../layouts/Layout.astro';
 import { AUDIENCES, CALENDAR, LAST_VERIFIED } from '../data/calendar';
-import { getCategory } from '../lib/categories';
+import { livePaths } from '../lib/livePaths';
 
-// Only link to guides that are actually live — a draft resolves to 404 until
-// its publishDate, so the link disappears rather than breaking.
-const published = new Set(
-  (await getCollection('posts', (p) => !p.data.draft)).map(
-    (p) => `/${getCategory(p.data.category).slug}/${p.id}/`,
-  ),
-);
+const published = await livePaths();
 
 const totalItems = CALENDAR.reduce((n, m) => n + m.items.length, 0);
 const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-GB', {
