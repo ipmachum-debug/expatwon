@@ -4,6 +4,7 @@ import {
   cardClass,
   fmtKrw,
   inputClass,
+  inputNarrowClass,
   labelClass,
   resultRowClass,
 } from './shared';
@@ -140,7 +141,7 @@ export default function OvertimePayCalculator() {
                   step={0.5}
                   value={hours[r.key]}
                   onChange={(e) => set(r.key, e.target.value)}
-                  className={`${inputClass} w-24 shrink-0 text-right`}
+                  className={inputNarrowClass}
                 />
               </div>
             ))}

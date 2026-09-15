@@ -19,8 +19,21 @@ export function fmtUsd(krwAmount: number): string {
  * Applies to the `<select>` in the cost-of-living calculator too, which zooms on
  * the same rule.
  */
-export const inputClass =
-  'w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-base text-slate-800 shadow-sm transition-colors focus:border-blue-400 focus:ring-2 focus:ring-blue-100 focus:outline-none lg:text-sm';
+const inputBase =
+  'rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-base text-slate-800 shadow-sm transition-colors focus:border-blue-400 focus:ring-2 focus:ring-blue-100 focus:outline-none lg:text-sm';
+
+export const inputClass = `w-full ${inputBase}`;
+
+/**
+ * A narrow numeric field that sits beside its label in a flex row.
+ *
+ * This cannot be built by appending a width to `inputClass`. Both widths then
+ * exist on the element and the generated stylesheet decides, not the class
+ * attribute — `.w-full` is emitted after `.w-24`, so the appended width loses.
+ * The field takes the whole row, the label beside it is crushed to a few
+ * characters per line, and the pair overflows the card.
+ */
+export const inputNarrowClass = `w-24 shrink-0 text-right ${inputBase}`;
 export const labelClass = 'mb-1.5 block text-sm font-medium text-slate-600';
 export const cardClass =
   'rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7';
