@@ -36,6 +36,28 @@ export const MYTHS: Myth[] = [
     guide: '/cost-of-living/managing-money-in-korea-fx-remittance-cards/',
   },
   {
+    claim: 'Someone in China can only receive USD 50,000 a year from abroad.',
+    reality:
+      'That figure is an annual facilitation quota for an individual in China settling foreign currency into renminbi or buying foreign currency — a quota on conversion, not a ceiling on what may arrive. SAFE\u2019s own position is that a genuine current-account transaction can be processed above it against documents, and that reading it as a personal annual maximum is wrong.',
+    basis: 'SAFE annual facilitation quota',
+    guide: '/banking/sending-money-from-korea-to-china/',
+  },
+  {
+    claim:
+      'Korea raised the undocumented remittance limit to USD 100,000, so that is your allowance now.',
+    reality:
+      'Not if you are a foreign resident. The higher annual figure applies to resident Korean nationals; foreign residents and non-residents sending through licensed small-amount remitters keep USD 5,000 per transaction and USD 50,000 per year. The route that actually lifts your ceiling is documenting how the money was acquired, not the headline change.',
+    basis: 'Foreign Exchange Transaction Regulations',
+    guide: '/banking/sending-money-from-korea-to-china/',
+  },
+  {
+    claim: 'Money a US person receives from parents abroad is taxed as income.',
+    reality:
+      'A gift or bequest is generally not income to the recipient. Over USD 100,000 received from related non-resident alien donors in a tax year it becomes reportable on Form 3520 — an information return, not a tax bill. What is expensive is omitting it: 5% of the unreported amount per month, to a maximum of 25%.',
+    basis: 'IRS Form 3520; IRC \u00a7 6039F',
+    guide: '/banking/sending-money-from-korea-to-the-us/',
+  },
+  {
     claim:
       'Under ₩24M a year you can stay a freelancer; over ₩33M you have to register a business.',
     reality:

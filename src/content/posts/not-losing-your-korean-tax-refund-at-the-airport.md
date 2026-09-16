@@ -2,12 +2,12 @@
 title: 'Not Losing Your Korean Tax Refund at the Airport'
 description: 'Most refunds are lost to procedure, not tax law. The order you do things in at check-in decides whether you are paid.'
 category: cost-of-living
-publishDate: 2026-10-16
-updatedDate: 2026-10-16
+publishDate: 2026-10-17
+updatedDate: 2026-10-17
 slot: am
 tags: [cost-of-living, tax-refund, airport, departure, short-stay]
 tracked: [tax-refund-minimum-purchase, tax-refund-export-deadline]
-lastVerified: 2026-10-16
+lastVerified: 2026-10-17
 draft: true
 sources:
   - label: 'Incheon International Airport — tax refund procedure for departing passengers'
@@ -18,7 +18,7 @@ sources:
     url: 'https://english.visitkorea.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-16
+  - date: 2026-10-17
     change: 'Published'
 keyFacts:
   - { label: 'Card receipt alone', value: 'Not enough' }

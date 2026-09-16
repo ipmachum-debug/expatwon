@@ -2,13 +2,13 @@
 title: 'Sending Money Into Korea: Routes and Real Cost'
 description: 'The same USD 20,000 arrives as a different number depending on the route — and only one of them lets you hold it in dollars until you need won.'
 category: banking
-publishDate: 2026-10-17
-updatedDate: 2026-10-17
+publishDate: 2026-10-18
+updatedDate: 2026-10-18
 slot: am
 pairedWith: what-korean-banks-ask-about-money-from-abroad
 tags: [banking, remittance, fx, arrival, foreign-currency]
 tracked: [wise-krw-resident-receiving-limit, wise-krw-nonresident-receiving-limit]
-lastVerified: 2026-10-17
+lastVerified: 2026-10-18
 draft: true
 sources:
   - label: 'Wise — KRW receiving limits, PayGate verification and recipient details'
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.fss.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-17
+  - date: 2026-10-18
     change: 'Published'
 keyFacts:
   - { label: 'Two routes', value: 'SWIFT or local settlement' }

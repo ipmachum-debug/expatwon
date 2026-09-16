@@ -2,14 +2,14 @@
 title: 'Your Korean Employment Contract: What to Check'
 description: 'Signed is not delivered, probation is not capped at three months, and two years does not always mean permanent. The clauses that decide your money.'
 category: employment
-publishDate: 2026-09-23
-updatedDate: 2026-09-23
+publishDate: 2026-09-24
+updatedDate: 2026-09-24
 slot: am
 pairedWith: minimum-wage-and-weekly-holiday-pay-korea
 draft: true
 tags: [employment, contract, probation, labour-law, foreign-workers]
 tracked: [employment-contract-written-delivery-penalty, probation-minimum-wage-reduction-period, fixed-term-two-year-rule, minimum-wage]
-lastVerified: 2026-09-23
+lastVerified: 2026-09-24
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (arts. 6, 15, 17, 20, 26, 27)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-23
+  - date: 2026-09-24
     change: 'Published'
 keyFacts:
   - { label: 'No written copy given', value: 'Fine up to ₩5,000,000' }

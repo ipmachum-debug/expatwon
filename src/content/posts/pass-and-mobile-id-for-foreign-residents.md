@@ -2,12 +2,12 @@
 title: 'PASS and Mobile ID for Foreign Residents in Korea'
 description: 'Both work on MVNO lines, and both are available to foreign residents. What decides it is the subscriber record underneath, not the brand on the plan.'
 category: cost-of-living
-publishDate: 2026-10-20
-updatedDate: 2026-10-20
+publishDate: 2026-10-21
+updatedDate: 2026-10-21
 slot: am
 tags: [cost-of-living, telecom, identity-verification, mobile-id, foreign-residents]
 tracked: [mobile-id-types-for-foreign-residents, phone-identity-verification-agencies]
-lastVerified: 2026-10-20
+lastVerified: 2026-10-21
 draft: true
 sources:
   - label: 'PASS — certificate service, MVNO support and service limitations'
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.kisa.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-20
+  - date: 2026-10-21
     change: 'Published'
 keyFacts:
   - { label: 'PASS on MVNO', value: 'Supported, with exceptions' }

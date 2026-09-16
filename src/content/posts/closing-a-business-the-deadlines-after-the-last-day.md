@@ -2,12 +2,12 @@
 title: 'Closing a Business: The Deadlines After the Last Day'
 description: 'The four insurance schemes are not all "within 14 days", and a company does not file its final tax next May. Four clocks, started by one closure.'
 category: business
-publishDate: 2026-11-01
-updatedDate: 2026-11-01
+publishDate: 2026-11-02
+updatedDate: 2026-11-02
 slot: am
 tags: [business, closing-a-business, four-insurances, corporate-tax, small-business]
 tracked: [nhis-business-closure-deadline, employment-accident-insurance-closure-deadline, nps-business-closure-deadline, corporate-tax-after-business-closure]
-lastVerified: 2026-11-01
+lastVerified: 2026-11-02
 draft: true
 sources:
   - label: 'Korea Law Information Center — National Health Insurance Act'
@@ -24,7 +24,7 @@ sources:
     url: 'https://www.4insure.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-01
+  - date: 2026-11-02
     change: 'Published'
 keyFacts:
   - { label: 'Health insurance', value: '14 days' }
