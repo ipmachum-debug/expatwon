@@ -5,7 +5,6 @@ category: business
 publishDate: 2026-09-17
 updatedDate: 2026-09-17
 slot: am
-draft: true
 tags: [business, tax, income-tax, payroll, employment]
 tracked: [foreign-worker-flat-tax-rate, foreign-worker-flat-tax-entry-deadline, flat-tax-application-period, flat-tax-break-even-model]
 lastVerified: 2026-09-17
