@@ -57,7 +57,7 @@ import { FAILURES, SCREENS, VISAS } from '../data/loanByVisa';
             <p class="mb-4 text-[0.95rem] leading-relaxed text-ink-soft/85">
               There is no list of loan-eligible visas in Korean law, and the
               tidy table — F-5 approved, E-7 conditional, E-9 and D-2 rejected —
-              does not survive contact with published products. What
+              does not survive contact with published products. What{' '}
               <strong class="text-ink">{v.label}</strong> does change is narrower
               than that, and worth knowing exactly:
             </p>
@@ -177,8 +177,18 @@ import { FAILURES, SCREENS, VISAS } from '../data/loanByVisa';
     const KEY = 'expatwon:loan-visa';
     const chips = [...root.querySelectorAll<HTMLButtonElement>('.visa-chip')];
     const panels = [...root.querySelectorAll<HTMLElement>('[data-visa-panel]')];
+    // The hover styles belong to the unselected state and travel with it.
+    // Left on the base class they outrank the selected colours while the
+    // pointer is still on the chip — which is always, right after a click —
+    // and the chip's own label turns ink on ink until the mouse moves away.
     const ON = ['border-ink', 'bg-ink', 'text-white'];
-    const OFF = ['border-rule', 'bg-white', 'text-ink-soft'];
+    const OFF = [
+      'border-rule',
+      'bg-white',
+      'text-ink-soft',
+      'hover:border-ink/40',
+      'hover:text-ink',
+    ];
 
     function show(id: string) {
       for (const chip of chips) {

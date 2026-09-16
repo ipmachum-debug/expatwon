@@ -224,8 +224,17 @@ const verifiedLabel = new Date(`${LAST_VERIFIED}T00:00:00Z`).toLocaleDateString(
     const chips = [...bar.querySelectorAll<HTMLButtonElement>('.aud-chip')];
     const months = [...document.querySelectorAll<HTMLElement>('[data-month]')];
     const emptyNote = bar.querySelector<HTMLElement>('[data-empty-note]');
+    // Hover styles travel with the unselected state. On the base class they
+    // outrank the selected colours while the pointer is still on the chip,
+    // which is always right after a click, and the label disappears.
     const ON = ['border-ink', 'bg-ink', 'text-white'];
-    const OFF = ['border-rule', 'bg-paper', 'text-ink-soft'];
+    const OFF = [
+      'border-rule',
+      'bg-paper',
+      'text-ink-soft',
+      'hover:border-ink/40',
+      'hover:text-ink',
+    ];
 
     // Seeded from the reader's own browser, so returning here shows the
     // situations they already chose rather than the whole calendar again.
