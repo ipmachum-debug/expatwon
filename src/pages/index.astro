@@ -24,6 +24,36 @@ const mythSample = liveMyths.slice(0, 3);
 // a home" spans cost-of-living and loans, and no category page expresses it.
 // Each one points at the guide that opens the job, so a card never promises
 // depth the site does not have.
+/**
+ * Three, not eight.
+ *
+ * The eight jobs below this are the full list and they stay there. What the
+ * opening needed was one decision small enough to make in the five seconds
+ * before someone leaves, and three situations cover where almost everyone is
+ * standing when they first land here. More choices at the top is how the
+ * grid below ends up read by nobody.
+ *
+ * All three point at guides that are live now. The arriving/leaving hubs
+ * would frame this better and publish in November; this gets rewritten then.
+ */
+const OPENINGS = [
+  {
+    title: 'I’ve just arrived',
+    blurb: 'The account, the card, and why the first one is limited.',
+    href: '/banking/how-to-open-a-bank-account-in-korea-as-a-foreigner/',
+  },
+  {
+    title: 'I need to borrow',
+    blurb: 'What your visa changes — and what is deciding it instead.',
+    href: '/tools/loan-by-visa/',
+  },
+  {
+    title: 'I’m running a business',
+    blurb: 'Visa permission first, then tax registration. In that order.',
+    href: '/business/registering-a-business-in-korea-as-a-foreigner/',
+  },
+];
+
 const tasks = [
   {
     title: 'Open a bank account',
@@ -119,19 +149,25 @@ const tools = [
           each one.
         </p>
 
-        <div class="flex flex-wrap items-center gap-3">
-          <a
-            href="/tools/"
-            class="rounded-full bg-ink px-6 py-3 font-sans text-[0.92rem] font-semibold text-paper transition-transform hover:-translate-y-0.5"
-          >
-            Run your own numbers →
-          </a>
-          <a
-            href="/banking/"
-            class="rounded-full border border-ink/25 px-6 py-3 font-sans text-[0.92rem] font-semibold text-ink transition-colors hover:border-ink"
-          >
-            Start with banking
-          </a>
+        <p class="mb-3 font-sans text-[0.8rem] font-semibold tracking-wide text-ink-soft/70 uppercase">
+          Where are you right now?
+        </p>
+        <div class="grid gap-2.5 sm:grid-cols-3">
+          {
+            OPENINGS.map((o) => (
+              <a
+                href={o.href}
+                class="group rounded-2xl border border-ink/15 bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-gold hover:shadow-md"
+              >
+                <span class="block font-display text-[1.02rem] leading-snug font-bold text-ink group-hover:text-gold">
+                  {o.title}
+                </span>
+                <span class="mt-1 block font-sans text-[0.82rem] leading-relaxed text-ink-soft/80">
+                  {o.blurb}
+                </span>
+              </a>
+            ))
+          }
         </div>
       </div>
 
