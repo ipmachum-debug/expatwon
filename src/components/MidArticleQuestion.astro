@@ -1,0 +1,85 @@
+---
+/**
+ * One open question, partway down a long guide.
+ *
+ * A reader who arrived from search reads until their own question is answered
+ * and then leaves, usually well before the end of the page. The card at the
+ * bottom never reaches them. This is the same offer placed where they actually
+ * stop.
+ *
+ * It takes the *second* guide in the body-link ranking, so the end-of-article
+ * card keeps the first and one page never recommends the same guide twice.
+ * A post with only one linked guide gets nothing here rather than a repeat.
+ *
+ * Placement is done in the browser. The article body arrives as one slot, so
+ * there is no server-side seam to insert at; the card renders after the body
+ * and moves itself in front of the most central h2. That order is also what a
+ * crawler sees, which is the right way round — the content is on the page
+ * either way, and the move is presentation.
+ */
+import type { CollectionEntry } from 'astro:content';
+
+import { getCategory } from '../lib/categories';
+
+interface Props {
+  target?: CollectionEntry<'posts'>;
+}
+
+const { target } = Astro.props;
+const category = target ? getCategory(target.data.category) : undefined;
+const question = target?.data.faq?.[0]?.question;
+---
+
+{
+  target && category && question && (
+    <aside class="my-10" data-mid-question>
+      <a
+        href={`/${category.slug}/${target.id}/`}
+        class="group flex gap-4 rounded-2xl border border-gold/30 bg-paper p-5 transition-colors hover:border-gold/60 sm:p-6"
+      >
+        <span
+          class="mt-0.5 flex-none font-display text-[1.6rem] leading-none font-bold text-gold"
+          aria-hidden="true"
+        >
+          ?
+        </span>
+        <span>
+          <span class="mb-1.5 block font-display text-[1.1rem] leading-snug font-semibold text-ink group-hover:text-gold sm:text-[1.2rem]">
+            {question}
+          </span>
+          <span class="block font-sans text-[0.85rem] font-medium text-ink-soft/70">
+            Answered in {target.data.title}
+            <span class="ml-1 inline-block transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+              →
+            </span>
+          </span>
+        </span>
+      </a>
+    </aside>
+  )
+}
+
+<script>
+  /**
+   * Move the card in front of the h2 nearest the middle of the article.
+   *
+   * Nearest by heading count rather than by pixel height: a section with a
+   * large table is not more read than a short one, and counting headings
+   * cannot land the card inside a figure or between a heading and its own
+   * first paragraph.
+   */
+  const card = document.querySelector<HTMLElement>('[data-mid-question]');
+  const body = document.querySelector<HTMLElement>('.prose-article');
+
+  if (card && body) {
+    const headings = [...body.querySelectorAll<HTMLElement>(':scope > h2')];
+    // Below three sections there is no middle worth finding, and the card
+    // would sit a paragraph away from the one at the end of the page.
+    if (headings.length >= 3) {
+      const at = headings[Math.floor(headings.length / 2)];
+      at.parentElement?.insertBefore(card, at);
+    } else {
+      card.remove();
+    }
+  }
+</script>

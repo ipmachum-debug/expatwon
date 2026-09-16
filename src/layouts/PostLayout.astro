@@ -1,15 +1,18 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 import AdSlot from '../components/AdSlot.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import EvidenceBlock from '../components/EvidenceBlock.astro';
 import PairedGuide from '../components/PairedGuide.astro';
+import MidArticleQuestion from '../components/MidArticleQuestion.astro';
 import ReadNext from '../components/ReadNext.astro';
 import SourcesFooter from '../components/SourcesFooter.astro';
 import TrackedFigures from '../components/TrackedFigures.astro';
 import VerificationMatrix from '../components/VerificationMatrix.astro';
 import { categoryVars, getCategory } from '../lib/categories';
+import { rankLinkedGuides } from '../lib/readNext';
 import { SITE_TITLE, SITE_URL } from '../lib/site';
 import Layout from './Layout.astro';
 
@@ -40,6 +43,16 @@ const canonical = `${SITE_URL}/${category.slug}/${post.id}/`;
 // Mid-article ad only for long-form posts (site policy: 800+ words).
 const wordCount = (post.body ?? '').split(/\s+/).filter(Boolean).length;
 const showMidAd = wordCount >= 800;
+
+// Ranked once here and split between the two cards: ReadNext takes the first
+// guide, the mid-article question takes the second. Ranking in both components
+// separately would offer the same guide twice on one page.
+const live = await getCollection('posts', (p) => !p.data.draft);
+const ranked = rankLinkedGuides(
+  post,
+  new Map(live.map((p) => [p.id, p])),
+  new Set([post.id, ...(pairedWith ? [pairedWith] : [])]),
+);
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -141,6 +154,8 @@ const faqSchema =
       <slot />
     </div>
 
+    <MidArticleQuestion target={ranked[1]} />
+
     {showMidAd && <AdSlot position="mid" />}
 
     {
@@ -204,7 +219,7 @@ const faqSchema =
       publishDate={publishDate}
     />
 
-    <ReadNext post={post} pairedWith={pairedWith} />
+    <ReadNext post={post} target={ranked[0]} pairedWith={pairedWith} />
 
     <AdSlot position="bottom" />
   </article>
