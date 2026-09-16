@@ -1,0 +1,29 @@
+---
+import AdSlot from '../../components/AdSlot.astro';
+import LoanByVisa from '../../components/LoanByVisa.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Korean Loans by Visa: What Your Status Actually Changes"
+  description="Pick your residence status and see what a Korean lender is really deciding — the three screens in order, what your visa genuinely changes, and which products name it in their own published terms."
+>
+  <header class="mb-8">
+    <h1 class="mb-3 font-display text-4xl font-bold text-ink">
+      Korean loans by visa
+    </h1>
+    <p class="max-w-2xl text-slate-600">
+      “Which visa qualifies for a loan?” is the question almost everyone
+      arrives with, and it is the wrong one — Korean law has no list of
+      loan-eligible residence statuses. This shows what your status genuinely
+      changes in a lender’s read, and what is deciding the file instead.
+    </p>
+  </header>
+
+  <LoanByVisa />
+
+  <AdSlot position="bottom" />
+
+  <RelatedPosts category="loans" heading="Guides on loans in Korea" />
+</Layout>

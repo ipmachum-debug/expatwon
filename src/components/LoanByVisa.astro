@@ -1,0 +1,216 @@
+---
+/**
+ * "Can I get a Korean loan on my visa?" — answered by disputing the question.
+ *
+ * The three screens and the three failure patterns sit outside the panels
+ * rather than inside them. That is not a saving — it is the argument. They do
+ * not change with the status, and seeing them stay put while the chips change
+ * is what makes the point without a paragraph explaining it.
+ *
+ * So they also render visible from the start. Hiding the whole answer behind a
+ * click would leave a crawler, and a reader who never picks a chip, looking at
+ * a page of buttons — and the part that does not vary is exactly the part that
+ * should not need permission to appear. Picking a status adds the narrow bit
+ * that is theirs; it does not unlock the page.
+ */
+import { FAILURES, SCREENS, VISAS } from '../data/loanByVisa';
+---
+
+<section
+  class="rounded-3xl border border-rule bg-paper p-6 sm:p-8"
+  data-loan-visa
+>
+  <h2 class="mb-1.5 font-display text-2xl font-bold text-ink sm:text-[1.75rem]">
+    Can I get a Korean loan on my visa?
+  </h2>
+  <p class="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft/85">
+    Pick your residence status.
+  </p>
+
+  <div class="mb-7 flex flex-wrap gap-2">
+    {
+      VISAS.map((v) => (
+        <button
+          type="button"
+          data-visa={v.id}
+          aria-pressed="false"
+          title={v.hint}
+          class="visa-chip rounded-full border border-rule bg-white px-4 py-2 font-sans text-[0.9rem] font-semibold text-ink-soft transition-colors hover:border-ink/40 hover:text-ink"
+        >
+          {v.label}
+        </button>
+      ))
+    }
+  </div>
+
+  <div data-visa-panels>
+    {
+      VISAS.map((v) => (
+        <div data-visa-panel={v.id} hidden>
+          <div class="mb-6 rounded-2xl border border-gold/30 bg-white p-5 sm:p-6">
+            <p class="mb-2 font-mono text-[0.65rem] tracking-[0.16em] text-gold uppercase">
+              The short answer
+            </p>
+            <p class="mb-4 font-display text-[1.35rem] leading-snug font-bold text-ink sm:text-[1.5rem]">
+              Your status is not what decides this.
+            </p>
+            <p class="mb-4 text-[0.95rem] leading-relaxed text-ink-soft/85">
+              There is no list of loan-eligible visas in Korean law, and the
+              tidy table — F-5 approved, E-7 conditional, E-9 and D-2 rejected —
+              does not survive contact with published products. What
+              <strong class="text-ink">{v.label}</strong> does change is narrower
+              than that, and worth knowing exactly:
+            </p>
+            <ul class="space-y-2.5">
+              {v.changes.map((c) => (
+                <li class="flex gap-2.5 text-[0.95rem] leading-relaxed text-ink">
+                  <span class="mt-[0.15rem] flex-none text-gold" aria-hidden="true">
+                    →
+                  </span>
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mb-7">
+            <h3 class="mb-3 font-sans text-[0.8rem] font-semibold tracking-wide text-ink-soft/70 uppercase">
+              Products whose published terms name {v.label}
+            </h3>
+            {v.products.length > 0 ? (
+              <ul class="space-y-2.5">
+                {v.products.map((p) => (
+                  <li class="flex gap-2.5 text-[0.9rem] leading-relaxed text-ink-soft/90">
+                    <span class="mt-[0.15rem] flex-none text-ink-soft/40" aria-hidden="true">
+                      ✓
+                    </span>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="max-w-2xl text-[0.9rem] leading-relaxed text-ink-soft/75">
+                None that we have cited. That is a statement about our sources,
+                not about the market — read it as “go and ask what this lender’s
+                published eligibility actually says”, never as “this status
+                cannot borrow”.
+              </p>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="border-t border-rule pt-6">
+    <h3 class="mb-4 font-sans text-[0.8rem] font-semibold tracking-wide text-ink-soft/70 uppercase">
+      What is actually being decided — the same for every status
+    </h3>
+    <ol class="mb-7 space-y-3">
+      {
+        SCREENS.map((s) => (
+          <li class="flex gap-3.5">
+            <span class="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-ink font-mono text-[0.75rem] font-bold text-white">
+              {s.n}
+            </span>
+            <div>
+              <p class="font-sans text-[0.95rem] font-semibold text-ink">{s.title}</p>
+              <p class="mt-0.5 max-w-2xl text-[0.9rem] leading-relaxed text-ink-soft/85">
+                {s.detail}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <h3 class="mb-4 font-sans text-[0.8rem] font-semibold tracking-wide text-ink-soft/70 uppercase">
+      Where foreigner files actually fail — all three are addressable
+    </h3>
+    <ul class="space-y-3">
+      {
+        FAILURES.map((f) => (
+          <li>
+            <p class="font-sans text-[0.95rem] font-semibold text-ink">{f.title}</p>
+            <p class="mt-0.5 max-w-2xl text-[0.9rem] leading-relaxed text-ink-soft/85">
+              {f.detail}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      href="/loans/can-foreigners-get-a-loan-in-korea/"
+      class="mt-7 inline-flex items-center gap-2 font-sans text-[0.9rem] font-semibold text-ink underline decoration-gold decoration-2 underline-offset-4 transition-colors hover:text-gold"
+    >
+      The full guide, status group by status group
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <noscript>
+    <p class="mt-6 border-t border-rule pt-6 text-[0.9rem] leading-relaxed text-ink-soft/85">
+      Picking a status needs JavaScript. The part that varies by status — and
+      the rest of this, status group by status group — is in
+      <a
+        href="/loans/can-foreigners-get-a-loan-in-korea/"
+        class="font-semibold text-ink underline decoration-gold decoration-2 underline-offset-4"
+        >the loans guide</a
+      >, which is where it all came from.
+    </p>
+  </noscript>
+</section>
+
+<style>
+  /* Status panels start hidden server-side so none flashes before the script
+     picks one. The screens below them are never hidden. */
+  [data-loan-visa] [data-visa-panel][hidden] {
+    display: none;
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-loan-visa]');
+
+  if (root) {
+    const KEY = 'expatwon:loan-visa';
+    const chips = [...root.querySelectorAll<HTMLButtonElement>('.visa-chip')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[data-visa-panel]')];
+    const ON = ['border-ink', 'bg-ink', 'text-white'];
+    const OFF = ['border-rule', 'bg-white', 'text-ink-soft'];
+
+    function show(id: string) {
+      for (const chip of chips) {
+        const on = chip.dataset.visa === id;
+        chip.setAttribute('aria-pressed', String(on));
+        chip.classList.remove(...(on ? OFF : ON));
+        chip.classList.add(...(on ? ON : OFF));
+      }
+      for (const panel of panels) {
+        panel.hidden = panel.dataset.visaPanel !== id;
+      }
+    }
+
+    for (const chip of chips) {
+      chip.addEventListener('click', () => {
+        const id = chip.dataset.visa;
+        if (!id) return;
+        show(id);
+        try {
+          localStorage.setItem(KEY, id);
+        } catch {
+          /* The answer still shows; only the memory of it is lost. */
+        }
+      });
+    }
+
+    // A reader who picked a status once does not have to pick it again.
+    try {
+      const saved = localStorage.getItem(KEY);
+      if (saved && chips.some((c) => c.dataset.visa === saved)) show(saved);
+    } catch {
+      /* Nothing stored, or storage is blocked: start from the chips. */
+    }
+  }
+</script>

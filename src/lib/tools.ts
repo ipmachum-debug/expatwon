@@ -22,6 +22,13 @@ export const TOOLS: Tool[] = [
     icon: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/>',
   },
   {
+    href: '/tools/loan-by-visa/',
+    title: 'Korean Loans by Visa',
+    description:
+      'Pick your residence status and see what it genuinely changes in a lender\u2019s read \u2014 the three screens in order, and which products name your status in their own published terms.',
+    icon: '<rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M7 9h5M7 12.5h3M15.5 15.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>',
+  },
+  {
     href: '/tools/car-lease-calculator/',
     title: 'Korea Car Lease Cost Calculator',
     description:

@@ -62,6 +62,10 @@ suddenly expensive; overseas income is harder to verify than domestic
 income; and if you have not been in Korea long, your KCB and NICE credit
 files are simply thin — high income does not fix an empty data file.
 
+If you want that narrowed to your own card before reading on, the
+[loans-by-visa picker](/tools/loan-by-visa/) shows what your status changes
+and what it does not.
+
 So the productive question is never "which visa qualifies for a loan?" It
 is: **how much of the stack — residence status + domestic income + credit
 history + existing debt + collateral or guarantee — can the lender actually
