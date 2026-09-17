@@ -1,6 +1,6 @@
 ---
-title: 'Car Ownership Taxes and Costs in Korea'
-description: 'Acquisition tax, the engine-size annual tax, registration bonds and the inspection cycle — what a Korean car actually costs to own, with 2026 figures.'
+title: 'What Owning a Car in Korea Costs Every Year'
+description: 'Acquisition tax, the engine-size annual tax, bonds, insurance and inspections — the yearly bill for a car in Korea, with 2026 figures.'
 category: cars
 publishDate: 2026-08-30
 updatedDate: 2026-08-30

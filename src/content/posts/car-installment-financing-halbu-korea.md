@@ -1,6 +1,6 @@
 ---
-title: 'Car Installment Loans in Korea: How Approval Works'
-description: 'Korean car installment financing for foreigners: what lenders actually screen, the down-payment effect, balloon deals, and the DSR exception explained.'
+title: 'Who Actually Gets Approved for a Car Loan in Korea'
+description: 'What Korean lenders actually screen for car finance — the credit file over the visa, the down-payment effect, balloon deals, and the DSR exception.'
 category: cars
 publishDate: 2026-08-27
 updatedDate: 2026-08-27

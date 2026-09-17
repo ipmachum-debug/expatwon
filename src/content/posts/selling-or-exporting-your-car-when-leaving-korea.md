@@ -1,6 +1,6 @@
 ---
-title: 'Selling or Exporting Your Car When Leaving Korea'
-description: 'Handing over the keys is not transferring ownership. The 30-day exit countdown, liens and seizures, export deregistration, and tax and insurance refunds.'
+title: 'Selling Your Car in Korea: Keys Are Not Ownership'
+description: 'Until the transfer is registered the car is still yours, and so are its fines. The 30-day exit countdown, liens, export deregistration and refunds.'
 category: cars
 publishDate: 2026-08-29
 updatedDate: 2026-08-29
