@@ -1,6 +1,6 @@
 ---
-title: 'Car Lease in Korea for Foreigners: The Real Cost'
-description: 'Korean car leasing as a financial contract: total cost math, the ₩8M/₩15M company-car tax caps, foreigner approval factors, and exit risks.'
+title: 'Your Company Car Lease Is Not Fully Deductible'
+description: 'Korea’s most repeated leasing claim is wrong: ₩8M a year on depreciation, ₩15M without a driving log — and what really decides approval.'
 category: cars
 publishDate: 2026-08-23
 updatedDate: 2026-08-23

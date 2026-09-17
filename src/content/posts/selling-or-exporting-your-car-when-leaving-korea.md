@@ -1,6 +1,6 @@
 ---
-title: 'Selling Your Car in Korea: Keys Are Not Ownership'
-description: 'Until the transfer is registered the car is still yours, and so are its fines. The 30-day exit countdown, liens, export deregistration and refunds.'
+title: 'You Left Korea. The Car Is Still in Your Name.'
+description: 'Handing over the keys does not transfer ownership, and the fines stay yours. The 30-day countdown, liens, export deregistration and the refunds.'
 category: cars
 publishDate: 2026-08-29
 updatedDate: 2026-08-29

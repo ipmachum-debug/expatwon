@@ -1,6 +1,6 @@
 ---
-title: 'What Owning a Car in Korea Costs Every Year'
-description: 'Acquisition tax, the engine-size annual tax, bonds, insurance and inspections — the yearly bill for a car in Korea, with 2026 figures.'
+title: 'Your Korean Car Tax Is Set by Engine Size, Not Price'
+description: 'A cheap car with a big engine is taxed more than an expensive one with a small engine. Acquisition tax, bonds, inspections and the ₩600,000 penalty.'
 category: cars
 publishDate: 2026-08-30
 updatedDate: 2026-08-30

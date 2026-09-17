@@ -1,6 +1,6 @@
 ---
-title: 'Who Actually Gets Approved for a Car Loan in Korea'
-description: 'What Korean lenders actually screen for car finance — the credit file over the visa, the down-payment effect, balloon deals, and the DSR exception.'
+title: 'Your Visa Does Not Decide Your Korean Car Loan'
+description: 'Lenders price car finance on your credit file, not your status. What is screened, the down-payment effect, balloon deals and the DSR exception.'
 category: cars
 publishDate: 2026-08-27
 updatedDate: 2026-08-27
