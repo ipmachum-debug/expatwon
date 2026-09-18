@@ -5,7 +5,6 @@ category: employment
 publishDate: 2026-09-19
 updatedDate: 2026-09-19
 slot: am
-draft: true
 tags: [employment, payroll, tax, insurance, four-insurances]
 tracked: [national-pension-rate, health-insurance-rate, long-term-care-rate, employment-insurance-employee-rate]
 lastVerified: 2026-09-19
