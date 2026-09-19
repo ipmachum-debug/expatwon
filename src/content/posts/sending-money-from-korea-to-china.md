@@ -2,7 +2,6 @@
 title: 'Sending Money From Korea to China'
 description: 'The payout rail decides this corridor — bank account, UnionPay or wallet — and China''s USD 50,000 is a purchase quota, not a cap on what you can receive.'
 category: banking
-draft: true
 publishDate: 2026-09-20
 updatedDate: 2026-09-20
 tags: [banking, remittance, china, FX, UnionPay]
