@@ -6,7 +6,6 @@ publishDate: 2026-09-21
 updatedDate: 2026-09-21
 slot: am
 pairedWith: korean-withholding-tax-receipt-explained
-draft: true
 tags: [business, tax, pension, employment, exit]
 tracked: [departure-income-tax-filing-deadline, nps-lump-sum-refund-country-list, nps-airport-refund-lead-time]
 lastVerified: 2026-09-21
