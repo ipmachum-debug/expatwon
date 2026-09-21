@@ -8,7 +8,6 @@ slot: am
 tags: [business, tax, payroll, year-end-settlement, foreign-workers]
 tracked: [withholding-receipt-form-version, employment-income-statement-deadline, foreign-worker-flat-tax-rate]
 lastVerified: 2026-09-22
-draft: true
 sources:
   - label: 'Korea Law Information Center — Enforcement Rule of the Income Tax Act, appended form 24 (employment income withholding receipt), revised 20 March 2026'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99'
