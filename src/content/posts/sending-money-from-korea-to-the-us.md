@@ -2,7 +2,6 @@
 title: 'Sending Money From Korea to the US'
 description: 'Wire or ACH changes the route and the fees; the tax result is set by whose money it is. Routing numbers, intermediary charges, FBAR and Form 3520.'
 category: banking
-draft: true
 publishDate: 2026-09-23
 updatedDate: 2026-09-23
 tags: [banking, remittance, USA, tax, FBAR]
