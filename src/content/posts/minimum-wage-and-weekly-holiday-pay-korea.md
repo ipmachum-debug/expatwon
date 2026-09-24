@@ -5,7 +5,6 @@ category: employment
 publishDate: 2026-09-25
 updatedDate: 2026-09-25
 slot: am
-draft: true
 tags: [employment, minimum-wage, weekly-holiday, part-time, payroll]
 tracked: [minimum-wage, minimum-wage-monthly-equivalent, monthly-standard-hours, weekly-holiday-hours-threshold]
 lastVerified: 2026-09-25
