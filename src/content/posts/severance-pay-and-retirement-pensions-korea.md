@@ -9,7 +9,6 @@ pairedWith: departure-guarantee-insurance-for-eps-workers
 tags: [employment, severance, retirement-pension, average-wage, foreign-workers]
 tracked: [severance-minimum-continuous-service, severance-payment-deadline, dc-employer-minimum-contribution, departure-guarantee-insurance-rate]
 lastVerified: 2026-09-26
-draft: true
 sources:
   - label: 'Korea Law Information Center — Act on the Guarantee of Workers’ Retirement Benefits (eligibility, DB/DC, 14-day payment, IRP transfer)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95'
