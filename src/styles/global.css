@@ -118,8 +118,45 @@
   border-color: var(--cat-accent);
   background: var(--cat-tint);
 }
-.prose-article code {
+/* Inline code only. Scoped away from `pre` — the chip background used to be
+ * painted on every line inside a code block (`code` is inline, so it paints per
+ * line box), which striped the block and made the text unreadable. */
+.prose-article :not(pre) > code {
   @apply rounded bg-paper-deep px-1.5 py-0.5 text-[0.9em];
+}
+
+/* Code blocks are ASCII figures on this site, not code — checklists, rate
+ * tables, flows. They read as a figure in the paper palette, and scroll
+ * sideways rather than pushing the page wide on a phone. */
+.prose-article pre {
+  @apply my-7 overflow-x-auto rounded-xl border px-5 py-4 text-[0.82rem] leading-[1.75];
+  border-color: var(--color-rule);
+  background-color: var(--color-paper-deep);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+
+  /* Two thirds of these figures are wider than a phone (median 49 chars, up to
+   * 84; about 45 fit at 390px). Shrinking the type to fit would make it
+   * unreadable, so the block scrolls — and these gradients are the only hint a
+   * reader gets that it does. The pairs are: an opaque mask pinned to each edge
+   * (background-attachment: local, so it slides away as you scroll) over a soft
+   * shadow pinned to the viewport (scroll). The shadow shows only while there
+   * is more content in that direction. No JS. */
+  background-image:
+    linear-gradient(to right, var(--color-paper-deep) 40%, transparent),
+    linear-gradient(to left, var(--color-paper-deep) 40%, transparent),
+    radial-gradient(farthest-side at 0 50%, rgb(34 28 20 / 0.13), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgb(34 28 20 / 0.13), transparent);
+  background-position: 0 0, 100% 0, 0 0, 100% 0;
+  background-repeat: no-repeat;
+  background-size: 44px 100%, 44px 100%, 15px 100%, 15px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+.prose-article pre code {
+  @apply bg-transparent p-0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 .prose-article > p:first-of-type {
   @apply mb-6 border-l-[3px] py-1 pl-5 text-[1.2rem] leading-[1.65] font-medium text-ink;

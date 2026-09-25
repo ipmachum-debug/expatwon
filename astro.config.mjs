@@ -24,6 +24,12 @@ export default defineConfig({
   ],
   markdown: {
     processor: satteri({ mdastPlugins: [satteriFigures()] }),
+    // Every one of the 296 code fences on this site is an untagged ASCII figure
+    // — a checklist, a rate table, a flow. None of them is code. Shiki was
+    // stamping a github-dark background on each one inline, which fought the
+    // paper palette and made the text unreadable on mobile. Plain <pre><code>
+    // instead; the block is styled in global.css like any other figure.
+    syntaxHighlight: false,
   },
   vite: {
     plugins: [tailwindcss()],
