@@ -8,7 +8,6 @@ slot: am
 tags: [employment, severance, eps, foreign-workers, departure]
 tracked: [departure-guarantee-insurance-rate, severance-payment-deadline]
 lastVerified: 2026-09-27
-draft: true
 sources:
   - label: 'Korea Law Information Center — Act on the Employment of Foreign Workers (departure guarantee insurance)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%99%B8%EA%B5%AD%EC%9D%B8%EA%B7%BC%EB%A1%9C%EC%9E%90%EC%9D%98%EA%B3%A0%EC%9A%A9%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EB%B2%95%EB%A5%A0'
