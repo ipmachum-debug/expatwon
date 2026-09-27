@@ -9,7 +9,6 @@ pairedWith: annual-leave-use-promotion-korea
 tags: [employment, annual-leave, unused-leave-pay, ordinary-wage, foreign-workers]
 tracked: [annual-leave-minimum-workplace-size, first-year-leave-expiry-rule, weekly-holiday-hours-threshold]
 lastVerified: 2026-09-28
-draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 18(3) short hours, art. 60 annual leave, art. 60(7) first-year expiry)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
