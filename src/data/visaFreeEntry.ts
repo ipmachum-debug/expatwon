@@ -5,11 +5,11 @@
  *
  * 1. NOTHING IS ASSERTED THAT HAS NOT BEEN READ AT SOURCE. A country produces
  *    a yes or a no only when a `CountryRule` for it exists, and a rule cannot
- *    be constructed without a `source` and a `verifiedOn`. `COUNTRY_RULES`
- *    starts empty on purpose: with no rules, every nationality resolves to
- *    `check-required` and the reader is sent to the official page. That is the
- *    correct behaviour, not a placeholder — a wrong yes here is not a wrong
- *    sentence in a guide, it is somebody refused at a boarding gate.
+ *    be constructed without a source and the date it was read. A nationality
+ *    with no row resolves to `check-required` and the reader is sent to the
+ *    official page — that is the correct behaviour, not a gap to be filled by
+ *    guessing, because a wrong yes here is not a wrong sentence in a guide, it
+ *    is somebody refused at a boarding gate.
  *
  * 2. THE VERDICT IS ABOUT SCOPE, NEVER ABOUT ADMISSION. An immigration officer
  *    decides admission at the counter; no table can. So the language is "you
@@ -18,10 +18,10 @@
  *    no scoring, no "you are likely to be approved".
  *
  * Scope of the first version, deliberately narrow: ORDINARY passports,
- * TOURISM or SHORT VISIT. Diplomatic and official passports, employment,
- * study, Jeju's separate scheme and transit all resolve to `check-required`
- * with a route, because each runs on a different rule set and half-covering
- * them is worse than not covering them.
+ * tourism, short visits and short business visits. Diplomatic and official
+ * passports, employment, study, Jeju's separate scheme and transit all resolve
+ * to `check-required` with a route, because each runs on a different rule set
+ * and half-covering them is worse than not covering them.
  */
 
 /* ---------------------------------------------------------------------------
@@ -48,8 +48,8 @@ export interface Verified {
 }
 
 /* ---------------------------------------------------------------------------
- * What the reader tells us. Kept to five fields — every extra field is a
- * reader who abandons the form.
+ * What the reader tells us. Kept short — every extra field is a reader who
+ * abandons the form.
  * ------------------------------------------------------------------------- */
 
 export type PassportKind = 'ordinary' | 'diplomatic-official' | 'other';
@@ -64,6 +64,8 @@ export interface CheckerInput {
   days: number | null;
   /** ISO date of intended arrival — temporary exemptions are dated. */
   arrivalDate: string;
+  /** Only asked when the chosen country has more than one category. */
+  nationalityCategory?: string;
 }
 
 /* ---------------------------------------------------------------------------
@@ -87,6 +89,11 @@ export interface CheckerResult {
   /** null = we do not know for this nationality, which is not the same as 'no'. */
   ketaNeeded?: boolean | null;
   arrivalCardNeeded?: boolean | null;
+  /**
+   * Set when the nationality splits into passport categories and the reader
+   * has not said which is theirs. The form asks rather than picking one.
+   */
+  categoryChoice?: { code: string; options: { value: string; label: string }[] };
   /** Where to go next, in the order the reader needs it. */
   next: { label: string; href: string }[];
   /** Everything the verdict rests on. Empty means we asserted nothing. */
@@ -100,8 +107,10 @@ export interface CheckerResult {
  * that differ in who is covered and for how long, which is why the checker
  * asks about passport kind at all.
  *
- * NOT YET VERIFIED AT SOURCE — so this array only labels the distinction for
- * the reader. No duration is stated here, and nothing in it feeds a verdict.
+ * The official lists name three things, not two: a treaty, reciprocity, and a
+ * unilateral exemption. Reciprocity and unilateral exemption are both Korea
+ * extending entry outside a treaty, so both map to `designation` here — which
+ * is also how HiKorea groups them.
  * ------------------------------------------------------------------------- */
 
 export interface EntryBasis {
@@ -128,13 +137,49 @@ export const ENTRY_BASES: EntryBasis[] = [
 ];
 
 /* ---------------------------------------------------------------------------
- * Verified facts. This is the only place a claim may enter the checker.
+ * Sources. Declared before the facts that cite them, so nothing reads a
+ * binding that has not been initialised yet.
  * ------------------------------------------------------------------------- */
 
+/** The dated blanket waiver, and the arrival-card consequence of holding one. */
 export const KETA_NOTICE: Source = {
   label: 'K-ETA — Notice on extension of the temporary exemption',
   url: 'https://www.k-eta.go.kr/portal/board/viewboarddetail.do?bbsSn=299707&locale=EN',
 };
+
+/**
+ * Where the permitted stay per nationality is stated, and where the British
+ * passport categories are listed separately. This replaces the site root the
+ * file carried while the deep link was unconfirmed.
+ */
+export const KETA_ELIGIBILITY_PAGE: Source = {
+  label: 'K-ETA — eligible countries and permitted period of stay',
+  url: 'https://www.k-eta.go.kr/portal/guide/viewetaalification.do?locale=EN',
+};
+
+/**
+ * Primary source for which scheme a nationality falls under. Preferred over
+ * HiKorea's equivalent page because it is current as of September 2026 and
+ * states the basis per country; HiKorea's page shows a last-modified date of
+ * 2024-12-30, so it is kept as a cross-check rather than the citation.
+ */
+export const MOFA_VISA_FREE: Source = {
+  label:
+    'Ministry of Foreign Affairs (0404) — visa-free entry, foreign nationals ' +
+    'entering Korea',
+  url: 'https://www.0404.go.kr/bbs/contsPst/MST0000000000113/13/detail',
+};
+
+export const HIKOREA_VISA_FREE: Source = {
+  label:
+    'HiKorea — visa exemption agreement countries and visa-free entry by ' +
+    'designation (cross-check; page last modified 2024-12-30)',
+  url: 'https://www.hikorea.go.kr/info/InfoDatail.pt?CAT_SEQ=161&PARENT_ID=11',
+};
+
+/* ---------------------------------------------------------------------------
+ * Verified facts. This is the only place a claim may enter the checker.
+ * ------------------------------------------------------------------------- */
 
 export const FACTS: (Verified & { id: string; statement: string })[] = [
   {
@@ -156,23 +201,51 @@ export const FACTS: (Verified & { id: string; statement: string })[] = [
     verifiedBy: 'author',
     source: KETA_NOTICE,
   },
+  {
+    id: 'keta-age-exemption',
+    statement:
+      'K-ETA is not required of travellers aged 17 or under, or 65 or over, ' +
+      'on the date of arrival. This attaches to the traveller, not to the ' +
+      'passport, which is why a nationality being inside K-ETA’s scope cannot ' +
+      'be turned into "you personally must apply".',
+    verifiedOn: '2026-09-28',
+    verifiedBy: 'author',
+    source: KETA_ELIGIBILITY_PAGE,
+  },
+  {
+    id: 'visa-free-purposes',
+    statement:
+      'The purposes visa-free entry covers are travel, visiting relatives, ' +
+      'attending events or conferences, and business purposes with no ' +
+      'commercial activities allowed. A short business visit is therefore ' +
+      'inside the scope; it is the commercial activity, not the word ' +
+      '"business", that puts a trip outside it.',
+    verifiedOn: '2026-09-28',
+    verifiedBy: 'author',
+    source: KETA_ELIGIBILITY_PAGE,
+  },
 ];
+
+export function fact(id: string): Verified & { id: string; statement: string } {
+  const found = FACTS.find((f) => f.id === id);
+  if (!found) throw new Error(`No verified fact with id "${id}"`);
+  return found;
+}
 
 /** The date the exemption above stops. Arrivals after it need re-checking. */
 export const KETA_EXEMPTION_ENDS = '2026-12-31';
 
 /* ---------------------------------------------------------------------------
- * Country rules. EMPTY UNTIL READ AT SOURCE — see the header.
- *
- * Filling one in is the whole job: a row may only be added from an official
- * page that was actually opened, with its URL and the date it was read.
+ * Country rules. A row may only be added from an official page that was
+ * actually opened, with its URL and the date it was read.
  * ------------------------------------------------------------------------- */
 
 /**
  * How long a visa-free stay may run. Not a number of days, because the
  * official lists do not all speak in days: some say months, and at least one
  * is a rolling window. Converting "6 months" to 180 would be inventing a
- * figure the source never gave.
+ * figure the source never gave — the K-ETA page says "06 Months", so that is
+ * what this stores.
  */
 export type StayAllowance =
   | { kind: 'days'; value: number }
@@ -180,74 +253,253 @@ export type StayAllowance =
   /** e.g. 30 continuous days, and no more than 60 within any 180. */
   | { kind: 'rolling'; continuousDays: number; maxInWindow: number; windowDays: number };
 
+/**
+ * Four things that "K-ETA" gets used for, and they are not the same thing:
+ *
+ *   is this nationality visa-free at all   → CountryRule.stay
+ *   is it inside K-ETA's scope             → eligible
+ *   is it inside the dated blanket waiver  → temporaryExemption
+ *   does the person hold an exemption      → personalExemptions
+ *
+ * Only the first two are properties of a passport. The third is a policy with
+ * an end date, and the fourth attaches to the traveller — age, an ABTC, an
+ * approved K-ETA already held. The form cannot see the fourth at all, so it is
+ * listed for the reader and never applied to a verdict.
+ */
+export interface KetaPosition {
+  /** Inside K-ETA's scope. null = not established, which is not 'no'. */
+  eligible: boolean | null;
+  /** The dated blanket waiver, when this nationality sits inside it. */
+  temporaryExemption?: { until: string };
+  /** Named for the reader to check. Never used to decide anything here. */
+  personalExemptions: string[];
+}
+
 export interface CountryRule {
   /** ISO 3166-1 alpha-2. */
   code: string;
   name: string;
   /**
-   * Which of the two schemes this falls under. OPTIONAL, and absent by
-   * default: no verdict reads it, so requiring it blocked rows whose day
-   * counts were verified. It is explanatory, and it is shown only when known.
+   * A nationality can split into passport categories that get different
+   * allowances — the United Kingdom splits six ways, and alpha-2 cannot tell
+   * them apart. 'default' when a country does not split; when it does, the
+   * reader is asked which one is theirs rather than being handed the wrong
+   * row. This is a nationality category, not the document kind (ordinary vs
+   * diplomatic) already asked for separately.
+   */
+  category: string;
+  /** Shown to the reader when a country splits. */
+  categoryLabel?: string;
+  /**
+   * Which of the two schemes this falls under. Explanatory: no verdict reads
+   * it, which is why it stays optional — requiring it would block rows whose
+   * day counts were verified from a page that does not state the basis.
    */
   basis?: EntryBasis['id'];
   /** What an ordinary passport holder gets for tourism or a short visit. */
   stay: StayAllowance;
-  /** true = K-ETA required · false = exempt · null = not established. */
-  keta: boolean | null;
-  verified: Verified;
+  keta: KetaPosition;
+  /**
+   * More than one page, because a row rests on more than one reading: the
+   * permitted stay comes from the K-ETA eligibility page, the scheme from the
+   * MOFA list. Both are pushed into the result's basis so the reader sees
+   * exactly what each part of the answer came from.
+   */
+  verified: Verified[];
 }
 
-/**
- * Read on the K-ETA site's "does K-ETA apply to my nationality" page by Codex
- * on 2026-09-28, and handed over in docs/visa-free-entry-handoff.md.
- *
- * The URL recorded is the site root, not the deep link. The handover gave
- * .../portal/guide/viewetaalification.do, which does not resolve as written
- * and looks like a corrupted path. This file's own rule for sources is that a
- * guessed deep link is worse than a root URL — it looks precise while being
- * wrong — so the root stands until the exact page is confirmed.
- *
- * Every row carries keta: null. The page gives durations; it does not
- * establish which nationalities sit inside the temporary K-ETA exemption, and
- * null means "not established", never "not required".
- *
- * GB is deliberately absent. The allowance was read, but it applies to
- * British Citizen passports and an alpha-2 code cannot tell those apart from
- * the other British passport categories. A holder of one of those would pick
- * "United Kingdom" and be handed an answer that is not theirs.
- */
-const KETA_NATIONALITY_PAGE: Source = {
-  label: 'K-ETA — whether K-ETA applies to your nationality',
-  url: 'https://www.k-eta.go.kr/',
-};
-
-const READ_BY_CODEX: Verified = {
+/* Read by the author on 2026-09-28 at the two pages named above. */
+const STAY_READ: Verified = {
   verifiedOn: '2026-09-28',
-  verifiedBy: 'codex',
-  source: KETA_NATIONALITY_PAGE,
+  verifiedBy: 'author',
+  source: KETA_ELIGIBILITY_PAGE,
 };
 
-export const COUNTRY_RULES: CountryRule[] = [
-  { code: 'US', name: 'United States', stay: { kind: 'days', value: 90 }, keta: null, verified: READ_BY_CODEX },
-  { code: 'JP', name: 'Japan', stay: { kind: 'days', value: 90 }, keta: null, verified: READ_BY_CODEX },
-  { code: 'SG', name: 'Singapore', stay: { kind: 'days', value: 90 }, keta: null, verified: READ_BY_CODEX },
-  { code: 'AU', name: 'Australia', stay: { kind: 'days', value: 90 }, keta: null, verified: READ_BY_CODEX },
-  // Months, not 180 days. Six months from 15 March is 15 September.
-  { code: 'CA', name: 'Canada', stay: { kind: 'months', value: 6 }, keta: null, verified: READ_BY_CODEX },
-  { code: 'MY', name: 'Malaysia', stay: { kind: 'months', value: 3 }, keta: null, verified: READ_BY_CODEX },
-  // Counts earlier visits, so this row can only ever reach check-required.
-  { code: 'KZ', name: 'Kazakhstan', stay: { kind: 'rolling', continuousDays: 30, maxInWindow: 60, windowDays: 180 }, keta: null, verified: READ_BY_CODEX },
+const BASIS_READ: Verified = {
+  verifiedOn: '2026-09-28',
+  verifiedBy: 'author',
+  source: MOFA_VISA_FREE,
+};
+
+const READ = [STAY_READ, BASIS_READ];
+
+/**
+ * Exemptions that attach to the traveller rather than the passport. Listed for
+ * the reader, never applied: the form does not ask anyone's age, and guessing
+ * would turn "K-ETA is normally required for your nationality" into a personal
+ * instruction that may be wrong in either direction.
+ */
+const PERSONAL_EXEMPTIONS = [
+  'aged 17 or under on the date of arrival',
+  'aged 65 or over on the date of arrival',
 ];
+
+/** Inside the dated blanket waiver — see FACTS[0]. */
+const TEMP_EXEMPT: KetaPosition = {
+  eligible: true,
+  temporaryExemption: { until: KETA_EXEMPTION_ENDS },
+  personalExemptions: PERSONAL_EXEMPTIONS,
+};
+
+/**
+ * Seven nationalities, read at source on 2026-09-28.
+ *
+ * Six of the seven sit inside the temporary K-ETA exemption. Malaysia does
+ * not, so its row carries the scope position alone — and that row cannot reach
+ * a clean yes here, by design: being inside K-ETA's scope is a fact about the
+ * passport, whereas "you must apply" is a fact about the traveller, and the
+ * age exemptions above mean the two are not the same sentence.
+ *
+ * The United Kingdom is six rows, not one. The K-ETA list gives British
+ * Citizen 90 days and the other British passport categories 30 days, and an
+ * alpha-2 code cannot tell them apart — so the reader is asked which is
+ * theirs instead of being handed the majority answer.
+ */
+export const COUNTRY_RULES: CountryRule[] = [
+  {
+    code: 'US',
+    name: 'United States',
+    category: 'default',
+    basis: 'designation',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    code: 'JP',
+    name: 'Japan',
+    category: 'default',
+    basis: 'designation',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    code: 'SG',
+    name: 'Singapore',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    code: 'AU',
+    name: 'Australia',
+    category: 'default',
+    basis: 'designation',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    // Months, not 180 days. Six months from 15 March is 15 September.
+    code: 'CA',
+    name: 'Canada',
+    category: 'default',
+    basis: 'designation',
+    stay: { kind: 'months', value: 6 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    // Not inside the temporary exemption, unlike the other six.
+    code: 'MY',
+    name: 'Malaysia',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'months', value: 3 },
+    keta: { eligible: true, personalExemptions: PERSONAL_EXEMPTIONS },
+    verified: READ,
+  },
+  {
+    code: 'GB',
+    name: 'United Kingdom',
+    category: 'british-citizen',
+    categoryLabel: 'British Citizen',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    code: 'GB',
+    name: 'United Kingdom',
+    category: 'british-dependent-territories-citizen',
+    categoryLabel: 'British Dependent Territories Citizen',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 30 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    code: 'GB',
+    name: 'United Kingdom',
+    category: 'british-national-overseas',
+    categoryLabel: 'British National (Overseas)',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 30 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    code: 'GB',
+    name: 'United Kingdom',
+    category: 'british-overseas-citizen',
+    categoryLabel: 'British Overseas Citizen',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 30 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    code: 'GB',
+    name: 'United Kingdom',
+    category: 'british-protected-person',
+    categoryLabel: 'British Protected Person',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 30 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+  {
+    code: 'GB',
+    name: 'United Kingdom',
+    category: 'british-subject',
+    categoryLabel: 'British Subject',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 30 },
+    keta: TEMP_EXEMPT,
+    verified: READ,
+  },
+];
+
+/** Every row for a nationality — more than one when its passport splits. */
+export function rulesFor(code: string): CountryRule[] {
+  return COUNTRY_RULES.filter((r) => r.code === code);
+}
+
+/** The choices to put in front of the reader when a nationality splits. */
+export function categoryOptions(code: string): { value: string; label: string }[] {
+  return rulesFor(code).map((r) => ({
+    value: r.category,
+    label: r.categoryLabel ?? r.name,
+  }));
+}
+
+/** Nationalities the checker can resolve, for the country select. */
+export function supportedCountries(): { code: string; name: string }[] {
+  const seen = new Map<string, string>();
+  for (const r of COUNTRY_RULES) if (!seen.has(r.code)) seen.set(r.code, r.name);
+  return [...seen].map(([code, name]) => ({ code, name })).sort((a, b) => a.name.localeCompare(b.name));
+}
 
 /* ---------------------------------------------------------------------------
  * The assessment. Order matters: scope gates run before any lookup, so an
  * out-of-scope reader is routed rather than judged on data we do not have.
  * ------------------------------------------------------------------------- */
 
-const OFFICIAL_CHECK: Source = {
-  label: 'Korea Immigration Service — check your nationality',
-  url: 'https://www.k-eta.go.kr/',
-};
+const OFFICIAL_CHECK: Source = KETA_ELIGIBILITY_PAGE;
 
 /**
  * Turn an allowance into a day limit against a specific arrival date.
@@ -295,7 +547,7 @@ export function assess(input: CheckerInput): CheckerResult {
     return {
       verdict: 'out-of-scope',
       reasons: [
-        'This checker covers tourism and short visits only.',
+        'This checker covers tourism, short visits and short business visits.',
         'Coming to work or study runs on the visa for that status, applied for before you travel.',
       ],
       next: [
@@ -303,6 +555,22 @@ export function assess(input: CheckerInput): CheckerResult {
         { label: 'Studying Korean: the D-4 route', href: '/study/' },
       ],
       basis,
+    };
+  }
+
+  // Anything the form cannot name is not judged. "Other" covers medical
+  // treatment, transit, Jeju's separate scheme and a dozen things besides, and
+  // they do not share a rule.
+  if (input.purpose === 'other') {
+    return {
+      verdict: 'check-required',
+      reasons: [
+        'Visa-free entry covers specific purposes, and what you have picked is not one we will judge blind.',
+        'Transit, medical treatment and Jeju each run on their own rule.',
+      ],
+      next: [],
+      basis,
+      officialCheck: OFFICIAL_CHECK,
     };
   }
 
@@ -321,11 +589,9 @@ export function assess(input: CheckerInput): CheckerResult {
     };
   }
 
-  // Gate 3 — do we have a verified rule for this nationality at all? With
-  // COUNTRY_RULES empty this catches everyone, which is the intended state
-  // until the official lists have been read.
-  const rule = COUNTRY_RULES.find((r) => r.code === input.country);
-  if (!rule) {
+  // Gate 3 — do we have a verified rule for this nationality at all?
+  const candidates = rulesFor(input.country);
+  if (candidates.length === 0) {
     return {
       verdict: 'check-required',
       reasons: [
@@ -336,19 +602,42 @@ export function assess(input: CheckerInput): CheckerResult {
       officialCheck: OFFICIAL_CHECK,
     };
   }
-  basis.push(rule.verified);
+
+  // Gate 4 — the nationality splits and we have not been told which row is
+  // theirs. Handing over the most common one would be handing 30-day holders a
+  // 90-day answer, so the form asks.
+  let rule = candidates[0];
+  if (candidates.length > 1) {
+    const chosen = candidates.find((r) => r.category === input.nationalityCategory);
+    if (!chosen) {
+      return {
+        verdict: 'check-required',
+        reasons: [
+          `Passports issued by ${candidates[0].name} come in categories that get different allowances.`,
+          'Tell us which one yours says, and we will answer for that one.',
+        ],
+        categoryChoice: { code: input.country, options: categoryOptions(input.country) },
+        next: [],
+        basis,
+        officialCheck: OFFICIAL_CHECK,
+      };
+    }
+    rule = chosen;
+  }
+  basis.push(...rule.verified);
 
   const reasons: string[] = [];
 
   // Length of stay. Visa-free entry is a fixed period, and overstaying it is
   // not a paperwork problem — it is the thing a visa exists for.
   const stay = resolveStay(rule.stay, input.arrivalDate);
+  const who = rule.categoryLabel ? `a ${rule.categoryLabel} passport` : 'your nationality';
 
   if (input.days != null && input.days > stay.limitDays) {
     return {
       verdict: 'out-of-scope',
       reasons: [
-        `Visa-free entry for your nationality runs to ${stay.label}.`,
+        `Visa-free entry on ${who} runs to ${stay.label}.`,
         `You have entered ${input.days} days, so the stay you are planning needs a visa applied for before you travel.`,
       ],
       next: [{ label: 'Long-stay routes and what each requires', href: '/study/' }],
@@ -357,9 +646,26 @@ export function assess(input: CheckerInput): CheckerResult {
     };
   }
 
-  reasons.push(
-    `Your nationality is in scope for visa-free entry for up to ${stay.label} on an ordinary passport.`,
-  );
+  reasons.push(`You are in scope for visa-free entry on ${who} for up to ${stay.label}.`);
+
+  // The purpose boundary. A short business visit is inside visa-free entry —
+  // the mistake this paragraph exists to prevent is reading "business trip" as
+  // "business visa". What puts a trip outside is the commercial activity, not
+  // the word.
+  if (input.purpose === 'business-meeting') {
+    basis.push(fact('visa-free-purposes'));
+    reasons.push(
+      'A short business visit is inside that scope: the purposes named are travel, ' +
+        'visiting relatives, attending events or conferences, and business purposes ' +
+        'with no commercial activities allowed.',
+    );
+    reasons.push(
+      'That last clause is the line. Meetings, a conference and talks sit inside it; ' +
+        'work you are paid for, service delivered on site, and taking up a posting do not, ' +
+        'whatever the trip is called internally.',
+    );
+    next.push({ label: 'Business visits and where the line actually falls', href: '/business/' });
+  }
 
   // A rolling allowance counts earlier visits. This form does not ask for
   // them, so the continuous limit is all it can settle.
@@ -371,7 +677,7 @@ export function assess(input: CheckerInput): CheckerResult {
         'This allowance also counts your earlier visits, which this form does not ask for. Check the total against the official rule.',
       ],
       stayDays: stay.limitDays,
-      ketaNeeded: rule.keta,
+      ketaNeeded: null,
       arrivalCardNeeded: null,
       next,
       basis,
@@ -379,24 +685,58 @@ export function assess(input: CheckerInput): CheckerResult {
     };
   }
 
-  // K-ETA. The dated exemption is the reason arrival date is asked for: a trip
-  // after it ends cannot be answered from what we verified.
-  let ketaNeeded: boolean | null = rule.keta;
-  if (input.arrivalDate && input.arrivalDate > KETA_EXEMPTION_ENDS) {
+  // K-ETA. Four separate questions, resolved in the order that keeps them
+  // separate — the dated waiver first, because it is the reason the form asks
+  // for an arrival date at all.
+  const keta = rule.keta;
+  const exemptUntil = keta.temporaryExemption?.until;
+  let ketaNeeded: boolean | null;
+
+  if (exemptUntil && input.arrivalDate && input.arrivalDate > exemptUntil) {
+    // Verified through a date, and the trip is past it. What we read does not
+    // cover this arrival, and an expired reading is not evidence of anything.
     ketaNeeded = null;
+    basis.push(fact('keta-temporary-exemption-through-2026'));
     reasons.push(
-      `The temporary K-ETA exemption we verified runs to ${KETA_EXEMPTION_ENDS}. Your arrival is after that, so check K-ETA again closer to the date.`,
+      `The temporary K-ETA exemption we verified runs to ${exemptUntil}, and you arrive after that. ` +
+        'Check K-ETA again nearer the date — an exemption with an end date is not a standing rule.',
     );
-  } else if (ketaNeeded === false) {
-    basis.push(FACTS[0]);
+  } else if (exemptUntil) {
+    ketaNeeded = false;
+    basis.push(fact('keta-temporary-exemption-through-2026'));
     reasons.push(
-      'You are covered by the temporary K-ETA exemption, so K-ETA is not required.',
+      `Your nationality is inside the temporary K-ETA exemption, which runs to ${exemptUntil}, so K-ETA is not required for this trip.`,
     );
     // The part almost everyone misses: exempt does not mean there is nothing
     // to gain from applying.
-    basis.push(FACTS[1]);
+    basis.push(fact('keta-voluntary-application-arrival-card'));
     reasons.push(
       'You may still apply and pay for one. An approved K-ETA exempts you from submitting the arrival card — approval, not the application, is what carries it.',
+    );
+  } else if (keta.eligible === true) {
+    // In scope for K-ETA is a fact about the passport. "You must apply" is a
+    // fact about the traveller, and this form never sees the traveller.
+    ketaNeeded = null;
+    basis.push(fact('keta-age-exemption'));
+    reasons.push(
+      'Your nationality is inside K-ETA’s scope, and it is not in the temporary exemption — so K-ETA normally applies to this trip.',
+    );
+    reasons.push(
+      'We stop short of telling you to apply, because the exemptions attach to the traveller rather than the passport and this form does not ask your age.',
+    );
+  } else if (keta.eligible === false) {
+    ketaNeeded = false;
+    reasons.push('K-ETA does not apply to your nationality.');
+  } else {
+    ketaNeeded = null;
+    reasons.push(
+      'Whether K-ETA applies to you has not been established here. Check it on the official page before you book.',
+    );
+  }
+
+  if (ketaNeeded !== false && keta.personalExemptions.length > 0) {
+    reasons.push(
+      `Exemptions to check against yourself: ${keta.personalExemptions.join('; ')}.`,
     );
   }
 
@@ -406,12 +746,6 @@ export function assess(input: CheckerInput): CheckerResult {
     { label: 'Which entry filing you actually need', href: '/cost-of-living/' },
     { label: 'Paying and getting connected on arrival', href: '/banking/' },
   );
-
-  // A country row with an unestablished K-ETA position cannot produce a clean
-  // yes: the reader would read "in scope" as "nothing left to do".
-  if (ketaNeeded === null) {
-    reasons.push('Whether K-ETA applies to you has not been established here. Check it on the official site before you book.');
-  }
 
   return {
     verdict: ketaNeeded === null ? 'check-required' : 'in-scope',
