@@ -11,6 +11,11 @@
  *    guessing, because a wrong yes here is not a wrong sentence in a guide, it
  *    is somebody refused at a boarding gate.
  *
+ *    And the two questions the reader arrives with are answered separately.
+ *    `verdict` is about visa-free scope; K-ETA is its own outcome with its own
+ *    evidence. Folding them together made one report the other's uncertainty,
+ *    which is how a settled three-month allowance came back as "check needed".
+ *
  * 2. THE VERDICT IS ABOUT SCOPE, NEVER ABOUT ADMISSION. An immigration officer
  *    decides admission at the counter; no table can. So the language is "you
  *    are in scope for visa-free entry", and there is no wording anywhere in
@@ -80,16 +85,38 @@ export type Verdict =
   /** We will not judge this combination. Official check, with the link. */
   | 'check-required';
 
+/**
+ * K-ETA's answer, kept in its own object rather than flattened into the result.
+ *
+ * It is a different question from "may I enter without a visa", and one shared
+ * verdict answered both wrongly: a Malaysian on a ten-day holiday is inside the
+ * three-month visa-free allowance — settled — while K-ETA still turns on their
+ * age. Reporting "additional check needed" for the whole trip misdescribed the
+ * part that was decided. So: two blocks, each with its own reasons and its own
+ * evidence, and the page renders them separately.
+ */
+export interface KetaOutcome {
+  status: KetaStatus;
+  /** false = not required for this trip · null = it turns on you, not the passport. */
+  needed: boolean | null;
+  reasons: string[];
+  basis: Verified[];
+  officialCheck: Source;
+}
+
 export interface CheckerResult {
+  /**
+   * VISA-FREE SCOPE ONLY. Not a summary of everything below — K-ETA has its
+   * own verdict in `keta`, and a settled 'in-scope' here never means there is
+   * nothing left to do.
+   */
   verdict: Verdict;
   /** Why, in the reader's own terms. Always populated. */
   reasons: string[];
   /** Days permitted, when a verified rule says so. */
   stayDays?: number;
-  /** null = we do not know for this nationality, which is not the same as 'no'. */
-  ketaNeeded?: boolean | null;
-  /** The same answer as a label, for rendering. See KetaStatus. */
-  ketaStatus?: KetaStatus;
+  /** Present once a country rule resolved. Its own question, its own answer. */
+  keta?: KetaOutcome;
   arrivalCardNeeded?: boolean | null;
   /**
    * Set when the nationality splits into passport categories and the reader
@@ -734,92 +761,19 @@ export function assess(input: CheckerInput): CheckerResult {
     next.push({ label: 'Business visits and where the line actually falls', href: '/business/' });
   }
 
-  // A rolling allowance counts earlier visits. This form does not ask for
-  // them, so the continuous limit is all it can settle.
+  // The visa-free verdict is settled HERE, and nothing below changes it.
+  // A rolling allowance counts earlier visits, which this form does not ask
+  // for — that is the one thing that can leave the scope question open.
+  let verdict: Verdict = 'in-scope';
   if (stay.needsTravelHistory) {
-    return {
-      verdict: 'check-required',
-      reasons: [
-        ...reasons,
-        'This allowance also counts your earlier visits, which this form does not ask for. Check the total against the official rule.',
-      ],
-      stayDays: stay.limitDays,
-      ketaNeeded: null,
-      ketaStatus: 'unestablished',
-      arrivalCardNeeded: null,
-      next,
-      basis,
-      officialCheck: OFFICIAL_CHECK,
-    };
-  }
-
-  // K-ETA. Four separate questions, resolved in the order that keeps them
-  // separate — the dated waiver first, because it is the reason the form asks
-  // for an arrival date at all.
-  const keta = rule.keta;
-  const exemptUntil = keta.temporaryExemption?.until;
-  let ketaNeeded: boolean | null;
-  let ketaStatus: KetaStatus;
-
-  if (exemptUntil && input.arrivalDate && input.arrivalDate > exemptUntil) {
-    // Verified through a date, and the trip is past it. What we read does not
-    // cover this arrival, and an expired reading is not evidence of anything.
-    ketaNeeded = null;
-    ketaStatus = 'unestablished';
-    basis.push(fact('keta-temporary-exemption-through-2026'));
+    verdict = 'check-required';
     reasons.push(
-      `The temporary K-ETA exemption we verified runs to ${exemptUntil}, and you arrive after that. ` +
-        'Check K-ETA again nearer the date — an exemption with an end date is not a standing rule.',
-    );
-  } else if (exemptUntil) {
-    ketaNeeded = false;
-    ketaStatus = 'temporarily-exempt';
-    // Two pages, because membership and the end date are stated in different
-    // places: the 2023 announcement names the countries, the 2026 notice
-    // extends them. Either alone leaves the reader a step short.
-    basis.push(fact('keta-temporary-exemption-countries'));
-    basis.push(fact('keta-temporary-exemption-through-2026'));
-    reasons.push(
-      `Your nationality is one of the 22 inside the temporary K-ETA exemption, which runs to ${exemptUntil}, so K-ETA is not required for this trip.`,
-    );
-    // The part almost everyone misses: exempt does not mean there is nothing
-    // to gain from applying.
-    basis.push(fact('keta-voluntary-application-arrival-card'));
-    reasons.push(
-      'You may still apply and pay for one. An approved K-ETA exempts you from submitting the arrival card — approval, not the application, is what carries it.',
-    );
-  } else if (keta.eligible === true) {
-    // In scope for K-ETA is a fact about the passport. "You must apply" is a
-    // fact about the traveller, and this form never sees the traveller.
-    ketaNeeded = null;
-    ketaStatus = 'personal-check';
-    basis.push(fact('keta-temporary-exemption-countries'));
-    basis.push(fact('keta-age-exemption'));
-    reasons.push(
-      'Your nationality is inside K-ETA’s scope, and it is not one of the 22 inside the temporary exemption — so K-ETA normally applies to this trip.',
-    );
-    reasons.push(
-      'We stop short of telling you to apply, because the exemptions attach to the traveller rather than the passport and this form does not ask your age.',
-    );
-  } else if (keta.eligible === false) {
-    ketaNeeded = false;
-    ketaStatus = 'not-applicable';
-    reasons.push('K-ETA does not apply to your nationality.');
-  } else {
-    ketaNeeded = null;
-    ketaStatus = 'unestablished';
-    reasons.push(
-      'Whether K-ETA applies to you has not been established here. Check it on the official page before you book.',
+      'This allowance also counts your earlier visits, which this form does not ask for. Check the total against the official rule.',
     );
   }
 
-  if (ketaNeeded !== false && keta.personalExemptions.length > 0) {
-    reasons.push(
-      `Exemptions to check against yourself: ${keta.personalExemptions.join('; ')}.`,
-    );
-  }
-
-  const arrivalCardNeeded = ketaNeeded === false ? true : null;
+  const keta = assessKeta(rule.keta, input.arrivalDate);
+  const arrivalCardNeeded = keta.needed === false ? true : null;
 
   next.push(
     { label: 'Which entry filing you actually need', href: '/cost-of-living/' },
@@ -827,14 +781,91 @@ export function assess(input: CheckerInput): CheckerResult {
   );
 
   return {
-    verdict: ketaNeeded === null ? 'check-required' : 'in-scope',
+    verdict,
     reasons,
     stayDays: stay.limitDays,
-    ketaNeeded,
-    ketaStatus,
+    keta,
     arrivalCardNeeded,
     next,
     basis,
     officialCheck: OFFICIAL_CHECK,
   };
+}
+
+/**
+ * K-ETA, on its own. A separate function because it is a separate question
+ * from whether the reader may enter without a visa, and folding the two into
+ * one verdict got them wrong: a Malaysian on a ten-day holiday is inside the
+ * three-month visa-free allowance — that part is settled — while K-ETA still
+ * turns on their age. One combined verdict had to report "additional check
+ * needed" for the whole trip, which told them the wrong thing about the part
+ * that was decided.
+ *
+ * Four questions in the order that keeps them apart. The dated waiver goes
+ * first, because it is the reason the form asks for an arrival date at all.
+ */
+export function assessKeta(position: KetaPosition, arrivalDate: string): KetaOutcome {
+  const reasons: string[] = [];
+  const basis: Verified[] = [];
+  const exemptUntil = position.temporaryExemption?.until;
+  let needed: boolean | null;
+  let status: KetaStatus;
+
+  if (exemptUntil && arrivalDate && arrivalDate > exemptUntil) {
+    // Verified through a date, and the trip is past it. An expired reading is
+    // not evidence of anything, so it does not carry forward as a "no".
+    needed = null;
+    status = 'unestablished';
+    basis.push(fact('keta-temporary-exemption-through-2026'));
+    reasons.push(
+      `The temporary exemption we verified runs to ${exemptUntil}, and you arrive after that. ` +
+        'Check K-ETA again nearer the date — an exemption with an end date is not a standing rule.',
+    );
+  } else if (exemptUntil) {
+    needed = false;
+    status = 'temporarily-exempt';
+    // Two pages, because membership and the end date are stated in different
+    // places: the 2023 announcement names the countries, the 2026 notice
+    // extends them. Either alone leaves the reader a step short.
+    basis.push(fact('keta-temporary-exemption-countries'));
+    basis.push(fact('keta-temporary-exemption-through-2026'));
+    reasons.push(
+      `Your nationality is one of the 22 inside the temporary exemption, which runs to ${exemptUntil}, so K-ETA is not required for this trip.`,
+    );
+    // The part almost everyone misses: exempt does not mean there is nothing
+    // to gain from applying.
+    basis.push(fact('keta-voluntary-application-arrival-card'));
+    reasons.push(
+      'You may still apply and pay for one. An approved K-ETA exempts you from submitting the arrival card — approval, not the application, is what carries it.',
+    );
+  } else if (position.eligible === true) {
+    // In scope is a fact about the passport. "You must apply" is a fact about
+    // the traveller, and this form never sees the traveller.
+    needed = null;
+    status = 'personal-check';
+    basis.push(fact('keta-temporary-exemption-countries'));
+    basis.push(fact('keta-age-exemption'));
+    reasons.push(
+      'Your nationality is inside K-ETA’s scope and is not one of the 22 inside the temporary exemption, so K-ETA normally applies to this trip.',
+    );
+    reasons.push(
+      'We stop short of telling you to apply, because the exemptions attach to the traveller rather than the passport and this form does not ask your age.',
+    );
+  } else if (position.eligible === false) {
+    needed = false;
+    status = 'not-applicable';
+    reasons.push('K-ETA does not apply to your nationality.');
+  } else {
+    needed = null;
+    status = 'unestablished';
+    reasons.push(
+      'Whether K-ETA applies to you has not been established here. Check it on the official page before you book.',
+    );
+  }
+
+  if (needed !== false && position.personalExemptions.length > 0) {
+    reasons.push(`Exemptions to check against yourself: ${position.personalExemptions.join('; ')}.`);
+  }
+
+  return { status, needed, reasons, basis, officialCheck: KETA_ELIGIBILITY_PAGE };
 }
