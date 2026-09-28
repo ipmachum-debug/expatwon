@@ -88,6 +88,8 @@ export interface CheckerResult {
   stayDays?: number;
   /** null = we do not know for this nationality, which is not the same as 'no'. */
   ketaNeeded?: boolean | null;
+  /** The same answer as a label, for rendering. See KetaStatus. */
+  ketaStatus?: KetaStatus;
   arrivalCardNeeded?: boolean | null;
   /**
    * Set when the nationality splits into passport categories and the reader
@@ -170,11 +172,39 @@ export const MOFA_VISA_FREE: Source = {
   url: 'https://www.0404.go.kr/bbs/contsPst/MST0000000000113/13/detail',
 };
 
+/**
+ * The page that separates the two schemes and enumerates the designation list
+ * by name — which is what makes `basis` verifiable rather than inferred. Read
+ * alongside the MOFA list rather than instead of it: this page reports a
+ * last-modified date of 2024-12-30, so the MOFA list carries currency and this
+ * one carries the explicit split.
+ */
 export const HIKOREA_VISA_FREE: Source = {
   label:
     'HiKorea — visa exemption agreement countries and visa-free entry by ' +
-    'designation (cross-check; page last modified 2024-12-30)',
-  url: 'https://www.hikorea.go.kr/info/InfoDatail.pt?CAT_SEQ=161&PARENT_ID=11',
+    'designation (page last modified 2024-12-30)',
+  url: 'https://www.hikorea.go.kr/info/InfoDatail.pt?CAT_SEQ=161&PARENT_ID=135',
+};
+
+/**
+ * The 2023 Ministry of Justice announcement that NAMES the countries inside the
+ * temporary K-ETA exemption — 22 of them. The 2026 extension notice does not
+ * re-list them; it extends "the countries and regions currently covered". So
+ * membership and end date come from two pages, and a row claiming the exemption
+ * has to cite both. Without this page, "is my country inside the waiver?" was
+ * unanswerable from the extension notice alone.
+ */
+export const MOJ_TEMP_EXEMPTION_LIST: Source = {
+  label:
+    'Ministry of Justice — countries and regions under the temporary K-ETA ' +
+    'exemption (2023 announcement, 22 listed)',
+  url: 'https://www.immigration.go.kr/bbs/immigration/489/569087/artclView.do',
+};
+
+/** The Ministry's own K-ETA page, where the personal exemptions are stated. */
+export const MOJ_KETA: Source = {
+  label: 'Ministry of Justice — Electronic Travel Authorization (K-ETA)',
+  url: 'https://www.immigration.go.kr/immigration/3339/subview.do',
 };
 
 /* ---------------------------------------------------------------------------
@@ -210,7 +240,19 @@ export const FACTS: (Verified & { id: string; statement: string })[] = [
       'be turned into "you personally must apply".',
     verifiedOn: '2026-09-28',
     verifiedBy: 'author',
-    source: KETA_ELIGIBILITY_PAGE,
+    source: MOJ_KETA,
+  },
+  {
+    id: 'keta-temporary-exemption-countries',
+    statement:
+      'The temporary K-ETA exemption covers 22 named countries and regions. ' +
+      'The United States, Canada, Australia, Japan, Singapore and the United ' +
+      'Kingdom are among them; Malaysia is not. The 2026 extension notice does ' +
+      'not repeat the list, which is why membership is cited from the 2023 ' +
+      'announcement and the end date from the notice.',
+    verifiedOn: '2026-09-28',
+    verifiedBy: 'author',
+    source: MOJ_TEMP_EXEMPTION_LIST,
   },
   {
     id: 'visa-free-purposes',
@@ -321,7 +363,13 @@ const BASIS_READ: Verified = {
   source: MOFA_VISA_FREE,
 };
 
-const READ = [STAY_READ, BASIS_READ];
+const BASIS_SPLIT_READ: Verified = {
+  verifiedOn: '2026-09-28',
+  verifiedBy: 'author',
+  source: HIKOREA_VISA_FREE,
+};
+
+const READ = [STAY_READ, BASIS_READ, BASIS_SPLIT_READ];
 
 /**
  * Exemptions that attach to the traveller rather than the passport. Listed for
@@ -333,6 +381,25 @@ const PERSONAL_EXEMPTIONS = [
   'aged 17 or under on the date of arrival',
   'aged 65 or over on the date of arrival',
 ];
+
+/**
+ * A flat status for the UI to render, derived from KetaPosition — never stored,
+ * because a stored enum loses the end date and the end date is the whole point.
+ *
+ * 'required' is deliberately not a member. A nationality being inside K-ETA's
+ * scope is a fact about a passport; "you must apply" is a fact about a
+ * traveller, and the personal exemptions above mean this form cannot get from
+ * the first to the second. That case is 'personal-check'.
+ */
+export type KetaStatus =
+  /** Inside the dated blanket waiver, and the arrival falls within it. */
+  | 'temporarily-exempt'
+  /** K-ETA's scope does not reach this nationality at all. */
+  | 'not-applicable'
+  /** In scope, no waiver — so it turns on the traveller, not the passport. */
+  | 'personal-check'
+  /** Not read at source, which is not the same as 'no'. */
+  | 'unestablished';
 
 /** Inside the dated blanket waiver — see FACTS[0]. */
 const TEMP_EXEMPT: KetaPosition = {
@@ -678,6 +745,7 @@ export function assess(input: CheckerInput): CheckerResult {
       ],
       stayDays: stay.limitDays,
       ketaNeeded: null,
+      ketaStatus: 'unestablished',
       arrivalCardNeeded: null,
       next,
       basis,
@@ -691,11 +759,13 @@ export function assess(input: CheckerInput): CheckerResult {
   const keta = rule.keta;
   const exemptUntil = keta.temporaryExemption?.until;
   let ketaNeeded: boolean | null;
+  let ketaStatus: KetaStatus;
 
   if (exemptUntil && input.arrivalDate && input.arrivalDate > exemptUntil) {
     // Verified through a date, and the trip is past it. What we read does not
     // cover this arrival, and an expired reading is not evidence of anything.
     ketaNeeded = null;
+    ketaStatus = 'unestablished';
     basis.push(fact('keta-temporary-exemption-through-2026'));
     reasons.push(
       `The temporary K-ETA exemption we verified runs to ${exemptUntil}, and you arrive after that. ` +
@@ -703,9 +773,14 @@ export function assess(input: CheckerInput): CheckerResult {
     );
   } else if (exemptUntil) {
     ketaNeeded = false;
+    ketaStatus = 'temporarily-exempt';
+    // Two pages, because membership and the end date are stated in different
+    // places: the 2023 announcement names the countries, the 2026 notice
+    // extends them. Either alone leaves the reader a step short.
+    basis.push(fact('keta-temporary-exemption-countries'));
     basis.push(fact('keta-temporary-exemption-through-2026'));
     reasons.push(
-      `Your nationality is inside the temporary K-ETA exemption, which runs to ${exemptUntil}, so K-ETA is not required for this trip.`,
+      `Your nationality is one of the 22 inside the temporary K-ETA exemption, which runs to ${exemptUntil}, so K-ETA is not required for this trip.`,
     );
     // The part almost everyone misses: exempt does not mean there is nothing
     // to gain from applying.
@@ -717,18 +792,22 @@ export function assess(input: CheckerInput): CheckerResult {
     // In scope for K-ETA is a fact about the passport. "You must apply" is a
     // fact about the traveller, and this form never sees the traveller.
     ketaNeeded = null;
+    ketaStatus = 'personal-check';
+    basis.push(fact('keta-temporary-exemption-countries'));
     basis.push(fact('keta-age-exemption'));
     reasons.push(
-      'Your nationality is inside K-ETA’s scope, and it is not in the temporary exemption — so K-ETA normally applies to this trip.',
+      'Your nationality is inside K-ETA’s scope, and it is not one of the 22 inside the temporary exemption — so K-ETA normally applies to this trip.',
     );
     reasons.push(
       'We stop short of telling you to apply, because the exemptions attach to the traveller rather than the passport and this form does not ask your age.',
     );
   } else if (keta.eligible === false) {
     ketaNeeded = false;
+    ketaStatus = 'not-applicable';
     reasons.push('K-ETA does not apply to your nationality.');
   } else {
     ketaNeeded = null;
+    ketaStatus = 'unestablished';
     reasons.push(
       'Whether K-ETA applies to you has not been established here. Check it on the official page before you book.',
     );
@@ -752,6 +831,7 @@ export function assess(input: CheckerInput): CheckerResult {
     reasons,
     stayDays: stay.limitDays,
     ketaNeeded,
+    ketaStatus,
     arrivalCardNeeded,
     next,
     basis,
