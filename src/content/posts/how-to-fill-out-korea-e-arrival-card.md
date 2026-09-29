@@ -63,10 +63,18 @@ nothing else. The tell is money:
   <p>There is no fee. Any site asking for payment information is not the official service — that is the official site's own wording, not ours.</p>
 </div>
 
+
+![The e-Arrival Card homepage, showing the Individual and Group submission cards and the dates currently open for declaration](../../assets/entry/eac-1-home.png)
+<p class="figcap">Two ways in — <strong>Individual</strong> for 1 to 9 people, <strong>Group/Travel Agency</strong> for 2 to 1000. The dates panel on the left is the three-day window.</p>
+
 The homepage also shows the dates it will currently accept. On 29 September it
 listed 29 September, 30 September and 1 October: the arrival day plus the two
 after it. Within three days of arrival, in other words — this is not something
 you can file when you book.
+
+
+![The terms screen with both agreement checkboxes ticked, the under-14 notice in red, and the two email fields confirming they match](../../assets/entry/eac-2-consent-email.png)
+<p class="figcap">The email goes in twice and the screen prints <strong>“Email matches.”</strong> when they agree. The red line above it is the one families need: under 14, somebody else files.</p>
 
 ## The eleven screens, in order
 
@@ -83,6 +91,10 @@ you can file when you book.
   <div class="step"><div class="step-num">10</div><div class="step-body"><strong>A contact number in Korea, and your job.</strong> Eight job options, listed below.</div></div>
   <div class="step"><div class="step-num">11</div><div class="step-body"><strong>Submit.</strong> Your email is shown again at the foot of the page above the button.</div></div>
 </div>
+
+
+![The required passport bio-page upload dialog, with the sample image showing a red box around the whole page including the machine-readable zone](../../assets/entry/eac-3-passport-upload.png)
+<p class="figcap">The red box on the sample is the instruction: the <strong>whole</strong> bio page, machine-readable zone included. Crop it out and the scan has nothing to read.</p>
 
 ## What the form treats as required
 
@@ -125,6 +137,10 @@ Upload the bio-page and the site reads it: surname, given name, date of birth,
 passport number, expiry date and sex all come back filled in. Then it tells you
 to check them.
 
+
+![The screen after the passport scan completes, asking you to check and correct the recognised fields, with country/region still unselected](../../assets/entry/eac-4-scan-complete.png)
+<p class="figcap">Read the row on the right: <strong>country/region is still “Select Country/Region”</strong> while everything else came back filled. Personal values are masked here.</p>
+
 That instruction is worth taking literally. In our run the scan populated the
 name and passport fields but left **country/region** as "Select Country/Region"
 — an unfilled dropdown in the middle of a form that otherwise looks finished.
@@ -149,6 +165,10 @@ Treatment/Medical care        Others
 Visit (Family/relatives/friends, etc.)
 ```
 
+
+![The Purpose of entry dropdown open, showing all eleven options from Tourism (Individual) to Others](../../assets/entry/eac-6-purpose.png)
+<p class="figcap">All eleven, as worded on the form.</p>
+
 Two notes. **Business** and **Meeting/event** are separate entries, so a work
 trip is not automatically "Business" — a conference or a trade event has its
 own option. And **Visit (Family/relatives/friends, etc.)** exists, so seeing
@@ -168,6 +188,10 @@ Student                       Agriculture and livestock industry
 Unemployed                    Others
 ```
 
+
+![The lower half of the form showing the visa lookup, the KOR and ENG address buttons, the contact number field and the Job dropdown open with eight options](../../assets/entry/eac-7-job-and-address.png)
+<p class="figcap">One screen holds the three fields that stall people: the <strong>visa lookup</strong>, the <strong>KOR / ENG</strong> address buttons, and <strong>Job</strong>.</p>
+
 There is no "retired" and no "freelancer". Most readers land on Office worker,
 Self-employed or Student.
 
@@ -183,6 +207,10 @@ lookup. The English one comes with a guide, and its rules are specific:
 </div>
 
 The site's own worked example, using a building anyone can look up:
+
+![The English Address Lookup Guide, explaining the hyphen rule and showing the Seoul Immigration Office address in Korean and English with its postcode](../../assets/entry/eac-8-address-guide.png)
+<p class="figcap">The guide the <strong>ENG</strong> button opens, with its own worked example.</p>
+
 
 ```
 Korean    서울특별시 양천구 목동동로 151 (신월동, 08013)

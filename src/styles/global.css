@@ -338,6 +338,38 @@
   @apply bg-white;
 }
 
+/* Screenshots.
+ *
+ * The first images on this site, and they earn their place on exactly two
+ * posts: a walkthrough of a government form is the one case where "here is the
+ * screen" beats any description of it. Everything else here stays text.
+ *
+ * Framed rather than bled, because a screenshot of a form is a document being
+ * quoted, not a photograph. The rule and the paper background say so, and a
+ * light shadow lifts a white UI off a white-ish page — without it the form's
+ * own edges disappear into the article.
+ *
+ * Every one of them is masked with opaque boxes where personal data appeared.
+ * Never blurred: a blur over a short high-contrast string is reversible in
+ * principle and looks reversible either way, which is its own problem in a post
+ * about not altering documents.
+ */
+.prose-article p > img,
+.prose-article > img {
+  @apply mt-7 mb-0 block w-full rounded-lg border;
+  border-color: var(--color-rule);
+  background: var(--color-paper-deep);
+  box-shadow: 0 1px 2px rgb(34 28 20 / 0.06), 0 8px 20px -12px rgb(34 28 20 / 0.25);
+}
+/* A caption directly under an image is that image's caption: tuck it up
+   against the frame instead of leaving a paragraph gap between the two. */
+.prose-article p:has(> img) {
+  @apply my-0;
+}
+.prose-article p:has(> img) + .figcap {
+  @apply mt-2.5 border-t-0 pt-0;
+}
+
 .prose-article .figcap {
   @apply mt-5 border-t border-rule pt-3 pb-0 text-[0.82rem] leading-relaxed text-ink-soft/75;
 }

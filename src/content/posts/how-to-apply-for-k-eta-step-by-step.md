@@ -71,6 +71,10 @@ Assessment            generally within 72 hours
 Where                 www.k-eta.go.kr, or the K-ETA mobile app
 ```
 
+
+![The K-ETA homepage showing the Member and Non-member tabs, the KRW 10,000 fee panel and the 72-hour assessment panel](../../assets/entry/keta-1-home.png)
+<p class="figcap">Fee and assessment time are stated on the homepage, next to its own warning about agencies charging high fees for “expedited” services.</p>
+
 The fee page adds an online payment processing charge of roughly 3% on top,
 and states that the fee covers processing the application — it is **not
 refunded if the application is denied.**
@@ -122,6 +126,10 @@ is broader than most travellers expect.
   <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Sensitive information.</strong> Information on infectious disease, overseas criminal record, and criminal record in Korea.</div></div>
 </div>
 
+
+![The K-ETA consent screen listing required, optional and sensitive information, with agree and disagree radio buttons for each](../../assets/entry/keta-2-consent.png)
+<p class="figcap">Three consent blocks on one screen. The sensitive one covers infectious disease and criminal record.</p>
+
 Retention is listed as semi-permanent, and the basis given is the Immigration
 Act and its Enforcement Decree.
 
@@ -144,6 +152,10 @@ belongs to the entry screen, not to the email sitting in your inbox. A
 **Resend** button sits next to it, so a code that runs out is not the end of
 the application.
 
+
+![The K-ETA email verification screen with the seven-step progress rail, the email field, the verification number field and its countdown timer](../../assets/entry/keta-3-email-verify.png)
+<p class="figcap">The timer sits between the code field and <strong>Verify</strong>. Email and code are masked here.</p>
+
 The part worth planning around is what the site displays the moment the code is
 sent:
 
@@ -151,6 +163,10 @@ sent:
   <p class="callout-title">⚠️ The site's own words</p>
   <p>“The verification number has been sent. Please note that verification codes may be delayed when using Gmail. If you do not receive the code, we kindly request that you use a different email address.”</p>
 </div>
+
+
+![The popup shown immediately after sending the verification code, warning that codes may be delayed when using Gmail and asking the applicant to use a different address](../../assets/entry/keta-4-gmail-warning.png)
+<p class="figcap">The timer behind the popup reads <strong>04:58</strong> — this is the moment the code was sent.</p>
 
 A government site naming one mail provider is unusual enough to take at face
 value. If you have a non-Gmail address, use it here — and remember the address
@@ -163,6 +179,10 @@ marks a red box around the whole bio page **including the machine-readable zone
 at the bottom** — those two lines of `<<<` characters have to be in the frame.
 Once uploaded, the personal information is filled in automatically.
 
+
+![The K-ETA passport upload panel with a specimen passport, a red dashed box drawn around the machine-readable zone at the bottom of the page](../../assets/entry/keta-5-upload-sample.png)
+<p class="figcap">The specimen the site shows. The red dashes mark the part people crop off.</p>
+
 Before the upload dialog will let you proceed, a warning appears. This is the
 strongest language anywhere in the application:
 
@@ -171,12 +191,20 @@ strongest language anywhere in the application:
   <p>“AI enhancement may cause image distortion. Please do not use AI photo editors when taking a passport photo. The passport bio-page image uploaded for your application must match the passport you present at immigration control. Any modification, alteration, or forgery of the image is strictly prohibited. Failure to comply may result in the denial or cancellation of your application and may lead to legal penalties under relevant laws, including the Immigration Act.”</p>
 </div>
 
+
+![The warning popup on the passport upload screen, stating that AI enhancement may distort the image and that modification or forgery may lead to penalties under the Immigration Act](../../assets/entry/keta-6-ai-warning.png)
+<p class="figcap">The only place in the application where the Immigration Act is named.</p>
+
 This rules out more than forgery. Phone cameras now ship with generative
 "enhance" and "clean up" features that rewrite characters they think are
 blurred — and a passport number is exactly the kind of small, high-contrast
 text those tools rebuild. Turn that off before you photograph the page.
 
 After selecting the file, the site opens a small editor with three tools:
+
+![The K-ETA image editor with Crop, Turn and Margin buttons under the uploaded image, and Cancel and add buttons below them](../../assets/entry/keta-7-crop-tool.png)
+<p class="figcap">The uploaded passport is covered here. The point of the figure is the row of buttons under it — <strong>Crop, Turn, Margin</strong>, and nothing else.</p>
+
 **Crop**, **Turn**, **Margin**, and an **add** button. That is the extent of
 the editing you are meant to do — make the page readable, straight and fully
 in frame. Keep both the printed details and the MRZ inside the crop.
@@ -191,6 +219,10 @@ a warning that tells you exactly where to look:
   <p class="callout-title">⚠️ O and 0</p>
   <p>“In some cases, contamination or light reflection of your passport bio page may cause incorrect input of your passport information. Please double-check to ensure the information is correct. (※ In particular, please exercise caution when distinguishing between the letter 'O' and the numeral '0'.) The applicant is responsible for any problems that arise from failing to double check incorrect information.”</p>
 </div>
+
+
+![The recognised passport information form under a red warning about contamination and light reflection causing incorrect input, singling out the letter O and the numeral 0](../../assets/entry/keta-8-ocr-check.png)
+<p class="figcap">Nationality is left visible because it is what the next screen acts on. Every other value is masked.</p>
 
 That last sentence is the operative one. The scan is a convenience and the
 error is yours.
@@ -214,6 +246,10 @@ the application stopped:
 This is not a country eligible for K-ETA application.
 Please check your nationality.
 ```
+
+
+![A popup reading This is not a country eligible for K-ETA application, please check your nationality, shown over the passport information form](../../assets/entry/keta-9-not-eligible.png)
+<p class="figcap">The application stops here. Nothing has been paid at this point — the payment screen is three steps further on.</p>
 
 Which is correct — a Korean national does not apply for K-ETA. Two things
 follow from seeing it.
