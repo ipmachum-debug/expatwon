@@ -88,9 +88,39 @@
   @apply font-medium underline decoration-current/35 underline-offset-[3px] transition-colors hover:decoration-current;
   color: var(--cat-ink);
 }
+/* Tables scroll sideways rather than pushing the page wide.
+ *
+ * Same problem the ASCII figures have, solved for `pre` and not for tables: a
+ * four-column table on a 360px screen laid out at 454px and gave the whole
+ * article a horizontal scrollbar, so the body text slid under the reader's
+ * thumb. 94 of the posts carry a table.
+ *
+ * `display: block` is the part that makes it scrollable at all — a table box
+ * ignores overflow, which is why `overflow-x` alone does nothing here. The
+ * rows then lay out in an anonymous table inside the block and that is what
+ * scrolls. Gradients are the same scroll hint as the code blocks: an opaque
+ * mask pinned to each edge over a soft shadow pinned to the viewport, so the
+ * shadow shows only while there is more in that direction.
+ *
+ * NOT `width: max-content`. That widens the block itself instead of its
+ * contents, so the table stops scrolling and overflows the page again — worse
+ * than the bug, and it measured that way. */
 .prose-article table {
   @apply my-6 w-full border-collapse text-sm;
+  display: block;
+  overflow-x: auto;
+
+  background-image:
+    linear-gradient(to right, var(--color-paper) 40%, transparent),
+    linear-gradient(to left, var(--color-paper) 40%, transparent),
+    radial-gradient(farthest-side at 0 50%, rgb(34 28 20 / 0.11), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgb(34 28 20 / 0.11), transparent);
+  background-position: 0 0, 100% 0, 0 0, 100% 0;
+  background-repeat: no-repeat;
+  background-size: 36px 100%, 36px 100%, 14px 100%, 14px 100%;
+  background-attachment: local, local, scroll, scroll;
 }
+
 .prose-article thead th {
   @apply border-b-2 px-3.5 py-2.5 text-left font-sans text-[0.82rem] font-bold tracking-wide text-ink uppercase;
   border-color: var(--cat-accent);
@@ -251,9 +281,27 @@
  * same wall of prose.
  */
 .prose-article .figure.hero {
-  @apply relative my-12 rounded-lg border border-rule sm:-mx-10;
+  @apply relative my-12 rounded-lg border border-rule;
   background: var(--cat-tint);
   box-shadow: 4px 5px 0 rgb(34 28 20 / 0.07);
+}
+/* The bleed, and why it is not `sm:` (640px).
+ *
+ * Measured across the range: the prose column runs full-width minus a 16px
+ * gutter until the viewport reaches about 848px, at which point it caps at
+ * 768px and starts centring. Below that there is no slack for a -40px margin,
+ * so from 640px to ~872px the card sat at left:-24 and right:viewport+8 —
+ * overflowing BOTH sides and giving the whole page a horizontal scrollbar.
+ * Every article with a hero figure had it, on tablets and small laptops.
+ *
+ * 864px is the first clean width where the gutter is wider than the bleed
+ * (prose left 48 > 40), so the card sits inside the viewport with room spare.
+ * Below it the figure simply lines up with the measure, which is what it
+ * already did below 640 — no new look, one less broken band. */
+@media (min-width: 864px) {
+  .prose-article .figure.hero {
+    margin-inline: -2.5rem;
+  }
 }
 /* A strip of tape holding the card to the page. */
 .prose-article .figure.hero::before {
