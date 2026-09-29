@@ -22,6 +22,13 @@ export const TOOLS: Tool[] = [
     icon: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/>',
   },
   {
+    href: '/tools/korea-entry-check/',
+    title: 'Korea Entry Requirements Check',
+    description:
+      'Visa-free scope and how long you get, whether K-ETA applies, and whether you file the e-Arrival Card \u2014 three separate answers, each citing the official page it was read from.',
+    icon: '<path d="M3.5 7.5h17v11a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5Z"/><path d="M8 7.5V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2.5M9.5 13.5l2 2 3.5-3.5"/>',
+  },
+  {
     href: '/tools/loan-by-visa/',
     title: 'Korean Loans by Visa',
     description:

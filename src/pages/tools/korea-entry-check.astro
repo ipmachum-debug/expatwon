@@ -1,0 +1,34 @@
+---
+import AdSlot from '../../components/AdSlot.astro';
+import EntryChecker from '../../components/EntryChecker.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Korea Entry Requirements Check: Visa-Free, K-ETA, e-Arrival Card"
+  description="Three questions people arrive believing are one. Check whether your passport is in scope for visa-free entry and for how long, whether K-ETA applies, and whether you file the e-Arrival Card — each answered separately, each citing the official page it came from."
+>
+  <header class="mb-8">
+    <h1 class="mb-3 font-display text-4xl font-bold text-ink">
+      Korea entry requirements check
+    </h1>
+    <p class="mb-3 max-w-2xl text-slate-600">
+      Visa-free entry, K-ETA and the e-Arrival Card are three separate
+      decisions, and most of the confusion comes from treating them as one. The
+      sharpest example: being exempt from K-ETA does not exempt you from the
+      arrival declaration — it puts you on the list of people who file it.
+    </p>
+    <p class="max-w-2xl text-slate-600">
+      Nothing here is a promise of admission. An immigration officer decides
+      that at the counter, and every answer below links the official page it was
+      read from so you can check it yourself.
+    </p>
+  </header>
+
+  <EntryChecker />
+
+  <AdSlot position="bottom" />
+
+  <RelatedPosts category="employment" heading="Before you arrive" />
+</Layout>

@@ -1,0 +1,615 @@
+---
+/**
+ * Korea pre-arrival entry checker — three answers, not one.
+ *
+ * The page is three blocks because the engine is three engines, and that is
+ * the whole point of the screen: "may I come without a visa", "do I need
+ * K-ETA" and "do I file the e-Arrival declaration" are independent questions
+ * that readers arrive believing are one. Rolling them into a single verdict is
+ * what the data layer was refactored to stop, so the UI must not quietly put
+ * them back together — each block carries its own answer, its own reasoning and
+ * its own official link, and a block may say "settled" while the one under it
+ * says "we cannot tell you".
+ *
+ * The blocks render before anything is picked. A crawler and a reader who never
+ * touches a control should still see what the tool answers and what the
+ * official lists say, which is what the static table at the foot is for: it is
+ * the whole verified dataset, readable with JavaScript off.
+ *
+ * Inputs are 16px on mobile, deliberately. Under that, iOS Safari zooms the
+ * page on focus and crops the header — found on a real phone after headless
+ * Chromium passed at every width.
+ */
+import {
+  COUNTRY_RULES,
+  ENTRY_BASES,
+  KETA_ELIGIBILITY_PAGE,
+  E_ARRIVAL_OFFICIAL,
+  OTHER_DECLARATION_STATUSES,
+  supportedCountries,
+} from '../data/visaFreeEntry';
+
+const countries = supportedCountries();
+const britishRows = COUNTRY_RULES.filter((r) => r.code === 'GB');
+
+/**
+ * The route, not the documents. Worded as validity rather than possession
+ * throughout: the official definition is "a valid visa as at the scheduled date
+ * of entry", so "do you have one" is the wrong question — a lapsed document in
+ * a drawer puts nobody on the must-file list.
+ */
+const ROUTES = [
+  { value: '', label: 'Select…' },
+  { value: 'visa-free', label: 'Without a visa (K-ETA, or exempt from it)' },
+  { value: 'visa', label: 'On a Korean visa' },
+  { value: 'group-visa', label: 'On a group (electronic) visa' },
+  { value: 'residence', label: 'On a Residence Card, ARC or Overseas Korean card' },
+  { value: 'abtc', label: 'On an APEC Business Travel Card (ABTC)' },
+  { value: 'sofa', label: 'As a service member under the US-ROK SOFA' },
+  { value: 'un', label: 'On a UN Laissez-Passer' },
+  { value: 'other', label: 'Something else' },
+];
+
+/** The one follow-up each route turns on. Shown only for that route. */
+const ROUTE_FOLLOWUPS = [
+  { route: 'visa-free', key: 'keta', label: 'I will have an approved K-ETA in hand, and will enter on it' },
+  { route: 'visa', key: 'visa', label: 'The visa will still be valid on the day I land' },
+  { route: 'residence', key: 'residence', label: 'The card will still be valid on the day I land' },
+  {
+    route: 'abtc',
+    key: 'abtc',
+    label:
+      'The card shows the approval country code KOR, my details match exactly, the passport number is on it, and it is still in date',
+  },
+];
+
+const field =
+  'w-full rounded-xl border border-rule bg-white px-3.5 py-2.5 text-base text-ink ' +
+  'focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none sm:text-[0.95rem]';
+const label = 'mb-1.5 block font-sans text-[0.8rem] font-semibold tracking-wide text-ink-soft/70 uppercase';
+
+const rows = COUNTRY_RULES.map((r) => ({
+  name: r.categoryLabel ? `${r.name} — ${r.categoryLabel}` : r.name,
+  stay:
+    r.stay.kind === 'days'
+      ? `${r.stay.value} days`
+      : r.stay.kind === 'months'
+        ? `${r.stay.value} months`
+        : `${r.stay.continuousDays} continuous days`,
+  basis: ENTRY_BASES.find((b) => b.id === r.basis)?.label ?? '—',
+  keta: r.keta.temporaryExemption ? 'Temporarily exempt' : r.keta.eligible ? 'Normally applies' : 'Not established',
+}));
+---
+
+<section class="rounded-3xl border border-rule bg-paper p-6 sm:p-8" data-entry-checker>
+  <h2 class="mb-1.5 font-display text-2xl font-bold text-ink sm:text-[1.75rem]">
+    Check your entry to Korea
+  </h2>
+  <p class="mb-7 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft/85">
+    Three separate questions, answered separately. None of them is a promise of
+    admission — an immigration officer decides that at the counter, and no table can.
+  </p>
+
+  <!-- ── Inputs ─────────────────────────────────────────────────────────── -->
+  <div class="mb-8 grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={label} for="ec-country">Passport issued by</label>
+      <select id="ec-country" class={field} data-ec="country">
+        <option value="">Select…</option>
+        {countries.map((c) => <option value={c.code}>{c.name}</option>)}
+        <option value="__other">Somewhere else</option>
+      </select>
+    </div>
+
+    <div data-ec-gb hidden>
+      <label class={label} for="ec-category">Which British nationality?</label>
+      <select id="ec-category" class={field} data-ec="category">
+        <option value="">Select…</option>
+        {britishRows.map((r) => <option value={r.category}>{r.categoryLabel}</option>)}
+      </select>
+      <p class="mt-1.5 text-[0.85rem] leading-relaxed text-ink-soft/75">
+        It is printed on the passport. The categories get different allowances,
+        so we will not guess which is yours.
+      </p>
+    </div>
+
+    <div>
+      <label class={label} for="ec-passport">Passport type</label>
+      <select id="ec-passport" class={field} data-ec="passport">
+        <option value="ordinary">Ordinary</option>
+        <option value="diplomatic-official">Diplomatic or official</option>
+        <option value="other">Something else</option>
+      </select>
+    </div>
+
+    <div>
+      <label class={label} for="ec-purpose">Why you are coming</label>
+      <select id="ec-purpose" class={field} data-ec="purpose">
+        <option value="tourism-visit">Tourism, or visiting people</option>
+        <option value="business-meeting">A short business visit</option>
+        <option value="work-study">To work or study</option>
+        <option value="other">Something else</option>
+      </select>
+    </div>
+
+    <div>
+      <label class={label} for="ec-days">Nights you plan to stay</label>
+      <input id="ec-days" class={field} data-ec="days" type="number" min="1" max="400" inputmode="numeric" placeholder="e.g. 10" />
+    </div>
+
+    <div>
+      <label class={label} for="ec-arrival">Arrival date</label>
+      <input id="ec-arrival" class={field} data-ec="arrival" type="date" />
+      <p class="mt-1.5 text-[0.85rem] leading-relaxed text-ink-soft/75">
+        Asked because one of the K-ETA rules has an end date.
+      </p>
+    </div>
+  </div>
+
+  <fieldset class="mb-8 rounded-2xl border border-rule bg-white p-5">
+    <legend class="px-2 font-sans text-[0.8rem] font-semibold tracking-wide text-ink-soft/70 uppercase">
+      How will you enter?
+    </legend>
+    <p class="mb-3.5 text-[0.9rem] leading-relaxed text-ink-soft/85">
+      Only the third block uses this, and it is the route that decides — not
+      what you own. Somebody holding both an approved K-ETA and a Korean visa is
+      excluded by one and required to file by the other, and what settles it is
+      the document they land on.
+    </p>
+    <label class="sr-only" for="ec-route">Entry route</label>
+    <select id="ec-route" class={field} data-ec="route">
+      {ROUTES.map((r) => <option value={r.value}>{r.label}</option>)}
+    </select>
+    {
+      ROUTE_FOLLOWUPS.map((f) => (
+        <label
+          class="mt-3.5 flex cursor-pointer items-start gap-2.5 text-[0.95rem] leading-relaxed text-ink"
+          data-ec-followup={f.route}
+          hidden
+        >
+          <input
+            type="checkbox"
+            data-ec-flag={f.key}
+            class="mt-[0.2rem] h-[1.1rem] w-[1.1rem] flex-none rounded border-rule text-accent focus:ring-2 focus:ring-accent/30"
+          />
+          <span>{f.label}</span>
+        </label>
+      ))
+    }
+  </fieldset>
+
+  <!-- ── The three answers ──────────────────────────────────────────────── -->
+  <!--
+    The summary repeats what the blocks say, and that is the point: three lines
+    is what a reader can hold in their head at the gate, and the blocks under it
+    are where they go when one of the three surprises them.
+  -->
+  <dl class="mb-4 grid gap-px overflow-hidden rounded-2xl border border-rule bg-rule sm:grid-cols-3" data-ec-summary>
+    <div class="bg-white px-5 py-4">
+      <dt class="mb-1 font-mono text-[0.65rem] tracking-[0.16em] text-gold uppercase">Your entry route</dt>
+      <dd class="font-display text-[1.05rem] leading-snug font-bold text-ink" data-sum="route">Not chosen yet</dd>
+    </div>
+    <div class="bg-white px-5 py-4">
+      <dt class="mb-1 font-mono text-[0.65rem] tracking-[0.16em] text-gold uppercase">K-ETA</dt>
+      <dd class="font-display text-[1.05rem] leading-snug font-bold text-ink" data-sum="keta">—</dd>
+    </div>
+    <div class="bg-white px-5 py-4">
+      <dt class="mb-1 font-mono text-[0.65rem] tracking-[0.16em] text-gold uppercase">e-Arrival Card</dt>
+      <dd class="font-display text-[1.05rem] leading-snug font-bold text-ink" data-sum="arrival">—</dd>
+    </div>
+  </dl>
+
+  <div class="grid gap-4">
+    <article class="rounded-2xl border border-rule bg-white p-5 sm:p-6" data-block="visa-free">
+      <div class="mb-3 flex flex-wrap items-center gap-3">
+        <p class="font-mono text-[0.65rem] tracking-[0.16em] text-gold uppercase">1 · Visa-free entry</p>
+        <span class="ec-badge" data-badge>Pick your passport country</span>
+      </div>
+      <p class="mb-3 font-display text-[1.2rem] leading-snug font-bold text-ink" data-headline>
+        Can you come without a visa, and for how long?
+      </p>
+      <ul class="space-y-2 text-[0.95rem] leading-relaxed text-ink-soft/90" data-reasons></ul>
+      <div class="mt-4 space-y-1.5 text-[0.82rem] leading-relaxed text-ink-soft/70" data-sources></div>
+    </article>
+
+    <article class="rounded-2xl border border-rule bg-white p-5 sm:p-6" data-block="keta">
+      <div class="mb-3 flex flex-wrap items-center gap-3">
+        <p class="font-mono text-[0.65rem] tracking-[0.16em] text-gold uppercase">2 · K-ETA</p>
+        <span class="ec-badge" data-badge>Not answered yet</span>
+      </div>
+      <p class="mb-3 font-display text-[1.2rem] leading-snug font-bold text-ink" data-headline>
+        Do you need a travel authorisation before you fly?
+      </p>
+      <ul class="space-y-2 text-[0.95rem] leading-relaxed text-ink-soft/90" data-reasons></ul>
+      <div class="mt-4 space-y-1.5 text-[0.82rem] leading-relaxed text-ink-soft/70" data-sources></div>
+    </article>
+
+    <article class="rounded-2xl border border-rule bg-white p-5 sm:p-6" data-block="arrival-card">
+      <div class="mb-3 flex flex-wrap items-center gap-3">
+        <p class="font-mono text-[0.65rem] tracking-[0.16em] text-gold uppercase">3 · e-Arrival Card</p>
+        <span class="ec-badge" data-badge>Tell us your route</span>
+      </div>
+      <p class="mb-3 font-display text-[1.2rem] leading-snug font-bold text-ink" data-headline>
+        Do you file the arrival declaration?
+      </p>
+      <ul class="space-y-2 text-[0.95rem] leading-relaxed text-ink-soft/90" data-reasons></ul>
+      <div class="mt-4 space-y-1.5 text-[0.82rem] leading-relaxed text-ink-soft/70" data-sources></div>
+    </article>
+  </div>
+
+  <div class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[0.85rem]" data-ec-next></div>
+
+  <details class="mt-4 rounded-2xl border border-rule bg-white p-5">
+    <summary class="cursor-pointer font-sans text-[0.9rem] font-semibold text-ink">
+      Cases this form does not cover
+    </summary>
+    <p class="mt-3 text-[0.9rem] leading-relaxed text-ink-soft/85">
+      The official declaration lists name these separately. If one is you, the
+      third block above is not your answer — check the official page.
+    </p>
+    <ul class="mt-3 space-y-2 text-[0.92rem] leading-relaxed text-ink">
+      {
+        OTHER_DECLARATION_STATUSES.map((o) => (
+          <li class="flex gap-2.5">
+            <span class="mt-[0.15rem] flex-none font-mono text-[0.7rem] tracking-wide text-gold uppercase">
+              {o.files ? "files" : "excluded"}
+            </span>
+            <span>{o.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+
+  <!-- ── Readable with JavaScript off ───────────────────────────────────── -->
+  <details class="mt-8 rounded-2xl border border-rule bg-white p-5">
+    <summary class="cursor-pointer font-sans text-[0.9rem] font-semibold text-ink">
+      Everything we have verified — {rows.length} rows, {countries.length} nationalities
+    </summary>
+    <div class="mt-4 overflow-x-auto">
+      <table class="w-full border-collapse text-left text-[0.9rem]">
+        <thead>
+          <tr class="border-b border-rule text-[0.75rem] tracking-wide text-ink-soft/70 uppercase">
+            <th class="py-2 pr-4 font-semibold">Passport</th>
+            <th class="py-2 pr-4 font-semibold">Stay</th>
+            <th class="py-2 pr-4 font-semibold">Basis</th>
+            <th class="py-2 font-semibold">K-ETA</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((r) => (
+              <tr class="border-b border-rule/60">
+                <td class="py-2 pr-4 text-ink">{r.name}</td>
+                <td class="py-2 pr-4 whitespace-nowrap text-ink-soft">{r.stay}</td>
+                <td class="py-2 pr-4 text-ink-soft">{r.basis}</td>
+                <td class="py-2 whitespace-nowrap text-ink-soft">{r.keta}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 text-[0.85rem] leading-relaxed text-ink-soft/75">
+      A nationality missing from this table is one we have not read at source, so
+      the checker will say so rather than guess. Stays written in months are left
+      in months because that is what the official table says, and three months
+      from 10 November is not the same number of days as three months from 1 December.
+    </p>
+    <p class="mt-2 text-[0.85rem] leading-relaxed text-ink-soft/75">
+      Official pages:
+      <a class="underline decoration-rule underline-offset-2 hover:text-accent" href={KETA_ELIGIBILITY_PAGE.url} rel="nofollow noopener" target="_blank">K-ETA eligibility and permitted stay</a>
+      ·
+      <a class="underline decoration-rule underline-offset-2 hover:text-accent" href={E_ARRIVAL_OFFICIAL.url} rel="nofollow noopener" target="_blank">e-Arrival Card, who must declare</a>
+    </p>
+  </details>
+</section>
+
+<style>
+  /* Plain CSS, not @apply. Tailwind v4 needs an @reference inside a scoped
+     style block, and three declarations are not worth importing the theme. */
+  .ec-badge {
+    display: inline-block;
+    border: 1px solid var(--color-rule);
+    border-radius: 9999px;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.3;
+    background: var(--color-paper-deep);
+    color: var(--color-ink-soft);
+  }
+  .ec-badge[data-tone='ok'] {
+    border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    background: var(--color-accent-soft);
+    color: var(--color-accent-dark);
+  }
+  .ec-badge[data-tone='warn'] {
+    border-color: color-mix(in srgb, var(--color-gold) 40%, transparent);
+    background: color-mix(in srgb, var(--color-gold) 10%, white);
+    color: var(--color-gold);
+  }
+</style>
+
+<script>
+  import { assess, categoryOptions, type ArrivalContext, type CheckerInput, type EntryRoute } from '../data/visaFreeEntry';
+
+  const root = document.querySelector<HTMLElement>('[data-entry-checker]');
+
+  if (root) {
+    const $ = <T extends HTMLElement>(sel: string) => root.querySelector<T>(sel)!;
+    const get = (name: string) => $<HTMLInputElement | HTMLSelectElement>(`[data-ec="${name}"]`);
+
+    const country = get('country');
+    const category = get('category');
+    const gbWrap = $<HTMLElement>('[data-ec-gb]');
+    const route = get('route');
+    const flags = [...root.querySelectorAll<HTMLInputElement>('[data-ec-flag]')];
+    const followups = [...root.querySelectorAll<HTMLElement>('[data-ec-followup]')];
+    const nextWrap = $<HTMLElement>('[data-ec-next]');
+    const sum = (k: string) => root.querySelector<HTMLElement>(`[data-sum="${k}"]`)!;
+
+    const block = (id: string) => {
+      const el = root.querySelector<HTMLElement>(`[data-block="${id}"]`)!;
+      return {
+        badge: el.querySelector<HTMLElement>('[data-badge]')!,
+        headline: el.querySelector<HTMLElement>('[data-headline]')!,
+        reasons: el.querySelector<HTMLElement>('[data-reasons]')!,
+        sources: el.querySelector<HTMLElement>('[data-sources]')!,
+      };
+    };
+
+    const BLOCKS = {
+      visaFree: block('visa-free'),
+      keta: block('keta'),
+      arrivalCard: block('arrival-card'),
+    };
+
+    type Tone = 'ok' | 'warn' | 'neutral';
+
+    function paint(
+      b: ReturnType<typeof block>,
+      tone: Tone,
+      badge: string,
+      headline: string,
+      reasons: string[],
+      sources: { label: string; url: string }[],
+    ) {
+      b.badge.textContent = badge;
+      if (tone === 'neutral') b.badge.removeAttribute('data-tone');
+      else b.badge.dataset.tone = tone;
+
+      b.headline.textContent = headline;
+
+      b.reasons.replaceChildren(
+        ...reasons.map((text) => {
+          const li = document.createElement('li');
+          li.className = 'flex gap-2.5';
+          const mark = document.createElement('span');
+          mark.className = 'mt-[0.15rem] flex-none text-gold';
+          mark.setAttribute('aria-hidden', 'true');
+          mark.textContent = '→';
+          const span = document.createElement('span');
+          // textContent, not innerHTML — every string here is engine copy today,
+          // and the day one comes from an input is the day this would matter.
+          span.textContent = text;
+          li.append(mark, span);
+          return li;
+        }),
+      );
+
+      // Deduplicated: two claims can cite one page, and the reader is being
+      // shown where to look, not how many sentences we took from it.
+      const seen = new Set<string>();
+      b.sources.replaceChildren(
+        ...sources
+          .filter((s) => !seen.has(s.url) && seen.add(s.url))
+          .map((s) => {
+            const p = document.createElement('p');
+            const a = document.createElement('a');
+            a.href = s.url;
+            a.rel = 'nofollow noopener';
+            a.target = '_blank';
+            a.className = 'underline decoration-rule underline-offset-2 hover:text-accent';
+            a.textContent = s.label;
+            p.append(document.createTextNode('Source: '), a);
+            return p;
+          }),
+      );
+    }
+
+    function render() {
+      const code = country.value;
+
+      // The British sub-question appears only for the nationality that splits,
+      // and its value is cleared when it is not the one being asked about —
+      // otherwise a stale category rides along into the next answer.
+      const options = code && code !== '__other' ? categoryOptions(code) : [];
+      const splits = options.length > 1;
+      gbWrap.hidden = !splits;
+      if (!splits) category.value = '';
+
+      // Only the follow-up belonging to the chosen route is shown, and only its
+      // value is read. A stale tick from a route the reader moved away from
+      // would otherwise answer a question they are no longer being asked.
+      const chosenRoute = route.value as EntryRoute | '';
+      for (const f of followups) f.hidden = f.dataset.ecFollowup !== chosenRoute;
+      const flag = (key: string) => {
+        const box = flags.find((b) => b.dataset.ecFlag === key);
+        const owner = box?.closest<HTMLElement>('[data-ec-followup]');
+        if (!box || !owner || owner.hidden) return undefined;
+        // Unticked is 'not confirmed', not 'no' — every one of these asks the
+        // reader to assert something, and silence is not an assertion.
+        return box.checked ? true : undefined;
+      };
+
+      const arrival: ArrivalContext | undefined = chosenRoute
+        ? {
+            entryRoute: chosenRoute,
+            validApprovedKeta: flag('keta'),
+            validVisaOnEntryDate: flag('visa'),
+            validResidenceCard: flag('residence'),
+            validAbtcForKorea: flag('abtc'),
+          }
+        : undefined;
+
+      const daysRaw = Number.parseInt((get('days') as HTMLInputElement).value, 10);
+
+      const input: CheckerInput = {
+        country: code === '__other' ? '' : code,
+        passport: get('passport').value as CheckerInput['passport'],
+        purpose: get('purpose').value as CheckerInput['purpose'],
+        days: Number.isFinite(daysRaw) && daysRaw > 0 ? daysRaw : null,
+        arrivalDate: (get('arrival') as HTMLInputElement).value,
+        nationalityCategory: category.value || undefined,
+        arrival,
+      };
+
+      const r = assess(input);
+
+      /* ── 1 · Visa-free ─────────────────────────────────────────────── */
+      const vfBadge =
+        r.verdict === 'in-scope'
+          ? 'In scope'
+          : r.verdict === 'out-of-scope'
+            ? 'A visa is the route'
+            : 'Official check needed';
+      const vfTone: Tone = r.verdict === 'in-scope' ? 'ok' : r.verdict === 'out-of-scope' ? 'warn' : 'neutral';
+      const vfHead = !code
+        ? 'Can you come without a visa, and for how long?'
+        : r.verdict === 'in-scope'
+          ? r.stayDays
+            ? `In scope, for up to ${r.stayDays} days.`
+            : 'In scope for visa-free entry.'
+          : r.verdict === 'out-of-scope'
+            ? 'Not on these conditions.'
+            : 'We will not answer this one from guesswork.';
+
+      paint(
+        BLOCKS.visaFree,
+        code ? vfTone : 'neutral',
+        code ? vfBadge : 'Pick your passport country',
+        vfHead,
+        code ? r.reasons : ['Pick the country that issued your passport to start.'],
+        r.basis.map((v) => v.source),
+      );
+
+      // The British question lives in this block's answer, so surface the
+      // options as a reminder rather than leaving a bare "check needed".
+      if (r.categoryChoice) {
+        const li = document.createElement('li');
+        li.className = 'flex gap-2.5';
+        const mark = document.createElement('span');
+        mark.className = 'mt-[0.15rem] flex-none text-gold';
+        mark.setAttribute('aria-hidden', 'true');
+        mark.textContent = '→';
+        const span = document.createElement('span');
+        span.textContent = r.categoryChoice.options.map((o) => o.label).join(' · ');
+        li.append(mark, span);
+        BLOCKS.visaFree.reasons.append(li);
+      }
+
+      /* ── 2 · K-ETA ─────────────────────────────────────────────────── */
+      if (r.keta) {
+        const map = {
+          'temporarily-exempt': ['ok', 'Not required', 'Not required for this trip.'],
+          'not-applicable': ['ok', 'Does not apply', 'K-ETA does not reach your nationality.'],
+          'personal-check': ['warn', 'Turns on you', 'It applies to your nationality — whether it applies to you is the open part.'],
+          unestablished: ['neutral', 'Not established', 'We have not established this one.'],
+        } as const;
+        const [tone, badge, head] = map[r.keta.status];
+        paint(BLOCKS.keta, tone as Tone, badge, head, r.keta.reasons, [
+          ...r.keta.basis.map((v) => v.source),
+          r.keta.officialCheck,
+        ]);
+      } else {
+        paint(
+          BLOCKS.keta,
+          'neutral',
+          'Not answered yet',
+          'Do you need a travel authorisation before you fly?',
+          ['This is answered once we know your nationality and arrival date.'],
+          [],
+        );
+      }
+
+      /* ── 3 · e-Arrival Card ────────────────────────────────────────── */
+      if (r.arrivalCard) {  // eslint-disable-line -- always set once a rule resolves
+        const ac = r.arrivalCard;
+        const tone: Tone = ac.needed === false ? 'ok' : ac.needed === true ? 'warn' : 'neutral';
+        const badge = ac.needed === false ? 'Excluded' : ac.needed === true ? 'You file it' : 'Tell us your route';
+        const head =
+          ac.needed === false
+            ? 'You do not file the declaration.'
+            : ac.needed === true
+              ? 'You file the declaration.'
+              : 'Do you file the arrival declaration?';
+        paint(BLOCKS.arrivalCard, tone, badge, head, ac.reasons, [
+          ...ac.basis.map((v) => v.source),
+          ac.officialCheck,
+        ]);
+      }
+
+      /* ── The three lines ───────────────────────────────────────────── */
+      const ROUTE_WORDS: Record<EntryRoute, string> = {
+        'visa-free': r.stayDays && r.verdict === 'in-scope' ? `Visa-free — up to ${r.stayDays} days` : 'Visa-free',
+        visa: 'On a Korean visa',
+        'group-visa': 'On a group visa',
+        residence: 'On a Residence Card',
+        abtc: 'On an ABTC',
+        sofa: 'Under the SOFA',
+        un: 'On a UN Laissez-Passer',
+        other: 'Something else',
+      };
+      sum('route').textContent = chosenRoute
+        ? ROUTE_WORDS[chosenRoute]
+        : code && r.verdict === 'in-scope' && r.stayDays
+          ? `Visa-free available — up to ${r.stayDays} days`
+          : 'Not chosen yet';
+
+      sum('keta').textContent = r.keta
+        ? {
+            'temporarily-exempt': 'Temporarily exempt',
+            'not-applicable': 'Not applicable',
+            'personal-check': 'Check your circumstances',
+            unestablished: 'Not established',
+          }[r.keta.status]
+        : '—';
+
+      sum('arrival').textContent = r.arrivalCard
+        ? r.arrivalCard.needed === true
+          ? 'Required'
+          : r.arrivalCard.needed === false
+            ? 'Excluded'
+            : 'Tell us your route'
+        : '—';
+
+      /* ── Where to go next ──────────────────────────────────────────── */
+      nextWrap.replaceChildren(
+        ...r.next.map((n) => {
+          const a = document.createElement('a');
+          a.href = n.href;
+          a.className = 'font-semibold text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent';
+          a.textContent = n.label;
+          return a;
+        }),
+      );
+    }
+
+    for (const el of root.querySelectorAll<HTMLElement>('[data-ec]')) {
+      el.addEventListener('change', render);
+      el.addEventListener('input', render);
+    }
+    for (const f of flags) f.addEventListener('change', render);
+
+    // Built statically, so "today" has to be set here or every visitor gets the
+    // date of the last deploy.
+    const arrival = get('arrival') as HTMLInputElement;
+    if (!arrival.value) {
+      const now = new Date();
+      arrival.value = new Date(now.getTime() - now.getTimezoneOffset() * 60_000).toISOString().slice(0, 10);
+    }
+
+    render();
+  }
+</script>

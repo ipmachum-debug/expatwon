@@ -30,18 +30,48 @@ const eq = (name: string, got: unknown, want: unknown) => {
 
 const T = { passport: 'ordinary', purpose: 'tourism-visit', days: 10, arrivalDate: '2026-11-10' } as const;
 
-/* ── e-Arrival: the official lists put these on opposite sides ───────────── */
-// Order-sensitive. A visa beats an approved K-ETA; a group e-visa beats both.
-eq('AC visa+keta', assessArrivalCard(['korean-visa', 'approved-keta']).needed, true);
-eq('AC group-visa', assessArrivalCard(['group-visa']).needed, false);
-eq('AC group+visa', assessArrivalCard(['group-visa', 'korean-visa']).needed, false);
-eq('AC keta alone', assessArrivalCard(['approved-keta']).needed, false);
-eq('AC visa alone', assessArrivalCard(['korean-visa']).needed, true);
-eq('AC abtc', assessArrivalCard(['abtc']).needed, true);
-eq('AC residence card', assessArrivalCard(['residence-card']).needed, false);
-eq('AC none', assessArrivalCard(['none']).needed, true);
-// Not asked is not 'none'.
+/* ── e-Arrival reads the ROUTE, not the set of documents held ────────────── */
+// The case the route model exists for: both documents, opposite answers.
+eq('AC keta only', assessArrivalCard({ entryRoute: 'visa-free', validApprovedKeta: true }).needed, false);
+eq('AC keta but entering on visa',
+  assessArrivalCard({ entryRoute: 'visa', validVisaOnEntryDate: true, validApprovedKeta: true }).needed, true);
+// A KOR-approved ABTC is its own must-file entry.
+eq('AC abtc valid', assessArrivalCard({ entryRoute: 'abtc', validAbtcForKorea: true }).needed, true);
+// Conditions unchecked: we do not decide on a condition we were told is unknown.
+eq('AC abtc unverified', assessArrivalCard({ entryRoute: 'abtc' }).needed, null);
+eq('AC abtc failed KOR', assessArrivalCard({ entryRoute: 'abtc', validAbtcForKorea: false }).needed, null);
+// Validity, not possession — a visa that lapses before arrival is not the route.
+eq('AC visa lapsed', assessArrivalCard({ entryRoute: 'visa', validVisaOnEntryDate: false }).needed, null);
+eq('AC visa unconfirmed', assessArrivalCard({ entryRoute: 'visa' }).needed, null);
+// Exclusions.
+eq('AC residence', assessArrivalCard({ entryRoute: 'residence', validResidenceCard: true }).needed, false);
+eq('AC group visa', assessArrivalCard({ entryRoute: 'group-visa' }).needed, false);
+// Named routes.
+eq('AC sofa', assessArrivalCard({ entryRoute: 'sofa' }).needed, true);
+eq('AC un', assessArrivalCard({ entryRoute: 'un' }).needed, true);
+// Not asked is not a route.
 eq('AC unasked', assessArrivalCard(undefined).needed, null);
+eq('AC other', assessArrivalCard({ entryRoute: 'other' }).needed, null);
+
+/* ── Every route out of K-ETA leads into the declaration ─────────────────── */
+for (const r of ['temporary-country-exemption', 'age-under-17', 'age-over-65', 'diplomatic-service-passport'] as const) {
+  const out = assessArrivalCard({ entryRoute: 'visa-free', ketaExempt: r });
+  eq('AC keta-exempt ' + r, out.needed, true);
+  if (!out.reasons.join(' ').includes('exempt from K-ETA')) fails.push('AC keta-exempt ' + r + ': does not say why');
+}
+// Visa-free with no K-ETA and no exemption: files, and says the answer can flip.
+const bare = assessArrivalCard({ entryRoute: 'visa-free', validApprovedKeta: false });
+eq('AC visa-free bare', bare.needed, true);
+if (!bare.reasons.join(' ').includes('flips')) fails.push('AC visa-free bare: does not say the answer can change');
+
+/* ── assess() hands the exemption reason down, so the reader is told why ─── */
+const usFree = assess({ ...T, country: 'US', arrival: { entryRoute: 'visa-free', validApprovedKeta: false } });
+eq('US visa-free files', usFree.arrivalCard?.needed, true);
+if (!usFree.arrivalCard?.reasons.join(' ').includes('temporary country waiver'))
+  fails.push('US visa-free: exemption reason not passed down from assess()');
+// Same nationality, different route, opposite answer. That is the whole point.
+eq('US on a visa files', assess({ ...T, country: 'US', arrival: { entryRoute: 'visa', validVisaOnEntryDate: true } }).arrivalCard?.needed, true);
+eq('US on residence excluded', assess({ ...T, country: 'US', arrival: { entryRoute: 'residence', validResidenceCard: true } }).arrivalCard?.needed, false);
 
 /* ── K-ETA is never derived from the visa-free verdict, nor the reverse ──── */
 // Inside the temporary waiver.
@@ -56,6 +86,19 @@ eq('TH still in scope', assess({ ...T, country: 'TH' }).verdict, 'in-scope');
 const late = assess({ ...T, country: 'US', arrivalDate: '2027-02-01' });
 eq('late keta', late.keta?.status, 'unestablished');
 eq('late visa-free', late.verdict, 'in-scope');
+
+/* ── Block 3 answers on every path — it does not depend on nationality ───── */
+// Found by clicking: an early return left the previous reader's answer on screen.
+const route = { entryRoute: 'visa', validVisaOnEntryDate: true } as const;
+for (const [name, input] of [
+  ['unknown nationality', { ...T, country: 'ZZ', arrival: route }],
+  ['GB category unchosen', { ...T, country: 'GB', arrival: route }],
+  ['stay too long', { ...T, country: 'US', days: 400, arrival: route }],
+  ['work or study', { ...T, country: 'US', purpose: 'work-study', arrival: route }],
+  ['diplomatic passport', { ...T, country: 'US', passport: 'diplomatic-official', arrival: route }],
+] as const) {
+  eq('AC present: ' + name, assess(input as any).arrivalCard?.needed, true);
+}
 
 /* ── Months are not 30 days ──────────────────────────────────────────────── */
 eq('CA 6mo from 2026-03-15', resolveStay({ kind: 'months', value: 6 }, '2026-03-15').limitDays, 184);
