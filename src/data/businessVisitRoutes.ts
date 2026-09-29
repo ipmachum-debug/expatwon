@@ -41,6 +41,10 @@ export type BusinessActivityId =
   | 'contract-negotiation'
   | 'factory-visit'
   | 'technical-work'
+  | 'technology-consulting'
+  | 'lecture-or-talk'
+  | 'performance-or-show'
+  | 'research-assignment'
   | 'installation-repair'
   | 'paid-work'
   | 'intra-company-assignment'
@@ -48,7 +52,19 @@ export type BusinessActivityId =
 
 /** The visa that matches an activity. A signpost, never a determination. */
 export type SuggestedVisa =
-  /** C-3-4 Short-Term Business. */
+  /**
+   * C-3-4 Business Visitor (General). The portal's published scope is
+   * commercial activities such as market research, business meetings,
+   * consultation, signing a contract or small-scale international trading —
+   * and an APEC card holder visiting Korea without a visa.
+   *
+   * Two siblings exist and are NOT longer or shorter versions of it:
+   * C-3-5 Business Visitor (Agreement) rests on an agreement with Korea, and
+   * C-3-6 Business Visitor (Sponsored) on an invitation from a designated
+   * company. Neither is a duration difference, so neither can be inferred
+   * from an activity alone — which is why this file suggests the General one
+   * and sends the reader to check.
+   */
   | 'c-3-4'
   /** C-4 Short-Term Employment. */
   | 'c-4'
@@ -160,6 +176,39 @@ export const BUSINESS_ACTIVITIES: BusinessActivity[] = [
     commercial: true,
     suggestedVisa: 'c-4',
     note: 'Work performed in Korea under a contract or purchase order is a commercial activity, so it is outside visa-free entry however few days it takes.',
+  },
+  {
+    // The line the portal draws that catches people: "consultation" is a
+    // C-3-4 business-visitor example, while "technology consulting" is a C-4
+    // short-term employment example. The word is the same; what is being done
+    // is not. Discussing is a visit; supplying the expertise as the work is
+    // employment.
+    id: 'technology-consulting',
+    label: 'Technology consulting delivered as the assignment',
+    commercial: true,
+    suggestedVisa: 'c-4',
+    note: 'Named on the short-term employment side, while plain "consultation" is named on the business-visitor side. Advising in a meeting is a visit; being brought in to supply the expertise is the work.',
+  },
+  {
+    id: 'lecture-or-talk',
+    label: 'Lecturing or speaking',
+    commercial: true,
+    suggestedVisa: 'c-4',
+    note: 'Listed among the short-term employment examples. Attending a conference is a visit; being on the programme as the speaker is not.',
+  },
+  {
+    id: 'performance-or-show',
+    label: 'A performance, show, advertising or modelling',
+    commercial: true,
+    suggestedVisa: 'c-4',
+    note: 'Temporary shows and advertising or modelling work are short-term employment examples, however brief the booking.',
+  },
+  {
+    id: 'research-assignment',
+    label: 'A research assignment in Korea',
+    commercial: true,
+    suggestedVisa: 'c-4',
+    note: 'Research carried out as short-term employment sits on the employment side. Coming to hear about someone else\u2019s research does not.',
   },
   {
     id: 'installation-repair',
