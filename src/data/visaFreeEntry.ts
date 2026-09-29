@@ -398,6 +398,9 @@ const BASIS_SPLIT_READ: Verified = {
 
 const READ = [STAY_READ, BASIS_READ, BASIS_SPLIT_READ];
 
+/** Second pass, 2026-09-29: the nine expansion nationalities, same pages. */
+const READ_0929: Verified[] = READ.map((v) => ({ ...v, verifiedOn: '2026-09-29' }));
+
 /**
  * Exemptions that attach to the traveller rather than the passport. Listed for
  * the reader, never applied: the form does not ask anyone's age, and guessing
@@ -505,6 +508,90 @@ export const COUNTRY_RULES: CountryRule[] = [
     stay: { kind: 'months', value: 3 },
     keta: { eligible: true, personalExemptions: PERSONAL_EXEMPTIONS },
     verified: READ,
+  },
+  {
+    code: 'DE',
+    name: 'Germany',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ_0929,
+  },
+  {
+    code: 'FR',
+    name: 'France',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ_0929,
+  },
+  {
+    code: 'IT',
+    name: 'Italy',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ_0929,
+  },
+  {
+    code: 'ES',
+    name: 'Spain',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ_0929,
+  },
+  {
+    // 03 Months on the official table, not 90 days. Kept as months.
+    code: 'NL',
+    name: 'Netherlands',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'months', value: 3 },
+    keta: TEMP_EXEMPT,
+    verified: READ_0929,
+  },
+  {
+    // 03 Months, same as the Netherlands.
+    code: 'NZ',
+    name: 'New Zealand',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'months', value: 3 },
+    keta: TEMP_EXEMPT,
+    verified: READ_0929,
+  },
+  {
+    // The one of the nine outside the temporary exemption, like Malaysia.
+    code: 'TH',
+    name: 'Thailand',
+    category: 'default',
+    basis: 'agreement',
+    stay: { kind: 'days', value: 90 },
+    keta: { eligible: true, personalExemptions: PERSONAL_EXEMPTIONS },
+    verified: READ_0929,
+  },
+  {
+    code: 'TW',
+    name: 'Taiwan',
+    category: 'default',
+    basis: 'designation',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ_0929,
+  },
+  {
+    code: 'HK',
+    name: 'Hong Kong',
+    category: 'default',
+    basis: 'designation',
+    stay: { kind: 'days', value: 90 },
+    keta: TEMP_EXEMPT,
+    verified: READ_0929,
   },
   {
     code: 'GB',
