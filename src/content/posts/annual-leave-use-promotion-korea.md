@@ -8,7 +8,6 @@ slot: am
 tags: [employment, annual-leave, unused-leave-pay, hr-compliance, foreign-workers]
 tracked: [annual-leave-promotion-deadlines, first-year-leave-expiry-rule]
 lastVerified: 2026-09-29
-draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 60 lapse and employer fault, art. 61 use promotion)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
