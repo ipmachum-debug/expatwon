@@ -63,14 +63,14 @@ Intra-Company Transfer, Journalism·Religious Affairs, Investment, International
 Trade, Overseas Korean, Work and Visit, Family Visitor·Dependent Family,
 Marriage Migrant, Trainee, Non-Professional, and Diplomacy·Official Business.
 
-![The Korea Visa Portal's visa-types-by-purpose page, showing a grid of fifteen purpose categories](../../assets/entry/visa-1-by-purpose.png)
-<p class="figcap">Captured on the Korean interface — there is an <strong>ENGLISH</strong> toggle at the top right. The first card, 관광 등 단기방문, is <strong>Short Term Visit</strong>.</p>
+![The Korea Visa Portal's Visa by Categories page in English, showing a grid of fifteen purpose categories from Short Term Visit to Diplomacy and Official Business](../../assets/entry/visa-1-by-purpose.png)
+<p class="figcap">Fifteen purposes. A holiday is inside the first card, <strong>Short Term Visit</strong> — along with eleven other things.</p>
 
 Open that first card and it expands into a list that makes the point better
 than any explanation:
 
-![The short-visit category expanded, listing B-1, B-2-1, B-2-2, C-3-1, C-3-2, C-3-4, C-3-5, C-3-6, C-3-8, C-3-9, H-1 and C-3-10](../../assets/entry/visa-2-short-visit-codes.png)
-<p class="figcap">Twelve routes under one heading. C-3-9 is <strong>일반관광 / Ordinary Tourist</strong> — one of them, not the default.</p>
+![The Short Term Visit category expanded on the Visa Portal, listing twelve routes from Visa Exempted B-1 through to Direct Transit Visa C-3-10](../../assets/entry/visa-2-short-visit-codes.png)
+<p class="figcap">Twelve routes under one heading. <strong>Ordinary Tourist (C-3-9)</strong> is the tenth of them, not the default.</p>
 
 ```
 Visa Exempted                 B-1        Business Visitor (Agreement)   C-3-5
@@ -95,8 +95,8 @@ arranged, not by how long it runs.
 
 The portal's entire published scope for Ordinary Tourist is one sentence:
 
-![The Visa Portal's detail page for Ordinary Tourist, showing eligible applicants and activities allowed](../../assets/entry/visa-3-c39-definition.png)
-<p class="figcap">Under <em>Eligible applicants or activities allowed</em>, one line.</p>
+![The Visa Portal's detail page for Ordinary Tourist, showing a single line under Eligible applicants or activities allowed](../../assets/entry/visa-3-c39-definition.png)
+<p class="figcap">Under <em>Eligible applicants or activities allowed</em>, one line. That is the whole published scope.</p>
 
 > A person who plans to visit Korea on the purpose of travel for holidays or leisure.
 
