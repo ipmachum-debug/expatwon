@@ -589,6 +589,16 @@ const rows = COUNTRY_RULES.map((r) => ({
       // it is worded to match the answer: someone told "Excluded" does not need
       // filling instructions, they need to know the answer can change.
       const links = [...r.next];
+      // The K-ETA walkthrough is offered only where K-ETA is actually live for
+      // this reader — in scope and not waived. Someone told "temporarily
+      // exempt" does not need application instructions, and offering them
+      // would undercut the answer above.
+      if (r.keta?.status === 'personal-check') {
+        links.unshift({
+          label: 'How to apply for K-ETA, screen by screen',
+          href: '/cost-of-living/how-to-apply-for-k-eta-step-by-step/',
+        });
+      }
       if (r.arrivalCard?.needed === true) {
         links.unshift({
           label: 'How to fill out the e-Arrival Card, field by field',
