@@ -60,6 +60,22 @@ export interface Verified {
 export type PassportKind = 'ordinary' | 'diplomatic-official' | 'other';
 export type Purpose = 'tourism-visit' | 'business-meeting' | 'work-study' | 'other';
 
+/**
+ * Documents the reader may already hold. Asked as a second step, because the
+ * e-Arrival answer turns on these and nothing else does — and because two of
+ * them are traps: a Korean visa and an ABTC both feel like they should exempt
+ * you from the declaration, and neither does.
+ */
+export type EntryHolding =
+  /** Korean Residence Card (ARC). */
+  | 'residence-card'
+  /** An approved K-ETA in hand — approval, not an application. */
+  | 'approved-keta'
+  | 'korean-visa'
+  /** APEC Business Travel Card. */
+  | 'abtc'
+  | 'none';
+
 export interface CheckerInput {
   /** ISO 3166-1 alpha-2, or '' before a choice is made. */
   country: string;
@@ -71,6 +87,12 @@ export interface CheckerInput {
   arrivalDate: string;
   /** Only asked when the chosen country has more than one category. */
   nationalityCategory?: string;
+  /**
+   * Left undefined until the reader is asked. Undefined is not 'none': it means
+   * the question has not been put, so the e-Arrival answer stays unresolved
+   * rather than defaulting to "you must file".
+   */
+  holdings?: EntryHolding[];
 }
 
 /* ---------------------------------------------------------------------------
@@ -104,6 +126,27 @@ export interface KetaOutcome {
   officialCheck: Source;
 }
 
+/**
+ * The e-Arrival Card declaration, kept apart from K-ETA for the same reason
+ * K-ETA was kept apart from the visa-free verdict — and here the reason is
+ * sharper, because deriving one from the other gets it wrong.
+ *
+ * Being waived out of K-ETA does NOT waive the declaration. It is the opposite:
+ * the declaration exemption rides on an APPROVED K-ETA, so a blanket waiver
+ * removes the very thing that would have carried it. Two more that feel like
+ * exemptions and are not: a valid Korean visa, and a valid ABTC — the ABTC
+ * waives K-ETA and stops there.
+ *
+ * Only two things waive it: a Residence Card, or an approved K-ETA in hand.
+ */
+export interface ArrivalCardOutcome {
+  /** null = the reader has not been asked what they hold. Not 'yes'. */
+  needed: boolean | null;
+  reasons: string[];
+  basis: Verified[];
+  officialCheck: Source;
+}
+
 export interface CheckerResult {
   /**
    * VISA-FREE SCOPE ONLY. Not a summary of everything below — K-ETA has its
@@ -117,7 +160,8 @@ export interface CheckerResult {
   stayDays?: number;
   /** Present once a country rule resolved. Its own question, its own answer. */
   keta?: KetaOutcome;
-  arrivalCardNeeded?: boolean | null;
+  /** Third question, third answer. See ArrivalCardOutcome. */
+  arrivalCard?: ArrivalCardOutcome;
   /**
    * Set when the nationality splits into passport categories and the reader
    * has not said which is theirs. The form asks rather than picking one.
@@ -228,6 +272,18 @@ export const MOJ_TEMP_EXEMPTION_LIST: Source = {
   url: 'https://www.immigration.go.kr/bbs/immigration/489/569087/artclView.do',
 };
 
+/**
+ * Where the e-Arrival Card's own inclusion list lives. THE URL IS THE SITE ROOT
+ * AND WANTS CONFIRMING: the rules below were read at source by the author, but
+ * the exact page was not handed over, and this file's standing rule is that a
+ * guessed deep link is worse than a root — it looks precise while being wrong.
+ * Replace with the deep link when it is confirmed.
+ */
+export const E_ARRIVAL_OFFICIAL: Source = {
+  label: 'Korea e-Arrival Card — who must submit a declaration',
+  url: 'https://e-arrivalcard.go.kr/',
+};
+
 /** The Ministry's own K-ETA page, where the personal exemptions are stated. */
 export const MOJ_KETA: Source = {
   label: 'Ministry of Justice — Electronic Travel Authorization (K-ETA)',
@@ -280,6 +336,28 @@ export const FACTS: (Verified & { id: string; statement: string })[] = [
     verifiedOn: '2026-09-28',
     verifiedBy: 'author',
     source: MOJ_TEMP_EXEMPTION_LIST,
+  },
+  {
+    id: 'arrival-card-exemptions',
+    statement:
+      'The e-Arrival Card declaration is waived for holders of a valid Korean ' +
+      'Residence Card and for holders of a valid approved K-ETA. Those two, and ' +
+      'not the others people assume.',
+    verifiedOn: '2026-09-29',
+    verifiedBy: 'author',
+    source: E_ARRIVAL_OFFICIAL,
+  },
+  {
+    id: 'arrival-card-still-required',
+    statement:
+      'Three things that do NOT waive the declaration, all of them commonly ' +
+      'assumed to: holding a valid Korean visa, holding a valid ABTC, and ' +
+      'sitting inside the temporary K-ETA exemption. An ABTC waives K-ETA and ' +
+      'not this; being waived out of K-ETA means no approved K-ETA exists to ' +
+      'carry the declaration exemption, so the exemption cuts the other way.',
+    verifiedOn: '2026-09-29',
+    verifiedBy: 'author',
+    source: E_ARRIVAL_OFFICIAL,
   },
   {
     id: 'visa-free-purposes',
@@ -860,7 +938,7 @@ export function assess(input: CheckerInput): CheckerResult {
   }
 
   const keta = assessKeta(rule.keta, input.arrivalDate);
-  const arrivalCardNeeded = keta.needed === false ? true : null;
+  const arrivalCard = assessArrivalCard(input.holdings);
 
   next.push(
     { label: 'Which entry filing you actually need', href: '/cost-of-living/' },
@@ -872,7 +950,7 @@ export function assess(input: CheckerInput): CheckerResult {
     reasons,
     stayDays: stay.limitDays,
     keta,
-    arrivalCardNeeded,
+    arrivalCard,
     next,
     basis,
     officialCheck: OFFICIAL_CHECK,
@@ -955,4 +1033,77 @@ export function assessKeta(position: KetaPosition, arrivalDate: string): KetaOut
   }
 
   return { status, needed, reasons, basis, officialCheck: KETA_ELIGIBILITY_PAGE };
+}
+
+/**
+ * The e-Arrival Card, on its own — and deliberately NOT derived from the K-ETA
+ * answer, which was the earlier design and was wrong in the dangerous
+ * direction. Deriving "exempt from K-ETA, therefore exempt from the
+ * declaration" inverts the actual rule: the declaration exemption rides on an
+ * approved K-ETA, so being waived out of K-ETA leaves nothing to carry it.
+ *
+ * It turns on one thing this form has to ask for — what the reader already
+ * holds — and on nothing about their nationality at all. That is why it takes
+ * no CountryRule.
+ */
+export function assessArrivalCard(holdings?: EntryHolding[]): ArrivalCardOutcome {
+  const base = { officialCheck: E_ARRIVAL_OFFICIAL };
+
+  // Not asked yet. Undefined is not 'none' — answering "you must file" to a
+  // question nobody put would be inventing the reader's circumstances.
+  if (!holdings) {
+    return {
+      needed: null,
+      reasons: [
+        'Whether you have to file the declaration depends on what you already hold, which we have not asked yet.',
+      ],
+      basis: [],
+      ...base,
+    };
+  }
+
+  const has = (h: EntryHolding) => holdings.includes(h);
+
+  if (has('residence-card')) {
+    return {
+      needed: false,
+      reasons: ['A valid Korean Residence Card waives the declaration.'],
+      basis: [fact('arrival-card-exemptions')],
+      ...base,
+    };
+  }
+
+  if (has('approved-keta')) {
+    return {
+      needed: false,
+      reasons: [
+        'An approved K-ETA in hand waives the declaration. The approval carries it — an application does not.',
+      ],
+      basis: [fact('arrival-card-exemptions'), fact('keta-voluntary-application-arrival-card')],
+      ...base,
+    };
+  }
+
+  // Everything else files. The reasons name the three things people expect to
+  // get them out of it, because a bare "yes, file it" is the answer they will
+  // assume is a mistake.
+  const reasons = ['You need to file the e-Arrival Card declaration.'];
+  if (has('korean-visa')) {
+    reasons.push('A valid Korean visa does not waive it — visa holders are inside the group that files.');
+  }
+  if (has('abtc')) {
+    reasons.push(
+      'A valid ABTC does not waive it either. The ABTC waives K-ETA and stops there; the two are separate filings.',
+    );
+  }
+  reasons.push(
+    'Nor does sitting inside the temporary K-ETA exemption. That waiver means no approved K-ETA exists, and the approved K-ETA is what would have carried the exemption.',
+  );
+
+  return {
+    needed: true,
+    reasons,
+    basis: [fact('arrival-card-still-required')],
+    ...base,
+  };
 }
