@@ -125,6 +125,63 @@ eq('meeting, unresolved', routeFor('meeting', null).route, 'check-required');
 // Business is inside visa-free entry, not outside it.
 eq('business purpose resolves', assess({ ...T, country: 'US', purpose: 'business-meeting' }).verdict, 'in-scope');
 
+// Out-of-scope leaves K-ETA unanswered ON PURPOSE — it is the authorisation for
+// travelling WITHOUT a visa, so it is not on the path of a trip that needs one.
+// The screen relies on this to say 'Not this route' instead of pretending it is
+// still waiting for the nationality it was just given.
+{
+  const over = assess({ ...T, country: 'ZA', days: 40 });
+  eq('over the allowance is out of scope', over.verdict, 'out-of-scope');
+  eq('out of scope answers no K-ETA', over.keta, undefined);
+  // And the reason has to be citable, or the screen has a claim with nothing under it.
+  if (over.basis.length === 0) fails.push('ZA over-limit: verdict with no basis');
+}
+
+/* ── The expansion rows: shape, uniqueness, and no invented K-ETA ────────── */
+{
+  const seen = new Set();
+  for (const r of COUNTRY_RULES) {
+    const key = r.code + '/' + r.category;
+    if (seen.has(key)) fails.push('duplicate row ' + key);
+    seen.add(key);
+    if (!/^[A-Z]{2}$/.test(r.code)) fails.push(key + ': not an ISO alpha-2 code');
+    if (!r.name.trim()) fails.push(key + ': no name');
+    // A category other than 'default' must tell the reader what it is — that is
+    // the whole reason the row was split off.
+    if (r.category !== 'default' && !r.categoryLabel) fails.push(key + ': split row with no label');
+    // A waiver is a claim with an end date. One without an end date renders as
+    // "exempt" forever.
+    if (r.keta.temporaryExemption && !r.keta.temporaryExemption.until) fails.push(key + ': waiver with no end date');
+    // The inference this expansion must never make: visa-free therefore K-ETA.
+    if (r.keta.eligible !== true && r.keta.temporaryExemption) fails.push(key + ': waiver on a row not established as in scope');
+  }
+}
+
+// A row whose K-ETA position was never read must say so and hand over the
+// official page — never a silent 'no', and never a blocked visa-free verdict.
+{
+  const unread = COUNTRY_RULES.find((r) => r.keta.eligible === null && r.category === 'default');
+  if (!unread) {
+    fails.push('expected at least one row with an unread K-ETA position');
+  } else {
+    const res = assess({ ...T, country: unread.code, days: 1 });
+    eq('unread keta says so', res.keta?.status, 'unestablished');
+    eq('unread keta is not a no', res.keta?.needed, null);
+    eq('unread keta still routes', Boolean(res.officialCheck), true);
+    // The point of splitting the two verdicts: an unknown K-ETA position must
+    // not reach back and change the visa-free answer.
+    if (res.verdict === 'out-of-scope') fails.push(unread.code + ': unread K-ETA blocked the visa-free verdict');
+  }
+}
+
+// Rolling allowances count earlier visits this form does not ask for, so they
+// must land on check-required rather than a confident yes.
+for (const r of COUNTRY_RULES) {
+  if (r.stay.kind !== 'rolling') continue;
+  const res = assess({ ...T, country: r.code, days: 1 });
+  if (res.verdict !== 'check-required') fails.push(r.code + ': rolling allowance resolved to ' + res.verdict);
+}
+
 /* ── Every row is citable ────────────────────────────────────────────────── */
 for (const r of COUNTRY_RULES) {
   if (r.verified.length === 0) fails.push(\`\${r.code}/\${r.category}: no source\`);

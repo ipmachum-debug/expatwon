@@ -77,7 +77,16 @@ const rows = COUNTRY_RULES.map((r) => ({
         ? `${r.stay.value} months`
         : `${r.stay.continuousDays} continuous days`,
   basis: ENTRY_BASES.find((b) => b.id === r.basis)?.label ?? '—',
-  keta: r.keta.temporaryExemption ? 'Temporarily exempt' : r.keta.eligible ? 'Normally applies' : 'Not established',
+  // Three states, not two. `eligible: null` means we did not read it, which is
+  // a different sentence from `false` — and the rows sourced from the manual's
+  // annexes are all null, because the annex says nothing about K-ETA.
+  keta: r.keta.temporaryExemption
+    ? 'Temporarily exempt'
+    : r.keta.eligible === true
+      ? 'Normally applies'
+      : r.keta.eligible === false
+        ? 'Does not apply'
+        : 'Not established',
 }));
 ---
 
@@ -295,6 +304,14 @@ const rows = COUNTRY_RULES.map((r) => ({
       the checker will say so rather than guess. Stays written in months are left
       in months because that is what the official table says, and three months
       from 10 November is not the same number of days as three months from 1 December.
+    </p>
+    <p class="mt-2 text-[0.85rem] leading-relaxed text-ink-soft/75">
+      Most rows read <em>Not established</em> under K-ETA, and that is not a
+      quiet no. Visa-free entry and K-ETA are kept on different official lists
+      that do not match row for row, and the temporary exemption is a third
+      list again — so a nationality read from the visa-exemption tables tells
+      us nothing about its K-ETA position. Those rows send you to the official
+      eligibility page instead of answering for it.
     </p>
     <p class="mt-2 text-[0.85rem] leading-relaxed text-ink-soft/75">
       Official pages:
@@ -523,12 +540,22 @@ const rows = COUNTRY_RULES.map((r) => ({
           r.keta.officialCheck,
         ]);
       } else {
+        // Two different silences, and telling the reader the wrong one is worse
+        // than saying nothing. If the visa-free answer came back as "a visa is
+        // the route", we DO know their nationality and date — K-ETA simply is
+        // not on their path, because it is the authorisation for travelling
+        // without a visa. Anything else means the form is still incomplete.
+        const visaRoute = r.verdict === 'out-of-scope';
         paint(
           BLOCKS.keta,
           'neutral',
-          'Not answered yet',
+          visaRoute ? 'Not this route' : 'Not answered yet',
           'Do you need a travel authorisation before you fly?',
-          ['This is answered once we know your nationality and arrival date.'],
+          [
+            visaRoute
+              ? 'K-ETA is the authorisation for travelling without a visa, so it is not part of a trip that needs one. The visa is what you apply for.'
+              : 'This is answered once we know your nationality and arrival date.',
+          ],
           [],
         );
       }
@@ -552,7 +579,17 @@ const rows = COUNTRY_RULES.map((r) => ({
 
       /* ── The three lines ───────────────────────────────────────────── */
       const ROUTE_WORDS: Record<EntryRoute, string> = {
-        'visa-free': r.stayDays && r.verdict === 'in-scope' ? `Visa-free — up to ${r.stayDays} days` : 'Visa-free',
+        // The route the reader chose, corrected by the verdict. Echoing
+        // "Visa-free" back at someone whose first block says "a visa is the
+        // route" puts a contradiction in the first thing they read.
+        'visa-free':
+          r.verdict === 'in-scope' && r.stayDays
+            ? `Visa-free — up to ${r.stayDays} days`
+            : r.verdict === 'out-of-scope'
+              ? 'A visa is the route'
+              : r.verdict === 'check-required'
+                ? 'Visa-free — needs checking'
+                : 'Visa-free',
         visa: 'On a Korean visa',
         'group-visa': 'On a group visa',
         residence: 'On a Residence Card',
@@ -574,7 +611,12 @@ const rows = COUNTRY_RULES.map((r) => ({
             'personal-check': 'Check your circumstances',
             unestablished: 'Not established',
           }[r.keta.status]
-        : '—';
+        : // Same two silences as the block. An em dash for "we have not asked
+          // you enough yet" is fine; for "you need a visa, so this is not your
+          // route" it reads as a gap in the answer rather than the answer.
+          r.verdict === 'out-of-scope'
+          ? 'Not this route'
+          : '—';
 
       sum('arrival').textContent = r.arrivalCard
         ? r.arrivalCard.needed === true
