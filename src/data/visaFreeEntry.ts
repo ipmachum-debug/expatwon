@@ -72,6 +72,12 @@ export type EntryHolding =
   /** An approved K-ETA in hand — approval, not an application. */
   | 'approved-keta'
   | 'korean-visa'
+  /**
+   * Group (electronic) visa. Its own option and not a kind of 'korean-visa',
+   * because the official lists put the two on OPPOSITE sides: individual visa
+   * holders file, group e-visa holders are excluded.
+   */
+  | 'group-visa'
   /** APEC Business Travel Card. */
   | 'abtc'
   | 'none';
@@ -272,16 +278,21 @@ export const MOJ_TEMP_EXEMPTION_LIST: Source = {
   url: 'https://www.immigration.go.kr/bbs/immigration/489/569087/artclView.do',
 };
 
-/**
- * Where the e-Arrival Card's own inclusion list lives. THE URL IS THE SITE ROOT
- * AND WANTS CONFIRMING: the rules below were read at source by the author, but
- * the exact page was not handed over, and this file's standing rule is that a
- * guessed deep link is worse than a root — it looks precise while being wrong.
- * Replace with the deep link when it is confirmed.
- */
+/** Where the e-Arrival Card's own inclusion list lives. */
 export const E_ARRIVAL_OFFICIAL: Source = {
   label: 'Korea e-Arrival Card — who must submit a declaration',
-  url: 'https://e-arrivalcard.go.kr/',
+  url: 'https://www.e-arrivalcard.go.kr/portal/guide/eacTargetGuide.do?locale=E',
+};
+
+/**
+ * The official site's own selector, which takes Visa / K-ETA / Residence Card /
+ * None as independent choices. Recorded because our three-block UI follows its
+ * logic, and matching the official tool is a defence: if a reader compares the
+ * two and they disagree, the bug is ours and we want it findable.
+ */
+export const E_ARRIVAL_NAVIGATOR: Source = {
+  label: 'Korea e-Arrival Card — declaration navigator',
+  url: 'https://www.e-arrivalcard.go.kr/portal/guide/navigator.do',
 };
 
 /** The Ministry's own K-ETA page, where the personal exemptions are stated. */
@@ -340,9 +351,11 @@ export const FACTS: (Verified & { id: string; statement: string })[] = [
   {
     id: 'arrival-card-exemptions',
     statement:
-      'The e-Arrival Card declaration is waived for holders of a valid Korean ' +
-      'Residence Card and for holders of a valid approved K-ETA. Those two, and ' +
-      'not the others people assume.',
+      'Excluded from the declaration, as published: citizens of the Republic of ' +
+      'Korea; holders of a Korean Residence Card (including a Permanent Resident ' +
+      'Card or Overseas Korean Resident Card); K-ETA holders; GROUP (ELECTRONIC) ' +
+      'VISA holders; visa-free group tourists arriving at Yangyang or Muan ' +
+      'International Airport; foreign flight attendants of aircraft entering Korea.',
     verifiedOn: '2026-09-29',
     verifiedBy: 'author',
     source: E_ARRIVAL_OFFICIAL,
@@ -350,11 +363,35 @@ export const FACTS: (Verified & { id: string; statement: string })[] = [
   {
     id: 'arrival-card-still-required',
     statement:
-      'Three things that do NOT waive the declaration, all of them commonly ' +
-      'assumed to: holding a valid Korean visa, holding a valid ABTC, and ' +
-      'sitting inside the temporary K-ETA exemption. An ABTC waives K-ETA and ' +
-      'not this; being waived out of K-ETA means no approved K-ETA exists to ' +
-      'carry the declaration exemption, so the exemption cuts the other way.',
+      'Subject to the declaration, as published: Korean VISA holders; K-ETA ' +
+      'EXEMPT INDIVIDUALS; active service members under the US-ROK Status of ' +
+      'Forces Agreement; UN passport holders; APEC Business Travel Card (ABTC) ' +
+      'holders; domestic seafarers entering or returning. Note the second entry ' +
+      'and the ABTC: being waived out of K-ETA puts you ON this list, not off ' +
+      'it, because the waiver means no approved K-ETA exists to carry the ' +
+      'exclusion — and the ABTC waives K-ETA and nothing further.',
+    verifiedOn: '2026-09-29',
+    verifiedBy: 'author',
+    source: E_ARRIVAL_OFFICIAL,
+  },
+  {
+    id: 'arrival-card-not-asked',
+    statement:
+      'Categories on the official lists that this form does not ask about, so ' +
+      'a reader in one of them must check for themselves: SOFA active service ' +
+      'members, UN passport holders, seafarers, foreign flight attendants, and ' +
+      'visa-free group tours arriving at Yangyang or Muan.',
+    verifiedOn: '2026-09-29',
+    verifiedBy: 'author',
+    source: E_ARRIVAL_OFFICIAL,
+  },
+  {
+    id: 'arrival-card-visa-overrides-keta',
+    statement:
+      'Holding an approved K-ETA does not waive the declaration if you enter on ' +
+      'a visa. The official page states this as its own exception, and it is the ' +
+      'one case where two exemption-looking documents give opposite answers — ' +
+      'what matters is the document you enter on, not the set you own.',
     verifiedOn: '2026-09-29',
     verifiedBy: 'author',
     source: E_ARRIVAL_OFFICIAL,
@@ -1064,11 +1101,62 @@ export function assessArrivalCard(holdings?: EntryHolding[]): ArrivalCardOutcome
 
   const has = (h: EntryHolding) => holdings.includes(h);
 
+  // Everything that files gets this line, because the form asks about five
+  // things and the official lists name eleven.
+  const notAsked =
+    'The official lists also name cases we do not ask about — SOFA service members, UN passport holders, ' +
+    'seafarers, flight attendants, and visa-free group tours arriving at Yangyang or Muan. If one is you, check the page.';
+
   if (has('residence-card')) {
     return {
       needed: false,
-      reasons: ['A valid Korean Residence Card waives the declaration.'],
+      reasons: [
+        'A Korean Residence Card excludes you from the declaration — including a Permanent Resident Card or an Overseas Korean Resident Card.',
+      ],
       basis: [fact('arrival-card-exemptions')],
+      ...base,
+    };
+  }
+
+  // Before the individual visa, because the two sit on OPPOSITE official lists
+  // and the group one is the exclusion. Test them the other way round and a
+  // group traveller is told to file.
+  if (has('group-visa')) {
+    return {
+      needed: false,
+      reasons: [
+        'Group (electronic) visa holders are excluded from the declaration. This is the one visa that excludes rather than includes.',
+      ],
+      basis: [fact('arrival-card-exemptions')],
+      ...base,
+    };
+  }
+
+  // A visa is tested BEFORE the approved K-ETA, and the order is the rule
+  // rather than a style choice. Someone can hold both, and then the K-ETA does
+  // NOT waive the declaration: what decides is the document you enter on. Put
+  // the K-ETA branch first and this case resolves to 'exempt', which is the
+  // wrong answer given to precisely the reader most likely to hold both.
+  if (has('korean-visa')) {
+    const reasons = ['You need to file the e-Arrival Card declaration.'];
+    if (has('approved-keta')) {
+      reasons.push(
+        'Holding an approved K-ETA does not get you out of it here, because you are entering on the visa. ' +
+          'This is the one case where two documents that both look like exemptions give opposite answers.',
+      );
+    } else {
+      reasons.push('A valid Korean visa does not waive it — visa holders are inside the group that files.');
+    }
+    if (has('abtc')) {
+      reasons.push('Nor does the ABTC. It waives K-ETA and stops there; the two are separate filings.');
+    }
+    reasons.push(notAsked);
+    return {
+      needed: true,
+      reasons,
+      basis: has('approved-keta')
+        ? [fact('arrival-card-visa-overrides-keta'), fact('arrival-card-still-required'), fact('arrival-card-not-asked')]
+        : [fact('arrival-card-still-required'), fact('arrival-card-not-asked')],
       ...base,
     };
   }
@@ -1078,6 +1166,7 @@ export function assessArrivalCard(holdings?: EntryHolding[]): ArrivalCardOutcome
       needed: false,
       reasons: [
         'An approved K-ETA in hand waives the declaration. The approval carries it — an application does not.',
+        'This holds only if you enter on the K-ETA. Enter on a visa instead and you file, whatever else you hold.',
       ],
       basis: [fact('arrival-card-exemptions'), fact('keta-voluntary-application-arrival-card')],
       ...base,
@@ -1088,22 +1177,20 @@ export function assessArrivalCard(holdings?: EntryHolding[]): ArrivalCardOutcome
   // get them out of it, because a bare "yes, file it" is the answer they will
   // assume is a mistake.
   const reasons = ['You need to file the e-Arrival Card declaration.'];
-  if (has('korean-visa')) {
-    reasons.push('A valid Korean visa does not waive it — visa holders are inside the group that files.');
-  }
   if (has('abtc')) {
     reasons.push(
       'A valid ABTC does not waive it either. The ABTC waives K-ETA and stops there; the two are separate filings.',
     );
   }
   reasons.push(
-    'Nor does sitting inside the temporary K-ETA exemption. That waiver means no approved K-ETA exists, and the approved K-ETA is what would have carried the exemption.',
+    'Nor does sitting inside the temporary K-ETA exemption — "K-ETA exempt individuals" is itself an entry on the official list of people who must file. The waiver means no approved K-ETA exists, and the approved K-ETA is what would have carried the exclusion.',
   );
 
+  reasons.push(notAsked);
   return {
     needed: true,
     reasons,
-    basis: [fact('arrival-card-still-required')],
+    basis: [fact('arrival-card-still-required'), fact('arrival-card-not-asked')],
     ...base,
   };
 }

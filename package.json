@@ -7,14 +7,15 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/lint-data.mjs && astro build",
+    "build": "node scripts/lint-data.mjs && node scripts/lint-entry-engine.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint:seo": "node scripts/lint-seo.mjs",
     "audit": "node scripts/audit-freshness.mjs",
     "publish:due": "node scripts/publish-due-drafts.mjs",
     "lint:data": "node scripts/lint-data.mjs",
-    "check": "npm run lint:seo && npm run lint:data",
+    "lint:engine": "node scripts/lint-entry-engine.mjs",
+    "check": "npm run lint:seo && npm run lint:data && npm run lint:engine",
     "queue": "node scripts/audit-freshness.mjs --queue=3"
   },
   "dependencies": {

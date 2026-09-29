@@ -24,7 +24,7 @@
  * says 'check' rather than guessing between two of them.
  */
 
-import { fact, HIKOREA_VISA_FREE, KETA_ELIGIBILITY_PAGE, type Source, type Verified } from './visaFreeEntry';
+import { fact, HIKOREA_VISA_FREE, KETA_ELIGIBILITY_PAGE, type Source, type Verified } from './visaFreeEntry.ts';
 
 /* ---------------------------------------------------------------------------
  * Activities, in the words a reader would use about their own trip.
