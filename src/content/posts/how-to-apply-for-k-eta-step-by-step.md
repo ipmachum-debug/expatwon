@@ -243,6 +243,21 @@ Assessment is *generally* within 72 hours, which is not the same as a maximum,
 and the site says so. There is no official expedited service to fall back on if
 it runs long, and the fee is gone whether or not the answer arrives in time.
 
+## Four things, and none of them replaces another
+
+Before the last section, the orientation that saves most of the arguing:
+
+| | What it decides |
+| --- | --- |
+| Visa-free entry | Whether you may enter Korea at all without obtaining a visa |
+| K-ETA | Whether a visa-free traveller needs authorisation before boarding |
+| Visa | The route when nationality, length of stay or activity puts you outside visa-free entry |
+| e-Arrival Card | Whether you file an arrival declaration, whichever of the above got you here |
+
+They answer in that order, and the order is the point. *Can I enter without a
+visa* comes first; *do I need K-ETA* only arises if the answer was yes; and the
+declaration is asked of everyone, decided by what you actually enter on.
+
 ## And then check the other form
 
 This is where most of the confusion on this subject actually lives.
