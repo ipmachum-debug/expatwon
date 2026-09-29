@@ -5,7 +5,6 @@ category: cost-of-living
 publishDate: 2026-09-30
 updatedDate: 2026-09-30
 slot: am
-draft: true
 tags: [visa, immigration, arrival, short-stay, admin]
 lastVerified: 2026-09-29
 sources:

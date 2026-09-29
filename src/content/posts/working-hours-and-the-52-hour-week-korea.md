@@ -9,7 +9,6 @@ pairedWith: overtime-night-and-holiday-pay-korea
 tags: [employment, working-hours, overtime, labour-law, foreign-workers]
 tracked: [statutory-weekly-hours, max-weekly-overtime-hours, working-hours-violation-max-fine, annual-leave-minimum-workplace-size]
 lastVerified: 2026-09-30
-draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 50 working hours, art. 53 extended work, art. 110 penalties)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
