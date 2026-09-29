@@ -31,7 +31,7 @@ faq:
   - question: 'Do I even need K-ETA in 2026?'
     answer: 'Possibly not. The temporary exemption for the countries and regions already covered by it runs to 31 December 2026, and travellers inside it do not have to obtain K-ETA during that period. You can still apply voluntarily, and there is a concrete reason to: an approved K-ETA carries an exemption from submitting the e-Arrival Card. Check your nationality before you start, because the application fee is not refunded if you turn out not to need it.'
   - question: 'My verification code never arrived.'
-    answer: 'Check whether you used Gmail. After the code is sent, the site itself displays a notice that verification codes may be delayed when using Gmail, and asks you to use a different email address if it does not arrive. That is the official site saying it, not a workaround someone found — so if you have a second address that is not Gmail, start with that one.'
+    answer: 'Check whether you used Gmail. After the code is sent, the site itself displays a notice that verification codes may be delayed when using Gmail, and asks you to use a different email address if it does not arrive. That is the official site saying it, not a workaround someone found — so if you have a second address that is not Gmail, start with that one. The entry screen gives you five minutes from sending, and there is a Resend button, so a code that arrives late is a retry rather than a lost application.'
   - question: 'Can I clean up the passport photo before uploading it?'
     answer: 'No, and the application says so in the strongest terms it uses anywhere. A popup on the upload screen states that AI enhancement may cause image distortion and asks you not to use AI photo editors, that the uploaded bio-page must match the passport you present at immigration control, that any modification, alteration or forgery is strictly prohibited, and that failure to comply may result in denial or cancellation of the application and may lead to legal penalties under relevant laws including the Immigration Act. Crop and rotate with the tool the site gives you. Nothing else.'
   - question: 'The scan read my passport number. Do I need to check it?'
@@ -138,8 +138,11 @@ Enter an address, press **Send Verification Code**, and a six-digit number
 arrives with the subject `[K-ETA] Application Authentication number`. Paste it
 in and press **Verify**; the screen answers `Verification succeeded.`
 
-A countdown runs beside the field and a **Resend** button sits next to it, so
-the code expires rather than waiting for you.
+**You have five minutes.** The timer beside the Verification Number field
+starts at `05:00` and counts down from the moment the code is sent — the limit
+belongs to the entry screen, not to the email sitting in your inbox. A
+**Resend** button sits next to it, so a code that runs out is not the end of
+the application.
 
 The part worth planning around is what the site displays the moment the code is
 sent:
