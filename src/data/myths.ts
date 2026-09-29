@@ -43,10 +43,14 @@ export const MYTHS: Myth[] = [
     guide: '/banking/sending-money-from-korea-to-china/',
   },
   {
-    claim:
-      'Korea raised the undocumented remittance limit to USD 100,000, so that is your allowance now.',
+    // Struck through on the page, so the whole sentence has to be the false
+    // part. An earlier wording ran "Korea raised the limit to USD 100,000, so
+    // that is your allowance now" — and the raise is real, which the
+    // correction below says outright. Striking that clause denied a fact we
+    // were in the middle of confirming. The claim is now the inference alone.
+    claim: 'My annual remittance allowance out of Korea is USD 100,000 now.',
     reality:
-      'Not if you are a foreign resident. The higher annual figure applies to resident Korean nationals; foreign residents and non-residents sending through licensed small-amount remitters keep USD 5,000 per transaction and USD 50,000 per year. The route that actually lifts your ceiling is documenting how the money was acquired, not the headline change.',
+      'Not if you are a foreign resident. Korea did raise the undocumented annual figure to USD 100,000, but it applies to resident Korean nationals; foreign residents and non-residents sending through licensed small-amount remitters keep USD 5,000 per transaction and USD 50,000 per year. The route that actually lifts your ceiling is documenting how the money was acquired, not the headline change.',
     basis: 'Foreign Exchange Transaction Regulations',
     guide: '/banking/sending-money-from-korea-to-china/',
   },

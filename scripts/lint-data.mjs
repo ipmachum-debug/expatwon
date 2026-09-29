@@ -313,6 +313,28 @@ for (const key of observationKeys) {
   if (!cited) warnings.push(`observation "${key}" is not tracked by any article`);
 }
 
+// ------------------------------------------------------------------- myths
+// A myth's `claim` renders with line-through, so the whole sentence has to be
+// the false part. A claim that hangs a false inference off a true premise —
+// "X is true, so Y" — strikes out X as well, and X is usually a fact the
+// correction underneath goes on to confirm. That happened once with the
+// USD 100,000 remittance change, which Korea really did make.
+//
+// Read as text rather than imported: this file is checked before the build, and
+// a gate that needs a TypeScript loader to run is a gate that stops running.
+{
+  const src = readFileSync('src/data/myths.ts', 'utf8');
+  const claims = [...src.matchAll(/^\s*claim:\s*(?:\n\s*)?'((?:[^'\\]|\\.)*)'/gm)].map((m) => m[1]);
+  if (claims.length === 0) errors.push('myths: no claims parsed — the scan is broken, not the data');
+  for (const c of claims) {
+    if (/,\s*(so|which means|therefore|and so|meaning)\s/i.test(c)) {
+      errors.push(`myth claim joins a premise to an inference, so the strikethrough denies the premise too: "${c}"`);
+    }
+    if (!/[.?]$/.test(c)) errors.push(`myth claim is not a full sentence: "${c}"`);
+  }
+  console.log(`  ..    ${claims.length} myth claims scanned`);
+}
+
 // -------------------------------------------------------------------- report
 for (const w of warnings) console.warn(`  warn  ${w}`);
 if (errors.length > 0) {
