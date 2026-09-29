@@ -585,8 +585,24 @@ const rows = COUNTRY_RULES.map((r) => ({
         : '—';
 
       /* ── Where to go next ──────────────────────────────────────────── */
+      // The how-to is offered only once the declaration answer is settled, and
+      // it is worded to match the answer: someone told "Excluded" does not need
+      // filling instructions, they need to know the answer can change.
+      const links = [...r.next];
+      if (r.arrivalCard?.needed === true) {
+        links.unshift({
+          label: 'How to fill out the e-Arrival Card, field by field',
+          href: '/cost-of-living/how-to-fill-out-korea-e-arrival-card/',
+        });
+      } else if (r.arrivalCard?.needed === false) {
+        links.unshift({
+          label: 'What the e-Arrival Card asks, and when the exclusion stops applying',
+          href: '/cost-of-living/how-to-fill-out-korea-e-arrival-card/',
+        });
+      }
+
       nextWrap.replaceChildren(
-        ...r.next.map((n) => {
+        ...links.map((n) => {
           const a = document.createElement('a');
           a.href = n.href;
           a.className = 'font-semibold text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent';
