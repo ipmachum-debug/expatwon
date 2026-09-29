@@ -1107,10 +1107,11 @@ export function assess(input: CheckerInput): CheckerResult {
     },
   );
 
-  next.push(
-    { label: 'Which entry filing you actually need', href: '/cost-of-living/' },
-    { label: 'Paying and getting connected on arrival', href: '/banking/' },
-  );
+  // No generic "which filing do you need" link here: the declaration and K-ETA
+  // answers are computed above, so whoever renders them can offer the exact
+  // guide for the answer the reader got. Two places emitting the same link is
+  // how they drift apart.
+  next.push({ label: 'Paying and getting connected on arrival', href: '/banking/' });
 
   return {
     verdict,

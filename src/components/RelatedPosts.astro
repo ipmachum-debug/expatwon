@@ -4,23 +4,43 @@ import { getCollection } from 'astro:content';
 import { getCategory } from '../lib/categories';
 
 interface Props {
-  category: string;
+  /** Pick the five most recently updated posts in this category. */
+  category?: string;
+  /**
+   * Or name the posts outright, in the order they should appear.
+   *
+   * A category is the wrong lens for a page whose readers all arrived with the
+   * same question. The entry checker sat under "Before you arrive" showing
+   * annual leave and severance, because those are what is newest in its
+   * category — true, and useless to somebody working out whether they need a
+   * K-ETA. Where a page has a real next step, it should say so.
+   *
+   * Each id is checked against the collection at build time, so a post that is
+   * renamed or still in draft fails the build here rather than shipping a dead
+   * link.
+   */
+  slugs?: string[];
   /** post id to exclude (the post being viewed), if any */
   excludeId?: string;
   heading?: string;
 }
 
-const { category, excludeId, heading = 'Related guides' } = Astro.props;
-const categoryMeta = getCategory(category);
+const { category, slugs, excludeId, heading = 'Related guides' } = Astro.props;
 
-const related = (
-  await getCollection(
-    'posts',
-    (p) => p.data.category === category && !p.data.draft && p.id !== excludeId,
-  )
-)
-  .sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf())
-  .slice(0, 5);
+if (!category && !slugs) throw new Error('RelatedPosts needs a category or a list of slugs');
+
+const all = await getCollection('posts', (p) => !p.data.draft);
+
+const related = slugs
+  ? slugs.map((id) => {
+      const found = all.find((p) => p.id === id);
+      if (!found) throw new Error(`RelatedPosts: no published post with id "${id}"`);
+      return found;
+    })
+  : all
+      .filter((p) => p.data.category === category && p.id !== excludeId)
+      .sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf())
+      .slice(0, 5);
 ---
 
 {
@@ -31,7 +51,7 @@ const related = (
         {related.map((p) => (
           <li>
             <a
-              href={`/${categoryMeta.slug}/${p.id}/`}
+              href={`/${getCategory(p.data.category).slug}/${p.id}/`}
               class="group flex items-baseline gap-2.5 text-[0.95rem] font-medium text-slate-600 transition-colors hover:text-gold"
             >
               <span class="text-blue-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">

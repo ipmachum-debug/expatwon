@@ -20,7 +20,7 @@ sources:
     url: 'https://www.k-eta.go.kr/portal/guide/viewetaalification.do?locale=EN'
 affiliate: false
 revisions:
-  - date: 2026-09-30
+  - date: 2026-09-29
     change: 'Published'
 keyFacts:
   - { label: 'Fee', value: 'KRW 10,000' }
