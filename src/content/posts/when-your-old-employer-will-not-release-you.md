@@ -2,8 +2,8 @@
 title: 'When Your Old Employer Will Not Release You'
 description: 'A release letter is evidence that a job ended, not a veto over your next one. What to do when the previous company simply refuses to sign.'
 category: employment
-publishDate: 2026-10-15
-updatedDate: 2026-10-15
+publishDate: 2026-10-16
+updatedDate: 2026-10-16
 slot: am
 tags: [employment, immigration, e-7, e-9, foreign-workers]
 tracked: [employer-employment-change-report-penalty, foreign-worker-employment-change-report-deadline, e9-workplace-change-limit]
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-15
+  - date: 2026-10-16
     change: 'Published'
 keyFacts:
   - { label: 'A release letter is', value: 'Evidence, not consent' }

@@ -2,8 +2,8 @@
 title: 'What Korean Health Insurance Does Not Cover'
 description: 'Enrolment does not settle a hospital bill. Three layers decide it, and the middle one is where the money you were not expecting comes from.'
 category: insurance
-publishDate: 2026-10-30
-updatedDate: 2026-10-30
+publishDate: 2026-10-31
+updatedDate: 2026-10-31
 slot: am
 pairedWith: korean-private-health-insurance-4th-vs-5th-generation
 tags: [insurance, nhis, non-covered, healthcare, medical-costs]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.fss.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-30
+  - date: 2026-10-31
     change: 'Published'
 keyFacts:
   - { label: 'Three layers', value: 'Insurer, you, private cover' }

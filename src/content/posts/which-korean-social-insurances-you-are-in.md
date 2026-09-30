@@ -2,8 +2,8 @@
 title: 'Which Korean Social Insurances You Are Actually In'
 description: 'Four schemes, four different tests for a foreign employee. Which is why your deductions can differ from a colleague’s and both payslips be right.'
 category: employment
-publishDate: 2026-10-09
-updatedDate: 2026-10-09
+publishDate: 2026-10-10
+updatedDate: 2026-10-10
 slot: am
 tags: [employment, social-insurance, foreign-workers, national-pension, health-insurance]
 tracked: [nps-lump-sum-refund-country-list, health-insurance-acquisition-report-deadline, foreign-dependant-residence-requirement, unemployment-benefit-insured-days]
@@ -22,7 +22,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-09
+  - date: 2026-10-10
     change: 'Published'
 keyFacts:
   - { label: 'Pension', value: 'Nationality and status' }

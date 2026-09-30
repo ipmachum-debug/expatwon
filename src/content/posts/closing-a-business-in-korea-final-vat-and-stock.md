@@ -2,8 +2,8 @@
 title: 'How to Close a Business in Korea: Final VAT and Stock'
 description: 'Closing the registration is one filing. The final VAT return is another, due the 25th of the next month — and it prices whatever is left on the shelves.'
 category: business
-publishDate: 2026-11-05
-updatedDate: 2026-11-05
+publishDate: 2026-11-06
+updatedDate: 2026-11-06
 slot: am
 pairedWith: closing-a-business-the-deadlines-after-the-last-day
 tags: [business, tax, vat, closing-a-business, small-business]
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EC%84%B8%EA%B8%B0%EB%B3%B8%EB%B2%95'
 affiliate: false
 revisions:
-  - date: 2026-11-05
+  - date: 2026-11-06
     change: 'Published'
 keyFacts:
   - { label: 'Final VAT due', value: '25th of next month' }

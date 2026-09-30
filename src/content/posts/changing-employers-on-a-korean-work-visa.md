@@ -2,8 +2,8 @@
 title: 'Changing Employers on a Korean Work Visa'
 description: 'The date that causes trouble is not your last day. It is your first day at the new place, and whether immigration had already said yes.'
 category: employment
-publishDate: 2026-10-14
-updatedDate: 2026-10-14
+publishDate: 2026-10-15
+updatedDate: 2026-10-15
 slot: am
 pairedWith: when-your-old-employer-will-not-release-you
 tags: [employment, immigration, e-7, e-9, foreign-workers]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.immigration.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-14
+  - date: 2026-10-15
     change: 'Published'
 keyFacts:
   - { label: 'Default rule', value: 'Prior permission' }
