@@ -2,8 +2,8 @@
 title: 'Buying vs Renting in Korea: The Real Break-Even'
 description: 'Loan principal is not a cost and a jeonse deposit is not free. Price both sides the same way and the question becomes how long you will stay.'
 category: cost-of-living
-publishDate: 2026-11-14
-updatedDate: 2026-11-14
+publishDate: 2026-10-06
+updatedDate: 2026-10-06
 slot: am
 tags: [housing, buying, jeonse, wolse, financial-planning]
 tracked: [monthly-rent-tax-credit-rate, monthly-rent-tax-credit-limit, comprehensive-property-tax-deduction]
@@ -22,7 +22,7 @@ sources:
     url: 'https://www.reb.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-14
+  - date: 2026-10-06
     change: 'Published'
 keyFacts:
   - { label: 'Principal repayment', value: 'Not a cost' }

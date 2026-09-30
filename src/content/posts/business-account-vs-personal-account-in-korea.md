@@ -2,8 +2,8 @@
 title: 'Business vs Personal Bank Accounts in Korea'
 description: 'A bank’s business chequing account and the tax office’s “business-use account” are two different things. Only one of them carries a penalty.'
 category: business
-publishDate: 2026-11-05
-updatedDate: 2026-11-05
+publishDate: 2026-11-07
+updatedDate: 2026-11-07
 slot: am
 pairedWith: company-money-is-not-the-directors-money
 tags: [business, banking, tax, sole-proprietor, small-business]
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.hometax.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-05
+  - date: 2026-11-07
     change: 'Published'
 keyFacts:
   - { label: 'Who must report', value: 'Double-entry obligors' }

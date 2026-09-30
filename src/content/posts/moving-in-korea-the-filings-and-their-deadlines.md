@@ -2,8 +2,8 @@
 title: 'Moving in Korea: The Filings and Their Real Deadlines'
 description: '14 days, 15 days and the day after come from three different statutes. For foreign residents, missing one is a criminal fine, not an administrative one.'
 category: cost-of-living
-publishDate: 2026-11-12
-updatedDate: 2026-11-12
+publishDate: 2026-11-14
+updatedDate: 2026-11-14
 slot: am
 tags: [housing, moving, immigration, address-registration, rental]
 tracked: [resident-move-in-report-deadline, foreigner-address-change-deadline, foreigner-address-change-penalty, address-change-bulk-service, leasehold-registration-order-effective-point]
@@ -22,7 +22,7 @@ sources:
     url: 'https://www.epost.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-12
+  - date: 2026-11-14
     change: 'Published'
 keyFacts:
   - { label: 'Korean nationals', value: '14 days' }

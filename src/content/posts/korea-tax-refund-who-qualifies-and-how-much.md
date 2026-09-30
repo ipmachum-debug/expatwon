@@ -2,8 +2,8 @@
 title: 'Korea’s Tax Refund: Who Qualifies, and How Much'
 description: 'It is not 10% back, your residence card does not decide eligibility, and there are three refund routes with four different thresholds between them.'
 category: cost-of-living
-publishDate: 2026-10-18
-updatedDate: 2026-10-18
+publishDate: 2026-10-23
+updatedDate: 2026-10-23
 slot: am
 pairedWith: not-losing-your-korean-tax-refund-at-the-airport
 tags: [cost-of-living, tax-refund, shopping, short-stay, vat]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.nts.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-18
+  - date: 2026-10-23
     change: 'Published'
 keyFacts:
   - { label: 'Minimum purchase', value: '₩15,000' }

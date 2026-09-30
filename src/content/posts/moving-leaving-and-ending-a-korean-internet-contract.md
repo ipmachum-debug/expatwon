@@ -2,8 +2,8 @@
 title: 'Moving, Leaving and Ending a Korean Internet Contract'
 description: 'Moving house is a transfer, not a cancellation. And a landlord refusing cabling is not the same thing as the carrier being unable to serve the address.'
 category: cost-of-living
-publishDate: 2026-10-25
-updatedDate: 2026-10-25
+publishDate: 2026-10-28
+updatedDate: 2026-10-28
 slot: am
 tags: [cost-of-living, internet, moving, contracts, departure]
 tracked: [internet-contract-term-options, foreigner-prepaid-internet-terms]
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.lguplus.com/'
 affiliate: false
 revisions:
-  - date: 2026-10-25
+  - date: 2026-10-28
     change: 'Published'
 keyFacts:
   - { label: 'Moving house', value: 'Transfer, not cancel' }

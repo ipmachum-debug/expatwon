@@ -2,8 +2,8 @@
 title: 'Ending a Korean Lease: The Notice That Has to Arrive'
 description: 'Two months before expiry, or three months after notice if the lease renewed itself. Both clocks start when the landlord receives it, not when you send it.'
 category: cost-of-living
-publishDate: 2026-11-09
-updatedDate: 2026-11-09
+publishDate: 2026-11-11
+updatedDate: 2026-11-11
 slot: am
 pairedWith: getting-your-korean-deposit-back-interest-and-enforcement
 tags: [housing, rental, lease-contract, deposit, moving-out]
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.scourt.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-09
+  - date: 2026-11-11
     change: 'Published'
 keyFacts:
   - { label: 'Refuse renewal by', value: '2 months before expiry' }

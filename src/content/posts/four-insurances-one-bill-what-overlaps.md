@@ -2,8 +2,8 @@
 title: 'Four Insurances, One Bill: What Actually Overlaps'
 description: 'Holding more policies does not mean receiving more. Which half of your cover doubles up and which half genuinely stacks is decided by one distinction.'
 category: insurance
-publishDate: 2026-10-30
-updatedDate: 2026-10-30
+publishDate: 2026-11-01
+updatedDate: 2026-11-01
 slot: am
 pairedWith: pausing-korean-cover-while-you-are-abroad
 tags: [insurance, travel-insurance, expat-insurance, nhis, claims]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.knia.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-30
+  - date: 2026-11-01
     change: 'Published'
 keyFacts:
   - { label: 'Indemnity cover', value: 'Shared, never doubled' }

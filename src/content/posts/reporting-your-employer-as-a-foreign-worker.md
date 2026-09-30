@@ -2,8 +2,8 @@
 title: 'Reporting Your Employer as a Foreign Worker'
 description: 'The fear is not the procedure. It is what happens to your status while you use it — and one protection changed in November 2025.'
 category: employment
-publishDate: 2026-10-13
-updatedDate: 2026-10-13
+publishDate: 2026-10-18
+updatedDate: 2026-10-18
 slot: am
 tags: [employment, unpaid-wages, immigration, foreign-workers, e-9]
 tracked: [foreigner-rights-hotline-languages, unfair-dismissal-relief-deadline, e9-workplace-change-limit, e9-workplace-change-application-period]
@@ -22,7 +22,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-13
+  - date: 2026-10-18
     change: 'Published'
 keyFacts:
   - { label: 'Unpaid wage victims', value: 'Notification exemption' }

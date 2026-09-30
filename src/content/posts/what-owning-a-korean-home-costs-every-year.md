@@ -2,8 +2,8 @@
 title: 'What Owning a Korean Home Costs Every Year'
 description: 'Closing costs are the part everyone budgets for. The annual side — property tax, holding tax, owner-side repairs — is what compounds over a decade.'
 category: cost-of-living
-publishDate: 2026-11-13
-updatedDate: 2026-11-13
+publishDate: 2026-10-05
+updatedDate: 2026-10-05
 slot: am
 pairedWith: buying-vs-renting-the-real-break-even
 tags: [housing, buying, property-tax, cost-of-living, homeownership]
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.nhis.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-13
+  - date: 2026-10-05
     change: 'Published'
 keyFacts:
   - { label: 'Ordinary acquisition tax', value: '1% – 3% + surtaxes' }

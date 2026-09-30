@@ -2,8 +2,8 @@
 title: 'Sending Money Into Korea: Routes and Real Cost'
 description: 'The same USD 20,000 arrives as a different number depending on the route — and only one of them lets you hold it in dollars until you need won.'
 category: banking
-publishDate: 2026-10-20
-updatedDate: 2026-10-20
+publishDate: 2026-10-02
+updatedDate: 2026-10-02
 slot: am
 pairedWith: what-korean-banks-ask-about-money-from-abroad
 tags: [banking, remittance, fx, arrival, foreign-currency]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.fss.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-20
+  - date: 2026-10-02
     change: 'Published'
 keyFacts:
   - { label: 'Two routes', value: 'SWIFT or local settlement' }
