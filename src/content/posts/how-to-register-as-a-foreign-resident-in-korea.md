@@ -2,8 +2,8 @@
 title: 'How to Register as a Foreign Resident in Korea'
 description: 'Booking a HiKorea slot is not filing your application, and two changes need no booking at all. What Form 34 and the accommodation form actually ask for.'
 category: cost-of-living
-publishDate: 2026-10-07
-updatedDate: 2026-10-07
+publishDate: 2026-10-06
+updatedDate: 2026-10-06
 draft: true
 tags: [visa, immigration, residence-card, foreign-registration, hikorea]
 lastVerified: 2026-09-30
@@ -18,7 +18,7 @@ sources:
     url: 'https://www.immigration.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-07
+  - date: 2026-10-06
     change: 'Published'
 keyFacts:
   - { label: 'Register within', value: '90 days of entry' }

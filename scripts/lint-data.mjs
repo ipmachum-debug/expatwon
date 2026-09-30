@@ -313,6 +313,40 @@ for (const key of observationKeys) {
   if (!cited) warnings.push(`observation "${key}" is not tracked by any article`);
 }
 
+// ----------------------------------------------------------- pending links
+// docs/pending-links.md records links taken out because the target was still
+// scheduled. The reminder has to arrive by itself: the alternatives are a link
+// nobody restores, or a queue reordered around one link, and the second of
+// those has already happened here. So once the target is live, the build fails
+// until the link is back.
+{
+  const PENDING = 'docs/pending-links.md';
+  if (existsSync(PENDING)) {
+    const rows = readFileSync(PENDING, 'utf8')
+      .split('\n')
+      .map((l) => l.trim())
+      .filter((l) => l.startsWith('|') && !/^\|\s*-+/.test(l) && !/in this guide/.test(l))
+      .map((l) => l.split('|').map((c) => c.trim()).filter(Boolean));
+    for (const [src, target] of rows) {
+      const tp = join(POSTS_DIR, target + '.md');
+      const sp = join(POSTS_DIR, src + '.md');
+      if (!existsSync(tp)) { errors.push('pending-links: no such target "' + target + '"'); continue; }
+      if (!existsSync(sp)) { errors.push('pending-links: no such source "' + src + '"'); continue; }
+      const t = readFileSync(tp, 'utf8');
+      const published = !/^draft:\s*true\s*$/m.test(t.slice(0, t.indexOf('\n---', 4)));
+      const restored = readFileSync(sp, 'utf8').includes('/' + target + '/');
+      if (published && !restored) {
+        errors.push('pending-links: "' + target + '" has published — restore its link in "' + src +
+          '" and delete the row from ' + PENDING);
+      }
+      if (restored) {
+        warnings.push('pending-links: "' + src + '" links to "' + target + '" again — the row in ' + PENDING + ' can go');
+      }
+    }
+    console.log('  ..    ' + rows.length + ' held-back link(s) tracked');
+  }
+}
+
 // ------------------------------------------------------------------- myths
 // A myth's `claim` renders with line-through, so the whole sentence has to be
 // the false part. A claim that hangs a false inference off a true premise —

@@ -1,9 +1,9 @@
 ---
-title: 'Sending Money From Korea: What Actually Arrives'
-description: 'What a transfer out of Korea really costs: the FX spread that dwarfs the fees, what banks deduct en route, and how to compare on the amount received.'
+title: 'How to Send Money From Korea: Steps and Real Cost'
+description: 'What a transfer out of Korea needs from you — beneficiary details, SWIFT, the purpose question — and why the exchange rate costs more than the fee does.'
 category: banking
 publishDate: 2026-08-23
-updatedDate: 2026-08-23
+updatedDate: 2026-09-30
 tags: [banking, remittance, FX, SWIFT, fees]
 sources:
   - label: 'Korea Law Information Center — Foreign Exchange Transaction Regulations, Ch. 4 (payments and receipts)'
@@ -22,6 +22,8 @@ sources:
     url: 'https://hanbiz.hanpass.com/faq'
 affiliate: false
 revisions:
+  - date: 2026-09-30
+    change: 'Rewritten to answer the procedure first — beneficiary details, SWIFT and intermediary banks, the purpose question — and linked down to the China and US corridors'
   - date: 2026-08-23
     change: 'Published'
 keyFacts:
@@ -39,11 +41,14 @@ faq:
   - question: 'Should I use a bank or a remittance app?'
     answer: 'Small, regular transfers usually favor licensed fintech remitters, whose structure strips out cable and intermediary fees; large transfers are dominated by the FX spread, where negotiated bank rates win — a ₩10 rate difference on USD 100,000 is ₩1,000,000. And for corporate, investment, or property-related money, the lawful channel and documentation outrank price entirely.'
 ---
-The worst way to compare international transfers is the way everyone
-starts: "Service A charges ₩5,000, Service B is free." The real cost of a
-remittance is not the fee printed next to the send button. It is the gap
-between **the won you spent and the foreign currency your recipient
-finally received.**
+Sending money out of Korea is two problems wearing one name. The first is
+procedural — what the bank needs from you before it will send anything. The
+second is that the price you were quoted is not the price you paid.
+
+Most guides only answer the second, and they answer it wrongly: *"Service A
+charges ₩5,000, Service B is free."* The real cost of a remittance is not
+the fee printed next to the send button. It is the gap between **the won you
+spent and the foreign currency your recipient finally received.**
 
 <figure class="figure hero">
   <p class="figure-title">Five places a transfer loses money — only one is advertised</p>
@@ -84,6 +89,39 @@ it is the only number worth comparing.
     <div class="flow-node"><strong>Recipient's bank credits the account</strong><span class="sub">= Net Received Amount — the only number worth comparing</span></div>
   </div>
 </figure>
+
+## What the bank needs before it will send anything
+
+Every route out of Korea — a bank counter, a bank app, a registered
+small-amount remitter — asks for the same four things in some form. Having
+them ready is the difference between one visit and three.
+
+**Who is receiving it.** The beneficiary's name exactly as their bank holds
+it, their account number or IBAN, and their address. A name that does not
+match the account is the most common reason a transfer is returned days
+later, minus the fees already taken.
+
+**Which bank, unambiguously.** For most corridors that means the receiving
+bank's **SWIFT/BIC code** — an 8 or 11 character identifier that names the
+bank and often the branch. Some corridors need a national code as well
+rather than instead: a routing number, a sort code, a branch number. The
+receiving bank publishes these; guessing one is how money ends up suspended.
+
+**Why you are sending it.** Korean banks ask the purpose of the remittance,
+and the answer is not a formality — it decides which evidence, if any, you
+are asked for. Living expenses to family, tuition, payment for goods and
+salary carried home are different answers with different paperwork behind
+them.
+
+**Where the money came from.** For anything the bank treats as large, the
+question moves from *why* to *how you got it*. That is the same distinction
+the ₩ ceiling everyone quotes actually turns on, and it is covered in its
+own section below.
+
+<div class="callout callout-note">
+  <p class="callout-title">One thing worth knowing before you start</p>
+  <p>A transfer can cross a bank you never chose. Where the sending and receiving banks hold no direct relationship, the payment routes through an <strong>intermediary bank</strong>, which may take its own cut from the money in transit — deducted from the amount, not billed to you. It is the one cost that does not appear on any quote, and it is why the only comparable number is what lands in the recipient's account.</p>
+</div>
 
 ## The rate can cost more than every fee combined
 

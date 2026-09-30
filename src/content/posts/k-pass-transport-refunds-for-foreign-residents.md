@@ -2,8 +2,8 @@
 title: 'K-Pass Transport Refunds for Foreign Residents'
 description: 'A government refund on what you spend commuting. Nationality is not the barrier — registration and residence verification are, and both are doable.'
 category: cost-of-living
-publishDate: 2026-10-20
-updatedDate: 2026-10-20
+publishDate: 2026-10-19
+updatedDate: 2026-10-19
 slot: am
 tags: [cost-of-living, transport, k-pass, foreign-residents, commuting]
 tracked: [kpass-refund-rate-general]
@@ -18,7 +18,7 @@ sources:
     url: 'https://www.t-money.co.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-20
+  - date: 2026-10-19
     change: 'Published'
 keyFacts:
   - { label: 'Standard refund', value: '20% of transport spend' }

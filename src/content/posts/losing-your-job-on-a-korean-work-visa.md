@@ -2,8 +2,8 @@
 title: 'Losing Your Job on a Korean Work Visa'
 description: 'The 15 days everyone cites is your employer’s reporting duty, not your grace period. And D-10 is a status you qualify for, not one you fall back to.'
 category: employment
-publishDate: 2026-10-12
-updatedDate: 2026-10-12
+publishDate: 2026-10-11
+updatedDate: 2026-10-11
 slot: am
 tags: [employment, immigration, e-7, d-10, foreign-workers]
 tracked: [foreign-worker-employment-change-report-deadline, d10-max-stay-period, unemployment-benefit-claim-period]
@@ -20,7 +20,7 @@ sources:
     url: 'https://www.immigration.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-12
+  - date: 2026-10-11
     change: 'Published'
 keyFacts:
   - { label: 'The 15 days', value: 'Your employer’s duty' }

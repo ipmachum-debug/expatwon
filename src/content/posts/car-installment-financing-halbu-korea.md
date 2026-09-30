@@ -1,9 +1,9 @@
 ---
-title: 'Your Visa Does Not Decide Your Korean Car Loan'
-description: 'Lenders price car finance on your credit file, not your status. What is screened, the down-payment effect, balloon deals and the DSR exception.'
+title: 'Car Loans in Korea for Foreigners: How 할부 Works'
+description: 'Can foreigners get a car loan in Korea? How 할부 works, what lenders screen, what your Residence Card does and does not decide, down payments and leasing.'
 category: cars
 publishDate: 2026-08-27
-updatedDate: 2026-08-27
+updatedDate: 2026-09-30
 tags: [cars, installment, financing, DSR, capital-companies]
 sources:
   - label: 'KB Capital — new-car installment product terms (12–60 months, fixed-rate band, lien, stamp duty, prepayment fee formula)'
@@ -18,6 +18,8 @@ sources:
     url: 'https://m.kbcapital.co.kr/cstmrPtct/fnncCstmrRght/rigtAsrtDefn.kbc'
 affiliate: false
 revisions:
+  - date: 2026-09-30
+    change: 'Title and description rewritten to the question readers arrive with — the page ranks for car finance but was headed with its conclusion rather than the question'
   - date: 2026-08-27
     change: 'Published'
 keyFacts:

@@ -2,8 +2,8 @@
 title: 'E-9 vs E-7: What Actually Separates Them'
 description: 'Not wages, and not skill level. The real difference is who controls the employment relationship, and how quickly losing a job becomes a visa problem.'
 category: employment
-publishDate: 2026-10-13
-updatedDate: 2026-10-13
+publishDate: 2026-10-12
+updatedDate: 2026-10-12
 slot: am
 pairedWith: e-7-4-from-e-9-to-long-term-status
 tags: [employment, immigration, e-9, e-7, foreign-workers]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.eps.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-13
+  - date: 2026-10-12
     change: 'Published'
 keyFacts:
   - { label: 'E-7 wage floor 2026', value: 'Set in won, not GNI' }
