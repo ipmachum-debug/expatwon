@@ -271,6 +271,21 @@ service issues the remittance documentation you may need later.
   support, gifts, personal funds, and business money carry different tax
   meanings downstream.
 
+## The corridor decides more than the provider
+
+Everything above is corridor-neutral, and the last part of the price is
+not. What the money has to become at the other end — a bank account, a
+card network, a wallet — sets the payout fee, the cut-off times and the
+questions the receiving bank asks. Two corridors are covered in their own
+right here:
+
+- **[Korea to China](/banking/sending-money-from-korea-to-china/)** — the
+  payout rail decides it, and China's USD 50,000 figure is a purchase
+  quota rather than a cap on what may arrive.
+- **[Korea to the United States](/banking/sending-money-from-korea-to-the-us/)**
+  — wire or ACH changes the route and the fees, and whose money it is
+  decides the tax result.
+
 Comparing remittance prices requires no financial sophistication. Get
 quotes at the same time, for the same won amount, to the same country,
 via the same payout method — then compare what actually lands in the
