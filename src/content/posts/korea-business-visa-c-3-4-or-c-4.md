@@ -4,7 +4,6 @@ description: 'Talking about the installation is a business visit. Doing the inst
 category: visas
 publishDate: 2026-10-01
 updatedDate: 2026-10-01
-draft: true
 tags: [visa, business, immigration, short-stay, foreign-workers]
 lastVerified: 2026-09-29
 sources:
