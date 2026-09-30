@@ -1,7 +1,7 @@
 ---
 title: 'How to Apply for K-ETA in 2026, Step by Step'
 description: 'A run through the official application — the Gmail warning, the ban on AI photo editing, and a nationality check that runs only after you upload.'
-category: cost-of-living
+category: visas
 publishDate: 2026-09-29
 updatedDate: 2026-09-29
 slot: pm
@@ -314,7 +314,7 @@ would have excluded you from the other form.
 
 <div class="callout callout-note">
   <p class="callout-title">The two next steps</p>
-  <p>Work out which row is yours with the <a href="/tools/korea-entry-check/">Korea entry requirements check</a> — it answers visa-free scope, K-ETA and the declaration separately. Then, if you are filing, <a href="/cost-of-living/how-to-fill-out-korea-e-arrival-card/">the e-Arrival Card field by field</a>.</p>
+  <p>Work out which row is yours with the <a href="/tools/korea-entry-check/">Korea entry requirements check</a> — it answers visa-free scope, K-ETA and the declaration separately. Then, if you are filing, <a href="/visas/how-to-fill-out-korea-e-arrival-card/">the e-Arrival Card field by field</a>.</p>
 </div>
 
 ## Before you start, have these ready

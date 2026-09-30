@@ -1,7 +1,7 @@
 ---
 title: 'Korea C-3-9 Tourist Visa: Who Needs It and How to Apply'
 description: 'The tourism route when visa-free entry is not open to you — and the five-page form, including the clause that stops you changing status later.'
-category: cost-of-living
+category: visas
 publishDate: 2026-09-30
 updatedDate: 2026-09-30
 slot: am
@@ -274,7 +274,7 @@ people who file the arrival declaration — visa holders are its first entry.
 
 <div class="callout callout-note">
   <p class="callout-title">Next</p>
-  <p><a href="/cost-of-living/how-to-fill-out-korea-e-arrival-card/">How to fill out the e-Arrival Card</a>, field by field. And if the entry check said visa-free after all, <a href="/cost-of-living/how-to-apply-for-k-eta-step-by-step/">how to apply for K-ETA</a> instead.</p>
+  <p><a href="/visas/how-to-fill-out-korea-e-arrival-card/">How to fill out the e-Arrival Card</a>, field by field. And if the entry check said visa-free after all, <a href="/visas/how-to-apply-for-k-eta-step-by-step/">how to apply for K-ETA</a> instead.</p>
 </div>
 
 ## The short version

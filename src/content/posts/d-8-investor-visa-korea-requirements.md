@@ -1,7 +1,7 @@
 ---
 title: 'Korea D-8 Investor Visa: How the Money Must Flow'
 description: 'The ₩100M is a starting point, not the visa: FDI notification, who sends the funds, the 60-day registration, spending the capital, and renewal myths.'
-category: business
+category: visas
 publishDate: 2026-08-23
 updatedDate: 2026-08-23
 tags: [business, D-8, FDI, visa, incorporation]

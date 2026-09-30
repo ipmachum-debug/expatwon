@@ -246,7 +246,7 @@ remittance path of the investment funds, the existence of a real place of
 business, what the capital was actually spent on, the business plan, and
 subsequently revenue, employment and tax records. The capital-continuity
 requirement is covered in detail in
-[the D-8 investor visa guide](/business/d-8-investor-visa-korea-requirements/).
+[the D-8 investor visa guide](/visas/d-8-investor-visa-korea-requirements/).
 
 ### If you already hold an F-series status
 

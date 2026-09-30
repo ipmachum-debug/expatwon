@@ -27,6 +27,23 @@ export interface CategoryMeta {
 
 export const CATEGORIES: CategoryMeta[] = [
   {
+    // First in the array, so first in the nav. Entry and status come before
+    // every other subject on this site: you cannot open an account, sign a
+    // lease or take a job on the wrong one.
+    slug: 'visas',
+    title: 'Visas & Immigration',
+    shortTitle: 'Visas',
+    description:
+      'Getting into Korea and staying legally: visa-free entry, K-ETA and the arrival declaration, short-stay visas, and registering once you are here.',
+    chip: 'bg-indigo-50 text-indigo-700',
+    tile: 'bg-indigo-50 text-indigo-600',
+    accent: '#4338ca',
+    ink: '#3730a3',
+    tint: '#eef2ff',
+    line: '#c7d2fe',
+    icon: '<rect x="4" y="2.5" width="16" height="19" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8.5 16.5h7M4 6.5h16"/>',
+  },
+  {
     slug: 'banking',
     title: 'Banking in Korea',
     shortTitle: 'Banking',

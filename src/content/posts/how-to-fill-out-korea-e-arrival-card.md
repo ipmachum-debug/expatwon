@@ -1,7 +1,7 @@
 ---
 title: 'How to Fill Out Korea''s e-Arrival Card in 2026'
 description: 'Every field on the official form in order, with the exact dropdown options — and the exemption that puts you on the filing list rather than off it.'
-category: cost-of-living
+category: visas
 publishDate: 2026-09-29
 updatedDate: 2026-09-29
 slot: am
@@ -265,7 +265,7 @@ you to select what you have **"used upon entry"**, not what you hold.
 <div class="callout callout-note">
   <p class="callout-title">Not sure which row is you?</p>
   <p>The <a href="/tools/korea-entry-check/">Korea entry requirements check</a> answers the three separately — visa-free scope and how long you get, whether K-ETA applies, and whether you file this — and links the official page each answer was read from.</p>
-  <p>If the answer is that you need a K-ETA, <a href="/cost-of-living/how-to-apply-for-k-eta-step-by-step/">the application walkthrough</a> covers the screens, including the two warnings that decide whether it goes through first time.</p>
+  <p>If the answer is that you need a K-ETA, <a href="/visas/how-to-apply-for-k-eta-step-by-step/">the application walkthrough</a> covers the screens, including the two warnings that decide whether it goes through first time.</p>
 </div>
 
 ## Before you press Submit

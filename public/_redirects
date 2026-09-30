@@ -1,0 +1,19 @@
+# Cloudflare Pages redirects.
+#
+# 301s from the URL a guide used to live at. A guide moves category when the
+# category it belonged to did not exist yet — /visas/ was planned from the
+# start and opened late, so four guides spent their first days filed under the
+# nearest thing available. Google had already seen them there.
+#
+# These are permanent on purpose. A 301 passes what the old URL earned and
+# tells the index to replace the entry rather than keep both; a 302 keeps the
+# old URL in the index and splits the signal between two addresses for the
+# same page.
+#
+# Nothing here expires. An old URL with one inbound link somewhere on the
+# internet is worth more than a tidy file.
+
+/cost-of-living/how-to-apply-for-k-eta-step-by-step/   /visas/how-to-apply-for-k-eta-step-by-step/   301
+/cost-of-living/how-to-fill-out-korea-e-arrival-card/  /visas/how-to-fill-out-korea-e-arrival-card/  301
+/cost-of-living/korea-c-3-9-tourist-visa/              /visas/korea-c-3-9-tourist-visa/              301
+/business/d-8-investor-visa-korea-requirements/        /visas/d-8-investor-visa-korea-requirements/  301

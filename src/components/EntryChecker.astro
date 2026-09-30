@@ -638,18 +638,18 @@ const rows = COUNTRY_RULES.map((r) => ({
       if (r.keta?.status === 'personal-check') {
         links.unshift({
           label: 'How to apply for K-ETA, screen by screen',
-          href: '/cost-of-living/how-to-apply-for-k-eta-step-by-step/',
+          href: '/visas/how-to-apply-for-k-eta-step-by-step/',
         });
       }
       if (r.arrivalCard?.needed === true) {
         links.unshift({
           label: 'How to fill out the e-Arrival Card, field by field',
-          href: '/cost-of-living/how-to-fill-out-korea-e-arrival-card/',
+          href: '/visas/how-to-fill-out-korea-e-arrival-card/',
         });
       } else if (r.arrivalCard?.needed === false) {
         links.unshift({
           label: 'What the e-Arrival Card asks, and when the exclusion stops applying',
-          href: '/cost-of-living/how-to-fill-out-korea-e-arrival-card/',
+          href: '/visas/how-to-fill-out-korea-e-arrival-card/',
         });
       }
 

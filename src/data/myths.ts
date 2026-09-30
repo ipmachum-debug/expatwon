@@ -145,7 +145,7 @@ export const MYTHS: Myth[] = [
     reality:
       'The capital exists to be spent on the business — office deposit, fit-out, equipment, inventory, payroll. What reviews want is explainability: contracts, tax invoices, transfers and payroll tying each outgoing to the stated business. Draining it to a personal account is what kills applications, not spending it.',
     basis: 'Foreign Investment Promotion Act; immigration review practice',
-    guide: '/business/d-8-investor-visa-korea-requirements/',
+    guide: '/visas/d-8-investor-visa-korea-requirements/',
   },
   {
     claim: 'Limited accounts have statutory "stage 1" and "stage 2" tiers.',

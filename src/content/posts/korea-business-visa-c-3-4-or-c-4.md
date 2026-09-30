@@ -1,7 +1,7 @@
 ---
 title: 'Korea Business Visa: C-3-4, C-3-5, C-3-6 or C-4?'
 description: 'Talking about the installation is a business visit. Doing the installation is work — even when your salary is paid abroad. Where Korea draws the line.'
-category: business
+category: visas
 publishDate: 2026-10-01
 updatedDate: 2026-10-01
 draft: true
@@ -300,7 +300,7 @@ lists.
 
 <div class="callout callout-warn">
   <p class="callout-title">⚠️ Describing work as tourism</p>
-  <p>C-3-9 is the <a href="/cost-of-living/korea-c-3-9-tourist-visa/">ordinary tourist route</a>, not a fallback. The form warns that false information or documents lead to revocation of the visa and of permission to stay, and may bring criminal punishment and an entry ban.</p>
+  <p>C-3-9 is the <a href="/visas/korea-c-3-9-tourist-visa/">ordinary tourist route</a>, not a fallback. The form warns that false information or documents lead to revocation of the visa and of permission to stay, and may bring criminal punishment and an entry ban.</p>
 </div>
 
 ## The order to answer in
@@ -327,7 +327,7 @@ paying. Inconsistency between those is a problem you create for yourself.
 
 <div class="callout callout-note">
   <p class="callout-title">Next</p>
-  <p>Entering on a visa puts you on the list of people who file the <a href="/cost-of-living/how-to-fill-out-korea-e-arrival-card/">e-Arrival Card</a>. If the entry check said visa-free instead, <a href="/cost-of-living/how-to-apply-for-k-eta-step-by-step/">K-ETA</a> is the thing to sort out.</p>
+  <p>Entering on a visa puts you on the list of people who file the <a href="/visas/how-to-fill-out-korea-e-arrival-card/">e-Arrival Card</a>. If the entry check said visa-free instead, <a href="/visas/how-to-apply-for-k-eta-step-by-step/">K-ETA</a> is the thing to sort out.</p>
 </div>
 
 ## The short version
