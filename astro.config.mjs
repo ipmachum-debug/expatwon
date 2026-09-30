@@ -18,12 +18,18 @@ import { satteriFigures } from './plugins/satteri-figures.mjs';
  * To a crawler that is a list of addresses with no news in it — rewrite a
  * title, restructure a guide, move six pages into a new category, and the
  * file Google re-reads looks exactly as it did before. Nothing in it says
- * anything changed. On a domain young enough to have a small crawl budget,
- * that is the difference between a change being noticed this week and next
- * quarter, and it showed: two guides retitled on 30 September were still
- * being reported under their old titles afterwards.
+ * anything changed.
  *
- * Dates are real or absent. A guide carries its own updatedDate; a category
+ * What this is NOT is a diagnosis of why anything was slow. A sitemap is a
+ * hint; submitting one guarantees neither crawling nor indexing, and no
+ * measurement here could attribute a re-crawl delay to a missing field. The
+ * honest claim is narrower and still worth acting on: a re-crawl signal that
+ * Google documents itself as using was absent, on a site whose whole problem
+ * right now is that recent changes are not being seen.
+ *
+ * Dates are real or absent, which is the condition Google attaches to using
+ * the field at all — it reads lastmod only where a site's dates are
+ * consistently accurate. A guide carries its own updatedDate; a category
  * listing carries the newest date among its own guides; the home page and the
  * library carry the newest date on the site. Pages whose content is code
  * rather than posts — the calculators, about, privacy — get nothing, because

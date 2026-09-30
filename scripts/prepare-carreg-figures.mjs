@@ -21,6 +21,11 @@ const JOBS = [
   // STEP 2: the conditions, including insurance-before-application and the
   // virtual-account-only payment rule.
   { src: 'car-161710.png', out: 'carreg-2-conditions.png', frame: [0.04, 0, 0.94, 1] },
+  // The non-member route's third step. Shows that an account is not the only
+  // way in, and which two authentication methods the portal offers. Nothing
+  // on it says whether either works with a foreign registration number, so
+  // the guide reports the options and stops there.
+  { src: 'car-auth.png', out: 'carreg-3-identity-step.png', frame: [0.07, 0.16, 0.90, 0.62] },
 ];
 
 for (const j of JOBS) {

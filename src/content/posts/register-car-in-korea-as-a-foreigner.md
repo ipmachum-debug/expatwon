@@ -134,6 +134,26 @@ account. Card payment is not available in this route.
   <p>A vehicle subject to Jeju's parking-space certification cannot be applied for until that certification is confirmed at <strong>parking.jeju.go.kr</strong>. It is the one region-specific condition on the page.</p>
 </div>
 
+## Getting in: an account is not the only route
+
+The portal has a non-member route, and it ends at an identity step with two
+methods.
+
+![The Car365 non-member identity step, offering simple authentication or mobile-phone verification](../../assets/entry/carreg-3-identity-step.png)
+<p class="figcap">3단계 본인인증, the last of three. 간편 인증 signs in with an electronic signature from Naver, Kakao or a financial institution; 휴대폰 본인인증 uses mobile-phone verification.</p>
+
+Worth knowing before you plan an afternoon around it: what the screen does
+not say is whether either method will accept a given foreign registration
+number or a phone contract in your name. Those are properties of Korea's
+identity infrastructure rather than of the vehicle portal, and this page does
+not speak for them.
+
+That is the practical difference between the two facts this guide keeps
+separate. The right to register a car in your own name is settled, and the
+table above settles it. Whether every online step will go through on the
+first attempt is a different question, and the registration authority is one
+of the normal filing routes rather than a fallback for when it does not.
+
 ## Four cases the portal will not take
 
 Below the conditions, Car365 lists the situations that send you to a
@@ -200,12 +220,3 @@ The part that trips people is sequence, not nationality. Insurance is a
 precondition. Payment is a virtual account. And a reduction is the one thing
 where using the convenient route costs you the benefit — which is worth
 knowing before you open the portal, not after.
-
-## What we did not verify here
-
-This guide covers the new-registration flow, because that is what we read at
-source. The transfer-registration figures — the filing period for a private
-sale, the penalty for missing it, the fee difference between jurisdictions,
-and the bank-account condition foreign applicants meet at the payment stage —
-are not stated on the two pages above, so they are not stated here either.
-They will go in once read at source, in this guide or its own.
