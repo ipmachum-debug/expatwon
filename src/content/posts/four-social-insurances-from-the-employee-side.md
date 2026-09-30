@@ -2,8 +2,8 @@
 title: 'Korea’s Four Social Insurances, From Your Side'
 description: 'Around 9.7% of pay, across four schemes that do not share a calculation base — and one of them never costs you a won.'
 category: employment
-publishDate: 2026-10-02
-updatedDate: 2026-10-02
+publishDate: 2026-10-04
+updatedDate: 2026-10-04
 slot: am
 pairedWith: which-korean-social-insurances-you-are-in
 tags: [employment, social-insurance, national-pension, health-insurance, payroll]
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.moel.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-02
+  - date: 2026-10-04
     change: 'Published'
 keyFacts:
   - { label: 'Employee side, roughly', value: '9.7% of pay' }

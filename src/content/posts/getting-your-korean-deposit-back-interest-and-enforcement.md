@@ -2,8 +2,8 @@
 title: 'Getting a Korean Deposit Back: Interest and Enforcement'
 description: '5% a year is the starting rate and 12% is not automatic. Both depend on dates you control — and one of them is the day you actually hand back the keys.'
 category: cost-of-living
-publishDate: 2026-11-08
-updatedDate: 2026-11-08
+publishDate: 2026-11-10
+updatedDate: 2026-11-10
 slot: am
 tags: [housing, rental, deposit, moving-out, enforcement]
 tracked: [civil-default-interest-rate, litigation-promotion-interest-rate, leasehold-registration-order-effective-point]
@@ -22,7 +22,7 @@ sources:
     url: 'https://www.scourt.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-08
+  - date: 2026-11-10
     change: 'Published'
 keyFacts:
   - { label: 'Statutory default rate', value: '5% a year' }

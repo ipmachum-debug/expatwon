@@ -2,8 +2,8 @@
 title: 'Unpaid Wages and Unfair Dismissal: Two Routes'
 description: 'They go to different bodies on different clocks. Working the wage claim first is how people lose the dismissal remedy without ever being told.'
 category: employment
-publishDate: 2026-10-10
-updatedDate: 2026-10-10
+publishDate: 2026-10-12
+updatedDate: 2026-10-12
 slot: am
 pairedWith: reporting-your-employer-as-a-foreign-worker
 tags: [employment, unpaid-wages, unfair-dismissal, labour-law, foreign-workers]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.nlrc.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-10
+  - date: 2026-10-12
     change: 'Published'
 keyFacts:
   - { label: 'Unpaid wages', value: 'Labour office' }

@@ -2,8 +2,8 @@
 title: 'Lease Clauses That Actually Protect a Tenant in Korea'
 description: 'Five special clauses worth writing into a Korean lease — and the limit on what any of them can do against a mortgage that is already registered.'
 category: cost-of-living
-publishDate: 2026-11-05
-updatedDate: 2026-11-05
+publishDate: 2026-11-07
+updatedDate: 2026-11-07
 slot: am
 pairedWith: repairs-restoration-and-leaving-without-your-deposit
 tags: [housing, rental, jeonse, lease-contract, deposit]
@@ -23,7 +23,7 @@ sources:
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%AF%BC%EB%B2%95'
 affiliate: false
 revisions:
-  - date: 2026-11-05
+  - date: 2026-11-07
     change: 'Published'
 keyFacts:
   - { label: 'Opposing power', value: 'From the next day' }

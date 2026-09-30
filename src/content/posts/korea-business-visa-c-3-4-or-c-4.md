@@ -2,9 +2,8 @@
 title: 'Korea Business Visa: C-3-4, C-3-5, C-3-6 or C-4?'
 description: 'Talking about the installation is a business visit. Doing the installation is work — even when your salary is paid abroad. Where Korea draws the line.'
 category: business
-publishDate: 2026-09-30
-updatedDate: 2026-09-30
-slot: pm
+publishDate: 2026-10-01
+updatedDate: 2026-10-01
 draft: true
 tags: [visa, business, immigration, short-stay, foreign-workers]
 lastVerified: 2026-09-29
@@ -19,7 +18,7 @@ sources:
     url: 'https://www.visa.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-09-30
+  - date: 2026-10-01
     change: 'Published'
 keyFacts:
   - { label: 'Business visitor', value: 'C-3-4 / 5 / 6' }

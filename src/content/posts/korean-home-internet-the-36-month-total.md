@@ -2,8 +2,8 @@
 title: 'Korean Home Internet: The 36-Month Total'
 description: 'The cash they hand you at signup is the least important number in the contract. Three years of payments and the cost of leaving early are the real ones.'
 category: cost-of-living
-publishDate: 2026-10-22
-updatedDate: 2026-10-22
+publishDate: 2026-10-24
+updatedDate: 2026-10-24
 slot: am
 pairedWith: moving-leaving-and-ending-a-korean-internet-contract
 tags: [cost-of-living, internet, telecom, contracts, foreign-residents]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.skbroadband.com/'
 affiliate: false
 revisions:
-  - date: 2026-10-22
+  - date: 2026-10-24
     change: 'Published'
 keyFacts:
   - { label: 'Terms offered', value: 'None, 1, 2 or 3 years' }

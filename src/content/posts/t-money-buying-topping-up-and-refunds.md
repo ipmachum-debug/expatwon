@@ -2,8 +2,8 @@
 title: 'T-money: Buying It, Topping It Up, Getting It Back'
 description: 'The card price is not a deposit, the top-up rules differ by product, and the refund channel depends on how much is left. Sorted before you land.'
 category: cost-of-living
-publishDate: 2026-10-12
-updatedDate: 2026-10-12
+publishDate: 2026-10-14
+updatedDate: 2026-10-14
 slot: am
 pairedWith: k-pass-transport-refunds-for-foreign-residents
 tags: [cost-of-living, transport, t-money, arrival, short-stay]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.wowpass.io/'
 affiliate: false
 revisions:
-  - date: 2026-10-12
+  - date: 2026-10-14
     change: 'Published'
 keyFacts:
   - { label: 'Card price', value: 'Not a deposit' }

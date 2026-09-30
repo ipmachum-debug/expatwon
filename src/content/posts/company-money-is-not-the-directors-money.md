@@ -2,8 +2,8 @@
 title: 'Company Money Is Not the Director’s Money'
 description: 'Owning all the shares does not make the balance yours. What a transfer to a director needs is a reason — and a new company needs an account that works.'
 category: business
-publishDate: 2026-11-04
-updatedDate: 2026-11-04
+publishDate: 2026-11-06
+updatedDate: 2026-11-06
 slot: am
 tags: [business, banking, corporate-tax, company, small-business]
 tracked: [deemed-interest-current-account-rate, limited-account-counter-limit, limited-account-electronic-limit]
@@ -22,7 +22,7 @@ sources:
     url: 'https://www.nts.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-04
+  - date: 2026-11-06
     change: 'Published'
 keyFacts:
   - { label: 'Deemed interest', value: 'Not automatically 4.6%' }

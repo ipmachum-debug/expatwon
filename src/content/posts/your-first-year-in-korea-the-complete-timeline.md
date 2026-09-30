@@ -2,8 +2,8 @@
 title: 'Your First Year in Korea: The Complete Timeline'
 description: 'Identity, then address, then banking, then contracts, then employment and tax. Twelve months of deadlines, in the order that stops each blocking the next.'
 category: cost-of-living
-publishDate: 2026-11-13
-updatedDate: 2026-11-13
+publishDate: 2026-11-15
+updatedDate: 2026-11-15
 slot: am
 pairedWith: leaving-korea-for-good-the-order-to-close-things-in
 tags: [moving-to-korea, immigration, banking, tax, first-year]
@@ -25,7 +25,7 @@ sources:
     url: 'https://www.hikorea.go.kr/'
 affiliate: false
 revisions:
-  - date: 2026-11-13
+  - date: 2026-11-15
     change: 'Published'
 keyFacts:
   - { label: 'Alien registration', value: '90 days from entry' }

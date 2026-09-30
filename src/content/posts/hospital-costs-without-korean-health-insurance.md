@@ -2,8 +2,8 @@
 title: 'Hospital Costs Without Korean Health Insurance'
 description: 'Not being enrolled does not mean you cannot be treated. It means you pay the whole bill — and no single multiplier tells you what that bill is.'
 category: insurance
-publishDate: 2026-10-14
-updatedDate: 2026-10-14
+publishDate: 2026-10-16
+updatedDate: 2026-10-16
 slot: am
 pairedWith: claiming-korean-medical-costs-on-foreign-insurance
 tags: [insurance, healthcare, self-pay, short-stay, foreign-residents]
@@ -21,7 +21,7 @@ sources:
     url: 'https://www.nhis.or.kr/'
 affiliate: false
 revisions:
-  - date: 2026-10-14
+  - date: 2026-10-16
     change: 'Published'
 keyFacts:
   - { label: 'Uninsured means', value: 'You pay all of it' }
