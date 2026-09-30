@@ -147,6 +147,9 @@ car, a high residual is your friend. If you intend to **keep** it:
 > insurance/taxes/other costs + buyout price + transfer costs −
 > refunded deposit**
 
+The [car lease calculator](/tools/car-lease-calculator/) takes that line
+with and without the buyout.
+
 A quote ₩100,000/month cheaper that carries a ₩10M higher buyout is not
 the cheaper contract for a keeper. Demand all four numbers together:
 monthly payment, total payments, residual/buyout, and early-termination

@@ -183,6 +183,9 @@ The 2026 minimum wage is **₩10,320 per hour**, up 2.9% from ₩10,030.
 | Daily (8 hours) | ₩82,560 |
 | Monthly (209 hours) | {{fig:minimum-wage-monthly-equivalent}} |
 
+The [minimum wage calculator](/tools/minimum-wage-calculator/) works a
+given contract back to that monthly floor.
+
 The 209-hour figure is 40 contractual hours a week plus the 8 paid
 weekly-holiday hours, annualised. It applies to every workplace including
 those under five employees, and an employee cannot agree to less. Paying
@@ -247,7 +250,9 @@ hours average 15 or more a week over four weeks is entitled to severance
 under the Employee Retirement Benefit Security Act. The conventional
 severance scheme pays at least 30 days of average wages per year of
 service — which is why the payroll model above accrues roughly one
-twelfth of annual pay each month.
+twelfth of annual pay each month. The
+[severance calculator](/tools/severance-calculator/) runs the statutory
+basis, which is not the same as one twelfth.
 
 Two things employers get wrong here. **Splitting severance into monthly
 salary and labelling it as such does not discharge the obligation** —

@@ -98,6 +98,10 @@ extended     +   12 h
 weekly max       52 h
 ```
 
+Those twelve hours are not paid at the ordinary rate. The
+[overtime pay calculator](/tools/overtime-pay-calculator/) applies the
+statutory premiums to a given wage and hours.
+
 Agreement is a live requirement, not a formality discharged at signing. A
 contract clause saying the company may order overtime when necessary does not
 by itself authorise unlimited extended work, and it certainly does not

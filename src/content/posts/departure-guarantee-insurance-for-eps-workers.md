@@ -85,7 +85,9 @@ depart, or on certain changes of status.
 Statutory severance is not computed that way. It uses **average wage** —
 total wages over the final three months divided by the calendar days in that
 period, with regular bonuses entering as three twelfths of the prior twelve
-months.
+months. The [severance calculator](/tools/severance-calculator/) works on
+that basis, which is the one that decides whether the insurance covers what
+you are owed.
 
 | | Departure insurance | Statutory severance |
 |---|---|---|

@@ -136,6 +136,9 @@ that ₩400M is 4.5%. Now the decision is a one-line test:
 > Annual rent **<** after-tax return on the freed deposit → wolse
 > Annual rent **>** after-tax return on the freed deposit → jeonse
 
+The [buy-vs-rent calculator](/tools/buy-vs-rent-calculator/) runs that
+comparison with your own numbers in it.
+
 One discipline: do not plug an 8% equity-market "expected" return into
 this formula as if it were certain. The deposit is money you *will* need
 back on a fixed date — benchmark it against assets of comparable
