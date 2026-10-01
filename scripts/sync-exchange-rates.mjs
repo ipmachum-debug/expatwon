@@ -80,11 +80,26 @@ const CA = (() => {
  * which also means redirects are not followed for us, as fetch would. This
  * host answers 302, so they are followed here, with a cap.
  */
-function getJson(url, timeoutMs, hops = 5) {
+function getJson(url, timeoutMs, hops = 5, jar = new Map()) {
   return new Promise((resolve, reject) => {
     const u = new URL(url);
     const mod = u.protocol === 'http:' ? http : https;
-    const req = mod.get(url, { ca: u.protocol === 'https:' ? CA : undefined }, (res) => {
+    const headers = {
+      // Some portals answer a bare client with a redirect loop rather than a
+      // refusal, so this is not decoration.
+      'User-Agent': 'expatwon-exchange-sync/1 (+https://expatwon.com)',
+      Accept: 'application/json, text/plain, */*',
+    };
+    if (jar.size) headers.Cookie = [...jar].map(([k, v]) => `${k}=${v}`).join('; ');
+    const req = mod.get(url, { ca: u.protocol === 'https:' ? CA : undefined, headers }, (res) => {
+      // Carry cookies across hops. A server that answers 302 to the SAME
+      // path is usually setting a session cookie and waiting to be shown it
+      // again; without a jar that is an endless loop back to where we were.
+      for (const c of res.headers['set-cookie'] ?? []) {
+        const pair = c.split(';')[0];
+        const i = pair.indexOf('=');
+        if (i > 0) jar.set(pair.slice(0, i).trim(), pair.slice(i + 1).trim());
+      }
       if ([301, 302, 303, 307, 308].includes(res.statusCode)) {
         res.resume();
         const loc = res.headers.location;
@@ -96,8 +111,17 @@ function getJson(url, timeoutMs, hops = 5) {
         // different problem from a redirect to the same resource elsewhere,
         // and the status code alone cannot tell those apart.
         const next = new URL(loc, url);
-        console.log(`  -> ${res.statusCode} to ${next.origin}${next.pathname}`);
-        resolve(getJson(next.toString(), timeoutMs, hops - 1));
+        const same = next.origin + next.pathname === u.origin + u.pathname;
+        // Whether the query survived matters: a redirect that drops authkey
+        // and searchdate lands on the same path asking for nothing.
+        console.log(
+          `  -> ${res.statusCode} to ${same ? 'the same path' : next.origin + next.pathname}` +
+            `, query ${next.search ? 'kept' : 'DROPPED'}` +
+            `, cookies now ${jar.size}`,
+        );
+        // Keep the query when the server drops it on a same-path redirect.
+        if (same && !next.search && u.search) next.search = u.search;
+        resolve(getJson(next.toString(), timeoutMs, hops - 1, jar));
         return;
       }
       if (res.statusCode !== 200) {
