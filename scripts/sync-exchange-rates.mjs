@@ -57,10 +57,23 @@ const MAX_LOOKBACK_DAYS = 10;
  * complete chain needs none of this.
  */
 const extraCaPath = process.env.KEXIM_EXTRA_CA;
-const CA =
-  extraCaPath && existsSync(extraCaPath)
-    ? [...tls.rootCertificates, readFileSync(extraCaPath, 'utf8')]
-    : undefined;
+const CA = (() => {
+  if (!extraCaPath) return undefined;
+  if (!existsSync(extraCaPath)) {
+    console.warn(`KEXIM_EXTRA_CA points at ${extraCaPath}, which does not exist. Using defaults.`);
+    return undefined;
+  }
+  const pem = readFileSync(extraCaPath, 'utf8');
+  const n = (pem.match(/BEGIN CERTIFICATE/g) ?? []).length;
+  if (n === 0) {
+    console.warn(`${extraCaPath} holds no certificate. Using defaults.`);
+    return undefined;
+  }
+  // Say what was loaded. A silently empty or unreadable trust file looks
+  // identical to a server problem from the error alone, and that cost a run.
+  console.log(`Trust store: ${tls.rootCertificates.length} default roots + ${n} from ${extraCaPath}`);
+  return [...tls.rootCertificates, pem];
+})();
 
 /** GET a JSON body. node:https rather than fetch, for the `ca` option above. */
 function getJson(url, timeoutMs) {

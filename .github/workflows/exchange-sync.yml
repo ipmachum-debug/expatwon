@@ -97,18 +97,32 @@ jobs:
           fi
 
           openssl x509 -in /tmp/intermediate.pem -noout -subject -issuer
-          echo "KEXIM_EXTRA_CA=/tmp/intermediate.pem" >> "$GITHUB_ENV"
 
-          # If the sync still fails after this, the next question is whether
-          # anything can reach the host or only Node cannot. curl answers that
-          # in one line, so the answer is already in the log rather than one
-          # more round trip away.
+          # --cacert REPLACES the trust store rather than adding to it, so a
+          # file holding only the intermediate leaves no root to finish the
+          # chain at. The last run failed on exactly that. Everything from
+          # here on uses one bundle: the system roots plus the missing
+          # intermediate, which is the store the server's chain needs and
+          # nothing more.
+          cat /etc/ssl/certs/ca-certificates.crt /tmp/intermediate.pem > /tmp/bundle.pem
+          echo "bundle holds $(grep -c 'BEGIN CERTIFICATE' /tmp/bundle.pem) certificates"
+          echo "KEXIM_EXTRA_CA=/tmp/bundle.pem" >> "$GITHUB_ENV"
+
+          # Proof rather than hope: verify the server's own leaf against the
+          # bundle before anything tries to use it.
+          openssl s_client -connect "$HOST:443" -servername "$HOST" </dev/null 2>/dev/null \
+            | openssl x509 -out /tmp/leaf.pem 2>/dev/null || true
+          if [ -s /tmp/leaf.pem ]; then
+            echo "--- openssl verify, leaf against the bundle ---"
+            openssl verify -CAfile /tmp/bundle.pem /tmp/leaf.pem || true
+          fi
+
           echo "--- curl probe, system roots only ---"
           curl -sS -o /dev/null -w 'system roots: %{http_code} (%{errormsg})\n' \
             --max-time 15 "https://$HOST/site/program/financial/exchangeJSON" || true
-          echo "--- curl probe, with the intermediate ---"
-          curl -sS -o /dev/null -w 'with intermediate: %{http_code} (%{errormsg})\n' \
-            --max-time 15 --cacert /tmp/intermediate.pem \
+          echo "--- curl probe, with the bundle ---"
+          curl -sS -o /dev/null -w 'with bundle: %{http_code} (%{errormsg})\n' \
+            --max-time 15 --cacert /tmp/bundle.pem \
             "https://$HOST/site/program/financial/exchangeJSON" || true
 
       - name: Fetch the day's rates
