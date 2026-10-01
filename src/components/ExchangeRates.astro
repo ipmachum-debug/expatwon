@@ -1,0 +1,74 @@
+---
+/**
+ * The homepage rate card.
+ *
+ * Renders nothing when there is nothing honest to show — never synced, or
+ * older than the staleness limit. That is handled once, in lib/exchangeRates,
+ * so this component has no opinion about when a rate stops being current.
+ *
+ * Three things are on the card because leaving any of them off makes the
+ * number misleading: the date it was quoted on, where it came from, and that
+ * it is the published reference rate rather than the rate a reader will get.
+ * A reader who compares this against their own transfer WILL find a gap, and
+ * should meet the explanation here rather than conclude the site is wrong.
+ */
+import { cardRates, exchangeRates, quoteUnit } from '../lib/exchangeRates';
+
+const data = exchangeRates();
+const rows = cardRates();
+/**
+ * Decimals by magnitude. Two is right for a rate near 1,000 and destroys a
+ * rate near zero: the dong is worth about five hundredths of a won, which at
+ * two decimals reads 0.05 and carries almost no information. Currencies the
+ * source quotes per 1 rather than per 100 are the ones this matters for.
+ */
+const fmt = (n: number) => {
+  const d = n >= 1 ? 2 : 4;
+  return n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+};
+---
+
+{
+  data && rows.length > 0 && (
+    <section class="mb-16 rounded-3xl border border-rule bg-white p-6 sm:p-8">
+      <div class="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <h2 class="font-display text-2xl font-bold text-ink">
+          <span class="mr-2 inline-flex items-center gap-1.5 align-middle rounded-full bg-gold/15 px-2 py-0.5 font-sans text-[0.6rem] font-bold tracking-[0.14em] text-[#8a6d1f] uppercase">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
+            Live
+          </span>
+          What the won is worth
+        </h2>
+        <p class="font-sans text-[0.78rem] text-ink-soft/75">
+          Quoted <time datetime={data.quotedOn} class="num font-semibold text-ink-soft">{data.quotedOn}</time>
+        </p>
+      </div>
+
+      <dl class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {rows.map(({ code, rate }) => (
+          <div class="rounded-2xl bg-paper px-4 py-3.5">
+            <dt class="font-sans text-[0.7rem] font-bold tracking-[0.12em] text-ink-soft/70 uppercase">
+              {quoteUnit(code, rate)}
+            </dt>
+            <dd class="num mt-1 text-[1.35rem] leading-none font-bold text-ink">
+              {fmt(rate.krw)}
+              <span class="ml-1 font-sans text-[0.7rem] font-semibold text-ink-soft/70">KRW</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <p class="mt-4 text-[0.82rem] leading-relaxed text-ink-soft/85">
+        This is the <strong class="font-semibold text-ink">reference rate</strong> (매매기준율)
+        published by{' '}
+        <a href={data.source.url} rel="nofollow noopener" target="_blank" class="underline decoration-ink/25 underline-offset-2 hover:text-gold">
+          Korea Eximbank
+        </a>
+        . <strong class="font-semibold text-ink">Your bank will not give you this rate.</strong>{' '}
+        Card payments, cash exchange and outbound transfers each carry their own
+        spread and fees, so treat this as the midpoint everything else is priced
+        around &mdash; not as what will land in the account.
+      </p>
+    </section>
+  )
+}

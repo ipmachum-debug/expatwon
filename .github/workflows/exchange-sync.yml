@@ -1,0 +1,81 @@
+name: Sync exchange rates
+
+# Once a day, pull the Eximbank reference rates into a committed JSON.
+#
+# WHY A COMMITTED FILE RATHER THAN A RUNTIME CALL
+# The site is static and the API needs a key. A key that reaches the browser
+# is a leaked key, so the fetch happens here, with the key in a repository
+# secret, and the result ships as data like everything else. The page is then
+# as fresh as the last successful sync and says so on its face.
+#
+# WHY 03:00 UTC
+# That is 12:00 KST. Eximbank publishes the day's rates during the Korean
+# morning and returns an empty array before then, so a run timed for the small
+# hours would reliably find nothing. Noon is comfortably clear of it, and
+# GitHub's scheduler runs hours late often enough that a tight window would
+# cost days. Measured on the sibling workflow in this repo, an attempt arrives
+# one to five hours after its cron — all of which still lands on the same
+# Korean day, which is all this job needs.
+#
+# A LATE OR FAILED RUN IS NOT AN OUTAGE
+# The script walks back day by day and keeps the last good file if no day
+# answers, so a missed run, a weekend, a holiday and a dead API all look the
+# same from the site's side: yesterday's rate, labelled with yesterday's date.
+# Past the staleness limit in lib/exchangeRates the card stops rendering on its
+# own. Nothing here needs to detect that.
+#
+# This workflow never deploys by itself. The push does, through the Pages
+# build — and when there is nothing new to commit it does not push, so a day
+# with unchanged rates costs no deploy.
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: exchange-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Fetch the day's rates
+        id: sync
+        env:
+          KEXIM_API_KEY: ${{ secrets.KEXIM_API_KEY }}
+        run: |
+          node scripts/sync-exchange-rates.mjs | tee out.txt
+          echo "count=$(grep -oP '::count::\K\d+' out.txt)" >> "$GITHUB_OUTPUT"
+          rm out.txt
+
+      - name: Install dependencies
+        if: steps.sync.outputs.count == '1'
+        run: npm ci
+
+      # Same rule as the publish workflow: never push something that would not
+      # build. A rate card is not worth a red site.
+      - name: Verify
+        if: steps.sync.outputs.count == '1'
+        run: |
+          npm run lint:data
+          npm run build
+
+      - name: Commit and push
+        if: steps.sync.outputs.count == '1'
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/data/live/exchange-rates.json
+          git commit -m "data: exchange rates as at $(TZ=Asia/Seoul date +%Y-%m-%d)"
+          git push

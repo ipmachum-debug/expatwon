@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
+import ExchangeRates from '../components/ExchangeRates.astro';
 import LeadCard from '../components/LeadCard.astro';
 import PostCard from '../components/PostCard.astro';
 import Layout from '../layouts/Layout.astro';
@@ -204,6 +205,8 @@ const tools = [
       </div>
     </div>
   </section>
+
+  <ExchangeRates />
 
   <!-- What do you need to do -->
   <section class="mb-16">

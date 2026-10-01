@@ -1,0 +1,9 @@
+{
+  "source": {
+    "label": "Korea Eximbank — 환율 API (AP01), 매매기준율 / reference rate",
+    "url": "https://www.koreaexim.go.kr/ir/HPHKIR019M01"
+  },
+  "quotedOn": null,
+  "fetchedAt": null,
+  "rates": {}
+}
