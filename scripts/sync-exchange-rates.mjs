@@ -25,7 +25,10 @@
  * the end so it shows up in the Actions log rather than silently never
  * appearing on the page.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import http from 'node:http';
+import https from 'node:https';
+import tls from 'node:tls';
 
 const OUT = 'src/data/live/exchange-rates.json';
 /** Overridable so the parse path can be exercised against a local mock; the
@@ -36,6 +39,55 @@ const ENDPOINT = process.env.KEXIM_ENDPOINT ?? 'https://www.koreaexim.go.kr/site
 const WANTED = ['USD', 'EUR', 'JPY', 'VND', 'CNH', 'CNY', 'GBP', 'AUD', 'CAD', 'PHP', 'THB', 'IDR'];
 /** Business days are never more than a few apart, even across a long holiday. */
 const MAX_LOOKBACK_DAYS = 10;
+
+/**
+ * The host serves its leaf certificate without the intermediate above it, so
+ * the chain does not reach a trusted root on its own. NODE_EXTRA_CA_CERTS was
+ * the obvious lever and did not take — undici, which backs global fetch, did
+ * not honour it here. Rather than guess at why, the trust material is now
+ * handed over explicitly: the full default root set PLUS the intermediate,
+ * passed as `ca` to a plain node:https request.
+ *
+ * This is stricter than it looks and nothing is being waived. Every root Node
+ * normally trusts is still required, the intermediate still has to be signed
+ * by one of them, and a forged certificate fails exactly as before. The only
+ * thing added is the one certificate the server should have sent itself.
+ *
+ * Without KEXIM_EXTRA_CA the defaults are used untouched, so a host with a
+ * complete chain needs none of this.
+ */
+const extraCaPath = process.env.KEXIM_EXTRA_CA;
+const CA =
+  extraCaPath && existsSync(extraCaPath)
+    ? [...tls.rootCertificates, readFileSync(extraCaPath, 'utf8')]
+    : undefined;
+
+/** GET a JSON body. node:https rather than fetch, for the `ca` option above. */
+function getJson(url, timeoutMs) {
+  return new Promise((resolve, reject) => {
+    const u = new URL(url);
+    const mod = u.protocol === 'http:' ? http : https;
+    const req = mod.get(url, { ca: u.protocol === 'https:' ? CA : undefined }, (res) => {
+      if (res.statusCode !== 200) {
+        res.resume();
+        reject(Object.assign(new Error(`HTTP ${res.statusCode}`), { status: res.statusCode }));
+        return;
+      }
+      let body = '';
+      res.setEncoding('utf8');
+      res.on('data', (c) => (body += c));
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(body));
+        } catch {
+          reject(Object.assign(new Error('response was not JSON'), { notJson: true }));
+        }
+      });
+    });
+    req.setTimeout(timeoutMs, () => req.destroy(new Error('timed out')));
+    req.on('error', reject);
+  });
+}
 
 const key = process.env.KEXIM_API_KEY;
 if (!key) {
@@ -51,29 +103,17 @@ const RESULT = { 2: 'DATA code error', 3: 'authentication error', 4: 'daily call
 
 async function fetchDay(ymd) {
   const url = `${ENDPOINT}?authkey=${encodeURIComponent(key)}&searchdate=${ymd}&data=AP01`;
-  let res;
-  try {
-    res = await fetch(url, { signal: AbortSignal.timeout(20_000) });
-  } catch (e) {
-    // fetch reports every network-level failure as a bare TypeError, so the
-    // name alone says nothing. The reason — DNS, TLS, refused, timed out —
-    // is on e.cause, and without it a run that cannot reach the host at all
-    // looks exactly like a quiet holiday in the log.
-    const c = e.cause;
-    const why = c?.code ?? c?.message ?? e.message ?? e.name;
-    console.warn(`  ${ymd}: request failed — ${why}`);
-    return { stop: `cannot reach ${new URL(ENDPOINT).host} (${why})` };
-  }
-  if (!res.ok) {
-    console.warn(`  ${ymd}: HTTP ${res.status}`);
-    return { stop: `${new URL(ENDPOINT).host} answered HTTP ${res.status}` };
-  }
   let body;
   try {
-    body = await res.json();
-  } catch {
-    console.warn(`  ${ymd}: response was not JSON`);
-    return null;
+    body = await getJson(url, 20_000);
+  } catch (e) {
+    // The reason lives on e.code for a TLS or socket failure and on e.status
+    // for an HTTP one. Without it, a host that cannot be reached at all reads
+    // in the log exactly like a quiet holiday.
+    const why = e.code ?? e.cause?.code ?? e.message;
+    console.warn(`  ${ymd}: request failed — ${why}`);
+    if (e.notJson) return null;
+    return { stop: `cannot reach ${new URL(ENDPOINT).host} (${why})` };
   }
   if (!Array.isArray(body) || body.length === 0) {
     console.log(`  ${ymd}: no quotes (non-business day, or not yet published)`);

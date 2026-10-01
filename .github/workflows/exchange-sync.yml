@@ -73,8 +73,8 @@ jobs:
         run: |
           HOST=www.koreaexim.go.kr
           echo "--- chain as the server sends it ---"
-          openssl s_client -connect "$HOST:443" -servername "$HOST" </dev/null 2>/dev/null \
-            | grep -E '^(depth|verify| *[0-9] s:| *i:)' || true
+          openssl s_client -connect "$HOST:443" -servername "$HOST" </dev/null 2>&1 \
+            | grep -E '^(depth=|verify |Certificate chain| *[0-9]+ s:| *i:)' || true
 
           AIA=$(openssl s_client -connect "$HOST:443" -servername "$HOST" </dev/null 2>/dev/null \
             | openssl x509 -noout -text 2>/dev/null \
@@ -97,7 +97,19 @@ jobs:
           fi
 
           openssl x509 -in /tmp/intermediate.pem -noout -subject -issuer
-          echo "NODE_EXTRA_CA_CERTS=/tmp/intermediate.pem" >> "$GITHUB_ENV"
+          echo "KEXIM_EXTRA_CA=/tmp/intermediate.pem" >> "$GITHUB_ENV"
+
+          # If the sync still fails after this, the next question is whether
+          # anything can reach the host or only Node cannot. curl answers that
+          # in one line, so the answer is already in the log rather than one
+          # more round trip away.
+          echo "--- curl probe, system roots only ---"
+          curl -sS -o /dev/null -w 'system roots: %{http_code} (%{errormsg})\n' \
+            --max-time 15 "https://$HOST/site/program/financial/exchangeJSON" || true
+          echo "--- curl probe, with the intermediate ---"
+          curl -sS -o /dev/null -w 'with intermediate: %{http_code} (%{errormsg})\n' \
+            --max-time 15 --cacert /tmp/intermediate.pem \
+            "https://$HOST/site/program/financial/exchangeJSON" || true
 
       - name: Fetch the day's rates
         id: sync
