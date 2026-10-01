@@ -32,28 +32,24 @@ import tls from 'node:tls';
 
 const OUT = 'src/data/live/exchange-rates.json';
 /**
- * Where the API lives. The server itself settled this:
+ * Where the API lives. The server said so itself, in Korean, behind a 302:
  *
  *   한국수출입은행 페이지 정보가 없습니다. 요청하신 페이지를 찾을 수 없거나,
  *   서버에서 삭제되었습니다. URL을 확인해주세요.
  *
- * Not the key, not a block, not maintenance — the path is gone from the www
- * host, and the 302 loop was the way to that notice. Eximbank serves its open
- * API from a separate hostname, so the candidates are tried in order and the
- * one that answers with JSON is kept for the rest of the run and named in the
- * log. Guessing a single address and failing is how the last hour went;
- * trying two and reporting which worked costs one request.
+ * Eximbank's own notice gives the dates: the API moved to oapi.koreaexim.go.kr
+ * on 2025-06-25, and parallel operation of www.koreaexim.go.kr ENDED
+ * 2026-04-30. The old host is not a fallback worth probing — it has been a
+ * page-not-found for months, and listing it would spend a request a day to be
+ * told so again.
  *
- * KEXIM_ENDPOINT overrides both, and is also how the parse path is exercised
- * against a local mock — the live API cannot be reached from a sandbox, and
- * an untested parser is how a per-100 quote reaches the page as a per-1 one.
+ * KEXIM_ENDPOINT overrides it, and is how the parse path is exercised against
+ * a local mock: the live API cannot be reached from a sandbox, and an
+ * untested parser is how a per-100 quote reaches the page as a per-1 one.
  */
 const ENDPOINTS = process.env.KEXIM_ENDPOINT
   ? [process.env.KEXIM_ENDPOINT]
-  : [
-      'https://oapi.koreaexim.go.kr/site/program/financial/exchangeJSON',
-      'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON',
-    ];
+  : ['https://oapi.koreaexim.go.kr/site/program/financial/exchangeJSON'];
 /** Set to the candidate that answered, so later days do not re-probe. */
 let endpoint = null;
 
@@ -188,7 +184,20 @@ const kstDate = (d) =>
   new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
 
 /** Eximbank's own result codes. 1 is success; the rest are worth naming. */
-const RESULT = { 2: 'DATA code error', 3: 'authentication error', 4: 'daily call limit reached' };
+/**
+ * Eximbank's own result codes. 1 is success. Code 3 deserves its sentence:
+ * their notice says a key is destroyed when the personal data given at
+ * registration passes its two-year retention period, after which it cannot be
+ * reused and a new one must be requested. A warning email goes to the
+ * registered address first, and re-consenting extends it another two years.
+ * Somebody meeting a bare "authentication error" two years from now would
+ * check the secret and find nothing wrong with it.
+ */
+const RESULT = {
+  2: 'DATA code error',
+  3: 'authentication error — the key may have been destroyed after its two-year retention period; a new one must be requested',
+  4: 'daily call limit reached (1,000 calls a day)',
+};
 
 async function fetchDay(ymd) {
   for (const base of endpoint ? [endpoint] : ENDPOINTS) {

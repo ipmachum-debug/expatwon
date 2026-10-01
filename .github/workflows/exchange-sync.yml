@@ -9,9 +9,10 @@ name: Sync exchange rates
 # as fresh as the last successful sync and says so on its face.
 #
 # WHY 03:00 UTC
-# That is 12:00 KST. Eximbank publishes the day's rates during the Korean
-# morning and returns an empty array before then, so a run timed for the small
-# hours would reliably find nothing. Noon is comfortably clear of it, and
+# That is 12:00 KST. Eximbank's own notice says the data is a daily rate
+# updated "around 11:00 on business days", and the API returns an empty array
+# before then — so a run timed for the small hours would reliably find
+# nothing. Noon leaves an hour's margin on the stated time. Noon is comfortably clear of it, and
 # GitHub's scheduler runs hours late often enough that a tight window would
 # cost days. Measured on the sibling workflow in this repo, an attempt arrives
 # one to five hours after its cron — all of which still lands on the same
@@ -23,6 +24,9 @@ name: Sync exchange rates
 # same from the site's side: yesterday's rate, labelled with yesterday's date.
 # Past the staleness limit in lib/exchangeRates the card stops rendering on its
 # own. Nothing here needs to detect that.
+#
+# The API allows 1,000 calls a day. One run walks back at most eleven days and
+# stops early on anything that is not a quiet day, so this spends single digits.
 #
 # This workflow never deploys by itself. The push does, through the Pages
 # build — and when there is nothing new to commit it does not push, so a day
