@@ -7,6 +7,7 @@ import {
   inputClass,
   labelClass,
   resultRowClass,
+  USD_NOTE,
 } from './shared';
 
 function amortize(principal: number, annualRatePct: number, months: number) {
@@ -117,8 +118,10 @@ export default function LoanCalculator() {
           </div>
         </dl>
         <p className="mt-4 text-xs text-slate-500">
-          Equal monthly installment (원리금균등) formula. Actual bank quotes may
-          differ slightly and may add fees or early-repayment charges.
+          Equal monthly installment (원리금균등) formula. The rate is the one you
+          entered — this tool does not assume what a Korean lender would offer
+          you. Actual bank quotes may differ slightly and may add fees or
+          early-repayment charges. {USD_NOTE}
         </p>
       </div>
     </div>

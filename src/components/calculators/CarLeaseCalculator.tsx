@@ -7,6 +7,7 @@ import {
   inputClass,
   labelClass,
   resultRowClass,
+  USD_NOTE,
 } from './shared';
 
 interface NumberFieldProps {
@@ -102,7 +103,8 @@ export default function CarLeaseCalculator() {
         <p className="mt-4 text-xs text-slate-500">
           Excludes insurance, fuel, and any excess-mileage or damage charges.
           The refundable deposit is not counted as a cost, but you cannot use
-          that money during the lease.
+          that money during the lease. Every other figure here is one you
+          entered — nothing is assumed about Korean lease pricing. {USD_NOTE}
         </p>
       </div>
     </div>

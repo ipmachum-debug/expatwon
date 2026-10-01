@@ -1,8 +1,19 @@
-import { KRW_PER_USD } from '../../lib/site';
+import { KRW_PER_USD, KRW_PER_USD_UPDATED } from '../../lib/site';
 
 export function fmtKrw(n: number): string {
   return `₩${Math.round(n).toLocaleString('en-US')}`;
 }
+
+/**
+ * Said wherever a dollar figure appears, in one place so three calculators
+ * cannot drift apart on it.
+ *
+ * Two of them printed dollars with no rate and no date at all, and the third
+ * described the rate as "manually updated" — true when written, and no longer
+ * true now that it comes from the daily sync. Both the number and the date
+ * below move on their own.
+ */
+export const USD_NOTE = `Dollar figures convert at \u20a9${KRW_PER_USD.toLocaleString('en-US')}/USD, the Korea Eximbank reference rate quoted ${KRW_PER_USD_UPDATED}. Your own bank will not give you that rate.`;
 
 export function fmtUsd(krwAmount: number): string {
   return `$${Math.round(krwAmount / KRW_PER_USD).toLocaleString('en-US')}`;

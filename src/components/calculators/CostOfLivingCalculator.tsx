@@ -1,10 +1,10 @@
 import { useStoredState } from './useStoredState';
 
-import { KRW_PER_USD } from '../../lib/site';
 import {
   cardClass,
   fmtKrw,
   fmtUsd,
+  USD_NOTE,
   inputClass,
   labelClass,
   resultRowClass,
@@ -117,8 +117,7 @@ export default function CostOfLivingCalculator() {
           </div>
         </dl>
         <p className="mt-4 text-xs text-slate-500">
-          USD conversion at ₩{KRW_PER_USD.toLocaleString('en-US')}/USD (manually
-          updated). Korean rentals also require a lump-sum deposit (보증금) that
+          {USD_NOTE} Korean rentals also require a lump-sum deposit (보증금) that
           is returned when you move out — it is not part of this monthly total.
         </p>
       </div>

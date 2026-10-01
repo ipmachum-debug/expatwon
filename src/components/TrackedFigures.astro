@@ -10,9 +10,11 @@ import { getSeries, hasHistory, latest } from '../data/observations';
 interface Props {
   tracked?: string[];
   lastVerified?: Date;
+  /** "guide" is wrong on a calculator page, which is the other place this runs. */
+  heading?: string;
 }
 
-const { tracked = [], lastVerified } = Astro.props;
+const { tracked = [], lastVerified, heading = 'Figures in this guide we track' } = Astro.props;
 
 const rows = tracked
   .map((key) => getSeries(key))
@@ -28,7 +30,7 @@ const verified = lastVerified
   rows.length > 0 && (
     <section class="mt-12 border-t-2 border-[var(--cat-accent)] pt-5">
       <div class="mb-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h2 class="font-display text-lg font-semibold text-ink">Figures in this guide we track</h2>
+        <h2 class="font-display text-lg font-semibold text-ink">{heading}</h2>
         {verified && (
           <span class="font-mono text-[0.7rem] tracking-wide text-ink-soft/60 uppercase">
             Last checked {verified}

@@ -111,6 +111,25 @@ export function exchangeRates(now: Date = new Date()): ExchangeRates | null {
   return { ...d, quotedOn: d.quotedOn, fetchedAt: d.fetchedAt, ageDays };
 }
 
+/**
+ * The USD rate for rough "≈ $X" conversions beside a won figure.
+ *
+ * Deliberately NOT behind MAX_AGE_DAYS. That gate exists for a card labelled
+ * LIVE, where a three-week-old number is a lie about itself. A conversion
+ * sitting next to a won amount is a different job: a fortnight-old rate is a
+ * fine approximation and a hardcoded one from six weeks ago is not, so the
+ * feed wins here even when it is too old for the card.
+ *
+ * Returns null only when nothing has ever synced, which is what the fallback
+ * constant in lib/site is for.
+ */
+export function usdForConversion(): { krw: number; quotedOn: string } | null {
+  const d = raw as { quotedOn: string | null; rates: Record<string, Rate> };
+  const usd = d.rates?.USD;
+  if (!d.quotedOn || !usd?.krw || usd.per !== 1) return null;
+  return { krw: usd.krw, quotedOn: d.quotedOn };
+}
+
 /** The card's currencies that the feed actually carries, in order. */
 export function cardRates(now?: Date): { code: string; rate: Rate }[] {
   const d = exchangeRates(now);

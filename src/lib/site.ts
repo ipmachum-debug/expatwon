@@ -1,3 +1,4 @@
+import { usdForConversion } from './exchangeRates';
 export const SITE_TITLE = 'ExpatWon';
 export const SITE_URL = 'https://expatwon.com';
 /**
@@ -39,13 +40,24 @@ export const NAVER_SITE_VERIFICATION = '0f5ddc6a055c9066ee1771e95c18298b27128f1f
 export const ADSENSE_PUBLISHER_ID = 'ca-pub-6014562863132369';
 
 /**
- * Manual exchange rate — a deliberate constant, not a live API.
- * ⚠️ Verify against the current market rate before launch and update
- * KRW_PER_USD_UPDATED whenever you change it.
+ * The rate behind every "≈ $X" on the site.
+ *
+ * It was a hand-maintained constant with a note saying to verify it before
+ * launch. By 2026-10-01 it read 1380 against a market near 1356 — 1.8% out,
+ * five and a half weeks stale, and two calculators were printing dollar
+ * figures from it without showing a rate or a date at all.
+ *
+ * It now comes from the daily Eximbank sync, so it is as current as the last
+ * successful one and dates itself. The constants below are the floor for a
+ * repository that has never synced; once it has, they are not consulted.
  */
-export const KRW_PER_USD = 1380;
-export const KRW_PER_USD_UPDATED = '2026-08-23';
-export const EXCHANGE_RATE_NOTE = `Approximate conversion at ₩${KRW_PER_USD.toLocaleString('en-US')}/USD (rate last updated ${KRW_PER_USD_UPDATED}).`;
+const FALLBACK_KRW_PER_USD = 1380;
+const FALLBACK_UPDATED = '2026-08-23';
+const liveUsd = usdForConversion();
+
+export const KRW_PER_USD = liveUsd?.krw ?? FALLBACK_KRW_PER_USD;
+export const KRW_PER_USD_UPDATED = liveUsd?.quotedOn ?? FALLBACK_UPDATED;
+export const EXCHANGE_RATE_NOTE = `Approximate conversion at ₩${KRW_PER_USD.toLocaleString('en-US')}/USD — the Korea Eximbank reference rate quoted ${KRW_PER_USD_UPDATED}, not a rate your bank will give you.`;
 
 export function krw(amount: number): string {
   return `₩${Math.round(amount).toLocaleString('en-US')}`;

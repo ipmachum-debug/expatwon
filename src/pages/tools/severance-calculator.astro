@@ -2,6 +2,7 @@
 import AdSlot from '../../components/AdSlot.astro';
 import SeveranceCalculator from '../../components/calculators/SeveranceCalculator.tsx';
 import RelatedPosts from '../../components/RelatedPosts.astro';
+import TrackedFigures from '../../components/TrackedFigures.astro';
 import Layout from '../../layouts/Layout.astro';
 ---
 
@@ -24,6 +25,12 @@ import Layout from '../../layouts/Layout.astro';
   </header>
 
   <SeveranceCalculator client:visible />
+
+  {/* The statutory figures this calculator runs on, resolved from the
+      observation database — same block the guides carry. The footer has
+      promised "every figure linked to an official source" on every page
+      since launch, and these pages were the ones not keeping it. */}
+  <TrackedFigures tracked={['severance-minimum-continuous-service', 'severance-payment-deadline']} heading="Figures this calculator runs on" />
 
   <AdSlot position="bottom" />
 
