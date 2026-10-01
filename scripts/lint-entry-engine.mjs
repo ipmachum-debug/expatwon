@@ -154,6 +154,24 @@ eq('business purpose resolves', assess({ ...T, country: 'US', purpose: 'business
     if (r.keta.temporaryExemption && !r.keta.temporaryExemption.until) fails.push(key + ': waiver with no end date');
     // The inference this expansion must never make: visa-free therefore K-ETA.
     if (r.keta.eligible !== true && r.keta.temporaryExemption) fails.push(key + ': waiver on a row not established as in scope');
+    // eligible:false is the only value here that settles something AGAINST a
+    // reader, and the one that absence from a list must never produce. The
+    // type already refuses a bare false; this refuses an empty one — a
+    // present-but-hollow exclusion would type-check and say nothing.
+    if (r.keta.eligible === false) {
+      const ex = r.keta.exclusion;
+      if (!ex) fails.push(key + ': eligible:false with no exclusion evidence');
+      else {
+        if (!ex.reason || ex.reason.trim().length < 20) fails.push(key + ': exclusion reason is missing or too thin to quote');
+        if (!ex.verified?.source?.url) fails.push(key + ': exclusion with no source URL');
+        if (!ex.verified?.verifiedOn) fails.push(key + ': exclusion with no read date');
+        if (!ex.verified?.verifiedBy) fails.push(key + ': exclusion with no reader');
+        // The sentence this file exists to keep out of the build.
+        if (/not (on|in) the .*list|absent from|could not find|not found/i.test(ex.reason)) {
+          fails.push(key + ': exclusion reads as absence from a list, which is a null, not a false');
+        }
+      }
+    }
   }
 }
 

@@ -592,14 +592,58 @@ export type KetaExemptionReason =
   | 'age-over-65'
   | 'diplomatic-service-passport';
 
-export interface KetaPosition {
-  /** Inside K-ETA's scope. null = not established, which is not 'no'. */
-  eligible: boolean | null;
-  /** The dated blanket waiver, when this nationality sits inside it. */
-  temporaryExemption?: { until: string };
-  /** Named for the reader to check. Never used to decide anything here. */
-  personalExemptions: string[];
+/**
+ * Why a nationality sits OUTSIDE K-ETA's scope, and where that was read.
+ *
+ * Required whenever `eligible` is false, because that is the only value in
+ * this file that tells a reader something is settled AGAINST them. It has to
+ * carry its own evidence, and the evidence has to be of a particular kind.
+ */
+export interface KetaExclusion {
+  /** What the official page says, in terms close enough to quote back. */
+  reason: string;
+  /** The page that says it, and the date it was read. */
+  verified: Verified;
 }
+
+/**
+ * Three states, and the third is not the opposite of the first.
+ *
+ *   eligible: true   — found on the official eligible-countries list.
+ *   eligible: null   — not established. Includes the ordinary case of simply
+ *                      not finding the nationality on that list.
+ *   eligible: false  — ONLY where an official source says, explicitly, that
+ *                      K-ETA does not apply to this nationality or passport.
+ *
+ * ABSENCE FROM THE ELIGIBLE LIST IS NOT A FALSE. It is a null. A list can be
+ * incomplete, renamed, reorganised or read at the wrong moment, and "we did
+ * not find it" is a fact about our reading rather than about the traveller.
+ * Turning that into "K-ETA does not apply to you" is the one inference in
+ * this file that could send someone to an airport on a wrong answer.
+ *
+ * That is why `exclusion` is required on the false branch rather than merely
+ * encouraged: the type will not let a bare `eligible: false` be written, and
+ * lint-entry-engine refuses one whose reason or source is missing. Nothing in
+ * the repository is currently in that state, which is precisely why the rule
+ * goes in now — a constraint added after twenty such rows exist is an audit,
+ * not a guardrail.
+ */
+export type KetaPosition =
+  | {
+      eligible: true | null;
+      /** The dated blanket waiver, when this nationality sits inside it. */
+      temporaryExemption?: { until: string };
+      /** Named for the reader to check. Never used to decide anything here. */
+      personalExemptions: string[];
+      exclusion?: never;
+    }
+  | {
+      eligible: false;
+      /** A waiver cannot sit on a row that is not in scope to begin with. */
+      temporaryExemption?: never;
+      personalExemptions: string[];
+      exclusion: KetaExclusion;
+    };
 
 export interface CountryRule {
   /** ISO 3166-1 alpha-2. */
@@ -2166,7 +2210,15 @@ export function assessKeta(position: KetaPosition, arrivalDate: string): KetaOut
   } else if (position.eligible === false) {
     needed = false;
     status = 'not-applicable';
-    reasons.push('K-ETA does not apply to your nationality.');
+    // The only verdict in this block that settles something against the
+    // reader, so it quotes the page that settled it instead of asserting it
+    // on our own authority — and the source line carries the date it was read.
+    basis.push(position.exclusion.verified);
+    reasons.push(position.exclusion.reason);
+    reasons.push(
+      'That is an explicit exclusion on an official page, not an absence from a list. ' +
+        'Where we simply cannot find a nationality, this tool says so rather than saying no.',
+    );
   } else {
     needed = null;
     status = 'unestablished';
