@@ -55,13 +55,18 @@ async function fetchDay(ymd) {
   try {
     res = await fetch(url, { signal: AbortSignal.timeout(20_000) });
   } catch (e) {
-    // Network trouble is a bad day, not a reason to wipe the file.
-    console.warn(`  ${ymd}: request failed (${e.name})`);
-    return null;
+    // fetch reports every network-level failure as a bare TypeError, so the
+    // name alone says nothing. The reason — DNS, TLS, refused, timed out —
+    // is on e.cause, and without it a run that cannot reach the host at all
+    // looks exactly like a quiet holiday in the log.
+    const c = e.cause;
+    const why = c?.code ?? c?.message ?? e.message ?? e.name;
+    console.warn(`  ${ymd}: request failed — ${why}`);
+    return { stop: `cannot reach ${new URL(ENDPOINT).host} (${why})` };
   }
   if (!res.ok) {
     console.warn(`  ${ymd}: HTTP ${res.status}`);
-    return null;
+    return { stop: `${new URL(ENDPOINT).host} answered HTTP ${res.status}` };
   }
   let body;
   try {
@@ -76,8 +81,12 @@ async function fetchDay(ymd) {
   }
   const bad = body.find((r) => r.result && r.result !== 1);
   if (bad) {
-    console.warn(`  ${ymd}: ${RESULT[bad.result] ?? `result ${bad.result}`}`);
-    return null;
+    // A rejected key, a bad data code and a spent call quota are all states
+    // of the request, not of the day. Asking for an older date repeats the
+    // same rejection ten more times, so these stop the walk immediately.
+    const label = RESULT[bad.result] ?? `result code ${bad.result}`;
+    console.warn(`  ${ymd}: ${label}`);
+    return { stop: `the API rejected the request — ${label}` };
   }
   return body;
 }
@@ -96,9 +105,23 @@ const num = (s) => {
 
 let rows = null;
 let quotedOn = null;
+let unreachable = 0;
 for (let back = 0; back <= MAX_LOOKBACK_DAYS; back++) {
   const ymd = kstDate(new Date(Date.now() - back * 86_400_000));
   const got = await fetchDay(ymd.replace(/-/g, ''));
+  if (got?.stop) {
+    // One retry covers a blip. Past that, the request itself is being
+    // refused — unreachable host, bad key, spent quota — and asking for an
+    // older date repeats the same refusal. These are states of the request,
+    // not of the day, so the walk ends here and says which one it was.
+    if (++unreachable >= 2) {
+      console.error(`Giving up after ${unreachable} attempts: ${got.stop}.`);
+      console.error('Not a quiet day — the request never succeeded. Leaving the file untouched.');
+      console.log('::count::0');
+      process.exit(0);
+    }
+    continue;
+  }
   if (got) {
     rows = got;
     quotedOn = ymd;
