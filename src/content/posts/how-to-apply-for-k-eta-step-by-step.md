@@ -3,10 +3,10 @@ title: 'How to Apply for K-ETA in 2026, Step by Step'
 description: 'A run through the official application — the Gmail warning, the ban on AI photo editing, and a nationality check that runs only after you upload.'
 category: visas
 publishDate: 2026-09-29
-updatedDate: 2026-09-29
+updatedDate: 2026-10-01
 slot: pm
 tags: [arrival, immigration, short-stay, visa, admin]
-lastVerified: 2026-09-29
+lastVerified: 2026-10-01
 sources:
   - label: 'K-ETA — official application site'
     url: 'https://www.k-eta.go.kr/'
@@ -18,8 +18,14 @@ sources:
     url: 'https://www.k-eta.go.kr/portal/board/viewboarddetail.do?bbsSn=299707&locale=EN'
   - label: 'K-ETA — eligible countries and permitted period of stay'
     url: 'https://www.k-eta.go.kr/portal/guide/viewetaalification.do?locale=EN'
+  - label: 'K-ETA — notice of scheduled system shutdown, 8–9 October 2026'
+    url: 'https://www.k-eta.go.kr/'
+  - label: 'K-ETA 신청방법 안내 (비회원) — official application guide, dated 1 January 2026'
+    url: 'https://www.k-eta.go.kr/'
 affiliate: false
 revisions:
+  - date: 2026-10-01
+    change: 'Scheduled shutdown 8–9 October 2026; payment section now covers 3-D Secure, the card-only rule and card-company selection'
   - date: 2026-09-29
     change: 'Published'
 keyFacts:
@@ -41,6 +47,11 @@ faq:
   - question: 'Member or non-member?'
     answer: 'The fee, the assessment time and the validity are the same either way. Registering gets you two things: you can check results and update information without repeating email verification, and you can see all your applications together. For a single trip, non-member is one less account.'
 ---
+
+<div class="callout callout-warn">
+  <p class="callout-title">⚠️ K-ETA is down 8–9 October 2026</p>
+  <p>The site, the application and results lookup are all offline from <strong>18:00 on 8 October to 02:30 on 9 October, KST</strong>. A saved draft not paid for by 18:00 on the 8th cannot be retrieved afterwards. Assessment can take up to 72 hours, so if you fly near those dates, apply before the window rather than after it.</p>
+</div>
 
 The hard part of K-ETA is not the form. It is knowing whether you should be
 applying at all — and then noticing that the passport scan typed something
@@ -88,6 +99,29 @@ services. There is no official fast track. The 72 hours is the 72 hours.
   <p class="callout-title">⚠️ Check eligibility before you pay, not after</p>
   <p>The fee is not refunded if the application is denied, and the temporary exemption means some travellers are paying for something they do not currently need. Settle “do I need this” first.</p>
 </div>
+
+### Card only, and what to do when one is refused
+
+The official guide states the fee is payable by international credit and debit
+cards — Visa, Mastercard, JCB, American Express, Diners Club, Discover,
+UnionPay and Alipay+ — and that bank transfer and similar methods are **not**
+accepted. There is no transfer or cash route to fall back on.
+
+When a card is refused, the guide gives its own order to work through: try a
+different connection, switching between Wi-Fi and mobile data, then a different
+card that is enabled for overseas payments. If neither helps, it says to ask
+your card company two specific things — whether the card is enabled for
+overseas online payment, and whether it is **enrolled for 3-D Secure**. A card
+that works perfectly at home can fail either test without ever having shown it.
+
+One detail that only reaches holders of Korean-issued cards: the form asks you
+to select by the **card company**, not the bank that issued the card. The bank
+is not on the list, and looking for it is the dead end.
+
+Whether a particular card will go through is not something this page or the
+official one can settle in advance. It turns on the issuer, the card's overseas
+payment setting and its 3-D Secure enrolment — which is why the guide sends you
+to the card company rather than answering it.
 
 ## The seven steps, as the site numbers them
 
