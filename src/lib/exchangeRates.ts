@@ -49,16 +49,44 @@ export interface ExchangeRates {
 }
 
 /**
- * What the homepage card shows, in this order. Chosen from the content:
- * USD appears in 115 places across the guides, and the corridors with their
- * own guides are the US and China. EUR, JPY and VND follow the readership.
+ * What the homepage card shows, in this order — everything the feed carries,
+ * not a chosen few. The order is who reads this site rather than which
+ * economies are largest:
  *
- * A code listed here that the feed does not carry is simply absent from the
- * card. That is deliberate — it is not known ahead of time whether every one
- * of these is in the Eximbank table, and a missing currency should quietly
- * not render rather than break the build or show a zero.
+ *   USD   appears in 115 places across the guides, and is the number every
+ *         other rate here is quoted against anyway
+ *   CNH   the largest foreign population in Korea, and the corridor with its
+ *         own guide
+ *   JPY   quoted per 100
+ *   EUR   the remaining currency the guides actually mention
+ *   THB   Thailand and Indonesia are both large communities in Korea and
+ *   IDR   neither is served by anything else on the site yet
+ *   GBP   last, because they are in the feed rather than in the readership
+ *   AUD
+ *   CAD
+ *
+ * VND and PHP are listed and will appear by themselves if Eximbank ever
+ * carries them. Measured on 2026-10-01 it does not: nine of the twelve asked
+ * for came back, and those two were among the three that did not. That is a
+ * real gap for this readership — Vietnam especially — and it is not one that
+ * a second source would close honestly, because two feeds quoted on
+ * different bases stop being comparable the moment they sit side by side.
+ *
+ * A code here that the feed does not carry simply does not render.
  */
-export const CARD_CURRENCIES = ['USD', 'EUR', 'JPY', 'VND'] as const;
+export const CARD_CURRENCIES = [
+  'USD',
+  'CNH',
+  'JPY',
+  'EUR',
+  'VND',
+  'THB',
+  'IDR',
+  'PHP',
+  'GBP',
+  'AUD',
+  'CAD',
+] as const;
 
 const daysBetween = (from: string, to: Date): number =>
   Math.floor((to.getTime() - new Date(from + 'T00:00:00Z').getTime()) / 86_400_000);
