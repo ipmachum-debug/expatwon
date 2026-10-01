@@ -415,6 +415,20 @@ export const FACTS: (Verified & { id: string; statement: string })[] = [
     source: E_ARRIVAL_OFFICIAL,
   },
   {
+    id: 'keta-eligible-countries',
+    statement:
+      'The K-ETA site publishes the list of countries and regions whose ' +
+      'passport holders may apply, under the heading 「신청 가능 국가 / 대상」 ' +
+      '— "if you hold a passport from a country or region listed below, you ' +
+      'can apply for K-ETA". It states a permitted period of stay against ' +
+      'each. Being on it is a fact about the passport and settles scope; it ' +
+      'says nothing about whether a particular traveller must apply, and ' +
+      'nothing about the temporary exemption, which is a separate list.',
+    verifiedOn: '2026-10-01',
+    verifiedBy: 'author',
+    source: KETA_ELIGIBILITY_PAGE,
+  },
+  {
     id: 'keta-temporary-exemption-countries',
     statement:
       'The temporary K-ETA exemption covers 22 named countries and regions: ' +
@@ -711,6 +725,15 @@ const KETA_UNREAD: KetaPosition = {
   personalExemptions: PERSONAL_EXEMPTIONS,
 };
 
+/**
+ * On the eligibility list, and not on the exemption list. Scope is settled;
+ * whether this traveller must apply is not, and cannot be from here.
+ */
+const IN_SCOPE: KetaPosition = {
+  eligible: true,
+  personalExemptions: PERSONAL_EXEMPTIONS,
+};
+
 /** Inside the dated blanket waiver — see FACTS[0]. */
 const TEMP_EXEMPT: KetaPosition = {
   eligible: true,
@@ -786,7 +809,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'months', value: 3 },
-    keta: { eligible: true, personalExemptions: PERSONAL_EXEMPTIONS },
+    keta: IN_SCOPE,
     verified: READ,
   },
   {
@@ -852,7 +875,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: { eligible: true, personalExemptions: PERSONAL_EXEMPTIONS },
+    keta: IN_SCOPE,
     verified: READ_0929,
   },
   {
@@ -962,7 +985,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -981,7 +1004,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -990,7 +1013,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -999,7 +1022,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1009,7 +1032,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1018,17 +1041,27 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
     // Agreement for diplomatic and service passports; an ordinary passport takes the designation.
+    //
+    // UNRESOLVED, 2026-10-01: the two official pages disagree on the stay.
+    // The manual's designation annex says 30 days; the K-ETA permitted-stay
+    // page says 90. Neither is a misreading — they are different documents
+    // saying different numbers, and 30 is the conservative one, so it stays
+    // until a third reading settles it. Scope is NOT in doubt and is recorded
+    // below: Argentina is on the eligibility list.
+    //
+    // Do not quietly raise this to 90 to make the two match. A reader who
+    // overstays on our number is the failure this row is guarding against.
     code: 'AR',
     name: 'Argentina',
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1038,7 +1071,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1047,7 +1080,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1057,7 +1090,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1066,7 +1099,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1075,7 +1108,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1084,7 +1117,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1093,7 +1126,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1103,7 +1136,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1112,7 +1145,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1121,7 +1154,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1130,7 +1163,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1139,7 +1172,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1148,7 +1181,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1158,7 +1191,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1167,7 +1200,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1176,7 +1209,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1185,7 +1218,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1194,7 +1227,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1203,7 +1236,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1212,7 +1245,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1221,7 +1254,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1230,7 +1263,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1239,7 +1272,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1248,7 +1281,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1257,7 +1290,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1266,7 +1299,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1275,7 +1308,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1284,7 +1317,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1293,7 +1326,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1302,7 +1335,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1311,7 +1344,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1320,7 +1353,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1330,7 +1363,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'rolling', continuousDays: 30, maxInWindow: 60, windowDays: 180 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1340,7 +1373,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1349,7 +1382,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1358,7 +1391,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1367,7 +1400,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1376,7 +1409,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1385,7 +1418,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1394,7 +1427,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'months', value: 3 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1403,7 +1436,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1412,7 +1445,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1421,7 +1454,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1430,7 +1463,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1439,7 +1472,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1448,7 +1481,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1457,7 +1490,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1466,7 +1499,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'months', value: 3 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1475,7 +1508,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1484,7 +1517,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1493,7 +1526,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1502,7 +1535,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1511,7 +1544,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1520,7 +1553,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1529,7 +1562,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1538,7 +1571,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1547,7 +1580,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1556,7 +1589,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1565,7 +1598,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1574,7 +1607,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'months', value: 3 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1601,7 +1634,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1611,7 +1644,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'rolling', continuousDays: 60, maxInWindow: 90, windowDays: 180 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1621,7 +1654,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'rolling', continuousDays: 90, maxInWindow: 90, windowDays: 180 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1630,7 +1663,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'months', value: 3 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1639,7 +1672,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1648,7 +1681,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'months', value: 3 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1657,7 +1690,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1675,7 +1708,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1693,7 +1726,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'months', value: 3 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1702,7 +1735,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1711,7 +1744,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1720,7 +1753,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1729,7 +1762,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1747,7 +1780,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1759,7 +1792,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'rolling', continuousDays: 90, maxInWindow: 90, windowDays: 180 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: [...MANUAL_ANNEX, STAY_READ_1001],
   },
   {
@@ -1786,7 +1819,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1795,7 +1828,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 60 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1804,7 +1837,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1813,7 +1846,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 30 },
-    keta: KETA_UNREAD,
+    keta: IN_SCOPE,
     verified: MANUAL_ANNEX,
   },
 ];
@@ -2119,6 +2152,9 @@ export function assessKeta(position: KetaPosition, arrivalDate: string): KetaOut
     // the traveller, and this form never sees the traveller.
     needed = null;
     status = 'personal-check';
+    // Two claims, two pages: the eligibility list puts the nationality in
+    // scope, the exemption list is what says it is not among the 22.
+    basis.push(fact('keta-eligible-countries'));
     basis.push(fact('keta-temporary-exemption-countries'));
     basis.push(fact('keta-age-exemption'));
     reasons.push(

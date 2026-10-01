@@ -20,7 +20,7 @@ const root = new URL('..', import.meta.url).pathname;
 writeFileSync(
   runner,
   `
-import { assess, assessArrivalCard, COUNTRY_RULES, supportedCountries, resolveStay } from ${JSON.stringify(join(root, 'src/data/visaFreeEntry.ts'))};
+import { assess, assessKeta, assessArrivalCard, COUNTRY_RULES, supportedCountries, resolveStay } from ${JSON.stringify(join(root, 'src/data/visaFreeEntry.ts'))};
 import { routeFor } from ${JSON.stringify(join(root, 'src/data/businessVisitRoutes.ts'))};
 
 const fails: string[] = [];
@@ -157,20 +157,38 @@ eq('business purpose resolves', assess({ ...T, country: 'US', purpose: 'business
   }
 }
 
-// A row whose K-ETA position was never read must say so and hand over the
-// official page — never a silent 'no', and never a blocked visa-free verdict.
+// A K-ETA position that was never read must say so and hand over the official
+// page — never a silent 'no'.
+//
+// This used to look for a real row with eligible === null and assert on that,
+// which made the test depend on the DATA having a gap. Filling the last of
+// them broke it, and a test that fails because the dataset improved was
+// testing the wrong thing. The engine's handling of an unread position has to
+// hold whether or not any country is currently in that state: the next
+// nationality added starts there.
 {
-  const unread = COUNTRY_RULES.find((r) => r.keta.eligible === null && r.category === 'default');
-  if (!unread) {
-    fails.push('expected at least one row with an unread K-ETA position');
+  const res = assessKeta({ eligible: null, personalExemptions: [] }, '2026-11-01');
+  eq('unread keta says so', res.status, 'unestablished');
+  eq('unread keta is not a no', res.needed, null);
+  eq('unread keta still routes', Boolean(res.officialCheck), true);
+}
+
+// The same silence by the other road, and this one is reachable from real
+// data: an exemption verified through a date says nothing about a trip after
+// it. A reader planning for 2027 must get 'unestablished', not a stale 'no'.
+{
+  const exempt = COUNTRY_RULES.find((r) => r.keta.temporaryExemption);
+  if (!exempt) {
+    fails.push('expected at least one row inside the temporary exemption');
   } else {
-    const res = assess({ ...T, country: unread.code, days: 1 });
-    eq('unread keta says so', res.keta?.status, 'unestablished');
-    eq('unread keta is not a no', res.keta?.needed, null);
-    eq('unread keta still routes', Boolean(res.officialCheck), true);
-    // The point of splitting the two verdicts: an unknown K-ETA position must
-    // not reach back and change the visa-free answer.
-    if (res.verdict === 'out-of-scope') fails.push(unread.code + ': unread K-ETA blocked the visa-free verdict');
+    const after = exempt.keta.temporaryExemption.until.slice(0, 4) + '-12-31';
+    const past = new Date(Date.parse(after) + 86400000 * 400).toISOString().slice(0, 10);
+    const res = assessKeta(exempt.keta, past);
+    eq('expired waiver does not carry forward', res.status, 'unestablished');
+    eq('expired waiver is not a no', res.needed, null);
+    // And it must not reach back into the visa-free answer.
+    const full = assess({ ...T, country: exempt.code, days: 1 });
+    if (full.verdict === 'out-of-scope') fails.push(exempt.code + ': K-ETA state blocked the visa-free verdict');
   }
 }
 
