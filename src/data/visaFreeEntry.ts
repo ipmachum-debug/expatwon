@@ -639,6 +639,17 @@ const BASIS_SPLIT_READ: Verified = {
   source: HIKOREA_VISA_FREE,
 };
 
+/**
+ * The permitted-stay page again, 2026-10-01. Used where that reading changed
+ * something: the first pass recorded Portugal as a flat 90 days and the page
+ * states a rolling cap, which is a stricter rule, not a different one.
+ */
+const STAY_READ_1001: Verified = {
+  verifiedOn: '2026-10-01',
+  verifiedBy: 'author',
+  source: KETA_ELIGIBILITY_PAGE,
+};
+
 const READ = [STAY_READ, BASIS_READ, BASIS_SPLIT_READ];
 
 /** Second pass, 2026-09-29: the nine expansion nationalities, same pages. */
@@ -1740,13 +1751,16 @@ export const COUNTRY_RULES: CountryRule[] = [
     verified: MANUAL_ANNEX,
   },
   {
+    // Ninety per entry AND ninety within any 180 — the permitted-stay page
+    // states both, where the manual's annex gave only the per-entry figure.
+    // The window is the half that bites on a second trip inside six months.
     code: 'PT',
     name: 'Portugal',
     category: 'default',
     basis: 'agreement',
-    stay: { kind: 'days', value: 90 },
+    stay: { kind: 'rolling', continuousDays: 90, maxInWindow: 90, windowDays: 180 },
     keta: KETA_UNREAD,
-    verified: MANUAL_ANNEX,
+    verified: [...MANUAL_ANNEX, STAY_READ_1001],
   },
   {
     code: 'PL',
