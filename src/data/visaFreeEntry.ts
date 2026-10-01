@@ -417,12 +417,14 @@ export const FACTS: (Verified & { id: string; statement: string })[] = [
   {
     id: 'keta-temporary-exemption-countries',
     statement:
-      'The temporary K-ETA exemption covers 22 named countries and regions. ' +
-      'The United States, Canada, Australia, Japan, Singapore and the United ' +
-      'Kingdom are among them; Malaysia is not. The 2026 extension notice does ' +
-      'not repeat the list, which is why membership is cited from the 2023 ' +
-      'announcement and the end date from the notice.',
-    verifiedOn: '2026-09-28',
+      'The temporary K-ETA exemption covers 22 named countries and regions: ' +
+      'the United States, Canada, Australia, New Zealand, Japan, Taiwan, ' +
+      'Hong Kong, Singapore, Macao, the United Kingdom, Germany, France, ' +
+      'Italy, the Netherlands, Spain, Poland, Sweden, Finland, Norway, ' +
+      'Belgium, Denmark and Austria. Malaysia is not among them. The 2026 ' +
+      'extension notice does not repeat the list, which is why membership is ' +
+      'cited from the 2023 announcement and the end date from the notice.',
+    verifiedOn: '2026-10-01',
     verifiedBy: 'author',
     source: MOJ_TEMP_EXEMPTION_LIST,
   },
@@ -959,7 +961,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'designation',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: TEMP_EXEMPT,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1570,7 +1572,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: TEMP_EXEMPT,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1579,7 +1581,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: TEMP_EXEMPT,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1653,7 +1655,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'months', value: 3 },
-    keta: KETA_UNREAD,
+    keta: TEMP_EXEMPT,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1671,7 +1673,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: TEMP_EXEMPT,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1725,7 +1727,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: TEMP_EXEMPT,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1752,7 +1754,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: TEMP_EXEMPT,
     verified: MANUAL_ANNEX,
   },
   {
@@ -1761,7 +1763,7 @@ export const COUNTRY_RULES: CountryRule[] = [
     category: 'default',
     basis: 'agreement',
     stay: { kind: 'days', value: 90 },
-    keta: KETA_UNREAD,
+    keta: TEMP_EXEMPT,
     verified: MANUAL_ANNEX,
   },
   {
