@@ -136,7 +136,18 @@ function getJson(url, timeoutMs, hops = 5, jar = new Map()) {
         try {
           resolve(JSON.parse(body));
         } catch {
-          reject(Object.assign(new Error('response was not JSON'), { notJson: true }));
+          // "not JSON" names the symptom and hides the cause. What comes back
+          // instead is usually an HTML page saying something useful — a
+          // rejected key, a blocked client, maintenance — and that sentence
+          // is worth more than ten more attempts.
+          const peek = body
+            .replace(/<[^>]+>/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .slice(0, 300);
+          const err = Object.assign(new Error('response was not JSON'), { notJson: true });
+          err.peek = `${res.headers['content-type'] ?? 'no content-type'} | ${body.length}B | ${peek || '(empty body)'}`;
+          reject(err);
         }
       });
     });
@@ -168,7 +179,11 @@ async function fetchDay(ymd) {
     // in the log exactly like a quiet holiday.
     const why = e.code ?? e.cause?.code ?? e.message;
     console.warn(`  ${ymd}: request failed — ${why}`);
-    if (e.notJson) return null;
+    if (e.notJson) {
+      // Redact the key before anything from the wire reaches the log.
+      console.warn(`     ${String(e.peek).split(key).join('***')}`);
+      return null;
+    }
     return { stop: `cannot reach ${new URL(ENDPOINT).host} (${why})` };
   }
   if (!Array.isArray(body) || body.length === 0) {
