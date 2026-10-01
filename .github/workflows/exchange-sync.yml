@@ -113,8 +113,20 @@ jobs:
           openssl s_client -connect "$HOST:443" -servername "$HOST" </dev/null 2>/dev/null \
             | openssl x509 -out /tmp/leaf.pem 2>/dev/null || true
           if [ -s /tmp/leaf.pem ]; then
+            # The last run failed at depth 0, which says the leaf's issuer is
+            # not in the bundle — so the certificate the AIA pointer handed
+            # over may simply not be the one that signed this leaf. That was
+            # assumed rather than checked. These two lines have to match.
+            echo "--- do these name the same certificate? ---"
+            echo -n "leaf issuer:          "; openssl x509 -in /tmp/leaf.pem -noout -issuer
+            echo -n "downloaded subject:   "; openssl x509 -in /tmp/intermediate.pem -noout -subject
+            echo "--- leaf validity ---"
+            openssl x509 -in /tmp/leaf.pem -noout -dates
+
             echo "--- openssl verify, leaf against the bundle ---"
             openssl verify -CAfile /tmp/bundle.pem /tmp/leaf.pem || true
+            echo "--- openssl verify, trusting the downloaded cert directly ---"
+            openssl verify -partial_chain -CAfile /tmp/intermediate.pem /tmp/leaf.pem || true
           fi
 
           echo "--- curl probe, system roots only ---"
