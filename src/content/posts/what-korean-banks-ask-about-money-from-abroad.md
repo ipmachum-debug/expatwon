@@ -8,7 +8,6 @@ slot: am
 tags: [banking, remittance, fx-regulation, gift-tax, compliance]
 tracked: [inbound-remittance-bank-confirmation-threshold, gift-tax-lineal-ascendant-deduction, wise-krw-resident-receiving-limit]
 lastVerified: 2026-10-19
-draft: true
 sources:
   - label: 'Korea Law Information Center — Foreign Exchange Transactions Act and its Regulation (receipts; capital transactions)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%99%B8%EA%B5%AD%ED%99%98%EA%B1%B0%EB%9E%98%EB%B2%95'
