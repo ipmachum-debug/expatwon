@@ -50,6 +50,55 @@ jobs:
         with:
           node-version: 22
 
+      # www.koreaexim.go.kr serves its leaf certificate without the
+      # intermediate above it, so the chain does not reach a trusted root and
+      # Node refuses with UNABLE_TO_VERIFY_LEAF_SIGNATURE. Browsers hide this
+      # by chasing the certificate's AIA pointer themselves; Node does not.
+      #
+      # The widespread "fix" is NODE_TLS_REJECT_UNAUTHORIZED=0, which does not
+      # complete the chain — it stops checking. For a feed of money figures
+      # that means accepting whatever answers at that address. So instead the
+      # missing certificate is fetched from the pointer the leaf itself
+      # carries and added to the trust store.
+      #
+      # This keeps verification ON. NODE_EXTRA_CA_CERTS adds to the default
+      # roots rather than replacing them, and the supplied intermediate still
+      # has to chain to a root Node already trusts, so a forged one fails
+      # exactly as it should.
+      #
+      # If any of this does not work the step gives up quietly and the sync
+      # fails the way it already knows how to: writing nothing.
+      - name: Complete the certificate chain
+        continue-on-error: true
+        run: |
+          HOST=www.koreaexim.go.kr
+          echo "--- chain as the server sends it ---"
+          openssl s_client -connect "$HOST:443" -servername "$HOST" </dev/null 2>/dev/null \
+            | grep -E '^(depth|verify| *[0-9] s:| *i:)' || true
+
+          AIA=$(openssl s_client -connect "$HOST:443" -servername "$HOST" </dev/null 2>/dev/null \
+            | openssl x509 -noout -text 2>/dev/null \
+            | grep -oP 'CA Issuers - URI:\K\S+' | head -1)
+          if [ -z "$AIA" ]; then
+            echo "No CA Issuers pointer on the leaf — cannot complete the chain automatically."
+            exit 0
+          fi
+          echo "--- intermediate at: $AIA ---"
+
+          curl -fsSL --max-time 20 "$AIA" -o /tmp/intermediate.crt || {
+            echo "Could not download the intermediate."; exit 0; }
+
+          # The pointer may serve DER or PEM. Normalise to PEM either way.
+          if ! openssl x509 -in /tmp/intermediate.crt -noout 2>/dev/null; then
+            openssl x509 -inform DER -in /tmp/intermediate.crt -out /tmp/intermediate.pem || {
+              echo "Downloaded file is not a certificate."; exit 0; }
+          else
+            cp /tmp/intermediate.crt /tmp/intermediate.pem
+          fi
+
+          openssl x509 -in /tmp/intermediate.pem -noout -subject -issuer
+          echo "NODE_EXTRA_CA_CERTS=/tmp/intermediate.pem" >> "$GITHUB_ENV"
+
       - name: Fetch the day's rates
         id: sync
         env:
