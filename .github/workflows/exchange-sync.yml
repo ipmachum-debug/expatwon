@@ -88,13 +88,28 @@ jobs:
           curl -fsSL --max-time 20 "$AIA" -o /tmp/intermediate.crt || {
             echo "Could not download the intermediate."; exit 0; }
 
-          # The pointer may serve DER or PEM. Normalise to PEM either way.
-          if ! openssl x509 -in /tmp/intermediate.crt -noout 2>/dev/null; then
-            openssl x509 -inform DER -in /tmp/intermediate.crt -out /tmp/intermediate.pem || {
-              echo "Downloaded file is not a certificate."; exit 0; }
-          else
-            cp /tmp/intermediate.crt /tmp/intermediate.pem
+          # The pointer serves DER. Converting it is not optional and the
+          # detection that used to decide whether to bother was worthless:
+          # `openssl x509 -in` AUTO-DETECTS DER and reads it happily, so the
+          # "is it already PEM?" test passed on a DER file and the convert
+          # branch never ran. The file was then copied under a .pem name,
+          # concatenated into the CA bundle as raw bytes, and silently
+          # ignored by everything that only accepts PEM — which is -CAfile,
+          # curl and Node. Five runs of "the intermediate is in the bundle"
+          # were five runs of it not being there.
+          #
+          # So: convert explicitly, try DER first because that is what this
+          # pointer serves, and refuse to continue unless the result really
+          # is PEM. A trust file that silently holds nothing is the failure
+          # mode this whole exercise was.
+          openssl x509 -inform DER -in /tmp/intermediate.crt -outform PEM -out /tmp/intermediate.pem 2>/dev/null \
+            || openssl x509 -inform PEM -in /tmp/intermediate.crt -outform PEM -out /tmp/intermediate.pem 2>/dev/null \
+            || { echo "Downloaded file is neither DER nor PEM."; exit 0; }
+
+          if ! grep -q 'BEGIN CERTIFICATE' /tmp/intermediate.pem; then
+            echo "Conversion produced no PEM certificate."; exit 0
           fi
+          echo "intermediate converted to PEM ($(grep -c 'BEGIN CERTIFICATE' /tmp/intermediate.pem) cert)"
 
           openssl x509 -in /tmp/intermediate.pem -noout -subject -issuer
 
