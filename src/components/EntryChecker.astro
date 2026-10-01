@@ -390,7 +390,14 @@ const rows = COUNTRY_RULES.map((r) => ({
       badge: string,
       headline: string,
       reasons: string[],
-      sources: { label: string; url: string }[],
+      // Two shapes arrive here and both are legitimate. A `Verified` record is
+      // a claim we read on a date, and carries it. An `officialCheck` is a
+      // pointer — "go and look at this yourself" — which was never a claim of
+      // ours, so it has no date and must not be given one.
+      sources: (
+        | { verifiedOn: string; source: { label: string; url: string } }
+        | { label: string; url: string }
+      )[],
     ) {
       b.badge.textContent = badge;
       if (tone === 'neutral') b.badge.removeAttribute('data-tone');
@@ -417,21 +424,43 @@ const rows = COUNTRY_RULES.map((r) => ({
 
       // Deduplicated: two claims can cite one page, and the reader is being
       // shown where to look, not how many sentences we took from it.
-      const seen = new Set<string>();
+      //
+      // When one page backs several claims read on different days, the OLDEST
+      // date is kept. "Last checked" has to describe the weakest thing on
+      // screen — at least one sentence here rests on a reading that old, and
+      // showing the newest would overstate how current the block is.
+      const flat = sources.map((v) =>
+        'source' in v
+          ? { ...v.source, verifiedOn: v.verifiedOn }
+          : { ...v, verifiedOn: undefined as string | undefined },
+      );
+      const oldest = new Map<string, (typeof flat)[number]>();
+      for (const v of flat) {
+        const prev = oldest.get(v.url);
+        if (!prev || (v.verifiedOn && prev.verifiedOn && v.verifiedOn < prev.verifiedOn)) {
+          oldest.set(v.url, v);
+        } else if (prev && !prev.verifiedOn && v.verifiedOn) {
+          oldest.set(v.url, v);
+        }
+      }
       b.sources.replaceChildren(
-        ...sources
-          .filter((s) => !seen.has(s.url) && seen.add(s.url))
-          .map((s) => {
-            const p = document.createElement('p');
-            const a = document.createElement('a');
-            a.href = s.url;
-            a.rel = 'nofollow noopener';
-            a.target = '_blank';
-            a.className = 'underline decoration-rule underline-offset-2 hover:text-accent';
-            a.textContent = s.label;
-            p.append(document.createTextNode('Source: '), a);
-            return p;
-          }),
+        ...[...oldest.values()].map((v) => {
+          const p = document.createElement('p');
+          const a = document.createElement('a');
+          a.href = v.url;
+          a.rel = 'nofollow noopener';
+          a.target = '_blank';
+          a.className = 'underline decoration-rule underline-offset-2 hover:text-accent';
+          a.textContent = v.label;
+          p.append(document.createTextNode('Source: '), a);
+          if (v.verifiedOn) {
+            const when = document.createElement('span');
+            when.className = 'whitespace-nowrap text-ink-soft/55';
+            when.textContent = ` \u00b7 last checked ${v.verifiedOn}`;
+            p.append(when);
+          }
+          return p;
+        }),
       );
     }
 
@@ -508,7 +537,7 @@ const rows = COUNTRY_RULES.map((r) => ({
         code ? vfBadge : 'Pick your passport country',
         vfHead,
         code ? r.reasons : ['Pick the country that issued your passport to start.'],
-        r.basis.map((v) => v.source),
+        r.basis,
       );
 
       // The British question lives in this block's answer, so surface the
@@ -536,7 +565,7 @@ const rows = COUNTRY_RULES.map((r) => ({
         } as const;
         const [tone, badge, head] = map[r.keta.status];
         paint(BLOCKS.keta, tone as Tone, badge, head, r.keta.reasons, [
-          ...r.keta.basis.map((v) => v.source),
+          ...r.keta.basis,
           r.keta.officialCheck,
         ]);
       } else {
@@ -572,7 +601,7 @@ const rows = COUNTRY_RULES.map((r) => ({
               ? 'You file the declaration.'
               : 'Do you file the arrival declaration?';
         paint(BLOCKS.arrivalCard, tone, badge, head, ac.reasons, [
-          ...ac.basis.map((v) => v.source),
+          ...ac.basis,
           ac.officialCheck,
         ]);
       }
