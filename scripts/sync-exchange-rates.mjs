@@ -75,12 +75,31 @@ const CA = (() => {
   return [...tls.rootCertificates, pem];
 })();
 
-/** GET a JSON body. node:https rather than fetch, for the `ca` option above. */
-function getJson(url, timeoutMs) {
+/**
+ * GET a JSON body. node:https rather than fetch, for the `ca` option above —
+ * which also means redirects are not followed for us, as fetch would. This
+ * host answers 302, so they are followed here, with a cap.
+ */
+function getJson(url, timeoutMs, hops = 5) {
   return new Promise((resolve, reject) => {
     const u = new URL(url);
     const mod = u.protocol === 'http:' ? http : https;
     const req = mod.get(url, { ca: u.protocol === 'https:' ? CA : undefined }, (res) => {
+      if ([301, 302, 303, 307, 308].includes(res.statusCode)) {
+        res.resume();
+        const loc = res.headers.location;
+        if (!loc || hops === 0) {
+          reject(Object.assign(new Error(`HTTP ${res.statusCode} with nowhere to follow`), { status: res.statusCode }));
+          return;
+        }
+        // Where it goes matters: a redirect to a login or error page is a
+        // different problem from a redirect to the same resource elsewhere,
+        // and the status code alone cannot tell those apart.
+        const next = new URL(loc, url);
+        console.log(`  -> ${res.statusCode} to ${next.origin}${next.pathname}`);
+        resolve(getJson(next.toString(), timeoutMs, hops - 1));
+        return;
+      }
       if (res.statusCode !== 200) {
         res.resume();
         reject(Object.assign(new Error(`HTTP ${res.statusCode}`), { status: res.statusCode }));
