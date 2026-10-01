@@ -31,10 +31,32 @@ import https from 'node:https';
 import tls from 'node:tls';
 
 const OUT = 'src/data/live/exchange-rates.json';
-/** Overridable so the parse path can be exercised against a local mock; the
- * live API cannot be reached from a sandbox and an untested parser is how a
- * per-100 quote ends up on the page as a per-1 one. Defaults to the real one. */
-const ENDPOINT = process.env.KEXIM_ENDPOINT ?? 'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON';
+/**
+ * Where the API lives. The server itself settled this:
+ *
+ *   한국수출입은행 페이지 정보가 없습니다. 요청하신 페이지를 찾을 수 없거나,
+ *   서버에서 삭제되었습니다. URL을 확인해주세요.
+ *
+ * Not the key, not a block, not maintenance — the path is gone from the www
+ * host, and the 302 loop was the way to that notice. Eximbank serves its open
+ * API from a separate hostname, so the candidates are tried in order and the
+ * one that answers with JSON is kept for the rest of the run and named in the
+ * log. Guessing a single address and failing is how the last hour went;
+ * trying two and reporting which worked costs one request.
+ *
+ * KEXIM_ENDPOINT overrides both, and is also how the parse path is exercised
+ * against a local mock — the live API cannot be reached from a sandbox, and
+ * an untested parser is how a per-100 quote reaches the page as a per-1 one.
+ */
+const ENDPOINTS = process.env.KEXIM_ENDPOINT
+  ? [process.env.KEXIM_ENDPOINT]
+  : [
+      'https://oapi.koreaexim.go.kr/site/program/financial/exchangeJSON',
+      'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON',
+    ];
+/** Set to the candidate that answered, so later days do not re-probe. */
+let endpoint = null;
+
 /** Everything the site may want, which is a superset of what the card shows. */
 const WANTED = ['USD', 'EUR', 'JPY', 'VND', 'CNH', 'CNY', 'GBP', 'AUD', 'CAD', 'PHP', 'THB', 'IDR'];
 /** Business days are never more than a few apart, even across a long holiday. */
@@ -169,6 +191,21 @@ const kstDate = (d) =>
 const RESULT = { 2: 'DATA code error', 3: 'authentication error', 4: 'daily call limit reached' };
 
 async function fetchDay(ymd) {
+  for (const base of endpoint ? [endpoint] : ENDPOINTS) {
+    const got = await fetchFrom(base, ymd);
+    if (Array.isArray(got)) {
+      if (!endpoint) console.log(`  using ${new URL(base).host}`);
+      endpoint = base;
+      return got;
+    }
+    // A candidate that is merely the wrong address should not end the run;
+    // only the last one standing gets to report a reason.
+    if (got?.stop && base === ENDPOINTS[ENDPOINTS.length - 1]) return got;
+  }
+  return null;
+}
+
+async function fetchFrom(ENDPOINT, ymd) {
   const url = `${ENDPOINT}?authkey=${encodeURIComponent(key)}&searchdate=${ymd}&data=AP01`;
   let body;
   try {
