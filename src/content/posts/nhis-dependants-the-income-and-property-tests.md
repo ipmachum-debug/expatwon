@@ -9,7 +9,6 @@ pairedWith: adding-foreign-family-to-korean-health-insurance
 tags: [insurance, nhis, dependants, family, health-insurance]
 tracked: [nhis-dependent-income-threshold, nhis-dependent-business-income-exception, nhis-dependent-property-threshold, nhis-sibling-property-threshold]
 lastVerified: 2026-10-24
-draft: true
 sources:
   - label: 'Korea Law Information Center — Enforcement Rule of the National Health Insurance Act, art. 2 and appended table 1-2'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99'
