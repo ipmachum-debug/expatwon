@@ -9,7 +9,6 @@ pairedWith: buying-vs-renting-the-real-break-even
 tags: [housing, buying, property-tax, cost-of-living, homeownership]
 tracked: [housing-multiple-owner-acquisition-tax-rate, acquisition-tax-housing, comprehensive-property-tax-deduction, comprehensive-property-tax-rate-individual]
 lastVerified: 2026-11-11
-draft: true
 sources:
   - label: 'Korea Law Information Center — Local Tax Act, art. 11 and art. 13-2 (acquisition tax and heavy rates)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95'
