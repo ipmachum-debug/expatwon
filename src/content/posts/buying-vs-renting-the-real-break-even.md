@@ -8,7 +8,6 @@ slot: am
 tags: [housing, buying, jeonse, wolse, financial-planning]
 tracked: [monthly-rent-tax-credit-rate, monthly-rent-tax-credit-limit, comprehensive-property-tax-deduction]
 lastVerified: 2026-11-12
-draft: true
 sources:
   - label: 'National Tax Service — monthly rent tax credit for employees'
     url: 'https://www.nts.go.kr/'
