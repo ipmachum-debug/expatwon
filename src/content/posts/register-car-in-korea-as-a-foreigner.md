@@ -4,7 +4,6 @@ description: 'A buyer has 15 days to put a used car in their name, and a fine up
 category: cars
 publishDate: 2026-10-07
 updatedDate: 2026-10-07
-draft: true
 tags: [cars, vehicle-registration, car365, foreign-residents, insurance, ownership-transfer]
 lastVerified: 2026-09-30
 sources:
