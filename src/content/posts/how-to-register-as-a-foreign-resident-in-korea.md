@@ -4,7 +4,6 @@ description: 'Booking a HiKorea slot is not filing your application, and two cha
 category: visas
 publishDate: 2026-10-06
 updatedDate: 2026-10-06
-draft: true
 tags: [visa, immigration, residence-card, foreign-registration, hikorea]
 lastVerified: 2026-09-30
 sources:
