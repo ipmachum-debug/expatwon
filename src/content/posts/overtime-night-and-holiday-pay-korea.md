@@ -8,7 +8,6 @@ slot: am
 tags: [employment, overtime, ordinary-wage, comprehensive-wage, unpaid-wages]
 tracked: [overtime-premium-rate, night-work-time-window, holiday-work-premium-rate, ordinary-wage-requirements-count, monthly-standard-hours]
 lastVerified: 2026-10-01
-draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 56 premium pay; 56(2) holiday work; 56(3) night work 22:00–06:00)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
