@@ -1,0 +1,19 @@
+{
+  "key": "substitute-payment-cap-current-employee",
+  "label": "Simplified substitute payment: ceiling while still employed",
+  "unit": "KRW, wage-type arrears",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Employees still in the job, who meet the separate eligibility test for arrears owed by their current employer",
+  "why": "Being still employed does not rule the scheme out, but it is a different door with a lower ceiling and its own conditions — including a wage test set against the minimum wage, which moves every January.",
+  "history": [
+    {
+      "date": "2026-10-09",
+      "value": 7000000,
+      "display": "₩7 million",
+      "source": "Ministry of Employment and Labour — Labour Portal, unpaid wage resolution routes",
+      "note": "Wage-related ceiling for a claimant still in employment. Eligibility carries additional restrictions that the former-employee route does not, so the lower cap is not the only difference."
+    }
+  ]
+}

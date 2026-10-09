@@ -1,0 +1,19 @@
+{
+  "key": "substitute-payment-cap-former-employee",
+  "label": "Simplified substitute payment: ceiling for a former employee",
+  "unit": "KRW, combined",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Former employees whose arrears the state pays under the Wage Claim Guarantee Act, foreign nationals included",
+  "why": "The state does not underwrite the whole debt. Wage-type arrears and retirement benefits each have their own ceiling, and the combined payment is capped below their sum — so the two component limits cannot be added together. Set by Enforcement Decree, which means it moves without the Act changing.",
+  "history": [
+    {
+      "date": "2026-10-09",
+      "value": 10000000,
+      "display": "₩10 million",
+      "source": "Ministry of Employment and Labour — Labour Portal, unpaid wage resolution routes",
+      "note": "Combined ceiling. The component limits are ₩7 million for covered wage-type arrears and ₩7 million for covered retirement benefits; a claimant cannot add them to reach ₩14 million. Still-employed claimants are capped separately."
+    }
+  ]
+}
