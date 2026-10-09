@@ -9,7 +9,6 @@ pairedWith: which-korean-social-insurances-you-are-in
 tags: [employment, social-insurance, national-pension, health-insurance, payroll]
 tracked: [national-pension-rate, health-insurance-rate, long-term-care-rate, employment-insurance-employee-rate, pension-standard-income-limits, nps-minimum-contribution-years, injury-leave-benefit-rate]
 lastVerified: 2026-10-02
-draft: true
 sources:
   - label: 'National Pension Service — 2026 contribution rate and standard monthly income limits'
     url: 'https://www.nps.or.kr/'
