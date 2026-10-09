@@ -1,0 +1,19 @@
+{
+  "key": "unemployment-benefit-daily-cap",
+  "label": "Job-seeking benefit: daily ceiling",
+  "unit": "KRW per day",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 12,
+  "appliesTo": "Every employed insured person claiming job-seeking benefit, whatever the previous salary",
+  "why": "The benefit is 60% of the statutory wage base, but the base is capped. Above a certain previous salary the benefit stops rising, so two people who earned very differently can receive the same amount. Set by Enforcement Decree and revised by Cabinet each December for the following year.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 68100,
+      "display": "₩68,100",
+      "source": "Ministry of Employment and Labour",
+      "note": "60% of a ₩113,500 daily wage base. Approved by Cabinet on 16 December 2025 for 2026 separations. The rate that applies is the one in force on the claimant's separation date, not the current year's."
+    }
+  ]
+}

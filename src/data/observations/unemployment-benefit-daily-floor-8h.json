@@ -1,0 +1,19 @@
+{
+  "key": "unemployment-benefit-daily-floor-8h",
+  "label": "Job-seeking benefit: daily floor at eight hours",
+  "unit": "KRW per day",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 8,
+  "appliesTo": "Claimants whose relevant scheduled working day was eight hours — not part-timers",
+  "why": "The floor is derived, not announced: hourly minimum wage x 8 hours x 80%. It moves every January with the minimum wage. A claimant on fewer scheduled hours has a different, lower floor, so this figure is not a universal minimum.",
+  "history": [
+    {
+      "date": "2026-01-01",
+      "value": 66048,
+      "display": "₩66,048",
+      "source": "Ministry of Employment and Labour",
+      "note": "₩10,320 x 8 x 80%. Follows the 2026 minimum wage, so it changes whenever that does."
+    }
+  ]
+}
