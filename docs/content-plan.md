@@ -579,3 +579,42 @@ F-2 점수제는 실제로 다른 글이다.
 - `278` marrying-a-korean-money-property-and-tax — `/taxes/`
 - `279` buying-korean-property-while-living-overseas — `/loans/`
 - `280` leaving-korea-permanently-complete-exit-guide — `/exit/`
+
+---
+
+## ⛔ 폐기한 주제 — 다시 제안하지 말 것 (2026-10-09)
+
+Batch 11–20 으로 들어온 원고 중 **기존 글과 충돌해 폐기**한 것. 같은 주제가
+세 번째로 올라오는 걸 막으려고 적는다. 판정 근거는 전부 `src/content/posts/`
+실측이며, **발행분이 아니라 예약분(`draft: true`)과 충돌한 건이 대부분**이다.
+
+| 폐기 | 충돌 대상 | 근거 |
+|---|---|---|
+| `e7-workplace-change-permission-or-report-korea`<br>(E-7 근무처 변경: 사전허가 vs 15일 신고) | **`changing-employers-on-a-korean-work-visa`** (예약 10-15) | 같은 질문·같은 조문(법 21조). 기존 글에 `## Permission is the rule; notification is the exception` 과 `## Three fifteen-day rules that are not the same rule` 이 이미 있고, `/tracked/workplace-change-notification-deadline/` 까지 물려 있다 |
+| `refinancing-korean-loan-foreigner` | `savings-banks-and-capital-companies-korea` | 그 글 222행 `## Refinancing upward is normal — if you engineer it` |
+| `korean-mortgage-approval-fall-through` | `korean-mortgage-for-foreigners` | 그 글 309행 `## Get the approval before the contract, not after` — 초안의 핵심 주장 그 자체 |
+| `korean-mobile-verification-foreigners` | `korean-phone-plans-for-foreigners` 외 3편 | 그 글 143행 `## Verification failures are data mismatches, not phone problems` |
+
+**살아남은 재료 1건**: 법무부고시 2020-212 의 E-7 직종 제외 목록(기계공학기술자 2351 ·
+제도사 2395 · 디자이너 285 · 주방장 및 조리사 441 · 판매사무원 31215 ·
+고객상담사무원 3991 · 조선용접공 7430). 저자가 2026-10-09 에 현행성을 확인했고,
+`changing-employers-on-a-korean-work-visa` 가 *"whether your particular sub-type
+falls inside the announced criteria"* 라고만 쓰고 목록을 보여주지 않는다 →
+**새 글이 아니라 그 글에 한 절로 삽입**한다.
+⚠️ 삽입 전에 고시 원문이 「사전허가 대상」인지 「15일 신고 대상에서 제외」인지
+표현을 확정할 것. 반대로 읽히면 독자가 불법취업이 된다.
+
+### 🔴 더 큰 문제 — 이 충돌은 전부 「계획 밖」에서 났다
+
+이 문서 머리에 **"여기 없는 주제를 즉흥으로 쓰지 않습니다 — 카니벌라이제이션은
+계획 밖에서 생깁니다"** 라고 적혀 있다. 그런데 2026-10-09 기준으로 **Batch 1·2 로
+들어와 예약된 14편이 전부 이 플랜에 없는 slug** 다. 그 14편 중 5건이 실제로
+충돌했고(17 · 15 · 16 · 19 · 11), 그중 **4건은 기존 예약분과 부딪혔다** — 즉
+공개 사이트만 봐서는 보이지 않고 저장소를 봐야만 잡힌다.
+
+**다음 배치 전에 할 일**: 원고를 쓰기 전에 이 플랜에서 번호를 고르거나, 플랜에
+없는 주제라면 **먼저 여기에 번호를 추가**한다. 쓴 뒤에 중복을 찾는 것보다 싸다.
+
+ℹ️ 머리의 「현황 35/280」은 2026-08-31 값이라 낡았다. **2026-10-09 실측: 135편
+(발행 82 · 예약 53).** 다만 그 135편 중 상당수가 위 사유로 플랜 번호에 매핑돼
+있지 않아, 「N/280」을 다시 세려면 매핑 작업이 따로 필요하다.
