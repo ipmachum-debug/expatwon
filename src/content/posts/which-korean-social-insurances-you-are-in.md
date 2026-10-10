@@ -8,7 +8,6 @@ slot: am
 tags: [employment, social-insurance, foreign-workers, national-pension, health-insurance]
 tracked: [nps-lump-sum-refund-country-list, health-insurance-acquisition-report-deadline, foreign-dependant-residence-requirement, unemployment-benefit-insured-days]
 lastVerified: 2026-10-03
-draft: true
 sources:
   - label: 'National Pension Service — foreign nationals: coverage, reciprocity, social security agreements, lump-sum refund'
     url: 'https://www.nps.or.kr/'
