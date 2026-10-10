@@ -9,7 +9,6 @@ pairedWith: losing-your-job-on-a-korean-work-visa
 tags: [employment, unemployment-benefit, employment-insurance, foreign-workers, e-7]
 tracked: [employment-insurance-voluntary-coverage-backdating, unemployment-benefit-insured-days, unemployment-benefit-claim-period, employment-insurance-employee-rate]
 lastVerified: 2026-10-04
-draft: true
 sources:
   - label: 'Korea Law Information Center — Employment Insurance Act and its Enforcement Decree (application to foreign nationals; insured periods; job-seeking benefit)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%EB%B2%95'
