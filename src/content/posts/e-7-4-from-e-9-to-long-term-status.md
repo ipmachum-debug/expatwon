@@ -8,7 +8,6 @@ slot: am
 tags: [employment, immigration, e-7, e-9, permanent-residence]
 tracked: [e74-annual-quota, e7-annual-wage-requirement, e9-max-continuous-employment-period]
 lastVerified: 2026-10-07
-draft: true
 sources:
   - label: 'Ministry of Justice — 2026 E-7-4 skilled technical personnel operating plan (quota, eligibility, points)'
     url: 'https://www.immigration.go.kr/'
