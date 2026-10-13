@@ -9,7 +9,6 @@ pairedWith: e-7-4-from-e-9-to-long-term-status
 tags: [employment, immigration, e-9, e-7, foreign-workers]
 tracked: [e7-annual-wage-requirement, e9-workplace-change-limit, e9-workplace-change-application-period, e9-max-continuous-employment-period]
 lastVerified: 2026-10-06
-draft: true
 sources:
   - label: 'Korea Law Information Center — Act on the Employment of Foreign Workers (art. 25 workplace change; employment activity period)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%99%B8%EA%B5%AD%EC%9D%B8%EA%B7%BC%EB%A1%9C%EC%9E%90%EC%9D%98%EA%B3%A0%EC%9A%A9%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EB%B2%95%EB%A5%A0'
