@@ -9,7 +9,6 @@ pairedWith: when-your-old-employer-will-not-release-you
 tags: [employment, immigration, e-7, e-9, foreign-workers]
 tracked: [workplace-change-notification-deadline, foreign-worker-employment-change-report-deadline, e9-workplace-change-application-period, e9-new-workplace-permission-window]
 lastVerified: 2026-10-08
-draft: true
 sources:
   - label: 'Korea Law Information Center — Immigration Act, art. 21 (change or addition of workplace) and its Enforcement Decree (notification exception; employer reporting)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%B6%9C%EC%9E%85%EA%B5%AD%EA%B4%80%EB%A6%AC%EB%B2%95'
