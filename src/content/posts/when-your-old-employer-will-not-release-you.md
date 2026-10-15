@@ -8,7 +8,6 @@ slot: am
 tags: [employment, immigration, e-7, e-9, foreign-workers]
 tracked: [employer-employment-change-report-penalty, foreign-worker-employment-change-report-deadline, e9-workplace-change-limit]
 lastVerified: 2026-10-09
-draft: true
 sources:
   - label: 'Korea Law Information Center — Immigration Act and its Enforcement Decree (workplace change; employer reporting and administrative fine)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%B6%9C%EC%9E%85%EA%B5%AD%EA%B4%80%EB%A6%AC%EB%B2%95'
