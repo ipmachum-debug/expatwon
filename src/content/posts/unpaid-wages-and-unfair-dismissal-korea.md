@@ -9,7 +9,6 @@ pairedWith: reporting-your-employer-as-a-foreign-worker
 tags: [employment, unpaid-wages, unfair-dismissal, labour-law, foreign-workers]
 tracked: [unfair-dismissal-relief-deadline, dismissal-notice-period, substitute-payment-claim-period, annual-leave-minimum-workplace-size]
 lastVerified: 2026-10-10
-draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act (art. 6 non-discrimination, art. 23 dismissal, art. 26 notice, art. 27 written notice, art. 28 relief)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
