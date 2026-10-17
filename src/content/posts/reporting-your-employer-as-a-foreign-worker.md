@@ -8,7 +8,6 @@ slot: am
 tags: [employment, unpaid-wages, immigration, foreign-workers, e-9]
 tracked: [foreigner-rights-hotline-languages, unfair-dismissal-relief-deadline, e9-workplace-change-limit, e9-workplace-change-application-period]
 lastVerified: 2026-10-11
-draft: true
 sources:
   - label: 'Korea Law Information Center — Labor Standards Act, art. 6 (no discrimination on grounds of nationality)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95'
