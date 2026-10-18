@@ -9,7 +9,6 @@ pairedWith: k-pass-transport-refunds-for-foreign-residents
 tags: [cost-of-living, transport, t-money, arrival, short-stay]
 tracked: [tmoney-card-price, tmoney-refund-fee, seoul-transit-foreign-card-machines, seoul-transit-foreign-card-fee, wowpass-topup-networks]
 lastVerified: 2026-10-12
-draft: true
 sources:
   - label: 'T-money — foreign visitor guidance: where to buy, top up and refund'
     url: 'https://www.t-money.co.kr/'
