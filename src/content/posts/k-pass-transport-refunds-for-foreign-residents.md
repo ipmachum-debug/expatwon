@@ -8,7 +8,6 @@ slot: am
 tags: [cost-of-living, transport, k-pass, foreign-residents, commuting]
 tracked: [kpass-refund-rate-general]
 lastVerified: 2026-10-13
-draft: true
 sources:
   - label: 'Government of Korea — K-Pass scheme: refund tiers, registration and card options'
     url: 'https://korea-pass.kr/'
