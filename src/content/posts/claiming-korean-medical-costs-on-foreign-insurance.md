@@ -8,7 +8,6 @@ slot: am
 tags: [insurance, healthcare, travel-insurance, claims, short-stay]
 tracked: [english-medical-certificate-fee]
 lastVerified: 2026-10-15
-draft: true
 sources:
   - label: 'Seoul National University Hospital — International Healthcare Center: billing records, English documents, direct billing insurers'
     url: 'https://www.snuh.org/'
