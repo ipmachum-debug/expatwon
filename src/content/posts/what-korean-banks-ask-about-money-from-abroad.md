@@ -215,6 +215,11 @@ who is sending
 Settle those and the rest follows: the route, the fee and spread optimisation,
 the documents the bank will want, and the tax position.
 
+What the route itself costs — the same amount arriving as a different
+number depending on how it was sent, and the one route that lets you hold
+dollars until you need won — is in
+[sending money into Korea: routes and real cost](/banking/sending-money-into-korea-routes-and-real-cost/).
+
 The question worth asking is not how much you can receive without reporting. It
 is whether you can explain, in one sentence and with documents behind it, what
 the money is — because that is the question you will actually be asked.

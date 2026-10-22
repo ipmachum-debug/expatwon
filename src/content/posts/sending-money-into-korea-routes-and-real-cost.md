@@ -9,7 +9,6 @@ pairedWith: what-korean-banks-ask-about-money-from-abroad
 tags: [banking, remittance, fx, arrival, foreign-currency]
 tracked: [wise-krw-resident-receiving-limit, wise-krw-nonresident-receiving-limit]
 lastVerified: 2026-10-18
-draft: true
 sources:
   - label: 'Wise — KRW receiving limits, PayGate verification and recipient details'
     url: 'https://wise.com/'

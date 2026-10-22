@@ -9,7 +9,6 @@ pairedWith: claiming-korean-medical-costs-on-foreign-insurance
 tags: [insurance, healthcare, self-pay, short-stay, foreign-residents]
 tracked: [hira-disclosed-noncovered-items]
 lastVerified: 2026-10-14
-draft: true
 sources:
   - label: 'Health Insurance Review and Assessment Service — public disclosure of non-covered treatment costs by institution'
     url: 'https://www.hira.or.kr/'

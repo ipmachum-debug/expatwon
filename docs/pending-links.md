@@ -19,4 +19,3 @@ Format, one per line, inside the table:
 
 | in this guide | restore this link | where |
 | --- | --- | --- |
-| what-korean-banks-ask-about-money-from-abroad | sending-money-into-korea-routes-and-real-cost | Last section, after "the documents the bank will want, and the tax position." — the route and cost side of receiving money |
