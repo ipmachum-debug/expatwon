@@ -3,51 +3,51 @@
     "label": "Korea Eximbank — 환율 API (AP01), 매매기준율 / reference rate",
     "url": "https://www.koreaexim.go.kr/ir/HPHKIR019M01"
   },
-  "quotedOn": "2026-10-22",
-  "fetchedAt": "2026-10-22T08:07:09.124Z",
+  "quotedOn": "2026-10-23",
+  "fetchedAt": "2026-10-23T08:05:42.553Z",
   "rates": {
     "AUD": {
-      "krw": 930.83,
+      "krw": 929.67,
       "per": 1,
       "name": "호주 달러"
     },
     "CAD": {
-      "krw": 943.52,
+      "krw": 946.01,
       "per": 1,
       "name": "캐나다 달러"
     },
     "CNH": {
-      "krw": 198.66,
+      "krw": 198.37,
       "per": 1,
       "name": "위안화"
     },
     "EUR": {
-      "krw": 1488.6,
+      "krw": 1486.4,
       "per": 1,
       "name": "유로"
     },
     "GBP": {
-      "krw": 1775.04,
+      "krw": 1775.56,
       "per": 1,
       "name": "영국 파운드"
     },
     "IDR": {
-      "krw": 7.36,
+      "krw": 7.34,
       "per": 100,
       "name": "인도네시아 루피아"
     },
     "JPY": {
-      "krw": 838.26,
+      "krw": 846.12,
       "per": 100,
       "name": "일본 옌"
     },
     "THB": {
-      "krw": 39.44,
+      "krw": 39.26,
       "per": 1,
       "name": "태국 바트"
     },
     "USD": {
-      "krw": 1325.5,
+      "krw": 1324.6,
       "per": 1,
       "name": "미국 달러"
     }
