@@ -9,7 +9,6 @@ pairedWith: not-losing-your-korean-tax-refund-at-the-airport
 tags: [cost-of-living, tax-refund, shopping, short-stay, vat]
 tracked: [tax-refund-minimum-purchase, immediate-refund-per-transaction-limit, immediate-refund-total-limit, downtown-refund-per-receipt-limit, tourist-tax-refund-stay-period, tax-refund-export-deadline]
 lastVerified: 2026-10-16
-draft: true
 sources:
   - label: 'Korea Tourism Organization — tax refund: thresholds, immediate, downtown and airport refunds'
     url: 'https://english.visitkorea.or.kr/'
