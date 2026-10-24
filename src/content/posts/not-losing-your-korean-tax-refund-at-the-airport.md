@@ -8,7 +8,6 @@ slot: am
 tags: [cost-of-living, tax-refund, airport, departure, short-stay]
 tracked: [tax-refund-minimum-purchase, tax-refund-export-deadline]
 lastVerified: 2026-10-17
-draft: true
 sources:
   - label: 'Incheon International Airport — tax refund procedure for departing passengers'
     url: 'https://www.airport.kr/'
