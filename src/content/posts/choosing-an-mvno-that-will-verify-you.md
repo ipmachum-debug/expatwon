@@ -9,7 +9,6 @@ pairedWith: pass-and-mobile-id-for-foreign-residents
 tags: [cost-of-living, telecom, mvno, identity-verification, foreign-residents]
 tracked: [phone-identity-verification-agencies]
 lastVerified: 2026-10-20
-draft: true
 sources:
   - label: 'Korea Internet & Security Agency — designated identity verification agencies'
     url: 'https://www.kisa.or.kr/'
