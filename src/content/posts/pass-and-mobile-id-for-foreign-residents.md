@@ -8,7 +8,6 @@ slot: am
 tags: [cost-of-living, telecom, identity-verification, mobile-id, foreign-residents]
 tracked: [mobile-id-types-for-foreign-residents, phone-identity-verification-agencies]
 lastVerified: 2026-10-21
-draft: true
 sources:
   - label: 'PASS — certificate service, MVNO support and service limitations'
     url: 'https://www.passapp.co.kr/'
