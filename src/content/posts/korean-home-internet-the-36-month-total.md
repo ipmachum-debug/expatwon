@@ -9,7 +9,6 @@ pairedWith: moving-leaving-and-ending-a-korean-internet-contract
 tags: [cost-of-living, internet, telecom, contracts, foreign-residents]
 tracked: [internet-contract-term-options, internet-signup-gift-dispersion, foreigner-prepaid-internet-terms]
 lastVerified: 2026-10-22
-draft: true
 sources:
   - label: 'KT — published internet tariffs by contract term, and maximum speed conditions'
     url: 'https://product.kt.com/'
