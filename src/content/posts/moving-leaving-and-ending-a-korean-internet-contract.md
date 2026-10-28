@@ -8,7 +8,6 @@ slot: am
 tags: [cost-of-living, internet, moving, contracts, departure]
 tracked: [internet-contract-term-options, foreigner-prepaid-internet-terms]
 lastVerified: 2026-10-23
-draft: true
 sources:
   - label: 'KT — relocation of service, dispatch charges and weekend surcharges'
     url: 'https://product.kt.com/'
