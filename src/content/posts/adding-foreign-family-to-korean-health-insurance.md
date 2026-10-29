@@ -8,7 +8,6 @@ slot: am
 tags: [insurance, nhis, dependants, foreign-residents, family]
 tracked: [foreign-dependant-residence-requirement, nhis-dependent-income-threshold]
 lastVerified: 2026-10-25
-draft: true
 sources:
   - label: 'Korea Law Information Center — National Health Insurance Act, art. 109 (foreign nationals; dependant residence condition)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95'
