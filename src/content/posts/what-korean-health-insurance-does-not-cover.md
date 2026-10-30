@@ -9,7 +9,6 @@ pairedWith: korean-private-health-insurance-4th-vs-5th-generation
 tags: [insurance, nhis, non-covered, healthcare, medical-costs]
 tracked: [hira-disclosed-noncovered-items]
 lastVerified: 2026-10-26
-draft: true
 sources:
   - label: 'Korea Law Information Center — National Health Insurance Act (benefits and cost sharing)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95'
