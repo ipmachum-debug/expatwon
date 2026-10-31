@@ -8,7 +8,6 @@ slot: am
 tags: [insurance, private-health-insurance, silson, claims, foreign-residents]
 tracked: [private-health-insurance-generation-on-sale, gen4-noncovered-premium-tier, gen4-therapy-limit, gen5-nonsevere-noncovered-limit, gen5-noncovered-copay]
 lastVerified: 2026-10-27
-draft: true
 sources:
   - label: 'Financial Services Commission — 5th generation indemnity health insurance, on sale from 6 May 2026'
     url: 'https://www.fsc.go.kr/'
