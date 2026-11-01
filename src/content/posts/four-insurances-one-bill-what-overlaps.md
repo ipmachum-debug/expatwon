@@ -9,7 +9,6 @@ pairedWith: pausing-korean-cover-while-you-are-abroad
 tags: [insurance, travel-insurance, expat-insurance, nhis, claims]
 tracked: [private-health-insurance-generation-on-sale]
 lastVerified: 2026-10-28
-draft: true
 sources:
   - label: 'Financial Services Commission — indemnity insurance: duplicate cover and proportional payment'
     url: 'https://www.fsc.go.kr/'
