@@ -1,0 +1,18 @@
+{
+  "key": "overseas-account-nonreporting-penalty",
+  "label": "Overseas financial account: penalty for not reporting, or under-reporting",
+  "unit": "% of the unreported amount",
+  "type": "rate",
+  "check": "annual",
+  "appliesTo": "Reporting persons who omit or understate qualifying overseas financial accounts",
+  "why": "The penalty base is the unreported account amount, not the income the account produced — which is why a reporting failure can be expensive on an account that earned almost nothing. Worth tracking next to the threshold it enforces, because the two are quoted together and only one of them is a tax.",
+  "history": [
+    {
+      "date": "2026-11-02",
+      "value": 10,
+      "display": "10% of the unreported amount, capped at ₩1bn",
+      "source": "Adjustment of International Taxes Act — penalties on overseas financial account reporting",
+      "note": "A further penalty can apply where the source of unreported funds is not adequately explained when required. Amounts above ₩5 billion can lead to public disclosure of the violator, and serious cases carry criminal provisions. Qualifying voluntary late or amended filing before enforcement action can reduce the penalty by up to 90% depending on timing and conditions — a reduction that is conditional, not automatic. Not independently opened at the time of writing: outbound network access was unavailable."
+    }
+  ]
+}

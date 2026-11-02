@@ -1,0 +1,18 @@
+{
+  "key": "overseas-account-reporting-threshold",
+  "label": "Overseas financial account reporting: the combined balance that triggers it",
+  "unit": "KRW, combined across all qualifying accounts",
+  "type": "amount",
+  "check": "annual",
+  "appliesTo": "Korean tax residents and domestic corporations holding qualifying overseas financial accounts",
+  "why": "Quoted wrong in two directions. It is combined across every qualifying account, not per account, so three mid-sized accounts can cross it while none does alone. And it is tested at each of the twelve month-ends, not at 31 December, so a balance that peaked in March and fell back can still create a June filing obligation. The statute requires the combined figure to exceed the amount, so exactly ₩500 million does not qualify.",
+  "history": [
+    {
+      "date": "2026-11-02",
+      "value": 500000000,
+      "display": "₩500 million",
+      "source": "Adjustment of International Taxes Act, art. 53 and Enforcement Decree art. 92",
+      "note": "A reporting obligation can arise where the combined prescribed balances of qualifying overseas financial accounts exceed ₩500 million at any month-end in the reporting year, with the highest combined month-end as the reporting reference date. Filing runs 1-30 June of the following year. A qualifying foreign resident with five years or less of cumulative Korean domicile or residence in the preceding ten years may be exempt under art. 54. Not independently opened at the time of writing: outbound network access was unavailable."
+    }
+  ]
+}
