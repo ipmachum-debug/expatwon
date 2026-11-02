@@ -1,0 +1,18 @@
+{
+  "key": "double-entry-bookkeeping-thresholds",
+  "label": "Double-entry bookkeeping: the prior-year revenue that triggers it, by industry group",
+  "unit": "KRW of prior-year revenue",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Individual businesses in Korea determining their bookkeeping obligation",
+  "why": "Three numbers, not three tiers of one number — a retailer and a professional-services provider at identical revenue can land on opposite sides. Cited by more than one guide on this site, so it lives here rather than being restated each time. Certain regulated professional businesses are on double-entry regardless of revenue, which the threshold alone does not show.",
+  "history": [
+    {
+      "date": "2026-11-02",
+      "value": 300000000,
+      "display": "₩300m retail · ₩150m manufacturing · ₩75m professional",
+      "source": "National Tax Service — bookkeeping obligation and expense-rate classification",
+      "note": "Group A (wholesale, retail and specified activities) ₩300m; Group B (manufacturing, accommodation, restaurants, information and certain others) ₩150m; Group C (professional, scientific, educational and specified services) ₩75m. Determined on prior-year revenue and the statutory industry classification, with professional-business exceptions overriding it and mixed-business rules requiring an adjusted calculation. The `value` field holds Group A; the display carries all three. Not independently opened at the time of writing: outbound network access was unavailable."
+    }
+  ]
+}

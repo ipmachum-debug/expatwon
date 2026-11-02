@@ -1,0 +1,18 @@
+{
+  "key": "simple-expense-rate-revenue-thresholds",
+  "label": "Simple expense rate (단순경비율): the prior-year revenue below which it may apply",
+  "unit": "KRW of prior-year revenue",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Individual businesses whose income may be calculated by the estimated expense-rate method",
+  "why": "Read as a tax-free allowance more often than as what it is — an eligibility test for an estimated calculation method. Someone earning under ₩24m still owes income tax. And prior-year revenue is not the only gate: reaching the current-year double-entry threshold can exclude simple-rate treatment even where last year was small.",
+  "history": [
+    {
+      "date": "2026-11-02",
+      "value": 60000000,
+      "display": "₩60m retail · ₩36m manufacturing · ₩24m professional",
+      "source": "National Tax Service — 2025 income-year bookkeeping and expense-rate guidance",
+      "note": "For the 2025 income year: Group A ₩60m, Group B ₩36m, Group C ₩24m of prior-year revenue. Specified professional occupations are excluded regardless of revenue, as are certain cash-receipt registration failures and repeated improper refusals to issue receipts. Newly commenced businesses get special treatment but remain subject to the current-year limits. The `value` field holds Group A; the display carries all three. Not independently opened at the time of writing: outbound network access was unavailable."
+    }
+  ]
+}

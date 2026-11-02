@@ -6,7 +6,7 @@ publishDate: 2026-12-03
 draft: true
 updatedDate: 2026-12-03
 tags: [business, tax, sole-proprietor, bookkeeping, hometax]
-tracked: [vat-simplified-threshold, no-filing-penalty-rate]
+tracked: [vat-simplified-threshold, no-filing-penalty-rate, double-entry-bookkeeping-thresholds]
 sources:
   - label: 'National Tax Service — comprehensive income tax: taxable business income, bookkeeping obligations, estimated expense-rate calculations and the penalties for unkept books'
     url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7664'
