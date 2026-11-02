@@ -1,0 +1,18 @@
+{
+  "key": "foreign-tax-credit-carryforward-years",
+  "label": "Foreign tax credit: how long unused excess can be carried forward",
+  "unit": "years",
+  "type": "schedule",
+  "check": "annual",
+  "appliesTo": "Korean tax residents with qualifying foreign income tax exceeding the Article 57 credit limit",
+  "why": "The figure most likely to be quoted wrong, because official English-language material has described five years while the current statutory text provides ten. A taxpayer who plans on the shorter period writes off credit they could still use; one who plans on the longer period without checking may find an older rule applied to their year. Tracked here so the number lives in one file instead of inside every guide that cites it.",
+  "history": [
+    {
+      "date": "2026-11-02",
+      "value": 10,
+      "display": "10 years",
+      "source": "Income Tax Act, art. 57(2) — carryforward of excess foreign income tax",
+      "note": "Qualifying excess foreign income tax may be carried forward to tax periods ending within ten years from the beginning of the following tax period, creditable within each year's own limit. Older National Tax Service English publications still describe a five-year period and reflect the earlier rule. Article 57(2) also provides that an amount still uncredited when the period expires may, subject to conditions, be included in necessary expenses for the period containing the day after expiry — which is a different treatment from the credit itself, not a refund. Not independently opened at the time of writing: outbound network access was unavailable, and the value is recorded as the manuscript's own verification against the current statutory text."
+    }
+  ]
+}
