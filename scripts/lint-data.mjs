@@ -254,6 +254,10 @@ for (const file of readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'))) {
 // category prefix, which 404s permanently.
 const slotOrder = (m) => `${m.date}#${m.slot === 'pm' ? 1 : 0}`;
 
+// Category slugs, read from the posts themselves: a link under one of these
+// prefixes is a link to a guide, so an unresolvable slug is a dead link.
+const CATEGORY_PREFIXES = new Set([...postMeta.values()].map((m) => m.category));
+
 const FIGURE_TOKEN = /\{\{fig:([a-z0-9-]+)\}\}/g;
 
 for (const { where, meta, body, frontmatter } of postBodies) {
@@ -286,7 +290,18 @@ for (const { where, meta, body, frontmatter } of postBodies) {
   ];
   for (const [, prefix, slug] of links) {
     const target = postMeta.get(slug);
-    if (!target) continue; // /tracked/, /tools/ and friends are not posts
+    // /tracked/, /tools/ and friends are not posts, so an unknown slug under
+    // one of those prefixes is fine. Under a CATEGORY prefix it is not: the
+    // post either never existed or was renamed, and the link is a 404 the
+    // moment this guide goes out. Caught here because every other check in
+    // this block starts by resolving the slug and gives up when it cannot —
+    // which is how a link to a guide that had not been written yet shipped.
+    if (!target) {
+      if (CATEGORY_PREFIXES.has(prefix)) {
+        errors.push(`${where}: links to /${prefix}/${slug}/ but no such post exists`);
+      }
+      continue;
+    }
 
     if (target.category !== prefix) {
       errors.push(
