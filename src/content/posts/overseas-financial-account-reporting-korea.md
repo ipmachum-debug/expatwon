@@ -10,8 +10,10 @@ tracked: [overseas-account-reporting-threshold, overseas-account-nonreporting-pe
 sources:
   - label: 'National Tax Service — overseas financial account reporting: the ₩500m threshold, the month-end balance test, the foreign-resident exemption, which accounts and assets are covered, filing routes and penalties'
     url: 'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7819'
-  - label: 'Korea Law Information Center — Adjustment of International Taxes Act, arts. 52–57: the reporting obligation and June period (art. 53), the exemptions including qualifying foreign residents and related account holders (art. 54), and the penalty provisions'
+  - label: 'Korea Law Information Center — Adjustment of International Taxes Act, art. 53: the reporting obligation, the combined-balance test and the June filing period'
     url: 'https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1008304751'
+  - label: 'Korea Law Information Center — Adjustment of International Taxes Act, art. 54: the exemptions, including the five-in-ten-year foreign resident, related account holders whose filing supplies the information, and specified treaty residents'
+    url: 'https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0054&lsiSeq=280389&urlMode=lsScJoRltInfoR'
   - label: 'Korea Law Information Center — Enforcement Decree of the Adjustment of International Taxes Act, arts. 92–94: the ₩500m threshold, the year-end residence date, the prescribed valuation methods for deposits, securities, insurance and virtual assets, joint-account treatment and the beneficial-owner rules'
     url: 'https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=163903'
   - label: 'National Tax Service — cited for the June 2026 reporting-season announcement covering 2025 holdings, overseas virtual assets, the Hometax filing path and the new overseas trust regime, and for the September 2026 results release reporting 7,484 filers and ₩107.1tn (neither notice page could be confirmed at the time of writing)'
