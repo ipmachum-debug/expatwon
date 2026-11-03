@@ -8,7 +8,6 @@ slot: am
 tags: [insurance, nhis, private-health-insurance, overseas, premiums]
 tracked: [nhis-overseas-premium-exemption-period, nhis-overseas-work-exception-period, private-loss-overseas-suspension-period]
 lastVerified: 2026-10-29
-draft: true
 sources:
   - label: 'Korea Law Information Center — Enforcement Decree of the National Health Insurance Act, art. 44-2 (overseas stay)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9'
