@@ -9,7 +9,6 @@ pairedWith: cutting-first-hire-costs-without-cutting-corners
 tags: [employment, hiring, payroll, employer-costs, small-business]
 tracked: [employer-social-insurance-burden, employment-insurance-employer-rate, industrial-accident-average-rate, national-pension-rate, pension-standard-income-limits]
 lastVerified: 2026-10-30
-draft: true
 sources:
   - label: 'National Pension Service — 2026 contribution rate and standard monthly income limits'
     url: 'https://www.nps.or.kr/'
