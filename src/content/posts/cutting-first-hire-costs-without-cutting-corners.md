@@ -8,7 +8,6 @@ slot: am
 tags: [employment, hiring, payroll, subsidies, small-business]
 tracked: [small-employer-insurance-subsidy-threshold, employer-social-insurance-burden, minimum-wage]
 lastVerified: 2026-10-31
-draft: true
 sources:
   - label: 'Ministry of Employment and Labor — Duru-nuri social insurance support: eligibility, rate and exclusions'
     url: 'https://www.moel.go.kr/'
