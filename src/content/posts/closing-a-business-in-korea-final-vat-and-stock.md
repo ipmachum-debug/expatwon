@@ -9,7 +9,6 @@ pairedWith: closing-a-business-the-deadlines-after-the-last-day
 tags: [business, tax, vat, closing-a-business, small-business]
 tracked: [closure-final-vat-deadline, deemed-supply-depreciable-asset-deduction-rate, deemed-supply-building-deduction-rate, no-filing-penalty-rate]
 lastVerified: 2026-11-01
-draft: true
 sources:
   - label: 'Korea Law Information Center — Value-Added Tax Act (art. 10(6) deemed supply, art. 29 supply value, art. 49 final return)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B6%80%EA%B0%80%EA%B0%80%EC%B9%98%EC%84%B8%EB%B2%95'
