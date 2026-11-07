@@ -8,7 +8,6 @@ slot: am
 tags: [business, closing-a-business, four-insurances, corporate-tax, small-business]
 tracked: [nhis-business-closure-deadline, employment-accident-insurance-closure-deadline, nps-business-closure-deadline, corporate-tax-after-business-closure]
 lastVerified: 2026-11-02
-draft: true
 sources:
   - label: 'Korea Law Information Center — National Health Insurance Act'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95'
