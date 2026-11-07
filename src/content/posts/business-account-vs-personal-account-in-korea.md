@@ -9,7 +9,6 @@ pairedWith: company-money-is-not-the-directors-money
 tags: [business, banking, tax, sole-proprietor, small-business]
 tracked: [business-account-registration-deadline, business-account-nonuse-penalty-rate, business-account-nonregistration-penalty-formula]
 lastVerified: 2026-11-03
-draft: true
 sources:
   - label: 'Korea Law Information Center — Income Tax Act, art. 160-5 (business-use account) and art. 81-8 (penalty)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%86%8C%EB%93%9D%EC%84%B8%EB%B2%95'
