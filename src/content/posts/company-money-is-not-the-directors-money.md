@@ -8,7 +8,6 @@ slot: am
 tags: [business, banking, corporate-tax, company, small-business]
 tracked: [deemed-interest-current-account-rate, limited-account-counter-limit, limited-account-electronic-limit]
 lastVerified: 2026-11-04
-draft: true
 sources:
   - label: 'Korea Law Information Center — Corporate Tax Act (wrongful calculation and related-party lending)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%B2%95%EC%9D%B8%EC%84%B8%EB%B2%95'
