@@ -9,7 +9,6 @@ pairedWith: repairs-restoration-and-leaving-without-your-deposit
 tags: [housing, rental, jeonse, lease-contract, deposit]
 tracked: [housing-lease-opposability-effective-time, hug-deposit-guarantee-limit, hug-application-deadline, unpaid-tax-inspection-without-landlord-consent-threshold]
 lastVerified: 2026-11-05
-draft: true
 sources:
   - label: 'Korea Law Information Center — Housing Lease Protection Act, art. 3 (opposing power) and art. 3-2 (priority repayment)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95'
