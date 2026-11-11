@@ -8,7 +8,6 @@ slot: am
 tags: [housing, rental, lease-contract, deposit, moving-out]
 tracked: [small-tenant-priority-threshold, small-tenant-priority-amount, foreign-resident-address-registration-equivalent]
 lastVerified: 2026-11-06
-draft: true
 sources:
   - label: 'Korea Law Information Center — Civil Act (landlord’s obligation to maintain the property, art. 623)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%AF%BC%EB%B2%95'
