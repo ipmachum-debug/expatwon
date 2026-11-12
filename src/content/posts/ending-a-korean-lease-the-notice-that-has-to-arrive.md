@@ -9,7 +9,6 @@ pairedWith: getting-your-korean-deposit-back-interest-and-enforcement
 tags: [housing, rental, lease-contract, deposit, moving-out]
 tracked: [lease-nonrenewal-notice-deadline, tacit-renewal-termination-effective-period, leasehold-registration-order-effective-point]
 lastVerified: 2026-11-07
-draft: true
 sources:
   - label: 'Korea Law Information Center — Housing Lease Protection Act, art. 4(2), 6, 6-2 and 3-3'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95'
