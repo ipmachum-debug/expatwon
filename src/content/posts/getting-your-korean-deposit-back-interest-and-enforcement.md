@@ -8,7 +8,6 @@ slot: am
 tags: [housing, rental, deposit, moving-out, enforcement]
 tracked: [civil-default-interest-rate, litigation-promotion-interest-rate, leasehold-registration-order-effective-point]
 lastVerified: 2026-11-08
-draft: true
 sources:
   - label: 'Korea Law Information Center — Civil Act (statutory interest, concurrent performance, tender of performance)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EB%AF%BC%EB%B2%95'
