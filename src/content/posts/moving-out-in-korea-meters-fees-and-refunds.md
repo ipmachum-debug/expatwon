@@ -9,7 +9,6 @@ pairedWith: moving-in-korea-the-filings-and-their-deadlines
 tags: [housing, moving, utilities, management-fees, rental]
 tracked: []
 lastVerified: 2026-11-09
-draft: true
 sources:
   - label: 'Korea Law Information Center — Multi-Family Housing Management Act (long-term repair reserve)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B3%B5%EB%8F%99%EC%A3%BC%ED%83%9D%EA%B4%80%EB%A6%AC%EB%B2%95'
