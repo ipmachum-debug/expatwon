@@ -8,7 +8,6 @@ slot: am
 tags: [housing, moving, immigration, address-registration, rental]
 tracked: [resident-move-in-report-deadline, foreigner-address-change-deadline, foreigner-address-change-penalty, address-change-bulk-service, leasehold-registration-order-effective-point]
 lastVerified: 2026-11-10
-draft: true
 sources:
   - label: 'Korea Law Information Center — Resident Registration Act, art. 16'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A3%BC%EB%AF%BC%EB%93%B1%EB%A1%9D%EB%B2%95'
