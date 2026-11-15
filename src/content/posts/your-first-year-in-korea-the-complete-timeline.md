@@ -9,7 +9,6 @@ pairedWith: leaving-korea-for-good-the-order-to-close-things-in
 tags: [moving-to-korea, immigration, banking, tax, first-year]
 tracked: [alien-registration-deadline, foreigner-address-change-deadline, business-registration-application-deadline, employment-insurance-acquisition-report-deadline, tax-residency-day-threshold]
 lastVerified: 2026-11-13
-draft: true
 sources:
   - label: 'Korea Law Information Center — Immigration Act (alien registration, art. 36 stay address, art. 98)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%B6%9C%EC%9E%85%EA%B5%AD%EA%B4%80%EB%A6%AC%EB%B2%95'
