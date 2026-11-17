@@ -8,7 +8,6 @@ slot: am
 tags: [leaving-korea, immigration, banking, tax, moving]
 tracked: [nps-lump-sum-refund-country-list, nps-airport-refund-lead-time, departure-income-tax-filing-deadline, lease-nonrenewal-notice-deadline, tacit-renewal-termination-effective-period]
 lastVerified: 2026-11-14
-draft: true
 sources:
   - label: 'Korea Law Information Center — Immigration Act, art. 37 (return of the alien registration card)'
     url: 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%B6%9C%EC%9E%85%EA%B5%AD%EA%B4%80%EB%A6%AC%EB%B2%95'
