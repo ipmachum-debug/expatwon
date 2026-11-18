@@ -3,7 +3,6 @@ title: 'Korean Loans by Visa Type: E-7, F-2, F-4, F-5, F-6'
 description: 'What changes by visa type when a Korean bank reviews a loan, and what does not. E-7, F-2, F-4, F-5 and F-6, plus the screens that apply to everyone.'
 category: loans
 publishDate: 2026-11-18
-draft: true
 updatedDate: 2026-11-18
 tags: [loans, visa, E-7, F-2, credit]
 sources:
