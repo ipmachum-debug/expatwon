@@ -3,7 +3,6 @@ title: 'Why Korean Banks Reject Foreign Loan Applicants'
 description: 'Ten reasons a Korean lender declines a foreign applicant: product scope, remaining stay, recognisable income, DSR headroom and a thin domestic credit file.'
 category: loans
 publishDate: 2026-11-19
-draft: true
 updatedDate: 2026-11-19
 tags: [loans, credit, DSR, income]
 sources:
