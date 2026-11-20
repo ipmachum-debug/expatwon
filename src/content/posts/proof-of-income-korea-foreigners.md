@@ -3,7 +3,6 @@ title: 'What Korean Lenders Accept as Proof of Income'
 description: 'Which documents a Korean lender treats as income, and which ones prove registration or tax status but not an amount you can actually borrow against.'
 category: loans
 publishDate: 2026-11-20
-draft: true
 updatedDate: 2026-11-20
 tags: [loans, income, documents, credit]
 sources:
