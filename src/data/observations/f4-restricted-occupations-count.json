@@ -1,0 +1,19 @@
+{
+  "key": "f4-restricted-occupations-count",
+  "label": "F-4 simple-labour occupations closed to employment",
+  "unit": "detailed occupational categories",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 2,
+  "appliesTo": "The simple-labour restriction only. Two further groups sit alongside it — work contrary to good customs or social order, and occupations closed on public-interest or employment-order grounds — so an occupation can be barred without appearing in this count.",
+  "why": "The list is replaced rather than amended, and every replacement orphans the guides quoting the old one. Restaurant work was broadly restricted, then relaxed in 2023, while restaurant delivery stayed closed — which is why an F-4 list from a two-year-old article is not a weaker source but a wrong one.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 29,
+      "display": "29 occupations",
+      "source": "Ministry of Justice Notice No. 2026-65, effective 2026-02-12",
+      "note": "Replaced the 2023 notice. Counted by detailed category under the Korean Standard Classification of Occupations."
+    }
+  ]
+}

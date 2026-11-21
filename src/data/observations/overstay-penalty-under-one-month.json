@@ -1,0 +1,19 @@
+{
+  "key": "overstay-penalty-under-one-month",
+  "label": "Overstay under one month — base monetary amount",
+  "unit": "KRW, scheduled base amount",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "The first bracket of the schedule, which starts below one month and has no entry for a few days. It is an assessment framework: the authority may adjust within half the standard amount for age, circumstances, reason, consequences, ability to pay and prior violations.",
+  "why": "Read in both wrong directions. It is not a fee that makes a short overstay harmless, and it is not a guaranteed invoice either — and neither reading touches the separate question of whether the person may keep living in Korea.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 2000000,
+      "display": "₩2,000,000",
+      "source": "Immigration Act Enforcement Rule — penalty schedule",
+      "note": "Rising to ₩3m at one month, ₩4m at three, ₩7m at six, ₩10m at one year, and ₩30m at seven years or more."
+    }
+  ]
+}
