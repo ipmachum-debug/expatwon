@@ -1,0 +1,19 @@
+{
+  "key": "incheon-20l-waste-bag-price",
+  "label": "Incheon 20L general-waste bag — price spread across districts",
+  "unit": "KRW per 20L bag",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 7,
+  "appliesTo": "One city. The bag is bought and valid locally, so the figure that applies is the one for the district of the address, not the city.",
+  "why": "Proof that there is no national price for household waste disposal. Four Incheon districts sit at the bottom of this range and four at the top, for the same bag and the same rubbish — which is why any guide quoting one Korean bag price is answering the wrong question.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 870,
+      "display": "₩620–₩870",
+      "source": "Incheon Metropolitan City — volume-based waste bag prices, July 2026",
+      "note": "₩620 in Jemulpo, Yeongjong, Seohae and Geomdan; ₩750 in Michuhol; ₩870 in Yeonsu, Namdong, Bupyeong and Gyeyang."
+    }
+  ]
+}

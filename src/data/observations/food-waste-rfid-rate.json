@@ -1,0 +1,19 @@
+{
+  "key": "food-waste-rfid-rate",
+  "label": "Food waste charged by weight at an RFID machine",
+  "unit": "KRW per kilogram",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 7,
+  "appliesTo": "Apartment complexes using RFID machines, where the district operates that system. Bag and paid-tag systems exist alongside it in the same city, so the machine is not the default.",
+  "why": "The only part of household waste that is billed by weight rather than by container, which makes draining moisture an actual line item rather than tidiness.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 100,
+      "display": "₩55–₩100 per kg",
+      "source": "Incheon Metropolitan City — volume-based food waste charges, July 2026",
+      "note": "Range across districts. Two families a few kilometres apart may be on a bag, a tag or a machine."
+    }
+  ]
+}

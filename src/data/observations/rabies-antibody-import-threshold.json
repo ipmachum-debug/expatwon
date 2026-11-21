@@ -1,0 +1,19 @@
+{
+  "key": "rabies-antibody-import-threshold",
+  "label": "Rabies-neutralizing antibody — minimum titre for import",
+  "unit": "IU/ml",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 9,
+  "appliesTo": "Dogs and cats aged 90 days or older arriving from a rabies-affected country or region. Animals under 90 days, and those from areas Korea currently recognises as rabies-free, are treated differently — but still need identification and certification.",
+  "why": "A vaccination record is not this test, and owners arrive believing it is. The requirement is a laboratory result at or above the titre, from a recognised laboratory or the exporting government, within the current validity window.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 0.5,
+      "display": "0.5 IU/ml",
+      "source": "Animal and Plant Quarantine Agency import standard effective 2026-09-30",
+      "note": "Checked within 24 months of the blood-draw date under the current rule."
+    }
+  ]
+}
