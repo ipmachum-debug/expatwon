@@ -3,7 +3,6 @@ title: 'Your Korean Loan Ends When Your ARC Does'
 description: 'Residence permission, contractual maturity and acceleration are three different dates. What a named lender actually requires, and what no Korean law says.'
 category: loans
 publishDate: 2026-11-21
-draft: true
 updatedDate: 2026-11-21
 tags: [loans, ARC, visa, credit]
 sources:
