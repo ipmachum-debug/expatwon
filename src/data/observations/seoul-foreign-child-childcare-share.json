@@ -1,0 +1,19 @@
+{
+  "key": "seoul-foreign-child-childcare-share",
+  "label": "Seoul foreign-child childcare support — share of the fee ceiling, ages 3 to 5",
+  "unit": "% of the applicable childcare fee ceiling",
+  "type": "rate",
+  "check": "annual",
+  "checkMonth": 3,
+  "appliesTo": "Foreign children aged 3 to 5 at a daycare centre in Seoul. Ages 0 to 2 and qualifying disabled-child childcare are supported at 50%. Foreign registration is required; undocumented residents are not covered.",
+  "why": "Seoul pays a share of a ceiling rather than a flat amount, so the money changes with the type of centre — which is why Seoul's published figures for private and home daycare sit above the national ages 3–5 rate and cannot be compared with it directly.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 70,
+      "display": "70%",
+      "source": "Seoul Metropolitan Government — 2026 foreign-child childcare fee support",
+      "note": "Paid via 국민행복카드. Ages 0–2 and qualifying disabled-child childcare at 50%."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "key": "childcare-fee-support-age-0",
+  "label": "National childcare fee support — age 0 class",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Children who meet the national eligibility rule, which starts with the child's Korean nationality and resident registration, with specified exceptions. It is the rate for an eligible child, not evidence that a given child is eligible.",
+  "why": "The rate table is what circulates; the eligibility sentence is what decides. Families find this figure, assume free childcare, and are then billed because the child never met the beneficiary rule in the first place.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 584000,
+      "display": "₩584,000",
+      "source": "2026 childcare business guidance (보육사업안내)",
+      "note": "Age 1 ₩515,000, age 2 ₩426,000, ages 3–5 ₩280,000 on the same table."
+    }
+  ]
+}

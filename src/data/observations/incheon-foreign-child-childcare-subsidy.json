@@ -1,0 +1,19 @@
+{
+  "key": "incheon-foreign-child-childcare-subsidy",
+  "label": "Incheon foreign-child childcare subsidy",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 3,
+  "appliesTo": "Foreign children aged 3 to 5 at a daycare centre in Incheon, with registered stay and over 90 days of residence in the jurisdiction. Undocumented or unregistered children are excluded, and under-3s fall outside the published age range.",
+  "why": "A municipal budget programme, not a national entitlement — it stops at the city line, and the 90-day residence condition means a family that has just moved cannot assume it starts on arrival.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 280000,
+      "display": "₩280,000",
+      "source": "Incheon Metropolitan City — foreign-child childcare fee support",
+      "note": "Same figure as the national ages 3–5 rate, and a different programme. Applied through the childcare centre."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "key": "childcare-fee-support-age-3-5",
+  "label": "National childcare fee support — ages 3 to 5",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "The national programme for eligible children. A municipal foreign-child programme is a different payment with its own rules, even where the monthly figure happens to match.",
+  "why": "This number collides with Incheon's foreign-child subsidy at the same amount, which is how '₩280,000 for daycare in Korea' spreads as if it were one nationwide entitlement. Two programmes, two eligibility tests, one coincidence.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 280000,
+      "display": "₩280,000",
+      "source": "2026 childcare business guidance (보육사업안내)",
+      "note": "Recorded at the date this site first verified it."
+    }
+  ]
+}
