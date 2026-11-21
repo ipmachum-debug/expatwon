@@ -1,0 +1,19 @@
+{
+  "key": "harassment-retaliation-criminal-fine",
+  "label": "Retaliation against a harassment reporter — maximum criminal fine",
+  "unit": "KRW, statutory maximum",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "A sanction against the responsible party, alongside imprisonment of up to three years. It is not a payment to the worker: compensation needs its own legal basis and its own assessment.",
+  "why": "Quoted to workers as if it were a payout. Someone who reads it that way files expecting ₩30m and treats the real remedies — reinstatement, the labour office, a civil claim — as a consolation prize.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 30000000,
+      "display": "₩30,000,000",
+      "source": "Labor Standards Act, art. 76-3(6) penalty provision",
+      "note": "Administrative fines for the employer's own harassment and for failing the investigation duty are separate and lower."
+    }
+  ]
+}

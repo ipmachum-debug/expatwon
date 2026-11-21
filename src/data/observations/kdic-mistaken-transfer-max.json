@@ -1,0 +1,19 @@
+{
+  "key": "kdic-mistaken-transfer-max",
+  "label": "KDIC mistaken-transfer support — maximum per transfer",
+  "unit": "KRW, per mistaken transaction",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "One mistaken transfer. The floor on the same programme is ₩50,000, and the programme restricts applications covering only part of a single claim — a larger transfer cannot be split to fit under the ceiling.",
+  "why": "This ceiling has moved twice, and English-language guidance lags it badly: pages still circulate quoting ₩10,000,000 and ₩50,000,000 as the limit. A reader who believes an outdated figure concludes they are ineligible and never applies.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 100000000,
+      "display": "₩100,000,000",
+      "source": "Easy Law (Ministry of Government Legislation) — mistaken transfer return support",
+      "note": "Recorded at the date this site first verified it, not the date it changed. Earlier stages of the programme carried lower ceilings."
+    }
+  ]
+}

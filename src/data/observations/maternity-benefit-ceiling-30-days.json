@@ -1,0 +1,19 @@
+{
+  "key": "maternity-benefit-ceiling-30-days",
+  "label": "Maternity leave benefit — ceiling per 30 days",
+  "unit": "KRW per 30 days",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "The government insurance payment. It does not displace the employer's separate wage obligation over the statutorily paid portion of the leave, so the employer may owe the difference.",
+  "why": "Read as the total the worker receives, when for many it is only one of two payments — and the gap between the ceiling and ordinary wage is the employer's, not nobody's.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 2200000,
+      "display": "₩2,200,000",
+      "source": "Ministry of Employment and Labor notice effective 2026-09-18",
+      "note": "₩6,600,000 across a standard 90-day leave. Premature and multiple births carry their own period totals."
+    }
+  ]
+}

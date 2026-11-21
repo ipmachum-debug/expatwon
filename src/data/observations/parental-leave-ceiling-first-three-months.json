@@ -1,0 +1,19 @@
+{
+  "key": "parental-leave-ceiling-first-three-months",
+  "label": "Parental leave benefit — monthly ceiling, months 1–3",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "The ordinary benefit at 100% of ordinary wage. The ceiling steps down to ₩2,000,000 for months 4–6 and ₩1,600,000 from month 7, where the rate also drops to 80%. The parental-sharing and single-parent schemes use different figures.",
+  "why": "A ceiling, not an entitlement: a worker on ₩3,000,000 receives the ceiling, not their wage. Households plan a year of leave by multiplying salary by twelve and discover the gap after the leave has started.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 2500000,
+      "display": "₩2,500,000",
+      "source": "Work24 — parental leave benefits",
+      "note": "2026 standard scheme."
+    }
+  ]
+}

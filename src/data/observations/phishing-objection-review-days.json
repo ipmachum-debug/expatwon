@@ -1,0 +1,19 @@
+{
+  "key": "phishing-objection-review-days",
+  "label": "Fraud-freeze objection — review-result notification standard",
+  "unit": "business days from a complete application",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 5,
+  "appliesTo": "Notification of a review result, where the application is complete and the evidence adequate. It is not a deadline for releasing the account, and separate restrictions can survive a favourable review.",
+  "why": "The single most misread number in this area. A supervisory handling standard for answering an objection gets quoted as 'the bank must unfreeze your account in five days', which is a different promise entirely.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 5,
+      "display": "5 business days",
+      "source": "Financial Supervisory Service — standardised handling of objections by account holders not involved in the fraud",
+      "note": "Announced 2026-05-04, implemented first in banking. Not independently confirmed against the primary announcement from this workspace."
+    }
+  ]
+}

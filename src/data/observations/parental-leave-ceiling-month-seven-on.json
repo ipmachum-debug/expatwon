@@ -1,0 +1,19 @@
+{
+  "key": "parental-leave-ceiling-month-seven-on",
+  "label": "Parental leave benefit — monthly ceiling, month 7 onward",
+  "unit": "KRW per month",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "The ordinary benefit from the seventh month, where the rate also falls to 80% of ordinary wage. Any qualifying extension months beyond twelve sit at this level too.",
+  "why": "The back half of a year's leave is paid at well under half the front half's ceiling, and that is where a household's cash planning actually breaks.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 1600000,
+      "display": "₩1,600,000",
+      "source": "Work24 — parental leave benefits",
+      "note": "2026 standard scheme."
+    }
+  ]
+}

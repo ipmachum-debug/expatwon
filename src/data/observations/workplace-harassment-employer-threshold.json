@@ -1,0 +1,19 @@
+{
+  "key": "workplace-harassment-employer-threshold",
+  "label": "Workplace harassment provisions — workplace-size threshold",
+  "unit": "regularly employed workers",
+  "type": "amount",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "The Labor Standards Act's harassment articles. A separate and higher threshold governs the duty to prepare and file employment rules, and the two get merged constantly.",
+  "why": "The single thing that decides whether the harassment route exists at all. Small restaurants, shops and offices sit right on this line, and the count is of workers regularly employed under the Act's own calculation — not whoever was rostered on the day of the incident.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 5,
+      "display": "5 or more",
+      "source": "Labor Standards Act and its enforcement framework",
+      "note": "Below the line other laws may still apply to violence, threats, discrimination or unpaid wages; the specific harassment framework generally does not."
+    }
+  ]
+}

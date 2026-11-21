@@ -1,0 +1,19 @@
+{
+  "key": "kdic-mistaken-transfer-window",
+  "label": "KDIC mistaken-transfer support — application window",
+  "unit": "months from the mistaken transfer",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Counted from the mistaken transfer itself, not from the day the bank reports that its return request failed. A slow preliminary procedure does not extend it.",
+  "why": "The deadline runs from the transfer, but the eligibility condition in front of it — a failed return request through the sending bank — takes time the applicant does not control. People wait for the bank and discover the window closed behind them.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 12,
+      "display": "12 months",
+      "source": "Easy Law (Ministry of Government Legislation) — mistaken transfer return support",
+      "note": "The programme's own rules govern how the period is calculated; the transfer day itself is excluded."
+    }
+  ]
+}

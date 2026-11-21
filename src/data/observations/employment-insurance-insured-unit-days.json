@@ -1,0 +1,19 @@
+{
+  "key": "employment-insurance-insured-unit-days",
+  "label": "Family-leave benefits — insured-unit days required",
+  "unit": "insured-unit days",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 1,
+  "appliesTo": "Counted before parental leave begins, but before maternity leave ends for the maternity benefit — the same number measured at two different moments. Unpaid days are excluded, and coverage under some non-employee schemes is not combined.",
+  "why": "Not six calendar months. A worker with a valid visa, a salary and a contract can still be short, which is how people reach the application with the leave already booked and no benefit behind it.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 180,
+      "display": "180 days",
+      "source": "Work24 — parental leave and maternity leave benefits",
+      "note": "Distinct from the employer-service condition, which lets an employer refuse ordinary parental leave below six months' continuous service."
+    }
+  ]
+}
