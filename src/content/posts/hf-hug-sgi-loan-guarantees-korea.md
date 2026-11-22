@@ -3,7 +3,6 @@ title: 'Loan Guarantees in Korea: HF, HUG and SGI Explained'
 description: 'HF, HUG and SGI are not interchangeable. Which one protects the bank, which protects your deposit, and why foreign eligibility differs by product.'
 category: loans
 publishDate: 2026-11-22
-draft: true
 updatedDate: 2026-11-22
 tags: [loans, guarantee, HF, HUG, SGI, jeonse]
 sources:
