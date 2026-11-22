@@ -1,0 +1,19 @@
+{
+  "key": "amended-return-claim-window",
+  "label": "Claim for correction — window to recover overpaid tax",
+  "unit": "years from the statutory filing deadline",
+  "type": "schedule",
+  "check": "annual",
+  "checkMonth": 5,
+  "appliesTo": "Recovering tax already overpaid for a year whose deadline has passed, filed year by year. It is not an extension of the May deadline for the current year, and it does not apply where no return was required or made in the first place.",
+  "why": "The reason a freelancer who never filed is not out of options. Each May that passes without a return is an unclaimed refund rather than a closed year, until this window shuts — and it shuts one year at a time, quietly.",
+  "history": [
+    {
+      "date": "2026-11-21",
+      "value": 5,
+      "display": "5 years",
+      "source": "Framework Act on National Taxes — claim for correction",
+      "note": "Counted from the statutory filing deadline for the year concerned, so the oldest recoverable year drops off every May."
+    }
+  ]
+}
