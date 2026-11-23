@@ -3,7 +3,6 @@ title: 'Korea F-2-7 Points: How the Score Is Actually Built'
 description: 'How Korea''s F-2-7 residence score is built, what the 2025 notice changed, and why the 120-point table still circulating online is not the current rule.'
 category: visas
 publishDate: 2026-11-23
-draft: true
 updatedDate: 2026-11-23
 tags: [visas, F-2, points, residency]
 sources:
