@@ -3,7 +3,6 @@ title: 'Korea F-5 Permanent Residency: Who Actually Qualifies'
 description: 'F-5 permanent residency has many routes, not one five-year rule. Which status years count, what the ten-year card validity means, and what to verify first.'
 category: visas
 publishDate: 2026-11-24
-draft: true
 updatedDate: 2026-11-24
 tags: [visas, F-5, permanent residency]
 sources:
