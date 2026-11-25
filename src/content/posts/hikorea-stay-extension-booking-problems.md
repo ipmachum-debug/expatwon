@@ -3,7 +3,6 @@ title: 'Extending Your Stay in Korea: The HiKorea Booking Wall'
 description: 'A HiKorea visit reservation is not an extension application. What the law requires, and what to do when no slot exists before your permitted stay ends.'
 category: visas
 publishDate: 2026-11-25
-draft: true
 updatedDate: 2026-11-25
 tags: [visas, extension, HiKorea, ARC]
 sources:
