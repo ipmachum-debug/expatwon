@@ -3,7 +3,6 @@ title: 'Korea D-10 Job-Seeker Visa: What It Lets You Do'
 description: 'What the D-10 job-seeker visa actually permits, what the 2025 reform changed, and why the three-year maximum is not automatic for every category.'
 category: visas
 publishDate: 2026-11-26
-draft: true
 updatedDate: 2026-11-26
 tags: [visas, D-10, job search, graduates]
 sources:
