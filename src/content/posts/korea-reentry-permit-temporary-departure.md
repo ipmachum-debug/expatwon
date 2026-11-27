@@ -3,7 +3,6 @@ title: 'Leaving Korea Mid-Visa: When You Need a Re-Entry Permit'
 description: 'When a registered foreigner can leave Korea and return without a re-entry permit, when the exemption does not apply, and which date actually governs.'
 category: visas
 publishDate: 2026-11-27
-draft: true
 updatedDate: 2026-11-27
 tags: [visas, re-entry, travel, F-5, F-4]
 sources:
