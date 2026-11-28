@@ -3,7 +3,6 @@ title: 'Lost Your ARC? The 14-Day Rule No Longer Exists'
 description: 'Lost your Korean residence card? The old 14-day replacement rule is gone. The current decree, the ₩35,000 fee, the photo, and the travel traps.'
 category: visas
 publishDate: 2026-11-28
-draft: true
 updatedDate: 2026-11-28
 tags: [visas, ARC, documents, immigration]
 sources:
